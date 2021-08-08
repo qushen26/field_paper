@@ -3,3 +3,9 @@ language:
   ui:
     chapter_name: "Chapter "
 delete_merged_file: true
+
+
+view: https://github.com/qushen26/field_paper/blob/master/%s
+edit: https://github.com/qushen26/field_paper/edit/master/%s
+output_dir: "docs"
+clean: ["my-book.bbl", "R-packages.bib"]

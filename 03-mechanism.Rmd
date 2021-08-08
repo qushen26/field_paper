@@ -1,0 +1,21 @@
+# Mechanism (Several Perspectives)
+
+Influencing Factors 
+
+
+
+
+
+$$
+SE = \sqrt(\frac{p(1-p)}{n})
+$$
+
+math in footnotes^[where we mention $p = \frac{a}{b}$].
+
+Or[^longnote]
+
+[^longnote]: Standard error will be approximated
+
+    $$
+    SE = \sqrt(\frac{p(1-p)}{n})
+    $$

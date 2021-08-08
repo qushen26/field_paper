@@ -1,21 +1,38 @@
+# (PART\*) Part I Theories and Framework {-} 
+
 # Introduction {#intro}
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emission.
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance.
+Previous studies commonly choose two metrics for measuring them, the proportion of auto trips (or other modes) and Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)].
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
+The proportion of mode is calculated by dividing the number of chosen mode over the total number of trips.
+The main travel modes, transit, bicycle, and walking are the alternatives to driving personal car.
+Given the same amount of travel demand, more active and transit modes means less car use.
+VMT is used to measure the travel distance made by a private vehicle.
+An integrated viewpoint is to treat the non-auto trips as zero-VMT.
+In this way, the probability distribution of VMT can comprehensively represents the travel behavior. 
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
+The smallest unit of VMT is recorded by trip from a daily travel survey. Then these records can be aggregated to personal or household daily VMT (DVMT).
+A traveler's or household's DVMT can account for the degree of automobile dependency by combining the number of trips and driving distance during a day.
+Given the survey day is randomly selected, DVMT can reflect the typical travel pattern in general.
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+Although, there are other approaches collect weekly, monthly, or longer VMT records by tracking car usage.
+The odometer records are more likely to represent the usage of vehicle rather than traveler's behavior.
+It is not easy to acquire long-term VMT through survey-based method. The annual mileage and fuel efficiency information provided in some public data usually are estimated values using daily records and are not as accurate as DVMT.
+
+On a personal scale, VMT relates to the economic cost of travel by car, while another dimension, travel time measuring the time cost of vehicle travel.
+For society as a whole, the total VMT measures the usage of road network. 
+Thus, it acts as a major interest within the field of transportation, especially in the research of travel demand and infrastructure capacity. 
+And VMT highly correlated with the amount of fuel consumption, which is one of the main indicators of pollution and GHG emission. It is also one of the priority issues involving sustainable development and climate change.
+
+Previous research found that reducing VMT is instrumental in solving some urban problems and improving the qualities of urban life.
+It is natural that urban studies try to figure out the relationship between VMT and some urban built-environment factors. Then urban or regional policies could identify the best practices to contribute VMT reduction.
+
+
+
+
+
+

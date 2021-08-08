@@ -1,0 +1,24 @@
+# (PART\*) Part II Data and Methods {-} 
+
+# Data {#data}
+
+reference Chapter \@ref(data). automatic labels, Chapter \@ref(methods).
+
+Figure \@ref(fig:nice-fig). Table \@ref(tab:nice-tab).
+
+
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='20%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+Figure \@ref(fig:nice-fig). Table \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 6), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+

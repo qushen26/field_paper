@@ -1,3 +1,30 @@
 # Non-Linear Models
 
-Here is a review of existing methods.
+
+### Overview
+
+As @cliftonGettingHereThere2017 said, relevant studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip v.s. built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], Ewing's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
+
+![Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form).\label{ewing-gam}](fig/Ewing_gam1.png)
+
+The synthesized methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.
+
+The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The urban studies field usually doesn't discuss the distribution of the key variables themselves. An interdisciplinary perspective could provide a theoretical explanation for model selection. Existing mobility theories can play an anchor to identify the key variables' property and confirm the additive and linear relation between VMT and density.
+
+### Main Approaches
+
+#### Polynomial Regression
+
+#### Step Funtions
+
+#### Basis Funtions
+
+#### Splines
+
+#### Local Regression
+
+#### Generalized Additive Models
+
+### Summary
+
+Expected finding, implications, and limitations

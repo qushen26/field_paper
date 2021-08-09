@@ -7,6 +7,8 @@ site: bookdown::bookdown_site
 output: 
   bookdown::gitbook: 
     lib_dir: "book_assets"
+    includes:
+      after_body: disqus.html
   bookdown::pdf_book:
     toc: true
     toc_depth: 4

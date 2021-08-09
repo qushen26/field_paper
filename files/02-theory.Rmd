@@ -1,3 +1,133 @@
 # Travel Behavior Theories
 
+Two different perspectives, individual and collective, can explain travel behavior.
+When people contextualizing travel as a personal choice or decision-making, the traveler as a subject make mode choices, driving or not.
+When travel behavior is understood as a social phenomenon, researcher observe and understand the trips as a whole.
+The two perspectives derived two schools of theory, mode choice and human mobility.
+In the school of mode choice, travel distance could be treat as an independent variable, a part of travel cost, or could be decided in the next step after mode choice , such as route choice.
+In the school of human mobility, driving distance grab more attentions.
+
+
+## Mode Choices (Travel as a subject)
+
+Are 'decision' and 'choice' the same when discussing travel modes?
+Literally, a 'choice' is one decision given all available options at the same time. While 'decision' is a broader concept. A decision could be a schedule with a combination of many choices, such as modes, destination, and activities. A decision related to travel behavior could even include bicycle or car purchase, and relocation.
+This section will start from the theories of mode choice, then extend to a broader discussion of decision processes.
+
+### Rational Choice Theory
+
+For prescriptive, analytical everyday decision-making, rationality is a basic assumption in reasoned behavior or rational choice theories (Edwards, 1954,Von Neumann and Morgenstern, 1944)(von Neumann and Morgenstern, 1947; Savage, 1954).
+
+This category is also called 'Normative Decision Theory', which assume people a traveler is an ideal decision maker who are full rational.
+It requires three necessary steps including information collection, utility evaluation, and choice making.
+
+- Expected Utility Theory (EUT)
+
+Traditional economics focus on the utility evaluation and come up with the Expected Utility Theory (EUT) which is also called Consumer Choice Theory.
+The rule of EUT is Random Utility Maximization (RUM) (Ben-Akiva & Lerman, 1985; Daneil McFadden, 1973).
+This classical theory claims that customer always choose the one most appropriate by comparing the advantages and disadvantages of a range of alternatives, evaluating the benefits and costs of each possible outcome.
+Eventually travelers will select the optimal solution with the maximum 'utility' from the choice set.
+
+In real life, Rational Choice Theory can not accurately describe the actual human behavior.
+Individuals do not often collect and analyse all the relevant information.
+They are not 'ideal' and are not able to calculate the utility for all possible alternatives with perfect accuracy.
+In many cases, the travel decision is not regarded as the 'best' one to achieve travelers' desired objective.
+Many other theories were developmed to fix these issues.
+
+### Prospect Theory
+
+Kahneman and Tversky (1979) introduced the [Prospect Theory](https://www-sciencedirect-com/topics/social-sciences/prospect-theory) to study the impacts of biases.
+Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55).
+Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses.
+Third, people make choice based on a reference point, rather than the overall situation or worth. 
+Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior. 
+### Regret Theory
+
+Regret Theory introduces the notions of risk or uncertainty in decisions (Bell, 1982; Loomes and Sugden, 1982).
+Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior.
+For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give traveler confidence in the rail system. 
+
+In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be smaller after subtracting the regret term, which is an increasing, continuous and non-negative function.
+
+### Cognitive bias
+
+Another psychological factor, cognitive bias can result in judgement errors.
+For example, people treat potential gains and losses differently, that is called Loss Aversion.
+Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains(Kahneman et al. 1991).
+As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
+
+
+### Bounded Rational Behavior
+
+Bounded rationality focused on the limitation of self-control (March and Simon, 1958, Simon, 1955).
+In reality, individuals are behaving under many constraints including incomplete information, limited time, and cognitive capacity.
+The observed behaviors often are not optimal and are inconsistent with 'pure' rationality.
+Bounded rationality claims that, when people make decisions under constraints, heuristics and rules of thumb are more common than statistical inference. 
+People are satisfied with a 'good enough' decision unless there is a definitively better alternative.
+The recently witnessed events would have stronger effects on an individual's decision than others (Camerer and Loewenstein, 2004).
+
+
+
+
+### The choice process. 
+
+
+McFadden (2001)
+
+hybrid choice model (HCM) and non-RUM decision protocols (Ben-Akiva et al., 2002)
+
+
+
+### Theory of Planned Behavior
+
+
+
+
+## Human Mobility (Travel as an object)
+
+Travel Distance in Physics and Geography
+
+The main laws of explaining travel behavior?
+
+There is a much longer history of human mobility studies in geography. The popularized ideas include @ravensteinLawsMigration1885 's *Law of Migration*, @stoufferInterveningOpportunitiesTheory1940 's *Law of Intervening Opportunities*, and @zipfP1P2Hypothesis1946 's *Zipf's Law*. Zipf's Law says A city's population size has a negative power relationship to its rank [^1]. The most influential theory in transportation modeling, Gravity Law [@newton18481687] asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass could be population or opportunity. Using commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. An implication is that the gravity or opportunities at the destination drive people traveling, rather than origin. It may explain why the local density doesn't strongly affect the trip distance in disaggregate studies.
+
+[^1]: @visserZipfLawPower2013;@jiangZipfLawAll2015;@rozenfeldAreaPopulationCities2011;@gomez-lievanoStatisticsUrbanScaling2012;@hackmannEvolutionZipfLaw2020
+
+Actually, Zipf's law and Gravity Law have a common essence of power law, or scaling pattern. The state-of-the-art studies of human mobility agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. It reflects the fact that both trip and built environment, as a type of geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation frame of linear models based on the location and scale parameters [^2]. Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in current VMT-density models [@saichevTheoryZipfLaw2010].
+
+[^2]: @jiangZipfLawAll2011;@chenHierarchicalScalingSystems2018;@jiangGeospatialAnalysisRequires2018;@jiangSpatialHeterogeneityScale2018
+
+Human behavior has two mobility roles: explorers and returners. It might be an inherent property of society.
+
+People are natural or nurtured likely to return to frequently visited locations or recently-visited locations.
+
+Instinct: Explore more territory. Keep together and division of labor.
+
+### Law of Migration
+
+### Law of Intervening Opportunities
+
+### Gravity Law and Distance-Decay
+
+### Time Geography (space-time aquarium/prism)
+
+### The Main Models
+
+-   individual level Random walk.Brownian motion and Levy flight
+
+-   population level Gravity models, Intervening opportunity models, the radiation models.
+
+-   the primary metrics for quantitatively describe travel behaviors
+
+    -   Jump lengths
+
+    -   Mean square displacement
+
+    -   Radius of gyration
+
+    -   Most frequented locations and motifs
+
+    -   Origin-Destination matrices
+
+In geography, *'distance decay'* means the interaction and the distance between two locations are inversely proportional. By *Intervening Opportunities* theory, this rule can be interpreted as the travel activity and the distance between origin and destination are inversely proportional too. Under the survival analysis framework, a trip is one event, trip distance represents *'duration of time'* Since there are no censored data values, the Kaplan-Meier (K-M) estimator of the survivor function is the same with the Empirical Survival Function (esf). Figure \@ref(fig:plotsurvVMT) show the esf regular and logarithm scales for four units, four trip types, and three spatial scales.
 

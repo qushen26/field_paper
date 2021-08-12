@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Generalized Linear Models | Travel Behavior and Urban Land Use</title>
+  <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Generalized Linear Models | Travel Behavior and Urban Land Use" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="qushen26/field_paper" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Generalized Linear Models | Travel Behavior and Urban Land Use" />
+  
+  <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Shen Qu" />
+
+
+<meta name="date" content="2021-08-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="linear-models.html"/>
+<link rel="next" href="non-linear-models.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="book_assets/viz-1.8.2/viz.js"></script>
+<link href="book_assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="book_assets/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Field Paper</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Part I Theories and Framework</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html"><i class="fa fa-check"></i><b>2</b> Travel Behavior Theories</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#mode-choices-travel-as-a-subject"><i class="fa fa-check"></i><b>2.1</b> Mode Choices (Travel as a subject)</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#rational-choice-theory"><i class="fa fa-check"></i><b>2.1.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="2.1.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#prospect-theory"><i class="fa fa-check"></i><b>2.1.2</b> Prospect Theory</a></li>
+<li class="chapter" data-level="2.1.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>2.1.3</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="2.1.4" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>2.1.4</b> Theory of Planned Behavior</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#human-mobility-travel-as-an-object"><i class="fa fa-check"></i><b>2.2</b> Human Mobility (Travel as an object)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#trip-distribution-laws"><i class="fa fa-check"></i><b>2.2.1</b> Trip Distribution Laws</a></li>
+<li class="chapter" data-level="2.2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#time-geography-space-time-aquariumprism"><i class="fa fa-check"></i><b>2.2.2</b> Time Geography (space-time aquarium/prism)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#the-main-models"><i class="fa fa-check"></i><b>2.2.3</b> The Main Models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html"><i class="fa fa-check"></i><b>3</b> The Impact of Land Use</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#all-influencing-factors"><i class="fa fa-check"></i><b>3.1</b> All Influencing Factors</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#individual-versus-environment"><i class="fa fa-check"></i><b>3.1.1</b> Individual versus Environment</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#morphology-versus-functionality"><i class="fa fa-check"></i><b>3.1.2</b> Morphology versus Functionality</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#techno-centric-versus-socio-centric"><i class="fa fa-check"></i><b>3.1.3</b> Techno-centric versus Socio-centric</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#spatial-scales"><i class="fa fa-check"></i><b>3.2</b> Spatial Scales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>3.2.1</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#uints-and-scales-in-the-u.s."><i class="fa fa-check"></i><b>3.2.2</b> Uints and Scales in the U.S.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#the-role-of-land-use-variables"><i class="fa fa-check"></i><b>3.3</b> The Role of Land Use Variables</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#personalhousehold-scale-micro-level"><i class="fa fa-check"></i><b>3.3.1</b> Personal/Household Scale (Micro level)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#neighborhooddistrict-scale-meso-level"><i class="fa fa-check"></i><b>3.3.2</b> Neighborhood/District Scale (Meso level)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#urbanmetropolitan-scale-macro-level"><i class="fa fa-check"></i><b>3.3.3</b> Urban/Metropolitan Scale (Macro level)</a></li>
+<li class="chapter" data-level="3.3.4" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#multi-scale-studies"><i class="fa fa-check"></i><b>3.3.4</b> Multi-scale Studies</a></li>
+<li class="chapter" data-level="3.3.5" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#the-role-of-population-density"><i class="fa fa-check"></i><b>3.3.5</b> The Role of Population Density</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html"><i class="fa fa-check"></i><b>4</b> Analytical and Explanatory Frameworks</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#analytical-sturcture"><i class="fa fa-check"></i><b>4.1</b> Analytical Sturcture</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#by-decision-making-process"><i class="fa fa-check"></i><b>4.1.1</b> By decision-making process</a></li>
+<li class="chapter" data-level="4.1.2" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#by-time-period"><i class="fa fa-check"></i><b>4.1.2</b> By time period</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#one-step-or-multistep"><i class="fa fa-check"></i><b>4.2</b> One-step or Multistep</a></li>
+<li class="chapter" data-level="4.3" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#association-and-causality"><i class="fa fa-check"></i><b>4.3</b> Association and Causality</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#association"><i class="fa fa-check"></i><b>4.3.1</b> Association</a></li>
+<li class="chapter" data-level="4.3.2" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#causal-inference-and-self-selection"><i class="fa fa-check"></i><b>4.3.2</b> Causal Inference and Self-selection</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#predictors-mediators-or-moderators"><i class="fa fa-check"></i><b>4.4</b> Predictors, Mediators or Moderators</a></li>
+<li class="chapter" data-level="4.5" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#effect-size-correlations-coefficients-elasticities"><i class="fa fa-check"></i><b>4.5</b> Effect Size (Correlations, Coefficients, Elasticities,)</a></li>
+<li class="chapter" data-level="4.6" data-path="analytical-and-explanatory-frameworks.html"><a href="analytical-and-explanatory-frameworks.html#generalisability-and-reproducibility"><i class="fa fa-check"></i><b>4.6</b> Generalisability and Reproducibility</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discussion.html"><a href="discussion.html#research-design"><i class="fa fa-check"></i><b>5.1</b> Research Design</a></li>
+<li class="chapter" data-level="5.2" data-path="discussion.html"><a href="discussion.html#trend-and-dynamic"><i class="fa fa-check"></i><b>5.2</b> Trend and Dynamic</a></li>
+<li class="chapter" data-level="5.3" data-path="discussion.html"><a href="discussion.html#policy-implications-the-scales-of-intervention"><i class="fa fa-check"></i><b>5.3</b> Policy implications (The Scales of Intervention)</a></li>
+</ul></li>
+<li class="part"><span><b>Part II Data and Methods</b></span></li>
+<li class="chapter" data-level="6" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>6</b> Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="data.html"><a href="data.html#the-daily-travel-data-in-the-u.s."><i class="fa fa-check"></i><b>6.0.1</b> The daily travel data in the U.S.</a></li>
+<li class="chapter" data-level="6.0.2" data-path="data.html"><a href="data.html#socio-demographic-data"><i class="fa fa-check"></i><b>6.0.2</b> Socio-Demographic Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="data.html"><a href="data.html#built-environment-data"><i class="fa fa-check"></i><b>6.0.3</b> Built-Environment Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="data.html"><a href="data.html#new-data-source"><i class="fa fa-check"></i><b>6.0.4</b> New Data Source</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear Models</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>7.0.1</b> Overview</a></li>
+<li class="chapter" data-level="7.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>7.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="7.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.0.3</b> Models Specifications</a></li>
+<li class="chapter" data-level="7.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.0.4</b> Diagnousis and Validation</a></li>
+<li class="chapter" data-level="7.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.0.5</b> Interpretation</a></li>
+<li class="chapter" data-level="7.0.6" data-path="linear-models.html"><a href="linear-models.html#summary"><i class="fa fa-check"></i><b>7.0.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
+<li class="chapter" data-level="8.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="8.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-1"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-linear-models.html"><a href="non-linear-models.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Models</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="non-linear-models.html"><a href="non-linear-models.html#overview-2"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
+<li class="chapter" data-level="9.0.2" data-path="non-linear-models.html"><a href="non-linear-models.html#main-approaches"><i class="fa fa-check"></i><b>9.0.2</b> Main Approaches</a></li>
+<li class="chapter" data-level="9.0.3" data-path="non-linear-models.html"><a href="non-linear-models.html#summary-2"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>10</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
+<li class="chapter" data-level="10.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>10.0.2</b> Advanced Methods</a></li>
+<li class="chapter" data-level="10.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-3"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Travel Behavior and Urban Land Use</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="generalized-linear-models" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Generalized Linear Models</h1>
+<div id="overview-1" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Overview</h3>
+</div>
+<div id="models-structures-1" class="section level3" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Models Structures</h3>
+</div>
+<div id="summary-1" class="section level3" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Summary</h3>
+
+</div>
+</div>
+<div id="disqus_thread"></div>
+
+<style>
+.hide-social-discuss {
+   background: white;
+   height: 20px;
+   position: relative;
+   width: 80%;
+   top: -60px;
+}
+</style>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qs26.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    //add this to script
+    $("#disqus_thread").append("<div class='hide-social-discuss'></div>")
+
+</script>
+
+
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="non-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/qushen26/field_paper/edit/master/files/08-glinear.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/qushen26/field_paper/blob/master/files/08-glinear.Rmd",
+"text": null
+},
+"download": ["field_paper.pdf", "field_paper.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

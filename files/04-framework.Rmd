@@ -1,12 +1,11 @@
-# Frameworks
-
-Analytical and Explanatory Frameworks
+# Analytical and Explanatory Frameworks
 
 
-It is also impossible to design a replicable experiment controlling other factors to identify the effects of density. But it is possible to filter out the unsuitable or irreproducible models.
+
+It is impossible to design a replicable experiment controlling other factors to identify the effects of density. But it is possible to filter out the unsuitable or irreproducible models.
 
 
-### Travel related variables (a tree sturcture)
+## Analytical Sturcture
 
 <!-- -   The types of trip variables and the proposed probability distributions -->
 <!--     -   Binary: Choose/not to make trip (Bernoulli/Binomial), -->
@@ -23,13 +22,13 @@ It is also impossible to design a replicable experiment controlling other factor
 <!-- The trip responses are defined in different units, scales, metrics. -->
 
 
-#### A structure by decision-making process
+### By decision-making process
 
 A top-down decision tree starts from a travel demand or purpose. The first choice then reaches a dichotomous node, making a trip or not. The next level of internal nodes is a polychotomous choice, choosing a mode from walking, bicycle, transit, or driving. Each node can further extend to several branches with different routes and departure time, which determine the travel distance and time.
 
 A daily travel could include multiple trips and form a travel chain. The traveler may switch the sequence or adjust the routes to optimize the chain and minimize the travel costs. The daily total travel distance is the summation of every trip distances. The number of trips denotes as trip count. It exists but not so common that driving itself is the travel purpose, especially in daily life.
 
-#### Another structure by time period
+### By time period
 
 According to the theoretical framework of hierarchical travel behavior introduced by Ben-Akiva and Atherton (1977), travel decision can be divided into three levels:
 
@@ -41,7 +40,7 @@ short-term decisions (e.g. travel mode choice).
 
 Another fundamental factor that influences travel mode choice behavior is the distance to destination, as would be expected (Munshi, 2016).
 
-#### One-step or Multistep
+## One-step or Multistep
 
 Progressive, iterative, and Habitual
 
@@ -91,9 +90,22 @@ After choosing the destination, the driving distance could be different among di
 
 
 
-### Association and Causality (Self-selection Issues)
+## Association and Causality
 
-Causal Inference and Self-selection
+### Association
+
+To estimate the association of VMT response and urban density predictor, the general regression model is:
+
+$$\begin{aligned}
+\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D}}{\beta}_\mathrm{D}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\end{aligned}$$
+
+where $\mathrm{Y}$ are the variable of VMT. $\boldsymbol{\beta}$ are the coefficients with respect to travelers' characteristics $\mathbf{X}_\mathrm{C}$, density $\mathrm{X_{D}}$, and other environment covariates $\mathbf{X}_\mathrm{E}$. $\boldsymbol{\varepsilon}$ are the error terms. It could develop different explanatory frameworks, which reflect the cognitive differences on this topic (Figure \@ref(fig:cognitive3)).
+
+
+
+
+### Causal Inference and Self-selection
 
 Essentially, both VMT and density are dependent variable depending by the socioeconomic and techonological development.
 
@@ -113,14 +125,14 @@ The nomological network among travel behavior, socioeconomic, and built environm
 
 Detailed theoretical learning could better answer the question of variable properties and model structures. VMT may be determined by individual's energy and city's opportunity. Then, local density is an irrelevant factor. @ewingTestingNewmanKenworthy2018 comment that the aggregate and disaggregate studies are asking the apples and oranges questions. This study will try to answer what apples and oranges are and what makes the difference.
 
-### Predictors, Mediators or Moderators
+## Predictors, Mediators or Moderators
 
 (Ding et al., 2017) Based on the fact that travel distance is one of the most important factors influencing travel mode choice, therefore, similar to household car ownership, travel distance also mediates the connection between built environment and mode choice that should be treated as an intermediate variable. Similar framework relates to the study conducted by Van Acker and Witlox (2011).
 
 the influence of the built environment on travel mode choice considering the mediating effects of car ownership, travel distance and travel attitudes. (De Vos et al., 2021)
 
-### Effect Size (Correlations, Coefficients, Elasticities,)
+## Effect Size (Correlations, Coefficients, Elasticities,)
 
-### Generalisability and Reproducibility
+## Generalisability and Reproducibility
 
 

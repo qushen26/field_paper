@@ -5,9 +5,9 @@
 In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emission.
 
 Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance.
-Previous studies commonly choose two metrics for measuring them, the proportion of auto trips (or other modes) and Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)].
+Previous studies commonly choose two metrics for measuring them, the share of auto trips (or other modes) and Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)].
 
-The proportion of mode is calculated by dividing the number of chosen mode over the total number of trips.
+The share of mode is calculated by dividing the number of chosen mode over the total number of trips.
 The main travel modes, transit, bicycle, and walking are the alternatives to driving personal car.
 Given the same amount of travel demand, more active and transit modes means less car use.
 VMT is used to measure the travel distance made by a private vehicle.

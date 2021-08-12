@@ -41,7 +41,8 @@ Prospect Theory is a descriptive theory with three main components: First, peopl
 Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses.
 Third, people make choice based on a reference point, rather than the overall situation or worth. 
 Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior. 
-### Regret Theory
+
+- Regret Theory
 
 Regret Theory introduces the notions of risk or uncertainty in decisions (Bell, 1982; Loomes and Sugden, 1982).
 Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior.
@@ -49,7 +50,7 @@ For example, A high risk of congestion in peak hours could encourage a commuter 
 
 In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be smaller after subtracting the regret term, which is an increasing, continuous and non-negative function.
 
-### Cognitive bias
+- Cognitive Bbias
 
 Another psychological factor, cognitive bias can result in judgement errors.
 For example, people treat potential gains and losses differently, that is called Loss Aversion.
@@ -68,34 +69,169 @@ The recently witnessed events would have stronger effects on an individual's dec
 
 
 
-
-### The choice process. 
-
-
-McFadden (2001)
-
-hybrid choice model (HCM) and non-RUM decision protocols (Ben-Akiva et al., 2002)
-
-
-
 ### Theory of Planned Behavior
 
 
+The choice process (McFadden 2001), hybrid choice model (HCM) and non-RUM decision protocols (Ben-Akiva et al., 2002)
 
 
 ## Human Mobility (Travel as an object)
 
-Travel Distance in Physics and Geography
+### Trip Distribution Laws
 
-The main laws of explaining travel behavior?
+There is a long history of human mobility studies. 
+In Physics and Geography, travel distance and pattern are treated as an objective phenomenon. The related theories try to use some statistical expressions to fit the aggregated trip distributions.
 
-There is a much longer history of human mobility studies in geography. The popularized ideas include @ravensteinLawsMigration1885 's *Law of Migration*, @stoufferInterveningOpportunitiesTheory1940 's *Law of Intervening Opportunities*, and @zipfP1P2Hypothesis1946 's *Zipf's Law*. Zipf's Law says A city's population size has a negative power relationship to its rank [^1]. The most influential theory in transportation modeling, Gravity Law [@newton18481687] asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass could be population or opportunity. Using commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. An implication is that the gravity or opportunities at the destination drive people traveling, rather than origin. It may explain why the local density doesn't strongly affect the trip distance in disaggregate studies.
+Gravity Law is a dominant theory in this field. 
+Scholars have developed some more delicate forms of Gravity Law and found some mathematical relationship to other famous distribution laws.
+Some theories from different perspectives, like intervening opportunities also show strong ability for describing travel behaviors.
+
+
+- Gravity Law 
+
+
+The most influential theory, Gravity Law [@newton18481687] asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass could be population or opportunity. 
+
+$$
+p_{ij}\propto m_i m_j f(d_{ij}), \qquad i\ne j 
+$$
+where $p_{ij}$ is the probability of commuting between origin $i$ and destination $j$, satisfying $\sum_{i,j=1}^n p_{ij}=1$.
+$m_i$ and $m_j$ are the population of two census units. The travel cost between the two places is represented as a distance decay function of $d_{ij}$ . 
+
+Exponential and power are the two forms of the distance decay function with a parameter $\beta$ showed as below:
+
+$$
+f(d_{ij})=\exp(-\beta d_{ij})
+$$
+and
+
+$$
+f(d_{ij})={d_{ij}}^{-\beta}
+$$
+The function implies that the movements between the origin and destination decays with their distance.
+In transportation modeling, a common form of gravity model is :
+
+$$
+T_{ij}= \alpha_i O_i \cdot \beta_j D_j \cdot f(d_{ij})
+$$
+
+where $T_{ij}$ is the flow between $i$ and $j$. the two population are replaced by total tirp generation of origin $O_i$ and total trip attraction of destination $D_i$. $\alpha_i$ and $\beta_j$ are two constraining parameters to satisfy $\sum_{i}^{n_i}T_{ij} = D_j$ and $\sum_{j}^{n_j}T_{ij} = O_i$.
+It means that $\alpha_i = [\sum_{j}^{n_j} \beta_j D_j \cdot f(d_{ij})]^{-1}$ and $\beta_j = [\sum_{i}^{n_i} \alpha_i O_i \cdot f(d_{ij})]^{-1}$.
+Thus, this model is called as doubly constrained gravity model.
+
+If it relieves the two constrains. this model will be simplified to single-constrained and unconstrained gravity model.
+By assuming $\alpha\beta$ is an adjustment parameter irrelevant to locations $i$ and $j$ for controlling the total flows, this model will not guarantee that the attraction of a destination equals the sum of flow from all origins, and the generation of a origin equals the sum of flow to all destinations.
+
+
+geography plays a prominent role 
+
+- Zipf's Law
+
+ @zipfP1P2Hypothesis1946 's *Zipf's Law*. 
+
+Zipf's Law says a city's population size has a negative power relationship to its rank [^1]. 
+
+
+
+- Power Law
+
+Actually, Zipf's law and Gravity Law have a common essence of power law, or scaling pattern. The state-of-the-art studies of human mobility agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. 
+It reflects the fact that both trip and built environment, as a type of geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation frame of linear models based on the location and scale parameters [^2]. 
+
+Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in current VMT-density models [@saichevTheoryZipfLaw2010].
+
+
+
+- Law of Migration, Law of Intervening Opportunities, and Radiation Law
+
+@ravensteinLawsMigration1885 's *Law of Migration*,
+
+
+@stoufferInterveningOpportunitiesTheory1940 's *Law of Intervening Opportunities*, 
+
+In the intervening opportunities law, the number of intervening opportunities $s_{ij}$ replaces the distance  between origin and destination.
+For example, a resident living in location $i$ is attracted to location $j$ with $s_{ij}$ job opportunities in between.
+
+
+$$
+p_{ij}\propto m_i \frac{P(1|m_i,m_j,s_{ij})}{\sum_{k=1}^n P(1|m_i,m_j,s_{ij})}, \qquad i\ne j 
+$$
+
+where the conditional probability $P(1|m_i,m_j,s_{ij})$  can be expressed by Schneider (1959) as:
+
+
+
+$$
+P(1|m_i,m_j,s_{ij})=\exp[-\gamma s_{ij}] - \exp[-\gamma (m_j + s_{ij})]
+$$
+
+Simini et al. (2012) propose a radiation model express the probability of the destination $j$ absorbing a person living in location $i$ as below:
+
+$$
+P(1|m_i,m_j,s_{ij})= \frac{m_i m_j}{(m_i + s_{ij})(m_i + m_j + s_{ij})}
+$$
+
+Or in transportation model it is expressed as:
+
+$$
+T_{ij}= O_i\cdot\frac{m_i m_j}{(m_i + s_{ij})(m_i + m_j + s_{ij})}
+$$
+To approximating the number of opportunities,  $s_{ij}$ is from the population within a circle centered at origin. The radius is the distance between $i$ and $j$. Then $m_i + m_j + s_{ij}$ represents the total population within the circle, and $m_i + s_{ij}$ is the total population within the circle but excluding $j$, that is:
+
+$$
+T_{ij}= O_i\cdot\frac{m_i }{m_i + s_{ij}}\cdot\frac{m_j}{m_i + m_j + s_{ij}}
+$$
+The part of fraction converts to the product of two weights, the weights of origin and destination in the whole region.
+Although distance $d_{ij}$ doesn't appear in the expression of radiation model, it is still a determinant as in gravity model.
+
+Using the survival analysis framework, Yang et al. (2014) further extended this model by assuming a trip from origin to destination as a time-to-event process. Here time variable is replaced by the number of opportunities. 
+
+The survival function $S(t)=Pr(T>t)$ represents the cumulative probability of the event not happened within a certain amount of opportunities.
+Choosing Weibull distribution as the survival function, $S(t)=\exp[-\lambda t^\alpha]$ with scale parameter $\lambda \in (0, +\infty)$. By assuming $f(\lambda)=\exp[-\lambda]$ and integral on $\lambda$, the derivation is:
+
+```{=tex}
+\begin{equation}
+(\#eq:sf1)
+\begin{split}
+P(T>t)=&E\{\exp[-\lambda t^\alpha]\} \\ 
+=&\int_0^{+\infty}\exp[-\lambda t^\alpha]\exp[-\lambda]d\lambda\\
+=&\frac{1}{1+t^{\alpha}}
+\end{split}
+\end{equation}
+```
+
+By replacing $t$ with $m_i+s_{ij}$, the conditional probability is:
+
+$$
+\begin{align}
+P(1|m_i,m_j,s_{ij})= &\frac{P(T>m_i+s_{ij})-P(T> m_i+s_{ij}+m_j)}{P(T>m_i)} \\ 
+=&\frac{[(m_i + s_{ij} + m_j)^{\alpha}-(m_i + s_{ij})^{\alpha}](m_i^{\alpha}+1)}{[(m_i + s_{ij} + m_j)^{\alpha}+1][(m_i + s_{ij})^{\alpha}+1]}\\
+\end{align}
+$$
+
+where $\alpha$ is a parameter adjusting the effect of the number of job opportunities between origins and destinations.
+
+Based on commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. The reasons could be the circle with radius $d_{ij}$ can not accurately represent the real influencing area, and the different between population and opportunities is not captured in this way.
+
+
 
 [^1]: @visserZipfLawPower2013;@jiangZipfLawAll2015;@rozenfeldAreaPopulationCities2011;@gomez-lievanoStatisticsUrbanScaling2012;@hackmannEvolutionZipfLaw2020
 
-Actually, Zipf's law and Gravity Law have a common essence of power law, or scaling pattern. The state-of-the-art studies of human mobility agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. It reflects the fact that both trip and built environment, as a type of geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation frame of linear models based on the location and scale parameters [^2]. Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in current VMT-density models [@saichevTheoryZipfLaw2010].
-
 [^2]: @jiangZipfLawAll2011;@chenHierarchicalScalingSystems2018;@jiangGeospatialAnalysisRequires2018;@jiangSpatialHeterogeneityScale2018
+
+
+
+
+
+
+
+
+### Time Geography (space-time aquarium/prism)
+
+Along with more high-quality data being collected, a recent trend is 
+
+The popularized ideas
+
 
 Human behavior has two mobility roles: explorers and returners. It might be an inherent property of society.
 
@@ -103,13 +239,7 @@ People are natural or nurtured likely to return to frequently visited locations 
 
 Instinct: Explore more territory. Keep together and division of labor.
 
-### Law of Migration
-
-### Law of Intervening Opportunities
-
-### Gravity Law and Distance-Decay
-
-### Time Geography (space-time aquarium/prism)
+The main laws of explaining travel behavior?
 
 ### The Main Models
 
@@ -129,5 +259,44 @@ Instinct: Explore more territory. Keep together and division of labor.
 
     -   Origin-Destination matrices
 
-In geography, *'distance decay'* means the interaction and the distance between two locations are inversely proportional. By *Intervening Opportunities* theory, this rule can be interpreted as the travel activity and the distance between origin and destination are inversely proportional too. Under the survival analysis framework, a trip is one event, trip distance represents *'duration of time'* Since there are no censored data values, the Kaplan-Meier (K-M) estimator of the survivor function is the same with the Empirical Survival Function (esf). Figure \@ref(fig:plotsurvVMT) show the esf regular and logarithm scales for four units, four trip types, and three spatial scales.
+
+### summary
+
+Understand the role Population size
+
+When area of interest is intra-urban, the O-D matrix records the trip connections among all paired locations.
+It is reasonable that the matrix contain plenty of information and decide the trip distance in some ways.
+
+The limitation is that the empirical O-D matrix may only reflect the particular characteristics in that city and can not be applied to others.
+But
+To get a generalized interpretation, 
+
+OD matrix. But the iterative fitting complicates the calibration of the distance decaying function, which is essential for the gravity model. However, the most important limitation of the doubly constrained gravity model is the calibrated parameters from the empirical trip data in one area lack meaningful interpretation and thus are not transferable to other regions.
+urban spatial structure.
+
+
+
+
+the transportation network is only a part of travel decisions. Social networks with a ‘hub-and-spoke structure’ play a prominent role in finding a job.
+
+This theory can explain the macro structure.
+
+An implication is that the gravity or opportunities at the destination drive people traveling, rather than origin. It may explain why the local density doesn't strongly affect the trip distance in disaggregate studies.
+
+Both the two branch use the concept of *'distance decay'* which means the interaction and the distance between two locations are inversely proportional. 
+Under the survival analysis framework, a trip is one event, trip distance represents *'duration of time'* 
+
+Since there are no censored data values, the Kaplan-Meier (K-M) estimator of the survivor function is the same with the Empirical Survival Function (esf). Figure \@ref(fig:plotsurvVMT) show the esf regular and logarithm scales for four units, four trip types, and three spatial scales.
+
+
+## Land Use Theory
+
+
+### Land Use as response
+
+
+### Land Use as treatment
+
+
+
 

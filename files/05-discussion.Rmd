@@ -1,7 +1,9 @@
 # Discussion
 
 
-## Research Design (Aston et al., 2020)
+## Research Design 
+
+(Aston et al., 2020)
 
 The results show study design has significant impacts on findings for the relationship between the built environment and transit use. Three methodological recommendations are made for future research:
 
@@ -74,6 +76,9 @@ Is the local urban form an internal attribute or external factor?
 -   Should the trips be classified by purposes.
 
 All three explanatory frameworks can find supportive evidence. The significant effects of 'population centrality' or ' high-density built-up areas' support 'the 'direct' framework. The disaggregated studies support the 'collaborated' framework. The effects of density are not significant and have a small magnitude. The 'compactness indices' synthesized by density and other built-environment factors play a more important role over VMT. The aggregated studies show that density has a strong effect on VMT at the city scale, implying that the 'respective' framework is correct. Before further discussion, it is necessary to clarify the sources of variation in many studies. If one source is unintentional or mismatched, it should be controlled or corrected. If one source answers one type of question, then the differences are reasonable and should be preserved in categories. This study tries to find the boundaries or criteria for the categorized discussions.
+
+"commuting trips because they are stable in time and account for the largest fraction of the total flows in a population."
+
 
 -   
 

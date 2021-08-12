@@ -1,12 +1,22 @@
-# Land Use as an influencing factor
+# The Impact of Land Use
 
-For the complexity of human behavior, many objective or subjective factors could change people's travel decisions, such as job opportunity, income level, lifecycle stage, habits, and preferences, etc. It seems impossible to make an exhaustive list.
+For the complexity of travel behavior, many objective or subjective factors could change people's travel decisions, such as job opportunity, income level, lifecycle stage, habits, and preferences, etc. 
+It seems impossible to make an exhaustive list.
+
+Urban studies' attentions are on land use related factors such as urban density, form, infrastructure, and services. Because these factors can be intervened by policies and planning.
+
+This chapter will introduce the factors influencing travel behavior and focus on the role of land use factors. 
+
+
+
+
+
+## All Influencing Factors
+
 After the meta-analysis of built environment and travel behavior by @ewingTravelBuiltEnvironment2010,
-a recent update re-examines the post-2010 empirical literature and give a list.
+a recent update re-examines the post-2010 empirical literature and summarized the most common factors.
 
-
-## Mechanisim (Several Perspectives)
-
+This section will give an overview from several different perspectives.
 
 
 ### Individual versus Environment
@@ -16,6 +26,8 @@ A dichotomy may be defined as individual factors and environmental factors.
 Socio-Demographic and Economic Status, Attitude
 
 (e.g., vehicle ownership, attitudes, habits), interpersonal (e.g., interactions among households), built environment (e.g., commute distance, walkability, level of urbanization, etc.), and policy (e.g., restrictions on car use) levels.
+
+Travel related variables
 
 -   Major life events,
 
@@ -35,11 +47,47 @@ Attitude (Psychological factors)
 
 Socioeconomic Environment
 
+-   Natural Environment
+
 Physical Environment and other factors
 
 ### Morphology versus Functionality
 
-### Spatial Scales and Modifiable areal unit problem (MAUP)
+
+### Techno-centric versus Socio-centric
+
+Lanzini & Stochetti(2020) [^tech_soci]
+
+Foltynova et al.(2020)
+
+[^tech_soci]: Lanzini P., Stochetti A.. From Techno-Centrism toSocio-Centrism: The Evolution of Principles for Urban Sustainable Mobility [J].International Journal of Sustainable Transportation, 2020, in Press.
+
+Foltynova H. B., Vejchodska E., Rybova K., KvetonV.. Sustainable Urban Mobility: One Definition, Different Stakeholders’Opinions [J].  Transportation ResearchPart D: Transport and Environment, 2020, 87: 102465.
+
+
+
+Spontaneity versus Policy Intervention
+
+
+- Travel Demand Management (TDM)
+
+The levels of land use policy tools. "largely remain under a local government's authority", "This imbalanced institutional setting and fragmented government system"
+
+- Urban Development Policies (UBG,TOD, Zoning)
+
+
+the habit discontinuity hypothesis, major life events may provide windows of opportunity during which individuals may reconsider their travel behaviors and be more sensitive to behavior change interventions [^3].
+
+[^3]: Verplanken, B.; Walker, I.; Davis, A.; Jurasek, M. Context change and travel mode choice: Combining the habit discontinuity and self-activation hypotheses. J. Environ. Psychol. 2008, 28, 121–127. 
+
+'changes in built environment attributes may be particularly salient for behaviour change following relocation.'
+
+
+
+
+## Spatial Scales 
+
+### Modifiable areal unit problem (MAUP)
 
 Ecological bias caused by MAUP has been documented as two separate effects that usually occur simultaneously during the analysis of aggregated data. [^4]
 
@@ -69,7 +117,7 @@ Ye & Rogerson. (2021).The Impacts of the Modifiable Areal Unit Problem (MAUP) on
 
 [^11]: A number of empirical studies (Fotheringham and Wong 1991; Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018) have strongly supported the viewpoint that the estimates of coefficients in a multiple regression model are significantly influenced by the MAUP (Cramer 1964; Clark and Avery 1976; Fotheringham and Wong 1991; Larsen 2000), changing substantially in value and in direction for different spatial configurations. On the other hand, it has been shown that when aggregate observations are the simple averages of individual observations, the estimator of coefficients in linear regression remains unbiased, regardless of the process of aggregation (Prais and Aitchison 1954). Prais and Aitchison (1954) did not explicitly state that for this to hold, the linear regression model must be correctly specified. But there may be model specification errors; in particular, omission error (Amrhein 1995).
 
-##### Uints and Scales in the U.S.
+### Uints and Scales in the U.S.
 
 delineating criteria
 
@@ -115,31 +163,19 @@ Cease Distinguishing UA and UZA [^18]
 
 "For the definition of Urbanized Areas for the 2000 and 2010 censuses, a minimum population density of 500 persons per square mile was required for a block or larger area to be added to an Urbanized Area (U.S. Bureau of the Census 2002, 2011). Using the ratio of population to housing units for the nation in 2000 of 2.34 persons per unit, a density of 500 persons per square mile is almost exactly equivalent to 1 housing unit per 3 acres or 213.33 units per square mile. This was used as the minimum urban density threshold." (Ottensmann, 2018)
 
-#### Policy Intervention
 
-##### Travel Demand Management (TDM)
+## The Role of Land Use Variables
 
-The levels of land use policy tools. "largely remain under a local government's authority", "This imbalanced institutional setting and fragmented government system"
+Levinson and Krizek (2018) emphasize transportation is a necessary but not a sufficient factor for any development. Meanwhile, Muller (2017) reviews the evolution of the U.S. urban form and describe the four eras of intrametropolitan growth: walking-horsecar era, electric streetcar era, recreational auto era, and freeway era. Each of the four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. We can see the transportation technology is a determining constraint to other factors for urban form. In the last section of his paper wrote in 1995, Muller stated the two problems of congestion and spatial mismatch caused by suburbanization and auto dependency. He also summarized some socioeconomic dynamics such as postindustrial economy, globalization, and the expansion of the services sector. 
 
-##### Urban Policies (UBG,TOD, Zoning)
-
-
-
-
-the habit discontinuity hypothesis, major life events may provide windows of opportunity during which individuals may reconsider their travel behaviors and be more sensitive to behavior change interventions [^3].
-
-[^3]: Verplanken, B.; Walker, I.; Davis, A.; Jurasek, M. Context change and travel mode choice: Combining the habit discontinuity and self-activation hypotheses. J. Environ. Psychol. 2008, 28, 121–127. 
-
-'changes in built environment attributes may be particularly salient for behaviour change following relocation.'
-
-### Built Environment
+- From Built Environment to Urban Form
 
 "Attributes of the built environment influence travel by making travel to opportunities more or less convenient and attractive" (Domencich & McFadden, 1975; Levinson, Marshall, & Axhausen, 2017; Litman & Steele, 2017).
 
 
-#### 5-Ds Variables
+- 5-Ds Variables for BE
 
-
+- Polycentric city for UF
 
 Other Density (bulit-up, Employment, etc.)
 
@@ -147,19 +183,13 @@ Other Density (bulit-up, Employment, etc.)
 
 Another fundamental factor that influences travel mode choice behavior is the distance to destination, as would be expected (Munshi, 2016).
 
--   Natural Environment
+
 
 By relationship
 
-To estimate the association of VMT response and urban density predictor, the general regression model is:
 
-$$\begin{aligned}
-\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D}}{\beta}_\mathrm{D}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
-\end{aligned}$$
 
-where $\mathrm{Y}$ are the variable of VMT. $\boldsymbol{\beta}$ are the coefficients with respect to travelers' characteristics $\mathbf{X}_\mathrm{C}$, density $\mathrm{X_{D}}$, and other environment covariates $\mathbf{X}_\mathrm{E}$. $\boldsymbol{\varepsilon}$ are the error terms. It could develop different explanatory frameworks, which reflect the cognitive differences on this topic (Figure \@ref(fig:cognitive3)).
-
-#### Personal/Household Scale (Micro level)
+### Personal/Household Scale (Micro level)
 
 ```{r cognitive3,eval=T,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
 # manypoint<- plot(rnorm(30),rnorm(30))
@@ -239,7 +269,8 @@ The first framework posits that density or subdivided densities are the determin
 \mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D1}}{\beta}_\mathrm{D1}+\mathrm{X_{D2}}{\beta}_\mathrm{D2}+\cdots+\boldsymbol{\varepsilon}
 \end{equation}
 ```
-#### Neighborhood/District Scale (Meso level)
+
+### Neighborhood/District Scale (Meso level)
 
 Community (Tract)
 
@@ -290,7 +321,8 @@ The third framework contends that density and other factors have different effec
 \end{split}
 \end{equation}
 ```
-#### Urban/Metropolitan Scale (Macro level)
+
+### Urban/Metropolitan Scale (Macro level)
 
 -   Tradition of aggregate analysis
 
@@ -308,7 +340,7 @@ Another line argues that the global comparisons are not valid, such as comparing
 
 Even for U.S. cities, @ewingTestingNewmanKenworthy2018 also found the inconsistent results in the aggregated and disaggregated studies. In their aggregate study, the elasticities of VMT with respect to population density is -0.164, a much higher value than disaggregate studies (-0.04 in the meta-analysis of @ewingTravelBuiltEnvironment2010). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
 
-#### Multi-scale Studies
+### Multi-scale Studies
 
 -   Ewing et al. (2020). Reducing Vehicle Miles Traveled, Encouraging Walk Trips, and Facilitating Efficient Trip Chains Through Polycentric Development
 

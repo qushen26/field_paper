@@ -2,7 +2,7 @@
 
 # Introduction {#intro}
 
-In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emission.
+In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions.
 
 Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance.
 Previous studies commonly choose two metrics for measuring them, the share of auto trips (or other modes) and Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)].
@@ -25,14 +25,13 @@ It is not easy to acquire long-term VMT through survey-based method. The annual 
 
 On a personal scale, VMT relates to the economic cost of travel by car, while another dimension, travel time measuring the time cost of vehicle travel.
 For society as a whole, the total VMT measures the usage of road network. 
-Thus, it acts as a major interest within the field of transportation, especially in the research of travel demand and infrastructure capacity. 
-And VMT highly correlated with the amount of fuel consumption, which is one of the main indicators of pollution and GHG emission. It is also one of the priority issues involving sustainable development and climate change.
+Thus, it acts as a major interest within the field of transportation, especially in the research of travel demand and infrastructure capacity.
 
-Previous research found that reducing VMT is instrumental in solving some urban problems and improving the qualities of urban life.
+
+And VMT highly correlated with the amount of fuel consumption, which is one of the main indicators of pollution and GHG emission. Since transportation is the second source of GHG emissions, it is also one of the priority issues involving sustainable development and climate change.
+
+Previous research found that reducing VMT is instrumental in solving some urban problems and improving the qualities of urban life. The proportion of transportation cost in household expenditures is about 15 to 25 percent in the U.S.
 It is natural that urban studies try to figure out the relationship between VMT and some urban built-environment factors. Then urban or regional policies could identify the best practices to contribute VMT reduction.
-
-
-
 
 
 

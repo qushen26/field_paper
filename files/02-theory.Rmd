@@ -34,30 +34,6 @@ They are not 'ideal' and are not able to calculate the utility for all possible 
 In many cases, the travel decision is not regarded as the 'best' one to achieve travelers' desired objective.
 Many other theories were developmed to fix these issues.
 
-### Prospect Theory
-
-Kahneman and Tversky (1979) introduced the [Prospect Theory](https://www-sciencedirect-com/topics/social-sciences/prospect-theory) to study the impacts of biases.
-Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55).
-Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses.
-Third, people make choice based on a reference point, rather than the overall situation or worth. 
-Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior. 
-
-- Regret Theory
-
-Regret Theory introduces the notions of risk or uncertainty in decisions (Bell, 1982; Loomes and Sugden, 1982).
-Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior.
-For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give traveler confidence in the rail system. 
-
-In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be smaller after subtracting the regret term, which is an increasing, continuous and non-negative function.
-
-- Cognitive Bbias
-
-Another psychological factor, cognitive bias can result in judgement errors.
-For example, people treat potential gains and losses differently, that is called Loss Aversion.
-Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains(Kahneman et al. 1991).
-As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
-
-
 ### Bounded Rational Behavior
 
 Bounded rationality focused on the limitation of self-control (March and Simon, 1958, Simon, 1955).
@@ -75,6 +51,32 @@ The recently witnessed events would have stronger effects on an individual's dec
 The choice process (McFadden 2001), hybrid choice model (HCM) and non-RUM decision protocols (Ben-Akiva et al., 2002)
 
 
+### Prospect Theory
+
+Kahneman and Tversky (1979) introduced the [Prospect Theory](https://www-sciencedirect-com/topics/social-sciences/prospect-theory) to study the impacts of biases.
+Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55).
+Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses.
+Third, people make choice based on a reference point, rather than the overall situation or worth. 
+Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior. 
+
+- Regret Theory
+
+Regret Theory introduces the notions of risk or uncertainty in decisions (Bell, 1982; Loomes and Sugden, 1982).
+Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior.
+For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give traveler confidence in the rail system. 
+
+In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be smaller after subtracting the regret term, which is an increasing, continuous and non-negative function.
+
+- Cognitive Bias
+
+Another psychological factor, cognitive bias can result in judgement errors.
+For example, people treat potential gains and losses differently, that is called Loss Aversion.
+Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains(Kahneman et al. 1991).
+As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
+
+
+
+
 ## Human Mobility (Travel as an object)
 
 ### Trip Distribution Laws
@@ -84,17 +86,46 @@ In Physics and Geography, travel distance and pattern are treated as an objectiv
 
 Gravity Law is a dominant theory in this field. 
 Scholars have developed some more delicate forms of Gravity Law and found some mathematical relationship to other famous distribution laws.
-Some theories from different perspectives, like intervening opportunities also show strong ability for describing travel behaviors.
+Some theories from different perspectives, like intervening opportunities also show strong ability for explaining travel patterns and regularities.
 
+#### Distance Based Theories
 
+- Law of Migration
+
+An early theory called *Law of Migration* by @ravensteinLawsMigration1885 tried to explain the regional migration patterns.
+This found is based on observation rather than quantitative analysis. But it capture the fact that the direction of migration is toward the regional center with great commerce and industry.
+It also pointed out that distance is a primary factor for migrant.
+This theory inspired many studies on population movement consequently.
+Even today, socio-economic factors and distance-constraints are the essential parts in the relevant models and frameworks.
+
+- Zipf's Law
+
+Zip's law is also called *discrete Pareto distribution*. It is found in linguistics to explain the inverse relationship between the frequency and rank of a word.
+The charm is that this rank-frequency distribution disclosed a universal law in many realms of society and physics, such as urban size, corporation sizes, cells' transcriptomes and so on.
+Zipf interpreted the two competing factors as *force of diversification and unification*. The former produces larger amount of cases and the later tries to upgrade the rank. An equilibrium of the rank-frequency balance is controlled through a parameter $\alpha$ in the exponent.
+For example, a city's population size $m$ has a negative power relationship to its rank $r$ as below. [^1]
+
+$$
+m \sim 1 / r^{\alpha}
+$$
+ @zipfP1P2Hypothesis1946 extended this expression to describe the traffic in both directions between two cities:
+ 
+ $$
+w_{ij}\propto \frac{m_i m_j} {d_{ij}}
+ $$
+
+where $w_{ij}$ represent the flow of goods between two centers $i$ and $j$ with population sizes $m_i$ and $m_j$. $d_{ij}$ is the distance from $i$ to $j$.
+Because Zipf's formula has a same form with Newtonian mechanics [@newton18481687], people call this expression as Gravity Law.
+
+ 
 - Gravity Law 
 
-
-The most influential theory, Gravity Law [@newton18481687] asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass could be population or opportunity. 
+As the most influential theory, Gravity Law asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass is often measured by population size. 
 
 $$
 p_{ij}\propto m_i m_j f(d_{ij}), \qquad i\ne j 
 $$
+
 where $p_{ij}$ is the probability of commuting between origin $i$ and destination $j$, satisfying $\sum_{i,j=1}^n p_{ij}=1$.
 $m_i$ and $m_j$ are the population of two census units. The travel cost between the two places is represented as a distance decay function of $d_{ij}$ . 
 
@@ -123,33 +154,31 @@ If it relieves the two constrains. this model will be simplified to single-const
 By assuming $\alpha\beta$ is an adjustment parameter irrelevant to locations $i$ and $j$ for controlling the total flows, this model will not guarantee that the attraction of a destination equals the sum of flow from all origins, and the generation of a origin equals the sum of flow to all destinations.
 
 
-geography plays a prominent role 
-
-- Zipf's Law
-
- @zipfP1P2Hypothesis1946 's *Zipf's Law*. 
-
-Zipf's Law says a city's population size has a negative power relationship to its rank [^1]. 
-
-
-
 - Power Law
 
-Actually, Zipf's law and Gravity Law have a common essence of power law, or scaling pattern. The state-of-the-art studies of human mobility agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. 
-It reflects the fact that both trip and built environment, as a type of geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation frame of linear models based on the location and scale parameters [^2]. 
+Broadly speaking, Zipf's law and Gravity Law have a common essence of power law, or scaling pattern. 
+The Zipfian distribution is one of a family of power-law probability distributions.
+The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. 
+
+The state-of-the-art studies of human mobility agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. 
+It reflects the fact that both trip and land use, as two geographic variables, follow some Paretian-like distribution. 
+Apparently, it conflicts with Gaussian thinking, the foundation frame of linear models based on the location and scale parameters [^2]. 
 
 Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in current VMT-density models [@saichevTheoryZipfLaw2010].
 
 
+[^1]: @visserZipfLawPower2013;@jiangZipfLawAll2015;@rozenfeldAreaPopulationCities2011;@gomez-lievanoStatisticsUrbanScaling2012;@hackmannEvolutionZipfLaw2020
 
-- Law of Migration, Law of Intervening Opportunities, and Radiation Law
+[^2]: @jiangZipfLawAll2011;@chenHierarchicalScalingSystems2018;@jiangGeospatialAnalysisRequires2018;@jiangSpatialHeterogeneityScale2018
 
-@ravensteinLawsMigration1885 's *Law of Migration*,
+#### Opportunity Based Theories
 
+- Law of Intervening Opportunities
 
-@stoufferInterveningOpportunitiesTheory1940 's *Law of Intervening Opportunities*, 
+*Law of Intervening Opportunities* by @stoufferInterveningOpportunitiesTheory1940 developed the migration theory in a different direction.
+Stouffer proposed that "the number of people going a given distance is directly proportional to the number of opportunities at that distance and inversely proportional to the number of intervening opportunities."
 
-In the intervening opportunities law, the number of intervening opportunities $s_{ij}$ replaces the distance  between origin and destination.
+Comparing with gravity law, the number of intervening opportunities $s_{ij}$ replaces the distance between origin and destination.
 For example, a resident living in location $i$ is attracted to location $j$ with $s_{ij}$ job opportunities in between.
 
 
@@ -164,6 +193,9 @@ where the conditional probability $P(1|m_i,m_j,s_{ij})$  can be expressed by Sch
 $$
 P(1|m_i,m_j,s_{ij})=\exp[-\gamma s_{ij}] - \exp[-\gamma (m_j + s_{ij})]
 $$
+
+
+- Radiation Law
 
 Simini et al. (2012) propose a radiation model express the probability of the destination $j$ absorbing a person living in location $i$ as below:
 
@@ -214,68 +246,45 @@ where $\alpha$ is a parameter adjusting the effect of the number of job opportun
 Based on commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. The reasons could be the circle with radius $d_{ij}$ can not accurately represent the real influencing area, and the different between population and opportunities is not captured in this way.
 
 
+### Time Geography 
 
-[^1]: @visserZipfLawPower2013;@jiangZipfLawAll2015;@rozenfeldAreaPopulationCities2011;@gomez-lievanoStatisticsUrbanScaling2012;@hackmannEvolutionZipfLaw2020
+In contrast to overall trip distribution, the movements of individuals are always research interest in geogrophy.
+Hägerstraand (1970) proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography.
+The famous "space-time aquarium/prism" is a 3D cube by adding temporal scales on the geographic space.
+It can capture the detailed structure and behavior of traveler.
 
-[^2]: @jiangZipfLawAll2011;@chenHierarchicalScalingSystems2018;@jiangGeospatialAnalysisRequires2018;@jiangSpatialHeterogeneityScale2018
+At individual level, time geography borrows some physical and mathematical concept and methods such as random walk, Brownian motion, and Levy flight
 
-
-
-
-
-
-
-
-### Time Geography (space-time aquarium/prism)
-
-Along with more high-quality data being collected, a recent trend is 
-
-The popularized ideas
-
-
-Human behavior has two mobility roles: explorers and returners. It might be an inherent property of society.
-
-People are natural or nurtured likely to return to frequently visited locations or recently-visited locations.
-
-Instinct: Explore more territory. Keep together and division of labor.
-
-The main laws of explaining travel behavior?
-
-### The Main Models
-
--   individual level Random walk.Brownian motion and Levy flight
-
--   population level Gravity models, Intervening opportunity models, the radiation models.
-
--   the primary metrics for quantitatively describe travel behaviors
-
-    -   Jump lengths
-
-    -   Mean square displacement
-
-    -   Radius of gyration
-
-    -   Most frequented locations and motifs
-
-    -   Origin-Destination matrices
+Along with the wide usage of Global Positioning System (GPS), high performance computer, and sophisticated algorithms, the high-resolution data being collected. The relevant studies also have a dramatic increase after 2005.
 
 
 ### summary
 
-Understand the role Population size
 
+
+Research in human mobility has some significant contributions.
+In adding to travel distance and Origin-Destination Matrices,
+these studies define some primary metrics, such as Mean Square Displacement and Radius of gyration, which allow scholars to quantitatively describe travel behaviors
+
+A vital insight is that human behavior has two mobility roles: explorers and returners. It might be an inherent property of society, the instinct of exploring more territory and keeping together for division of labor.
+The explorers' behavior is consistent with the theory of utility maximization. People are always looking for more benefit.
+The concept of habit also match the behavior of 'preferential return', which means 
+people are natural or nurtured likely to return to frequently visited locations or recently-visited locations.
+
+Geographic distance plays a prominent role in all human mobility theories.
 When area of interest is intra-urban, the O-D matrix records the trip connections among all paired locations.
-It is reasonable that the matrix contain plenty of information and decide the trip distance in some ways.
-
-The limitation is that the empirical O-D matrix may only reflect the particular characteristics in that city and can not be applied to others.
-But
-To get a generalized interpretation, 
-
-OD matrix. But the iterative fitting complicates the calibration of the distance decaying function, which is essential for the gravity model. However, the most important limitation of the doubly constrained gravity model is the calibrated parameters from the empirical trip data in one area lack meaningful interpretation and thus are not transferable to other regions.
-urban spatial structure.
+The matrix contain plenty of information including urban spatial structure, opportunities, activities and other socio-economic characteristics.
+The theories imply that O-D matrix have some strong connections to travel behavior in some ways.
+The first challenge is how to mine the information and extract some explainable elements.
+A limitation is that the empirical O-D matrix may only reflect the particular characteristics in that city and can not be applied to others. The second challenge is how to get a generalized interpretation, 
 
 
 
+
+
+## Discussion
+
+normative, descriptive, and narrative
 
 the transportation network is only a part of travel decisions. Social networks with a ‘hub-and-spoke structure’ play a prominent role in finding a job.
 
@@ -289,14 +298,6 @@ Under the survival analysis framework, a trip is one event, trip distance repres
 Since there are no censored data values, the Kaplan-Meier (K-M) estimator of the survivor function is the same with the Empirical Survival Function (esf). Figure \@ref(fig:plotsurvVMT) show the esf regular and logarithm scales for four units, four trip types, and three spatial scales.
 
 
-## Land Use Theory
-
-
-### Land Use as response
-
-
-### Land Use as treatment
-
-
+- Accessibility
 
 

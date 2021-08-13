@@ -7,16 +7,23 @@ Urban studies' attentions are on land use related factors such as urban density,
 
 This chapter will introduce the factors influencing travel behavior and focus on the role of land use factors. 
 
+All Influencing Factors
 
 
 
-
-## All Influencing Factors
+## Several Perspectives
 
 After the meta-analysis of built environment and travel behavior by @ewingTravelBuiltEnvironment2010,
 a recent update re-examines the post-2010 empirical literature and summarized the most common factors.
 
 This section will give an overview from several different perspectives.
+
+
+
+
+### Land Use as response versus treatment
+
+
 
 
 ### Individual versus Environment

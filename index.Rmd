@@ -19,12 +19,8 @@ biblio-style: apalike
 link-citations: yes
 github-repo: qushen26/field_paper
 description: "This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook."
-abstract: |
-  Part I reviews the literature of theories and studies in Travel Behavor and Built Environment.
-  
-  Daily Driving Distance as the variable of interest, is associated with many factors including Built-Environment variables. Population Density may have more potential to explain the driving distance than people ever thought about.
-  
-  Part II iintroduces the linear/non-linear models and meta-analysis methods applied on this topic.
+# abstract: |
+
   
 keywords: travel behavior, urban land use, probability distribution
 header-includes:
@@ -50,7 +46,17 @@ header-includes:
 
 # Preface {-}
 
-This is a field paper using the **bookdown** package [@R-bookdown], **knitr** [@xie2015] and TinyTeX: <https://yihui.name/tinytex/>.
+This field paper is for discussing the relationship between travel behavior and urban land use. ^[This is a field paper using the **bookdown** package [@R-bookdown], **knitr** [@xie2015] and TinyTeX: <https://yihui.name/tinytex/>.]
+Part I reviews the related literature and tries to cover the main theories and research in the two fields.
+The discussion will gradually narrow down to the association between driving distance and urban density. 
+Daily Driving Distance as the variable of interest, is associated with many factors including land use variables.
+Instead of using very high dimension model or synthesized index, 
+Population Density itself may have more potential to explain the driving distance than people ever thought about.
+  
+Part II introduces the linear, generalized linear, and non-linear models which is the fundamental methods for the question raised in Part I.
+Meta-analysis is also a useful method to get more general results based on many studies with the same topic.
+It can be applied on investigating self-selection and publication bias.
+
 
 
 ```{r setup, include=FALSE}

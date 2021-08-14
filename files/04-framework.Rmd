@@ -94,15 +94,6 @@ After choosing the destination, the driving distance could be different among di
 
 ### Association
 
-To estimate the association of VMT response and urban density predictor, the general regression model is:
-
-$$\begin{aligned}
-\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D}}{\beta}_\mathrm{D}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
-\end{aligned}$$
-
-where $\mathrm{Y}$ are the variable of VMT. $\boldsymbol{\beta}$ are the coefficients with respect to travelers' characteristics $\mathbf{X}_\mathrm{C}$, density $\mathrm{X_{D}}$, and other environment covariates $\mathbf{X}_\mathrm{E}$. $\boldsymbol{\varepsilon}$ are the error terms. It could develop different explanatory frameworks, which reflect the cognitive differences on this topic (Figure \@ref(fig:cognitive3)).
-
-
 
 
 ### Causal Inference and Self-selection
@@ -111,7 +102,6 @@ Essentially, both VMT and density are dependent variable depending by the socioe
 
 However, the urban form remains relatively more stable than individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, the relationship of VMT-density can hold in the context of the current stage of urban development and changing travel behaviors.
 
-Early research of automobile trips and urban density can go back sixty years [@mitchellUrbanTraffic1954]. @levinsonEFFECTSDENSITYURBAN1963 suggest that the people who lived in high-density neighborhoods make fewer automobile trips. This paradigm hasn't changed until now. Due to the various data sources, related studies divide into two groups. One group uses aggregated trip and density variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
 
 simultaneous equation model
 

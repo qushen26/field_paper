@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Non-Linear Models | Travel Behavior and Urban Land Use</title>
+  <title>Chapter 6 Discussion | Travel Behavior and Urban Land Use</title>
   <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Non-Linear Models | Travel Behavior and Urban Land Use" />
+  <meta property="og:title" content="Chapter 6 Discussion | Travel Behavior and Urban Land Use" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qushen26/field_paper" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Non-Linear Models | Travel Behavior and Urban Land Use" />
+  <meta name="twitter:title" content="Chapter 6 Discussion | Travel Behavior and Urban Land Use" />
   
   <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generalized-linear-models.html"/>
-<link rel="next" href="meta-analysis.html"/>
+<link rel="prev" href="analytical-and-explanatory-frameworks.html"/>
+<link rel="next" href="data.html"/>
 <script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -229,56 +229,90 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="non-linear-models" class="section level1" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Non-Linear Models</h1>
-<div id="overview-2" class="section level3" number="10.0.1">
-<h3><span class="header-section-number">10.0.1</span> Overview</h3>
-<p>As <span class="citation"><a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">Clifton</a> (<a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">2017</a>)</span> said, relevant studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip v.s. built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods <span class="citation">(<a href="#ref-dingNonlinearAssociationsZonal2021" role="doc-biblioref">Ding et al. 2021</a>)</span>. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) <span class="citation">(<a href="#ref-hastieGeneralizedAdditiveModels1990" role="doc-biblioref">Hastie and Tibshirani 1990</a>)</span>, Ewing’s study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure ).</p>
-<div class="figure">
-<img src="fig/Ewing_gam1.png" alt="" />
-<p class="caption">Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form).</p>
+<div id="discussion-2" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Discussion</h1>
+<div id="research-design" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Research Design</h2>
+<p>(Aston et al., 2020)</p>
+<p>The results show study design has significant impacts on findings for the relationship between the built environment and transit use. Three methodological recommendations are made for future research:</p>
+<ol style="list-style-type: decimal">
+<li><p>Where applicable, best practice approaches to specification should be adopted. Table 7 assembles best practice approaches according to theory.</p></li>
+<li><p>In the absence of best practice, researchers should use Sensitivity Testing to demonstrate a range of results generated when different methodological choices are made.</p></li>
+<li><p>Study design characteristics associated with significant differences in theoretical consistency or effect size should be further examined to determine whether there is a theoretically plausible reason for favoring certain alternatives. These include:</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>Travel behavior data sources</p></li>
+<li><p>Population segments</p></li>
+<li><p>Transit modes</p></li>
+<li><p>Catchment buffer size and type</p></li>
+</ol>
 </div>
-<p>The synthesized methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.</p>
-<p>The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The urban studies field usually doesn’t discuss the distribution of the key variables themselves. An interdisciplinary perspective could provide a theoretical explanation for model selection. Existing mobility theories can play an anchor to identify the key variables’ property and confirm the additive and linear relation between VMT and density.</p>
+<div id="trend-and-dynamic" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Trend and Dynamic</h2>
+<div id="from-single-layer-to-multiple-layers" class="section level4" number="6.2.0.1">
+<h4><span class="header-section-number">6.2.0.1</span> From single layer to Multiple layers</h4>
 </div>
-<div id="main-approaches" class="section level3" number="10.0.2">
-<h3><span class="header-section-number">10.0.2</span> Main Approaches</h3>
-<div id="polynomial-regression" class="section level4" number="10.0.2.1">
-<h4><span class="header-section-number">10.0.2.1</span> Polynomial Regression</h4>
+<div id="from-fixed-effects-to-random-effects" class="section level4" number="6.2.0.2">
+<h4><span class="header-section-number">6.2.0.2</span> From fixed effects to random effects</h4>
 </div>
-<div id="step-funtions" class="section level4" number="10.0.2.2">
-<h4><span class="header-section-number">10.0.2.2</span> Step Funtions</h4>
-</div>
-<div id="basis-funtions" class="section level4" number="10.0.2.3">
-<h4><span class="header-section-number">10.0.2.3</span> Basis Funtions</h4>
-</div>
-<div id="splines" class="section level4" number="10.0.2.4">
-<h4><span class="header-section-number">10.0.2.4</span> Splines</h4>
-</div>
-<div id="local-regression" class="section level4" number="10.0.2.5">
-<h4><span class="header-section-number">10.0.2.5</span> Local Regression</h4>
-</div>
-<div id="generalized-additive-models" class="section level4" number="10.0.2.6">
-<h4><span class="header-section-number">10.0.2.6</span> Generalized Additive Models</h4>
+<div id="from-linear-to-non-linear-models-and-threshold-studies" class="section level4" number="6.2.0.3">
+<h4><span class="header-section-number">6.2.0.3</span> From linear to non-linear models and threshold studies</h4>
 </div>
 </div>
-<div id="summary-2" class="section level3" number="10.0.3">
-<h3><span class="header-section-number">10.0.3</span> Summary</h3>
-<p>Expected finding, implications, and limitations</p>
+<div id="policy-implications-the-scales-of-intervention" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Policy implications (The Scales of Intervention)</h2>
+<div id="ugb" class="section level4" number="6.3.0.1">
+<h4><span class="header-section-number">6.3.0.1</span> UGB,</h4>
+</div>
+<div id="tod-and" class="section level4" number="6.3.0.2">
+<h4><span class="header-section-number">6.3.0.2</span> TOD, and</h4>
+</div>
+<div id="upzoning" class="section level4" number="6.3.0.3">
+<h4><span class="header-section-number">6.3.0.3</span> Upzoning</h4>
+<p>In 2019, Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> ‘Missing Middle Housing’ (Figure <a href="#fig:MMH"><strong>??</strong></a>) claims that more middle-dense communities would makeless reliance on cars.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a></p>
+<p>The goal of making American communities “car free” like some European cities has been widely discussed for many years.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> From “Compact City” (1970s), “New Urbanism” (1980s), to “Smart Growth” (1990s), urban planners and researchers agree that less automobile dependence has many benefits including fewer traffic accidents involving injury or fatality, less congestion, less greenhouse gas emission, more active trips and healthier lifestyle.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a> The controversial part is the role of density. Does density strongly affect VMT - a primary variable representing the degree of automobile dependence? Independently or not? Does the effect exist everywhere or in a specific geographic range?</p>
+<ul>
+<li>Why “the locational context within an urban region is a more important factor of driving-related behavior than local urban form.”</li>
+</ul>
+<p><span class="math inline">\(H_1\)</span>: Modifiable Areal Unit Problem (MAUP) in geography</p>
+<p>Discloses the phenomenon but does not fully explain the reason.</p>
+<p><span class="math inline">\(H_2\)</span>: Center Limit Theorem (CLT) in statistics</p>
+<p>Can explain the individual and local factors are confounded by aggregating.</p>
+<p>Can be proved by increasing the sample size.</p>
+<p><span class="math inline">\(H_3\)</span>: Gravity or Opportunity theories in Human Mobility</p>
+<p>Can be proved by choosing different variable and model comparison.</p>
+<ul>
+<li>Should the spatial scale be in accordance with the mean (median) of driving distance?</li>
+</ul>
+<p>Is the local urban form an internal attribute or external factor?</p>
+<ul>
+<li>Should the trips be classified by purposes.</li>
+</ul>
+<p>All three explanatory frameworks can find supportive evidence. The significant effects of ‘population centrality’ or ’ high-density built-up areas’ support ‘the ’direct’ framework. The disaggregated studies support the ‘collaborated’ framework. The effects of density are not significant and have a small magnitude. The ‘compactness indices’ synthesized by density and other built-environment factors play a more important role over VMT. The aggregated studies show that density has a strong effect on VMT at the city scale, implying that the ‘respective’ framework is correct. Before further discussion, it is necessary to clarify the sources of variation in many studies. If one source is unintentional or mismatched, it should be controlled or corrected. If one source answers one type of question, then the differences are reasonable and should be preserved in categories. This study tries to find the boundaries or criteria for the categorized discussions.</p>
+<p>“commuting trips because they are stable in time and account for the largest fraction of the total flows in a population.”</p>
+<ul>
+<li></li>
+</ul>
+<p>The second source of variation is from the use of different scales. The variables in different units, levels, and metrics may have various characteristics. For example, the personal v.s household’s records, block-level v.s city-level density, or daily v.s weekly trips are not identical. A systematic comparison should be conducted at various scales. A more general conclusion may hold if a significant factor appears with a similar effect size repeatedly at all scales. Otherwise, a separate discussion is appropriate.</p>
+<ul>
+<li></li>
+</ul>
+<p>As an important type of technique, the trip-based model (TBM) and activity-based model (ABM) are very elaborate and widely used. These simulation methods are based on extrapolation and are designed for forecasting the future scenarios. They would not be included in this study.</p>
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-cliftonGettingHereThere2017" class="csl-entry">
-Clifton, Kelly J. 2017. <span>“Getting <span>From</span> <span>Here</span> to <span>There</span>: <span>Comment</span> on <span>“</span><span>Does</span> <span>Compact</span> <span>Development</span> <span>Make</span> <span>People</span> <span>Drive</span> <span>Less</span>?<span>”</span>.”</span> <em>Journal of the American Planning Association</em> 83 (2): 148–51. <a href="https://doi.org/10.1080/01944363.2017.1290494">https://doi.org/10.1080/01944363.2017.1290494</a>.
 </div>
-<div id="ref-dingNonlinearAssociationsZonal2021" class="csl-entry">
-Ding, Chuan, Xinyu Cao, Bin Yu, and Yang Ju. 2021. <span>“Non-Linear Associations Between Zonal Built Environment Attributes and Transit Commuting Mode Choice Accounting for Spatial Heterogeneity.”</span> <em>Transportation Research Part A: Policy and Practice</em> 148 (June): 22–35. <a href="https://doi.org/10.1016/j.tra.2021.03.021">https://doi.org/10.1016/j.tra.2021.03.021</a>.
-</div>
-<div id="ref-hastieGeneralizedAdditiveModels1990" class="csl-entry">
-Hastie, T. J., and R. J. Tibshirani. 1990. <em>Generalized <span>Additive</span> <span>Models</span></em>. CRC Press.
-</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="20">
+<li id="fn20"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="discussion-2.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="discussion-2.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p><a href="https://roomfordebate.blogs.nytimes.com/2009/05/12/carless-in-america/" class="uri">https://roomfordebate.blogs.nytimes.com/2009/05/12/carless-in-america/</a><a href="discussion-2.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p><a href="https://www.aarp.org/livable-communities/info-2014/livability-factsheet-density.html" class="uri">https://www.aarp.org/livable-communities/info-2014/livability-factsheet-density.html</a><a href="discussion-2.html#fnref23" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 
@@ -322,8 +356,8 @@ Hastie, T. J., and R. J. Tibshirani. 1990. <em>Generalized <span>Additive</span>
           </div>
         </div>
       </div>
-<a href="generalized-linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meta-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analytical-and-explanatory-frameworks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -355,7 +389,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/qushen26/field_paper/edit/master/files/09-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/edit/master/files/05-discussion.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -363,7 +397,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/qushen26/field_paper/blob/master/files/09-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/blob/master/files/05-discussion.Rmd",
 "text": null
 },
 "download": ["field_paper.pdf", "field_paper.epub"],

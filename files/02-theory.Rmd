@@ -258,20 +258,34 @@ At individual level, time geography borrows some physical and mathematical conce
 Along with the wide usage of Global Positioning System (GPS), high performance computer, and sophisticated algorithms, the high-resolution data being collected. The relevant studies also have a dramatic increase after 2005.
 
 
-### summary
 
 
+## Discussion
 
-Research in human mobility has some significant contributions.
+The theories of travel behavior follow a positivism tradition for a long time. 
+Economics and geography give some strong explanations for both macro and micro travel patterns.
+In order to remove the limitation of ideal rationality, more sociological and psychological theories and methods are introduced into this field.
+Gradually, people realized the normative concept is not sufficient for real world applications.
+More descriptive and narrative arguments appear in transportation and land use planning. 
+An example is the shift from mobility to accessibility. The socio-centric methods claim that accessibility is the key concept for evaluating urban sustainable mobility.
+This trend emphasizes the interpretations of travel behavior are context dependent and avoids generalizations.
+
+
+Research in human mobility insist the positivism methodology and has some significant contributions because the individuals differences are confounded at the macro level.
+Under this framework, geographic distance always plays a prominent role in all human mobility theories.
 In adding to travel distance and Origin-Destination Matrices,
-these studies define some primary metrics, such as Mean Square Displacement and Radius of gyration, which allow scholars to quantitatively describe travel behaviors
+Some primary metrics such as Mean Square Displacement and Radius of gyration are defined to quantitatively describe travel behaviors
 
 A vital insight is that human behavior has two mobility roles: explorers and returners. It might be an inherent property of society, the instinct of exploring more territory and keeping together for division of labor.
 The explorers' behavior is consistent with the theory of utility maximization. People are always looking for more benefit.
 The concept of habit also match the behavior of 'preferential return', which means 
 people are natural or nurtured likely to return to frequently visited locations or recently-visited locations.
 
-Geographic distance plays a prominent role in all human mobility theories.
+Both gravity and opportunities theory choose population size as the source of travel demand.
+This is a rough assumption and is not enough to get more accurate predictions.
+One solution is to use empirical observed demand to calibrate the model case by case. 
+Another way is to find more suitable variables such as residential, employment, or activity size to improve the model.
+
 When area of interest is intra-urban, the O-D matrix records the trip connections among all paired locations.
 The matrix contain plenty of information including urban spatial structure, opportunities, activities and other socio-economic characteristics.
 The theories imply that O-D matrix have some strong connections to travel behavior in some ways.
@@ -279,25 +293,9 @@ The first challenge is how to mine the information and extract some explainable 
 A limitation is that the empirical O-D matrix may only reflect the particular characteristics in that city and can not be applied to others. The second challenge is how to get a generalized interpretation, 
 
 
+Once choosing the individual perspective, current theories and methods are still insufficient.
+For example, the physical transportation network is only a part of travel decisions. Social networks with a 'hub-and-spoke structure' play a prominent role in finding a job.
+Using social media data, some studies provide valuable insight but still have a gap to form new theories.
 
-
-
-## Discussion
-
-normative, descriptive, and narrative
-
-the transportation network is only a part of travel decisions. Social networks with a ‘hub-and-spoke structure’ play a prominent role in finding a job.
-
-This theory can explain the macro structure.
-
-An implication is that the gravity or opportunities at the destination drive people traveling, rather than origin. It may explain why the local density doesn't strongly affect the trip distance in disaggregate studies.
-
-Both the two branch use the concept of *'distance decay'* which means the interaction and the distance between two locations are inversely proportional. 
-Under the survival analysis framework, a trip is one event, trip distance represents *'duration of time'* 
-
-Since there are no censored data values, the Kaplan-Meier (K-M) estimator of the survivor function is the same with the Empirical Survival Function (esf). Figure \@ref(fig:plotsurvVMT) show the esf regular and logarithm scales for four units, four trip types, and three spatial scales.
-
-
-- Accessibility
 
 

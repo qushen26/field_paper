@@ -215,6 +215,55 @@ Since 1969, there is a person/household-level data on travel and transportation 
 
 ### Built-Environment Data
 
+### Uints and Scales in the U.S.
+
+delineating criteria
+
+-   Tract scale and below: Similar Population Size with varying Area Size
+
+Boundary requirements: Census tract and BNA boundaries generally follow permanent, visible features,
+
+Demographic requirements: 4000 people (2500-8000) [^12]
+
+[^12]: When first delineating census tracts, the Census Bureau requests that the average population of all census tracts in a county (or statistically equivalent entity) be about 4,000 people (approximately 1,500 housing units), with individual census tracts ranging from 2,500 to 8,000 inhabitants (1,000 to 3,000 housing units).
+
+Block Group: 400 housing units (250-550) [^13]
+
+[^13]: The guidelines specified an ideal size for a BG of 400 housing units, with a minimum of 250, and a maximum of 550 housing units. The guidelines further required that BG boundaries follow clearly visible features,
+
+Block: 30,000 sq.ft. (0.69 acre) [^14]
+
+[^14]: The minimum size of a census block was 30,000 square feet (0.69 acre) for polygons bounded entirely by roads, or 40,000 square feet (0.92 acres) for other polygons. There was no maximum size for a census block
+
+-   Urban Area and Urbanized Area scale: Combined Area with Multiple criteria.
+
+2010: A densely settled core of census tracts and/or census blocks (1000 persons/sq.mi.). Urban area has a population \> 2,500 person.
+
+2020: The census blocks with \> 385 housing units/sq.mi. (1000 persons/sq.mi.). Urban area has a population \> 10,000 person.
+
+[^15] [^16] 500 persons per square mile (ppsm) as the minimum density criterion for recognizing some types of urban territory. [^17]
+
+[^15]: The Census Bureau proposes adopting a housing unit density threshold of 385 housing units per square mile as the primary criterion for determining whether a census block qualifies for inclusion in an urban area, replacing the use of population density. The 385 housing units (occupied or vacant) per square mile density threshold utilized in the delineation of urban areas is consistent with the 1,000 persons per square mile density used in the past, based on the 2019 American Community Survey (ACS) 1-year data average of an estimated 2.6 persons per household for the United States.
+
+[^16]: The Census Bureau proposes that an area will qualify as urban if it contains at least 4,000 housing units or has a population of at least 10,000. The proposed increase in the minimum population responds to calls for the Census Bureau to increase its minimum threshold for defining urban areas from the 2,500-person minimum established in 1910.
+
+[^17]: Jumps: Two conditions must be satisfied: (1) the road distance through the low-density area must be 1 1/2 miles or less, and (2) the combined population density of the outlying area and the intervening area must be at least 500 people per square mile
+
+Cease Distinguishing UA and UZA [^18]
+
+[^18]: The 50,000-person threshold that has been used to distinguish between urbanized areas and smaller urban areas should no longer be used to distinguish types of urban areas in 2020 proposal. <https://www.federalregister.gov/documents/2021/02/19/2021-03412/urban-areas-for-the-2020-census-proposed-criteria>
+
+-   UA Central Places
+
+[^19]
+
+[^19]: To determine central place status, the Census Bureau selects the most populous incorporated place that contains at least 2,500 people. It may select up to two additional incorporated places as central places, provided that each additional place has a population of at least 15,000 and that each has at least one-third the population of the most populous incorporated place.
+
+"For the definition of Urbanized Areas for the 2000 and 2010 censuses, a minimum population density of 500 persons per square mile was required for a block or larger area to be added to an Urbanized Area (U.S. Bureau of the Census 2002, 2011). Using the ratio of population to housing units for the nation in 2000 of 2.34 persons per unit, a density of 500 persons per square mile is almost exactly equivalent to 1 housing unit per 3 acres or 213.33 units per square mile. This was used as the minimum urban density threshold." (Ottensmann, 2018)
+
+
+
+
 ### New Data Source
 
 There are more and more transportation studies using GPS, ICT, trajectory, Point of Interest (POI) and social media data. @liuPointofInterestDemandModeling2017 use Point-of-Interest (POI) demand modeling to analyze human mobility patterns. @damianiLocationRelevanceDiversity2020 use trajectory summarization technique for the extraction of the locations of interest high-quality information. Using image recognition techniques, satellite imagery and Street View data provide unprecedented built environment information. The advantage of these new data sources is the high resolution and detailed information. Combining two types of data sources together has tremendous potential to answer VMT-built environment questions. However, the enormous amount of emerging data is also a huge challenge. The analysis methods of abstracting out generic information lags behind the data collection. How to eliminate the sample bias in new data sources is another unfinished work.

@@ -47,7 +47,7 @@ header-includes:
 # Preface {-}
 
 This field paper is for discussing the relationship between travel behavior and urban land use. ^[This is a field paper using the **bookdown** package [@R-bookdown], **knitr** [@xie2015] and TinyTeX: <https://yihui.name/tinytex/>.]
-Part I reviews the related literature and tries to cover the main theories and research in the two fields.
+Part I reviews the related literature and tries to cover the main theories and research in this field.
 The discussion will gradually narrow down to the association between driving distance and urban density. 
 Daily Driving Distance as the variable of interest, is associated with many factors including land use variables.
 Instead of using very high dimension model or synthesized index, 

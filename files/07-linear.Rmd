@@ -39,9 +39,6 @@ Principal Components Regression (PCR)
 
 Partial Least Square (PLS)
 
-To address the multicollinearity and interactions issues, @cliftonGettingHereThere2017 suggest to convert the various environmental characteristics to built environment indices. Some research try to use 'compactness indices' to replace the single density measurement [^47]. The primary method is principal components analysis (PCA), which synthesizes many variables to four dimensions: development density, land use mix, activity centering, and street connectivity. The advantage of this method is to increase the elasticity value significantly. A recent study shows that the elasticity of VMT with respect to a county compactness index is -0.78. Using a similar method (common factor analysis), @hongHowBuiltenvironmentFactors2014 convert eight attitudinal questions in the 2006 Household Activity Survey to three factors: Ease, Convenience, and Pro-transit. They fit the model using two geographic scales: 1-km buffer and traffic analysis zone (TAZ). At the TAZ level, the *nonresidential density* and *distance from CBD* have significant effects on VMT. The disadvantage of this method is that the internal mechanisms of the indices are still not clear.
-
-[^47]: @ewingRelationshipUrbanSprawl2014;@hamidiLongitudinalStudyChanges2014;@hamidiMeasuringSprawlIts2015;@ewingUrbanSprawlRisk2016
 
 ```{r,eval=F}
 # Compute k-means with k = 3

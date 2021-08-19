@@ -1,0 +1,414 @@
+
+# Analytical Frameworks
+
+Based on related theories and studies, this section introduces several different analytical frameworks. All three explanatory frameworks can find supportive evidences.
+They reflect the cognitive differences on this topic from various perspectives (Figure \@ref(fig:cognitive3)).
+
+```{r cognitive3,eval=T,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
+# manypoint<- plot(rnorm(30),rnorm(30))
+DiagrammeR::grViz("
+digraph C {
+compound=true;
+graph[fontname = 'helvetica',  nodesep=0.4, overlap='prism1000']
+rankdir = TD
+node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0.75, width = 1, fontcolor = black];
+
+    subgraph cluster1{
+    label = 'Stepwise';
+    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
+    
+    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
+        c1d1[label = 'Long-term decisions: \\n Residential location choice'];    
+        
+		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];
+		    c1d2[label = 'Medium-term decisions: \\n Car ownership, \\n Distance to destination'];
+		    
+		node [shape=box, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
+        c1d3[label = 'Short-term decision: \\n Mode Choice'];
+
+    node [shape = oval, style=filled,fontsize=12, fillcolor ='#91cf60'];
+        c1ad[label = 'Travel Behavior'];
+
+    c1d1 -> c1d2   c1d2  -> c1d3   c1d3 -> c1ad
+	  }
+
+    subgraph cluster2{
+    label = 'Multi-layer';
+    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
+ 
+    node [shape = oval, style=filled,fontsize=12, fillcolor = White];
+		    c2d0[label = 'Travel Choice'];	
+		    
+		    subgraph cluster21{
+		    label = '';
+		    style=solid;	color= '#625a5a'; fontname = 'helvetica-bold';
+		    }				    
+		    
+    node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke];
+		    c2d11[label = 'Yes'];		 		    
+    node [shape = oval, style=filled,fontsize=12, fillcolor = White];
+		    c2d10[label = 'No'];			    
+   
+ 
+    
+		    subgraph cluster22{
+		    label = '';
+		    style=solid;	color= '#625a5a'; fontname = 'helvetica-bold';
+		    }		
+		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
+        c2d21[label = 'Driving'];		    
+		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];
+        c2d22[label = 'Other modes'];        
+
+	    
+
+		    subgraph cluster23{
+		    label = 'Route Choice';
+		    style= dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
+		    }		    
+		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor ='#91cf60'];
+        c2ad1[label = 'Distance'];			    
+    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige]; #
+        c2ad2[label = 'Time'];		    
+	    
+
+       c2d11 -> c2d22   c2d0 -> c2d11 -> c2d21 -> {c2ad1 c2ad2}   c2d0 -> c2d10
+		    
+        # c2d3 -> c2ad[ltail=cluster22,lhead=cluster22] c2d2 -> c2ad c2d1 -> c2ad[style=invis];
+    }
+
+    subgraph cluster_3{
+    label = 'Multi-scale';
+    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold'; 
+    
+    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
+        c3d1[label = 'Urban Form'];
+            
+		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip]; #
+		    c3d2[label = 'Built Environmnet'];
+		    
+		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = '#fee08b']
+        c3d3[label = 'Socio-demographic \\n characteristics'];
+
+    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];
+        c3ad1[label = 'City \\n Travel \\n Behavior'];
+        
+    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];
+        c3ad2[label = 'Neighborhood \\n Travel \\n Behavior'];
+        
+    node [shape = oval, style=filled,fontsize=12, fillcolor = '#91cf60'];
+        c3ad3[label = 'Household \\n Travel \\n Behavior'];
+        
+        c3d1 -> c3ad1[weight= 10]  c3d2 -> c3ad2   c3d3 -> c3ad3[weight= 10]
+        {rank = same; c3ad1;c3ad2;c3ad3}
+        c3d1 -> c3d2-> c3d3[style=dashed,splines=curved,constraint=true] #,dir=none
+        
+	}
+  #   # edge[style=invisible,dir=none];
+  #   node [shape = square, style=filled,fontsize=9,fillcolor = Beige];
+  #   b [label = 'The relationship \\n between \\n Auto Dependence \\n & \\n Urban Density']
+  #   node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke]; #'#91cf60'
+  #   c [label = 'Evidence from \\n existing studies']
+  # a1 ->b [dir=back]
+  # b -> c [dir=back]
+
+  }")#,
+ # height = 500,width = 800)
+```
+
+
+
+
+## Stepwise Structure
+
+Ben-Akiva and Atherton (1977) introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
+Car ownership belongs medium-term decision since people usually don't purchase or sell a car very often.
+Residential location choice is long-term decision because relocation is the most infrequent event than others.
+
+Under this framework, the decisions in longer term can affect the decisions in shorter term,  but not vice versa.
+For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior (Munshi, 2016).
+In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. (Van Acker and Witlox, 2011; Ding et al., 2017; De Vos et al., 2021).
+A VMT models with stepwise framework is as follow.
+
+```{=tex}
+\begin{equation}
+(\#eq:stepwise)
+\mathrm{Y}=\mathbf{X}_\mathrm{L}\boldsymbol{\beta}_\mathrm{L}+\mathrm{X_{M}}{\beta}_\mathrm{M}+\mathbf{X}_\mathrm{S}\boldsymbol{\beta}_\mathrm{S}+\boldsymbol{\varepsilon}
+\end{equation}
+```
+
+
+where $\boldsymbol{\beta}$ are the coefficients with respect to long-term factors $\mathbf{X}_\mathrm{L}$, medium-term $\mathrm{X_{M}}$, and short-term covariates $\mathbf{X}_\mathrm{S}$.
+There could be two-way interaction effect between long-term and medium-term variables; three-way interaction effects among long-term, medium-term and short-term variables in the model (Equation \@ref(eq:stepwise)). 
+
+This framework works well for commuting trips because people will not change work place very often. The mobility theories also agree with this pattern.
+"commuting trips are stable in time and account for the largest fraction of the total flows in a population."
+
+However, the number of non-commuting trips in the U.S. have been more than commuting trips in recent years (TODO source).
+For non-commuting travel purposes, such as shopping, leisure, or socializing, the destination choices are more flexible.
+
+The decision could be one-step. In consideration of all the benefit and cost, The traveler make a decision including the destination, mode and route at the same moment.
+It also could be multistep. Starting from a travel demand or purpose, the traveler decides to make a trip then choose the destination, mode, route, and departure time step-by-step from available alternatives based on benefit, cost, and habit.
+This process is progressive, iterative, and habitual in real life. Hence, the travel distance could be decided before or after mode or route choices. One structure only can capture one aspect of the process.
+The framework selection should suit the research question. 
+
+
+
+
+##  Multi-layers Model
+
+The single-layer frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
+Here these observation are treated as censored data with negative utilities. (That will leads to Tobit model for VMT.)
+
+In contrast, a multiple-layers framework allows to use a hierarchical structure to fit different observation respectively.
+The model will split into three equations \@ref(eq:multilayer)
+Starting from a travel demand or purpose, the traveler decides to make a trip or not at the first-level dichotomous node. 
+A logit or probit model will fit all the data using a suitable model specification.
+
+Then the second layer with polychotomous nodes is about mode choice, which is respect to the multinomial models.
+At the bottom layer, a linear (or log-linear) model will only fit the data with positive driving distance (hurdle models).
+It is remarkable that the covariates set could vary in different layer's models. For example the lifecycle factor could strongly affect the travel frequency but not affect the driving distance significantly.
+Therefore, this structure is more flexible and is consistent with real decision process.
+
+
+```{=tex}
+\begin{equation}
+(\#eq:multilayer)
+\begin{split}
+E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\boldsymbol{\beta})\\
+E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&\boldsymbol{\mu_1}=g^{-1}(\mathbf{X_1}\boldsymbol{\gamma})\\
+\mathbf{Z}_{\{car\}}=&\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}\\
+\end{split}
+\end{equation}
+```
+
+where $\mathbf{Y}_{\{yes,no\}}$ is a binary variable of making a trip or not. $\mathbf{Y}_{\{car,bus,...\}}$ is a categorical variable only including the cases of making a trip. $\mathbf{Z}_{\{car\}}$ is a continuous variable represent driving distance among the group of choosing driving. $\mathbf{X}_{\{0,1,2\}}$ means the three equations could have different model specifications and will estimate corresponding coefficients, $\boldsymbol{\beta}$, $\boldsymbol{\gamma}$, and $\boldsymbol{\delta}$.
+
+
+<!-- -   The types of trip variables and the proposed probability distributions -->
+<!--     -   Binary: Choose/not to make trip (Bernoulli/Binomial), -->
+<!--     -   Polychotomous: modes (Multinomial) and trajectory (Network) -->
+<!--     -   Counts: the number of trips (Poisson or NB), -->
+<!--     -   Positive continuous: distance and time (Exponential Family: Normal, Log-normal, Power-law, Gamma, Weibull); -->
+<!-- -   The unit: Individual or aggregated (household, areal); -->
+<!-- -   The temporal scales: Real-time, hourly, Daily, weekly, monthly, yearly/annual, or decade; -->
+<!-- -   The spatial scales: Community, city, region, country-wide/national -->
+<!-- -   Other taxonomy/division may include -->
+<!--     -   traveler roles (returner or explorer); -->
+<!--     -   trip purposes; -->
+<!--     -   long/short distance/time of trips. -->
+<!-- The trip responses are defined in different units, scales, metrics. -->
+
+## Multi-scales Structure
+
+
+As discussed in previous section, the external factors affect individual's travel behavior at multiple scales.
+It is necessary to distinguish the meso-scale and macro-scale variable.
+The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions. 
+Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation \@ref(eq:multiscale))
+
+```{=tex}
+\begin{equation}
+(\#eq:multiscale)
+\mathbf{Y}=\mathbf{X}_\mathrm{U}\boldsymbol{\beta}_\mathrm{U}+\mathbf{X}_\mathrm{N}{\beta}_\mathrm{N}+\mathbf{X}_\mathrm{H}{\beta}_\mathrm{H}+\cdots+\boldsymbol{\varepsilon}
+\end{equation}
+```
+
+where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{H}$ are the covariates at the scales of urban, neighborhood, and household. And $\boldsymbol{\beta}_\mathrm{U}$, $\boldsymbol{\beta}_\mathrm{N}$, and $\boldsymbol{\beta}_\mathrm{H}$ are corresponding coefficients respectively.
+
+
+## Mixed Structure
+
+Regression models usually assume the fixed effects of covariate on response. has to random effects
+
+In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city.
+The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
+When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.
+
+In spatial analysis, autocorrelation is a common issue which means the observation values in a location will be affected by its neighbors. Mixed model can help to eliminate the neighborhood effects.
+
+```{=tex}
+\begin{equation}
+(\#eq:multiscale)
+\mathbf{Y}=\mathbf{X}_\mathrm{H}\boldsymbol{\beta}+\mathbf{X}_\mathrm{N}{\gamma}+\mathbf{X}_\mathrm{U}{\delta}+\boldsymbol{\varepsilon}
+\end{equation}
+```
+
+where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{H}$ are the same as above. $\boldsymbol{\beta}$ is a vector of fixed effects. $\boldsymbol{\gamma}$ and $\boldsymbol{\delta}$ are two vectors of random effects at neighborhood and urban scales. Assume that $\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})$ and $\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})$. And also assume $Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}$.
+
+
+## Non-linear models
+
+As @cliftonGettingHereThere2017 said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], Ewing's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
+
+![Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form).\label{ewing-gam}](fig/Ewing_gam1.png)
+
+
+```{=tex}
+\begin{equation}
+(\#eq:nonlinear)
+\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathbf{X}_\mathrm{E})\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\end{equation}
+```
+
+In the model (Equation \@ref(eq:nonlinear)), $m(\mathbf{X}_\mathrm{E})$ is a proper function of built environment covariates. 
+
+The non-linear methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.
+
+The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The threshold studies in urban transportation field remain in the early stages. 
+
+
+
+
+
+<!-- All factors related to spatial distributions have the morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->
+<!-- such as road network connection -->
+<!-- such as distance to transit services.  -->
+<!-- This perspective helps people to figure out the influencing path and better understand the underlying mechanism. -->
+<!-- another way of understanding the role of land use is morphology versus functionality.  -->
+
+
+
+
+
+<!-- the demand or utility of travel is the primary node affecting travel choice.  -->
+
+<!-- The available transportation modes is the secondary nodes which allow the traveler compares and chooses among driving and others. Choosing routes and departure time is in the third level. -->
+
+<!-- The driving distance mainly is decided by the travel demand or utility. Only when the demand is not strong enough or having many alternative destinations, the lower levels' choices could change the driving distance. -->
+
+<!-- If one focuses on auto trips. The tree can be simplified to two levels: driving or not. -->
+
+<!-- From the travel behavior perspective, driving distance locates on a terminal node of a trip decision tree. -->
+
+<!-- The tree shows that the first two level could produce some 'zero' driving distance. Should these cases be included in the studies of driving distance? -->
+
+<!-- This discussion demonstrates a hierarchical relationship among driving distance and other trip variables. -->
+
+<!-- In this way, the transit services located on the second internal nodes. -->
+
+<!-- the travel destination may be determined before the decision making or be selected after the traveler comparing several plans. -->
+
+
+# Discussion
+
+It is impossible to design a replicable experiment controlling other factors to identify the effects of density. But it is possible to filter out the unsuitable or irreproducible models.
+
+## A Proposed Framework
+
+Related theories say that travel is determined by individual's energy, distance, and city's opportunity. 
+A proposed framework is to re-categorize all potential factors by three aspects: budget, distance decay, and benefit/opportunity.
+And assign them into multiple spatial scales.
+
+Personal/household characteristics are travel budget that means the ability or willingness to pay for a trip. These factors are always point attribute rather than areal.
+
+A part of built environment factors, such as road connectivity, distance to transit, relate to distance decay and measure how easily people can move. From this perspective, a high local and nearby residential density may lead to greater resistance.
+
+Other built environment and urban form factors could represent the benefit or opportunity. The aggregated measurement only can caupure the variation between cities/regions. For disaggregated data, a complete assessment should evaluate all opportunities inside the daily travel range and their weights for each traveler.
+
+
+## Policy implications 
+
+- directionality and causality might not matter
+
+Ideally, the causal relationship between built environment and travel is preferred in studies.
+But as long as evidences support that these two have significant association, policy makers still can utilize this relation to achieve some social, economic, and environmental goals.
+
+Controlling the effects of self-selection make the research results more convincing.
+But from the policy perspective, if a city shows a more desirable travel pattern under a policy intervention, it doesn't matter whether people change their travel behavior or people with different behavior relocated outside or inside this city.
+
+The nomological network among travel behavior, socioeconomic, and built environment factors is iterative and cumulative. Causal inference, such as disentangling residential self-selection,  This study does not indicate .
+
+<!-- Causal Inference and  -->
+<!-- simultaneous equation model -->
+<!-- fake -->
+<!-- common cause -->
+<!-- back-door criterion -->
+
+- Policy cost and effect size matter
+
+There are different metrics, such as correlations, coefficients, or elasticities to measure the effect size.
+If it is possible, a quantified travel behavior change with respect to per unit of public investment is more attractive for policy maker and public.
+
+- Generalisability and Reproducibility
+
+Scientist always want to find some generalized knowledge and hope it can be reproduced in all places.
+It requires a large amongt of evidences and stronger schemes.
+
+When a study can only explain and evaluate the built environment-travel association in a specific city or region, the results are still valuable for this city/region. 
+the trip-based model (TBM) and activity-based model (ABM) are designed for forecasting the future scenarios based on the local data.
+These simulation methods are very elaborate and widely used.
+
+- The Scales of Intervention
+
+The urban development policies have their spatial scales.
+For example, UGB would affect all the people in the metropolitan.
+
+A TOD project, and a neighborhood upzoning may change or not change people's travel behavior who living or working inside the neighborhood.
+
+- A case study
+
+In 2019, Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots [^a]. 'Missing Middle Housing' (Figure \@ref(fig:MMH)) claims that more middle-dense communities would make less reliance on cars [^b].
+
+[^a]: <https://olis.leg.state.or.us/liz/2019R1/Downloads/MeasureDocument/HB2001>
+
+[^b]: <https://www.sightline.org/2019/06/30/oregon-just-voted-to-legalize-duplexes-on-almost-every-city-lot/>
+
+      <https://olis.leg.state.or.us/liz/2019r1/Downloads/CommitteeMeetingDocument/158465>
+
+```{r MMH,eval=F,out.width='80%', fig.align='center',fig.cap="Source: opticosdesign.com/missing-middle-housing"}
+knitr::include_graphics("fig/MMH_Diagram_Landing_Page-2.jpg")
+```
+
+The goal of making American communities "car free" like some European cities has been widely discussed for many years [^26]. From "Compact City" (1970s), "New Urbanism" (1980s), to "Smart Growth" (1990s), urban planners and researchers agree that less automobile dependence has many benefits including fewer traffic accidents involving injury or fatality, less congestion, less greenhouse gas emission, more active trips and healthier lifestyle [^27]. The controversial part is the role of density. Does density strongly affect VMT - a primary variable representing the degree of automobile dependence? Independently or not? Does the effect exist everywhere or in a specific geographic range?
+
+[^26]: <https://roomfordebate.blogs.nytimes.com/2009/05/12/carless-in-america/>
+
+[^27]: <https://www.aarp.org/livable-communities/info-2014/livability-factsheet-density.html>
+
+<!-- -   Why "the locational context within an urban region is a more important factor of driving-related behavior than local urban form." -->
+
+<!-- $H_1$: Modifiable Areal Unit Problem (MAUP) in geography -->
+
+<!-- Discloses the phenomenon but does not fully explain the reason. -->
+
+<!-- $H_2$: Center Limit Theorem (CLT) in statistics -->
+
+<!-- Can explain the individual and local factors are confounded by aggregating. -->
+
+<!-- Can be proved by increasing the sample size. -->
+
+<!-- $H_3$: Gravity or Opportunity theories in Human Mobility -->
+
+<!-- Can be proved by choosing different variable and model comparison. -->
+
+<!-- -   Should the spatial scale be in accordance with the mean (median) of driving distance? -->
+
+<!-- Is the local urban form an internal attribute or external factor? -->
+
+<!-- -   Should the trips be classified by purposes. -->
+
+
+## Other thoughts
+
+Aston et al. (2020) conduct a systematic analysis on study design of built environment-transit research.
+Their results show that study design has significant impacts on findings for the relationship between the built environment and transit use. Three methodological recommendations are made for future research:
+
+1. Where applicable, best practice approaches to specification should be adopted. Table 7 assembles best practice approaches according to theory.
+
+2. In the absence of best practice, researchers should use Sensitivity Testing to demonstrate a range of results generated when different methodological choices are made.
+
+3. Study design characteristics associated with significant differences in theoretical consistency or effect size should be further examined to determine whether there is a theoretically plausible reason for favoring certain alternatives. These include:
+
+a. Travel behavior data sources
+b. Population segments
+c. Transit modes
+d. Catchment buffer size and type
+
+
+A primary trend in urban and transportation fields recently is the transition from techno-centric to socio-centric (Lanzini & Stochetti, 2020) [^factors-5]
+
+[^factors-5]: Lanzini P., Stochetti A.. From Techno-Centrism toSocio-Centrism: The Evolution of Principles for Urban Sustainable Mobility [J].International Journal of Sustainable Transportation, 2020, in Press.
+
+Banister (2008) suggests that urban sustainable mobility should be the third principle in addition to derived demand and cost minimization.
+

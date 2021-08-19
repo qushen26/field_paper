@@ -16,37 +16,63 @@ In U.S. history, Muller (2017) reviews the evolution of the U.S. urban form and 
 
 New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools is called confounder who affect both treatment and outcome. But what is the relationship between travel and land use? A simple way is to observe the sequence fo events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today multiple travel modes exist in old town but suburban seldom has old mode like streetcar. Thus, land use is more like a outcome rather than treatment.
 
-Over the long term, the relationships among travel, land use, and other physical, socioeconomic, demographic factors were interactive and iterative. Levinson and Krizek (2018) emphasize transportation is a necessary but not a sufficient factor for any development. Which one caused which effect does not have a simple answer. A conservative view is that land use and travel behavior are determined simultaneously by the transportation costs (Don Pickrell, 1999).
+However, the urban form remains relatively more stable than individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, the relationship of VMT-density can hold in the context of the current stage of urban development and changing travel behaviors.
+
+Over the long term, the relationships among travel, land use, and other physical, socioeconomic, demographic factors were interactive and iterative. Levinson and Krizek (2018) emphasize transportation is a necessary but not a sufficient factor for any development. The change of eras is a comprehensive outcome of socioeconomic and technological development. Which factor caused which effect does not have a simple answer. A conservative view is that land use and travel behavior are determined simultaneously by the transportation costs (Don Pickrell, 1999).
 
 Although randomized experiments about travel and land use are impossible, once the simultaneous relationship holds, the regression model still can explore the associations between travel and land use.
 
 <!-- ![One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.\label{4age}](fig/one_hour_commmuting2.png){width="50%"} -->
 
+
+
+
+
 ## Influencing Factors
+
+
 
 A large mount of studies try to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like VMT, the basic regression model is:
 
 $$\begin{aligned}
-\mathrm{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
+\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
 \end{aligned}$$
 
-where $\mathrm{Y}$ are the variable of VMT. $\mathrm{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are the error terms.
+where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are the error terms.
 
 When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
 
 $$\begin{aligned}
-E[\mathrm{Y}|\mathrm{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
+E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
 \end{aligned}$$
 
-Where $E[\mathrm{Y}|\mathrm{X}]$ is the expected value of $Y$ conditional on $X$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g$ is a link function.
+Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level VMT $\mathbf{Y}$ conditional on $\mathbf{Y}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g$ is a link function.
 
 For the complexity of travel behavior, many other objective or subjective factors could change people's travel decisions. They include but are not limited to physical, socio-demographic, individual, and policy determinants. It seems impossible to make an exhaustive list.
 
-Previous research have identified many factors such as job opportunity, income level, lifecycle stage, habits, and preferences, having stronger impact on travel. Therefore, a sufficient model should contain these strong influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. Here briefly introduces several significant influencing factors.
+Previous research have identified many factors such as job opportunity, income level, lifecycle stage, habits, and preferences, having stronger impact on travel. Therefore, a sufficient model should contain these strong influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
 
 Urban studies' attentions are on built-environment factors such as urban density, design, and services. Because these factors can be intervened by policies and planning. this part of discussion will be placed in the next section separately.
 
+
+The dichotomy of individual versus environmental factors is a most common framework.
+All relevant factors involving personal or household characteristics is treated as internal factors. While the built-environment and other environmental factors have external influences.
+Disaggregate analysis usually chooses this structure because the models try to explain the variation of individual travel behavior.
+The internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models.
+Take for example VMT models, the model is as follow.
+
+$$\begin{aligned}
+\mathbf{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\end{aligned}$$
+
+where $\mathbf{X}_\mathrm{C}$ travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
+
+
+
+
 ### Individual Factors
+
+Here briefly introduces several significant influencing factors.
 
 -   Income levels
 
@@ -101,6 +127,8 @@ The most influential aggregate studies start from Newman and Kenworthy. They pub
 [^factors-3]: @newmanCITIESAUTOMOBILEDEPENDENCE1989;@newmanGasolineConsumptionCities1989;@kenworthyINTERNATIONALSOURCEBOOKAUTOMOBILE1999;@newmanUrbanDesignReduce2006;@newmanPeakCarUse2011;@newmanDensityMultiplierResponse2011;@newmanDensitySustainabilityMultiplier2014;@newmanEndAutomobileDependence2015;@kenworthyAutomobileDependenceEmerging2017
 
 The criticisms include their ideological grounds, dataset, and model specification[^factors-4]. A criticism is that, for aggregated data, the population variable on both sides of the equation artificially creates a hyperbolic function (Equation \@ref(eq:hyperbolic)).
+In many disaggregated studies, the effects of density are not significant and have a small magnitude. 
+
 
 [^factors-4]: @gordonGasolineConsumptionCities1989;@dujardinHometoworkCommutingUrban2012;@perumalContextualDensityUS2017
 
@@ -114,6 +142,7 @@ The criticisms include their ideological grounds, dataset, and model specificati
 \end{split}
 \end{equation}
 ```
+
 Another criticism argues that the global comparisons are not valid, such as comparing Hong Kong and Houston. @ewingTestingNewmanKenworthy2018 created a subset with only US Metropolitan areas from @kenworthyPatternsAutomobileDependence1999 's original data set. They fit the same model but get a much lower $R^2$ (0.096) than Kenworthy and Laube's (0.72). A similar work by @fanisThreeStudiesThat2019 shows the low $R^2$ for US cities (0.1838) and European cities (0.2804) when deconstructing Newman and Kenworthy's data by continent. Actually, any research question has its corresponding sampling design. Choosing a cutoff from the whole data often gets a different result. These criticisms are unfair for Kenworthy and Laube's work. But it is true that the US cities have higher VMT and lower density than other countries' cities. Recent evidence over a 20-year period from other cities and counties show that the status quo of the U.S. only represents a small window of the global trend[@kenworthyAutomobileDependenceEmerging2017].
 
 Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. The divisions of the statistical units are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements.
@@ -130,6 +159,14 @@ It even grows to seven with the addition of *demand management* and *demographic
 
 The criticism from @handyEnoughAlreadyLet2018 says the 5Ds variables may not be independent. Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects, which rarely be investigated.
 
+### Synthesized Index
+
+To address the multicollinearity and interactions issues, @cliftonGettingHereThere2017 suggest to convert the various environmental characteristics to built environment indices. Some research try to use 'compactness indices' to replace the single density measurement [^47]. The primary method is principal components analysis (PCA) or principal components regression (PCR), which synthesizes many variables to four dimensions: development density, land use mix, activity centering, and street connectivity. The advantage of this method is to increase the elasticity value significantly. A recent study shows that the elasticity of VMT with respect to a county compactness index is -0.78. Using a similar method (common factor analysis), @hongHowBuiltenvironmentFactors2014 convert eight attitudinal questions in the 2006 Household Activity Survey to three factors: Ease, Convenience, and Pro-transit. They fit the model using two geographic scales: 1-km buffer and traffic analysis zone (TAZ). At the TAZ level, the *nonresidential density* and *distance from CBD* have significant effects on VMT. The disadvantage of this method is that the internal mechanisms of the indices are still not clear.
+
+[^47]: @ewingRelationshipUrbanSprawl2014;@hamidiLongitudinalStudyChanges2014;@hamidiMeasuringSprawlIts2015;@ewingUrbanSprawlRisk2016
+
+
+
 ### Meta-Analaysis
 
 To get a general, comparable outcome, @ewingTravelBuiltEnvironment2010 collect more than 200 related studies and try to summarize the elasticity values using meta-analysis. Elasticity measures the percentage change in response with respect to a 1 percent increase in a predictor. Thus, it is a dimensionless parameter. After screening, sixty-two studies were selected. But divided by modes (VMT, walking, and transit use), only nine studies were used to calculate the weighted-average elasticities of VMT with respect to population density. Of nine papers, six gave zero or insignificant elasticity, while three showed significant negative values (two are -0.04 and one is -0.12). The weighted-average elasticity of job density (sample size = 9) was zero. The largest elasticity of VMT belonged to Destination accessibility, -0.20 with respect to Job accessibility by auto (sample size = 5) and -0.22 with respect to Distance to downtown (sample size = 3). Due to the small sample size, the confidence intervals were not available. The authors call for more relevant studies to refine the results.
@@ -137,6 +174,8 @@ To get a general, comparable outcome, @ewingTravelBuiltEnvironment2010 collect m
 @stevensDoesCompactDevelopment2017 also try to explain the different outcomes using a meta-regression method. Based on the results from 37 studies, they found the magnitude of effects is small and suggest that compacting development has a tiny influence on driving. In @ewingDoesCompactDevelopment2017 's reply, they agreed with the values of elasticity but emphasize that Stevens' results (-0.15 \~ -0.22) are not small actually. In a forthcoming study by Ewing and Cervero, an update elasticity of VMT per capita with respect to density is -0.15 [@ewingTestingNewmanKenworthy2018].
 
 After the meta-analysis of built environment and travel behavior by @ewingTravelBuiltEnvironment2010, a recent update re-examines the post-2010 empirical literature and summarized the most common factors.
+They are Density, Urban design, Local land use mix, mono/polycentrism and centrality, and Regional jobs-housing balance
+
 
 <!-- better understanding the association between travel behavior and built environment. -->
 
@@ -152,182 +191,8 @@ After the meta-analysis of built environment and travel behavior by @ewingTravel
 
 ## Discussion
 
-This section gives an overview from several different perspectives. Except the dichotomy of individual versus environmental factors, another way of understanding the role of land use is morphology versus functionality. All factors related to spatial distributions have the morphological attributes such as road network connection. These attributes directly or indirectly affect travel behavior through some functional ways such as distance to transit services. This perspective helps people to figure out the influencing path and better understand the underlying mechanism.
 
-A primary trend in urban and transportation fields recently is the transition from techno-centric to socio-centric (Lanzini & Stochetti, 2020) [^factors-5]
 
-[^factors-5]: Lanzini P., Stochetti A.. From Techno-Centrism toSocio-Centrism: The Evolution of Principles for Urban Sustainable Mobility [J].International Journal of Sustainable Transportation, 2020, in Press.
 
-Banister (2008) suggests that urban sustainable mobility should be the third principle in addition to derived demand and cost minimization.
 
-# Spatial Scales
 
-Due to the various data sources or research interests, travel related studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
-
-Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
-
-## Urban/Region Scale
-
-Tradition of aggregate analysis treat a city of metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
-
-@vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
-
-The aggregate models confound the individual level's variance. Urban form factors usually show significant effect.
-
-## Neighborhood Scale
-
-In disaggregate analysis, the travel records by individual or household are the basic unit of dependent variables. traveler's socio-demographic characteristics also keep this resolution such as income and vehicle ownership. However, built environment factors technically have a minimum geographic unit as the measure scope. Census tract and block group are the most common unit in disaggregate analysis.
-
-Scholars who choose disaggregate analysis believe that the internal difference of urban characteristics be neglected at region level. They are interested in the impact of meso-level built-environment factors like the population and employment distribution of intra-urban.
-
-Using disaggregate data can disclose the neighborhood-level differences and eliminate aggregation bias. Using logarithms of VMTs per vehicle from *National Personal Travel Survey (NPTS)* data with 114 urban areas, @bentoEffectsUrbanSpatial2005 fit the linear model with 19 variables. They found that, instead of population density, population centrality has a significant effect on VMT. The elasticity of annual VMT with respect to population centrality is 1.5. [^factors-6]
-
-[^factors-6]: "population centrality measure is computed by averaging the difference between the cumulative population in annulus n (expressed as a percentage of total population) and the cumulative distance-weighted population in annulus n (expressed as a percentage of total distance-weighted population)."
-
-The results of travel models at different scales are often inconsistent. Using the same data source, @ewingTestingNewmanKenworthy2018 found that the elasticities of VMT with respect to population density is -0.164 in the aggregate models, which is a much higher value than disaggregate studies (-0.04 in the meta-analysis of @ewingTravelBuiltEnvironment2010). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
-
-## Multi-scale Studies
-
-Schwanen (2003) explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, Ewing et al. (2020)[^factors-7] identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
-
-[^factors-7]: Ewing et al. (2020). Reducing Vehicle Miles Traveled, Encouraging Walk Trips, and Facilitating Efficient Trip Chains Through Polycentric Development
-
-Lee, S., & Lee, B. (2020)[^factors-8] also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
-
-[^factors-8]: Lee, S., & Lee, B. (2020). Comparing the impacts of local land use and urban spatial structure on household VMT and GHG emissions.
-
-## Modifiable areal unit problem (MAUP)
-
-Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger (Gehlke & Biehl, 1934). This phenomenon is called modifiable areal unit problem (MAUP) and ecological fallacy (Openshaw, 1984; Arbia 1988).
-
-In aggregated analysis, two kinds of MAUP often happen simultaneously. The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
-
-Fotheringham & Wong (1991) found that multivariate analysis is unreliable when using the data from areal units. The check of unit consistency may help to examine the biases by MAUP on the estimations.[^factors-9]
-
-[^factors-9]: Fotheringham & Wong. (1991). The Modifiable Areal Unit Problem in Multivariate Statistical Analysis
-
-              Ye & Rogerson. (2021).The Impacts of the Modifiable Areal Unit Problem (MAUP) on Omission Error 
-
-"The MAUP is one of the most longstanding and far-reaching problems in geography. It refers to the sensitivity or the inconsistency of the results of spatial analyses in the same study area with different spatial configurations (Openshaw and Taylor 1981; Openshaw 1983; Fotheringham and Wong 1991; Larsen 2000). The MAUP can be further divided into the scale problem and the zoning problem (Openshaw and Taylor 1979; Wong 2009): the scale problem is the inconsistency/sensitivity of analysis results caused by aggregating the observations into different numbers of spatial units, while the zoning problem is the inconsistency/sensitivity of analysis results due to redrawing the boundaries of spatial units in the study area while keeping the number of spatial units unchanged."
-
-"A number of empirical studies (Fotheringham and Wong 1991; Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018) have strongly supported the viewpoint that the estimates of coefficients in a multiple regression model are significantly influenced by the MAUP (Cramer 1964; Clark and Avery 1976; Fotheringham and Wong 1991; Larsen 2000), changing substantially in value and in direction for different spatial configurations. On the other hand, it has been shown that when aggregate observations are the simple averages of individual observations, the estimator of coefficients in linear regression remains unbiased, regardless of the process of aggregation (Prais and Aitchison 1954). Prais and Aitchison (1954) did not explicitly state that for this to hold, the linear regression model must be correctly specified. But there may be model specification errors; in particular, omission error (Amrhein 1995)."
-
-## Discussion
-
-Some variables such as density has cross scales. From Density to Urban Form and Mono/Polycenticcity - 5-Ds Variables for BE
-
-Density
-
-Urban design
-
-Local land use mix
-
-mono/polycentrism and centrality
-
-Regional jobs-housing balance
-
-It could develop different explanatory frameworks, which reflect the cognitive differences on this topic (Figure \@ref(fig:cognitive3)).
-
-```{r cognitive3,eval=T,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
-# manypoint<- plot(rnorm(30),rnorm(30))
-grViz("
-digraph C {
-compound=true;
-graph[fontname = 'helvetica',  nodesep=0.4, overlap='prism1000']
-rankdir = TD
-node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0.75, width = 1, fontcolor = black];
-
-    subgraph cluster1{
-    label = 'Direct';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];
-		    c1d1[label = 'Diversity,\\n Design \\n Transit,\\n Accessibility,\\n ...'];
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
-        c1d2[label = 'Density'];
-    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-        c1d3[label = 'Social \\n economic \\n factors ...'];
-    node [shape = oval, style=filled,fontsize=12, fillcolor ='#91cf60'];
-        c1ad[label = 'Less Driving'];
-        {rank = same; c1d1;c1d2;c1d3}
-    c1d2 -> c1d1[style=dashed,dir=none]   {c1d2 c1d3} -> c1ad
-	  }
-
-    subgraph cluster2{
-    label = 'Collaborated';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
-		    subgraph cluster22{
-		    label = '';
-		    style=solid;	color= '#625a5a'; fontname = 'helvetica-bold';
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor =PapayaWhip];
-        c2d3[label = 'Diversity,\\n Design \\n Transit,\\n Accessibility,\\n ...'];
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
-        c2d1[label = 'Density'];
-		    }
-    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-		    c2d2[label = 'Social \\n economic \\n factors ...'];
-    node [shape = oval, style=filled,fontsize=12, fillcolor = '#91cf60']; #
-        c2ad[label = 'Less Driving'];
-
-        c2d3 -> c2ad[ltail=cluster22,lhead=cluster22] c2d2 -> c2ad c2d1 -> c2ad[style=invis];
-    }
-
-    subgraph cluster_3{
-    label = 'Respective';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = '#fee08b']; #
-		    c3d1[label = 'Density'];
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip]
-        c3d2[label = 'Diversity,\\n Design \\n Transit,\\n Accessibility,\\n ...'];
-    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-        c3d3[label = 'Social \\n economic \\n factors ...'];
-    node [shape = oval, style=filled,fontsize=12, fillcolor ='#91cf60'];
-        c3ad1[label = 'Less Driving \\n (City level)'];
-    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];
-        c3ad2[label = 'Less Driving \\n (Household level)'];
-        {c3d3 c3d2} -> c3ad2  c3d1  -> c3ad1
-	}
-  #   # edge[style=invisible,dir=none];
-  #   node [shape = square, style=filled,fontsize=9,fillcolor = Beige];
-  #   b [label = 'The relationship \\n between \\n Auto Dependence \\n & \\n Urban Density']
-  #   node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke]; #'#91cf60'
-  #   c [label = 'Evidence from \\n existing studies']
-  # a1 ->b [dir=back]
-  # b -> c [dir=back]
-
-  }")#,
- # height = 500,width = 800)
-```
-
-$$\begin{aligned}
-\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D}}{\beta}_\mathrm{D}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
-\end{aligned}$$
-
-where $\mathrm{Y}$ are the variable of VMT. $\boldsymbol{\beta}$ are the coefficients with respect to travelers' characteristics $\mathbf{X}_\mathrm{C}$, density $\mathrm{X_{D}}$, and other environment covariates $\mathbf{X}_\mathrm{E}$.
-
-The first framework posits that density or subdivided densities are the deterministic factors for relieving automobile dependence. In the model (Equation \@ref(eq:f1)), at least one covariate of density $\mathrm{X_{D}}$ should be associated with the trip variables $\mathrm{Y}$ significantly. The values of $\beta_\mathrm{D}$ reflect the effects size of density on VMT. If density itself is 'enough' for the car-free goal, people should support HB2001.
-
-```{=tex}
-\begin{equation}
-(\#eq:f1)
-\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathrm{X_{D1}}{\beta}_\mathrm{D1}+\mathrm{X_{D2}}{\beta}_\mathrm{D2}+\cdots+\boldsymbol{\varepsilon}
-\end{equation}
-```
-The second framework assumes that density could only work when combined with other factors - land use mixture, good design, connected street network, and high quality of transit services. In the model (Equation \@ref(eq:f2)), $m(\mathrm{X_{D}},\mathbf{X}_\mathrm{E})$ is a proper function of density and environment covariates. Here density itself has no significant effect on VMT. If it is true, some terms of improving the design, transit, etc., should add into HB2001.
-
-```{=tex}
-\begin{equation}
-(\#eq:f2)
-\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathrm{X_{D}},\mathbf{X}_\mathrm{E}){\beta}+\boldsymbol{\varepsilon}
-\end{equation}
-```
-The third framework contends that density and other factors have different effective domains. The model will split into two equations \@ref(eq:f3), where $\mathrm{Y_{I}}$ is the individual/household-level VMT and $\mathrm{Y_{A}}$ is the VMT aggregated at the city/metro level. This framework supports some policies, such as Urban Growth Boundary (UGB). But the denser communities by HB2001 would not make VMT increasing.
-
-```{=tex}
-\begin{equation}
-(\#eq:f3)
-\begin{split}
-\mathrm{Y_{I}}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}\\
-\mathrm{Y_{A}}=\mathrm{X_{D}}{\beta}_\mathrm{D}+\cdots+\boldsymbol{\epsilon}
-\end{split}
-\end{equation}
-```

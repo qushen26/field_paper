@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Analytical Frameworks | Travel Behavior and Urban Land Use</title>
+  <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Analytical Frameworks | Travel Behavior and Urban Land Use" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="qushen26/field_paper" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Analytical Frameworks | Travel Behavior and Urban Land Use" />
+  
+  <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Shen Qu" />
+
+
+<meta name="date" content="2021-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="spatial-scales.html"/>
+<link rel="next" href="discussion-3.html"/>
+<script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="book_assets/viz-1.8.2/viz.js"></script>
+<link href="book_assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="book_assets/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Field Paper</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Part I Theories and Framework</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html"><i class="fa fa-check"></i><b>2</b> Travel Behavior Theories</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#mode-choices-travel-as-a-subject"><i class="fa fa-check"></i><b>2.1</b> Mode Choices (Travel as a subject)</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#rational-choice-theory"><i class="fa fa-check"></i><b>2.1.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="2.1.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>2.1.2</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="2.1.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>2.1.3</b> Theory of Planned Behavior</a></li>
+<li class="chapter" data-level="2.1.4" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#prospect-theory"><i class="fa fa-check"></i><b>2.1.4</b> Prospect Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#human-mobility-travel-as-an-object"><i class="fa fa-check"></i><b>2.2</b> Human Mobility (Travel as an object)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#trip-distribution-laws"><i class="fa fa-check"></i><b>2.2.1</b> Trip Distribution Laws</a></li>
+<li class="chapter" data-level="2.2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#time-geography"><i class="fa fa-check"></i><b>2.2.2</b> Time Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#discussion"><i class="fa fa-check"></i><b>2.3</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html"><i class="fa fa-check"></i><b>3</b> The Impact of Land Use</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#influencing-direction"><i class="fa fa-check"></i><b>3.1</b> Influencing Direction</a></li>
+<li class="chapter" data-level="3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#influencing-factors"><i class="fa fa-check"></i><b>3.2</b> Influencing Factors</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#individual-factors"><i class="fa fa-check"></i><b>3.2.1</b> Individual Factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#environmental-factors"><i class="fa fa-check"></i><b>3.2.2</b> Environmental Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#built-environment-variables"><i class="fa fa-check"></i><b>3.3</b> Built-Environment Variables</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#density"><i class="fa fa-check"></i><b>3.3.1</b> Density</a></li>
+<li class="chapter" data-level="3.3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#d-variables"><i class="fa fa-check"></i><b>3.3.2</b> D-variables</a></li>
+<li class="chapter" data-level="3.3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#synthesized-index"><i class="fa fa-check"></i><b>3.3.3</b> Synthesized Index</a></li>
+<li class="chapter" data-level="3.3.4" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#meta-analaysis"><i class="fa fa-check"></i><b>3.3.4</b> Meta-Analaysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#discussion-1"><i class="fa fa-check"></i><b>3.4</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-scales.html"><a href="spatial-scales.html"><i class="fa fa-check"></i><b>4</b> Spatial Scales</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="spatial-scales.html"><a href="spatial-scales.html#urbanregion-scale"><i class="fa fa-check"></i><b>4.1</b> Urban/Region Scale</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-scales.html"><a href="spatial-scales.html#neighborhood-scale"><i class="fa fa-check"></i><b>4.2</b> Neighborhood Scale</a></li>
+<li class="chapter" data-level="4.3" data-path="spatial-scales.html"><a href="spatial-scales.html#multi-scale-studies"><i class="fa fa-check"></i><b>4.3</b> Multi-scale Studies</a></li>
+<li class="chapter" data-level="4.4" data-path="spatial-scales.html"><a href="spatial-scales.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>4.4</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="4.5" data-path="spatial-scales.html"><a href="spatial-scales.html#discussion-2"><i class="fa fa-check"></i><b>4.5</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html"><i class="fa fa-check"></i><b>5</b> Analytical Frameworks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#stepwise-structure"><i class="fa fa-check"></i><b>5.1</b> Stepwise Structure</a></li>
+<li class="chapter" data-level="5.2" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#multi-layers-model"><i class="fa fa-check"></i><b>5.2</b> Multi-layers Model</a></li>
+<li class="chapter" data-level="5.3" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#multi-scales-structure"><i class="fa fa-check"></i><b>5.3</b> Multi-scales Structure</a></li>
+<li class="chapter" data-level="5.4" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#mixed-structure"><i class="fa fa-check"></i><b>5.4</b> Mixed Structure</a></li>
+<li class="chapter" data-level="5.5" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#non-linear-models"><i class="fa fa-check"></i><b>5.5</b> Non-linear models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion-3.html"><a href="discussion-3.html"><i class="fa fa-check"></i><b>6</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discussion-3.html"><a href="discussion-3.html#a-proposed-framework"><i class="fa fa-check"></i><b>6.1</b> A Proposed Framework</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion-3.html"><a href="discussion-3.html#policy-implications"><i class="fa fa-check"></i><b>6.2</b> Policy implications</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion-3.html"><a href="discussion-3.html#other-thoughts"><i class="fa fa-check"></i><b>6.3</b> Other thoughts</a></li>
+</ul></li>
+<li class="part"><span><b>Part II Data and Methods</b></span></li>
+<li class="chapter" data-level="7" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>7</b> Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="data.html"><a href="data.html#the-daily-travel-data-in-the-u.s."><i class="fa fa-check"></i><b>7.0.1</b> The daily travel data in the U.S.</a></li>
+<li class="chapter" data-level="7.0.2" data-path="data.html"><a href="data.html#socio-demographic-data"><i class="fa fa-check"></i><b>7.0.2</b> Socio-Demographic Data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="data.html"><a href="data.html#built-environment-data"><i class="fa fa-check"></i><b>7.0.3</b> Built-Environment Data</a></li>
+<li class="chapter" data-level="7.0.4" data-path="data.html"><a href="data.html#uints-and-scales-in-the-u.s."><i class="fa fa-check"></i><b>7.0.4</b> Uints and Scales in the U.S.</a></li>
+<li class="chapter" data-level="7.0.5" data-path="data.html"><a href="data.html#new-data-source"><i class="fa fa-check"></i><b>7.0.5</b> New Data Source</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear Models</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
+<li class="chapter" data-level="8.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="8.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>8.0.3</b> Models Specifications</a></li>
+<li class="chapter" data-level="8.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>8.0.4</b> Diagnousis and Validation</a></li>
+<li class="chapter" data-level="8.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>8.0.5</b> Interpretation</a></li>
+<li class="chapter" data-level="8.0.6" data-path="linear-models.html"><a href="linear-models.html#summary"><i class="fa fa-check"></i><b>8.0.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>9</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
+<li class="chapter" data-level="9.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>9.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="9.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-1"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>10</b> Non-Linear Models</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview-2"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
+<li class="chapter" data-level="10.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>10.0.2</b> Main Approaches</a></li>
+<li class="chapter" data-level="10.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-2"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>11</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="11.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>11.0.1</b> Overview</a></li>
+<li class="chapter" data-level="11.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>11.0.2</b> Advanced Methods</a></li>
+<li class="chapter" data-level="11.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-3"><i class="fa fa-check"></i><b>11.0.3</b> Summary</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Travel Behavior and Urban Land Use</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analytical-frameworks" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Analytical Frameworks</h1>
+<p>Based on related theories and studies, this section introduces several different analytical frameworks. All three explanatory frameworks can find supportive evidences.
+They reflect the cognitive differences on this topic from various perspectives (Figure <a href="analytical-frameworks.html#fig:cognitive3">5.1</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cognitive3"></span>
+<div id="htmlwidget-f66e74c68e3d79f3d3ae" style="width:100%;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f66e74c68e3d79f3d3ae">{"x":{"diagram":"\ndigraph C {\ncompound=true;\ngraph[fontname = \"helvetica\",  nodesep=0.4, overlap=\"prism1000\"]\nrankdir = TD\nnode [fontname = \"helvetica\", style = filled, fillcolor = WhiteSmoke, height = 0.75, width = 1, fontcolor = black];\n\n    subgraph cluster1{\n    label = \"Stepwise\";\n    style=dashed;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\";\n    \n    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];\n        c1d1[label = \"Long-term decisions: \\n Residential location choice\"];    \n        \n\t\tnode [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];\n\t\t    c1d2[label = \"Medium-term decisions: \\n Car ownership, \\n Distance to destination\"];\n\t\t    \n\t\tnode [shape=box, style=filled, color=black,fontsize=12, fillcolor =\"#fee08b\"];\n        c1d3[label = \"Short-term decision: \\n Mode Choice\"];\n\n    node [shape = oval, style=filled,fontsize=12, fillcolor =\"#91cf60\"];\n        c1ad[label = \"Travel Behavior\"];\n\n    c1d1 -> c1d2   c1d2  -> c1d3   c1d3 -> c1ad\n\t  }\n\n    subgraph cluster2{\n    label = \"Multi-layer\";\n    style=dashed;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\";\n \n    node [shape = oval, style=filled,fontsize=12, fillcolor = White];\n\t\t    c2d0[label = \"Travel Choice\"];\t\n\t\t    \n\t\t    subgraph cluster21{\n\t\t    label = \"\";\n\t\t    style=solid;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\";\n\t\t    }\t\t\t\t    \n\t\t    \n    node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke];\n\t\t    c2d11[label = \"Yes\"];\t\t \t\t    \n    node [shape = oval, style=filled,fontsize=12, fillcolor = White];\n\t\t    c2d10[label = \"No\"];\t\t\t    \n   \n \n    \n\t\t    subgraph cluster22{\n\t\t    label = \"\";\n\t\t    style=solid;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\";\n\t\t    }\t\t\n\t\tnode [shape= oval, style=filled, color=black,fontsize=12, fillcolor =\"#fee08b\"];\n        c2d21[label = \"Driving\"];\t\t    \n\t\tnode [shape= oval, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];\n        c2d22[label = \"Other modes\"];        \n\n\t    \n\n\t\t    subgraph cluster23{\n\t\t    label = \"Route Choice\";\n\t\t    style= dashed;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\";\n\t\t    }\t\t    \n\t\tnode [shape= oval, style=filled, color=black,fontsize=12, fillcolor =\"#91cf60\"];\n        c2ad1[label = \"Distance\"];\t\t\t    \n    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige]; #\n        c2ad2[label = \"Time\"];\t\t    \n\t    \n\n       c2d11 -> c2d22   c2d0 -> c2d11 -> c2d21 -> {c2ad1 c2ad2}   c2d0 -> c2d10\n\t\t    \n        # c2d3 -> c2ad[ltail=cluster22,lhead=cluster22] c2d2 -> c2ad c2d1 -> c2ad[style=invis];\n    }\n\n    subgraph cluster_3{\n    label = \"Multi-scale\";\n    style=dashed;\tcolor= \"#625a5a\"; fontname = \"helvetica-bold\"; \n    \n    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];\n        c3d1[label = \"Urban Form\"];\n            \n\t\tnode [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip]; #\n\t\t    c3d2[label = \"Built Environmnet\"];\n\t\t    \n\t\tnode [shape=box, style=filled, color=black,fontsize=12, fillcolor = \"#fee08b\"]\n        c3d3[label = \"Socio-demographic \\n characteristics\"];\n\n    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];\n        c3ad1[label = \"City \\n Travel \\n Behavior\"];\n        \n    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];\n        c3ad2[label = \"Neighborhood \\n Travel \\n Behavior\"];\n        \n    node [shape = oval, style=filled,fontsize=12, fillcolor = \"#91cf60\"];\n        c3ad3[label = \"Household \\n Travel \\n Behavior\"];\n        \n        c3d1 -> c3ad1[weight= 10]  c3d2 -> c3ad2   c3d3 -> c3ad3[weight= 10]\n        {rank = same; c3ad1;c3ad2;c3ad3}\n        c3d1 -> c3d2-> c3d3[style=dashed,splines=curved,constraint=true] #,dir=none\n        \n\t}\n  #   # edge[style=invisible,dir=none];\n  #   node [shape = square, style=filled,fontsize=9,fillcolor = Beige];\n  #   b [label = \"The relationship \\n between \\n Auto Dependence \\n & \\n Urban Density\"]\n  #   node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke]; #\"#91cf60\"\n  #   c [label = \"Evidence from \\n existing studies\"]\n  # a1 ->b [dir=back]\n  # b -> c [dir=back]\n\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 5.1: Three conceptual frameworks
+</p>
+</div>
+<div id="stepwise-structure" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Stepwise Structure</h2>
+<p>Ben-Akiva and Atherton (1977) introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
+Car ownership belongs medium-term decision since people usually don’t purchase or sell a car very often.
+Residential location choice is long-term decision because relocation is the most infrequent event than others.</p>
+<p>Under this framework, the decisions in longer term can affect the decisions in shorter term, but not vice versa.
+For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior (Munshi, 2016).
+In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. (Van Acker and Witlox, 2011; Ding et al., 2017; De Vos et al., 2021).
+A VMT models with stepwise framework is as follow.</p>
+<span class="math display" id="eq:stepwise">\[\begin{equation}
+\tag{5.1}
+\mathrm{Y}=\mathbf{X}_\mathrm{L}\boldsymbol{\beta}_\mathrm{L}+\mathrm{X_{M}}{\beta}_\mathrm{M}+\mathbf{X}_\mathrm{S}\boldsymbol{\beta}_\mathrm{S}+\boldsymbol{\varepsilon}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\boldsymbol{\beta}\)</span> are the coefficients with respect to long-term factors <span class="math inline">\(\mathbf{X}_\mathrm{L}\)</span>, medium-term <span class="math inline">\(\mathrm{X_{M}}\)</span>, and short-term covariates <span class="math inline">\(\mathbf{X}_\mathrm{S}\)</span>.
+There could be two-way interaction effect between long-term and medium-term variables; three-way interaction effects among long-term, medium-term and short-term variables in the model (Equation <a href="analytical-frameworks.html#eq:stepwise">(5.1)</a>).</p>
+<p>This framework works well for commuting trips because people will not change work place very often. The mobility theories also agree with this pattern.
+“commuting trips are stable in time and account for the largest fraction of the total flows in a population.”</p>
+<p>However, the number of non-commuting trips in the U.S. have been more than commuting trips in recent years (TODO source).
+For non-commuting travel purposes, such as shopping, leisure, or socializing, the destination choices are more flexible.</p>
+<p>The decision could be one-step. In consideration of all the benefit and cost, The traveler make a decision including the destination, mode and route at the same moment.
+It also could be multistep. Starting from a travel demand or purpose, the traveler decides to make a trip then choose the destination, mode, route, and departure time step-by-step from available alternatives based on benefit, cost, and habit.
+This process is progressive, iterative, and habitual in real life. Hence, the travel distance could be decided before or after mode or route choices. One structure only can capture one aspect of the process.
+The framework selection should suit the research question.</p>
+</div>
+<div id="multi-layers-model" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Multi-layers Model</h2>
+<p>The single-layer frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
+Here these observation are treated as censored data with negative utilities. (That will leads to Tobit model for VMT.)</p>
+<p>In contrast, a multiple-layers framework allows to use a hierarchical structure to fit different observation respectively.
+The model will split into three equations <a href="analytical-frameworks.html#eq:multilayer">(5.2)</a>
+Starting from a travel demand or purpose, the traveler decides to make a trip or not at the first-level dichotomous node.
+A logit or probit model will fit all the data using a suitable model specification.</p>
+<p>Then the second layer with polychotomous nodes is about mode choice, which is respect to the multinomial models.
+At the bottom layer, a linear (or log-linear) model will only fit the data with positive driving distance (hurdle models).
+It is remarkable that the covariates set could vary in different layer’s models. For example the lifecycle factor could strongly affect the travel frequency but not affect the driving distance significantly.
+Therefore, this structure is more flexible and is consistent with real decision process.</p>
+<span class="math display" id="eq:multilayer">\[\begin{equation}
+\tag{5.2}
+\begin{split}
+E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&amp;\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\boldsymbol{\beta})\\
+E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&amp;\boldsymbol{\mu_1}=g^{-1}(\mathbf{X_1}\boldsymbol{\gamma})\\
+\mathbf{Z}_{\{car\}}=&amp;\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}\\
+\end{split}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\mathbf{Y}_{\{yes,no\}}\)</span> is a binary variable of making a trip or not. <span class="math inline">\(\mathbf{Y}_{\{car,bus,...\}}\)</span> is a categorical variable only including the cases of making a trip. <span class="math inline">\(\mathbf{Z}_{\{car\}}\)</span> is a continuous variable represent driving distance among the group of choosing driving. <span class="math inline">\(\mathbf{X}_{\{0,1,2\}}\)</span> means the three equations could have different model specifications and will estimate corresponding coefficients, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\gamma}\)</span>, and <span class="math inline">\(\boldsymbol{\delta}\)</span>.</p>
+<!-- -   The types of trip variables and the proposed probability distributions -->
+<!--     -   Binary: Choose/not to make trip (Bernoulli/Binomial), -->
+<!--     -   Polychotomous: modes (Multinomial) and trajectory (Network) -->
+<!--     -   Counts: the number of trips (Poisson or NB), -->
+<!--     -   Positive continuous: distance and time (Exponential Family: Normal, Log-normal, Power-law, Gamma, Weibull); -->
+<!-- -   The unit: Individual or aggregated (household, areal); -->
+<!-- -   The temporal scales: Real-time, hourly, Daily, weekly, monthly, yearly/annual, or decade; -->
+<!-- -   The spatial scales: Community, city, region, country-wide/national -->
+<!-- -   Other taxonomy/division may include -->
+<!--     -   traveler roles (returner or explorer); -->
+<!--     -   trip purposes; -->
+<!--     -   long/short distance/time of trips. -->
+<!-- The trip responses are defined in different units, scales, metrics. -->
+</div>
+<div id="multi-scales-structure" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Multi-scales Structure</h2>
+<p>As discussed in previous section, the external factors affect individual’s travel behavior at multiple scales.
+It is necessary to distinguish the meso-scale and macro-scale variable.
+The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions.
+Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation <a href="analytical-frameworks.html#eq:multiscale">(5.3)</a>)</p>
+<span class="math display" id="eq:multiscale">\[\begin{equation}
+\tag{5.3}
+\mathbf{Y}=\mathbf{X}_\mathrm{U}\boldsymbol{\beta}_\mathrm{U}+\mathbf{X}_\mathrm{N}{\beta}_\mathrm{N}+\mathbf{X}_\mathrm{H}{\beta}_\mathrm{H}+\cdots+\boldsymbol{\varepsilon}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the covariates at the scales of urban, neighborhood, and household. And <span class="math inline">\(\boldsymbol{\beta}_\mathrm{U}\)</span>, <span class="math inline">\(\boldsymbol{\beta}_\mathrm{N}\)</span>, and <span class="math inline">\(\boldsymbol{\beta}_\mathrm{H}\)</span> are corresponding coeficients respectively.</p>
+</div>
+<div id="mixed-structure" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Mixed Structure</h2>
+<p>Regression models usually assume the fixed effects of covariate on response. has to random effects</p>
+<p>In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city.
+The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
+When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.</p>
+<p>In spatial analysis, autocorrelation is a common issue which means the observation values in a location will be affected by its neighbors. Mixed model can help to eliminate the neighborhood effects.</p>
+<span class="math display" id="eq:multiscale">\[\begin{equation}
+\tag{5.3}
+\mathbf{Y}=\mathbf{X}_\mathrm{H}\boldsymbol{\beta}+\mathbf{X}_\mathrm{N}{\gamma}+\mathbf{X}_\mathrm{U}{\delta}+\boldsymbol{\varepsilon}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the same as above. <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of fixed effects. <span class="math inline">\(\boldsymbol{\gamma}\)</span> and <span class="math inline">\(\boldsymbol{\delta}\)</span> are two vectors of random effects at neighborhood and city scales. Assume that <span class="math inline">\(\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})\)</span> and <span class="math inline">\(\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})\)</span>. And also assume <span class="math inline">\(Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}\)</span>.</p>
+</div>
+<div id="non-linear-models" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Non-linear models</h2>
+<p>As <span class="citation"><a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">Clifton</a> (<a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">2017</a>)</span> said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods <span class="citation">(<a href="#ref-dingNonlinearAssociationsZonal2021" role="doc-biblioref">Ding et al. 2021</a>)</span>. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) <span class="citation">(<a href="#ref-hastieGeneralizedAdditiveModels1990" role="doc-biblioref">Hastie and Tibshirani 1990</a>)</span>, Ewing’s study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure ).</p>
+<div class="figure">
+<img src="fig/Ewing_gam1.png" alt="" />
+<p class="caption">Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form).</p>
+</div>
+<span class="math display" id="eq:nonlinear">\[\begin{equation}
+\tag{5.4}
+\mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathbf{X}_\mathrm{E})\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\end{equation}\]</span>
+<p>In the model (Equation <a href="analytical-frameworks.html#eq:nonlinear">(5.4)</a>), <span class="math inline">\(m(\mathbf{X_{D}},\mathbf{X}_\mathrm{E})\)</span> is a proper function of built environment covariates.</p>
+<p>The non-linear methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.</p>
+<p>The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The threshold studies in urban transportation field remain in the early stages.</p>
+<!-- All factors related to spatial distributions have the morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->
+<!-- such as road network connection -->
+<!-- such as distance to transit services.  -->
+<!-- This perspective helps people to figure out the influencing path and better understand the underlying mechanism. -->
+<!-- another way of understanding the role of land use is morphology versus functionality.  -->
+<!-- the demand or utility of travel is the primary node affecting travel choice.  -->
+<!-- The available transportation modes is the secondary nodes which allow the traveler compares and chooses among driving and others. Choosing routes and departure time is in the third level. -->
+<!-- The driving distance mainly is decided by the travel demand or utility. Only when the demand is not strong enough or having many alternative destinations, the lower levels' choices could change the driving distance. -->
+<!-- If one focuses on auto trips. The tree can be simplified to two levels: driving or not. -->
+<!-- From the travel behavior perspective, driving distance locates on a terminal node of a trip decision tree. -->
+<!-- The tree shows that the first two level could produce some 'zero' driving distance. Should these cases be included in the studies of driving distance? -->
+<!-- This discussion demonstrates a hierarchical relationship among driving distance and other trip variables. -->
+<!-- In this way, the transit services located on the second internal nodes. -->
+<!-- the travel destination may be determined before the decision making or be selected after the traveler comparing several plans. -->
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-cliftonGettingHereThere2017" class="csl-entry">
+Clifton, Kelly J. 2017. <span>“Getting <span>From</span> <span>Here</span> to <span>There</span>: <span>Comment</span> on <span>“</span><span>Does</span> <span>Compact</span> <span>Development</span> <span>Make</span> <span>People</span> <span>Drive</span> <span>Less</span>?<span>”</span>.”</span> <em>Journal of the American Planning Association</em> 83 (2): 148–51. <a href="https://doi.org/10.1080/01944363.2017.1290494">https://doi.org/10.1080/01944363.2017.1290494</a>.
+</div>
+<div id="ref-dingNonlinearAssociationsZonal2021" class="csl-entry">
+Ding, Chuan, Xinyu Cao, Bin Yu, and Yang Ju. 2021. <span>“Non-Linear Associations Between Zonal Built Environment Attributes and Transit Commuting Mode Choice Accounting for Spatial Heterogeneity.”</span> <em>Transportation Research Part A: Policy and Practice</em> 148 (June): 22–35. <a href="https://doi.org/10.1016/j.tra.2021.03.021">https://doi.org/10.1016/j.tra.2021.03.021</a>.
+</div>
+<div id="ref-hastieGeneralizedAdditiveModels1990" class="csl-entry">
+Hastie, T. J., and R. J. Tibshirani. 1990. <em>Generalized <span>Additive</span> <span>Models</span></em>. CRC Press.
+</div>
+</div>
+<div id="disqus_thread"></div>
+
+<style>
+.hide-social-discuss {
+   background: white;
+   height: 20px;
+   position: relative;
+   width: 80%;
+   top: -60px;
+}
+</style>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qs26.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    //add this to script
+    $("#disqus_thread").append("<div class='hide-social-discuss'></div>")
+
+</script>
+
+
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="spatial-scales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discussion-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/qushen26/field_paper/edit/master/files/05-framework.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/qushen26/field_paper/blob/master/files/05-framework.Rmd",
+"text": null
+},
+"download": ["field_paper.pdf", "field_paper.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

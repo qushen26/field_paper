@@ -248,10 +248,13 @@ Based on commuting data from six countries, @lenormandSystematicComparisonTrip20
 
 ### Time Geography 
 
-In contrast to overall trip distribution, the movements of individuals are always research interest in geogrophy.
+In contrast to overall trip distribution, the movements of individuals are always research interest in geography.
 Hägerstraand (1970) proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography.
 The famous "space-time aquarium/prism" is a 3D cube by adding temporal scales on the geographic space.
 It can capture the detailed structure and behavior of traveler.
+
+A daily travel could include multiple trips and form a travel chain. The traveler may switch the sequence or adjust the routes to optimize the chain and minimize the travel costs. The daily total travel distance is the summation of every trip distances. The number of trips denotes as trip count. It exists but not so common that driving itself is the travel purpose, especially in daily life.
+
 
 At individual level, time geography borrows some physical and mathematical concept and methods such as random walk, Brownian motion, and Levy flight
 
@@ -297,5 +300,5 @@ Once choosing the individual perspective, current theories and methods are still
 For example, the physical transportation network is only a part of travel decisions. Social networks with a 'hub-and-spoke structure' play a prominent role in finding a job.
 Using social media data, some studies provide valuable insight but still have a gap to form new theories.
 
-
+An interdisciplinary perspective could provide a theoretical explanation for model selection. Existing mobility theories can play an anchor to identify the key variables' property and confirm the additive and linear relation among the factors.
 

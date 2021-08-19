@@ -1,0 +1,81 @@
+
+
+# Spatial Scales
+
+Due to the various data sources or research interests, travel related studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
+
+Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
+
+
+
+## Urban/Region Scale
+
+Tradition of aggregate analysis treat a city of metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
+
+@vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
+
+The aggregate models confound the individual level's variance. Urban form factors usually show significant effect.
+
+## Neighborhood Scale
+
+In disaggregate analysis, the travel records by individual or household are the basic unit of dependent variables. traveler's socio-demographic characteristics also keep this resolution such as income and vehicle ownership. However, built environment factors technically have a minimum geographic unit as the measure scope. Census tract and block group are the most common unit in disaggregate analysis.
+
+Scholars who choose disaggregate analysis believe that the internal difference of urban characteristics be neglected at region level. They are interested in the impact of meso-level built-environment factors like the population and employment distribution of intra-urban.
+
+Using disaggregate data can disclose the neighborhood-level differences and eliminate aggregation bias. Using logarithms of VMTs per vehicle from *National Personal Travel Survey (NPTS)* data with 114 urban areas, @bentoEffectsUrbanSpatial2005 fit the linear model with 19 variables. They found that, instead of population density, population centrality has a significant effect on VMT. The elasticity of annual VMT with respect to population centrality is 1.5. [^factors-6]
+
+[^factors-6]: "population centrality measure is computed by averaging the difference between the cumulative population in annulus n (expressed as a percentage of total population) and the cumulative distance-weighted population in annulus n (expressed as a percentage of total distance-weighted population)."
+
+The results of travel models at different scales are often inconsistent. Using the same data source, @ewingTestingNewmanKenworthy2018 found that the elasticities of VMT with respect to population density is -0.164 in the aggregate models, which is a much higher value than disaggregate studies (-0.04 in the meta-analysis of @ewingTravelBuiltEnvironment2010). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
+
+## Multi-scale Studies
+
+Schwanen (2003) explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, Ewing et al. (2020)[^factors-7] identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
+
+[^factors-7]: Ewing et al. (2020). Reducing Vehicle Miles Traveled, Encouraging Walk Trips, and Facilitating Efficient Trip Chains Through Polycentric Development
+
+Lee, S., & Lee, B. (2020)[^factors-8] also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
+
+[^factors-8]: Lee, S., & Lee, B. (2020). Comparing the impacts of local land use and urban spatial structure on household VMT and GHG emissions.
+
+## Modifiable areal unit problem (MAUP)
+
+
+Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger (Gehlke & Biehl, 1934). This phenomenon is called modifiable areal unit problem (MAUP) and ecological fallacy (Openshaw, 1984; Arbia 1988).
+
+In aggregated analysis, two kinds of MAUP often happen simultaneously. The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
+
+Fotheringham & Wong (1991) found that multivariate analysis is unreliable when using the data from areal units. The check of unit consistency may help to examine the biases by MAUP on the estimations.[^factors-9]
+
+[^factors-9]: Fotheringham & Wong. (1991). The Modifiable Areal Unit Problem in Multivariate Statistical Analysis
+
+              Ye & Rogerson. (2021).The Impacts of the Modifiable Areal Unit Problem (MAUP) on Omission Error 
+
+"The MAUP is one of the most longstanding and far-reaching problems in geography. It refers to the sensitivity or the inconsistency of the results of spatial analyses in the same study area with different spatial configurations (Openshaw and Taylor 1981; Openshaw 1983; Fotheringham and Wong 1991; Larsen 2000). The MAUP can be further divided into the scale problem and the zoning problem (Openshaw and Taylor 1979; Wong 2009): the scale problem is the inconsistency/sensitivity of analysis results caused by aggregating the observations into different numbers of spatial units, while the zoning problem is the inconsistency/sensitivity of analysis results due to redrawing the boundaries of spatial units in the study area while keeping the number of spatial units unchanged."
+
+"A number of empirical studies (Fotheringham and Wong 1991; Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018) have strongly supported the viewpoint that the estimates of coefficients in a multiple regression model are significantly influenced by the MAUP (Cramer 1964; Clark and Avery 1976; Fotheringham and Wong 1991; Larsen 2000), changing substantially in value and in direction for different spatial configurations. On the other hand, it has been shown that when aggregate observations are the simple averages of individual observations, the estimator of coefficients in linear regression remains unbiased, regardless of the process of aggregation (Prais and Aitchison 1954). Prais and Aitchison (1954) did not explicitly state that for this to hold, the linear regression model must be correctly specified. But there may be model specification errors; in particular, omission error (Amrhein 1995)."
+
+## Discussion
+
+The variables in different units, and scales may have various characteristics. The personal v.s household's records, block-level v.s city-level density, or daily v.s weekly trips are not identical.
+
+Before further discussion, it is necessary to clarify the sources of variation and their scales. 
+
+A systematic comparison should be conducted at comparable scales and a separate discussion is appropriate.
+Even some factors such as density has cross scales, these variables may have different meaning and impact at different scales.
+
+The inconsistent is not about correct or wrong.
+As @ewingTestingNewmanKenworthy2018 commented, the aggregate and disaggregate studies are asking the apples and oranges questions. 
+
+
+
+
+<!-- The significant effects of 'population centrality' or ' high-density built-up areas'.  -->
+<!-- The effects of density are not significant and have a small magnitude.  -->
+<!-- The aggregated studies show that density has a strong effect on VMT at the city scale -->
+<!-- The disaggregated studies support the 'collaborated' framework.  -->
+
+
+
+
+

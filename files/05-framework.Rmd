@@ -221,7 +221,7 @@ where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{
 
 Regression models usually assume the fixed effects of covariate on response. has to random effects
 
-In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city.
+In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city (Ding et al. 2017).
 The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
 When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.
 
@@ -406,9 +406,7 @@ c. Transit modes
 d. Catchment buffer size and type
 
 
-A primary trend in urban and transportation fields recently is the transition from techno-centric to socio-centric (Lanzini & Stochetti, 2020) [^factors-5]
 
-[^factors-5]: Lanzini P., Stochetti A.. From Techno-Centrism toSocio-Centrism: The Evolution of Principles for Urban Sustainable Mobility [J].International Journal of Sustainable Transportation, 2020, in Press.
 
 Banister (2008) suggests that urban sustainable mobility should be the third principle in addition to derived demand and cost minimization.
 

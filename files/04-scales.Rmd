@@ -2,10 +2,10 @@
 
 # Spatial Scales
 
-Due to the various data sources or research interests, travel related studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
+Due to the various data sources or research interests, built environment-travel studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
 
 Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
-
+It is not reasonable to neglect the scale issues in built environment-travel studies.
 
 
 ## Urban/Region Scale

@@ -10,19 +10,21 @@ editor_options:
 
 Before discussing the impact of land use on travel, the first question is, does land use characteristics is the treatment affecting the outcome of travel behavior? Or the affecting direction is opposite? Technically, randomized experiments can identify the causal relationship between them. But in real life, it is impossible to setup some experimental areas and randomly assign people to live in these areas. Another way is to observe the dynamic of these factors to figure out the direction of influences.
 
-In U.S. history, Muller (2017) reviews the evolution of the U.S. urban form and describe the four eras of intrametropolitan growth (Figure \ref{4age}): the walking-horsecar era (1800s -- 1890s), the electric streetcar or transit era (1890s -- 1920s), the recreational automobile era (1930s -- 1950s), and the freeway era (1950s -- 2010s) [^factors-1]. Each of the four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each era has the distinctive travel mode, range of distance, and land-use patterns. People can see that the innovation of transportation technology is a determining constraint to other factors and a main driving force to launch the next era.
+Muller (2017) reviews the evolution of the U.S. urban form and describe the four eras of intrametropolitan growth (Figure \ref{4age}) in U.S. history: the walking-horsecar era (1800s -- 1890s), the electric streetcar or transit era (1890s -- 1920s), the recreational automobile era (1930s -- 1950s), and the freeway era (1950s -- 2010s) [^factors-1]. Each of the four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each era has the distinctive travel mode, range of distance, and land-use patterns. People can see that the innovation of transportation technology is a determining constraint to other factors and a main driving force to launch the next era.
 
 [^factors-1]: The Geography of Transport Systems. Jean-Paul Rodrigue (2020), New York: Routledge. ISBN 978-0-367-36463-2
 
-New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools is called confounder who affect both treatment and outcome. But what is the relationship between travel and land use? A simple way is to observe the sequence fo events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today multiple travel modes exist in old town but suburban seldom has old mode like streetcar. Thus, land use is more like a outcome rather than treatment.
+![One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.\label{4age}](fig/one_hour_commmuting2.png){width="50%"}
 
-However, the urban form remains relatively more stable than individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, the relationship of VMT-density can hold in the context of the current stage of urban development and changing travel behaviors.
+New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools is called confounder or common cause who affect both treatment and outcome. But what is the relationship between travel and land use? A simple way is to observe the sequence fo events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today multiple travel modes exist in old town but suburban seldom has old mode like streetcar. Thus, land use is more like a outcome rather than treatment.
+
+However, the urban form remains relatively more stable than individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, land use can be treated as indepedent variables in the context of the current stage of urban development. The relationship of land use with respect to travel can hold for a period of time.
 
 Over the long term, the relationships among travel, land use, and other physical, socioeconomic, demographic factors were interactive and iterative. Levinson and Krizek (2018) emphasize transportation is a necessary but not a sufficient factor for any development. The change of eras is a comprehensive outcome of socioeconomic and technological development. Which factor caused which effect does not have a simple answer. A conservative view is that land use and travel behavior are determined simultaneously by the transportation costs (Don Pickrell, 1999).
 
 Although randomized experiments about travel and land use are impossible, once the simultaneous relationship holds, the regression model still can explore the associations between travel and land use.
 
-<!-- ![One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.\label{4age}](fig/one_hour_commmuting2.png){width="50%"} -->
+
 
 
 
@@ -38,7 +40,7 @@ $$\begin{aligned}
 \mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
 \end{aligned}$$
 
-where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are the error terms.
+where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error terms with expected value of $0$ and variance $\sigma^2$.
 
 When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
 
@@ -46,28 +48,26 @@ $$\begin{aligned}
 E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
 \end{aligned}$$
 
-Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level VMT $\mathbf{Y}$ conditional on $\mathbf{Y}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g$ is a link function.
+Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level travel variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
 
 For the complexity of travel behavior, many other objective or subjective factors could change people's travel decisions. They include but are not limited to physical, socio-demographic, individual, and policy determinants. It seems impossible to make an exhaustive list.
 
-Previous research have identified many factors such as job opportunity, income level, lifecycle stage, habits, and preferences, having stronger impact on travel. Therefore, a sufficient model should contain these strong influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
-
-Urban studies' attentions are on built-environment factors such as urban density, design, and services. Because these factors can be intervened by policies and planning. this part of discussion will be placed in the next section separately.
-
-
-The dichotomy of individual versus environmental factors is a most common framework.
+A dichotomy of individual versus environmental factors is a most common framework.
 All relevant factors involving personal or household characteristics is treated as internal factors. While the built-environment and other environmental factors have external influences.
-Disaggregate analysis usually chooses this structure because the models try to explain the variation of individual travel behavior.
-The internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models.
+Disaggregate analysis usually chooses this structure because the models can distinguish the different sources of variation from individual and environmental factors.
 Take for example VMT models, the model is as follow.
 
 $$\begin{aligned}
-\mathbf{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\mathbf{Y}=\mathbf{X}_\mathrm{I}\boldsymbol{\beta}_\mathrm{I}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
 \end{aligned}$$
 
-where $\mathbf{X}_\mathrm{C}$ travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
+where $\mathbf{X}_\mathrm{I}$ travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
+
+Previous research have identified many internal factors such as employment status, income level, lifecycle stage, habits, and preferences, having strong impact on travel. Therefore, a sufficient model should contain these influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
 
 
+Although the internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models,
+urban studies' attentions are on built-environment factors such as urban density, design, and transit services. Because these factors can be intervened by policies and planning. This part of discussion will be placed in the next section separately.
 
 
 ### Individual Factors
@@ -87,6 +87,8 @@ Some major life events, such as transitions to higher school, labor market, marr
 -   Psychological factors
 
 -   Attitude
+
+-   Habit
 
 ### Environmental Factors
 
@@ -147,15 +149,16 @@ Another criticism argues that the global comparisons are not valid, such as comp
 
 Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. The divisions of the statistical units are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements.
 
-Density is an informative factor. Except for the mean and variance, The moments function for Urban density such as skewness, kurtosis, rank, destination density, or CBD density all can be the predictor candidates. Scolar also explore more delicate measurements of density such as Propotional Weighted Density to replace overall density. "population-weighted density is equal to conventional density plus the variance of density across the subareas used for its calculation divided by the conventional density" (Ottensmann, 2018) Some studies use a geographically weighted regression (GWR) procedure to identify significant employment density peaks.
+Density is an informative factor. Except for the mean and variance, The moments function for Urban density such as skewness, kurtosis, or rank,  all can be the predictor candidates. Scolar also explore more delicate measurements of density such as Propotional Weighted Density to replace overall density. "population-weighted density is equal to conventional density plus the variance of density across the subareas used for its calculation divided by the conventional density" (Ottensmann, 2018) Some studies use a geographically weighted regression (GWR) procedure to identify significant employment density peaks.
 
-Urban density can be represented by many approximate variables -- built-up density, residential density, or employment density. Here this paper focus on population density -- how many people live in a square mile of land - and involves others if possible.
+Urban density can be represented by many approximate variables -- built-up density, residential density, employment density, destination density, or CBD density. Here this paper focus on population density -- how many people live in a square mile of land - and involves others if possible.
 
 ### D-variables
 
-One trenchant criticism of Newman and Kenworthy's work is that the univariate or bivariate models may leave some critical factors out. In a recent debate [@fanisThreeStudiesThat2019], Newman clarified that "All our work shows that there are multiple causes of car dependence and multiple implications." Since travel behavior is a multi-dimensional issue, more socioeconomic and built environment variables were added to the multivariate analysis. The work started from adding three 'Ds' variables, *density*, *diversity*, and *design* [@cerveroTravelDemand3Ds1997], extended to five 'Ds', adding *destination accessibility* and *distance to transit* [@ewingTravelBuiltEnvironment2001a]. Another fundamental factor that influences travel mode choice behavior is the distance to destination, as would be expected (Munshi, 2016).
+One trenchant criticism of Newman and Kenworthy's work is that the univariate or bivariate models may leave some critical factors out. In a recent debate [@fanisThreeStudiesThat2019], Newman clarified that "All our work shows that there are multiple causes of car dependence and multiple implications." Since travel behavior is a multi-dimensional issue, more socio-demographic and built environment variables were added to the multivariate analysis. The work started from adding three 'Ds' variables, *density*, *diversity*, and *design* [@cerveroTravelDemand3Ds1997], extended to five 'Ds', adding *destination accessibility* and *distance to transit* [@ewingTravelBuiltEnvironment2001a]. 
+It even grows to seven with the addition of *demand management* and *demographics*. Another fundamental factor, *distance to destination* is added into the travel mode choice model (Munshi, 2016).
 
-It even grows to seven with the addition of *demand management* and *demographics*. Ds' Framework is a significance-centered mixed factor sets and becomes one of the most influential ideas among the built environment--travel literature in the past decades. Using household-level or person-level data, these studies tried to disclose more complex relationships among the candidate factors by adding more relevant variables.
+Ds' Framework is a significance-centered mixed factor sets and becomes one of the most influential ideas among the built environment--travel literature in the past decades. Using household-level or person-level data, these studies tried to disclose more complex relationships among the candidate factors by adding more relevant variables.
 
 The criticism from @handyEnoughAlreadyLet2018 says the 5Ds variables may not be independent. Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects, which rarely be investigated.
 
@@ -171,9 +174,14 @@ To address the multicollinearity and interactions issues, @cliftonGettingHereThe
 
 To get a general, comparable outcome, @ewingTravelBuiltEnvironment2010 collect more than 200 related studies and try to summarize the elasticity values using meta-analysis. Elasticity measures the percentage change in response with respect to a 1 percent increase in a predictor. Thus, it is a dimensionless parameter. After screening, sixty-two studies were selected. But divided by modes (VMT, walking, and transit use), only nine studies were used to calculate the weighted-average elasticities of VMT with respect to population density. Of nine papers, six gave zero or insignificant elasticity, while three showed significant negative values (two are -0.04 and one is -0.12). The weighted-average elasticity of job density (sample size = 9) was zero. The largest elasticity of VMT belonged to Destination accessibility, -0.20 with respect to Job accessibility by auto (sample size = 5) and -0.22 with respect to Distance to downtown (sample size = 3). Due to the small sample size, the confidence intervals were not available. The authors call for more relevant studies to refine the results.
 
-@stevensDoesCompactDevelopment2017 also try to explain the different outcomes using a meta-regression method. Based on the results from 37 studies, they found the magnitude of effects is small and suggest that compacting development has a tiny influence on driving. In @ewingDoesCompactDevelopment2017 's reply, they agreed with the values of elasticity but emphasize that Stevens' results (-0.15 \~ -0.22) are not small actually. In a forthcoming study by Ewing and Cervero, an update elasticity of VMT per capita with respect to density is -0.15 [@ewingTestingNewmanKenworthy2018].
+@stevensDoesCompactDevelopment2017 also try to explain the different outcomes using a meta-regression method. Based on the results from 37 studies, they found the magnitude of effects is small and suggest that compacting development has a tiny influence on driving. 
+His work triggers a new round of discussion (Handy, 2017; Knaap et al., 2017; Nelson, 2017; Manville, 2017; Clifton, 2017; Stevens, 2017)
 
-After the meta-analysis of built environment and travel behavior by @ewingTravelBuiltEnvironment2010, a recent update re-examines the post-2010 empirical literature and summarized the most common factors.
+In @ewingDoesCompactDevelopment2017 's reply, they agreed with the values of elasticity but emphasize that Stevens' results (-0.15 \~ -0.22) are not small actually. In a forthcoming study by Ewing and Cervero, an update elasticity of VMT per capita with respect to density is -0.15 [@ewingTestingNewmanKenworthy2018].
+In Stevens (2017)'s response to commentaries , he clarified the research goals and important questions.
+
+
+After the two milestones for meta-analysis of built environment and travel behavior, a recent update re-examines the post-2010 empirical literature and summarized the most common factors (Aston et al., 2020).
 They are Density, Urban design, Local land use mix, mono/polycentrism and centrality, and Regional jobs-housing balance
 
 

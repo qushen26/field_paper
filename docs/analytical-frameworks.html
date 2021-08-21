@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-18" />
+<meta name="date" content="2021-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -297,12 +297,12 @@ Only when the data sources cover many cities or regions, these factors can be in
 \tag{5.3}
 \mathbf{Y}=\mathbf{X}_\mathrm{U}\boldsymbol{\beta}_\mathrm{U}+\mathbf{X}_\mathrm{N}{\beta}_\mathrm{N}+\mathbf{X}_\mathrm{H}{\beta}_\mathrm{H}+\cdots+\boldsymbol{\varepsilon}
 \end{equation}\]</span>
-<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the covariates at the scales of urban, neighborhood, and household. And <span class="math inline">\(\boldsymbol{\beta}_\mathrm{U}\)</span>, <span class="math inline">\(\boldsymbol{\beta}_\mathrm{N}\)</span>, and <span class="math inline">\(\boldsymbol{\beta}_\mathrm{H}\)</span> are corresponding coeficients respectively.</p>
+<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the covariates at the scales of urban, neighborhood, and household. And <span class="math inline">\(\boldsymbol{\beta}_\mathrm{U}\)</span>, <span class="math inline">\(\boldsymbol{\beta}_\mathrm{N}\)</span>, and <span class="math inline">\(\boldsymbol{\beta}_\mathrm{H}\)</span> are corresponding coefficients respectively.</p>
 </div>
 <div id="mixed-structure" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Mixed Structure</h2>
 <p>Regression models usually assume the fixed effects of covariate on response. has to random effects</p>
-<p>In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city.
+<p>In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city (Ding et al. 2017).
 The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
 When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.</p>
 <p>In spatial analysis, autocorrelation is a common issue which means the observation values in a location will be affected by its neighbors. Mixed model can help to eliminate the neighborhood effects.</p>
@@ -310,7 +310,7 @@ When the data across many different regions, the model need to control the locat
 \tag{5.3}
 \mathbf{Y}=\mathbf{X}_\mathrm{H}\boldsymbol{\beta}+\mathbf{X}_\mathrm{N}{\gamma}+\mathbf{X}_\mathrm{U}{\delta}+\boldsymbol{\varepsilon}
 \end{equation}\]</span>
-<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the same as above. <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of fixed effects. <span class="math inline">\(\boldsymbol{\gamma}\)</span> and <span class="math inline">\(\boldsymbol{\delta}\)</span> are two vectors of random effects at neighborhood and city scales. Assume that <span class="math inline">\(\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})\)</span> and <span class="math inline">\(\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})\)</span>. And also assume <span class="math inline">\(Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}\)</span>.</p>
+<p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the same as above. <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of fixed effects. <span class="math inline">\(\boldsymbol{\gamma}\)</span> and <span class="math inline">\(\boldsymbol{\delta}\)</span> are two vectors of random effects at neighborhood and urban scales. Assume that <span class="math inline">\(\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})\)</span> and <span class="math inline">\(\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})\)</span>. And also assume <span class="math inline">\(Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}\)</span>.</p>
 </div>
 <div id="non-linear-models" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Non-linear models</h2>
@@ -323,7 +323,7 @@ When the data across many different regions, the model need to control the locat
 \tag{5.4}
 \mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathbf{X}_\mathrm{E})\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
 \end{equation}\]</span>
-<p>In the model (Equation <a href="analytical-frameworks.html#eq:nonlinear">(5.4)</a>), <span class="math inline">\(m(\mathbf{X_{D}},\mathbf{X}_\mathrm{E})\)</span> is a proper function of built environment covariates.</p>
+<p>In the model (Equation <a href="analytical-frameworks.html#eq:nonlinear">(5.4)</a>), <span class="math inline">\(m(\mathbf{X}_\mathrm{E})\)</span> is a proper function of built environment covariates.</p>
 <p>The non-linear methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.</p>
 <p>The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The threshold studies in urban transportation field remain in the early stages.</p>
 <!-- All factors related to spatial distributions have the morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->

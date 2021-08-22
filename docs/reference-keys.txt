@@ -1,9 +1,11 @@
 eq:sf1
+fig:4age
 eq:hyperbolic
 fig:cognitive3
 eq:stepwise
 eq:multilayer
 eq:multiscale
+fig:ewing-gam
 eq:nonlinear
 fig:diagram3
 intro

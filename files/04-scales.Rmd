@@ -5,12 +5,13 @@
 Due to the various data sources or research interests, built environment-travel studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
 
 Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
+Previous studies found that the density variables evaluated at different spatial scales have different impact on travel (Boarnet & Crane, 2001; Buchanan et al., 2006; Sultana & Weber, 2007).
 It is not reasonable to neglect the scale issues in built environment-travel studies.
 
 
 ## Urban/Region Scale
 
-Tradition of aggregate analysis treat a city of metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
+Tradition of aggregate analysis treat a city or metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
 
 @vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
 
@@ -41,30 +42,25 @@ Lee, S., & Lee, B. (2020)[^factors-8] also conduct a study involving factors at 
 ## Modifiable areal unit problem (MAUP)
 
 
-Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger (Gehlke & Biehl, 1934). This phenomenon is called modifiable areal unit problem (MAUP) and ecological fallacy (Openshaw, 1984; Arbia 1988).
+Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger (Gehlke & Biehl, 1934). This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) and ecological fallacy (Openshaw, 1984; Arbia 1988; Larsen 2000).
 
-In aggregated analysis, two kinds of MAUP often happen simultaneously. The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
+In aggregated analysis, two kinds of MAUP often happen simultaneously (Openshaw and Taylor 1979; Wong 2009). The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
 
-Fotheringham & Wong (1991) found that multivariate analysis is unreliable when using the data from areal units. The check of unit consistency may help to examine the biases by MAUP on the estimations.[^factors-9]
+Fotheringham & Wong (1991) found that multivariate analysis is unreliable when using the data from areal units. 
+Both value and direction of estimated coefficients may change for different spatial configurations (Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018).
 
-[^factors-9]: Fotheringham & Wong. (1991). The Modifiable Areal Unit Problem in Multivariate Statistical Analysis
+Meanwhile, some aggregate studies shows that, using the simple averages of individual data, the estimations of coefficients in linear model are unbiased (Prais and Aitchison 1954). A condition is that the regression model must fix the *omission error* using proper specification (Amrhein 1995, Ye \& Rogerson. 2021).
+The check of unit consistency may help to examine the biases by MAUP on the estimations.
 
-              Ye & Rogerson. (2021).The Impacts of the Modifiable Areal Unit Problem (MAUP) on Omission Error 
 
-"The MAUP is one of the most longstanding and far-reaching problems in geography. It refers to the sensitivity or the inconsistency of the results of spatial analyses in the same study area with different spatial configurations (Openshaw and Taylor 1981; Openshaw 1983; Fotheringham and Wong 1991; Larsen 2000). The MAUP can be further divided into the scale problem and the zoning problem (Openshaw and Taylor 1979; Wong 2009): the scale problem is the inconsistency/sensitivity of analysis results caused by aggregating the observations into different numbers of spatial units, while the zoning problem is the inconsistency/sensitivity of analysis results due to redrawing the boundaries of spatial units in the study area while keeping the number of spatial units unchanged."
-
-"A number of empirical studies (Fotheringham and Wong 1991; Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018) have strongly supported the viewpoint that the estimates of coefficients in a multiple regression model are significantly influenced by the MAUP (Cramer 1964; Clark and Avery 1976; Fotheringham and Wong 1991; Larsen 2000), changing substantially in value and in direction for different spatial configurations. On the other hand, it has been shown that when aggregate observations are the simple averages of individual observations, the estimator of coefficients in linear regression remains unbiased, regardless of the process of aggregation (Prais and Aitchison 1954). Prais and Aitchison (1954) did not explicitly state that for this to hold, the linear regression model must be correctly specified. But there may be model specification errors; in particular, omission error (Amrhein 1995)."
 
 ## Discussion
 
-The variables in different units, and scales may have various characteristics. The personal v.s household's records, block-level v.s city-level density, or daily v.s weekly trips are not identical.
-
-Before further discussion, it is necessary to clarify the sources of variation and their scales. 
-
-A systematic comparison should be conducted at comparable scales and a separate discussion is appropriate.
-Even some factors such as density has cross scales, these variables may have different meaning and impact at different scales.
-
-The inconsistent is not about correct or wrong.
+The factors measured at a specific scale could only explain the variation generated at or above that level.
+Even some factors such as density has cross scales.
+Their distributions in different units and scales are not identical. It is reasonable for them to have various meanings and influences on travel.
+A systematic comparison should be conducted among multi-scale studies.
+The inconsistent might not be about correct or wrong.
 As @ewingTestingNewmanKenworthy2018 commented, the aggregate and disaggregate studies are asking the apples and oranges questions. 
 
 

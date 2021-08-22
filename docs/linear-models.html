@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-20" />
+<meta name="date" content="2021-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,7 +238,7 @@ div.csl-indent {
 </div>
 <div id="models-specifications" class="section level3" number="8.0.3">
 <h3><span class="header-section-number">8.0.3</span> Models Specifications</h3>
-<p><a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></p>
+<p><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a></p>
 <div id="theoretical-considerations" class="section level4" number="8.0.3.1">
 <h4><span class="header-section-number">8.0.3.1</span> Theoretical considerations</h4>
 </div>
@@ -295,7 +295,7 @@ div.csl-indent {
 <div id="elasticity" class="section level4" number="8.0.5.2">
 <h4><span class="header-section-number">8.0.5.2</span> Elasticity</h4>
 <p>Definition: Commonly used to determine the relative importance of a variable in terms of its influence on a dependent variable. It is generally interpreted as the percent change in the dependent variable induced by a 1% change in the independent variable.</p>
-<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></p>
+<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></p>
 <table>
 <caption>Elasticity Estimates for Various Functional Forms</caption>
 <colgroup>
@@ -339,11 +339,11 @@ div.csl-indent {
 <tr class="even">
 <td align="center">Logit</td>
 <td align="center"><span class="math inline">\(\beta p_i(1-p_i)\)</span></td>
-<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a></td>
+<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></td>
 </tr>
 <tr class="odd">
 <td align="center">Poisson</td>
-<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a></td>
+<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a></td>
 <td align="center"><span class="math inline">\(\beta X_i\)</span></td>
 </tr>
 <tr class="even">
@@ -353,12 +353,12 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td align="center">Tr-Pois</td>
-<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a></td>
+<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
 <td align="center">Hurdle-P</td>
-<td align="center">separately<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a></td>
+<td align="center">separately<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a></td>
 <td align="center"></td>
 </tr>
 </tbody>
@@ -386,13 +386,13 @@ Ewing, Reid, Shima Hamidi, Frank Gallivan, Arthur C Nelson, and James B Grace. 2
 </div>
 <div class="footnotes">
 <hr />
-<ol start="48">
-<li id="fn48"><p>There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).<a href="linear-models.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref49" class="footnote-back">↩︎</a></p></li>
-<li id="fn50"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref50" class="footnote-back">↩︎</a></p></li>
-<li id="fn51"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref51" class="footnote-back">↩︎</a></p></li>
-<li id="fn52"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref52" class="footnote-back">↩︎</a></p></li>
-<li id="fn53"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref53" class="footnote-back">↩︎</a></p></li>
+<ol start="47">
+<li id="fn47"><p>There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).<a href="linear-models.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref51" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref52" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

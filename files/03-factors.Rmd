@@ -14,7 +14,10 @@ Muller (2017) reviews the evolution of the U.S. urban form and describe the four
 
 [^factors-1]: The Geography of Transport Systems. Jean-Paul Rodrigue (2020), New York: Routledge. ISBN 978-0-367-36463-2
 
-![One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.\label{4age}](fig/one_hour_commmuting2.png){width="50%"}
+```{r 4age,eval=T,out.width='50%', fig.align='center',fig.cap="One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213."}
+knitr::include_graphics("fig/one_hour_commmuting2.png")
+```
+
 
 New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools is called confounder or common cause who affect both treatment and outcome. But what is the relationship between travel and land use? A simple way is to observe the sequence fo events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today multiple travel modes exist in old town but suburban seldom has old mode like streetcar. Thus, land use is more like a outcome rather than treatment.
 
@@ -61,7 +64,7 @@ $$\begin{aligned}
 \mathbf{Y}=\mathbf{X}_\mathrm{I}\boldsymbol{\beta}_\mathrm{I}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
 \end{aligned}$$
 
-where $\mathbf{X}_\mathrm{I}$ travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
+where $\mathbf{X}_\mathrm{I}$ are travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
 
 Previous research have identified many internal factors such as employment status, income level, lifecycle stage, habits, and preferences, having strong impact on travel. Therefore, a sufficient model should contain these influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
 
@@ -98,7 +101,7 @@ Physical Environment and other factors
 
 -   Infrastructure supplement
 
-Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space and policy
+Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space
 
 -   policy interventions
 
@@ -134,20 +137,24 @@ In many disaggregated studies, the effects of density are not significant and ha
 
 [^factors-4]: @gordonGasolineConsumptionCities1989;@dujardinHometoworkCommutingUrban2012;@perumalContextualDensityUS2017
 
+
+
 ```{=tex}
 \begin{equation}
-(\#eq:hyperbolic)
 \begin{split}
  & \text{VMT}_{average}  =\beta\cdot  \text{Density}  +\cdots\\ 
 \implies & \frac{\text{VMT}_{total}}{\text{Population}}  = \beta\cdot  \frac{\text{Population}}{\text{Area}}  +\cdots\\
 \implies & \text{VMT}_{total} = \beta\cdot  \frac{(\text{Population})^2}{\text{Area}}  +\cdots
 \end{split}
+(\#eq:hyperbolic)
 \end{equation}
 ```
 
 Another criticism argues that the global comparisons are not valid, such as comparing Hong Kong and Houston. @ewingTestingNewmanKenworthy2018 created a subset with only US Metropolitan areas from @kenworthyPatternsAutomobileDependence1999 's original data set. They fit the same model but get a much lower $R^2$ (0.096) than Kenworthy and Laube's (0.72). A similar work by @fanisThreeStudiesThat2019 shows the low $R^2$ for US cities (0.1838) and European cities (0.2804) when deconstructing Newman and Kenworthy's data by continent. Actually, any research question has its corresponding sampling design. Choosing a cutoff from the whole data often gets a different result. These criticisms are unfair for Kenworthy and Laube's work. But it is true that the US cities have higher VMT and lower density than other countries' cities. Recent evidence over a 20-year period from other cities and counties show that the status quo of the U.S. only represents a small window of the global trend[@kenworthyAutomobileDependenceEmerging2017].
 
-Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. The divisions of the statistical units are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements.
+Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. 
+Some studies found density might be an intermediate variable or proxy to other land use variables such as land use mix, street network, and transit services (Ewing & Cervero, 2010; Handy, 2005).
+The divisions of the statistical units in the U.S. are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements. 
 
 Density is an informative factor. Except for the mean and variance, The moments function for Urban density such as skewness, kurtosis, or rank,  all can be the predictor candidates. Scolar also explore more delicate measurements of density such as Propotional Weighted Density to replace overall density. "population-weighted density is equal to conventional density plus the variance of density across the subareas used for its calculation divided by the conventional density" (Ottensmann, 2018) Some studies use a geographically weighted regression (GWR) procedure to identify significant employment density peaks.
 
@@ -160,7 +167,7 @@ It even grows to seven with the addition of *demand management* and *demographic
 
 Ds' Framework is a significance-centered mixed factor sets and becomes one of the most influential ideas among the built environment--travel literature in the past decades. Using household-level or person-level data, these studies tried to disclose more complex relationships among the candidate factors by adding more relevant variables.
 
-The criticism from @handyEnoughAlreadyLet2018 says the 5Ds variables may not be independent. Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects, which rarely be investigated.
+The criticism from @handyEnoughAlreadyLet2018 says the 5Ds variables may not be independent. A meta-analysis found that spatial multicollinearity is widespread in this field (Gim, 2013). Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects. 
 
 ### Synthesized Index
 

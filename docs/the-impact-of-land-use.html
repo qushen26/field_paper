@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-20" />
+<meta name="date" content="2021-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,9 +223,11 @@ div.csl-indent {
 <h2><span class="header-section-number">3.1</span> Influencing Direction</h2>
 <p>Before discussing the impact of land use on travel, the first question is, does land use characteristics is the treatment affecting the outcome of travel behavior? Or the affecting direction is opposite? Technically, randomized experiments can identify the causal relationship between them. But in real life, it is impossible to setup some experimental areas and randomly assign people to live in these areas. Another way is to observe the dynamic of these factors to figure out the direction of influences.</p>
 <p>Muller (2017) reviews the evolution of the U.S. urban form and describe the four eras of intrametropolitan growth (Figure ) in U.S. history: the walking-horsecar era (1800s – 1890s), the electric streetcar or transit era (1890s – 1920s), the recreational automobile era (1930s – 1950s), and the freeway era (1950s – 2010s).<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Each of the four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each era has the distinctive travel mode, range of distance, and land-use patterns. People can see that the innovation of transportation technology is a determining constraint to other factors and a main driving force to launch the next era.</p>
-<div class="figure">
-<img src="fig/one_hour_commmuting2.png" style="width:50.0%" alt="" />
-<p class="caption">One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:4age"></span>
+<img src="fig/one_hour_commmuting2.png" alt="One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213." width="50%" />
+<p class="caption">
+Figure 3.1: One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.
+</p>
 </div>
 <p>New transportation tools shifted people’s travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools is called confounder or common cause who affect both treatment and outcome. But what is the relationship between travel and land use? A simple way is to observe the sequence fo events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today multiple travel modes exist in old town but suburban seldom has old mode like streetcar. Thus, land use is more like a outcome rather than treatment.</p>
 <p>However, the urban form remains relatively more stable than individual’s travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn’t make sense that VMT will change the density in the short term. Therefore, land use can be treated as indepedent variables in the context of the current stage of urban development. The relationship of land use with respect to travel can hold for a period of time.</p>
@@ -252,7 +254,7 @@ Take for example VMT models, the model is as follow.</p>
 <p><span class="math display">\[\begin{aligned}
 \mathbf{Y}=\mathbf{X}_\mathrm{I}\boldsymbol{\beta}_\mathrm{I}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
 \end{aligned}\]</span></p>
-<p>where <span class="math inline">\(\mathbf{X}_\mathrm{I}\)</span> travelers’ internal characteristics; <span class="math inline">\(\mathbf{X}_\mathrm{E}\)</span> are built environment and other environment covariates.</p>
+<p>where <span class="math inline">\(\mathbf{X}_\mathrm{I}\)</span> are travelers’ internal characteristics; <span class="math inline">\(\mathbf{X}_\mathrm{E}\)</span> are built environment and other environment covariates.</p>
 <p>Previous research have identified many internal factors such as employment status, income level, lifecycle stage, habits, and preferences, having strong impact on travel. Therefore, a sufficient model should contain these influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables.</p>
 <p>Although the internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models,
 urban studies’ attentions are on built-environment factors such as urban density, design, and transit services. Because these factors can be intervened by policies and planning. This part of discussion will be placed in the next section separately.</p>
@@ -281,7 +283,7 @@ urban studies’ attentions are on built-environment factors such as urban densi
 <ul>
 <li>Infrastructure supplement</li>
 </ul>
-<p>Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space and policy</p>
+<p>Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space</p>
 <ul>
 <li>policy interventions</li>
 </ul>
@@ -303,15 +305,17 @@ urban studies’ attentions are on built-environment factors such as urban densi
 <p>The criticisms include their ideological grounds, dataset, and model specification<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>. A criticism is that, for aggregated data, the population variable on both sides of the equation artificially creates a hyperbolic function (Equation <a href="the-impact-of-land-use.html#eq:hyperbolic">(3.1)</a>).
 In many disaggregated studies, the effects of density are not significant and have a small magnitude.</p>
 <span class="math display" id="eq:hyperbolic">\[\begin{equation}
-\tag{3.1}
 \begin{split}
  &amp; \text{VMT}_{average}  =\beta\cdot  \text{Density}  +\cdots\\ 
 \implies &amp; \frac{\text{VMT}_{total}}{\text{Population}}  = \beta\cdot  \frac{\text{Population}}{\text{Area}}  +\cdots\\
 \implies &amp; \text{VMT}_{total} = \beta\cdot  \frac{(\text{Population})^2}{\text{Area}}  +\cdots
 \end{split}
+\tag{3.1}
 \end{equation}\]</span>
 <p>Another criticism argues that the global comparisons are not valid, such as comparing Hong Kong and Houston. <span class="citation"><a href="#ref-ewingTestingNewmanKenworthy2018" role="doc-biblioref">Reid Ewing et al.</a> (<a href="#ref-ewingTestingNewmanKenworthy2018" role="doc-biblioref">2018</a>)</span> created a subset with only US Metropolitan areas from <span class="citation"><a href="#ref-kenworthyPatternsAutomobileDependence1999" role="doc-biblioref">J. R. Kenworthy and Laube</a> (<a href="#ref-kenworthyPatternsAutomobileDependence1999" role="doc-biblioref">1999</a>)</span> ‘s original data set. They fit the same model but get a much lower <span class="math inline">\(R^2\)</span> (0.096) than Kenworthy and Laube’s (0.72). A similar work by <span class="citation"><a href="#ref-fanisThreeStudiesThat2019" role="doc-biblioref">Fanis</a> (<a href="#ref-fanisThreeStudiesThat2019" role="doc-biblioref">2019</a>)</span> shows the low <span class="math inline">\(R^2\)</span> for US cities (0.1838) and European cities (0.2804) when deconstructing Newman and Kenworthy’s data by continent. Actually, any research question has its corresponding sampling design. Choosing a cutoff from the whole data often gets a different result. These criticisms are unfair for Kenworthy and Laube’s work. But it is true that the US cities have higher VMT and lower density than other countries’ cities. Recent evidence over a 20-year period from other cities and counties show that the status quo of the U.S. only represents a small window of the global trend<span class="citation">(<a href="#ref-kenworthyAutomobileDependenceEmerging2017" role="doc-biblioref">J. Kenworthy 2017</a>)</span>.</p>
-<p>Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. The divisions of the statistical units are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements.</p>
+<p>Density variable have some advantages. Density is calculated by population size and area size from census data, which are widely available over the country. In contrast, some individual variables are not as measurable and accurate as density.
+Some studies found density might be an intermediate variable or proxy to other land use variables such as land use mix, street network, and transit services (Ewing &amp; Cervero, 2010; Handy, 2005).
+The divisions of the statistical units in the U.S. are from an uniform criteria at multiple scales. Thus, density values is more objective, and comparable comparing other measurements.</p>
 <p>Density is an informative factor. Except for the mean and variance, The moments function for Urban density such as skewness, kurtosis, or rank, all can be the predictor candidates. Scolar also explore more delicate measurements of density such as Propotional Weighted Density to replace overall density. “population-weighted density is equal to conventional density plus the variance of density across the subareas used for its calculation divided by the conventional density” (Ottensmann, 2018) Some studies use a geographically weighted regression (GWR) procedure to identify significant employment density peaks.</p>
 <p>Urban density can be represented by many approximate variables – built-up density, residential density, employment density, destination density, or CBD density. Here this paper focus on population density – how many people live in a square mile of land - and involves others if possible.</p>
 </div>
@@ -320,7 +324,7 @@ In many disaggregated studies, the effects of density are not significant and ha
 <p>One trenchant criticism of Newman and Kenworthy’s work is that the univariate or bivariate models may leave some critical factors out. In a recent debate <span class="citation">(<a href="#ref-fanisThreeStudiesThat2019" role="doc-biblioref">Fanis 2019</a>)</span>, Newman clarified that “All our work shows that there are multiple causes of car dependence and multiple implications.” Since travel behavior is a multi-dimensional issue, more socio-demographic and built environment variables were added to the multivariate analysis. The work started from adding three ‘Ds’ variables, <em>density</em>, <em>diversity</em>, and <em>design</em> <span class="citation">(<a href="#ref-cerveroTravelDemand3Ds1997" role="doc-biblioref">Cervero and Kockelman 1997</a>)</span>, extended to five ‘Ds,’ adding <em>destination accessibility</em> and <em>distance to transit</em> <span class="citation">(<a href="#ref-ewingTravelBuiltEnvironment2001a" role="doc-biblioref">Reid Ewing and Cervero 2001</a>)</span>.
 It even grows to seven with the addition of <em>demand management</em> and <em>demographics</em>. Another fundamental factor, <em>distance to destination</em> is added into the travel mode choice model (Munshi, 2016).</p>
 <p>Ds’ Framework is a significance-centered mixed factor sets and becomes one of the most influential ideas among the built environment–travel literature in the past decades. Using household-level or person-level data, these studies tried to disclose more complex relationships among the candidate factors by adding more relevant variables.</p>
-<p>The criticism from <span class="citation"><a href="#ref-handyEnoughAlreadyLet2018" role="doc-biblioref">Handy</a> (<a href="#ref-handyEnoughAlreadyLet2018" role="doc-biblioref">2018</a>)</span> says the 5Ds variables may not be independent. Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects, which rarely be investigated.</p>
+<p>The criticism from <span class="citation"><a href="#ref-handyEnoughAlreadyLet2018" role="doc-biblioref">Handy</a> (<a href="#ref-handyEnoughAlreadyLet2018" role="doc-biblioref">2018</a>)</span> says the 5Ds variables may not be independent. A meta-analysis found that spatial multicollinearity is widespread in this field (Gim, 2013). Although previous studies usually check multicollinearity issues, these variables still correlate with each other in some ways and may have strong interaction effects.</p>
 </div>
 <div id="synthesized-index" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Synthesized Index</h3>

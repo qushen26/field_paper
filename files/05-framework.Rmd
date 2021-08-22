@@ -4,7 +4,7 @@
 Based on related theories and studies, this section introduces several different analytical frameworks. All three explanatory frameworks can find supportive evidences.
 They reflect the cognitive differences on this topic from various perspectives (Figure \@ref(fig:cognitive3)).
 
-```{r cognitive3,eval=T,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
+```{r cognitive3,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
 # manypoint<- plot(rnorm(30),rnorm(30))
 DiagrammeR::grViz("
 digraph C {
@@ -173,14 +173,16 @@ Therefore, this structure is more flexible and is consistent with real decision 
 
 ```{=tex}
 \begin{equation}
-(\#eq:multilayer)
 \begin{split}
 E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\boldsymbol{\beta})\\
 E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&\boldsymbol{\mu_1}=g^{-1}(\mathbf{X_1}\boldsymbol{\gamma})\\
-\mathbf{Z}_{\{car\}}=&\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}\\
+\mathbf{Z}_{\{car\}}=&\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}
 \end{split}
+(\#eq:multilayer)
 \end{equation}
 ```
+
+
 
 where $\mathbf{Y}_{\{yes,no\}}$ is a binary variable of making a trip or not. $\mathbf{Y}_{\{car,bus,...\}}$ is a categorical variable only including the cases of making a trip. $\mathbf{Z}_{\{car\}}$ is a continuous variable represent driving distance among the group of choosing driving. $\mathbf{X}_{\{0,1,2\}}$ means the three equations could have different model specifications and will estimate corresponding coefficients, $\boldsymbol{\beta}$, $\boldsymbol{\gamma}$, and $\boldsymbol{\delta}$.
 
@@ -241,8 +243,10 @@ where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{
 
 As @cliftonGettingHereThere2017 said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], Ewing's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
 
-![Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form).\label{ewing-gam}](fig/Ewing_gam1.png)
 
+```{r ewing-gam,eval=T,out.width='50%', fig.align='center',fig.cap="Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form)"}
+knitr::include_graphics("fig/Ewing_gam1.png")
+```
 
 ```{=tex}
 \begin{equation}

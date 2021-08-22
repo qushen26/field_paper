@@ -24,9 +24,9 @@ Bounded rationality focused on the limitation of self-control (March and Simon, 
 
 ### Theory of Planned Behavior
 
-In psychology, many theories and models are developed to explain people's decision-making processes [^theory-1].
+In psychology, many theories and models are developed to explain people's decision-making processes. [^theory-1]
 
-[^theory-1]: CMDT=Cognitive moral development theory (Kohlberg, 1984),
+[^theory-1]: CMDT=Cognitive moral development theory (Kohlberg, 1984), 
 
              ITB=Ipsative theory of behavior (Frey, 1988),
 

@@ -14,7 +14,7 @@ output:
     toc_depth: 4
   citation_package: biblatex
 documentclass: book
-bibliography: [fieldpaper.bib, book.bib, packages.bib]
+bibliography: [fieldpaper0822.bib, unsorted.bib, book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: qushen26/field_paper

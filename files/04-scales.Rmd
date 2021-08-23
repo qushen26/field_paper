@@ -5,7 +5,7 @@
 Due to the various data sources or research interests, built environment-travel studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
 
 Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
-Previous studies found that the density variables evaluated at different spatial scales have different impact on travel (Boarnet & Crane, 2001; Buchanan et al., 2006; Sultana & Weber, 2007).
+Previous studies found that the density variables evaluated at different spatial scales have different impact on travel [@boarnetInfluenceLandUse2001; @buchananEffectUrbanGrowth2006; @sultanaJourneytoWorkPatternsAge2007].
 It is not reasonable to neglect the scale issues in built environment-travel studies.
 
 
@@ -31,25 +31,22 @@ The results of travel models at different scales are often inconsistent. Using t
 
 ## Multi-scale Studies
 
-Schwanen (2003) explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, Ewing et al. (2020)[^factors-7] identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
+@schwanenImpactMetropolitanStructure2004 explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, @ewingReducingVehicleMiles2020 identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
 
-[^factors-7]: Ewing et al. (2020). Reducing Vehicle Miles Traveled, Encouraging Walk Trips, and Facilitating Efficient Trip Chains Through Polycentric Development
+@leeComparingImpactsLocal2020 also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
 
-Lee, S., & Lee, B. (2020)[^factors-8] also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
-
-[^factors-8]: Lee, S., & Lee, B. (2020). Comparing the impacts of local land use and urban spatial structure on household VMT and GHG emissions.
 
 ## Modifiable areal unit problem (MAUP)
 
 
-Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger (Gehlke & Biehl, 1934). This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) and ecological fallacy (Openshaw, 1984; Arbia 1988; Larsen 2000).
+Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger [@gehlkeCertainEffectsGrouping1934]. This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) and ecological fallacy [@openshawEcologicalFallaciesAnalysis1984].
 
-In aggregated analysis, two kinds of MAUP often happen simultaneously (Openshaw and Taylor 1979; Wong 2009). The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
+In aggregated analysis, two kinds of MAUP often happen simultaneously [@wongModifiableArealUnit2004]. The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
 
-Fotheringham & Wong (1991) found that multivariate analysis is unreliable when using the data from areal units. 
-Both value and direction of estimated coefficients may change for different spatial configurations (Lee, Cho, and Kim 2016; Xu, Huang, and Dong 2018).
+@fotheringhamModifiableArealUnit1991 found that multivariate analysis is unreliable when using the data from areal units. 
+Both value and direction of estimated coefficients may change for different spatial configurations [@leeModifiableArealUnit2016; @xuModifiableArealUnit2018].
 
-Meanwhile, some aggregate studies shows that, using the simple averages of individual data, the estimations of coefficients in linear model are unbiased (Prais and Aitchison 1954). A condition is that the regression model must fix the *omission error* using proper specification (Amrhein 1995, Ye \& Rogerson. 2021).
+Meanwhile, some aggregate studies shows that, using the simple averages of individual data, the estimations of coefficients in linear model are unbiased [@praisGroupingObservationsRegression1954]. A condition is that the regression model must fix the *omission error* using proper specification [@amrheinSearchingElusiveAggregation1995; @yeImpactsModifiableAreal2021].
 The check of unit consistency may help to examine the biases by MAUP on the estimations.
 
 

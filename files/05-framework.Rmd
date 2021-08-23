@@ -1,7 +1,7 @@
 
 # Analytical Frameworks
 
-Based on related theories and studies, this section introduces several different analytical frameworks. All three explanatory frameworks can find supportive evidences.
+Based on related theories and studies, this section introduces several different analytical frameworks [@gotschiComprehensiveConceptualFramework2017]. All three explanatory frameworks can find supportive evidences.
 They reflect the cognitive differences on this topic from various perspectives (Figure \@ref(fig:cognitive3)).
 
 ```{r cognitive3,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
@@ -121,13 +121,13 @@ node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0
 
 ## Stepwise Structure
 
-Ben-Akiva and Atherton (1977) introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
+@ben-arivaMETHODOLOGYSHORTRANGETRAVEL1977 introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
 Car ownership belongs medium-term decision since people usually don't purchase or sell a car very often.
 Residential location choice is long-term decision because relocation is the most infrequent event than others.
 
 Under this framework, the decisions in longer term can affect the decisions in shorter term,  but not vice versa.
-For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior (Munshi, 2016).
-In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. (Van Acker and Witlox, 2011; Ding et al., 2017; De Vos et al., 2021).
+For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior [@munshiBuiltEnvironmentMode2016].
+In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. [@dingExploringInfluenceBuilt2017; @devosIndirectEffectBuilt2021].
 A VMT models with stepwise framework is as follow.
 
 ```{=tex}
@@ -142,7 +142,7 @@ where $\boldsymbol{\beta}$ are the coefficients with respect to long-term factor
 There could be two-way interaction effect between long-term and medium-term variables; three-way interaction effects among long-term, medium-term and short-term variables in the model (Equation \@ref(eq:stepwise)). 
 
 This framework works well for commuting trips because people will not change work place very often. The mobility theories also agree with this pattern.
-"commuting trips are stable in time and account for the largest fraction of the total flows in a population."
+"commuting trips are stable in time and account for the largest fraction of the total flows in a population." [@vanackerCommutingTripsTours2011].
 
 However, the number of non-commuting trips in the U.S. have been more than commuting trips in recent years (TODO source).
 For non-commuting travel purposes, such as shopping, leisure, or socializing, the destination choices are more flexible.
@@ -166,7 +166,7 @@ Starting from a travel demand or purpose, the traveler decides to make a trip or
 A logit or probit model will fit all the data using a suitable model specification.
 
 Then the second layer with polychotomous nodes is about mode choice, which is respect to the multinomial models.
-At the bottom layer, a linear (or log-linear) model will only fit the data with positive driving distance (hurdle models).
+At the bottom layer, a linear (or log-linear) model will only fit the data with positive driving distance (hurdle models; @maModelingTrafficCrash2015; @ewingVaryingInfluencesBuilt2015).
 It is remarkable that the covariates set could vary in different layer's models. For example the lifecycle factor could strongly affect the travel frequency but not affect the driving distance significantly.
 Therefore, this structure is more flexible and is consistent with real decision process.
 
@@ -223,7 +223,7 @@ where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{
 
 Regression models usually assume the fixed effects of covariate on response. has to random effects
 
-In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city (Ding et al. 2017).
+In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city [@dingInfluencesBuiltEnvironment2017].
 The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
 When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.
 
@@ -352,7 +352,7 @@ A TOD project, and a neighborhood upzoning may change or not change people's tra
 
 - A case study
 
-In 2019, Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots [^a]. 'Missing Middle Housing' (Figure \@ref(fig:MMH)) claims that more middle-dense communities would make less reliance on cars [^b].
+In 2019, Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots [^a]. 'Missing Middle Housing' (Figure \ref{MMH}) claims that more middle-dense communities would make less reliance on cars [^b].
 
 [^a]: <https://olis.leg.state.or.us/liz/2019R1/Downloads/MeasureDocument/HB2001>
 

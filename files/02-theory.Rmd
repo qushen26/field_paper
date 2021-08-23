@@ -8,19 +8,19 @@ Are 'decision' and 'choice' the same when discussing travel modes? Literally, a 
 
 ### Rational Choice Theory
 
-For prescriptive, analytical everyday decision-making, rationality is a basic assumption in reasoned behavior or rational choice theories (Edwards, 1954,Von Neumann and Morgenstern, 1944)(von Neumann and Morgenstern, 1947; Savage, 1954).
+For prescriptive, analytical everyday decision-making, rationality is a basic assumption in reasoned behavior or rational choice theories [@edwardsTheoryDecisionMaking1954; @vonneumannTheoryGamesEconomic1944].
 
 This category is also called 'Normative Decision Theory', which assume people a traveler is an ideal decision maker who are full rational. It requires three necessary steps including information collection, utility evaluation, and choice making.
 
 -   Expected Utility Theory (EUT)
 
-Traditional economics focus on the utility evaluation and come up with the Expected Utility Theory (EUT) which is also called Consumer Choice Theory. The rule of EUT is Random Utility Maximization (RUM) (Ben-Akiva & Lerman, 1985; Daneil McFadden, 1973). This classical theory claims that customer always choose the one most appropriate by comparing the advantages and disadvantages of a range of alternatives, evaluating the benefits and costs of each possible outcome. Eventually travelers will select the optimal solution with the maximum 'utility' from the choice set.
+Traditional economics focus on the utility evaluation and come up with the Expected Utility Theory (EUT) which is also called Consumer Choice Theory. The rule of EUT is Random Utility Maximization (RUM) [@ben-akivaDiscreteChoiceAnalysis1985; @mcfaddenConditionalLogitAnalysis1973]. This classical theory claims that customer always choose the one most appropriate by comparing the advantages and disadvantages of a range of alternatives, evaluating the benefits and costs of each possible outcome. Eventually travelers will select the optimal solution with the maximum 'utility' from the choice set.
 
 In real life, Rational Choice Theory can not accurately describe the actual human behavior. Individuals do not often collect and analyse all the relevant information. They are not 'ideal' and are not able to calculate the utility for all possible alternatives with perfect accuracy. In many cases, the travel decision is not regarded as the 'best' one to achieve travelers' desired objective. Many other theories were developmed to fix these issues.
 
 ### Bounded Rational Behavior
 
-Bounded rationality focused on the limitation of self-control (March and Simon, 1958, Simon, 1955). In reality, individuals are behaving under many constraints including incomplete information, limited time, and cognitive capacity. The observed behaviors often are not optimal and are inconsistent with 'pure' rationality. Bounded rationality claims that, when people make decisions under constraints, heuristics and rules of thumb are more common than statistical inference. People are satisfied with a 'good enough' decision unless there is a definitively better alternative. The recently witnessed events would have stronger effects on an individual's decision than others (Camerer and Loewenstein, 2004).
+Bounded rationality focused on the limitation of self-control [@marchCognitiveLimitsRationality2005]. In reality, individuals are behaving under many constraints including incomplete information, limited time, and cognitive capacity. The observed behaviors often are not optimal and are inconsistent with 'pure' rationality. Bounded rationality claims that, when people make decisions under constraints, heuristics and rules of thumb are more common than statistical inference. People are satisfied with a 'good enough' decision unless there is a definitively better alternative. The recently witnessed events would have stronger effects on an individual's decision than others [@camererAdvancesBehavioralEconomics2004].
 
 ### Theory of Planned Behavior
 
@@ -28,51 +28,51 @@ In psychology, many theories and models are developed to explain people's decisi
 
 [^theory-1]: CMDT=Cognitive moral development theory (Kohlberg, 1984), 
 
-             ITB=Ipsative theory of behavior (Frey, 1988),
+    ITB=Ipsative theory of behavior (Frey, 1988),
+    
+    NAM=Norm activation model (Schwartz, 1977,Schwartz and Howard, 1981),
+    
+    SDT=Self-determination theory(Deci & Ryan, 1985),
+    
+    TAM=Technology acceptance model(Davis, 1989),
+    
+    TDM=Travel demand management measures,
+    
+    TNC=Theory of normative conduct (Cialdini et al., 1990,Cialdini et al., 1991),
+    
+    TPB=Theory of planned behavior(Ajzen, 1985,Ajzen, 1991), 
+    
+    VBN=Value-belief-norm (Stern, 2000,Stern et al., 1999), 
+    
+    MGB=Model of goal-directed behavior(Perugini & Bagozzi, 2001),
 
-             NAM=Norm activation model (Schwartz, 1977,Schwartz and Howard, 1981),
-        
-             SDT=Self-determination theory(Deci & Ryan, 1985),
-        
-             TAM=Technology acceptance model(Davis, 1989),
-        
-             TDM=Travel demand management measures,
-        
-             TNC=Theory of normative conduct (Cialdini et al., 1990,Cialdini et al., 1991),
-        
-             TPB=Theory of planned behavior(Ajzen, 1985,Ajzen, 1991),
-        
-             VBN=Value-belief-norm (Stern, 2000,Stern et al., 1999),
-        
-             MGB=Model of goal-directed behavior(Perugini & Bagozzi, 2001),
-
-Ajzen and Fishbein (1980) proposed the Theory of Reasoned Action (TRA) to understand people's *behavioral intentions* and actual behaviors. They found two deciding psychological elements as *attitudes* and *subjective norms*. Ajzen (1991) adds a new part of *Perceived Behavioral Control* (PBC) and renames TRA as Theory of Planned Behavior (TPB).
+@ajzenAttitudebehaviorRelationsTheoretical1977 proposed the Theory of Reasoned Action (TRA) to understand people's *behavioral intentions* and actual behaviors. They found two deciding psychological elements as *attitudes* and *subjective norms*. @ajzenTheoryPlannedBehavior1991 adds a new part of *Perceived Behavioral Control* (PBC) and renames TRA as Theory of Planned Behavior (TPB).
 
 Attitudes are personal evaluation and it means how people prefer or are against performing an activity. For example, a commuter might choose transit in spite of the longer travel time because this person believes that transit is an environment-friendly transport mode.
 
 Subjective norm is the social pressure from others. In the example above, choosing transit is because of other people's normative expectations rather than personal desirability.
 
-PBC represents some nonvolitional factors such as time, budget, and resources. PBC is assessed by the individual's perception of ease or difficulty of the behavior. PBC is one reason of the different between intentions and actual behaviors, which is called attitude-behavior gap (Kollmuss and Agyeman, 2002, Lane and Potter, 2007). In this case, a commuter might choose transit because this person is confident in catching the bus every day.
+PBC represents some nonvolitional factors such as time, budget, and resources. PBC is assessed by the individual's perception of ease or difficulty of the behavior. PBC is one reason of the different between intentions and actual behaviors, which is called attitude-behavior gap [@kollmussMindGapWhy2002; @laneAdoptionCleanerVehicles2007]. In this case, a commuter might choose transit because this person is confident in catching the bus every day.
 
-Based on RUM models, McFadden (2001) proposes a similar framework called the choice process including attitudes, perception, and preference. This framework is further developed to hybrid choice model (HCM) and non-RUM decision protocols (Ben-Akiva et al., 2002).
+Based on RUM models, @mcfaddenEconomicChoices2001 proposes a similar framework called the choice process including attitudes, perception, and preference. This framework is further developed to hybrid choice model (HCM) and non-RUM decision protocols [@ben-akivaHybridChoiceModels2002].
 
-Two meta-analyses found that intentions to drive, perceived behavioral control, habits and past behavior play the primary roles in travel mode choice. Among these factors, PBC have the strongest effects on private car use. People don't want to reduce the car use because they think it is very inconvenient. The effect of attitudes is modest while subjective norms have weak effect on car use (Lanzini & Khan, 2017; Gardner & Abraham, 2008).
+Two meta-analyses found that intentions to drive, perceived behavioral control, habits and past behavior play the primary roles in travel mode choice. Among these factors, PBC have the strongest effects on private car use. People don't want to reduce the car use because they think it is very inconvenient. The effect of attitudes is modest while subjective norms have weak effect on car use [@lanziniSheddingLightPsychological2017; @gardnerPsychologicalCorrelatesCar2008].
 
 
 
 ### Prospect Theory
 
-Kahneman and Tversky (1979) introduced the [Prospect Theory](https://www-sciencedirect-com/topics/social-sciences/prospect-theory) to study the impacts of biases. Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choice based on a reference point, rather than the overall situation or worth. Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior.
+@kahnemanProspectTheoryAnalysis1979a introduced the ProspectTheory ^[@ProspectTheoryOverview] to study the impacts of biases. Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choice based on a reference point, rather than the overall situation or worth. Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior.
 
 -   Regret Theory
 
-Regret Theory introduces the notions of risk or uncertainty in decisions (Bell, 1982; Loomes and Sugden, 1982). Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior. For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give traveler confidence in the rail system.
+Regret Theory introduces the notions of risk or uncertainty in decisions [@loomesRegretTheoryAlternative1982]. Psychological studies found that individuals will not only try to maximize the utility but to minimize the anticipation of regret. The fear of regret could affect people's rational behavior. For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give traveler confidence in the rail system.
 
 In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be smaller after subtracting the regret term, which is an increasing, continuous and non-negative function.
 
 -   Cognitive Bias
 
-Another psychological factor, cognitive bias can result in judgement errors. For example, people treat potential gains and losses differently, that is called Loss Aversion. Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains(Kahneman et al. 1991). As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
+Another psychological factor, cognitive bias can result in judgement errors. For example, people treat potential gains and losses differently, that is called Loss Aversion. Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains [@tverskyAdvancesProspectTheory1992]. As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
 
 ## Human Mobility (Travel as an object)
 
@@ -96,7 +96,9 @@ Zip's law is also called *discrete Pareto distribution*. It is found in linguist
 
 $$
 m \sim 1 / r^{\alpha}
-$$ @zipfP1P2Hypothesis1946 extended this expression to describe the traffic in both directions between two cities:
+$$ 
+
+@zipfP1P2Hypothesis1946 extended this expression to describe the traffic in both directions between two cities:
 
 $$
 t_{ij}\propto \frac{m_i m_j} {d_{ij}}
@@ -162,7 +164,7 @@ $$
 
 -   Radiation Law
 
-Simini et al. (2012) propose a radiation model express the probability of the destination $j$ absorbing a person living in location $i$ as below:
+@siminiUniversalModelMobility2012 propose a radiation model express the probability of the destination $j$ absorbing a person living in location $i$ as below:
 
 $$
 P(1|m_i,m_j,s_{ij})= \frac{m_i m_j}{(m_i + s_{ij})(m_i + m_j + s_{ij})}
@@ -180,7 +182,7 @@ $$ The part of fraction converts to the product of two weights, the weights of o
 
 -   Distance Decay (hazard models)
 
-Using the survival analysis framework, Yang et al. (2014) further extended this model by assuming a trip from origin to destination as a time-to-event process. Here time variable is replaced by the number of opportunities.
+Using the survival analysis framework, @yangLimitsPredictabilityCommuting2014 further extended this model by assuming a trip from origin to destination as a time-to-event process. Here time variable is replaced by the number of opportunities.
 
 The survival function $S(t)=Pr(T>t)$ represents the cumulative probability of the event not happened within a certain amount of opportunities. Choosing Weibull distribution as the survival function, $S(t)=\exp[-\lambda t^\alpha]$ with scale parameter $\lambda \in (0, +\infty)$. By assuming $f(\lambda)=\exp[-\lambda]$ and integral on $\lambda$, the derivation is:
 
@@ -205,13 +207,13 @@ $$
 
 where $\alpha$ is a parameter adjusting the effect of the number of job opportunities between origins and destinations.
 
-A similar method can be found in Ding et al. (2017)'s study. They use a multilevel hazard model to examine the effects of TAZ level and individual level factors with respect to commuting distance using the data of Washington metropolitan area.
+A similar method can be found in @dingInfluencesBuiltEnvironment2017 's study. They use a multilevel hazard model to examine the effects of TAZ level and individual level factors with respect to commuting distance using the data of Washington metropolitan area.
 
 Based on commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. The reasons could be the circle with radius $d_{ij}$ can not accurately represent the real influencing area, and the different between population and opportunities is not captured in this way.
 
 ### Time Geography
 
-In contrast to overall trip distribution, the movements of individuals are always research interest in geography. Hägerstraand (1970) proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography. The famous "space-time aquarium/prism" is a 3D cube by adding temporal scales on the geographic space. It can capture the detailed structure and behavior of traveler.
+In contrast to overall trip distribution, the movements of individuals are always research interest in geography. @hagerstraandWhatPeopleRegional1970 proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography. The famous "space-time aquarium/prism" is a 3D cube by adding temporal scales on the geographic space. It can capture the detailed structure and behavior of traveler.
 
 A daily travel could include multiple trips and form a travel chain. The traveler may switch the sequence or adjust the routes to optimize the chain and minimize the travel costs. The daily total travel distance is the summation of every trip distances. The number of trips denotes as trip count. It exists but not so common that driving itself is the travel purpose, especially in daily life.
 

@@ -1,5 +1,5 @@
 --- 
-title: "Travel Behavior and Urban Land Use"
+title: "The Association Between Travel Behavior and Urban Form"
 author: 
 - Shen Qu^["Portland State University, Toulan School of Urban Studies and Planning"]
 date: "`r Sys.Date()`"
@@ -22,7 +22,7 @@ description: "This is a field paper using the bookdown package. The output forma
 # abstract: |
 
   
-keywords: travel behavior, urban land use, probability distribution
+keywords: travel behavior, urban form, regression analysis
 header-includes:
    - \usepackage{amssymb}
    - \usepackage{amsmath}
@@ -46,10 +46,10 @@ header-includes:
 
 # Preface {-}
 
-This field paper is for discussing the relationship between travel behavior and urban land use. ^[This is a field paper using the **bookdown** package [@R-bookdown], **knitr** [@xie2015] and TinyTeX: <https://yihui.name/tinytex/>.]
+This field paper is for discussing the relationship between travel behavior and urban form. ^[This is a field paper using the **bookdown** package [@R-bookdown], **knitr** [@xie2015] and TinyTeX: <https://yihui.name/tinytex/>.]
 Part I reviews the related literature and tries to cover the main theories and research in this field.
+Daily Driving Distance as the variable of interest, is associated with many factors including urban form variables.
 The discussion will gradually narrow down to the association between driving distance and urban density. 
-Daily Driving Distance as the variable of interest, is associated with many factors including land use variables.
 Instead of using very high dimension model or synthesized index, 
 Population Density itself may have more potential to explain the driving distance than people ever thought about.
   

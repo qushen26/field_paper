@@ -107,7 +107,7 @@ At least two scales need to be aggregated: One is Core Based Statistical Area (C
 
 [^43]: 2010 Census Urban and Rural Classification and Urban Area Criteria Urbanized Areas (UAs) of 50,000 or more people; Urban Clusters (UCs) of at least 2,500 and less than 50,000 people. (<https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html>)
 
-```{r diagram3,eval=T,fig.cap='The aggregate procedure',fig.dim = c(9,2.5),fig.pos="H"}
+```{r diagram3,eval=T,fig.cap='The aggregate procedure',fig.dim = c(9,2.5)}
 grViz("
 digraph G {
 graph[fontname = 'helvetica',  nodesep=0.4, overlap='prism1000']

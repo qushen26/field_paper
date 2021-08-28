@@ -2,36 +2,51 @@
 
 # Introduction {#intro}
 
+## Background
+
 In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions.
 
-Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance.
-Previous studies commonly choose two metrics for measuring them, the share of auto trips (or other modes) and Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)].
-
-The share of mode is calculated by dividing the number of chosen mode over the total number of trips.
-The main travel modes, transit, bicycle, and walking are the alternatives to driving personal car.
-Given the same amount of travel demand, more active and transit modes means less car use.
-VMT is used to measure the travel distance made by a private vehicle.
-An integrated viewpoint is to treat the non-auto trips as zero-VMT.
-In this way, the probability distribution of VMT can comprehensively represents the travel behavior. 
+In urban planning and transportation, achieving this goal requires two parts. First, researcher find a set of factors which could mostly explain and affect travel behavior. Second, planning and policy are made to intervene the adjustable factors then to reduce the car use significantly.
+This paper focuses on the first part and aims at supporting the second part.
 
 
-The smallest unit of VMT is recorded by trip from a daily travel survey. Then these records can be aggregated to personal or household daily VMT (DVMT).
-A traveler's or household's DVMT can account for the degree of automobile dependency by combining the number of trips and driving distance during a day.
-Given the survey day is randomly selected, DVMT can reflect the typical travel pattern in general.
 
-Although, there are other approaches collect weekly, monthly, or longer VMT records by tracking car usage.
-The odometer records are more likely to represent the usage of vehicle rather than traveler's behavior.
-It is not easy to acquire long-term VMT through survey-based method. The annual mileage and fuel efficiency information provided in some public data usually are estimated values using daily records and are not as accurate as DVMT.
+## Analytical Framework
 
-On a personal scale, VMT relates to the economic cost of travel by car, while another dimension, travel time measuring the time cost of vehicle travel.
-For society as a whole, the total VMT measures the usage of road network. 
-Thus, it acts as a major interest within the field of transportation, especially in the research of travel demand and infrastructure capacity.
+Regression Analysis provides a powerful framework for explaining the relationship between urban form and travel.
+A large mount of studies use regression models to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)], the basic structure of the regression model is as below:
+
+$$\begin{equation}
+\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
+(\#eq:lm)
+\end{equation}$$
+
+where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error terms with expected value of $0$ and variance $\sigma^2$.
+
+When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
+
+$$\begin{equation}
+E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
+(\#eq:glm)
+\end{equation}$$
+
+Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level travel variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
 
 
-And VMT highly correlated with the amount of fuel consumption, which is one of the main indicators of pollution and GHG emission. Since transportation is the second source of GHG emissions, it is also one of the priority issues involving sustainable development and climate change.
+## Content Organization
 
-Previous research found that reducing VMT is instrumental in solving some urban problems and improving the qualities of urban life. The proportion of transportation cost in household expenditures is about 15 to 25 percent in the U.S.
-It is natural that urban studies try to figure out the relationship between VMT and some urban built-environment factors. Then urban or regional policies could identify the best practices to contribute VMT reduction.
+<!-- \@ref(struc) -->
+As the essential parts of regression analysis, independent variables of [Urban Form](#form) and dependent variables of [Travel](#travel) are presented using two separate chapters. 
+
+Chapter 2 of [Urban Form](#form) starts from a fundamental question: Do urban form and travel have casual relationship? If not, what is their relationship?
+Then the significant influencing factors in literature are systematically introduced.
+
+[Spatial Scales](#scale) is a critical element which can sway the meaning of influencing factors. Careless choosing variable in various scales could even make the results mismatching the initial research questions.
+
+Chapter 3, [the theories of travel behavior](#travel) can be divided into [Traveler Choice][Traveler Choice] and [Human Mobility][Human Mobility] by looking travel as object or subject.
+These theories and practice can enrich the understanding of travel variable as response of model.
+
+[Chapter 4][Model Structures] presents several common model structures in existing literature of this field. It demonstrate the different perspectives of the relationship between urban form and travel. Some new trends and methods are also included in this chapter.
 
 
 

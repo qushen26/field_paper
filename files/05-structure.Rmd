@@ -1,110 +1,72 @@
 
-# Analytical Frameworks
+# Model Structures {#struc}
 
 Based on related theories and studies, this section introduces several different analytical frameworks [@gotschiComprehensiveConceptualFramework2017]. All three explanatory frameworks can find supportive evidences.
-They reflect the cognitive differences on this topic from various perspectives (Figure \@ref(fig:cognitive3)).
+They reflect the cognitive differences on this topic from various perspectives.
 
-```{r cognitive3,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Three conceptual frameworks"}
+
+
+
+
+## Multistage
+
+```{r Mstage,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Multistage Structure"}
 # manypoint<- plot(rnorm(30),rnorm(30))
 DiagrammeR::grViz("
-digraph C {
-compound=true;
-graph[fontname = 'helvetica',  nodesep=0.4, overlap='prism1000']
-rankdir = TD
-node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0.75, width = 1, fontcolor = black];
+digraph Mstage {
+compound=true; # allow edges between clusters.
+graph[fontname = 'helvetica-bold',  nodesep=0.4, overlap='prism1000']
+rankdir = LR
+node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, 
+      fontname = 'helvetica',fontsize=12, fontcolor = black];
 
-    subgraph cluster1{
-    label = 'Stepwise';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
-    
-    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-        c1d1[label = 'Long-term decisions: \\n Residential location choice'];    
-        
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];
-		    c1d2[label = 'Medium-term decisions: \\n Car ownership, \\n Distance to destination'];
-		    
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
-        c1d3[label = 'Short-term decision: \\n Mode Choice'];
+subgraph cluster_L{
+label = 'Long-term';
+style=dashed; color=black; 
+node [fillcolor = WhiteSmoke];
+R[label = 'Residential \\n location choice']; 
+L2[label ='...'];
+L3[label ='...']; # , style=invis, height = 0.4, width = 0, margin=0
+# R -> NA[style=invis];
+}    
 
-    node [shape = oval, style=filled,fontsize=12, fillcolor ='#91cf60'];
-        c1ad[label = 'Travel Behavior'];
+subgraph cluster_M{
+label = 'Medium-term';
+style=dashed; color=black;
+# rank = same;
+node [fillcolor = PapayaWhip];
+C[label = 'Car \\n ownership'];  
+D[label = 'Distance to \\n destination'];
+M2[label ='...'];
+# C -> D[style=invis];
+}   
 
-    c1d1 -> c1d2   c1d2  -> c1d3   c1d3 -> c1ad
-	  }
 
-    subgraph cluster2{
-    label = 'Multi-layer';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
- 
-    node [shape = oval, style=filled,fontsize=12, fillcolor = White];
-		    c2d0[label = 'Travel Choice'];	
-		    
-		    subgraph cluster21{
-		    label = '';
-		    style=solid;	color= '#625a5a'; fontname = 'helvetica-bold';
-		    }				    
-		    
-    node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-		    c2d11[label = 'Yes'];		 		    
-    node [shape = oval, style=filled,fontsize=12, fillcolor = White];
-		    c2d10[label = 'No'];			    
-   
- 
-    
-		    subgraph cluster22{
-		    label = '';
-		    style=solid;	color= '#625a5a'; fontname = 'helvetica-bold';
-		    }		
-		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor ='#fee08b'];
-        c2d21[label = 'Driving'];		    
-		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip];
-        c2d22[label = 'Other modes'];        
+subgraph cluster_S{
+label = 'Short-term';
+style=dashed; color=black;
+node [fillcolor = '#fee08b'];
+M[label = 'Mode \\n Choice'];
+Ro[label = 'Route \\n Choice']; 
+S3[label ='...'];
+# M -> Ro[style=invis];
+}  
 
-	    
+# NA -> D # [ltail=cluster_L,lhead=cluster_M];
+# D -> Ro # [ltail=cluster_M,lhead=cluster_S];
+subgraph{
+node [fillcolor =yellowgreen];
+TB[label = 'Travel \\n Behavior'];
+L2 -> D[ltail=cluster_L,lhead=cluster_M]
+D -> Ro[ltail=cluster_M,lhead=cluster_S]
+Ro -> TB[ltail=cluster_S]
+}
 
-		    subgraph cluster23{
-		    label = 'Route Choice';
-		    style= dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
-		    }		    
-		node [shape= oval, style=filled, color=black,fontsize=12, fillcolor ='#91cf60'];
-        c2ad1[label = 'Distance'];			    
-    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige]; #
-        c2ad2[label = 'Time'];		    
-	    
-
-       c2d11 -> c2d22   c2d0 -> c2d11 -> c2d21 -> {c2ad1 c2ad2}   c2d0 -> c2d10
-		    
-        # c2d3 -> c2ad[ltail=cluster22,lhead=cluster22] c2d2 -> c2ad c2d1 -> c2ad[style=invis];
-    }
-
-    subgraph cluster_3{
-    label = 'Multi-scale';
-    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold'; 
-    
-    node [shape =box, style=filled,fontsize=12, fillcolor = WhiteSmoke];
-        c3d1[label = 'Urban Form'];
-            
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = PapayaWhip]; #
-		    c3d2[label = 'Built Environmnet'];
-		    
-		node [shape=box, style=filled, color=black,fontsize=12, fillcolor = '#fee08b']
-        c3d3[label = 'Socio-demographic \\n characteristics'];
-
-    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];
-        c3ad1[label = 'City \\n Travel \\n Behavior'];
-        
-    node [shape = oval, style=filled,fontsize=12, fillcolor = Beige];
-        c3ad2[label = 'Neighborhood \\n Travel \\n Behavior'];
-        
-    node [shape = oval, style=filled,fontsize=12, fillcolor = '#91cf60'];
-        c3ad3[label = 'Household \\n Travel \\n Behavior'];
-        
-        c3d1 -> c3ad1[weight= 10]  c3d2 -> c3ad2   c3d3 -> c3ad3[weight= 10]
-        {rank = same; c3ad1;c3ad2;c3ad3}
-        c3d1 -> c3d2-> c3d3[style=dashed,splines=curved,constraint=true] #,dir=none
-        
-	}
-  #   # edge[style=invisible,dir=none];
+  # c3d1 -> c3ad1[weight= 10]  c3d2 -> c3ad2   c3d3 -> c3ad3[weight= 10]    
+  # {rank = same; c3ad1;c3ad2;c3ad3}    
+	# c3d1 -> c3d2-> c3d3[style=dashed,splines=curved,constraint=true] #,dir=none
+  #  c2d2 -> c2ad c2d1 -> c2ad[style=invis];
+  # edge[style=invisible,dir=none];
   #   node [shape = square, style=filled,fontsize=9,fillcolor = Beige];
   #   b [label = 'The relationship \\n between \\n Auto Dependence \\n & \\n Urban Density']
   #   node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke]; #'#91cf60'
@@ -117,15 +79,11 @@ node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0
 ```
 
 
-
-
-## Stepwise Structure
-
 @ben-arivaMETHODOLOGYSHORTRANGETRAVEL1977 introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
 Car ownership belongs medium-term decision since people usually don't purchase or sell a car very often.
 Residential location choice is long-term decision because relocation is the most infrequent event than others.
 
-Under this framework, the decisions in longer term can affect the decisions in shorter term,  but not vice versa.
+Under this framework, the decisions in longer term can affect the decisions in shorter term,  but not vice versa. (Figure \@ref(fig:Mstage))
 For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior [@munshiBuiltEnvironmentMode2016].
 In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. [@dingExploringInfluenceBuilt2017; @devosIndirectEffectBuilt2021].
 A VMT models with stepwise framework is as follow.
@@ -155,13 +113,46 @@ The framework selection should suit the research question.
 
 
 
-##  Multi-layers Model
+##  Decision Tree
 
-The single-layer frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
+```{r Tree,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Decision Tree Structure"}
+# manypoint<- plot(rnorm(30),rnorm(30))
+DiagrammeR::grViz("
+digraph Tree {
+graph[fontname = 'helvetica-bold',  nodesep=0.4, overlap='prism1000']
+rankdir = LR
+node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, 
+      fontname = 'helvetica',fontsize=12, fontcolor = black];
+
+T1[label = 'Travel Choice'];	
+  T20[label = 'No'];
+node [fillcolor = WhiteSmoke];
+  T21[label = 'Yes'];		 		    
+ 
+node [fillcolor ='#fee08b'];
+    T31[label = 'Driving'];		    
+node [fillcolor = PapayaWhip];
+    T32[label = 'Transit'];        
+    T33[label = 'Biking'];  
+    T34[label = 'Walking'];  
+    
+node [fillcolor = yellowgreen];
+      T41[label = 'Distance'];			    
+node [fillcolor = Beige]; #
+      T42[label = 'Time'];		    
+
+T1 -> T20   T1 -> T21 -> T31 -> {T41 T42}   T21 -> {T32 T33 T34}
+  }")#,
+ # height = 500,width = 800)
+```
+
+
+
+The single-step decision frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
 Here these observation are treated as censored data with negative utilities. (That will leads to Tobit model for VMT.)
 
-In contrast, a multiple-layers framework allows to use a hierarchical structure to fit different observation respectively.
-The model will split into three equations \@ref(eq:multilayer)
+In contrast, a Decision Tree structure allows to use a hierarchical structure to fit different observation respectively (Figure \@ref(fig:Tree)).
+The model will split into three equations \@ref(eq:Tree)
 Starting from a travel demand or purpose, the traveler decides to make a trip or not at the first-level dichotomous node. 
 A logit or probit model will fit all the data using a suitable model specification.
 
@@ -178,7 +169,7 @@ E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\
 E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&\boldsymbol{\mu_1}=g^{-1}(\mathbf{X_1}\boldsymbol{\gamma})\\
 \mathbf{Z}_{\{car\}}=&\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}
 \end{split}
-(\#eq:multilayer)
+(\#eq:Tree)
 \end{equation}
 ```
 
@@ -201,10 +192,43 @@ where $\mathbf{Y}_{\{yes,no\}}$ is a binary variable of making a trip or not. $\
 <!--     -   long/short distance/time of trips. -->
 <!-- The trip responses are defined in different units, scales, metrics. -->
 
-## Multi-scales Structure
+## Multi-scales
+
+```{r Mscale,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Multi-scales Structure"}
+# manypoint<- plot(rnorm(30),rnorm(30))
+DiagrammeR::grViz("
+digraph Mscale {
+graph[fontname = 'helvetica-bold', style=filled, nodesep=0.4, overlap='prism1000']
+rankdir = TD
+node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, 
+      fontname = 'helvetica',fontsize=12, fontcolor = black];
+
+  subgraph cluster_U {
+  label = 'Urban Form'; fillcolor= WhiteSmoke; 
+     
+    node [fillcolor = Beige];
+    UT[label = 'City \\n Travel \\n Behavior'];		 
+
+    subgraph cluster_BE{
+    label = 'Built Environmnet'; fillcolor= PapayaWhip; 
+
+      node [fillcolor = palegreen];
+      NT[label = 'Neighborhood \\n Travel \\n Behavior'];
+		    
+	    subgraph cluster_H{
+	    label = 'Socio-demographic \\n characteristics'; fillcolor= '#fee08b';
+		    
+        node [fillcolor = yellowgreen];
+        HT[label = 'Household \\n Travel \\n Behavior'];		    
+		    }	
+		 }	
+	}    
+  }")#,
+ # height = 500,width = 800)
+```
 
 
-As discussed in previous section, the external factors affect individual's travel behavior at multiple scales.
+As discussed in previous section, the external factors affect individual's travel behavior at multiple scales (Figure \@ref(fig:Mscale)).
 It is necessary to distinguish the meso-scale and macro-scale variable.
 The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions. 
 Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation \@ref(eq:multiscale))
@@ -219,7 +243,7 @@ Only when the data sources cover many cities or regions, these factors can be in
 where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{H}$ are the covariates at the scales of urban, neighborhood, and household. And $\boldsymbol{\beta}_\mathrm{U}$, $\boldsymbol{\beta}_\mathrm{N}$, and $\boldsymbol{\beta}_\mathrm{H}$ are corresponding coefficients respectively.
 
 
-## Mixed Structure
+## Mixed Model
 
 Regression models usually assume the fixed effects of covariate on response. has to random effects
 
@@ -294,7 +318,7 @@ The results of linear and non-linear models cannot be compared because their und
 <!-- the travel destination may be determined before the decision making or be selected after the traveler comparing several plans. -->
 
 
-# Discussion
+# Summary (Opt.)
 
 It is impossible to design a replicable experiment controlling other factors to identify the effects of density. But it is possible to filter out the unsuitable or irreproducible models.
 

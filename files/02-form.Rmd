@@ -4,7 +4,13 @@ editor_options:
     wrap: none # sentence
 ---
 
-# The Impact of Land Use
+# Urban Form as Predictors {#form}
+
+The concepts of 'urban form', 'built environment', and 'land use' are often exchangeable in literature.
+Adopted from some common usages, here land use refer to 
+At the macro scale,, The same thing is about 'land use' and  at the meso and micro scales.
+and
+
 
 ## Influencing Direction
 
@@ -29,27 +35,10 @@ Although randomized experiments about travel and land use are impossible, once t
 
 ## Influencing Factors
 
+For the complexity of travel behavior, many objective or subjective factors could change people's travel decisions. They include but are not limited to physical, socio-demographic, individual, and policy determinants. It seems impossible to make an exhaustive list.
+Here briefly introduces several significant influencing factors.
 
-
-A large mount of studies try to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like VMT, the basic regression model is:
-
-$$\begin{aligned}
-\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
-\end{aligned}$$
-
-where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error terms with expected value of $0$ and variance $\sigma^2$.
-
-When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
-
-$$\begin{aligned}
-E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
-\end{aligned}$$
-
-Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level travel variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
-
-For the complexity of travel behavior, many other objective or subjective factors could change people's travel decisions. They include but are not limited to physical, socio-demographic, individual, and policy determinants. It seems impossible to make an exhaustive list.
-
-A dichotomy of individual versus environmental factors is a most common framework.
+A dichotomy of individual versus environmental factors is a common framework.
 All relevant factors involving personal or household characteristics is treated as internal factors. While the built-environment and other environmental factors have external influences.
 Disaggregate analysis usually chooses this structure because the models can distinguish the different sources of variation from individual and environmental factors.
 Take for example VMT models, the model is as follow.
@@ -60,16 +49,12 @@ $$\begin{aligned}
 
 where $\mathbf{X}_\mathrm{I}$ are travelers' internal characteristics; $\mathbf{X}_\mathrm{E}$ are built environment and other environment covariates.
 
-Previous research have identified many internal factors such as employment status, income level, lifecycle stage, habits, and preferences, having strong impact on travel. Therefore, a sufficient model should contain these influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
-
-
-Although the internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models,
-urban studies' attentions are on built-environment factors such as urban density, design, and transit services. Because these factors can be intervened by policies and planning. This part of discussion will be placed in the next section separately.
-
-
 ### Individual Factors
 
-Here briefly introduces several significant influencing factors.
+Previous research have identified many internal factors such as employment status, income level, lifecycle stage, habits, and preferences, having strong impact on travel. Therefore, a sufficient model should contain these influencing factors. One purpose is to increase the explanatory power. Another purpose is to control self-selection and other independent variables. 
+
+Some major life events, such as transitions to higher school, labor market, marriage, parenthood, retirement, and relocation, could provide windows of opportunity for travel behavior change [@laroucheEffectMajorLife2020]. The results of a scoping review show that relocation prompts people to reflect on their travel behaviors. Entry into the labor market often increases driving while retirement may have more walking or cycling for fewer time constraints. The effects of school transition may have different directions due to the environmental differences. Marriage is not significant because couples may live together before marriage. In a similar way, parents may have more car use several years after childbirth for the purposes of childcare, school, recreation, etc.
+
 
 -   Income levels
 
@@ -79,42 +64,50 @@ Here briefly introduces several significant influencing factors.
 
 -   Major life events/lifecycle
 
-Some major life events, such as transitions to higher school, labor market, marriage, parenthood, retirement, and relocation, could provide windows of opportunity for travel behavior change [@laroucheEffectMajorLife2020]. The results of a scoping review show that relocation prompts people to reflect on their travel behaviors. Entry into the labor market often increases driving while retirement may have more walking or cycling for fewer time constraints. The effects of school transition may have different directions due to the environmental differences. Marriage is not significant because couples may live together before marriage. In a similar way, parents may have more car use several years after childbirth for the purposes of childcare, school, recreation, etc.
-
 -   Psychological factors
 
 -   Attitude
 
 -   Habit
 
+
+
 ### Environmental Factors
 
--   Natural Environment
+Environmental factors usually impact a large number of people. Three main categories are socio-economic environment, natural Environment, and built environment.
 
-Physical Environment and other factors
+The natural terrain, temperature, and precipitation could change travelers' choice. 
+These factors can only be examined across cities and regions. They are also hard to change and are not included in the models.
 
--   Infrastructure supplement
+Fuel price, crime rates also encourage people choosing driving or not for economic or safety reasons. 
+Some factors could be related to the broader topics such as public security, and Automobile Dependency may be the secondary issues in some cases.
+Or, Some of them are as hard to measure and control as individual psychological factors, such as car culture.
 
-Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space
+<!-- Although the internal factors, psychological, socio-demographic, and economic characteristics contribute the primary variation in these models, -->
 
--   policy interventions
+Infrastructure supplement is also a set of strong explanatory variables. It has been proven that road capacity and parking space are two primary factors for driving. No one doubts this relations. The problem is that reducing supply is painful for public and is subject to political pressure.
 
-(e.g., restrictions on car use) Travel Demand Management (TDM): The levels of land use policy tools. "largely remain under a local government's authority", "This imbalanced institutional setting and fragmented government system"
+Policy environment as treatment applied on a administrative region, such as restrictions on car use, can only be examined by comparing with the 'control groups'.
+Meanwhile, transportation policy is a context-dependent factor. 
+The same policy in name may be implemented in very different ways across the country.
+Cross-sectional study is a challenge because existing the complex interaction effects between a policy and the characteristics of the 'experimental group'.
+Longitudinal study and Difference in Difference (DID) methods are more common in policy evaluations.
 
-Urban Development Policies (UBG,TOD, Zoning)
+There are also two types of policies. Travel Demand Management (TDM) heads directly toward change of travel behavior.
+While many urban development policies such as UBG, TOD, and rezoning have more comprehensive goals.
 
-There are many complex unknown interaction effects between individual and environmental variables. Some research found that the habit discontinuity hypothesis, major life events may provide windows of opportunity during which individuals may reconsider their travel behaviors and be more sensitive to behavior change interventions [@verplankenContextChangeTravel2008]. Similarly, 'changes in built environment attributes may be particularly salient for behaviour change following relocation.'
 
+The research purpose of travel behavior is not only to explain travel itself, but also to find some tools to affect people's behavior. 
+Built environment is the primary focus of attention in urban studies because policy or planning might be able to intervene current and future land use, further achieve the goal of travel behavior change.
+"Attributes of the built environment influence travel by making travel to opportunities more or less convenient and attractive" [@domencichURBANTRAVELDEMAND1975; @levinsonElementsAccessTransport2017; @litmanHowLandUse2017].
+Some of them such as urban density and design are more acceptable for having neutral meaning and could change people's behavior inadvertently.
+Some such as transit services are more welcome and feasible through providing a substitution of driving.
+
+There are many complex unknown interaction effects between built-environment and other variables. Some research found that the habit discontinuity hypothesis, major life events may provide windows of opportunity during which individuals may reconsider their travel behaviors and be more sensitive to behavior change interventions [@verplankenContextChangeTravel2008]. Similarly, 'changes in built environment attributes may be particularly salient for behavior change following relocation.'
+Comparing to other factors, built environment are more measurable to be added into the regression model. 
+Detailed introduction will be placed in the next section.
 
 <!-- Density is a critical built-environment factor in many theories, research, and policies. For simplicity, the regression models including response VMT and predictor density are called **VMT-density models**. -->
-
-## Built-Environment Variables
-
-At the macro scale, the concepts of 'land use' and 'urban form' are often exchangeable, The same thing is about 'land use' and 'built environment' at the meso and micro scales.
-
-"Attributes of the built environment influence travel by making travel to opportunities more or less convenient and attractive" [@domencichURBANTRAVELDEMAND1975; @levinsonElementsAccessTransport2017; @litmanHowLandUse2017].
-
-The research purpose of travel behavior is not only to describe travel itself, but also to find some tools to affect people's behavior. Land Use is the primary focus of attention because policy or planning might be able to intervene current and future land use, further achieve the goal of behavior change.
 
 ### Density
 
@@ -174,7 +167,7 @@ A smart application of synthesize method (common factor analysis) is to control 
 
 
 
-### Meta-Analaysis
+### Meta-Aanalysis
 
 To get a general, comparable outcome, @ewingTravelBuiltEnvironment2010 collect more than 200 related studies and try to summarize the elasticity values using meta-analysis. Elasticity measures the percentage change in response with respect to a 1 percent increase in a predictor. Thus, it is a dimensionless parameter. After screening, sixty-two studies were selected. But divided by modes (VMT, walking, and transit use), only nine studies were used to calculate the weighted-average elasticities of VMT with respect to population density. Of nine papers, six gave zero or insignificant elasticity, while three showed significant negative values (two are -0.04 and one is -0.12). The weighted-average elasticity of job density (sample size = 9) was zero. The largest elasticity of VMT belonged to Destination accessibility, -0.20 with respect to Job accessibility by auto (sample size = 5) and -0.22 with respect to Distance to downtown (sample size = 3). Due to the small sample size, the confidence intervals were not available. The authors call for more relevant studies to refine the results.
 
@@ -201,7 +194,9 @@ They are Density, Urban design, Local land use mix, mono/polycentrism and centra
 
 <!-- land use, including the main study subjects in transportation and urban planning. -->
 
-## Discussion
+
+
+
 
 
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Linear Models | Travel Behavior and Urban Land Use</title>
+  <title>Chapter 7 Linear Models | The Association Between Travel Behavior and Urban Form</title>
   <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23.4 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Linear Models | Travel Behavior and Urban Land Use" />
+  <meta property="og:title" content="Chapter 7 Linear Models | The Association Between Travel Behavior and Urban Form" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qushen26/field_paper" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Linear Models | Travel Behavior and Urban Land Use" />
+  <meta name="twitter:title" content="Chapter 7 Linear Models | The Association Between Travel Behavior and Urban Form" />
   
   <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-22" />
+<meta name="date" content="2021-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,6 +35,7 @@
 <link rel="next" href="generalized-linear-models.html"/>
 <script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -101,97 +101,99 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>Part I Theories and Framework</b></span></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html"><i class="fa fa-check"></i><b>2</b> Travel Behavior Theories</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#mode-choices-travel-as-a-subject"><i class="fa fa-check"></i><b>2.1</b> Mode Choices (Travel as a subject)</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#rational-choice-theory"><i class="fa fa-check"></i><b>2.1.1</b> Rational Choice Theory</a></li>
-<li class="chapter" data-level="2.1.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>2.1.2</b> Bounded Rational Behavior</a></li>
-<li class="chapter" data-level="2.1.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>2.1.3</b> Theory of Planned Behavior</a></li>
-<li class="chapter" data-level="2.1.4" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#prospect-theory"><i class="fa fa-check"></i><b>2.1.4</b> Prospect Theory</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#analytical-framework"><i class="fa fa-check"></i><b>1.2</b> Analytical Framework</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#content-organization"><i class="fa fa-check"></i><b>1.3</b> Content Organization</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#human-mobility-travel-as-an-object"><i class="fa fa-check"></i><b>2.2</b> Human Mobility (Travel as an object)</a>
+<li class="chapter" data-level="2" data-path="form.html"><a href="form.html"><i class="fa fa-check"></i><b>2</b> Urban Form as Predictors</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#trip-distribution-laws"><i class="fa fa-check"></i><b>2.2.1</b> Trip Distribution Laws</a></li>
-<li class="chapter" data-level="2.2.2" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#time-geography"><i class="fa fa-check"></i><b>2.2.2</b> Time Geography</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="travel-behavior-theories.html"><a href="travel-behavior-theories.html#discussion"><i class="fa fa-check"></i><b>2.3</b> Discussion</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html"><i class="fa fa-check"></i><b>3</b> The Impact of Land Use</a>
+<li class="chapter" data-level="2.1" data-path="form.html"><a href="form.html#influencing-direction"><i class="fa fa-check"></i><b>2.1</b> Influencing Direction</a></li>
+<li class="chapter" data-level="2.2" data-path="form.html"><a href="form.html#influencing-factors"><i class="fa fa-check"></i><b>2.2</b> Influencing Factors</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#influencing-direction"><i class="fa fa-check"></i><b>3.1</b> Influencing Direction</a></li>
-<li class="chapter" data-level="3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#influencing-factors"><i class="fa fa-check"></i><b>3.2</b> Influencing Factors</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#individual-factors"><i class="fa fa-check"></i><b>3.2.1</b> Individual Factors</a></li>
-<li class="chapter" data-level="3.2.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#environmental-factors"><i class="fa fa-check"></i><b>3.2.2</b> Environmental Factors</a></li>
+<li class="chapter" data-level="2.2.1" data-path="form.html"><a href="form.html#individual-factors"><i class="fa fa-check"></i><b>2.2.1</b> Individual Factors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="form.html"><a href="form.html#environmental-factors"><i class="fa fa-check"></i><b>2.2.2</b> Environmental Factors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="form.html"><a href="form.html#density"><i class="fa fa-check"></i><b>2.2.3</b> Density</a></li>
+<li class="chapter" data-level="2.2.4" data-path="form.html"><a href="form.html#d-variables"><i class="fa fa-check"></i><b>2.2.4</b> D-variables</a></li>
+<li class="chapter" data-level="2.2.5" data-path="form.html"><a href="form.html#synthesized-index"><i class="fa fa-check"></i><b>2.2.5</b> Synthesized Index</a></li>
+<li class="chapter" data-level="2.2.6" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.2.6</b> Meta-Aanalysis</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#built-environment-variables"><i class="fa fa-check"></i><b>3.3</b> Built-Environment Variables</a>
+<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.3</b> Spatial Scales</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#density"><i class="fa fa-check"></i><b>3.3.1</b> Density</a></li>
-<li class="chapter" data-level="3.3.2" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#d-variables"><i class="fa fa-check"></i><b>3.3.2</b> D-variables</a></li>
-<li class="chapter" data-level="3.3.3" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#synthesized-index"><i class="fa fa-check"></i><b>3.3.3</b> Synthesized Index</a></li>
-<li class="chapter" data-level="3.3.4" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#meta-analaysis"><i class="fa fa-check"></i><b>3.3.4</b> Meta-Analaysis</a></li>
+<li class="chapter" data-level="2.3.1" data-path="form.html"><a href="form.html#neighborhood-scale"><i class="fa fa-check"></i><b>2.3.1</b> Neighborhood Scale</a></li>
+<li class="chapter" data-level="2.3.2" data-path="form.html"><a href="form.html#urbanregion-scale"><i class="fa fa-check"></i><b>2.3.2</b> Urban/Region Scale</a></li>
+<li class="chapter" data-level="2.3.3" data-path="form.html"><a href="form.html#multi-scale-studies"><i class="fa fa-check"></i><b>2.3.3</b> Multi-scale Studies</a></li>
+<li class="chapter" data-level="2.3.4" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.3.4</b> Modifiable areal unit problem (MAUP)</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="the-impact-of-land-use.html"><a href="the-impact-of-land-use.html#discussion-1"><i class="fa fa-check"></i><b>3.4</b> Discussion</a></li>
+<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#summary"><i class="fa fa-check"></i><b>2.4</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="spatial-scales.html"><a href="spatial-scales.html"><i class="fa fa-check"></i><b>4</b> Spatial Scales</a>
+<li class="chapter" data-level="3" data-path="travel.html"><a href="travel.html"><i class="fa fa-check"></i><b>3</b> Travel as Response</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="spatial-scales.html"><a href="spatial-scales.html#urbanregion-scale"><i class="fa fa-check"></i><b>4.1</b> Urban/Region Scale</a></li>
-<li class="chapter" data-level="4.2" data-path="spatial-scales.html"><a href="spatial-scales.html#neighborhood-scale"><i class="fa fa-check"></i><b>4.2</b> Neighborhood Scale</a></li>
-<li class="chapter" data-level="4.3" data-path="spatial-scales.html"><a href="spatial-scales.html#multi-scale-studies"><i class="fa fa-check"></i><b>4.3</b> Multi-scale Studies</a></li>
-<li class="chapter" data-level="4.4" data-path="spatial-scales.html"><a href="spatial-scales.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>4.4</b> Modifiable areal unit problem (MAUP)</a></li>
-<li class="chapter" data-level="4.5" data-path="spatial-scales.html"><a href="spatial-scales.html#discussion-2"><i class="fa fa-check"></i><b>4.5</b> Discussion</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html"><i class="fa fa-check"></i><b>5</b> Analytical Frameworks</a>
+<li class="chapter" data-level="3.1" data-path="travel.html"><a href="travel.html#travel-variables"><i class="fa fa-check"></i><b>3.1</b> Travel Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="travel.html"><a href="travel.html#traveler-choice"><i class="fa fa-check"></i><b>3.2</b> Traveler Choice</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#stepwise-structure"><i class="fa fa-check"></i><b>5.1</b> Stepwise Structure</a></li>
-<li class="chapter" data-level="5.2" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#multi-layers-model"><i class="fa fa-check"></i><b>5.2</b> Multi-layers Model</a></li>
-<li class="chapter" data-level="5.3" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#multi-scales-structure"><i class="fa fa-check"></i><b>5.3</b> Multi-scales Structure</a></li>
-<li class="chapter" data-level="5.4" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#mixed-structure"><i class="fa fa-check"></i><b>5.4</b> Mixed Structure</a></li>
-<li class="chapter" data-level="5.5" data-path="analytical-frameworks.html"><a href="analytical-frameworks.html#non-linear-models"><i class="fa fa-check"></i><b>5.5</b> Non-linear models</a></li>
+<li class="chapter" data-level="3.2.1" data-path="travel.html"><a href="travel.html#rational-choice-theory"><i class="fa fa-check"></i><b>3.2.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="travel.html"><a href="travel.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>3.2.2</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="3.2.3" data-path="travel.html"><a href="travel.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>3.2.3</b> Theory of Planned Behavior</a></li>
+<li class="chapter" data-level="3.2.4" data-path="travel.html"><a href="travel.html#prospect-theory"><i class="fa fa-check"></i><b>3.2.4</b> Prospect Theory</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="discussion-3.html"><a href="discussion-3.html"><i class="fa fa-check"></i><b>6</b> Discussion</a>
+<li class="chapter" data-level="3.3" data-path="travel.html"><a href="travel.html#human-mobility"><i class="fa fa-check"></i><b>3.3</b> Human Mobility</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="discussion-3.html"><a href="discussion-3.html#a-proposed-framework"><i class="fa fa-check"></i><b>6.1</b> A Proposed Framework</a></li>
-<li class="chapter" data-level="6.2" data-path="discussion-3.html"><a href="discussion-3.html#policy-implications"><i class="fa fa-check"></i><b>6.2</b> Policy implications</a></li>
-<li class="chapter" data-level="6.3" data-path="discussion-3.html"><a href="discussion-3.html#other-thoughts"><i class="fa fa-check"></i><b>6.3</b> Other thoughts</a></li>
+<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#trip-distribution-laws"><i class="fa fa-check"></i><b>3.3.1</b> Trip Distribution Laws</a></li>
+<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.2</b> Time Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="travel.html"><a href="travel.html#discussion"><i class="fa fa-check"></i><b>3.4</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="struc.html"><a href="struc.html"><i class="fa fa-check"></i><b>4</b> Model Structures</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="struc.html"><a href="struc.html#multistage"><i class="fa fa-check"></i><b>4.1</b> Multistage</a></li>
+<li class="chapter" data-level="4.2" data-path="struc.html"><a href="struc.html#decision-tree"><i class="fa fa-check"></i><b>4.2</b> Decision Tree</a></li>
+<li class="chapter" data-level="4.3" data-path="struc.html"><a href="struc.html#multi-scales"><i class="fa fa-check"></i><b>4.3</b> Multi-scales</a></li>
+<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#mixed-model"><i class="fa fa-check"></i><b>4.4</b> Mixed Model</a></li>
+<li class="chapter" data-level="4.5" data-path="struc.html"><a href="struc.html#non-linear-models"><i class="fa fa-check"></i><b>4.5</b> Non-linear models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary-opt..html"><a href="summary-opt..html"><i class="fa fa-check"></i><b>5</b> Summary (Opt.)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="summary-opt..html"><a href="summary-opt..html#a-proposed-framework"><i class="fa fa-check"></i><b>5.1</b> A Proposed Framework</a></li>
+<li class="chapter" data-level="5.2" data-path="summary-opt..html"><a href="summary-opt..html#policy-implications"><i class="fa fa-check"></i><b>5.2</b> Policy implications</a></li>
+<li class="chapter" data-level="5.3" data-path="summary-opt..html"><a href="summary-opt..html#other-thoughts"><i class="fa fa-check"></i><b>5.3</b> Other thoughts</a></li>
 </ul></li>
 <li class="part"><span><b>Part II Data and Methods</b></span></li>
-<li class="chapter" data-level="7" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>7</b> Data</a>
+<li class="chapter" data-level="6" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>6</b> Data</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="data.html"><a href="data.html#the-daily-travel-data-in-the-u.s."><i class="fa fa-check"></i><b>7.0.1</b> The daily travel data in the U.S.</a></li>
-<li class="chapter" data-level="7.0.2" data-path="data.html"><a href="data.html#socio-demographic-data"><i class="fa fa-check"></i><b>7.0.2</b> Socio-Demographic Data</a></li>
-<li class="chapter" data-level="7.0.3" data-path="data.html"><a href="data.html#built-environment-data"><i class="fa fa-check"></i><b>7.0.3</b> Built-Environment Data</a></li>
-<li class="chapter" data-level="7.0.4" data-path="data.html"><a href="data.html#uints-and-scales-in-the-u.s."><i class="fa fa-check"></i><b>7.0.4</b> Uints and Scales in the U.S.</a></li>
-<li class="chapter" data-level="7.0.5" data-path="data.html"><a href="data.html#new-data-source"><i class="fa fa-check"></i><b>7.0.5</b> New Data Source</a></li>
+<li class="chapter" data-level="6.0.1" data-path="data.html"><a href="data.html#the-daily-travel-data-in-the-u.s."><i class="fa fa-check"></i><b>6.0.1</b> The daily travel data in the U.S.</a></li>
+<li class="chapter" data-level="6.0.2" data-path="data.html"><a href="data.html#socio-demographic-data"><i class="fa fa-check"></i><b>6.0.2</b> Socio-Demographic Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="data.html"><a href="data.html#built-environment-data"><i class="fa fa-check"></i><b>6.0.3</b> Built-Environment Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="data.html"><a href="data.html#uints-and-scales-in-the-u.s."><i class="fa fa-check"></i><b>6.0.4</b> Uints and Scales in the U.S.</a></li>
+<li class="chapter" data-level="6.0.5" data-path="data.html"><a href="data.html#new-data-source"><i class="fa fa-check"></i><b>6.0.5</b> New Data Source</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear Models</a>
+<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear Models</a>
 <ul>
-<li class="chapter" data-level="8.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
-<li class="chapter" data-level="8.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="8.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>8.0.3</b> Models Specifications</a></li>
-<li class="chapter" data-level="8.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>8.0.4</b> Diagnousis and Validation</a></li>
-<li class="chapter" data-level="8.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>8.0.5</b> Interpretation</a></li>
-<li class="chapter" data-level="8.0.6" data-path="linear-models.html"><a href="linear-models.html#summary"><i class="fa fa-check"></i><b>8.0.6</b> Summary</a></li>
+<li class="chapter" data-level="7.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>7.0.1</b> Overview</a></li>
+<li class="chapter" data-level="7.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>7.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="7.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.0.3</b> Models Specifications</a></li>
+<li class="chapter" data-level="7.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.0.4</b> Diagnousis and Validation</a></li>
+<li class="chapter" data-level="7.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.0.5</b> Interpretation</a></li>
+<li class="chapter" data-level="7.0.6" data-path="linear-models.html"><a href="linear-models.html#summary-1"><i class="fa fa-check"></i><b>7.0.6</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>9</b> Generalized Linear Models</a>
+<li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
-<li class="chapter" data-level="9.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>9.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="9.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-1"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+<li class="chapter" data-level="8.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
+<li class="chapter" data-level="8.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="8.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-2"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>10</b> Non-Linear Models</a>
+<li class="chapter" data-level="9" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Models</a>
 <ul>
-<li class="chapter" data-level="10.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview-2"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
-<li class="chapter" data-level="10.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>10.0.2</b> Main Approaches</a></li>
-<li class="chapter" data-level="10.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-2"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
+<li class="chapter" data-level="9.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview-2"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
+<li class="chapter" data-level="9.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>9.0.2</b> Main Approaches</a></li>
+<li class="chapter" data-level="9.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-3"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>11</b> Meta-Analysis</a>
+<li class="chapter" data-level="10" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>10</b> Meta-Analysis</a>
 <ul>
-<li class="chapter" data-level="11.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>11.0.1</b> Overview</a></li>
-<li class="chapter" data-level="11.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>11.0.2</b> Advanced Methods</a></li>
-<li class="chapter" data-level="11.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-3"><i class="fa fa-check"></i><b>11.0.3</b> Summary</a></li>
+<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
+<li class="chapter" data-level="10.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>10.0.2</b> Advanced Methods</a></li>
+<li class="chapter" data-level="10.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-4"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a></li>
@@ -209,7 +211,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Travel Behavior and Urban Land Use</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Association Between Travel Behavior and Urban Form</a>
           </h1>
         </div>
 
@@ -217,73 +219,73 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linear-models" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Linear Models</h1>
-<div id="overview" class="section level3" number="8.0.1">
-<h3><span class="header-section-number">8.0.1</span> Overview</h3>
+<div id="linear-models" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Linear Models</h1>
+<div id="overview" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Overview</h3>
 </div>
-<div id="models-structures" class="section level3" number="8.0.2">
-<h3><span class="header-section-number">8.0.2</span> Models Structures</h3>
-<div id="variable-transforamtion" class="section level4" number="8.0.2.1">
-<h4><span class="header-section-number">8.0.2.1</span> Variable Transforamtion</h4>
+<div id="models-structures" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> Models Structures</h3>
+<div id="variable-transforamtion" class="section level4" number="7.0.2.1">
+<h4><span class="header-section-number">7.0.2.1</span> Variable Transforamtion</h4>
 <p>Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is hard to believe they are all correct or equivalent. Some interdisciplinary knowledge could give some hints.</p>
 </div>
-<div id="fixed-and-mixed-effects" class="section level4" number="8.0.2.2">
-<h4><span class="header-section-number">8.0.2.2</span> Fixed and Mixed Effects</h4>
+<div id="fixed-and-mixed-effects" class="section level4" number="7.0.2.2">
+<h4><span class="header-section-number">7.0.2.2</span> Fixed and Mixed Effects</h4>
 </div>
-<div id="bayesian-approaches-opt." class="section level4" number="8.0.2.3">
-<h4><span class="header-section-number">8.0.2.3</span> Bayesian approaches (Opt.)</h4>
+<div id="bayesian-approaches-opt." class="section level4" number="7.0.2.3">
+<h4><span class="header-section-number">7.0.2.3</span> Bayesian approaches (Opt.)</h4>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="models-specifications" class="section level3" number="8.0.3">
-<h3><span class="header-section-number">8.0.3</span> Models Specifications</h3>
-<p><a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></p>
-<div id="theoretical-considerations" class="section level4" number="8.0.3.1">
-<h4><span class="header-section-number">8.0.3.1</span> Theoretical considerations</h4>
+<div id="models-specifications" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Models Specifications</h3>
+<p><a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></p>
+<div id="theoretical-considerations" class="section level4" number="7.0.3.1">
+<h4><span class="header-section-number">7.0.3.1</span> Theoretical considerations</h4>
 </div>
-<div id="subset-selection" class="section level4" number="8.0.3.2">
-<h4><span class="header-section-number">8.0.3.2</span> Subset Selection</h4>
+<div id="subset-selection" class="section level4" number="7.0.3.2">
+<h4><span class="header-section-number">7.0.3.2</span> Subset Selection</h4>
 <p>Empirical or methodological considerations</p>
 </div>
-<div id="shrinkage-methods" class="section level4" number="8.0.3.3">
-<h4><span class="header-section-number">8.0.3.3</span> Shrinkage Methods</h4>
+<div id="shrinkage-methods" class="section level4" number="7.0.3.3">
+<h4><span class="header-section-number">7.0.3.3</span> Shrinkage Methods</h4>
 <p>Ridge Regression and Lasso</p>
 </div>
-<div id="dimention-reduction-methods" class="section level4" number="8.0.3.4">
-<h4><span class="header-section-number">8.0.3.4</span> Dimention Reduction Methods</h4>
+<div id="dimention-reduction-methods" class="section level4" number="7.0.3.4">
+<h4><span class="header-section-number">7.0.3.4</span> Dimention Reduction Methods</h4>
 <p>Principal Components Regression (PCR)</p>
 <p>Partial Least Square (PLS)</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="diagnousis-and-validation" class="section level3" number="8.0.4">
-<h3><span class="header-section-number">8.0.4</span> Diagnousis and Validation</h3>
+<div id="diagnousis-and-validation" class="section level3" number="7.0.4">
+<h3><span class="header-section-number">7.0.4</span> Diagnousis and Validation</h3>
 <p>The third source, model selection, should also be controlled. In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. Hence, effective comparison or classification requires a few conditions:</p>
 <p>Of course, an effective comparison also should present the full results of model diagnosis and validation. In practice, a more certain modeling framework allows scholars to present more general conclusions and speak with a clear voice to the public and decision-makers.</p>
 <ul>
 <li>Checking the assumption of Independent Identically Distributed random variables (IID)</li>
 </ul>
-<div id="checking-residuals" class="section level4" number="8.0.4.1">
-<h4><span class="header-section-number">8.0.4.1</span> Checking Residuals</h4>
+<div id="checking-residuals" class="section level4" number="7.0.4.1">
+<h4><span class="header-section-number">7.0.4.1</span> Checking Residuals</h4>
 <p>The residual plots prove log-transform of VMT is reasonable because it has a highly right-skewed probability distribution. Only looking at the <span class="math inline">\(R^2\)</span> and p-values cannot disclose this feature. This result suggests that residual diagnosis is an essential step for modeling validation.</p>
 </div>
-<div id="checking-residuals-1" class="section level4" number="8.0.4.2">
-<h4><span class="header-section-number">8.0.4.2</span> Checking Residuals</h4>
+<div id="checking-residuals-1" class="section level4" number="7.0.4.2">
+<h4><span class="header-section-number">7.0.4.2</span> Checking Residuals</h4>
 </div>
-<div id="checking-multicollinearity" class="section level4" number="8.0.4.3">
-<h4><span class="header-section-number">8.0.4.3</span> Checking multicollinearity</h4>
+<div id="checking-multicollinearity" class="section level4" number="7.0.4.3">
+<h4><span class="header-section-number">7.0.4.3</span> Checking multicollinearity</h4>
 <p>If the Variance Inflation Factor of a predictor variable is high (e.g. VIF=9), this means that the standard error for the coefficient of that predictor variable is 3 times larger than if that predictor had 0 correlation with the other predictors. Table <a href="#tab:vifdd"><strong>??</strong></a> shows that the county-level model has serious multicollinearity issue. The double log transformation seems to enlarge the VIF values on D1a and D3a (Table <a href="#tab:vifdd"><strong>??</strong></a>,<a href="#tab:vif"><strong>??</strong></a>).</p>
 </div>
-<div id="goodness-of-fit" class="section level4" number="8.0.4.4">
-<h4><span class="header-section-number">8.0.4.4</span> Goodness of fit</h4>
+<div id="goodness-of-fit" class="section level4" number="7.0.4.4">
+<h4><span class="header-section-number">7.0.4.4</span> Goodness of fit</h4>
 <p>Two models with different specifications also have varied outcomes. The goodness-of-fit level is a premise. Although the coefficients of determination <span class="math inline">\(R^2\)</span> are not the only criteria of a good model, it is often available in most published papers. The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3. A seriously underfitting model’s outputs could be biased and unstable. In these cases, the comparison must have strong constraints. By dint of some synthetic variables, the disaggregated model’s <span class="math inline">\(R^2\)</span> can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. Meanwhile, the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. It is worthy of a deeper investigation.</p>
 </div>
 </div>
-<div id="interpretation" class="section level3" number="8.0.5">
-<h3><span class="header-section-number">8.0.5</span> Interpretation</h3>
-<div id="standardized-coefficients" class="section level4" number="8.0.5.1">
-<h4><span class="header-section-number">8.0.5.1</span> Standardized coefficients</h4>
+<div id="interpretation" class="section level3" number="7.0.5">
+<h3><span class="header-section-number">7.0.5</span> Interpretation</h3>
+<div id="standardized-coefficients" class="section level4" number="7.0.5.1">
+<h4><span class="header-section-number">7.0.5.1</span> Standardized coefficients</h4>
 <p>General case: It is very easy to go from the metric to the standardized coefficients. There is no need to actually compute the standardized variables and run a new regression.</p>
 <p><span class="math display">\[\beta&#39;_k=\beta_k\cdot\frac{s_{x_k}}{s_y}\]</span></p>
 <p>Two IV case: Compare this to the formula for the metric coefficients. Note that correlations take the place of the corresponding variances and covariances.</p>
@@ -292,10 +294,10 @@ div.csl-indent {
 <p><span class="math display">\[\beta&#39;_k=r_{yx}\]</span></p>
 <p><a href="https://www3.nd.edu/~rwilliam/stats1/x92.pdf" class="uri">https://www3.nd.edu/~rwilliam/stats1/x92.pdf</a></p>
 </div>
-<div id="elasticity" class="section level4" number="8.0.5.2">
-<h4><span class="header-section-number">8.0.5.2</span> Elasticity</h4>
+<div id="elasticity" class="section level4" number="7.0.5.2">
+<h4><span class="header-section-number">7.0.5.2</span> Elasticity</h4>
 <p>Definition: Commonly used to determine the relative importance of a variable in terms of its influence on a dependent variable. It is generally interpreted as the percent change in the dependent variable induced by a 1% change in the independent variable.</p>
-<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></p>
+<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></p>
 <table>
 <caption>Elasticity Estimates for Various Functional Forms</caption>
 <colgroup>
@@ -339,11 +341,11 @@ div.csl-indent {
 <tr class="even">
 <td align="center">Logit</td>
 <td align="center"><span class="math inline">\(\beta p_i(1-p_i)\)</span></td>
-<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></td>
+<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a></td>
 </tr>
 <tr class="odd">
 <td align="center">Poisson</td>
-<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a></td>
+<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></td>
 <td align="center"><span class="math inline">\(\beta X_i\)</span></td>
 </tr>
 <tr class="even">
@@ -353,23 +355,23 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td align="center">Tr-Pois</td>
-<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></td>
+<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
 <td align="center">Hurdle-P</td>
-<td align="center">separately<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></td>
+<td align="center">separately<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a></td>
 <td align="center"></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="combined-effects" class="section level4" number="8.0.5.3">
-<h4><span class="header-section-number">8.0.5.3</span> Combined effects?</h4>
+<div id="combined-effects" class="section level4" number="7.0.5.3">
+<h4><span class="header-section-number">7.0.5.3</span> Combined effects?</h4>
 </div>
 </div>
-<div id="summary" class="section level3" number="8.0.6">
-<h3><span class="header-section-number">8.0.6</span> Summary</h3>
+<div id="summary-1" class="section level3" number="7.0.6">
+<h3><span class="header-section-number">7.0.6</span> Summary</h3>
 <p>Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) <span class="citation">(<a href="#ref-cerveroEffectsBuiltEnvironments2010" role="doc-biblioref">Cervero and Murakami 2010</a>; <a href="#ref-ewingStructuralEquationModels2014" role="doc-biblioref">Reid Ewing, Hamidi, et al. 2014</a>)</span>.</p>
 <p>As far as methods, standardization, orthogonalization before fitting the model might be helpful.</p>
 
@@ -386,13 +388,13 @@ Ewing, Reid, Shima Hamidi, Frank Gallivan, Arthur C Nelson, and James B Grace. 2
 </div>
 <div class="footnotes">
 <hr />
-<ol start="44">
-<li id="fn44"><p>There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).<a href="linear-models.html#fnref44" class="footnote-back">↩︎</a></p></li>
-<li id="fn45"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref45" class="footnote-back">↩︎</a></p></li>
-<li id="fn46"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref46" class="footnote-back">↩︎</a></p></li>
-<li id="fn47"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref47" class="footnote-back">↩︎</a></p></li>
-<li id="fn48"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<ol start="45">
+<li id="fn45"><p>There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).<a href="linear-models.html#fnref45" class="footnote-back">↩︎</a></p></li>
+<li id="fn46"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<li id="fn47"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref50" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -442,7 +444,6 @@ Ewing, Reid, Shima Hamidi, Frank Gallivan, Arthur C Nelson, and James B Grace. 2
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
-<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
 <script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -483,7 +484,7 @@ gitbook.start({
 },
 "download": ["field_paper.pdf", "field_paper.epub"],
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

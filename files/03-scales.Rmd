@@ -1,6 +1,6 @@
 
 
-# Spatial Scales
+## Spatial Scales {#scale}
 
 Due to the various data sources or research interests, built environment-travel studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
 
@@ -8,16 +8,11 @@ Research also find that the models at different scales would give different resu
 Previous studies found that the density variables evaluated at different spatial scales have different impact on travel [@boarnetInfluenceLandUse2001; @buchananEffectUrbanGrowth2006; @sultanaJourneytoWorkPatternsAge2007].
 It is not reasonable to neglect the scale issues in built environment-travel studies.
 
+<!-- ### Units of Travel -->
+<!-- By household, person or trip? -->
 
-## Urban/Region Scale
 
-Tradition of aggregate analysis treat a city or metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
-
-@vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
-
-The aggregate models confound the individual level's variance. Urban form factors usually show significant effect.
-
-## Neighborhood Scale
+### Neighborhood Scale
 
 In disaggregate analysis, the travel records by individual or household are the basic unit of dependent variables. traveler's socio-demographic characteristics also keep this resolution such as income and vehicle ownership. However, built environment factors technically have a minimum geographic unit as the measure scope. Census tract and block group are the most common unit in disaggregate analysis.
 
@@ -29,14 +24,23 @@ Using disaggregate data can disclose the neighborhood-level differences and elim
 
 The results of travel models at different scales are often inconsistent. Using the same data source, @ewingTestingNewmanKenworthy2018 found that the elasticities of VMT with respect to population density is -0.164 in the aggregate models, which is a much higher value than disaggregate studies (-0.04 in the meta-analysis of @ewingTravelBuiltEnvironment2010). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
 
-## Multi-scale Studies
+
+### Urban/Region Scale
+
+Tradition of aggregate analysis treat a city or metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
+
+@vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
+
+The aggregate models confound the individual level's variance. Urban form factors usually show significant effect.
+
+### Multi-scale Studies
 
 @schwanenImpactMetropolitanStructure2004 explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, @ewingReducingVehicleMiles2020 identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
 
 @leeComparingImpactsLocal2020 also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
 
 
-## Modifiable areal unit problem (MAUP)
+### Modifiable areal unit problem (MAUP)
 
 
 Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger [@gehlkeCertainEffectsGrouping1934]. This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) and ecological fallacy [@openshawEcologicalFallaciesAnalysis1984].
@@ -51,7 +55,7 @@ The check of unit consistency may help to examine the biases by MAUP on the esti
 
 
 
-## Discussion
+## Summary
 
 The factors measured at a specific scale could only explain the variation generated at or above that level.
 Even some factors such as density has cross scales.

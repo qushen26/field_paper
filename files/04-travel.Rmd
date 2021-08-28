@@ -1,8 +1,44 @@
-# Travel Behavior Theories
+# Travel as Response {#travel}
 
-Two different perspectives, individual and collective, can explain travel behavior. When people contextualizing travel as a personal choice or decision-making, the traveler as a subject make mode choices, driving or not. When travel behavior is understood as a social phenomenon, researcher observe and understand the trips as a whole. The two perspectives derived two schools of theory, mode choice and human mobility. In the school of mode choice, travel distance could be treat as an independent variable, a part of travel cost, or could be decided in the next step after mode choice , such as route choice. In the school of human mobility, driving distance grab more attentions.
+Two different perspectives, individual and collective, can explain travel behavior and car use. When people contextualizing travel as a personal choice or decision-making, the traveler as a subject make mode choices, driving or not. 
+When travel behavior is understood as a social phenomenon, researcher observe and understand all the trip distance, time, and distributions as a whole. 
 
-## Mode Choices (Travel as a subject)
+The two perspectives derived two schools of theory, Traveler choice and human mobility. In the school of Traveler choice, travel distance could be treat as an independent variable, a part of travel cost, or could be decided in the next step after mode choice , such as route choice. 
+In the school of human mobility, driving distance grab more attentions.
+
+## Travel Variables
+
+Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance.
+Previous studies commonly choose two metrics for measuring them, the share of auto trips (or other modes) and Vehicle Miles Traveled (VMT).
+
+The share of mode is calculated by dividing the number of chosen mode over the total number of trips.
+The main travel modes, transit, bicycle, and walking are the alternatives to driving personal car.
+Given the same amount of travel demand, more active and transit modes means less car use.
+VMT is used to measure the travel distance made by a private vehicle.
+An integrated viewpoint is to treat the non-auto trips as zero-VMT.
+In this way, the probability distribution of VMT can comprehensively represents the travel behavior. 
+
+
+The smallest unit of VMT is recorded by trip from a daily travel survey. Then these records can be aggregated to personal or household daily VMT (DVMT).
+A traveler's or household's DVMT can account for the degree of automobile dependency by combining the number of trips and driving distance during a day.
+Given the survey day is randomly selected, DVMT can reflect the typical travel pattern in general.
+
+Although, there are other approaches collect weekly, monthly, or longer VMT records by tracking car usage.
+The odometer records are more likely to represent the usage of vehicle rather than traveler's behavior.
+It is not easy to acquire long-term VMT through survey-based method. The annual mileage and fuel efficiency information provided in some public data usually are estimated values using daily records and are not as accurate as DVMT.
+
+On a personal scale, VMT relates to the economic cost of travel by car, while another dimension, travel time measuring the time cost of vehicle travel.
+For society as a whole, the total VMT measures the usage of road network. 
+Thus, it acts as a major interest within the field of transportation, especially in the research of travel demand and infrastructure capacity.
+
+
+And VMT highly correlated with the amount of fuel consumption, which is one of the main indicators of pollution and GHG emission. Since transportation is the second source of GHG emissions, it is also one of the priority issues involving sustainable development and climate change.
+
+Previous research found that reducing VMT is instrumental in solving some urban problems and improving the qualities of urban life. The proportion of transportation cost in household expenditures is about 15 to 25 percent in the U.S.
+It is natural that urban studies try to figure out the relationship between VMT and some urban built-environment factors. Then urban or regional policies could identify the best practices to contribute VMT reduction.
+
+
+## Traveler Choice
 
 Are 'decision' and 'choice' the same when discussing travel modes? Literally, a 'choice' is one decision given all available options at the same time. While 'decision' is a broader concept. A decision could be a schedule with a combination of many choices, such as modes, destination, and activities. A decision related to travel behavior could even include bicycle or car purchase, and relocation. This section will start from the theories of mode choice, then extend to a broader discussion of decision processes.
 
@@ -74,11 +110,12 @@ In addition to the traditional utility framework, a regret term is added to addr
 
 Another psychological factor, cognitive bias can result in judgement errors. For example, people treat potential gains and losses differently, that is called Loss Aversion. Loss Aversion suggests that the negative feeling about losses is greater than the positive response to gains [@tverskyAdvancesProspectTheory1992]. As a result, individual's decisions may not be consistent with evidence and tend to pay additional costs to avoid losses.
 
-## Human Mobility (Travel as an object)
+## Human Mobility
 
 ### Trip Distribution Laws
 
-There is a long history of human mobility studies. In Physics and Geography, travel distance and pattern are treated as an objective phenomenon. The related theories try to use some statistical expressions to fit the aggregated trip distributions.
+In Physics and Geography, travel distance and pattern are treated as an objective phenomenon.
+There is a long history of human mobility studies. The related theories try to use some statistical expressions to fit the aggregated trip distributions.
 
 Gravity Law is a dominant theory in this field. Scholars have developed some more delicate forms of Gravity Law and found some mathematical relationship to other famous distribution laws. Some theories from different perspectives, like intervening opportunities also show strong ability for explaining travel patterns and regularities.
 
@@ -199,10 +236,10 @@ P(T>t)=&E\{\exp[-\lambda t^\alpha]\} \\
 By replacing $t$ with $m_i+s_{ij}$, the conditional probability is:
 
 $$
-\begin{align}
+\begin{aligned}
 P(1|m_i,m_j,s_{ij})= &\frac{P(T>m_i+s_{ij})-P(T> m_i+s_{ij}+m_j)}{P(T>m_i)} \\ 
 =&\frac{[(m_i + s_{ij} + m_j)^{\alpha}-(m_i + s_{ij})^{\alpha}](m_i^{\alpha}+1)}{[(m_i + s_{ij} + m_j)^{\alpha}+1][(m_i + s_{ij})^{\alpha}+1]}\\
-\end{align}
+\end{aligned}
 $$
 
 where $\alpha$ is a parameter adjusting the effect of the number of job opportunities between origins and destinations.

@@ -40,6 +40,37 @@ The aggregate models confound the individual level's variance. Urban form factor
 @leeComparingImpactsLocal2020 also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
 
 
+
+Aggregate data is more accessible and more convenient to combine with other data sources. For example, @ewingTestingNewmanKenworthy2018 use the average per capita VMT of all urbanized areas across the U.S. from FHWA's Highway Statistics. They joined the 2010 census tracts to FHWA's 157 urbanized areas with populations of two hundred thousand or more.
+
+For disaggregate studies, collecting complete personal travel records and the built environment information is difficult. A common way is to get travel survey data from the local department of transportation and combine it with census data and GIS data. Many scholars start their relevant research from neighborhoods data, then extend the scope to the whole city or metropolitan area. Among the selected nine VMT-density studies in @ewingTravelBuiltEnvironment2010, eight use single city/metro data[^45]. 
+
+```{r}
+library(kableExtra)
+kbl(data.frame( #knitr::kable
+  `study`=c('@ewing2009measuring','@frankMultipleImpactsBuilt2005','@greenwald2009sacsim','@mariakockelmanTravelBehaviorFunction1997'),
+  `Study sites` = c('Portland,OR','Seattle','Sacramento', 'Bay Area'),
+Elasticity= c(0.00,0.00,-0.07,0.00)
+)  , booktabs = TRUE, label = 'geoid', align = "llr",
+  caption = 'The Studies of VMT vresus Density in @ewingTravelBuiltEnvironment2010'
+) %>% kable_classic() %>% kable_styling(bootstrap_options = "striped", font_size = 7) 
+```
+
+[^45]: @ewing2009measuring: Portland, elas=0.00; 
+@frankMultipleImpactsBuilt2005 Misquote,Seattle , elas=0.00; 
+@greenwald2009sacsim Sacramento, elas=-0.07 (Non-significant, Unpublished); @mariakockelmanTravelBehaviorFunction1997,Bay Area, elas=0.00; 
+@kuzmyak2009estimating Los Angeles, elas=-0.04 (Unpublished); 
+@kuzmyak2009estimates Phoenix,elas=0.00 (Unpublished); 
+@zegrasBuiltEnvironmentMotor2010 Santiago de Chile, elas=-0.04; 
+@zhouSelfSelectionHomeChoice2008 Austin, elas=-0.12, no-log, $R^2$=0.097
+
+Only one nationwide study using NPTS data [@schimekHouseholdMotorVehicle1996] finds logarithm of household VMT has a non-significant elasticity (-0.07). Some studies begin to cover multi-region data [@zhangHowBuiltEnvironment2012]. @ewingVaryingInfluencesBuilt2015 accumulated a travel and built environmental dataset from 23 metropolitan regions in US (81,056 households and 815,204 people). They find that all of the 11 D-variables have statistically significant effects on VMT.
+
+
+Since 1969, there is a person/household-level data on travel and transportation patterns in the United States, called the National Personal/Household Travel Survey (NPTS/NHTS). NHTS data include population density of census tract and gasoline-equivalent gallons consumed per year. Some studies use NHTS data to modeling the automotive CO$_2$ emissions [@kimImpactResidentialDensity2013; @perumalContextualDensityUS2017]. But this dataset doesn't contain enough built environment information and cannot support a full VMT-5Ds variable studies. Some studies add psychological factors such as role preferences, motivations, and expectations in choices to the models. @hongHowBuiltenvironmentFactors2014 use eight attitudinal questions in the 2006 Household Activity Survey and improve the models' $R^2$ over 0.7.
+
+
+
 ### Modifiable areal unit problem (MAUP)
 
 

@@ -258,7 +258,20 @@ At individual level, time geography borrows some physical and mathematical conce
 
 Along with the wide usage of Global Positioning System (GPS), high performance computer, and sophisticated algorithms, the high-resolution data being collected. The relevant studies also have a dramatic increase after 2005.
 
-## Discussion
+## Probability Distributions
+
+In the transportation field, there are some valuable studies to identify the distributions of trip variables. Based on some theoretical or empirical studies [^28], scholars prove that trip generating frequency should not choose the linear regression models based on continuous functional forms. A zero-inflated negative binomial model is appropriate to solve the problems of over-dispersion and excess zero. This study implies that the diagnosis of variable distribution may be critical for regression modeling.
+
+[^28]: @hellersteinTheoreticalFoundationCount1993;@jangCountDataModels2005;@bienInflatedMultivariateInteger2011
+
+For continuous variables, it seems like choosing log-normal distribution for trip distance/time is a convention. @puAnalyticRelationshipsTravel2011 choose log-normal as prior assumption because a report called Future Strategic Highway Research Program (F-SHRP) [^29] says "the log-normal distribution is the closest traditional statistical distribution that describes the distribution of travel times." Actually, the new version, SHRP2 says "formal tests (e.g., a Kolmogorov-Smirnov test) could be employed to evaluate the assumption and identify the sensitivity of the results to departures from this assumption." (p. 130)
+
+[^29]: @cambridge2003providing;@kittelson2013evaluating
+
+Meanwhile, @linEstimationEnergyUse2012 validates the daily vehicle miles traveled (DVMT) follows a gamma distribution in the context of PHEV energy analysis. Based on the multidate (7-200 days) data sets from four countries, @plotzDistributionIndividualDaily2017 found Weibull distribution is an overall good two-parameter distribution for daily VKT; while the log-normal estimates are more conservative. The studies on trip distance are still not conclusive. But the attention of three distributions is similar to the survival analysis, which is also called time-to-event analysis [@kleinbaumSurvivalAnalysisSelfLearning2012]. This shows a potential relation with the Distance-Decay, or travel-time-budget theories [@marchettiAnthropologicalInvariantsTravel1994]. Similar to that, @kolblEnergyLawsHuman2003 show a canonical-like energy distribution for short trips by modes, which imply "a law of constant average energy consumption for the physical activity of daily travel". Some studies are not limited in parameter methods. @siminiUniversalModelMobility2012 propose a parameter-free model that predicts patterns of commuting.
+
+
+## Summary (Opt.)
 
 The theories of travel behavior follow a positivism tradition for a long time. Economics and geography give some strong explanations for both macro and micro travel patterns. In order to remove the limitation of ideal rationality, more sociological and psychological theories and methods are introduced into this field. Gradually, people realized the normative concept is not sufficient for real world applications. More descriptive and narrative arguments appear in transportation and land use planning. An example is the shift from mobility to accessibility.
 

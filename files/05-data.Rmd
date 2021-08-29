@@ -1,0 +1,280 @@
+
+
+# Data (Opt.) {#data}
+
+
+Due to the cost and difficulty of gathering data, it is expected that the data in many studies come from a specific region, period, or group. Partial data may store only pieces of information. Of course, its outcome will only represent the local knowledge rather than the characteristics of the population. 
+This fact is a challenge to get any generalized conclusion.
+A countrywide or worldwide random sampling dataset can mostly address this issue.
+Although people developed more new data-collection techniques and gathered more detailed data in the past years, 
+Randomization is still the fundamental requirement for eliminating the bias. 
+
+Identifying the effects of urban form on travel behaviors is harder than proving global warming. Scientists can get Antarctic ice core samples but cannot gather everyone's daily travel records, in part because of personal privacy protections, and in part because of limited techniques for gathering these data. Surveys, traffic flow detection, or event data recorder (EDR) can only capture a small piece of the whole picture. Thus, to get a results without loss of generality, wide-range random-sampling data is a critical condition.
+
+## Travel Survey
+
+National Household Travel Survey (NHTS) [@nhts_2009] is a nationwide travel survey on travel and transportation patterns in the United States, which includes the essential trip variables: number of trips, purpose, modes, VMT, etc.
+
+NHTS conducted in 2001, 2009, and 2017 by the Federal Highway Administration (FHWA). The prior Nationwide Personal Transportation Surveys (NPTS) conducted in 1969, 1977, 1983, 1990, and 1995.
+
+NHTS is a well-designed survey. Some deliberate sampling methods make NHTS data representing the population-level travel characteristics. Although it is not as detailed as the GPS data, as large as the social media data, the advantage of NHTS is it satisfies the fundamental requirement of statistic inference: random sampling.
+
+NHTS data include population density of census tract and gasoline-equivalent gallons consumed per year. Some studies use NHTS data to modeling the automotive CO$_2$ emissions [@kimImpactResidentialDensity2013; @perumalContextualDensityUS2017]. But this dataset doesn't contain enough built environment information and cannot support a full VMT-5Ds variable studies. Some studies add psychological factors such as role preferences, motivations, and expectations in choices to the models. @hongHowBuiltenvironmentFactors2014 use eight attitudinal questions in the 2006 Household Activity Survey and improve the models' $R^2$ over 0.7.
+
+State is the [valid geographic levels](https://nhts.ornl.gov/faq.shtml) to use NHTS data.
+Only the Add-on Partner [^add-on], the states and MPOs with more sufficient samples size could conduct valid estimates in smaller levels of geography (e.g., cities, counties).
+
+
+[^add-on]: 9 add-on Partners in 2001; 20 in 2009; [13 in 2017](<https://www.bts.gov/table-3-2017-nhts-add-partners>)
+
+-   Sampling methods (Opt.)
+
+## Census Data
+
+The new NHTS (2009 and 2017) "weights its person data based on control totals found in the [American Community Survey (ACS)](https://www.census.gov/programs-surveys/decennial-census/about/census-acs.html)." This provides an opportunity of joining travel data to other demographic, employment, and built environment data. 
+
+
+
+```{r}
+library(kableExtra)
+kbl(data.frame( #knitr::kable
+  `Area Type`=c("State","County","County Subdivision","Tract","Block Group","Block",
+                "CSA","CMSA","CBSA","UACE","Places", "PUMA"),
+   GEOID = c("41", "41051",	"4105192520",	"410510056",	"410510056002",	"410510056002014",
+             "440", "6442", "38900", "71317",	"4159000", "4101314"),
+`Geographic Area`= c("Oregon","Multnomah County, OR", "Portland West CCD, Multnomah County, OR", 
+                     "Census Tract 56, Multnomah County, OR", "Block Group 2, Census Tract 56, Multnomah County, OR",
+                     "Block 2014, Census Tract 56, Multnomah County, OR",
+                     "Portland-Vancouver-Salem, OR-WA", "Portland-Salem, OR-WA", "Portland-Vancouver-Hillsboro, OR-WA", 
+                     "Portland, OR-WA", "Portland city, OR", "Portland City (Northwest & Southwest)")
+)  , booktabs = TRUE, label = 'geoid', align = "llr",
+  caption = 'GEOID Structure for Geographic Areas'
+) %>% kable_classic() %>% kable_styling(bootstrap_options = "striped", font_size = 7) %>% 
+ pack_rows(index = c("Nested Entities" = 6, "Other Entities" = 6)) 
+```
+
+
+NHTS is conducted at four units: trip, person, vehicle, and household. While SLD is collected at the Census block group (CBG) level. The attributes can be synthesized at block, tract, county, and city scales by [geographic identifiers](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) (Table \@ref(tab:geoid)). 
+
+
+
+```{=latex}
+\begin{table}[h]
+\begin{tabular}{|c|l|r|}\hline
+Area Type & GEOID & Geographic Area \\\hline
+State     &  41   & Oregon \\
+County    & 41051 & Multnomah County, OR \\
+County Subdivision & 4105192520 & Portland West CCD, Multnomah County, OR \\
+Places    & 4159000 & Portland city, OR \\
+Tract     & 410510056 & Census Tract 56, Multnomah County, OR \\
+Block Group & 410510056002    & Block Group 2, Census Tract 56, Multnomah County, OR \\
+Block       & 410510056002014 & Block 2014, Census Tract 56, Multnomah County, OR \\\hline
+\multicolumn{3}{|c|}{Other Census Geographic Entities} \\\hline
+CSA   & 440      & Portland-Vancouver-Salem, OR-WA  \\
+CMSA  & 6442     & Portland--Salem, OR--WA \\
+CBSA  & 38900      & Portland-Vancouver-Hillsboro, OR-WA \\
+UACE  & 71317      & Portland, OR--WA \\
+PUMA   & 4101314 & Portland City (Northwest \& Southwest)   \\\hline
+\end{tabular}
+\centering
+\caption{\label{tab:geoid}GEOID Structure for Geographic Areas}
+\end{table}
+```
+
+In the nested series, one spatial entities can be combined by its lower-level unit. For example, Multnomah county, Oregon is made up of 171 tracts, Tract 56 is made up of 4 block groups, Block Group 2 is made up of 22 blocks. Urban Center at PSU locates inside Block 2014.
+Other geographic entities can also combined with small units,
+Such as Core Based Statistical Area (CBSA) [^42]
+and Urban Areas (including 486 Urbanized Areas and 3,087 Urban Clusters in 2010) [^43].
+
+[^42]: there are 384 metropolitan statistical areas and 543 micropolitan statistical areas as of 2020. The 2010 standards provide that each CBSA must contain at least one urban area of 10,000 or more population. Each metropolitan statistical area must have at least one urbanized area of 50,000 or more inhabitants. Each micropolitan statistical area must have at least one urban cluster of at least 10,000 but less than 50,000 population.
+
+[^43]: 2010 Census Urban and Rural Classification and Urban Area Criteria Urbanized Areas (UAs) of 50,000 or more people; Urban Clusters (UCs) of at least 2,500 and less than 50,000 people. (<https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html>)
+
+It allows a cities-to-cities, metro-to-metro comparison with an uniform data source (Figure \@ref(fig:diagram3)).
+
+```{r diagram3,eval=T,fig.cap='The data at mutiple scales'}
+# library(DiagrammeR) # ,fig.dim = c(9,2.5)
+grViz("
+digraph G {
+graph[fontname = 'helvetica',  nodesep=0.4, overlap='prism1000']
+rankdir = LR
+node [fontname = 'helvetica', style = filled, fillcolor = WhiteSmoke, height = 0.75, width = 1, fontcolor = black];
+
+node[fillcolor = PapayaWhip, shape = circle]
+# node [shape=none, width=0, height=0, label='']
+
+    subgraph{label = '';
+    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
+		node [shape=plain, style=filled, color=black, fillcolor = WhiteSmoke]; # '#91cf60'
+    rank = same
+    t[label = 'Trip']; t1[label = 'Person']; t2[label = 'Household']
+    t -> t1 -> t2[style=dashed,label='@@4',dir = none,splines = none]
+    }
+
+    subgraph cluster_D {label = 'Data Sources';
+    style=dashed;	color= '#625a5a'; fontname = 'helvetica-bold';
+    node [shape = cylinder, fillcolor = WhiteSmoke]# '#91cf60'
+    nhts[label = 'NHTS']    
+    acs[label = 'ACS']
+    sld[label = 'SLD']
+    {t t1 t2} -> nhts[label='@@4']
+    }
+
+    subgraph cluster_BG {label = 'Block Group';
+    style=dashed;	
+    node [shape = tab, fillcolor = WhiteSmoke]
+    Tbg[label = '@@1']; 
+    node [shape = folder]   
+    SDbg[label = '@@2']; 
+		node [shape=box3d];    
+    BEbg[label = '@@3']
+    }
+
+    subgraph cluster_Tr {label = 'Tract';
+    style=dashed;
+    node [shape = tab, fillcolor = Beige]
+    Ttr[label = '@@1']; 
+    node [shape = folder]   
+    SDtr[label = '@@2']; 
+		node [shape=box3d];    
+    BEtr[label = '@@3']
+    }
+
+    subgraph cluster_Co {label = 'County';
+    style=dashed;
+    node [shape = tab, fillcolor = cornsilk]
+    Tco[label = '@@1']; 
+    node [shape = folder]
+    SDco[label = '@@2']; 
+		node [shape=box3d];
+    BEco[label = '@@3']
+    }
+
+    subgraph cluster_Ci {label = 'City';
+    style=dashed;	
+    node [shape = tab, fillcolor = PapayaWhip]
+    Tci[label = '@@1']; 
+    node [shape = folder]   
+    SDci[label = '@@2']; 
+		node [shape=box3d];    
+    BEci[label = '@@3']
+    }
+    
+    subgraph cluster_Ua {label = 'UA';
+    style=dashed;
+    node [shape = tab, fillcolor = PeachPuff]
+    Tua[label = '@@1']; 
+    node [shape = folder]  
+    SDua[label = '@@2']; 
+		node [shape=box3d];   
+    BEua[label = '@@3']
+    }
+
+    subgraph cluster_Cbsa { label = 'CBSA';
+    style=dashed;
+    node [shape = tab, fillcolor = SandyBrown]
+    Tcbsa[label = '@@1']; 
+    node [shape = folder]  
+    SDcbsa[label = '@@2']; 
+		node [shape=box3d];   
+    BEcbsa[label = '@@3']
+    }
+    
+nhts -> Tbg  -> Ttr -> Tco  -> Tci -> Tua -> Tcbsa
+acs -> SDbg  -> SDtr -> SDco  -> SDci -> SDua -> SDcbsa
+sld -> BEbg  -> BEtr -> BEco  -> BEci -> BEua -> BEcbsa
+
+label= 'T(Travel); SD(Socio-Demographic Characteristics); BE(Built Environment)';
+# t2 -> {dist Model} -> f4_2 [dir=back,style=dashed,splines = none]
+}
+
+[1]: paste0('T')
+[2]: paste0('SD')
+[3]: paste0('BE')
+[4]: paste0('') # &Sigma; # ,label='&Sigma;/n'
+
+")
+```
+
+
+-   Tract scale and below: Similar Population Size with varying Area Size
+
+<!-- delineating criteria -->
+<!-- Boundary requirements: Census tract and BNA boundaries generally follow permanent, visible features, -->
+
+<!-- Demographic requirements: 4000 people (2500-8000) [^12] -->
+
+<!-- [^12]: When first delineating census tracts, the Census Bureau requests that the average population of all census tracts in a county (or statistically equivalent entity) be about 4,000 people (approximately 1,500 housing units), with individual census tracts ranging from 2,500 to 8,000 inhabitants (1,000 to 3,000 housing units). -->
+
+<!-- Block Group: 400 housing units (250-550) [^13] -->
+
+<!-- [^13]: The guidelines specified an ideal size for a BG of 400 housing units, with a minimum of 250, and a maximum of 550 housing units. The guidelines further required that BG boundaries follow clearly visible features, -->
+
+<!-- Block: 30,000 sq.ft. (0.69 acre) [^14] -->
+
+<!-- [^14]: The minimum size of a census block was 30,000 square feet (0.69 acre) for polygons bounded entirely by roads, or 40,000 square feet (0.92 acres) for other polygons. There was no maximum size for a census block -->
+
+<!-- -   Urban Area and Urbanized Area scale: Combined Area with Multiple criteria. -->
+
+<!-- 2010: A densely settled core of census tracts and/or census blocks (1000 persons/sq.mi.). Urban area has a population \> 2,500 person. -->
+
+<!-- 2020: The census blocks with \> 385 housing units/sq.mi. (1000 persons/sq.mi.). Urban area has a population \> 10,000 person. -->
+
+<!-- [^15] [^16] 500 persons per square mile (ppsm) as the minimum density criterion for recognizing some types of urban territory. [^17] -->
+
+<!-- [^15]: The Census Bureau proposes adopting a housing unit density threshold of 385 housing units per square mile as the primary criterion for determining whether a census block qualifies for inclusion in an urban area, replacing the use of population density. The 385 housing units (occupied or vacant) per square mile density threshold utilized in the delineation of urban areas is consistent with the 1,000 persons per square mile density used in the past, based on the 2019 American Community Survey (ACS) 1-year data average of an estimated 2.6 persons per household for the United States. -->
+
+<!-- [^16]: The Census Bureau proposes that an area will qualify as urban if it contains at least 4,000 housing units or has a population of at least 10,000. The proposed increase in the minimum population responds to calls for the Census Bureau to increase its minimum threshold for defining urban areas from the 2,500-person minimum established in 1910. -->
+
+<!-- [^17]: Jumps: Two conditions must be satisfied: (1) the road distance through the low-density area must be 1 1/2 miles or less, and (2) the combined population density of the outlying area and the intervening area must be at least 500 people per square mile -->
+
+<!-- - Cease Distinguishing UA and UZA  -->
+<!--  The 50,000-person threshold that has been used to distinguish between urbanized areas and smaller urban areas should no longer be used to distinguish types of urban areas in 2020 proposal. <https://www.federalregister.gov/documents/2021/02/19/2021-03412/urban-areas-for-the-2020-census-proposed-criteria> -->
+
+<!-- -   UA Central Places -->
+<!--  To determine central place status, the Census Bureau selects the most populous incorporated place that contains at least 2,500 people. It may select up to two additional incorporated places as central places, provided that each additional place has a population of at least 15,000 and that each has at least one-third the population of the most populous incorporated place. -->
+
+<!-- "For the definition of Urbanized Areas for the 2000 and 2010 censuses, a minimum population density of 500 persons per square mile was required for a block or larger area to be added to an Urbanized Area (U.S. Bureau of the Census 2002, 2011). Using the ratio of population to housing units for the nation in 2000 of 2.34 persons per unit, a density of 500 persons per square mile is almost exactly equivalent to 1 housing unit per 3 acres or 213.33 units per square mile. This was used as the minimum urban density threshold." (Ottensmann, 2018) -->
+
+## Smart Location Database
+
+Smart Location Database (SLD) [@ramsey_smart_2014] is an informative data source covering the entire US. The Environmental Protection Agency (EPA) [conducted SLD](https://www.epa.gov/smartgrowth/smart-location-mapping) for measuring location efficiency and the built environment. 
+
+2009 NHTS and SLD have the same period and can join together by geographic locations. 
+SLD synthesized many data sources in around 2010 including [2010 Census](http://www.census.gov/2010census/data/), 2010 ACS, LEHD Origin-Destination Employment Statistics (LODES), [InfoUSA](http://www.infousa.com/), [NAVTEQ](http://www.navteq.com/products_data.htm), [PAD-US](http://gapanalysis.usgs.gov/padus/), [TOD Database](http://toddata.cnt.org/), [GTFS](https://developers.google.com/transit/gtfs/). 
+
+
+
+SLD have more than 90 variables including 
+*'density of development'*), 
+*'diversity of land use'*, 
+*'street network design'*, 
+*'transit service'*, and 
+*'accessibility to destinations'*. 
+The initial data dimension is 150,145 observations by 192 variables. Hence, the joint datasets contain both trip and built environment information to fit VMT-density models.
+
+The advantage is this dataset has almost reached the finest resolution for travel v.s built environment analysis. 
+
+However, among the 57 Ds variables in SLD, the variables inside each Ds group are highly correlated. A ongoing study chooses only one variable from each D group as below.
+
+> D1B: Gross population density (people/acre) on unprotected land;
+> D2A_WRKEMP: Household Workers per Job, by CBG;
+  D3a: Total road network density;
+  D4b050: Proportion of CBG employment within 1/2 mile of fixed-guideway transit stop;
+
+> D5ar: Jobs within 45 minutes auto travel time, time decay (network travel time) weighted.
+> Source:[@ramsey_smart_2014]
+
+
+
+
+
+## New Data Sources
+
+There are more and more transportation studies using new data sources such as Call Detail Records (CDR), GPS, ICT, Point of Interest (POI), and social media data.
+@liuPointofInterestDemandModeling2017 use Point-of-Interest (POI) demand modeling to analyze human mobility patterns. @damianiLocationRelevanceDiversity2020 use trajectory summarization technique for the extraction of the locations of interest high-quality information. Using image recognition techniques, satellite imagery and Street View data provide unprecedented built environment information. The advantage of these new data sources is the high resolution and detailed information. 
+
+As long as the data contain the identifiable variables, combining traditional and new data sources together can largely enrich the information and has tremendous potential to answer VMT-urban form questions.
+For example, Point of Interest may represent the number of opportunities of place or utility of place. Although some data have high resolution and plenty of information, the geographic restriction and self-report bias should not be neglected.
+
+However, the enormous amount of emerging data is also a huge challenge. The analysis methods of abstracting out generic information lags behind the data collection. How to eliminate the sample bias in new data sources is another unfinished work.

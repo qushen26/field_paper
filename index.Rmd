@@ -71,7 +71,7 @@ p_load(tidyverse,kableExtra ,mosaic,ggpubr,factoextra, DiagrammeR,magrittr) #
 # if (!require("webshot")) {install.packages("webshot")}
 # webshot::install_phantomjs()
 
-knitr::opts_chunk$set(eval=F,echo=F, message=F, warning=F,cache=T,fig.dim = c(8, 6),fig.align = 'center') #,fig.pos="!h"
+knitr::opts_chunk$set(eval=T,echo=F, message=F, warning=F,cache=T,fig.dim = c(8, 6),fig.align = 'center') #,fig.pos="!h"
 ```
 
 
@@ -79,6 +79,7 @@ knitr::opts_chunk$set(eval=F,echo=F, message=F, warning=F,cache=T,fig.dim = c(8,
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
+bookdown::render_book()
 bookdown::publish_book(account="")
 ```
 

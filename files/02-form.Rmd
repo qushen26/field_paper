@@ -7,9 +7,11 @@ editor_options:
 # Urban Form as Predictors {#form}
 
 The concepts of 'urban form', 'built environment', and 'land use' are often exchangeable in literature.
-Adopted from some common usages, here land use refer to 
-At the macro scale,, The same thing is about 'land use' and  at the meso and micro scales.
-and
+Adopted from some common usages, here 'urban form' refers to the comprehensive physical expression of land use at macro scale.  
+'Built environment' emphasis the urban form attributes as a series of external factors with respect to travelers' internal characteristics.
+When using 'urban form' and 'Built environment', one looks them as the given conditions of travel decision.
+While 'land use' can represent either current status descriptions or designated future use at meso and micro scales.
+
 
 
 ## Influencing Direction
@@ -169,7 +171,46 @@ A smart application of synthesize method (common factor analysis) is to control 
 
 ### Meta-Aanalysis
 
+Aggregate data is more accessible and more convenient to combine with other data sources. For example, @ewingTestingNewmanKenworthy2018 use the average per capita VMT of all urbanized areas across the U.S. from FHWA's Highway Statistics. They joined the 2010 census tracts to FHWA's 157 urbanized areas with populations of two hundred thousand or more.
+
+For disaggregate studies, collecting complete personal travel records and the built environment information is difficult. A common way is to get travel survey data from the local department of transportation and combine it with census data and GIS data. Many scholars start their relevant research from neighborhoods data, then extend the scope to the whole city or metropolitan area. 
+
 To get a general, comparable outcome, @ewingTravelBuiltEnvironment2010 collect more than 200 related studies and try to summarize the elasticity values using meta-analysis. Elasticity measures the percentage change in response with respect to a 1 percent increase in a predictor. Thus, it is a dimensionless parameter. After screening, sixty-two studies were selected. But divided by modes (VMT, walking, and transit use), only nine studies were used to calculate the weighted-average elasticities of VMT with respect to population density. Of nine papers, six gave zero or insignificant elasticity, while three showed significant negative values (two are -0.04 and one is -0.12). The weighted-average elasticity of job density (sample size = 9) was zero. The largest elasticity of VMT belonged to Destination accessibility, -0.20 with respect to Job accessibility by auto (sample size = 5) and -0.22 with respect to Distance to downtown (sample size = 3). Due to the small sample size, the confidence intervals were not available. The authors call for more relevant studies to refine the results.
+
+
+Among the selected nine VMT-density studies in @ewingTravelBuiltEnvironment2010, eight use single city/metro data. 
+Only one nationwide study using NPTS data [@schimekHouseholdMotorVehicle1996] finds logarithm of household VMT has a non-significant elasticity (-0.07). Some studies begin to cover multi-region data [@zhangHowBuiltEnvironment2012]. @ewingVaryingInfluencesBuilt2015 accumulated a travel and built environmental dataset from 23 metropolitan regions in US (81,056 households and 815,204 people). They find that all of the 11 D-variables have statistically significant effects on VMT.
+
+```{r}
+library(kableExtra) 
+kbl(data.frame( #knitr::kable
+  `Study`=c('@ewing2009measuring','@frankMultipleImpactsBuilt2005',
+            '@greenwald2009sacsim',
+            '@mariakockelmanTravelBehaviorFunction1997',
+            '@kuzmyak2009estimating',
+            '@kuzmyak2009estimates',
+            '@zegrasBuiltEnvironmentMotor2010',
+            '@zhouSelfSelectionHomeChoice2008',
+            '@schimekHouseholdMotorVehicle1996'),
+  `Sites` = c('Portland,OR','Seattle','Sacramento', 'Bay Area','Los Angeles', 'Phoenix','Santiago de Chile','Austin','U.S.'),
+Elasticity= c(0.00,0.00,-0.07,0.00,-0.04, 0.00,-0.04,-0.12,-0.07),
+note =c('','','Non-peer-reviewed;Non-significant','','Non-peer-reviewed','Non-peer-reviewed',
+        '','not log transform,$R^2$=0.097','Non-significant')
+)  , booktabs = TRUE, label = 'geoid', align = "llr", digit=2,
+  caption = 'The Studies of VMT vresus Density in @ewingTravelBuiltEnvironment2010'
+) %>% kable_classic(bootstrap_options = "striped",full_width = F,font_size = 7)  #%>% kable_styling( ) 
+   #%>%footnote(symbol = c("Non-peer-reviewed", "Non-significant", 'not log transform,$R^2$=0.097'),footnote_as_chunk = T)
+```
+
+<!-- [^45]: @ewing2009measuring: Portland, elas=0.00;  -->
+<!-- @frankMultipleImpactsBuilt2005 Misquote,Seattle , elas=0.00;  -->
+<!-- @greenwald2009sacsim Sacramento, elas=-0.07 (Non-significant, Unpublished);  -->
+<!-- @mariakockelmanTravelBehaviorFunction1997,Bay Area, elas=0.00;  -->
+<!-- @kuzmyak2009estimating Los Angeles, elas=-0.04 (Unpublished);  -->
+<!-- @kuzmyak2009estimates Phoenix,elas=0.00 (Unpublished);  -->
+<!-- @zegrasBuiltEnvironmentMotor2010 Santiago de Chile, elas=-0.04;  -->
+<!-- @zhouSelfSelectionHomeChoice2008 Austin, elas=-0.12, no-log, $R^2$=0.097 -->
+
 
 @stevensDoesCompactDevelopment2017 also try to explain the different outcomes using a meta-regression method. Based on the results from 37 studies, they found the magnitude of effects is small and suggest that compacting development has a tiny influence on driving. 
 His work triggers a new round of discussion [@handyThoughtsMeaningMark2017; @knaapDrivingCompactGrowth2017; @nelsonCompactDevelopmentReduces2017; @manvilleTravelBuiltEnvironment2017; @cliftonGettingHereThere2017]
@@ -193,6 +234,84 @@ They are Density, Urban design, Local land use mix, mono/polycentrism and centra
 <!-- Previous theories has point out several facets affecting travel behavior: economic, psychological, and physical. -->
 
 <!-- land use, including the main study subjects in transportation and urban planning. -->
+
+
+
+
+## Spatial Scales {#scale}
+
+Due to the various data sources or research interests, built environment-travel studies divide into two groups. One group uses aggregated travel and built-environment variables at the city, county, or metropolitan level. At the same time, the other group uses trip data at the individual or household level.
+
+Research also find that the models at different scales would give different result. This phenomenon is called Modifiable areal unit problem (MAUP).
+Previous studies found that the density variables evaluated at different spatial scales have different impact on travel [@boarnetInfluenceLandUse2001; @buchananEffectUrbanGrowth2006; @sultanaJourneytoWorkPatternsAge2007].
+It is not reasonable to neglect the scale issues in built environment-travel studies.
+
+<!-- ### Units of Travel -->
+<!-- By household, person or trip? -->
+
+
+### Neighborhood Scale
+
+In disaggregate analysis, the travel records by individual or household are the basic unit of dependent variables. traveler's socio-demographic characteristics also keep this resolution such as income and vehicle ownership. However, built environment factors technically have a minimum geographic unit as the measure scope. Census tract and block group are the most common unit in disaggregate analysis.
+
+Scholars who choose disaggregate analysis believe that the internal difference of urban characteristics be neglected at region level. They are interested in the impact of meso-level built-environment factors like the population and employment distribution of intra-urban.
+
+Using disaggregate data can disclose the neighborhood-level differences and eliminate aggregation bias. Using logarithms of VMTs per vehicle from *National Personal Travel Survey (NPTS)* data with 114 urban areas, @bentoEffectsUrbanSpatial2005 fit the linear model with 19 variables. They found that, instead of population density, population centrality has a significant effect on VMT. The elasticity of annual VMT with respect to population centrality is 1.5. [^factors-6]
+
+[^factors-6]: "population centrality measure is computed by averaging the difference between the cumulative population in annulus n (expressed as a percentage of total population) and the cumulative distance-weighted population in annulus n (expressed as a percentage of total distance-weighted population)."
+
+The results of travel models at different scales are often inconsistent. Using the same data source, @ewingTestingNewmanKenworthy2018 found that the elasticities of VMT with respect to population density is -0.164 in the aggregate models, which is a much higher value than disaggregate studies (-0.04 in the meta-analysis of @ewingTravelBuiltEnvironment2010). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
+
+
+### Urban/Region Scale
+
+Tradition of aggregate analysis treat a city or metropolitan as an observation. Both dependent and independent variables are aggregated at macro level. Here the land use factors only reflect the density, pattern and structure at the whole city.
+
+@vandecoeveringReevaluatingImpactUrban2006 carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation) and all of their adjusted $R^2$ are higher than 0.7. Their models also show that the cities with higher population density drive less. They found the land use characteristics of the inner area are more important than metropolitan-wide population density. Similarly, a recent city-level study [@gimAnalyzingCitylevelEffects2021] fit multiple regression models based on the data from 65 global cities. The population density becomes not significant in this model. Their results show that fuel price, household size, and congestion level have strong effects on travel time. Using structural equation modeling, they also find the population density of the high-density built-up areas has a larger effect on travel than overall city density.
+
+The aggregate models confound the individual level's variance. Urban form factors usually show significant effect.
+
+### Multi-scale Studies
+
+@schwanenImpactMetropolitanStructure2004 explains that many urban form dimensions are tied to specific geographical scales. Recently, more studies import the spatial scales as an explanatory variable. In a report of travel and polycentic development, @ewingReducingVehicleMiles2020 identify 589 centers in 28 U.S. regions. Then a categorical variable, 'within/outside a center' is added into the model. The results show that the household living within a center have more walk trips and fewer VMT than who living outside a center.
+
+@leeComparingImpactsLocal2020 also conduct a study involving factors at three level: household, census tract, and urbanized area. They find that density and centrality affect VMT at urban level as well as the meso-scale jobs-housing mix. After controlling for factors, the effect of local factors the urban-level spatial structure moderates the effects size of local built environment on travel.
+
+
+
+
+### Modifiable areal unit problem (MAUP)
+
+
+Early in 1930, scholars noticed that, when a set of smaller areal units was aggregated into larger areal units, the variance structure will be changed and the estimated coefficients will be larger [@gehlkeCertainEffectsGrouping1934]. This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) and ecological fallacy [@openshawEcologicalFallaciesAnalysis1984].
+
+In aggregated analysis, two kinds of MAUP often happen simultaneously [@wongModifiableArealUnit2004]. The first one called 'scale effect' means that the correlation among variables depends on the size of areal units. Larger units usually lead to larger estimations. The second one, zone effect describe the various results of correlation by choosing different areal shape or subset at the same scale.
+
+@fotheringhamModifiableArealUnit1991 found that multivariate analysis is unreliable when using the data from areal units. 
+Both value and direction of estimated coefficients may change for different spatial configurations [@leeModifiableArealUnit2016; @xuModifiableArealUnit2018].
+
+Meanwhile, some aggregate studies shows that, using the simple averages of individual data, the estimations of coefficients in linear model are unbiased [@praisGroupingObservationsRegression1954]. A condition is that the regression model must fix the *omission error* using proper specification [@amrheinSearchingElusiveAggregation1995; @yeImpactsModifiableAreal2021].
+The check of unit consistency may help to examine the biases by MAUP on the estimations.
+
+
+
+## Summary
+
+The factors measured at a specific scale could only explain the variation generated at or above that level.
+Even some factors such as density has cross scales.
+Their distributions in different units and scales are not identical. It is reasonable for them to have various meanings and influences on travel.
+A systematic comparison should be conducted among multi-scale studies.
+The inconsistent might not be about correct or wrong.
+As @ewingTestingNewmanKenworthy2018 commented, the aggregate and disaggregate studies are asking the apples and oranges questions. 
+
+
+
+
+<!-- The significant effects of 'population centrality' or ' high-density built-up areas'.  -->
+<!-- The effects of density are not significant and have a small magnitude.  -->
+<!-- The aggregated studies show that density has a strong effect on VMT at the city scale -->
+<!-- The disaggregated studies support the 'collaborated' framework.  -->
+
 
 
 

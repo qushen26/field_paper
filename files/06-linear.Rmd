@@ -3,40 +3,148 @@
 
 # Linear Models
 
-
-### Overview
-
-### Models Structures
-
-#### Variable Transforamtion
-
-Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is hard to believe they are all correct or equivalent. Some interdisciplinary knowledge could give some hints.
-
-#### Fixed and Mixed Effects
-
-#### Bayesian approaches (Opt.)
-
-\pagebreak
-
-### Models Specifications
-
-[^factors-14]
-
-[^factors-14]: There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96--8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287--92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).
+This Chapter will not give a complete introduction of linear regression.
+It only focus on some critical issues which are related with Travel-Urban Form models.
+This chapter only discusses the VMT-urban form models because the response are continue variables in regular linear models.
+The part of mode choice model is placed in Chapter of Generalized linear models.
 
 
-#### Theoretical considerations
+
+## Assumptions
+
+- Additive and linear
+
+For linear models, the most important assumptions are the additive and linear relationship between the response and predictors.
+Gravity Law discloses that travel distance has a multiplicative (inverse) relationship with the 'masses' of two places. If the population size can be a representative of built environment, the additive relationship will not hold.
+Previous studies also shows that the effect sizes of built environment with respect of travel are small and complex.
+There is not sufficient evidence to support or against the linear hypothesis.
+
+- IID
+
+Another essential assumption is that both predictors and response are Independent Identically Distributed (IID) random variables.
+
+Unfortunately, many of the predictors are correlated.
+Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Diagnousis and Validation.
+
+When data is generated from experimental design, the treatments $X$ could be fixed variables. But travel-urban form model is observational studies and nothing can be controlled as in lab. Thus, all $X$s are random variables.
+
+- Second Moment
+
+The first- and second-moment are about the expected value, the variances, and the covariances among the random errors.
+Once the conditions of the first- and second-moment are satisfied, the Gauss - Markov theorem \@ref(thm:g-m), proves that least-square method could give the minimum-variance unbiased estimators (MVUE) or called the best linear unbiased estimators (BLUE).
+These conditions are not strict and make regression method widely applicable.
+
+::: {.theorem #g-m name="Gauss - Markov theorem"}
+
+For the regression model \@ref(eq:lm) with the assumptions $E(\varepsilon) = 0$, $Var(\varepsilon) = \sigma^2$, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the $y_i$. (Montgomery et al., 2021)
+
+Another version is that:
+
+Under Models II - VII, if $\lambda'\beta$ is estimable and $\hat\beta$ is any solution to the normal equations, then $\lambda'\hat\beta$ is a linear unbiased estimator of $\lambda'\beta$ and, under Model II, the variance of $\lambda'\hat\beta$ is uniformly less than that of any other linear unbiased estimator of $\lambda'\beta$ (IX, Theorem E13, p38)
+
+:::
 
 
-#### Subset Selection
+- Normal Distribution
+
+When conducting Hypothesis test and confidence intervals, the required assumption is $y|x\sim N (X\beta,\sigma^2) $.
+Maximum Likelihood Methods also requires this assumption.
+
+Evidence has demonstrated that travel distance is not Normal distributed.
+The Zipf's law also prove that travel distance follows a power distribution.
+
+## Transforamtions of Predictors
+
+Above discussion has shown that some assumptions are not valid for VMT and urban form variables.
+Gravity law and Zipf's law also imply that taking logarithm transformations is a proper choice.
+
+Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is unlikely that they are all correct or equivalent.
+
+
+## Multiple Linear Regression
+
+### Parameter Estimations
+
+Least-Squares method can be used to estimate the coefficients $\beta$ in equation \@ref(eq:lm)
+The dimension of $\mathbf{X}$ is $n\times p$, which means the data contain $n$ observations and $p$ predictors.
+The $p\times1$ vector of least-squares estimators is denoted as $\hat\beta$ and the solution to the normal equations is
+
+$$\begin{equation}
+\boldsymbol{\hat\beta}=(\mathbf{X'X})^{-1}\mathbf{X'}\mathbf{y}
+(\#eq:lsq)
+\end{equation}$$
+
+Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ (V., Definition, p.22). 
+
+### Analysis of Variance
+
+Analysis of Variance (ANOVA) is the fundamental approach in regression analysis.
+Actually, this method analysis the variation in means rather than variances themselves ((Casella & Berger, 2002, Ch.11).
+
+Once the linear relationship holds, the response $\mathbf{y}$ can be decomposed to
+
+$$\begin{equation}
+\begin{split}
+\mathbf{y'y}=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
+\mathbf{y'y}-n\bar y^2=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}-n\bar y^2+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
+\sum(y-\bar y)^2=&\sum(\hat y-\bar y)^2+\sum(y-\hat y)^2\\
+
+\end{split}
+(\#eq:ss)
+\end{equation}$$
+
+
+### Hypothesis Test
+
+
+
+
+### Confidence Intervals
+
+
+## Models Specifications
+
+### Variables Selections
+
+- Underfitting models
+
+
+- Overfitting models
+
+
+- Interaction Effects
+
+- Polynomial Regression Models
+
+"There are different types of model specification errors in regression analysis: "
+
+(1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96--8, Section 4.3.2); 
+
+(2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); 
+
+(3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); 
+
+(4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287--92, Section 9.4); and 
+
+(5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).
+
+
+- Theoretical considerations
+
+
+
+
+
+
+### Subset Selection
 
 Empirical or methodological considerations
 
-#### Shrinkage Methods
+### Shrinkage Methods
 
 Ridge Regression and Lasso
 
-#### Dimention Reduction Methods
+### Dimention Reduction Methods
 
 Principal Components Regression (PCR)
 
@@ -68,7 +176,7 @@ fviz_cluster(res.km, data = USArrests,
              )
 ```
 
-```{r modelcluster, out.width='50%',fig.cap="A diagram of model cluster"}
+```{r modelcluster, eval=F, out.width='50%',fig.cap="A diagram of model cluster"}
 # Dimension reduction using PCA
 res.pca <- prcomp(USArrests,  scale = TRUE) #iris[, -5]
 # Coordinates of individuals
@@ -93,33 +201,56 @@ p <- ggscatter(ind.coord,x = "Dim.1", y = "Dim.2",
 ggpar(p,tickslab=F,ticks=F)
 ```
 
+
+
+## Fixed and Mixed Effects
+
+There are two different settings in experimental design. One assigns the treatments having fixed effects on the response. The other assign the treatments having random effects on the response.
+In fixed-effect model, the interest is the effects of levels themselves. The levels of the factor are chosen to test the differences among these specific levels. The chosen levels exhaust the pop
+The fixed effects across cases are constant. 
+
+
+While in random-effect model, the interest is the underlying population. The random effects are vary.
+
+
+In random-effect models, the levels are selected at random from a large number of levels.
+
+
+In VMT-urban form models, the interest is the effects of built-environment variables, not the specific region's impact.
+
+## Bayesian approaches (Opt.)
+
 \pagebreak
 
-### Diagnousis and Validation
+## Diagnousis and Validation
 
-The third source, model selection, should also be controlled. In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. Hence, effective comparison or classification requires a few conditions:
+In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. Hence, effective comparison or classification requires a few conditions:
 
-Of course, an effective comparison also should present the full results of model diagnosis and validation. In practice, a more certain modeling framework allows scholars to present more general conclusions and speak with a clear voice to the public and decision-makers.
+An effective comparison also should present the full results of model diagnosis and validation. In practice, a more certain modeling framework allows scholars to present more general conclusions and speak with a clear voice to the public and decision-makers.
 
 -   Checking the assumption of Independent Identically Distributed random variables (IID)
 
-#### Checking Residuals
+### Checking Residuals
 
 The residual plots prove log-transform of VMT is reasonable because it has a highly right-skewed probability distribution. Only looking at the $R^2$ and p-values cannot disclose this feature. This result suggests that residual diagnosis is an essential step for modeling validation.
 
-#### Checking Residuals
+### Heteroscedasticity
 
-#### Checking multicollinearity
+Bartlett's (1937) likelihood ratio test (Ravishanker & Dey, 2020, 8.1.3, p.288)
+
+### Multicollinearity
 
 If the Variance Inflation Factor of a predictor variable is high (e.g. VIF=9), this means that the standard error for the coefficient of that predictor variable is 3 times larger than if that predictor had 0 correlation with the other predictors. Table \@ref(tab:vifdd) shows that the county-level model has serious multicollinearity issue. The double log transformation seems to enlarge the VIF values on D1a and D3a (Table \@ref(tab:vifdd),\@ref(tab:vif)).
 
-#### Goodness of fit
+### Goodness of fit
 
 Two models with different specifications also have varied outcomes. The goodness-of-fit level is a premise. Although the coefficients of determination $R^2$ are not the only criteria of a good model, it is often available in most published papers. The $R^2$ in many disaggregate studies are around 0.3. A seriously underfitting model's outputs could be biased and unstable. In these cases, the comparison must have strong constraints. By dint of some synthetic variables, the disaggregated model's $R^2$ can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. Meanwhile, the $R^2$ in some aggregate studies can reach 0.8. It is worthy of a deeper investigation.
 
-### Interpretation
 
-#### Standardized coefficients
+
+## Interpretation
+
+### Standardized coefficients
 
 General case: It is very easy to go from the metric to the standardized coefficients. There is no need to actually compute the standardized variables and run a new regression.
 
@@ -135,7 +266,7 @@ $$\beta'_k=r_{yx}$$
 
 <https://www3.nd.edu/~rwilliam/stats1/x92.pdf>
 
-#### Elasticity
+### Elasticity
 
 Definition: Commonly used to determine the relative importance of a variable in terms of its influence on a dependent variable. It is generally interpreted as the percent change in the dependent variable induced by a 1% change in the independent variable.
 
@@ -177,9 +308,9 @@ $$e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y
 
 [^52]: (Greene, 2012, p.865)
 
-#### Combined effects?
+### Combined effects?
 
-### Summary
+## Summary
 
 Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) [@cerveroEffectsBuiltEnvironments2010; @ewingStructuralEquationModels2014].
 

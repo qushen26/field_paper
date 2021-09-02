@@ -204,22 +204,22 @@ node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1,
       fontname = 'helvetica',fontsize=12, fontcolor = black];
 
   subgraph cluster_U {
-  label = 'Urban Form'; fillcolor= WhiteSmoke; 
+  label = 'Urban Scale \\n (urban-form factors)'; fillcolor= WhiteSmoke; 
      
     node [fillcolor = Beige];
-    UT[label = 'City \\n Travel \\n Behavior'];		 
+    UT[label = 'Macro \\n Travel \\n Behavior'];		 
 
     subgraph cluster_BE{
-    label = 'Built Environmnet'; fillcolor= PapayaWhip; 
+    label = 'Neighborhood Scale \\n (built-environmnet factors)'; fillcolor= PapayaWhip; 
 
       node [fillcolor = palegreen];
-      NT[label = 'Neighborhood \\n Travel \\n Behavior'];
+      NT[label = 'Meso \\n Travel \\n Behavior'];
 		    
 	    subgraph cluster_H{
-	    label = 'Socio-demographic \\n characteristics'; fillcolor= '#fee08b';
+	    label = 'Household Scale \\n (socio-demographic \\n characteristics)'; fillcolor= '#fee08b';
 		    
         node [fillcolor = yellowgreen];
-        HT[label = 'Household \\n Travel \\n Behavior'];		    
+        HT[label = 'Micro \\n Travel \\n Behavior'];		    
 		    }	
 		 }	
 	}    

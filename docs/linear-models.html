@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-29" />
+<meta name="date" content="2021-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="data.html"/>
-<link rel="next" href="generalized-linear-models.html"/>
+<link rel="next" href="non-linear-models-1.html"/>
 <script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,28 +172,53 @@ div.csl-indent {
 <li class="part"><span><b>Part II Methods and Data</b></span></li>
 <li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear Models</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>7.0.1</b> Overview</a></li>
-<li class="chapter" data-level="7.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>7.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="7.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.0.3</b> Models Specifications</a></li>
-<li class="chapter" data-level="7.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.0.4</b> Diagnousis and Validation</a></li>
-<li class="chapter" data-level="7.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.0.5</b> Interpretation</a></li>
-<li class="chapter" data-level="7.0.6" data-path="linear-models.html"><a href="linear-models.html#summary-1"><i class="fa fa-check"></i><b>7.0.6</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
+<li class="chapter" data-level="7.1" data-path="linear-models.html"><a href="linear-models.html#assumptions"><i class="fa fa-check"></i><b>7.1</b> Assumptions</a></li>
+<li class="chapter" data-level="7.2" data-path="linear-models.html"><a href="linear-models.html#transforamtions-of-predictors"><i class="fa fa-check"></i><b>7.2</b> Transforamtions of Predictors</a></li>
+<li class="chapter" data-level="7.3" data-path="linear-models.html"><a href="linear-models.html#multiple-linear-regression"><i class="fa fa-check"></i><b>7.3</b> Multiple Linear Regression</a>
 <ul>
-<li class="chapter" data-level="8.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
-<li class="chapter" data-level="8.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="8.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-2"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
+<li class="chapter" data-level="7.3.1" data-path="linear-models.html"><a href="linear-models.html#parameter-estimations"><i class="fa fa-check"></i><b>7.3.1</b> Parameter Estimations</a></li>
+<li class="chapter" data-level="7.3.2" data-path="linear-models.html"><a href="linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>7.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="7.3.3" data-path="linear-models.html"><a href="linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>7.3.3</b> Confidence Intervals</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Models</a>
+<li class="chapter" data-level="7.4" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.4</b> Models Specifications</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview-2"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
-<li class="chapter" data-level="9.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>9.0.2</b> Main Approaches</a></li>
-<li class="chapter" data-level="9.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-3"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+<li class="chapter" data-level="7.4.1" data-path="linear-models.html"><a href="linear-models.html#variables-selections"><i class="fa fa-check"></i><b>7.4.1</b> Variables Selections</a></li>
+<li class="chapter" data-level="7.4.2" data-path="linear-models.html"><a href="linear-models.html#subset-selection"><i class="fa fa-check"></i><b>7.4.2</b> Subset Selection</a></li>
+<li class="chapter" data-level="7.4.3" data-path="linear-models.html"><a href="linear-models.html#shrinkage-methods"><i class="fa fa-check"></i><b>7.4.3</b> Shrinkage Methods</a></li>
+<li class="chapter" data-level="7.4.4" data-path="linear-models.html"><a href="linear-models.html#dimention-reduction-methods"><i class="fa fa-check"></i><b>7.4.4</b> Dimention Reduction Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="linear-models.html"><a href="linear-models.html#fixed-and-mixed-effects"><i class="fa fa-check"></i><b>7.5</b> Fixed and Mixed Effects</a></li>
+<li class="chapter" data-level="7.6" data-path="linear-models.html"><a href="linear-models.html#bayesian-approaches-opt."><i class="fa fa-check"></i><b>7.6</b> Bayesian approaches (Opt.)</a></li>
+<li class="chapter" data-level="7.7" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.7</b> Diagnousis and Validation</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="linear-models.html"><a href="linear-models.html#checking-residuals"><i class="fa fa-check"></i><b>7.7.1</b> Checking Residuals</a></li>
+<li class="chapter" data-level="7.7.2" data-path="linear-models.html"><a href="linear-models.html#heteroscedasticity"><i class="fa fa-check"></i><b>7.7.2</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="7.7.3" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>7.7.3</b> Multicollinearity</a></li>
+<li class="chapter" data-level="7.7.4" data-path="linear-models.html"><a href="linear-models.html#goodness-of-fit"><i class="fa fa-check"></i><b>7.7.4</b> Goodness of fit</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.8</b> Interpretation</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="linear-models.html"><a href="linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>7.8.1</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="7.8.2" data-path="linear-models.html"><a href="linear-models.html#elasticity"><i class="fa fa-check"></i><b>7.8.2</b> Elasticity</a></li>
+<li class="chapter" data-level="7.8.3" data-path="linear-models.html"><a href="linear-models.html#combined-effects"><i class="fa fa-check"></i><b>7.8.3</b> Combined effects?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="linear-models.html"><a href="linear-models.html#summary-1"><i class="fa fa-check"></i><b>7.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>8</b> Non-Linear Models</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
+<li class="chapter" data-level="8.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>8.0.2</b> Main Approaches</a></li>
+<li class="chapter" data-level="8.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-2"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>9</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
+<li class="chapter" data-level="9.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures"><i class="fa fa-check"></i><b>9.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="9.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-3"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>10</b> Meta-Analysis</a>
 <ul>
-<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
+<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-2"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
 <li class="chapter" data-level="10.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>10.0.2</b> Advanced Methods</a></li>
 <li class="chapter" data-level="10.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-4"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
 </ul></li>
@@ -223,77 +248,140 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="linear-models" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Linear Models</h1>
-<div id="overview" class="section level3" number="7.0.1">
-<h3><span class="header-section-number">7.0.1</span> Overview</h3>
+<p>This Chapter will not give a complete introduction of linear regression.
+It only focus on some critical issues which are related with Travel-Urban Form models.
+This chapter only discusses the VMT-urban form models because the response are continue variables in regular linear models.
+The part of mode choice model is placed in Chapter of Generalized linear models.</p>
+<div id="assumptions" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Assumptions</h2>
+<ul>
+<li>Additive and linear</li>
+</ul>
+<p>For linear models, the most important assumptions are the additive and linear relationship between the response and predictors.
+Gravity Law discloses that travel distance has a multiplicative (inverse) relationship with the ‘masses’ of two places. If the population size can be a representative of built environment, the additive relationship will not hold.
+Previous studies also shows that the effect sizes of built environment with respect of travel are small and complex.
+There is not sufficient evidence to support or against the linear hypothesis.</p>
+<ul>
+<li>IID</li>
+</ul>
+<p>Another essential assumption is that both predictors and response are Independent Identically Distributed (IID) random variables.</p>
+<p>Unfortunately, many of the predictors are correlated.
+Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Diagnousis and Validation.</p>
+<p>When data is generated from experimental design, the treatments <span class="math inline">\(X\)</span> could be fixed variables. But in travel-urban form model, nothing can be controlled as in lab and all <span class="math inline">\(X\)</span>s are random variables.</p>
+<ul>
+<li>Second Moment</li>
+</ul>
+<p>The first- and second-moment are about the expected value, the variances, and the covariances among the random errors.
+Once the conditions of the first- and second-moment are satisfied, the Gauss - Markov theorem <a href="linear-models.html#thm:g-m">7.1</a>, proves that least-square method could give the minimum-variance unbiased estimators (MVUE) or called the best linear unbiased estimators (BLUE).
+These conditions are not strict and make regression method widely applicable.</p>
+<div class="theorem">
+<p><span id="thm:g-m" class="theorem"><strong>Theorem 7.1  (Gauss - Markov theorem) </strong></span>For the regression model <a href="intro.html#eq:lm">(1.1)</a> with the assumptions <span class="math inline">\(E(\varepsilon) = 0\)</span>, <span class="math inline">\(Var(\varepsilon) = \sigma^2\)</span>, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the <span class="math inline">\(y_i\)</span>. (Montgomery et al., 2021)</p>
+<p>Another version is that:</p>
+<p>Under Models II - VII, if <span class="math inline">\(\lambda&#39;\beta\)</span> is estimable and <span class="math inline">\(\hat\beta\)</span> is any solution to the normal equations, then <span class="math inline">\(\lambda&#39;\hat\beta\)</span> is a linear unbiased estimator of <span class="math inline">\(\lambda&#39;\beta\)</span> and, under Model II, the variance of <span class="math inline">\(\lambda&#39;\hat\beta\)</span> is uniformly less than that of any other linear unbiased estimator of <span class="math inline">\(\lambda&#39;\beta\)</span> (IX, Theorem E13, p38)</p>
 </div>
-<div id="models-structures" class="section level3" number="7.0.2">
-<h3><span class="header-section-number">7.0.2</span> Models Structures</h3>
-<div id="variable-transforamtion" class="section level4" number="7.0.2.1">
-<h4><span class="header-section-number">7.0.2.1</span> Variable Transforamtion</h4>
-<p>Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is hard to believe they are all correct or equivalent. Some interdisciplinary knowledge could give some hints.</p>
+<ul>
+<li>Normal Distribution</li>
+</ul>
+<p>When conducting Hypothesis test and confidence intervals, the required assumption is $y|xN (X,^2) $.
+Maximum Likelihood Methods also requires this assumption.</p>
+<p>Evidence has demonstrated that travel distance is not Normal distributed.
+The Zipf’s law also prove that travel distance follows a power distribution.</p>
 </div>
-<div id="fixed-and-mixed-effects" class="section level4" number="7.0.2.2">
-<h4><span class="header-section-number">7.0.2.2</span> Fixed and Mixed Effects</h4>
+<div id="transforamtions-of-predictors" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Transforamtions of Predictors</h2>
+<p>Above discussion has shown that some assumptions are not valid for VMT and urban form variables.
+Gravity law and Zipf’s law also imply that taking logarithm transformations is a proper choice.</p>
+<p>Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is unlikely that they are all correct or equivalent.</p>
 </div>
-<div id="bayesian-approaches-opt." class="section level4" number="7.0.2.3">
-<h4><span class="header-section-number">7.0.2.3</span> Bayesian approaches (Opt.)</h4>
-<div style="page-break-after: always;"></div>
+<div id="multiple-linear-regression" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Multiple Linear Regression</h2>
+<div id="parameter-estimations" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Parameter Estimations</h3>
+</div>
+<div id="hypothesis-test" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Hypothesis Test</h3>
+</div>
+<div id="confidence-intervals" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Confidence Intervals</h3>
 </div>
 </div>
-<div id="models-specifications" class="section level3" number="7.0.3">
-<h3><span class="header-section-number">7.0.3</span> Models Specifications</h3>
-<p><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
-<div id="theoretical-considerations" class="section level4" number="7.0.3.1">
-<h4><span class="header-section-number">7.0.3.1</span> Theoretical considerations</h4>
+<div id="models-specifications" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Models Specifications</h2>
+<div id="variables-selections" class="section level3" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Variables Selections</h3>
+<ul>
+<li><p>Underfitting models</p></li>
+<li><p>Overfitting models</p></li>
+<li><p>Interaction Effects</p></li>
+<li><p>Polynomial Regression Models</p></li>
+</ul>
+<p>“There are different types of model specification errors in regression analysis:”</p>
+<ol style="list-style-type: decimal">
+<li><p>necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2);</p></li>
+<li><p>irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3);</p></li>
+<li><p>independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981);</p></li>
+<li><p>variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and</p></li>
+<li><p>the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).</p></li>
+</ol>
+<ul>
+<li>Theoretical considerations</li>
+</ul>
 </div>
-<div id="subset-selection" class="section level4" number="7.0.3.2">
-<h4><span class="header-section-number">7.0.3.2</span> Subset Selection</h4>
+<div id="subset-selection" class="section level3" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> Subset Selection</h3>
 <p>Empirical or methodological considerations</p>
 </div>
-<div id="shrinkage-methods" class="section level4" number="7.0.3.3">
-<h4><span class="header-section-number">7.0.3.3</span> Shrinkage Methods</h4>
+<div id="shrinkage-methods" class="section level3" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> Shrinkage Methods</h3>
 <p>Ridge Regression and Lasso</p>
 </div>
-<div id="dimention-reduction-methods" class="section level4" number="7.0.3.4">
-<h4><span class="header-section-number">7.0.3.4</span> Dimention Reduction Methods</h4>
+<div id="dimention-reduction-methods" class="section level3" number="7.4.4">
+<h3><span class="header-section-number">7.4.4</span> Dimention Reduction Methods</h3>
 <p>Principal Components Regression (PCR)</p>
 <p>Partial Least Square (PLS)</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:modelcluster"></span>
-<img src="field_paper_files/figure-html/modelcluster-1.png" alt="A diagram of model cluster" width="50%" />
-<p class="caption">
-Figure 7.1: A diagram of model cluster
-</p>
 </div>
+</div>
+<div id="fixed-and-mixed-effects" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Fixed and Mixed Effects</h2>
+<p>There are two different settings in experimental design. One assigns the treatments having fixed effects on the response. The other assign the treatments having random effects on the response.
+In fixed-effect model, the interest is the effects of levels themselves. The levels of the factor are chosen to test the differences among these specific levels. The chosen levels exhaust the pop
+The fixed effects across cases are constant.</p>
+<p>While in random-effect model, the interest is the underlying population. The random effects are vary.</p>
+<p>In random-effect models, the levels are selected at random from a large number of levels.</p>
+<p>In VMT-urban form models, the interest is the effects of built-environment variables, not the specific region’s impact.</p>
+</div>
+<div id="bayesian-approaches-opt." class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> Bayesian approaches (Opt.)</h2>
 <div style="page-break-after: always;"></div>
 </div>
-</div>
-<div id="diagnousis-and-validation" class="section level3" number="7.0.4">
-<h3><span class="header-section-number">7.0.4</span> Diagnousis and Validation</h3>
-<p>The third source, model selection, should also be controlled. In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. Hence, effective comparison or classification requires a few conditions:</p>
-<p>Of course, an effective comparison also should present the full results of model diagnosis and validation. In practice, a more certain modeling framework allows scholars to present more general conclusions and speak with a clear voice to the public and decision-makers.</p>
+<div id="diagnousis-and-validation" class="section level2" number="7.7">
+<h2><span class="header-section-number">7.7</span> Diagnousis and Validation</h2>
+<p>In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. Hence, effective comparison or classification requires a few conditions:</p>
+<p>An effective comparison also should present the full results of model diagnosis and validation. In practice, a more certain modeling framework allows scholars to present more general conclusions and speak with a clear voice to the public and decision-makers.</p>
 <ul>
 <li>Checking the assumption of Independent Identically Distributed random variables (IID)</li>
 </ul>
-<div id="checking-residuals" class="section level4" number="7.0.4.1">
-<h4><span class="header-section-number">7.0.4.1</span> Checking Residuals</h4>
+<div id="checking-residuals" class="section level3" number="7.7.1">
+<h3><span class="header-section-number">7.7.1</span> Checking Residuals</h3>
 <p>The residual plots prove log-transform of VMT is reasonable because it has a highly right-skewed probability distribution. Only looking at the <span class="math inline">\(R^2\)</span> and p-values cannot disclose this feature. This result suggests that residual diagnosis is an essential step for modeling validation.</p>
 </div>
-<div id="checking-residuals-1" class="section level4" number="7.0.4.2">
-<h4><span class="header-section-number">7.0.4.2</span> Checking Residuals</h4>
+<div id="heteroscedasticity" class="section level3" number="7.7.2">
+<h3><span class="header-section-number">7.7.2</span> Heteroscedasticity</h3>
+<p>Bartlett’s (1937) likelihood ratio test (Ravishanker &amp; Dey, 2020, 8.1.3, p.288)</p>
 </div>
-<div id="checking-multicollinearity" class="section level4" number="7.0.4.3">
-<h4><span class="header-section-number">7.0.4.3</span> Checking multicollinearity</h4>
+<div id="multicollinearity" class="section level3" number="7.7.3">
+<h3><span class="header-section-number">7.7.3</span> Multicollinearity</h3>
 <p>If the Variance Inflation Factor of a predictor variable is high (e.g. VIF=9), this means that the standard error for the coefficient of that predictor variable is 3 times larger than if that predictor had 0 correlation with the other predictors. Table <a href="#tab:vifdd"><strong>??</strong></a> shows that the county-level model has serious multicollinearity issue. The double log transformation seems to enlarge the VIF values on D1a and D3a (Table <a href="#tab:vifdd"><strong>??</strong></a>,<a href="#tab:vif"><strong>??</strong></a>).</p>
 </div>
-<div id="goodness-of-fit" class="section level4" number="7.0.4.4">
-<h4><span class="header-section-number">7.0.4.4</span> Goodness of fit</h4>
+<div id="goodness-of-fit" class="section level3" number="7.7.4">
+<h3><span class="header-section-number">7.7.4</span> Goodness of fit</h3>
 <p>Two models with different specifications also have varied outcomes. The goodness-of-fit level is a premise. Although the coefficients of determination <span class="math inline">\(R^2\)</span> are not the only criteria of a good model, it is often available in most published papers. The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3. A seriously underfitting model’s outputs could be biased and unstable. In these cases, the comparison must have strong constraints. By dint of some synthetic variables, the disaggregated model’s <span class="math inline">\(R^2\)</span> can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. Meanwhile, the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. It is worthy of a deeper investigation.</p>
 </div>
 </div>
-<div id="interpretation" class="section level3" number="7.0.5">
-<h3><span class="header-section-number">7.0.5</span> Interpretation</h3>
-<div id="standardized-coefficients" class="section level4" number="7.0.5.1">
-<h4><span class="header-section-number">7.0.5.1</span> Standardized coefficients</h4>
+<div id="interpretation" class="section level2" number="7.8">
+<h2><span class="header-section-number">7.8</span> Interpretation</h2>
+<div id="standardized-coefficients" class="section level3" number="7.8.1">
+<h3><span class="header-section-number">7.8.1</span> Standardized coefficients</h3>
 <p>General case: It is very easy to go from the metric to the standardized coefficients. There is no need to actually compute the standardized variables and run a new regression.</p>
 <p><span class="math display">\[\beta&#39;_k=\beta_k\cdot\frac{s_{x_k}}{s_y}\]</span></p>
 <p>Two IV case: Compare this to the formula for the metric coefficients. Note that correlations take the place of the corresponding variances and covariances.</p>
@@ -302,10 +390,10 @@ Figure 7.1: A diagram of model cluster
 <p><span class="math display">\[\beta&#39;_k=r_{yx}\]</span></p>
 <p><a href="https://www3.nd.edu/~rwilliam/stats1/x92.pdf" class="uri">https://www3.nd.edu/~rwilliam/stats1/x92.pdf</a></p>
 </div>
-<div id="elasticity" class="section level4" number="7.0.5.2">
-<h4><span class="header-section-number">7.0.5.2</span> Elasticity</h4>
+<div id="elasticity" class="section level3" number="7.8.2">
+<h3><span class="header-section-number">7.8.2</span> Elasticity</h3>
 <p>Definition: Commonly used to determine the relative importance of a variable in terms of its influence on a dependent variable. It is generally interpreted as the percent change in the dependent variable induced by a 1% change in the independent variable.</p>
-<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></p>
+<p><span class="math display">\[e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}\]</span><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
 <table>
 <caption>Elasticity Estimates for Various Functional Forms</caption>
 <colgroup>
@@ -349,11 +437,11 @@ Figure 7.1: A diagram of model cluster
 <tr class="even">
 <td align="center">Logit</td>
 <td align="center"><span class="math inline">\(\beta p_i(1-p_i)\)</span></td>
-<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a></td>
+<td align="center"><span class="math inline">\(\beta X_i(1-p_i)\)</span>;<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></td>
 </tr>
 <tr class="odd">
 <td align="center">Poisson</td>
-<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></td>
+<td align="center"><span class="math inline">\(\beta \lambda_i\)</span>;<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a></td>
 <td align="center"><span class="math inline">\(\beta X_i\)</span></td>
 </tr>
 <tr class="even">
@@ -363,23 +451,23 @@ Figure 7.1: A diagram of model cluster
 </tr>
 <tr class="odd">
 <td align="center">Tr-Pois</td>
-<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a></td>
+<td align="center"><span class="math inline">\(\delta_i\)</span>;<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
 <td align="center">Hurdle-P</td>
-<td align="center">separately<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a></td>
+<td align="center">separately<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a></td>
 <td align="center"></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="combined-effects" class="section level4" number="7.0.5.3">
-<h4><span class="header-section-number">7.0.5.3</span> Combined effects?</h4>
+<div id="combined-effects" class="section level3" number="7.8.3">
+<h3><span class="header-section-number">7.8.3</span> Combined effects?</h3>
 </div>
 </div>
-<div id="summary-1" class="section level3" number="7.0.6">
-<h3><span class="header-section-number">7.0.6</span> Summary</h3>
+<div id="summary-1" class="section level2" number="7.9">
+<h2><span class="header-section-number">7.9</span> Summary</h2>
 <p>Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) <span class="citation">(<a href="#ref-cerveroEffectsBuiltEnvironments2010" role="doc-biblioref">Cervero and Murakami 2010</a>; <a href="#ref-ewingStructuralEquationModels2014" role="doc-biblioref">Reid Ewing, Hamidi, et al. 2014</a>)</span>.</p>
 <p>As far as methods, standardization, orthogonalization before fitting the model might be helpful.</p>
 
@@ -397,12 +485,11 @@ Ewing, Reid, Shima Hamidi, Frank Gallivan, Arthur C Nelson, and James B Grace. 2
 <div class="footnotes">
 <hr />
 <ol start="23">
-<li id="fn23"><p>There are different types of model specification errors in regression analysis: (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96–8, Section 4.3.2); (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287–92, Section 9.4); and (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978).<a href="linear-models.html#fnref23" class="footnote-back">↩︎</a></p></li>
-<li id="fn24"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref24" class="footnote-back">↩︎</a></p></li>
-<li id="fn25"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref25" class="footnote-back">↩︎</a></p></li>
-<li id="fn26"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref26" class="footnote-back">↩︎</a></p></li>
-<li id="fn27"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref27" class="footnote-back">↩︎</a></p></li>
-<li id="fn28"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>McCarthy, P.S., Transportation Economics Theory and Practice: A Case Study Approach. Blackwell, Boston, 2001.<a href="linear-models.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p><span class="math inline">\(\beta \bar X\left(1-\frac{\bar Y}{n}\right)\)</span> (Ewing and Cervero, 2010)<a href="linear-models.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p><span class="math inline">\(\lambda_i=\exp[\mathbf{x}_i&#39;\boldsymbol{\beta}]\)</span> (Greene, 2012, eq.18-21)<a href="linear-models.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p><span class="math inline">\(\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta\)</span> (Greene, 2012, eq.18-23)<a href="linear-models.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>(Greene, 2012, p.865)<a href="linear-models.html#fnref27" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -448,7 +535,7 @@ Ewing, Reid, Shima Hamidi, Frank Gallivan, Arthur C Nelson, and James B Grace. 2
         </div>
       </div>
 <a href="data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="generalized-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="non-linear-models-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Non-Linear Models | The Association Between Travel Behavior and Urban Form</title>
+  <title>Chapter 8 Non-Linear Models | The Association Between Travel Behavior and Urban Form</title>
   <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.23.4 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
+  <meta property="og:title" content="Chapter 8 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qushen26/field_paper" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
+  <meta name="twitter:title" content="Chapter 8 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
   
   <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-08-29" />
+<meta name="date" content="2021-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generalized-linear-models.html"/>
-<link rel="next" href="meta-analysis.html"/>
+<link rel="prev" href="linear-models.html"/>
+<link rel="next" href="generalized-linear-models.html"/>
 <script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,28 +172,53 @@ div.csl-indent {
 <li class="part"><span><b>Part II Methods and Data</b></span></li>
 <li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear Models</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="linear-models.html"><a href="linear-models.html#overview"><i class="fa fa-check"></i><b>7.0.1</b> Overview</a></li>
-<li class="chapter" data-level="7.0.2" data-path="linear-models.html"><a href="linear-models.html#models-structures"><i class="fa fa-check"></i><b>7.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="7.0.3" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.0.3</b> Models Specifications</a></li>
-<li class="chapter" data-level="7.0.4" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.0.4</b> Diagnousis and Validation</a></li>
-<li class="chapter" data-level="7.0.5" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.0.5</b> Interpretation</a></li>
-<li class="chapter" data-level="7.0.6" data-path="linear-models.html"><a href="linear-models.html#summary-1"><i class="fa fa-check"></i><b>7.0.6</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
+<li class="chapter" data-level="7.1" data-path="linear-models.html"><a href="linear-models.html#assumptions"><i class="fa fa-check"></i><b>7.1</b> Assumptions</a></li>
+<li class="chapter" data-level="7.2" data-path="linear-models.html"><a href="linear-models.html#transforamtions-of-predictors"><i class="fa fa-check"></i><b>7.2</b> Transforamtions of Predictors</a></li>
+<li class="chapter" data-level="7.3" data-path="linear-models.html"><a href="linear-models.html#multiple-linear-regression"><i class="fa fa-check"></i><b>7.3</b> Multiple Linear Regression</a>
 <ul>
-<li class="chapter" data-level="8.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
-<li class="chapter" data-level="8.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures-1"><i class="fa fa-check"></i><b>8.0.2</b> Models Structures</a></li>
-<li class="chapter" data-level="8.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-2"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
+<li class="chapter" data-level="7.3.1" data-path="linear-models.html"><a href="linear-models.html#parameter-estimations"><i class="fa fa-check"></i><b>7.3.1</b> Parameter Estimations</a></li>
+<li class="chapter" data-level="7.3.2" data-path="linear-models.html"><a href="linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>7.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="7.3.3" data-path="linear-models.html"><a href="linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>7.3.3</b> Confidence Intervals</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Models</a>
+<li class="chapter" data-level="7.4" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.4</b> Models Specifications</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview-2"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
-<li class="chapter" data-level="9.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>9.0.2</b> Main Approaches</a></li>
-<li class="chapter" data-level="9.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-3"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+<li class="chapter" data-level="7.4.1" data-path="linear-models.html"><a href="linear-models.html#variables-selections"><i class="fa fa-check"></i><b>7.4.1</b> Variables Selections</a></li>
+<li class="chapter" data-level="7.4.2" data-path="linear-models.html"><a href="linear-models.html#subset-selection"><i class="fa fa-check"></i><b>7.4.2</b> Subset Selection</a></li>
+<li class="chapter" data-level="7.4.3" data-path="linear-models.html"><a href="linear-models.html#shrinkage-methods"><i class="fa fa-check"></i><b>7.4.3</b> Shrinkage Methods</a></li>
+<li class="chapter" data-level="7.4.4" data-path="linear-models.html"><a href="linear-models.html#dimention-reduction-methods"><i class="fa fa-check"></i><b>7.4.4</b> Dimention Reduction Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="linear-models.html"><a href="linear-models.html#fixed-and-mixed-effects"><i class="fa fa-check"></i><b>7.5</b> Fixed and Mixed Effects</a></li>
+<li class="chapter" data-level="7.6" data-path="linear-models.html"><a href="linear-models.html#bayesian-approaches-opt."><i class="fa fa-check"></i><b>7.6</b> Bayesian approaches (Opt.)</a></li>
+<li class="chapter" data-level="7.7" data-path="linear-models.html"><a href="linear-models.html#diagnousis-and-validation"><i class="fa fa-check"></i><b>7.7</b> Diagnousis and Validation</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="linear-models.html"><a href="linear-models.html#checking-residuals"><i class="fa fa-check"></i><b>7.7.1</b> Checking Residuals</a></li>
+<li class="chapter" data-level="7.7.2" data-path="linear-models.html"><a href="linear-models.html#heteroscedasticity"><i class="fa fa-check"></i><b>7.7.2</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="7.7.3" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>7.7.3</b> Multicollinearity</a></li>
+<li class="chapter" data-level="7.7.4" data-path="linear-models.html"><a href="linear-models.html#goodness-of-fit"><i class="fa fa-check"></i><b>7.7.4</b> Goodness of fit</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.8</b> Interpretation</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="linear-models.html"><a href="linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>7.8.1</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="7.8.2" data-path="linear-models.html"><a href="linear-models.html#elasticity"><i class="fa fa-check"></i><b>7.8.2</b> Elasticity</a></li>
+<li class="chapter" data-level="7.8.3" data-path="linear-models.html"><a href="linear-models.html#combined-effects"><i class="fa fa-check"></i><b>7.8.3</b> Combined effects?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="linear-models.html"><a href="linear-models.html#summary-1"><i class="fa fa-check"></i><b>7.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>8</b> Non-Linear Models</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#overview"><i class="fa fa-check"></i><b>8.0.1</b> Overview</a></li>
+<li class="chapter" data-level="8.0.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#main-approaches"><i class="fa fa-check"></i><b>8.0.2</b> Main Approaches</a></li>
+<li class="chapter" data-level="8.0.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#summary-2"><i class="fa fa-check"></i><b>8.0.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>9</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#overview-1"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
+<li class="chapter" data-level="9.0.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#models-structures"><i class="fa fa-check"></i><b>9.0.2</b> Models Structures</a></li>
+<li class="chapter" data-level="9.0.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#summary-3"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>10</b> Meta-Analysis</a>
 <ul>
-<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-3"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
+<li class="chapter" data-level="10.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview-2"><i class="fa fa-check"></i><b>10.0.1</b> Overview</a></li>
 <li class="chapter" data-level="10.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>10.0.2</b> Advanced Methods</a></li>
 <li class="chapter" data-level="10.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-4"><i class="fa fa-check"></i><b>10.0.3</b> Summary</a></li>
 </ul></li>
@@ -221,34 +246,34 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="non-linear-models-1" class="section level1" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Non-Linear Models</h1>
-<div id="overview-2" class="section level3" number="9.0.1">
-<h3><span class="header-section-number">9.0.1</span> Overview</h3>
+<div id="non-linear-models-1" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Non-Linear Models</h1>
+<div id="overview" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Overview</h3>
 </div>
-<div id="main-approaches" class="section level3" number="9.0.2">
-<h3><span class="header-section-number">9.0.2</span> Main Approaches</h3>
-<div id="polynomial-regression" class="section level4" number="9.0.2.1">
-<h4><span class="header-section-number">9.0.2.1</span> Polynomial Regression</h4>
+<div id="main-approaches" class="section level3" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Main Approaches</h3>
+<div id="polynomial-regression" class="section level4" number="8.0.2.1">
+<h4><span class="header-section-number">8.0.2.1</span> Polynomial Regression</h4>
 </div>
-<div id="step-funtions" class="section level4" number="9.0.2.2">
-<h4><span class="header-section-number">9.0.2.2</span> Step Funtions</h4>
+<div id="step-funtions" class="section level4" number="8.0.2.2">
+<h4><span class="header-section-number">8.0.2.2</span> Step Funtions</h4>
 </div>
-<div id="basis-funtions" class="section level4" number="9.0.2.3">
-<h4><span class="header-section-number">9.0.2.3</span> Basis Funtions</h4>
+<div id="basis-funtions" class="section level4" number="8.0.2.3">
+<h4><span class="header-section-number">8.0.2.3</span> Basis Funtions</h4>
 </div>
-<div id="splines" class="section level4" number="9.0.2.4">
-<h4><span class="header-section-number">9.0.2.4</span> Splines</h4>
+<div id="splines" class="section level4" number="8.0.2.4">
+<h4><span class="header-section-number">8.0.2.4</span> Splines</h4>
 </div>
-<div id="local-regression" class="section level4" number="9.0.2.5">
-<h4><span class="header-section-number">9.0.2.5</span> Local Regression</h4>
+<div id="local-regression" class="section level4" number="8.0.2.5">
+<h4><span class="header-section-number">8.0.2.5</span> Local Regression</h4>
 </div>
-<div id="generalized-additive-models" class="section level4" number="9.0.2.6">
-<h4><span class="header-section-number">9.0.2.6</span> Generalized Additive Models</h4>
+<div id="generalized-additive-models" class="section level4" number="8.0.2.6">
+<h4><span class="header-section-number">8.0.2.6</span> Generalized Additive Models</h4>
 </div>
 </div>
-<div id="summary-3" class="section level3" number="9.0.3">
-<h3><span class="header-section-number">9.0.3</span> Summary</h3>
+<div id="summary-2" class="section level3" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Summary</h3>
 <p>Expected finding, implications, and limitations</p>
 
 </div>
@@ -295,8 +320,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="generalized-linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meta-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generalized-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -327,7 +352,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/qushen26/field_paper/edit/master/files/08-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/edit/master/files/07-nonlinear.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -335,7 +360,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/qushen26/field_paper/blob/master/files/08-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/blob/master/files/07-nonlinear.Rmd",
 "text": null
 },
 "download": ["field_paper.pdf", "field_paper.epub"],

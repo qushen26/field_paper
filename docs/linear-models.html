@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-01" />
+<meta name="date" content="2021-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -177,8 +177,8 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="linear-models.html"><a href="linear-models.html#multiple-linear-regression"><i class="fa fa-check"></i><b>7.3</b> Multiple Linear Regression</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="linear-models.html"><a href="linear-models.html#parameter-estimations"><i class="fa fa-check"></i><b>7.3.1</b> Parameter Estimations</a></li>
-<li class="chapter" data-level="7.3.2" data-path="linear-models.html"><a href="linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>7.3.2</b> Hypothesis Test</a></li>
-<li class="chapter" data-level="7.3.3" data-path="linear-models.html"><a href="linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>7.3.3</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="7.3.2" data-path="linear-models.html"><a href="linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>7.3.2</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="7.3.3" data-path="linear-models.html"><a href="linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>7.3.3</b> Hypothesis Test</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="linear-models.html"><a href="linear-models.html#models-specifications"><i class="fa fa-check"></i><b>7.4</b> Models Specifications</a>
 <ul>
@@ -194,7 +194,6 @@ div.csl-indent {
 <li class="chapter" data-level="7.7.1" data-path="linear-models.html"><a href="linear-models.html#checking-residuals"><i class="fa fa-check"></i><b>7.7.1</b> Checking Residuals</a></li>
 <li class="chapter" data-level="7.7.2" data-path="linear-models.html"><a href="linear-models.html#heteroscedasticity"><i class="fa fa-check"></i><b>7.7.2</b> Heteroscedasticity</a></li>
 <li class="chapter" data-level="7.7.3" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>7.7.3</b> Multicollinearity</a></li>
-<li class="chapter" data-level="7.7.4" data-path="linear-models.html"><a href="linear-models.html#goodness-of-fit"><i class="fa fa-check"></i><b>7.7.4</b> Goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="linear-models.html"><a href="linear-models.html#interpretation"><i class="fa fa-check"></i><b>7.8</b> Interpretation</a>
 <ul>
@@ -267,7 +266,7 @@ There is not sufficient evidence to support or against the linear hypothesis.</p
 <p>Another essential assumption is that both predictors and response are Independent Identically Distributed (IID) random variables.</p>
 <p>Unfortunately, many of the predictors are correlated.
 Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Diagnousis and Validation.</p>
-<p>When data is generated from experimental design, the treatments <span class="math inline">\(X\)</span> could be fixed variables. But in travel-urban form model, nothing can be controlled as in lab and all <span class="math inline">\(X\)</span>s are random variables.</p>
+<p>When data is generated from experimental design, the treatments <span class="math inline">\(X\)</span> could be fixed variables. But travel-urban form model is observational studies and nothing can be controlled as in lab. Thus, all <span class="math inline">\(X\)</span>s are random variables.</p>
 <ul>
 <li>Second Moment</li>
 </ul>
@@ -282,7 +281,7 @@ These conditions are not strict and make regression method widely applicable.</p
 <ul>
 <li>Normal Distribution</li>
 </ul>
-<p>When conducting Hypothesis test and confidence intervals, the required assumption is $y|xN (X,^2) $.
+<p>When conducting Hypothesis test and confidence intervals, the required assumption is <span class="math inline">\(\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})\)</span>.
 Maximum Likelihood Methods also requires this assumption.</p>
 <p>Evidence has demonstrated that travel distance is not Normal distributed.
 The Zipf’s law also prove that travel distance follows a power distribution.</p>
@@ -297,12 +296,130 @@ Gravity law and Zipf’s law also imply that taking logarithm transformations is
 <h2><span class="header-section-number">7.3</span> Multiple Linear Regression</h2>
 <div id="parameter-estimations" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Parameter Estimations</h3>
+<p>Least-Squares method can be used to estimate the coefficients <span class="math inline">\(\beta\)</span> in equation <a href="intro.html#eq:lm">(1.1)</a>
+The dimension of <span class="math inline">\(\mathbf{X}\)</span> is <span class="math inline">\(n\times p\)</span>, which means the data contain <span class="math inline">\(n\)</span> observations and <span class="math inline">\(p-1\)</span> predictors.
+The <span class="math inline">\(p\times1\)</span> vector of least-squares estimators is denoted as <span class="math inline">\(\hat\beta\)</span> and the solution to the normal equations is</p>
+<p><span class="math display" id="eq:lsq">\[\begin{equation}
+\boldsymbol{\hat\beta}=(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;}\mathbf{y}
+\tag{7.1}
+\end{equation}\]</span></p>
+<p>Here requires <span class="math inline">\(\mathbf{X&#39;X}\)</span> are invertible, that is, the covariates are linearly independent if <span class="math inline">\(\mathbf{X}\)</span> has rank <span class="math inline">\(p\)</span> (V., Definition, p.22).</p>
+<p>Given the estimated coefficients, the model can give the fitted values of response as:</p>
+<p><span class="math display" id="eq:fitted-y">\[\begin{equation}
+\mathbf{\hat y}=\mathbf{X}\boldsymbol{\hat\beta}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;y}= \mathbf{Hy}
+\tag{7.2}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{H}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;y}\)</span> is hat matrix.
+There is always a difference between observed <span class="math inline">\(\mathbf{y}\)</span> and fitted <span class="math inline">\(\mathbf{\hat y}\)</span>, which can not be explained by the model.
+This part is called residual.</p>
+<p><span class="math display" id="eq:residual">\[\begin{equation}
+\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}
+\tag{7.3}
+\end{equation}\]</span></p>
 </div>
-<div id="hypothesis-test" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Hypothesis Test</h3>
+<div id="analysis-of-variance" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Analysis of Variance</h3>
+<p>Analysis of Variance (ANOVA) is the fundamental approach in regression analysis.
+Actually, this method analysis the variation in means rather than variances themselves (Casella &amp; Berger, 2002, Ch.11).</p>
+<p>Once the linear relationship holds, the response <span class="math inline">\(\mathbf{y}\)</span> can be decomposed to</p>
+<p><span class="math display" id="eq:ss">\[\begin{equation}
+\begin{split}
+\mathbf{y&#39;y}=&amp;\mathbf{y&#39;Hy}+\mathbf{y&#39;}(\mathbf{I}-\mathbf{H})\mathbf{y}\\
+\mathbf{y&#39;y}=&amp;\boldsymbol{\hat\beta}\mathbf{X&#39;}\mathbf{y}+\mathbf{y&#39;y}-\boldsymbol{\hat\beta}\mathbf{X&#39;}\mathbf{y}\\
+\mathbf{y&#39;y}-n\bar y^2=&amp;\boldsymbol{\hat\beta}\mathbf{X&#39;}\mathbf{y}-n\bar y^2+\mathbf{y&#39;y}-\boldsymbol{\hat\beta}\mathbf{X&#39;}\mathbf{y}\\
+\sum(y-\bar y)^2=&amp;\sum(\hat y-\bar y)^2+\sum(y-\hat y)^2\\
+SST =&amp; SSR + SSE
+\end{split}
+\tag{7.4}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(SST\)</span> is Sum of Squares Total, <span class="math inline">\(SSR\)</span> is Sum of Squares Regression, and <span class="math inline">\(SSE\)</span> is Sum of Square Error.
+<span class="math inline">\(SSE=\mathbf{e&#39;e}\)</span> represents the unknown part of model.</p>
+<ul>
+<li>Goodness of fit</li>
+</ul>
+<p>This structure tell us how good the model can explain the data. Coefficient of Determination <span class="math inline">\(R^2\)</span> is a proportion to assess the quality of fitted model.</p>
+<p><span class="math display" id="eq:rsq">\[\begin{equation}
+R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
+\tag{7.5}
+\end{equation}\]</span></p>
+<p>when <span class="math inline">\(R^2\)</span> is close to <span class="math inline">\(1\)</span>, the most of variation in response can be explained by the fitted model.
+Although <span class="math inline">\(R^2\)</span> is not the only criteria of a good model, it is often available in most published papers.
+Recall the discussion in Part I, the aggregated data will eliminate the difference among individuals, households, or neighborhoods. In the new variance structure, <span class="math inline">\(SSE\)</span> will be much less than disaggregated model.
+The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3, while the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. A seriously underfitting model’s outputs could be biased and unstable.</p>
+<p>A fact is that adding predictors into the model will never decrease <span class="math inline">\(R^2\)</span>. Thus the models with different number of predictors is not comparable. Adjusted <span class="math inline">\(R^2\)</span> can address this issue by introducing degree of freedom.
+The degree of freedom denotes the amount of information required to know.</p>
+<p><span class="math display" id="eq:df">\[\begin{equation}
+\begin{split}
+df_T =&amp; df_R + df_E\\
+n-1=&amp;(p-1)+(n-p)
+\end{split}
+\tag{7.6}
+\end{equation}\]</span></p>
+<p>Then, the mean square (MS) of each sum of squares (SS) can be calculated by <span class="math inline">\(MS=SS/df\)</span>.
+The mean square error <span class="math inline">\(MSE\)</span> is also called as the expected value of error variance <span class="math inline">\(\hat\sigma^2=MSE=SSE/(n-p)\)</span>. <span class="math inline">\(n-p\)</span> is the degree of freedom. Then adjusted <span class="math inline">\(R^2\)</span> is</p>
+<p><span class="math display" id="eq:rsq">\[\begin{equation}
+R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
+\tag{7.5}
+\end{equation}\]</span></p>
 </div>
-<div id="confidence-intervals" class="section level3" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Confidence Intervals</h3>
+<div id="hypothesis-test" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Hypothesis Test</h3>
+<ul>
+<li>Significance of Regression</li>
+</ul>
+<p>Significance of regression means if the linear relationship between response and predictors is adequate.
+The hypotheses for testing model adequacy are</p>
+<p><span class="math display" id="eq:hyp-1">\[\begin{equation}
+\begin{split}
+H_0:&amp;\quad \beta_0 = \beta_1 = \cdots =\beta_{p-1}=0\\
+H_1:&amp;\quad \text{at least one } \beta_j \neq 0,\ j=0,1,...,(p-1)\\
+\end{split}
+\tag{7.7}
+\end{equation}\]</span></p>
+<p>By Theorem D14 (XX, p.90), if an <span class="math inline">\(n\times1\)</span>random vector <span class="math inline">\(\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})\)</span>, then</p>
+<p><span class="math display" id="eq:chisq">\[\begin{equation}
+\mathbf{y&#39;y} \sim \chi^2(n,\frac12\boldsymbol{\mu&#39;\mu})
+\tag{7.8}
+\end{equation}\]</span></p>
+<p>Recall the assumption of <span class="math inline">\(\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})\)</span>.<br />
+By the additive property of <span class="math inline">\(\chi^2\)</span> distribution,</p>
+<p><span class="math display">\[\begin{equation}
+\frac{MSE}{\sigma^2}=\frac{\mathbf{y&#39;(I-H)y}}{(n-p)\sigma^2} \sim \chi^2_{(n-p)}\\
+\frac{MSR}{\sigma^2}=\frac{\mathbf{y&#39;Hy}}{(p-1)\sigma^2} \sim \chi^2_{(p-1)}\\
+\end{equation}\]</span></p>
+<p>Though <span class="math inline">\(\sigma^2\)</span> is usually unknown, by the relationship between <span class="math inline">\(\chi^2\)</span> and <span class="math inline">\(F\)</span> distributions,</p>
+<p><span class="math display">\[\begin{equation}
+F_0=\frac{MSE}{MSR} \sim F_{(p-1),(n-p),\lambda}\\
+\end{equation}\]</span>
+where <span class="math inline">\(\lambda\)</span> is the non-centrality parameter.
+It allows to test the hypotheses given a significance level <span class="math inline">\(\alpha\)</span>. If test statistic <span class="math inline">\(F_0&gt;F_{\alpha,(p-1),(n-p)}\)</span>, then one can reject <span class="math inline">\(H_0\)</span>.</p>
+<p>If a VMT-urban form model added many predictors but adjusted <span class="math inline">\(R^2\)</span> is still low, the association between travel distance and built environment might be spurious.</p>
+<ul>
+<li>Significance of Coefficients</li>
+</ul>
+<p>For testing a specific coefficient, the hypothesis is</p>
+<p><span class="math display" id="eq:hyp-2">\[\begin{equation}
+\begin{split}
+H_0:&amp;\quad \beta_j =0\\
+H_1:&amp;\quad \beta_j \neq 0\\
+\end{split}
+\tag{7.9}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(\boldsymbol{\hat\beta}\)</span> is a linear combination of <span class="math inline">\(\mathbf{y}\)</span>.
+Based on the assumption of <span class="math inline">\(\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})\)</span>, it can be proved that <span class="math inline">\(\boldsymbol{\hat\beta}\sim N (\boldsymbol{\beta},\sigma^2(\mathbf{X&#39;X})^{-1})\)</span> and</p>
+<p><span class="math display">\[\begin{equation}
+t_0=\frac{\hat\beta_j}{se(\hat\beta_j)}=\frac{\hat\beta_j}{\sqrt{\hat\sigma^2C_{jj}}} \sim t_{(n-p)}\\
+\end{equation}\]</span>
+where <span class="math inline">\(C_{jj}\)</span> is the element at the <span class="math inline">\(j\)</span> row and <span class="math inline">\(j\)</span> column of <span class="math inline">\((\mathbf{X&#39;X})^{-1}\)</span>.
+If <span class="math inline">\(|t_0|&lt; t_{\alpha/2,(n-p)}\)</span>, then the test failed to reject the <span class="math inline">\(H_0\)</span>, this predictor can be removed from the model.
+This test is called partial or marginal test because the test statistic for <span class="math inline">\(\beta_j\)</span> depends on all the predictors in the model.</p>
+<ul>
+<li>Confidence Intervals</li>
+</ul>
+<p>Above results can also construct the confidence interval for each coefficient. A <span class="math inline">\(100(1-\alpha)\)</span> confidence interval for <span class="math inline">\(\beta_j\)</span> is</p>
+<p><span class="math display">\[\begin{equation}
+\hat\beta_j-t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}\le \beta_j \le \hat\beta_j+t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}
+\end{equation}\]</span></p>
 </div>
 </div>
 <div id="models-specifications" class="section level2" number="7.4">
@@ -339,6 +456,7 @@ Gravity law and Zipf’s law also imply that taking logarithm transformations is
 <h3><span class="header-section-number">7.4.4</span> Dimention Reduction Methods</h3>
 <p>Principal Components Regression (PCR)</p>
 <p>Partial Least Square (PLS)</p>
+<p>By dint of some synthetic variables, the disaggregated model’s <span class="math inline">\(R^2\)</span> can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. It is worthy of a deeper investigation.</p>
 </div>
 </div>
 <div id="fixed-and-mixed-effects" class="section level2" number="7.5">
@@ -373,22 +491,53 @@ The fixed effects across cases are constant.</p>
 <h3><span class="header-section-number">7.7.3</span> Multicollinearity</h3>
 <p>If the Variance Inflation Factor of a predictor variable is high (e.g. VIF=9), this means that the standard error for the coefficient of that predictor variable is 3 times larger than if that predictor had 0 correlation with the other predictors. Table <a href="#tab:vifdd"><strong>??</strong></a> shows that the county-level model has serious multicollinearity issue. The double log transformation seems to enlarge the VIF values on D1a and D3a (Table <a href="#tab:vifdd"><strong>??</strong></a>,<a href="#tab:vif"><strong>??</strong></a>).</p>
 </div>
-<div id="goodness-of-fit" class="section level3" number="7.7.4">
-<h3><span class="header-section-number">7.7.4</span> Goodness of fit</h3>
-<p>Two models with different specifications also have varied outcomes. The goodness-of-fit level is a premise. Although the coefficients of determination <span class="math inline">\(R^2\)</span> are not the only criteria of a good model, it is often available in most published papers. The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3. A seriously underfitting model’s outputs could be biased and unstable. In these cases, the comparison must have strong constraints. By dint of some synthetic variables, the disaggregated model’s <span class="math inline">\(R^2\)</span> can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. Meanwhile, the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. It is worthy of a deeper investigation.</p>
-</div>
 </div>
 <div id="interpretation" class="section level2" number="7.8">
 <h2><span class="header-section-number">7.8</span> Interpretation</h2>
 <div id="standardized-coefficients" class="section level3" number="7.8.1">
 <h3><span class="header-section-number">7.8.1</span> Standardized coefficients</h3>
-<p>General case: It is very easy to go from the metric to the standardized coefficients. There is no need to actually compute the standardized variables and run a new regression.</p>
-<p><span class="math display">\[\beta&#39;_k=\beta_k\cdot\frac{s_{x_k}}{s_y}\]</span></p>
-<p>Two IV case: Compare this to the formula for the metric coefficients. Note that correlations take the place of the corresponding variances and covariances.</p>
-<p><span class="math display">\[\beta&#39;_1=\frac{r_{y1}-r_{12}r_{y2}}{1-r^2_{12}};\qquad\beta&#39;_2=\frac{r_{y2}-r_{12}r_{y1}}{1-r^2_{12}}\]</span></p>
-<p>One IV case: the standardized coefficient simply equals the correlation between Y and X</p>
-<p><span class="math display">\[\beta&#39;_k=r_{yx}\]</span></p>
-<p><a href="https://www3.nd.edu/~rwilliam/stats1/x92.pdf" class="uri">https://www3.nd.edu/~rwilliam/stats1/x92.pdf</a></p>
+<p>The value of <span class="math inline">\(\hat \beta_j\)</span> means that, given all other coefficients fixed, for each change of one unit in <span class="math inline">\(x_j\)</span>, the average change in the mean of <span class="math inline">\(Y\)</span>.
+However, the units of predictors <span class="math inline">\(\mathbf{X}\)</span> are very different. Hence, the values of coefficients are not comparable.</p>
+<p>Unit normal scaling or Unit length scaling can convert <span class="math inline">\(\hat \beta_j\)</span> to dimensionless regression coefficient, which is called standardized regression coefficients. Let</p>
+<p><span class="math display" id="eq:standize">\[\begin{equation}
+\begin{split}
+z_{ij}=&amp;\frac{x_{ij}-\bar x_j}{\sqrt{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}},\quad \\
+y^{0}_{i}=&amp;\frac{y_{i}-\bar y}{\sqrt{\sum_{i=1}^{n}(y_{i}-\bar y)^2}}
+\end{split}
+\tag{7.10}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:stand-coef">\[\begin{equation}
+\begin{split}
+\mathbf{\hat b}=&amp;(\mathbf{Z&#39;Z})^{-1}\mathbf{Z&#39;}\mathbf{y^{0}},\ \text{or}\\
+\hat b_j= &amp;\hat\beta_j\sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}{\sum_{i=1}^{n}(y_{i}-\bar y)^2}},\ j=1,2,...(p-1),\text{ and}\\
+\hat\beta_0=&amp;\bar y - \sum_{j=1}^{p-1}\hat\beta_j\bar x_j
+\end{split}
+\tag{7.11}
+\end{equation}\]</span></p>
+<p>Note that <span class="math inline">\(\mathbf{Z&#39;Z}\)</span> correlations matrix.</p>
+<p><span class="math display" id="eq:corr-matrix">\[\begin{equation}
+\begin{split}
+\mathbf{Z&#39;Z}=&amp;\begin{bmatrix} 
+1 &amp; r_{12} &amp; r_{13} &amp; \dots &amp; r_{1k} \\  
+r_{21} &amp; 1 &amp; r_{23} &amp; \dots &amp; r_{2k} \\  
+r_{31} &amp; _{32} &amp; 1 &amp; \dots &amp; r_{3k} \\  
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+r_{k1} &amp; r_{k2} &amp; _{k3} &amp; \dots &amp; 1  \end{bmatrix},\quad 
+\mathbf{Z&#39;}\mathbf{y^{0}}=&amp;\begin{bmatrix} 
+r_{1y} \\ r_{2y} \\ r_{3y} \\ \vdots \\ r_{ky} \end{bmatrix}
+\end{split}
+\tag{7.12}
+\end{equation}\]</span></p>
+<p>where</p>
+<p><span class="math display" id="eq:corr-1">\[\begin{equation}
+\begin{split}
+r_{ij}=&amp;\frac{\sum_{u=1}^{n}(x_{ui}-\bar x_i)(x_{uj}-\bar x_j)}{\sqrt{\sum_{u=1}^{n}(x_{ui}-\bar x_i)^2\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2}}\\
+r_{jy}=&amp;\frac{\sum_{u=1}^{n}(x_{uj}-\bar x_j)(y_{u}-\bar y)}{\sqrt{\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2\sum_{u=1}^{n}(y_{u}-\bar y)^2}}
+\end{split}
+\tag{7.13}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(r_{ij}\)</span> is the simple correlation between <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span>. <span class="math inline">\(r_{jy}\)</span> is the simple correlation between <span class="math inline">\(x_j\)</span> and <span class="math inline">\(y\)</span></p>
+<p>It seems that standardized regression coefficients are comparable. However, the value of <span class="math inline">\(\hat b_j\)</span> depends on other predictors. Therefore, comparison between different models is still problematic.</p>
 </div>
 <div id="elasticity" class="section level3" number="7.8.2">
 <h3><span class="header-section-number">7.8.2</span> Elasticity</h3>

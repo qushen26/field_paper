@@ -47,7 +47,7 @@ Under Models II - VII, if $\lambda'\beta$ is estimable and $\hat\beta$ is any so
 
 - Normal Distribution
 
-When conducting Hypothesis test and confidence intervals, the required assumption is $y|x\sim N (X\beta,\sigma^2) $.
+When conducting Hypothesis test and confidence intervals, the required assumption is $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$.
 Maximum Likelihood Methods also requires this assumption.
 
 Evidence has demonstrated that travel distance is not Normal distributed.
@@ -66,7 +66,7 @@ Among the above literature, some regression models take logarithm transforms on 
 ### Parameter Estimations
 
 Least-Squares method can be used to estimate the coefficients $\beta$ in equation \@ref(eq:lm)
-The dimension of $\mathbf{X}$ is $n\times p$, which means the data contain $n$ observations and $p$ predictors.
+The dimension of $\mathbf{X}$ is $n\times p$, which means the data contain $n$ observations and $p-1$ predictors.
 The $p\times1$ vector of least-squares estimators is denoted as $\hat\beta$ and the solution to the normal equations is
 
 $$\begin{equation}
@@ -76,30 +76,154 @@ $$\begin{equation}
 
 Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ (V., Definition, p.22). 
 
+Given the estimated coefficients, the model can give the fitted values of response as:
+
+$$\begin{equation}
+\mathbf{\hat y}=\mathbf{X}\boldsymbol{\hat\beta}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'y}= \mathbf{Hy}
+(\#eq:fitted-y)
+\end{equation}$$
+
+where $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'y}$ is hat matrix. 
+There is always a difference between observed $\mathbf{y}$ and fitted $\mathbf{\hat y}$, which can not be explained by the model.
+This part is called residual.
+
+
+$$\begin{equation}
+\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}
+(\#eq:residual)
+\end{equation}$$
+
+
+
+
 ### Analysis of Variance
 
 Analysis of Variance (ANOVA) is the fundamental approach in regression analysis.
-Actually, this method analysis the variation in means rather than variances themselves ((Casella & Berger, 2002, Ch.11).
+Actually, this method analysis the variation in means rather than variances themselves (Casella & Berger, 2002, Ch.11).
 
 Once the linear relationship holds, the response $\mathbf{y}$ can be decomposed to
 
 $$\begin{equation}
 \begin{split}
+\mathbf{y'y}=&\mathbf{y'Hy}+\mathbf{y'}(\mathbf{I}-\mathbf{H})\mathbf{y}\\
 \mathbf{y'y}=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
 \mathbf{y'y}-n\bar y^2=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}-n\bar y^2+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
 \sum(y-\bar y)^2=&\sum(\hat y-\bar y)^2+\sum(y-\hat y)^2\\
-
+SST =& SSR + SSE
 \end{split}
 (\#eq:ss)
+\end{equation}$$
+
+where $SST$ is Sum of Squares Total, $SSR$ is Sum of Squares Regression, and $SSE$ is Sum of Square Error.
+$SSE=\mathbf{e'e}$ represents the unknown part of model. 
+
+- Goodness of fit
+
+This structure tell us how good the model can explain the data. Coefficient of Determination $R^2$ is a proportion to assess the quality of fitted model.
+
+$$\begin{equation}
+R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
+(\#eq:rsq)
+\end{equation}$$
+
+when $R^2$ is close to $1$, the most of variation in response can be explained by the fitted model. 
+Although $R^2$ is not the only criteria of a good model, it is often available in most published papers. 
+Recall the discussion in Part I, the aggregated data will eliminate the difference among individuals, households, or neighborhoods. In the new variance structure, $SSE$ will be much less than disaggregated model.
+The $R^2$ in many disaggregate studies are around 0.3, while the $R^2$ in some aggregate studies can reach 0.8. A seriously underfitting model's outputs could be biased and unstable. 
+
+
+A fact is that adding predictors into the model will never decrease $R^2$. Thus the models with different number of predictors is not comparable. Adjusted $R^2$ can address this issue by introducing degree of freedom. 
+The degree of freedom denotes the amount of information required to know.
+
+$$\begin{equation}
+\begin{split}
+df_T =& df_R + df_E\\
+n-1=&(p-1)+(n-p)
+\end{split}
+(\#eq:df)
+\end{equation}$$
+
+Then, the mean square (MS) of each sum of squares (SS) can be calculated by $MS=SS/df$.
+The mean square error $MSE$ is also called as the expected value of error variance $\hat\sigma^2=MSE=SSE/(n-p)$. $n-p$ is the degree of freedom. Then adjusted $R^2$ is
+
+
+$$\begin{equation}
+R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
+(\#eq:rsq)
 \end{equation}$$
 
 
 ### Hypothesis Test
 
+- Significance of Regression
+
+Significance of regression means if the linear relationship between response and predictors is adequate.
+The hypotheses for testing model adequacy are
+
+$$\begin{equation}
+\begin{split}
+H_0:&\quad \beta_0 = \beta_1 = \cdots =\beta_{p-1}=0\\
+H_1:&\quad \text{at least one } \beta_j \neq 0,\ j=0,1,...,(p-1)\\
+\end{split}
+(\#eq:hyp-1)
+\end{equation}$$
+
+By Theorem D14 (XX, p.90), if an $n\times1$random vector $\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})$, then
+
+$$\begin{equation}
+\mathbf{y'y} \sim \chi^2(n,\frac12\boldsymbol{\mu'\mu})
+(\#eq:chisq)
+\end{equation}$$
 
 
+Recall the assumption of $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$.  
+By the additive property of $\chi^2$ distribution, 
 
-### Confidence Intervals
+$$\begin{equation}
+\frac{MSE}{\sigma^2}=\frac{\mathbf{y'(I-H)y}}{(n-p)\sigma^2} \sim \chi^2_{(n-p)}\\
+\frac{MSR}{\sigma^2}=\frac{\mathbf{y'Hy}}{(p-1)\sigma^2} \sim \chi^2_{(p-1)}\\
+\end{equation}$$
+
+Though $\sigma^2$ is usually unknown, by the relationship between $\chi^2$ and $F$ distributions,
+
+$$\begin{equation}
+F_0=\frac{MSE}{MSR} \sim F_{(p-1),(n-p),\lambda}\\
+\end{equation}$$
+where $\lambda$ is the non-centrality parameter.
+It allows to test the hypotheses given a significance level $\alpha$. If test statistic $F_0>F_{\alpha,(p-1),(n-p)}$, then one can reject $H_0$.
+
+If a VMT-urban form model added many predictors but adjusted $R^2$ is still low, the association between travel distance and built environment might be spurious.
+
+
+- Significance of Coefficients
+
+For testing a specific coefficient, the hypothesis is
+
+$$\begin{equation}
+\begin{split}
+H_0:&\quad \beta_j =0\\
+H_1:&\quad \beta_j \neq 0\\
+\end{split}
+(\#eq:hyp-2)
+\end{equation}$$
+
+$\boldsymbol{\hat\beta}$ is a linear combination of $\mathbf{y}$.
+Based on the assumption of $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$, it can be proved that $\boldsymbol{\hat\beta}\sim N (\boldsymbol{\beta},\sigma^2(\mathbf{X'X})^{-1})$ and
+
+$$\begin{equation}
+t_0=\frac{\hat\beta_j}{se(\hat\beta_j)}=\frac{\hat\beta_j}{\sqrt{\hat\sigma^2C_{jj}}} \sim t_{(n-p)}\\
+\end{equation}$$
+where $C_{jj}$ is the element at the $j$ row and $j$ column of $(\mathbf{X'X})^{-1}$.
+If $|t_0|< t_{\alpha/2,(n-p)}$, then the test failed to reject the $H_0$, this predictor can be removed from the model.
+This test is called partial or marginal test because the test statistic for $\beta_j$ depends on all the predictors in the model.
+
+- Confidence Intervals
+
+Above results can also construct the confidence interval for each coefficient. A $100(1-\alpha)$ confidence interval for $\beta_j$ is
+
+$$\begin{equation}
+\hat\beta_j-t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}\le \beta_j \le \hat\beta_j+t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}
+\end{equation}$$
 
 
 ## Models Specifications
@@ -150,6 +274,8 @@ Principal Components Regression (PCR)
 
 Partial Least Square (PLS)
 
+
+By dint of some synthetic variables, the disaggregated model's $R^2$ can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized.  It is worthy of a deeper investigation.
 
 ```{r,eval=F}
 # Compute k-means with k = 3
@@ -242,9 +368,7 @@ Bartlett's (1937) likelihood ratio test (Ravishanker & Dey, 2020, 8.1.3, p.288)
 
 If the Variance Inflation Factor of a predictor variable is high (e.g. VIF=9), this means that the standard error for the coefficient of that predictor variable is 3 times larger than if that predictor had 0 correlation with the other predictors. Table \@ref(tab:vifdd) shows that the county-level model has serious multicollinearity issue. The double log transformation seems to enlarge the VIF values on D1a and D3a (Table \@ref(tab:vifdd),\@ref(tab:vif)).
 
-### Goodness of fit
 
-Two models with different specifications also have varied outcomes. The goodness-of-fit level is a premise. Although the coefficients of determination $R^2$ are not the only criteria of a good model, it is often available in most published papers. The $R^2$ in many disaggregate studies are around 0.3. A seriously underfitting model's outputs could be biased and unstable. In these cases, the comparison must have strong constraints. By dint of some synthetic variables, the disaggregated model's $R^2$ can be over 0.5. But the risk is these techniques may describe the data themselves, and the results cannot be generalized. Meanwhile, the $R^2$ in some aggregate studies can reach 0.8. It is worthy of a deeper investigation.
 
 
 
@@ -252,19 +376,59 @@ Two models with different specifications also have varied outcomes. The goodness
 
 ### Standardized coefficients
 
-General case: It is very easy to go from the metric to the standardized coefficients. There is no need to actually compute the standardized variables and run a new regression.
+The value of $\hat \beta_j$ means that, given all other coefficients fixed, for each change of one unit in $x_j$, the average change in the mean of $Y$.
+However, the units of predictors $\mathbf{X}$ are very different. Hence, the values of coefficients are not comparable.
 
-$$\beta'_k=\beta_k\cdot\frac{s_{x_k}}{s_y}$$
+Unit normal scaling or Unit length scaling can convert $\hat \beta_j$ to dimensionless regression coefficient, which is called standardized regression coefficients. Let
 
-Two IV case: Compare this to the formula for the metric coefficients. Note that correlations take the place of the corresponding variances and covariances.
+$$\begin{equation}
+\begin{split}
+z_{ij}=&\frac{x_{ij}-\bar x_j}{\sqrt{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}},\quad \\
+y^{0}_{i}=&\frac{y_{i}-\bar y}{\sqrt{\sum_{i=1}^{n}(y_{i}-\bar y)^2}}
+\end{split}
+(\#eq:standize)
+\end{equation}$$
 
-$$\beta'_1=\frac{r_{y1}-r_{12}r_{y2}}{1-r^2_{12}};\qquad\beta'_2=\frac{r_{y2}-r_{12}r_{y1}}{1-r^2_{12}}$$
 
-One IV case: the standardized coefficient simply equals the correlation between Y and X
+$$\begin{equation}
+\begin{split}
+\mathbf{\hat b}=&(\mathbf{Z'Z})^{-1}\mathbf{Z'}\mathbf{y^{0}},\ \text{or}\\
+\hat b_j= &\hat\beta_j\sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}{\sum_{i=1}^{n}(y_{i}-\bar y)^2}},\ j=1,2,...(p-1),\text{ and}\\
+\hat\beta_0=&\bar y - \sum_{j=1}^{p-1}\hat\beta_j\bar x_j
+\end{split}
+(\#eq:stand-coef)
+\end{equation}$$
 
-$$\beta'_k=r_{yx}$$
+ Note that $\mathbf{Z'Z}$ correlations matrix.
+ 
+$$\begin{equation}
+\begin{split}
+\mathbf{Z'Z}=&\begin{bmatrix} 
+1 & r_{12} & r_{13} & \dots & r_{1k} \\  
+r_{21} & 1 & r_{23} & \dots & r_{2k} \\  
+r_{31} & _{32} & 1 & \dots & r_{3k} \\  
+\vdots & \vdots & \vdots & \ddots & \vdots \\  
+r_{k1} & r_{k2} & _{k3} & \dots & 1  \end{bmatrix},\quad 
+\mathbf{Z'}\mathbf{y^{0}}=&\begin{bmatrix} 
+r_{1y} \\ r_{2y} \\ r_{3y} \\ \vdots \\ r_{ky} \end{bmatrix}
+\end{split}
+(\#eq:corr-matrix)
+\end{equation}$$
+ 
+where
 
-<https://www3.nd.edu/~rwilliam/stats1/x92.pdf>
+$$\begin{equation}
+\begin{split}
+r_{ij}=&\frac{\sum_{u=1}^{n}(x_{ui}-\bar x_i)(x_{uj}-\bar x_j)}{\sqrt{\sum_{u=1}^{n}(x_{ui}-\bar x_i)^2\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2}}\\
+r_{jy}=&\frac{\sum_{u=1}^{n}(x_{uj}-\bar x_j)(y_{u}-\bar y)}{\sqrt{\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2\sum_{u=1}^{n}(y_{u}-\bar y)^2}}
+\end{split}
+(\#eq:corr-1)
+\end{equation}$$
+
+where $r_{ij}$ is the simple correlation between $x_i$ and $x_j$. $r_{jy}$ is the simple correlation between $x_j$ and $y$
+
+It seems that standardized regression coefficients are comparable. However, the value of $\hat b_j$ depends on other predictors. Therefore, comparison between different models is still problematic.
+
 
 ### Elasticity
 

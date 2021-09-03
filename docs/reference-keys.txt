@@ -14,6 +14,19 @@ fig:ewing-gam
 eq:nonlinear
 fig:diagram3
 thm:g-m
+eq:lsq
+eq:fitted-y
+eq:residual
+eq:ss
+eq:rsq
+eq:df
+eq:hyp-1
+eq:chisq
+eq:hyp-2
+eq:standize
+eq:stand-coef
+eq:corr-matrix
+eq:corr-1
 intro
 background
 analytical-framework
@@ -67,8 +80,8 @@ assumptions
 transforamtions-of-predictors
 multiple-linear-regression
 parameter-estimations
+analysis-of-variance
 hypothesis-test
-confidence-intervals
 models-specifications
 variables-selections
 subset-selection
@@ -80,7 +93,6 @@ diagnousis-and-validation
 checking-residuals
 heteroscedasticity
 multicollinearity
-goodness-of-fit
 interpretation
 standardized-coefficients
 elasticity

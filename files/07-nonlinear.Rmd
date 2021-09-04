@@ -1,13 +1,21 @@
 # Non-Linear Models
 
 
-### Overview
+## Transformations 
+
+- Transformations of Response
+
+Above discussion has shown that some assumptions are not valid for VMT and urban form variables.
+Gravity law and Zipf's law also imply that taking logarithm transformations is a proper choice.
+
+Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is unlikely that they are all correct or equivalent.
+
+- Transformations of Predictors?
 
 
 
-### Main Approaches
 
-#### Polynomial Regression
+## Polynomial Regression
 
 #### Step Funtions
 
@@ -15,10 +23,12 @@
 
 #### Splines
 
+## Nonparamteric Regression
+
 #### Local Regression
 
-#### Generalized Additive Models
+## Generalized Additive Models
 
-### Summary
+
 
 Expected finding, implications, and limitations

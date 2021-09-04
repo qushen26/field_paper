@@ -1,12 +1,15 @@
 # Generalized Linear Models
 
 
-### Overview
-
-### Models Structures
+## Logistic Regression
 
 
 
-### Summary
+## Poisson Regression
+
+
+
+
+## Zero-inflated and Hurdle Models
 
 

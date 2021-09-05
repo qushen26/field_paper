@@ -19,6 +19,7 @@ eq:indenpendent
 thm:g-m
 eq:lsq
 eq:fitted-y
+eq:glsq
 eq:standize
 eq:stand-coef
 eq:corr-matrix
@@ -30,6 +31,9 @@ eq:hyp-2
 eq:vif
 eq:rsq
 eq:df
+eq:rsq-adj
+eq:press
+eq:rsq-pred
 intro
 background
 analytical-framework
@@ -93,7 +97,7 @@ analysis-of-variance
 hypothesis-test
 confidence-intervals
 adequacy
-checking-residuals
+residuals-analysis
 heteroscedasticity
 multicollinearity
 ridge-regression-and-lasso
@@ -107,6 +111,8 @@ bayesian-approaches-opt.
 sem-opt.
 non-linear-models-1
 transformations
+variance-stabilizing
+linearizing
 polynomial-regression
 step-funtions
 basis-funtions

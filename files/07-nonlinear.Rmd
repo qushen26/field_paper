@@ -1,18 +1,61 @@
 # Non-Linear Models
 
+## Transformations
 
-## Transformations 
+Checking model adequacy shows if the underlying assumptions of regression model are violated. Research find data transformation can address this issues in many cases.
 
-- Transformations of Response
+Above discussion has shown that some assumptions are not valid for original VMT-urban form models. In literature, some regression models take logarithm transforms on all variables, while others only transform one or a part of them. Even though they have various data sources, it is unlikely that they are all correct or equivalent.
 
-Above discussion has shown that some assumptions are not valid for VMT and urban form variables.
-Gravity law and Zipf's law also imply that taking logarithm transformations is a proper choice.
+### Variance Stabilizing
 
-Among the above literature, some regression models take logarithm transforms on all variables, while others only transform one or a part. Even though they have various data sources, it is unlikely that they are all correct or equivalent.
+Equality of variance is a primary assumption of the regression model. 
+When variance is not constant, the least-squares estimators will not give the minimized variance.
+Though the estimation is still unbiased, the standard errors of regression coefficients will be larger and the model becomes insensitive.
+Montgomery et al. (2021) give several useful variance stabilizing transformations
 
-- Transformations of Predictors?
++----------------------------+------------------+
+| Relationship               | Transformation   |
++:===========================+:================:+
+| $\sigma^2\propto E[y]$     | $y^{1/2}$        |
++----------------------------+------------------+
+| $\sigma^2\propto (E[y])^2$ | $\ln(y)$         |
++----------------------------+------------------+
+| $\sigma^2\propto (E[y])^3$ | $y^{-1/2}$       |
++----------------------------+------------------+
+| $\sigma^2\propto (E[y])^4$ | $y^{-1}$         |
++----------------------------+------------------+
 
+A preliminary study finds both the mean and variance of household daily VMT are close to 40.
+This relationship supports that the logarithm of $\mathbf{y}$ is a proper choice for variance stabilizing.
 
+### Linearizing
+
+Another fundamental assumption, linearity is also can be addressed by transformation.
+If the relationship between response and predictors is linearizable, a suitable transformation can construct a intrinsically linear model. 
+Several common forms are shown in Table.
+
++--------------------------------------+----------------------+-------------------------------------------+
+| Linearizable Function                | Transformation       | Linear Form                               |
++:=====================================+:====================:+==========================================:+
+| $y=\beta_0\exp[\beta_1x]\varepsilon$ | $y'=\ln(y)$          | $y'=\ln \beta_0 +\beta_1x +\ln\varepsilon$|
++--------------------------------------+----------------------+-------------------------------------------+
+| $y=\beta_0+\beta_1\ln(x)+\varepsilon$| $x'=\ln(x)$          | $y=\beta_0 +\beta_1x'+\varepsilon$        |
++--------------------------------------+----------------------+-------------------------------------------+
+| $y=\beta_0x^{\beta_1}\varepsilon$    | $y'=\ln(y),x'=\ln(x)$| $y'=\ln\beta_0 +\beta_1x' +\ln\varepsilon$|
++--------------------------------------+----------------------+-------------------------------------------+
+|$y=x/((\beta_0+\varepsilon)x+\beta_1)$|$y'=1/y,x'=1/x$       | $y'=\beta_0 +\beta_1x' +\varepsilon$      |
++--------------------------------------+----------------------+-------------------------------------------+
+
+Comparing these forms, the $log(y)$ transformation also called log-linear model gives a finite value of response $y$ when predictor $x\to  0$. 
+While the log-log model ($y'=\ln(y),x'=\ln(x)$) will give an infinite value of $y$ when $x\to  0$. 
+This gives a useful hint when one chooses from log-linear and log-log models.
+
+Moreover, the $log(y)$ transformation changes the scale of error term.
+Only one term in $\varepsilon$ and $\ln\varepsilon$ can be close to constant mean and normal distributed.
+Therefore, residual diagnosis is still a effective way for choosing the proper form of transformation.
+
+Prior theories and experience can also help to make a proper choice.
+Recall the equation in PART I, both Gravity law and Zipf's law also imply that a logarithm transformation on VMT is suitable. But whether taking logarithm transformation on urban form still needs further investigation.
 
 
 ## Polynomial Regression
@@ -28,7 +71,5 @@ Among the above literature, some regression models take logarithm transforms on 
 #### Local Regression
 
 ## Generalized Additive Models
-
-
 
 Expected finding, implications, and limitations

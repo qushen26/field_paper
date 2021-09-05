@@ -72,7 +72,25 @@ $$\begin{equation}
 (\#eq:fitted-y)
 \end{equation}$$
 
-where $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'y}$ is hat matrix and $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}$
+where $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'}$ is hat matrix and $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}$
+
+When the observations are not independent or have unequal variances, the covariance matrix of error is not identity matrix. The assumption of regression model $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{I}$ doesn't hold. Denote $\mathbf{V}$ is a known $n\times n$ positive definite matrix and $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{V}$.
+Then, there exists an $n\times n$ symmetric matrix $\mathbf{K}$ with rank $n$ and $\mathbf{V}=\mathbf{KK'}$. Let
+
+$$\begin{equation}
+\mathbf{z}=\mathbf{K'y},\ \mathbf{B}=\mathbf{K^{-1}X}, \text{and}\ \boldsymbol{\eta}=\mathbf{K'}\boldsymbol{\varepsilon}
+\end{equation}$$
+
+The linear model becomes $\mathbf{z}=\mathbf{B}\boldsymbol{\beta}+\boldsymbol{\eta}$ and $V[\boldsymbol{\eta}]=\sigma^2\mathbf{I}$.
+If the model is full rank, that is $rank(\mathbf{X})=p$ then $\mathbf{X'V^{-1}X}$ is invertible
+and the generalized least squares solution is
+
+$$\begin{equation}
+\boldsymbol{\hat\beta}_{GLS}=(\mathbf{X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}
+(\#eq:glsq)
+\end{equation}$$
+
+
 
 ### Standardized coefficients
 
@@ -144,7 +162,7 @@ $$e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y
 +----------------+-------------------------------+---------------------------------+
 | Linear-log     | $\beta\frac{1}{X_i}$          | $\beta\frac{1}{Y_i}$            |
 +----------------+-------------------------------+---------------------------------+
-| Log-log        | $beta\frac{Y_i}{X_i}$         | $\beta$                         |
+| Log-log        | $\beta\frac{Y_i}{X_i}$        | $\beta$                         |
 +----------------+-------------------------------+---------------------------------+
 | Logit          | $\beta p_i(1-p_i)$            | $\beta X_i(1-p_i)$              |
 +----------------+-------------------------------+---------------------------------+
@@ -184,6 +202,8 @@ SST =& SSR + SSE
 \end{equation}$$
 
 where $SST$ is Sum of Squares Total, $SSR$ is Sum of Squares Regression, and $SSE$ is Sum of Square Error. $SSE=\mathbf{e'e}$ represents the unknown part of model.
+
+For Generalized Least Squares method, $SST=\mathbf{y'V^{-1}y}$, $SSR= \boldsymbol{\hat\beta'}\mathbf{B'z}=\mathbf{y'V^{-1}(X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$, and $SSE=SST-SSR$
 
 ### Hypothesis Test
 
@@ -253,9 +273,7 @@ $$\begin{equation}
 Only estimation and inference can not demonstrate model's performance.
 If the primary assumptions is violated, the estimations could be biased and the model could be useless. These problems can also happen when the model is not correctly specified. It is necessary to make diagnosis and validation for fitted models.
 
-In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data.
-The published papers usually don't show the results of diagnosis and validation.
-Under this circumstance, compare or summarize these outcomes are unreliable.
+
 
 <!-- "There are different types of model specification errors in regression analysis: " -->
 <!-- (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96--8, Section 4.3.2); -->
@@ -264,12 +282,50 @@ Under this circumstance, compare or summarize these outcomes are unreliable.
 <!-- (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287--92, Section 9.4); and -->
 <!-- (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978). -->
 
-### Checking Residuals
+### Residuals Analysis
 
+The major assumptions, both IID and normality are related to residual. 
 Residual diagnosis is an essential step for modeling validation.
 
+There are several scaled residuals can help the diagnosis. 
+Since $MSE$ is the expected variance of error $\hat\sigma^2$ and $E[\varepsilon]=0$, standardized residuals should follow a standard normal distribution.
 
-The curved pattern in residual plots implies log-transform of VMT is reasonable because it has a highly right-skewed probability distribution. Only looking at the $R^2$ and p-values cannot disclose this feature. 
+$$d_i=\frac{e_i}{\sqrt{MSE}}=e_i\sqrt{\frac{n-p}{\sum_{i=1}^n e_i^2}},\quad i=1,2,...,n$$
+
+Recall random error $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=(\mathbf{I}-\mathbf{H})\mathbf{y}$ and hat matrix $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'}$.
+Let $h_{ii}$ denote the $i^{th}$ diagonal element of hat matrix.
+Studentized Residuals can be expressed by
+$$r_i=\frac{e_i}{\sqrt{MSE(1-h_{ii})}},\quad i=1,2,...,n$$
+It is proved that $0\le h_{ii}\le1$.
+An observation with $h_{ii}$ closed to one will return a large value of $r_i$. The $x_i$ who has strong influence on fitted value is called leverage point.
+
+Ideally, the scaled residual have zero mean and unit variance. Hence, an observation with $|d_i|>3$ or $|r_i|>3$ is a potential outlier.
+
+Predicted Residual Error Sum of Squares (PRESS) can also be used to detect outliers.
+This method predicts the $i^{th}$ fitted response by excluding the $i^{th}$ observation and examine the influence of this point.
+The corresponding error $e_{(i)}=e_{i}/(1-h_{ii})$ and $V[e_{(i)}]=\sigma^2/(1-h_{ii})$.
+Thus, if $MSE$ is a good estimate of $\sigma^2$, PRESS residuals is equivalent to Studentized Residuals.
+
+$$\frac{e_{(i)}}{\sqrt{V[e_{(i)}]}}=\frac{e_i/(1-h_{ii})}{\sqrt{\sigma^2/(1-h_{ii})}}=\frac{e_i}{\sqrt{\sigma^2(1-h_{ii})}}$$
+
+- Residual Plot
+
+Residual plot shows the pattern of the residuals against fitted $\mathbf{\hat y}$.
+If the assumptions are valid, the shape of points should like a envelope and be evenly distributed around the horizontal line of $e=0$.
+
+A funnel shape in residual plot shows that the variance of error is a function of $\hat y$. A suitable transformation to response or predictor could stabilize the variance.
+A curved shape means the assumption of linearity is not valid. It implies that adding quadratic terms or higher-order terms might be suitable.
+
+
+- Normal Probability Plot
+
+A histogram of residuals can check the normality assumption. 
+The highly right-skewed probability distribution of VMT log-transform of VMT is reasonable.
+
+A better way is a normal quantile -- quantile (QQ) plot of the residuals.
+An ideal cumulative normal distribution should plot as a straight line.
+Only looking at the $R^2$ and p-values cannot disclose this feature. 
+
 
 ### Heteroscedasticity
 
@@ -390,8 +446,26 @@ Then, the mean square (MS) of each sum of squares (SS) can be calculated by $MS=
 
 $$\begin{equation}
 R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
-(\#eq:rsq)
+(\#eq:rsq-adj)
 \end{equation}$$
+
+Another similar method is $R^2$ for prediction based on PRESS.
+Recall the PRESS statistic is the prediction error sum of square by fitting a model with $n-1$ observations.
+
+$$\begin{equation}
+PRESS = \sum_{i=1}^n(y_i-\hat y_{(i)})^2= \sum_{i=1}^n\left(\frac{e_i}{1-h_{ii}}\right)^2
+(\#eq:press)
+\end{equation}$$
+
+
+A model with smaller PRESS has a better ability of prediction. The $R^2$ for prediction is
+
+$$\begin{equation}
+R_{adj}^2 = 1-\frac{PRESS}{MST}
+(\#eq:rsq-pred)
+\end{equation}$$
+
+
 
 ### Mallows $C_p$
 
@@ -426,3 +500,8 @@ In VMT-urban form models, the interest is the effects of built-environment varia
 ## SEM (Opt.)
 
 Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) [@cerveroEffectsBuiltEnvironments2010; @ewingStructuralEquationModels2014].
+
+
+In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data.
+The published papers usually don't show the results of diagnosis and validation.
+Under this circumstance, compare or summarize these outcomes are unreliable.

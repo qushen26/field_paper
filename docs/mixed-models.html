@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Non-Linear Models | The Association Between Travel Behavior and Urban Form</title>
+  <title>Chapter 6 Mixed Models | The Association Between Travel Behavior and Urban Form</title>
   <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.23.4 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
+  <meta property="og:title" content="Chapter 6 Mixed Models | The Association Between Travel Behavior and Urban Form" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qushen26/field_paper" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Non-Linear Models | The Association Between Travel Behavior and Urban Form" />
+  <meta name="twitter:title" content="Chapter 6 Mixed Models | The Association Between Travel Behavior and Urban Form" />
   
   <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="mixed-models.html"/>
-<link rel="next" href="generalized-linear-models.html"/>
+<link rel="prev" href="linear-models.html"/>
+<link rel="next" href="non-linear-models-1.html"/>
 <script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -260,123 +260,68 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="non-linear-models-1" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Non-Linear Models</h1>
-<div id="transformations" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Transformations</h2>
-<p>Checking model adequacy shows if the underlying assumptions of regression model are violated. Research find data transformation can address this issues in many cases.</p>
-<p>Above discussion has shown that some assumptions are not valid for original VMT-urban form models. In literature, some regression models take logarithm transforms on all variables, while others only transform one or a part of them. Even though they have various data sources, it is unlikely that they are all correct or equivalent.</p>
-<div id="variance-stabilizing" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Variance Stabilizing</h3>
-<p>Equality of variance is a primary assumption of the regression model.
-When variance is not constant, the least-squares estimators will not give the minimized variance.
-Though the estimation is still unbiased, the standard errors of regression coefficients will be larger and the model becomes insensitive.
-Montgomery et al. (2021) give several useful variance stabilizing transformations</p>
-<table style="width:67%;">
-<colgroup>
-<col width="40%" />
-<col width="26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Relationship</th>
-<th align="center">Transformation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\sigma^2\propto E[y]\)</span></td>
-<td align="center"><span class="math inline">\(y^{1/2}\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\sigma^2\propto (E[y])^2\)</span></td>
-<td align="center"><span class="math inline">\(\ln(y)\)</span></td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\sigma^2\propto (E[y])^3\)</span></td>
-<td align="center"><span class="math inline">\(y^{-1/2}\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\sigma^2\propto (E[y])^4\)</span></td>
-<td align="center"><span class="math inline">\(y^{-1}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>A preliminary study finds both the mean and variance of household daily VMT are close to 40.
-This relationship supports that the logarithm of <span class="math inline">\(\mathbf{y}\)</span> is a proper choice for variance stabilizing.</p>
+<div id="mixed-models" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Mixed Models</h1>
+<p>When the standard regression model has more than one error term, the model includes both fixed effects and random effects, which is called mixed models.
+The general form is</p>
+<p><span class="math display" id="eq:mix">\[\begin{equation}
+\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}\boldsymbol{\delta}+\boldsymbol{\varepsilon}
+\tag{6.1}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{\delta}\)</span> represents the random effects by assuming <span class="math inline">\(\boldsymbol{\delta}\sim N(\mathbf{0}, \sigma_\delta^2\mathbf{I})\)</span> and <span class="math inline">\(Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}\)</span>.
+<span class="math inline">\(\sigma_\delta^2\)</span> is the extra sources of variability in addition to <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Random effects usually are related to categorical variables.
+<span class="math inline">\(\mathbf{Z}\)</span> is a <span class="math inline">\(n\times q\)</span> indicator matrix. <span class="math inline">\(q\)</span> refers to the levels of factors.</p>
+<div id="fixed-and-random-effects" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Fixed and Random Effects</h2>
+<p>The dichotomy of fixed effects and random effects is not decided by the factors themselves.
+In research design, the study is interest in some factors and try to estimate corresponding coefficients.
+These factors are assigned as having fixed effects on the response.
+When these factors are categorical variables. The levels of the factor are chosen to test the differences among these specific levels. The chosen levels should exhaust the population and the fixed effects across cases are constant. The typical cases include gender, race, and lifecycle.</p>
+<p>The factors assigned with random effects usually are not the study interest but need to control.
+People have already known theses factor have significant impacts on response.
+These factors contribute a part of variance in the model. By the principle of ANOVA, adding random-effect terms into the model can improve the accuracy of model.
+However, the study can not or has no intention to estimate their effect sizes.</p>
+<p>Sometimes it is because of they have too many levels which can not be exhausted.
+Or these levels represent comprehensive unknown mechanisms which have no explanatory value.
+For example, in experimental design, a few operators or machines are selected at random from numerous operators and machines but people have no interest in their influences. The experiment will assign operators and machines with random effects.</p>
+<p>Sometimes it is just because the research want to get a generalized result.
+In travel-urban form studies, the number of urban areas is finite. If the research purpose is to
+compare the travel behavior among the five cities in U.S. WestCoast, the effect of cities should be treated as fixed.
+If the research want to evaluate the impact of urban density across cities, the appropriate setting is to assign the factor of cities with random effects.
+Due to the cities in data are not random selected, the estimates could be biased. Although the result has limitation but is still looked as a research contribution.</p>
 </div>
-<div id="linearizing" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Linearizing</h3>
-<p>Another fundamental assumption, linearity is also can be addressed by transformation.
-If the relationship between response and predictors is linearizable, a suitable transformation can construct a intrinsically linear model.
-Several common forms are shown in Table.</p>
-<table>
-<colgroup>
-<col width="36%" />
-<col width="21%" />
-<col width="41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Linearizable Function</th>
-<th align="center">Transformation</th>
-<th align="right">Linear Form</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(y=\beta_0\exp[\beta_1x]\varepsilon\)</span></td>
-<td align="center"><span class="math inline">\(y&#39;=\ln(y)\)</span></td>
-<td align="right"><span class="math inline">\(y&#39;=\ln \beta_0 +\beta_1x +\ln\varepsilon\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(y=\beta_0+\beta_1\ln(x)+\varepsilon\)</span></td>
-<td align="center"><span class="math inline">\(x&#39;=\ln(x)\)</span></td>
-<td align="right"><span class="math inline">\(y=\beta_0 +\beta_1x&#39;+\varepsilon\)</span></td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(y=\beta_0x^{\beta_1}\varepsilon\)</span></td>
-<td align="center"><span class="math inline">\(y&#39;=\ln(y),x&#39;=\ln(x)\)</span></td>
-<td align="right"><span class="math inline">\(y&#39;=\ln\beta_0 +\beta_1x&#39; +\ln\varepsilon\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(y=x/((\beta_0+\varepsilon)x+\beta_1)\)</span></td>
-<td align="center"><span class="math inline">\(y&#39;=1/y,x&#39;=1/x\)</span></td>
-<td align="right"><span class="math inline">\(y&#39;=\beta_0 +\beta_1x&#39; +\varepsilon\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Comparing these forms, the <span class="math inline">\(log(y)\)</span> transformation also called log-linear model gives a finite value of response <span class="math inline">\(y\)</span> when predictor <span class="math inline">\(x\to 0\)</span>.
-While the log-log model (<span class="math inline">\(y&#39;=\ln(y),x&#39;=\ln(x)\)</span>) will give an infinite value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\to 0\)</span>.
-This gives a useful hint when one chooses from log-linear and log-log models.</p>
-<p>Moreover, the <span class="math inline">\(log(y)\)</span> transformation changes the scale of error term.
-Only one term in <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\ln\varepsilon\)</span> can be close to constant mean and normal distributed.
-Therefore, residual diagnosis is still a effective way for choosing the proper form of transformation.</p>
-<p>Prior theories and experience can also help to make a proper choice.
-Recall the equation in PART I, both Gravity law and Zipf’s law also imply that a logarithm transformation on VMT is suitable. But whether taking logarithm transformation on urban form still needs further investigation.</p>
+<div id="crossed-and-nested-effects" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Crossed and Nested Effects</h2>
+<p>Crossed effects versus nested effects is another dichotomy in regression models. They are often related to mixed models.
+Crossed effects means that every levels of factor <span class="math inline">\(A\)</span> co-occurs with every levels of factor <span class="math inline">\(B\)</span>.
+There could be interaction effect between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
+There is at least one observation in any specific combination of categories.
+A level of factor <span class="math inline">\(A\)</span> applied on the cases will refer to the same treatment.
+For example, a household with/without child and with/without vehicle have crossed effects. all households can be assigned to the four categories. All households in one category have the same characteristics on parenthood and vehicle ownership.</p>
+<p>Nested arrangement is also called hierarchical design. The levels of factor <span class="math inline">\(A\)</span> nested under the levels of factor <span class="math inline">\(B\)</span>. That means some levels of <span class="math inline">\(A\)</span> only occurs with one level of factor <span class="math inline">\(B\)</span>.
+In other words, all levels of <span class="math inline">\(A\)</span> nested under of <span class="math inline">\(B\)</span> are unique.
+There would not be interaction effect between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Some combinations of categories are not represented.
+The spatial related factors are often nested arrangement. For example, the built environment of neighborhood <span class="math inline">\(A\)</span> has some impacts on household living inside this area. Neighborhood <span class="math inline">\(A\)</span> belongs to city <span class="math inline">\(B\)</span>, which also has some impacts on all neighborhoods inside this city. The neighborhood <span class="math inline">\(A\)</span> is nested under city <span class="math inline">\(B\)</span> and <span class="math inline">\(A\)</span> has no connection with any households living in other cities.</p>
+<p>It should be careful that the nested effects are not obvious in some cases.
+For example, population density should be a crossed factor because a density value (e.g. 1000 persons per square miles) is exactly the same in any cities.
+However, it is possible that a city such as New York only has high-density neighborhoods (e.g all are greater than 1000 persons/sq.mi.), while another city only has low-density neighborhoods (e.g all are less than 1000 persons/sq.mi.).
+In this case, the relationship between density and city is not crossed.</p>
 </div>
-</div>
-<div id="polynomial-regression" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Polynomial Regression</h2>
-<div id="step-funtions" class="section level4" number="7.2.0.1">
-<h4><span class="header-section-number">7.2.0.1</span> Step Funtions</h4>
-</div>
-<div id="basis-funtions" class="section level4" number="7.2.0.2">
-<h4><span class="header-section-number">7.2.0.2</span> Basis Funtions</h4>
-</div>
-<div id="splines" class="section level4" number="7.2.0.3">
-<h4><span class="header-section-number">7.2.0.3</span> Splines</h4>
-</div>
-</div>
-<div id="nonparamteric-regression" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Nonparamteric Regression</h2>
-<div id="local-regression" class="section level4" number="7.3.0.1">
-<h4><span class="header-section-number">7.3.0.1</span> Local Regression</h4>
-</div>
-</div>
-<div id="generalized-additive-models" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Generalized Additive Models</h2>
-<p>Expected finding, implications, and limitations</p>
+<div id="unbalanced-subgroup" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Unbalanced Subgroup</h2>
+<p>In mixed models, ordinary least squares method ignore the impact of the random effects.
+When the grouped data is balanced, the generalized least square method is equivalent to ordinary method. The sum of square error is</p>
+<p><span class="math display">\[SSE=\mathbf{y&#39;[Z(Z&#39;Z)^{-1}Z&#39;-X(X&#39;X)^{-1}X&#39;]y}\]</span></p>
+<p>It is common that the sample sizes in every groups are unequal.
+Restricted Maximum Likelihood (REML) is an iterative approach which can deal with the variability among the groups.
+Each iteration of REML involves two steps.
+The first step ignores the random effect. Only fixed effects <span class="math inline">\(\boldsymbol{\hat\beta}^{(t)}\)</span> are estimated using ordinary least squares method. Then, the results can construct a set of estimated residuals <span class="math inline">\(\mathbf{\hat e}^{(t)}\)</span>.</p>
+<p>In the second step, using maximum likelihood method to obtain the estimated variance components <span class="math inline">\((\hat\sigma^2_\delta)^{(t)}\)</span> and the updated variance of <span class="math inline">\(y\)</span>.</p>
+<p>Plugging the new variance back to step one can get the updated fixed effects and residuals.
+This procedure continues until the results being convergence.</p>
+<p>Recall that maximum likelihood estimates assumes the observations follow a normal distribution.
+Therefore, the mixed model with REML method has stricter requirement of the data or proper transformations.</p>
 
 </div>
 </div>
@@ -422,8 +367,8 @@ Recall the equation in PART I, both Gravity law and Zipf’s law also imply that
           </div>
         </div>
       </div>
-<a href="mixed-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="generalized-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="non-linear-models-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -454,7 +399,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/qushen26/field_paper/edit/master/files/07-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/edit/master/files/06-mixed.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -462,7 +407,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/qushen26/field_paper/blob/master/files/07-nonlinear.Rmd",
+"link": "https://github.com/qushen26/field_paper/blob/master/files/06-mixed.Rmd",
 "text": null
 },
 "download": ["field_paper.pdf", "field_paper.epub"],

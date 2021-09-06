@@ -17,7 +17,7 @@ Regression Analysis provides a powerful framework for explaining the relationshi
 A large mount of studies use regression models to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)], the basic structure of the regression model is as below:
 
 $$\begin{equation}
-\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
+\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
 (\#eq:lm)
 \end{equation}$$
 
@@ -26,7 +26,7 @@ where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covari
 When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
 
 $$\begin{equation}
-E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
+E[\mathbf{y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
 (\#eq:glm)
 \end{equation}$$
 

@@ -203,7 +203,7 @@ SST =& SSR + SSE
 
 where $SST$ is Sum of Squares Total, $SSR$ is Sum of Squares Regression, and $SSE$ is Sum of Square Error. $SSE=\mathbf{e'e}$ represents the unknown part of model.
 
-For Generalized Least Squares method, $SST=\mathbf{y'V^{-1}y}$, $SSR= \boldsymbol{\hat\beta'}\mathbf{B'z}=\mathbf{y'V^{-1}(X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$, and $SSE=SST-SSR$
+For Generalized Least Squares method, $SST=\mathbf{y'V^{-1}y}$, $SSR= \boldsymbol{\hat\beta'}\mathbf{B'z}=\mathbf{y'V^{-1}X(X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$, and $SSE=SST-SSR$
 
 ### Hypothesis Test
 
@@ -483,21 +483,15 @@ R_{adj}^2 = 1-\frac{PRESS}{MST}
 
 -   Theoretical considerations
 
-## Fixed and Mixed Effects
-
-There are two different settings in experimental design. One assigns the treatments having fixed effects on the response. The other assign the treatments having random effects on the response. In fixed-effect model, the interest is the effects of levels themselves. The levels of the factor are chosen to test the differences among these specific levels. The chosen levels exhaust the pop The fixed effects across cases are constant.
-
-While in random-effect model, the interest is the underlying population. The random effects are vary.
-
-In random-effect models, the levels are selected at random from a large number of levels.
-
-In VMT-urban form models, the interest is the effects of built-environment variables, not the specific region's impact.
-
-## Bayesian approaches (Opt.)
 
 \pagebreak
 
-## SEM (Opt.)
+## Other Topics
+
+### Bayesian approaches (Opt.)
+
+
+### SEM (Opt.)
 
 Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) [@cerveroEffectsBuiltEnvironments2010; @ewingStructuralEquationModels2014].
 

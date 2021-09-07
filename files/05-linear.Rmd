@@ -60,8 +60,16 @@ Least-Squares method can be used to estimate the coefficients $\beta$ in equatio
 
 $$\begin{equation}
 \boldsymbol{\hat\beta}=(\mathbf{X'X})^{-1}\mathbf{X'}\mathbf{y}
-(\#eq:lsq)
+(\#eq:lsq-e)
 \end{equation}$$
+
+and
+
+$$\begin{equation}
+\hat\sigma^2=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta})'(\mathbf{y-X}\boldsymbol{\hat\beta})
+(\#eq:lsq-v)
+\end{equation}$$
+
 
 Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ (V., Definition, p.22).
 
@@ -87,10 +95,15 @@ and the generalized least squares solution is
 
 $$\begin{equation}
 \boldsymbol{\hat\beta}_{GLS}=(\mathbf{X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}
-(\#eq:glsq)
+(\#eq:glsq-e)
 \end{equation}$$
 
+and
 
+$$\begin{equation}
+\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})
+(\#eq:glsq-v)
+\end{equation}$$
 
 ### Standardized coefficients
 
@@ -329,10 +342,74 @@ Only looking at the $R^2$ and p-values cannot disclose this feature.
 
 ### Heteroscedasticity
 
+When the assumption of constant variance is violated, the linear model is heteroscedastic.
+Heteroscedasticity is common in urban studies. For example, the cities with different size are not identical. Small cities or rural areas might have homogeneous values of population density, while large cities' densities are more variable. 
 
+Recall Generalized least square estimates \@ref(eq:glsq-e) and \@ref(eq:glsq-v), if the residuals are independent but variances are not constant, a simple linear model becomes $\boldsymbol{\varepsilon}\sim MVN(\mathbf{0},\sigma^2\mathbf{V})$ where
 
+$$\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+x_1^2 & 0 & \dots & 0 \\  
+0 & x_2^2 & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & x_n^2 \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{x_1^2} & 0 & \dots & 0 \\  
+0 & \frac1{x_2^2} & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & \frac1{x_n^2} \end{bmatrix}
+(\#eq:hete-matrix)
+\end{equation}$$
 
-Bartlett's (1937) likelihood ratio test (Ravishanker & Dey, 2020, 8.1.3, p.288)
+Then $\mathbf{X'V^{-1}X}=n$ and the generalized least squares solution is
+
+$$\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\sum_{i=1}^{n}\frac{y_i}{x_i}
+(\#eq:hete-e)
+\end{equation}$$
+
+and
+
+$$\begin{equation}
+\hat\sigma^2_{WLS}=\frac1{n-1}\sum_{i=1}^{n}\frac{(y_i-\hat\beta_{1}x_i)^2}{x_i^2}
+(\#eq:hete-v)
+\end{equation}$$
+
+In heteroscedastic model, the OLS estimates of coefficients are still unbiased but no longer efficient.
+But the estimates of variances are biased. The corresponding hypothesis test and confidence interval would be misleading.
+
+Another special case is the model with aggregated variables, which is the cases of geographic unit.
+Let $u_j$ and $v_j$ are the response and predictors of $j^{th}$ household in a neighborhood. $n_i$ is the sample size in each neighborhood. Then $y_i=\sum_{j=1}^{n_i}u_j/n_i$ and $X_i=\sum_{j=1}^{n_i}v_j/n_i$. In this case,
+
+$$\begin{equation}
+\mathbf{V}=\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{n_1} & 0 & \dots & 0 \\  
+0 & \frac1{n_2} & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & \frac1{n_n} \end{bmatrix},\quad 
+\begin{bmatrix} 
+n_1 & 0 & \dots & 0 \\  
+0 & n_2 & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & n_n \end{bmatrix}
+(\#eq:agg-matrix)
+\end{equation}$$
+
+Then $\mathbf{X'V^{-1}X}=\sum_{i=1}^nn_ix_i^2$ and the WLS estimate of $\beta_1$ is
+
+$$\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\frac{\sum_{i=1}^{n}n_ix_iy_i}{\sum_{i=1}^{n}n_ix_i^2}
+(\#eq:agg-e)
+\end{equation}$$
+
+and
+
+$$\begin{equation}
+V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sum_{i=1}^{n}n_i^2x_i^2\sigma^2/n_i}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sigma^2}{\sum_{i=1}^{n}n_ix_i^2}
+(\#eq:agg-v)
+\end{equation}$$
+
+There are three procedures, Bartlett's likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity (Ravishanker & Dey, 2020, 8.1.3, pp.288-290)
 
 ### Multicollinearity
 

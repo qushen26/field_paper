@@ -16,9 +16,11 @@ eq:residual
 eq:identical
 eq:indenpendent
 thm:g-m
-eq:lsq
+eq:lsq-e
+eq:lsq-v
 eq:fitted-y
-eq:glsq
+eq:glsq-e
+eq:glsq-v
 eq:standize
 eq:stand-coef
 eq:corr-matrix
@@ -27,6 +29,12 @@ eq:ss
 eq:hyp-1
 eq:chisq
 eq:hyp-2
+eq:hete-matrix
+eq:hete-e
+eq:hete-v
+eq:agg-matrix
+eq:agg-e
+eq:agg-v
 eq:vif
 eq:rsq
 eq:df

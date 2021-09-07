@@ -58,7 +58,7 @@ The spatial related factors are often nested arrangement. For example, the built
 It should be careful that the nested effects are not obvious in some cases.
 For example, population density should be a crossed factor because a density value (e.g. 1000 persons per square miles) is exactly the same in any cities. 
 However, it is possible that a city such as New York only has high-density neighborhoods (e.g all are greater than 1000 persons/sq.mi.), while another city only has low-density neighborhoods (e.g all are less than 1000 persons/sq.mi.).
-In this case, the relationship between density and city is not crossed.
+In this case, the effects of density with respect to city are not crossed.
 
 
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-05" />
+<meta name="date" content="2021-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -306,15 +306,20 @@ Cov[\varepsilon_i,\varepsilon_j] = 0,\quad i\neq j
 <div id="least-square" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Least Square</h3>
 <p>Least-Squares method can be used to estimate the coefficients <span class="math inline">\(\beta\)</span> in equation <a href="intro.html#eq:lm">(1.1)</a> The dimension of <span class="math inline">\(\mathbf{X}\)</span> is <span class="math inline">\(n\times p\)</span>, which means the data contain <span class="math inline">\(n\)</span> observations and <span class="math inline">\(p-1\)</span> predictors. The <span class="math inline">\(p\times1\)</span> vector of least-squares estimators is denoted as <span class="math inline">\(\hat\beta\)</span> and the solution to the normal equations is</p>
-<p><span class="math display" id="eq:lsq">\[\begin{equation}
+<p><span class="math display" id="eq:lsq-e">\[\begin{equation}
 \boldsymbol{\hat\beta}=(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;}\mathbf{y}
 \tag{5.4}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:lsq-v">\[\begin{equation}
+\hat\sigma^2=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta})&#39;(\mathbf{y-X}\boldsymbol{\hat\beta})
+\tag{5.5}
 \end{equation}\]</span></p>
 <p>Here requires <span class="math inline">\(\mathbf{X&#39;X}\)</span> are invertible, that is, the covariates are linearly independent if <span class="math inline">\(\mathbf{X}\)</span> has rank <span class="math inline">\(p\)</span> (V., Definition, p.22).</p>
 <p>Given the estimated coefficients, the model can give the fitted values of response as:</p>
 <p><span class="math display" id="eq:fitted-y">\[\begin{equation}
 \mathbf{\hat y}=\mathbf{X}\boldsymbol{\hat\beta}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;y}= \mathbf{Hy}
-\tag{5.5}
+\tag{5.6}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{H}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;}\)</span> is hat matrix and <span class="math inline">\(\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}\)</span></p>
 <p>When the observations are not independent or have unequal variances, the covariance matrix of error is not identity matrix. The assumption of regression model <span class="math inline">\(V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{I}\)</span> doesn’t hold. Denote <span class="math inline">\(\mathbf{V}\)</span> is a known <span class="math inline">\(n\times n\)</span> positive definite matrix and <span class="math inline">\(V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{V}\)</span>.
@@ -325,9 +330,14 @@ Then, there exists an <span class="math inline">\(n\times n\)</span> symmetric m
 <p>The linear model becomes <span class="math inline">\(\mathbf{z}=\mathbf{B}\boldsymbol{\beta}+\boldsymbol{\eta}\)</span> and <span class="math inline">\(V[\boldsymbol{\eta}]=\sigma^2\mathbf{I}\)</span>.
 If the model is full rank, that is <span class="math inline">\(rank(\mathbf{X})=p\)</span> then <span class="math inline">\(\mathbf{X&#39;V^{-1}X}\)</span> is invertible
 and the generalized least squares solution is</p>
-<p><span class="math display" id="eq:glsq">\[\begin{equation}
+<p><span class="math display" id="eq:glsq-e">\[\begin{equation}
 \boldsymbol{\hat\beta}_{GLS}=(\mathbf{X&#39;V^{-1}X})^{-1}\mathbf{X&#39;V^{-1}}\mathbf{y}
-\tag{5.6}
+\tag{5.7}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:glsq-v">\[\begin{equation}
+\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})&#39;(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})
+\tag{5.8}
 \end{equation}\]</span></p>
 </div>
 <div id="standardized-coefficients" class="section level3" number="5.2.2">
@@ -339,7 +349,7 @@ and the generalized least squares solution is</p>
 z_{ij}=&amp;\frac{x_{ij}-\bar x_j}{\sqrt{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}},\quad \\
 y^{0}_{i}=&amp;\frac{y_{i}-\bar y}{\sqrt{\sum_{i=1}^{n}(y_{i}-\bar y)^2}}
 \end{split}
-\tag{5.7}
+\tag{5.9}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:stand-coef">\[\begin{equation}
 \begin{split}
@@ -347,7 +357,7 @@ y^{0}_{i}=&amp;\frac{y_{i}-\bar y}{\sqrt{\sum_{i=1}^{n}(y_{i}-\bar y)^2}}
 \hat b_j= &amp;\hat\beta_j\sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}{\sum_{i=1}^{n}(y_{i}-\bar y)^2}},\ j=1,2,...(p-1),\text{ and}\\
 \hat\beta_0=&amp;\bar y - \sum_{j=1}^{p-1}\hat\beta_j\bar x_j
 \end{split}
-\tag{5.8}
+\tag{5.10}
 \end{equation}\]</span></p>
 <p>Note that <span class="math inline">\(\mathbf{Z&#39;Z}\)</span> correlations matrix.</p>
 <p><span class="math display" id="eq:corr-matrix">\[\begin{equation}
@@ -361,7 +371,7 @@ r_{k1} &amp; r_{k2} &amp; _{k3} &amp; \dots &amp; 1  \end{bmatrix},\quad
 \mathbf{Z&#39;}\mathbf{y^{0}}=&amp;\begin{bmatrix} 
 r_{1y} \\ r_{2y} \\ r_{3y} \\ \vdots \\ r_{ky} \end{bmatrix}
 \end{split}
-\tag{5.9}
+\tag{5.11}
 \end{equation}\]</span></p>
 <p>where</p>
 <p><span class="math display" id="eq:corr-1">\[\begin{equation}
@@ -369,7 +379,7 @@ r_{1y} \\ r_{2y} \\ r_{3y} \\ \vdots \\ r_{ky} \end{bmatrix}
 r_{ij}=&amp;\frac{\sum_{u=1}^{n}(x_{ui}-\bar x_i)(x_{uj}-\bar x_j)}{\sqrt{\sum_{u=1}^{n}(x_{ui}-\bar x_i)^2\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2}}\\
 r_{jy}=&amp;\frac{\sum_{u=1}^{n}(x_{uj}-\bar x_j)(y_{u}-\bar y)}{\sqrt{\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2\sum_{u=1}^{n}(y_{u}-\bar y)^2}}
 \end{split}
-\tag{5.10}
+\tag{5.12}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(r_{ij}\)</span> is the simple correlation between <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span>. <span class="math inline">\(r_{jy}\)</span> is the simple correlation between <span class="math inline">\(x_j\)</span> and <span class="math inline">\(y\)</span></p>
 <p>It seems that standardized regression coefficients are comparable. However, the value of <span class="math inline">\(\hat b_j\)</span> depends on other predictors. Therefore, comparison between different models is still problematic.</p>
@@ -454,7 +464,7 @@ Hurdle model will give separate marginal(partial) effects (Greene, 2018, example
 \sum(y-\bar y)^2=&amp;\sum(\hat y-\bar y)^2+\sum(y-\hat y)^2\\
 SST =&amp; SSR + SSE
 \end{split}
-\tag{5.11}
+\tag{5.13}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(SST\)</span> is Sum of Squares Total, <span class="math inline">\(SSR\)</span> is Sum of Squares Regression, and <span class="math inline">\(SSE\)</span> is Sum of Square Error. <span class="math inline">\(SSE=\mathbf{e&#39;e}\)</span> represents the unknown part of model.</p>
 <p>For Generalized Least Squares method, <span class="math inline">\(SST=\mathbf{y&#39;V^{-1}y}\)</span>, <span class="math inline">\(SSR= \boldsymbol{\hat\beta&#39;}\mathbf{B&#39;z}=\mathbf{y&#39;V^{-1}X(X&#39;V^{-1}X})^{-1}\mathbf{X&#39;V^{-1}}\mathbf{y}\)</span>, and <span class="math inline">\(SSE=SST-SSR\)</span></p>
@@ -470,12 +480,12 @@ SST =&amp; SSR + SSE
 H_0:&amp;\quad \beta_0 = \beta_1 = \cdots =\beta_{p-1}=0\\
 H_1:&amp;\quad \text{at least one } \beta_j \neq 0,\ j=0,1,...,(p-1)\\
 \end{split}
-\tag{5.12}
+\tag{5.14}
 \end{equation}\]</span></p>
 <p>By Theorem D14 (XX, p.90), if an <span class="math inline">\(n\times1\)</span>random vector <span class="math inline">\(\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})\)</span>, then</p>
 <p><span class="math display" id="eq:chisq">\[\begin{equation}
 \mathbf{y&#39;y} \sim \chi^2(n,\frac12\boldsymbol{\mu&#39;\mu})
-\tag{5.13}
+\tag{5.15}
 \end{equation}\]</span></p>
 <p>Recall the assumption of <span class="math inline">\(\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})\)</span>.<br />
 By the additive property of <span class="math inline">\(\chi^2\)</span> distribution,</p>
@@ -497,7 +507,7 @@ F_0=\frac{MSE}{MSR} \sim F_{(p-1),(n-p),\lambda}\\
 H_0:&amp;\quad \beta_j =0\\
 H_1:&amp;\quad \beta_j \neq 0\\
 \end{split}
-\tag{5.14}
+\tag{5.16}
 \end{equation}\]</span></p>
 <p><span class="math inline">\(\boldsymbol{\hat\beta}\)</span> is a linear combination of <span class="math inline">\(\mathbf{y}\)</span>. Based on the assumption of <span class="math inline">\(\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})\)</span>, it can be proved that <span class="math inline">\(\boldsymbol{\hat\beta}\sim N (\boldsymbol{\beta},\sigma^2(\mathbf{X&#39;X})^{-1})\)</span> and</p>
 <p><span class="math display">\[\begin{equation}
@@ -559,16 +569,69 @@ Only looking at the <span class="math inline">\(R^2\)</span> and p-values cannot
 </div>
 <div id="heteroscedasticity" class="section level3" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Heteroscedasticity</h3>
-<p>Bartlett’s (1937) likelihood ratio test (Ravishanker &amp; Dey, 2020, 8.1.3, p.288)</p>
+<p>When the assumption of constant variance is violated, the linear model is heteroscedastic.
+Heteroscedasticity is common in urban studies. For example, the cities with different size are not identical. Small cities or rural areas might have homogeneous values of population density, while large cities’ densities are more variable.</p>
+<p>Recall Generalized least square estimates <a href="linear-models.html#eq:glsq-e">(5.7)</a> and <a href="linear-models.html#eq:glsq-v">(5.8)</a>, if the residuals are independent but variances are not constant, a simple linear model becomes <span class="math inline">\(\boldsymbol{\varepsilon}\sim MVN(\mathbf{0},\sigma^2\mathbf{V})\)</span> where</p>
+<p><span class="math display" id="eq:hete-matrix">\[\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+x_1^2 &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; x_2^2 &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; x_n^2 \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{x_1^2} &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; \frac1{x_2^2} &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; \frac1{x_n^2} \end{bmatrix}
+\tag{5.17}
+\end{equation}\]</span></p>
+<p>Then <span class="math inline">\(\mathbf{X&#39;V^{-1}X}=n\)</span> and the generalized least squares solution is</p>
+<p><span class="math display" id="eq:hete-e">\[\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\sum_{i=1}^{n}\frac{y_i}{x_i}
+\tag{5.18}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:hete-v">\[\begin{equation}
+\hat\sigma^2_{WLS}=\frac1{n-1}\sum_{i=1}^{n}\frac{(y_i-\hat\beta_{1}x_i)^2}{x_i^2}
+\tag{5.19}
+\end{equation}\]</span></p>
+<p>In heteroscedastic model, the OLS estimates of coefficients are still unbiased but no longer efficient.
+But the estimates of variances are biased. The corresponding hypothesis test and confidence interval would be misleading.</p>
+<p>Another special case is the model with aggregated variables, which is the cases of geographic unit.
+Let <span class="math inline">\(u_j\)</span> and <span class="math inline">\(v_j\)</span> are the response and predictors of <span class="math inline">\(j^{th}\)</span> household in a neighborhood. <span class="math inline">\(n_i\)</span> is the sample size in each neighborhood. Then <span class="math inline">\(y_i=\sum_{j=1}^{n_i}u_j/n_i\)</span> and <span class="math inline">\(X_i=\sum_{j=1}^{n_i}v_j/n_i\)</span>. In this case,</p>
+<p><span class="math display" id="eq:agg-matrix">\[\begin{equation}
+\mathbf{V}=\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{n_1} &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; \frac1{n_2} &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; \frac1{n_n} \end{bmatrix},\quad 
+\begin{bmatrix} 
+n_1 &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; n_2 &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; n_n \end{bmatrix}
+\tag{5.20}
+\end{equation}\]</span></p>
+<p>Then <span class="math inline">\(\mathbf{X&#39;V^{-1}X}=\sum_{i=1}^nn_ix_i^2\)</span> and the WLS estimate of <span class="math inline">\(\beta_1\)</span> is</p>
+<p><span class="math display" id="eq:agg-e">\[\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\frac{\sum_{i=1}^{n}n_ix_iy_i}{\sum_{i=1}^{n}n_ix_i^2}
+\tag{5.21}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:agg-v">\[\begin{equation}
+V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sum_{i=1}^{n}n_i^2x_i^2\sigma^2/n_i}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sigma^2}{\sum_{i=1}^{n}n_ix_i^2}
+\tag{5.22}
+\end{equation}\]</span></p>
+<p>There are three procedures, Bartlett’s likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity (Ravishanker &amp; Dey, 2020, 8.1.3, pp.288-290)</p>
 </div>
 <div id="multicollinearity" class="section level3" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> Multicollinearity</h3>
 <p>Multicollinearity or near-linear dependence refers to the models with highly correlated predictors. When data is generated from experimental design, the treatments <span class="math inline">\(X\)</span> could be fixed variables and be orthogonal. But travel-urban form model is observational studies and nothing can be controlled as in lab. It is known that there are complex correlations among the built-environment predictors themselves.</p>
 <p>Although, the basic IID assumptions do not require that all predictors <span class="math inline">\(\mathbf{X}\)</span> are independent, when the predictors are near-linear dependent, the model is ill-conditioned and the least-square estimators are unstable.</p>
-<p>multicollinearity can make the variances inflated and impact model precision seriously. If some of predictors are exact linear dependent, the matrix <span class="math inline">\(\mathbf{X&#39;X})^{-1}\)</span> will be non-invertible. If the predictors are near-linear dependent, the correlation matrix using unit length scaling <span class="math inline">\(\mathbf{Z&#39;Z}\)</span>will has a inverse matrix with inflated variances. That means that the diagonal elements of <span class="math inline">\((\mathbf{Z&#39;Z})^{-1}\)</span> are not all equal to one. The diagnoal elements are called <strong>Variance Inflation Factors</strong>, which can be used to examine multicollinearity. The VIF for a particular predictor is examined as below <a href="linear-models.html#eq:vif">(5.15)</a></p>
+<p>multicollinearity can make the variances inflated and impact model precision seriously. If some of predictors are exact linear dependent, the matrix <span class="math inline">\(\mathbf{X&#39;X})^{-1}\)</span> will be non-invertible. If the predictors are near-linear dependent, the correlation matrix using unit length scaling <span class="math inline">\(\mathbf{Z&#39;Z}\)</span>will has a inverse matrix with inflated variances. That means that the diagonal elements of <span class="math inline">\((\mathbf{Z&#39;Z})^{-1}\)</span> are not all equal to one. The diagnoal elements are called <strong>Variance Inflation Factors</strong>, which can be used to examine multicollinearity. The VIF for a particular predictor is examined as below <a href="linear-models.html#eq:vif">(5.23)</a></p>
 <p><span class="math display" id="eq:vif">\[\begin{equation}
 VIF_j=\frac{1}{1-R_j^2}
-\tag{5.15}
+\tag{5.23}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(R_j^2\)</span> is the coefficient of determination by regressing <span class="math inline">\(x_j\)</span> on all the remaining predictors.</p>
 <p>A common approach is to drop off the predictor with greatest VIF and refit the model until all VIFs are less than 10. However, dropping off one or more predictors will lose many information which might be valuable for explaining response. Due to the complexity among predictors, dropping off the predictor with the greatest VIF is not always the best choice. Sometimes, removing a predictor with moderate VIF can make all VIFs less than 10 in the refitted model. Moreover, there is not an unique criteria for VIF value. When the relationship between predictor and response is weak, or the <span class="math inline">\(R^2\)</span> is low, the VIFs less than 10 may also affect the ability of estimation dramatically.</p>
@@ -600,7 +663,7 @@ VIF_j=\frac{1}{1-R_j^2}
 <p>This structure tell us how good the model can explain the data. Coefficient of Determination <span class="math inline">\(R^2\)</span> is a proportion to assess the quality of fitted model.</p>
 <p><span class="math display" id="eq:rsq">\[\begin{equation}
 R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
-\tag{5.16}
+\tag{5.24}
 \end{equation}\]</span></p>
 <p>when <span class="math inline">\(R^2\)</span> is close to <span class="math inline">\(1\)</span>, the most of variation in response can be explained by the fitted model. Although <span class="math inline">\(R^2\)</span> is not the only criteria of a good model, it is often available in most published papers. Recall the discussion in Part I, the aggregated data will eliminate the difference among individuals, households, or neighborhoods. In the new variance structure, <span class="math inline">\(SSE\)</span> will be much less than disaggregated model. The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3, while the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. A seriously underfitting model’s outputs could be biased and unstable.</p>
 <p>A fact is that adding predictors into the model will never decrease <span class="math inline">\(R^2\)</span>. Thus the models with different number of predictors is not comparable. Adjusted <span class="math inline">\(R^2\)</span> can address this issue by introducing degree of freedom. The degree of freedom denotes the amount of information required to know.</p>
@@ -609,23 +672,23 @@ R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
 df_T =&amp; df_R + df_E\\
 n-1=&amp;(p-1)+(n-p)
 \end{split}
-\tag{5.17}
+\tag{5.25}
 \end{equation}\]</span></p>
 <p>Then, the mean square (MS) of each sum of squares (SS) can be calculated by <span class="math inline">\(MS=SS/df\)</span>. The mean square error <span class="math inline">\(MSE\)</span> is also called as the expected value of error variance <span class="math inline">\(\hat\sigma^2=MSE=SSE/(n-p)\)</span>. <span class="math inline">\(n-p\)</span> is the degree of freedom. Then adjusted <span class="math inline">\(R^2\)</span> is</p>
 <p><span class="math display" id="eq:rsq-adj">\[\begin{equation}
 R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
-\tag{5.18}
+\tag{5.26}
 \end{equation}\]</span></p>
 <p>Another similar method is <span class="math inline">\(R^2\)</span> for prediction based on PRESS.
 Recall the PRESS statistic is the prediction error sum of square by fitting a model with <span class="math inline">\(n-1\)</span> observations.</p>
 <p><span class="math display" id="eq:press">\[\begin{equation}
 PRESS = \sum_{i=1}^n(y_i-\hat y_{(i)})^2= \sum_{i=1}^n\left(\frac{e_i}{1-h_{ii}}\right)^2
-\tag{5.19}
+\tag{5.27}
 \end{equation}\]</span></p>
 <p>A model with smaller PRESS has a better ability of prediction. The <span class="math inline">\(R^2\)</span> for prediction is</p>
 <p><span class="math display" id="eq:rsq-pred">\[\begin{equation}
 R_{adj}^2 = 1-\frac{PRESS}{MST}
-\tag{5.20}
+\tag{5.28}
 \end{equation}\]</span></p>
 </div>
 <div id="mallows-c_p" class="section level3" number="5.5.2">

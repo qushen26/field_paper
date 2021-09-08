@@ -3,6 +3,7 @@ eq:glm
 fig:4age
 eq:hyperbolic
 tab:geoid
+eq:gravity-law
 eq:sf1
 fig:Mstage
 eq:stepwise
@@ -35,6 +36,7 @@ eq:hete-v
 eq:agg-matrix
 eq:agg-e
 eq:agg-v
+eq:auto-matrix
 eq:vif
 eq:rsq
 eq:df
@@ -42,6 +44,8 @@ eq:rsq-adj
 eq:press
 eq:rsq-pred
 eq:mix
+eq:polym
+eq:stepf
 fig:diagram3
 intro
 background
@@ -88,7 +92,7 @@ additive-and-linearity
 independent-identically-distributed-iid
 normality
 estimations
-least-square
+least-squares
 standardized-coefficients
 elasticity
 combined-effects
@@ -99,6 +103,7 @@ confidence-intervals
 adequacy
 residuals-analysis
 heteroscedasticity
+autocorrelation
 multicollinearity
 ridge-regression-and-lasso
 principal-components-regression-pcr
@@ -118,11 +123,11 @@ transformations
 variance-stabilizing
 linearizing
 polynomial-regression
-step-funtions
-basis-funtions
-splines
-nonparamteric-regression
-local-regression
+basis-functions
+step-functions
+splines-piecewise-polynomials
+smoothing-spline
+non-parameter-regression
 generalized-additive-models
 generalized-linear-models
 logistic-regression

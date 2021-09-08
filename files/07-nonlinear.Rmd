@@ -60,16 +60,108 @@ Recall the equation in PART I, both Gravity law and Zipf's law also imply that a
 
 ## Polynomial Regression
 
-#### Step Funtions
+An implication of Gravity Law is that the interaction between $m_1$ and $m_2$ ((\@ref(eq:gravity-law)) should be considered. That is the attributes of origin and destination can collectively affect travel behavior.
+This involves the second-order polynomial regression models. 
 
-#### Basis Funtions
+$$\begin{equation}
+y=\beta_0+\beta_1x_1+\beta_2x_2+\beta_{11}x_1^2+\beta_{22}x_2^2+\beta_{12}x_1x_2+\varepsilon
+(\#eq:polym)
+\end{equation}$$
 
-#### Splines
+It has known that the distribution of VMT follow a decreasing exponential curve. Logarithm transformation can make the model at first order and convert the multiplicative relationship to additive.
+Keeping the order of the model as low as possible is a general rule.
+Because adding high-order terms could produce ill-conditioned $\mathbf{X'X}$ matrix or strong multicollinearity between $x$ and $x^2$.
+Only if the curve still exists after transformation, the second-order terms could be added to the model.
 
-## Nonparamteric Regression
 
-#### Local Regression
+High-order models is a global structure of non-linearity. That means this function should hold on the whole range of $x$.
+Sometimes, the mechanism of a factor are different in different parts of the range of $x$.
+A common example is the impact of income on travel distance. Research found that low-income and high-income households have longer travel distance than middle class households but the underlying reasons are different.
+High-income families have less constrains on driving decision than middle class so they drive more.
+However low-income families have stronger constrains than middle class because their homes are often far away from their workplaces or cheap grocery stores.
+The similar things could happen on age, population density and other factors. 
+
+
+## Basis Functions
+
+Using basis functions can avoid the weakness of a global structure. By dividing the range of $x$ into many segments, then a set of fixed and known functions can be applied to a variable $X$.
+The points of the coefficients change are called **knots**.
+
+### Step Functions
+
+Step functions is a special case of basis functions. Here the basis functions are a set of indicator functions. 
+The idea is to convert a continuous variable, such as income into an ordered categorical variable. Let the cut-points are $c_1,c_2,..., c_k$ in the range of $X$, then the new variables are
+
+$$\begin{equation}
+\begin{split}
+C_0(x)=&\mathbb{I}_{x<c_1}\\
+C_1(x)=&\mathbb{I}_{c_1\le x<c_2}\\
+C_2(x)=&\mathbb{I}_{c_2\le x<c_3}\\
+\cdots\\
+C_k(x)=&\mathbb{I}_{c_k\le x}\\
+\end{split}
+\end{equation}$$
+
+Then the linear model is 
+
+$$\begin{equation}
+y=\beta_0+\beta_1C_1(x)+\beta_2C_2(x)+\cdots+\beta_{k}x_k+\varepsilon
+(\#eq:stepf)
+\end{equation}$$
+
+Note that $C_0(x)$ don't need to appear in the model because it is treated as the reference level.
+Step functions divide the whole curve into many bins. This action could miss the trend of curve.
+The choice of proper breakpoints is also a challenge.
+
+
+
+### Splines (Piecewise Polynomials)
+
+If the range of $x$ is divided into segments, each segment can fit a polynomial model. This method is called piecewise polynomial fitting or spline.
+
+Adding constrain can make the fitted curves being continues. And the additional constrains can make the first and second derivatives of the piecewise polynomial continues.
+A cubic polynomial with $k$ knots can add a truncated power basis function as
+
+$$h(x,c_i)=(x-c_i)^3_+=\begin{cases}(x-c_i)^3&\text{if }x>c_i\\0&\text{otherwise}\end{cases}$$
+then the spline with continuous first and second derivatives is
+
+$$y=\sum_{j=0}^3\beta_{0j}x^j+\sum_{i=i}^k\beta_{k}h(x,c_i)$$
+
+By computing the MSEs of every models with different number of knots, cross validation can be used to examine the best number of knots.
+ When adding more knots, the value of MSE decrease. The optimal choice is the minimum number of knots with respect to a "small enough" MSE.
+
+
+### Smoothing Spline
+
+Regression spline is very flexible so have the risk of overfitting. The fitted curve can go though all of the $y_i$ without constrains. Denote the function $g(x)$ represent the constraints. Smoothing spline can be expressed as
+
+$$\arg\min_{g}\left\{\sum_{i=1}^n(y_i-g(x_i)^2)+\lambda\int g''(t)^2dt \right\}$$
+where $\lambda$ is a nonegative tuning function. The left term of $\sum_{i=1}^n(y_i-g(x_i)^2)$ is the quadratic loss function. Loss reduction can improve the fitness of model.
+The right term of $\lambda\int g''(t)^2dt$ is a penalty term. $g''(t)$ is the second derivative of function $g(\cdot)$ measure the amount of slope changing. If the fitted curve is very wiggly, the value of penalty term will be very large.
+Therefore, smoothing spline tries to find the trade-off of loss and penalty by adjusting $\lambda$.
+
+Using the leave-one-out (LOO) cross validation, the best value of $\lambda$ can be verified to minimize the SSE and achive the bias-variance balance.
+
+
+## Non-parameter Regression
+
+
+Non-parameter regression is an approach using a model-free basis for prediction. The basic idea is to select a set of neighborhood points inside a window defined by a bandwidth $b$. Then calculate $S=[w_{ij}]$, a weighting matrix. The smoother estimate of the $i$th response is
+
+$$\mathbf{\tilde y}=\mathbf{Sy}\quad \text{or } \tilde y_i=\sum_{j=1}^n w_{ij}y_j$$
+
+There are two common types of smoother, kernel and local regression.
+The kernel smoother uses a weighted average for the estimation. And the kernel functions satisfy $K(t)\ge 0,\forall t$, $\int_{-\infty}^{+\infty}K(t)dt=1$, and $K(-t)=K(t)$.
+
+- Kernel Regression
+
+$$w_{ij}=\frac{K(\frac{x_i-x_j}{b})}{\sum_{k=1}^n K(\frac{x_i-x_k}{b})}$$
+- Local Weighted Regression
+
+For local regression, the neighborhood points inside the span can fit locally a regression line or a hyperplane rather than a constant. 
 
 ## Generalized Additive Models
+
+
 
 Expected finding, implications, and limitations

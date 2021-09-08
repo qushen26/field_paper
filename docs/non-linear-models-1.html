@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-06" />
+<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,7 +167,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="linear-models.html"><a href="linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="linear-models.html"><a href="linear-models.html#least-square"><i class="fa fa-check"></i><b>5.2.1</b> Least Square</a></li>
+<li class="chapter" data-level="5.2.1" data-path="linear-models.html"><a href="linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
 <li class="chapter" data-level="5.2.2" data-path="linear-models.html"><a href="linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
 <li class="chapter" data-level="5.2.3" data-path="linear-models.html"><a href="linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
 <li class="chapter" data-level="5.2.4" data-path="linear-models.html"><a href="linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
@@ -182,7 +182,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.4.1" data-path="linear-models.html"><a href="linear-models.html#residuals-analysis"><i class="fa fa-check"></i><b>5.4.1</b> Residuals Analysis</a></li>
 <li class="chapter" data-level="5.4.2" data-path="linear-models.html"><a href="linear-models.html#heteroscedasticity"><i class="fa fa-check"></i><b>5.4.2</b> Heteroscedasticity</a></li>
-<li class="chapter" data-level="5.4.3" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>5.4.3</b> Multicollinearity</a></li>
+<li class="chapter" data-level="5.4.3" data-path="linear-models.html"><a href="linear-models.html#autocorrelation"><i class="fa fa-check"></i><b>5.4.3</b> Autocorrelation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>5.4.4</b> Multicollinearity</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="linear-models.html"><a href="linear-models.html#variables-selections"><i class="fa fa-check"></i><b>5.5</b> Variables Selections</a>
 <ul>
@@ -210,8 +211,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.1.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#linearizing"><i class="fa fa-check"></i><b>7.1.2</b> Linearizing</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#polynomial-regression"><i class="fa fa-check"></i><b>7.2</b> Polynomial Regression</a></li>
-<li class="chapter" data-level="7.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#nonparamteric-regression"><i class="fa fa-check"></i><b>7.3</b> Nonparamteric Regression</a></li>
-<li class="chapter" data-level="7.4" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#generalized-additive-models"><i class="fa fa-check"></i><b>7.4</b> Generalized Additive Models</a></li>
+<li class="chapter" data-level="7.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#basis-functions"><i class="fa fa-check"></i><b>7.3</b> Basis Functions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#step-functions"><i class="fa fa-check"></i><b>7.3.1</b> Step Functions</a></li>
+<li class="chapter" data-level="7.3.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>7.3.2</b> Splines (Piecewise Polynomials)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#smoothing-spline"><i class="fa fa-check"></i><b>7.3.3</b> Smoothing Spline</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#non-parameter-regression"><i class="fa fa-check"></i><b>7.4</b> Non-parameter Regression</a></li>
+<li class="chapter" data-level="7.5" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#generalized-additive-models"><i class="fa fa-check"></i><b>7.5</b> Generalized Additive Models</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
 <ul>
@@ -358,24 +365,85 @@ Recall the equation in PART I, both Gravity law and Zipf’s law also imply that
 </div>
 <div id="polynomial-regression" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Polynomial Regression</h2>
-<div id="step-funtions" class="section level4" number="7.2.0.1">
-<h4><span class="header-section-number">7.2.0.1</span> Step Funtions</h4>
+<p>An implication of Gravity Law is that the interaction between <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span> ((<a href="travel.html#eq:gravity-law">(3.1)</a>) should be considered. That is the attributes of origin and destination can collectively affect travel behavior.
+This involves the second-order polynomial regression models.</p>
+<p><span class="math display" id="eq:polym">\[\begin{equation}
+y=\beta_0+\beta_1x_1+\beta_2x_2+\beta_{11}x_1^2+\beta_{22}x_2^2+\beta_{12}x_1x_2+\varepsilon
+\tag{7.1}
+\end{equation}\]</span></p>
+<p>It has known that the distribution of VMT follow a decreasing exponential curve. Logarithm transformation can make the model at first order and convert the multiplicative relationship to additive.
+Keeping the order of the model as low as possible is a general rule.
+Because adding high-order terms could produce ill-conditioned <span class="math inline">\(\mathbf{X&#39;X}\)</span> matrix or strong multicollinearity between <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>.
+Only if the curve still exists after transformation, the second-order terms could be added to the model.</p>
+<p>High-order models is a global structure of non-linearity. That means this function should hold on the whole range of <span class="math inline">\(x\)</span>.
+Sometimes, the mechanism of a factor are different in different parts of the range of <span class="math inline">\(x\)</span>.
+A common example is the impact of income on travel distance. Research found that low-income and high-income households have longer travel distance than middle class households but the underlying reasons are different.
+High-income families have less constrains on driving decision than middle class so they drive more.
+However low-income families have stronger constrains than middle class because their homes are often far away from their workplaces or cheap grocery stores.
+The similar things could happen on age, population density and other factors.</p>
 </div>
-<div id="basis-funtions" class="section level4" number="7.2.0.2">
-<h4><span class="header-section-number">7.2.0.2</span> Basis Funtions</h4>
+<div id="basis-functions" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Basis Functions</h2>
+<p>Using basis functions can avoid the weakness of a global structure. By dividing the range of <span class="math inline">\(x\)</span> into many segments, then a set of fixed and known functions can be applied to a variable <span class="math inline">\(X\)</span>.
+The points of the coefficients change are called <strong>knots</strong>.</p>
+<div id="step-functions" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Step Functions</h3>
+<p>Step functions is a special case of basis functions. Here the basis functions are a set of indicator functions.
+The idea is to convert a continuous variable, such as income into an ordered categorical variable. Let the cut-points are <span class="math inline">\(c_1,c_2,..., c_k\)</span> in the range of <span class="math inline">\(X\)</span>, then the new variables are</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+C_0(x)=&amp;\mathbb{I}_{x&lt;c_1}\\
+C_1(x)=&amp;\mathbb{I}_{c_1\le x&lt;c_2}\\
+C_2(x)=&amp;\mathbb{I}_{c_2\le x&lt;c_3}\\
+\cdots\\
+C_k(x)=&amp;\mathbb{I}_{c_k\le x}\\
+\end{split}
+\end{equation}\]</span></p>
+<p>Then the linear model is</p>
+<p><span class="math display" id="eq:stepf">\[\begin{equation}
+y=\beta_0+\beta_1C_1(x)+\beta_2C_2(x)+\cdots+\beta_{k}x_k+\varepsilon
+\tag{7.2}
+\end{equation}\]</span></p>
+<p>Note that <span class="math inline">\(C_0(x)\)</span> don’t need to appear in the model because it is treated as the reference level.
+Step functions divide the whole curve into many bins. This action could miss the trend of curve.
+The choice of proper breakpoints is also a challenge.</p>
 </div>
-<div id="splines" class="section level4" number="7.2.0.3">
-<h4><span class="header-section-number">7.2.0.3</span> Splines</h4>
+<div id="splines-piecewise-polynomials" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Splines (Piecewise Polynomials)</h3>
+<p>If the range of <span class="math inline">\(x\)</span> is divided into segments, each segment can fit a polynomial model. This method is called piecewise polynomial fitting or spline.</p>
+<p>Adding constrain can make the fitted curves being continues. And the additional constrains can make the first and second derivatives of the piecewise polynomial continues.
+A cubic polynomial with <span class="math inline">\(k\)</span> knots can add a truncated power basis function as</p>
+<p><span class="math display">\[h(x,c_i)=(x-c_i)^3_+=\begin{cases}(x-c_i)^3&amp;\text{if }x&gt;c_i\\0&amp;\text{otherwise}\end{cases}\]</span>
+then the spline with continuous first and second derivatives is</p>
+<p><span class="math display">\[y=\sum_{j=0}^3\beta_{0j}x^j+\sum_{i=i}^k\beta_{k}h(x,c_i)\]</span></p>
+<p>By computing the MSEs of every models with different number of knots, cross validation can be used to examine the best number of knots.
+When adding more knots, the value of MSE decrease. The optimal choice is the minimum number of knots with respect to a “small enough” MSE.</p>
+</div>
+<div id="smoothing-spline" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Smoothing Spline</h3>
+<p>Regression spline is very flexible so have the risk of overfitting. The fitted curve can go though all of the <span class="math inline">\(y_i\)</span> without constrains. Denote the function <span class="math inline">\(g(x)\)</span> represent the constraints. Smoothing spline can be expressed as</p>
+<p><span class="math display">\[\arg\min_{g}\left\{\sum_{i=1}^n(y_i-g(x_i)^2)+\lambda\int g&#39;&#39;(t)^2dt \right\}\]</span>
+where <span class="math inline">\(\lambda\)</span> is a nonegative tuning function. The left term of <span class="math inline">\(\sum_{i=1}^n(y_i-g(x_i)^2)\)</span> is the quadratic loss function. Loss reduction can improve the fitness of model.
+The right term of <span class="math inline">\(\lambda\int g&#39;&#39;(t)^2dt\)</span> is a penalty term. <span class="math inline">\(g&#39;&#39;(t)\)</span> is the second derivative of function <span class="math inline">\(g(\cdot)\)</span> measure the amount of slope changing. If the fitted curve is very wiggly, the value of penalty term will be very large.
+Therefore, smoothing spline tries to find the trade-off of loss and penalty by adjusting <span class="math inline">\(\lambda\)</span>.</p>
+<p>Using the leave-one-out (LOO) cross validation, the best value of <span class="math inline">\(\lambda\)</span> can be verified to minimize the SSE and achive the bias-variance balance.</p>
 </div>
 </div>
-<div id="nonparamteric-regression" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Nonparamteric Regression</h2>
-<div id="local-regression" class="section level4" number="7.3.0.1">
-<h4><span class="header-section-number">7.3.0.1</span> Local Regression</h4>
+<div id="non-parameter-regression" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Non-parameter Regression</h2>
+<p>Non-parameter regression is an approach using a model-free basis for prediction. The basic idea is to select a set of neighborhood points inside a window defined by a bandwidth <span class="math inline">\(b\)</span>. Then calculate <span class="math inline">\(S=[w_{ij}]\)</span>, a weighting matrix. The smoother estimate of the <span class="math inline">\(i\)</span>th response is</p>
+<p><span class="math display">\[\mathbf{\tilde y}=\mathbf{Sy}\quad \text{or } \tilde y_i=\sum_{j=1}^n w_{ij}y_j\]</span></p>
+<p>There are two common types of smoother, kernel and local regression.
+The kernel smoother uses a weighted average for the estimation. And the kernel functions satisfy <span class="math inline">\(K(t)\ge 0,\forall t\)</span>, <span class="math inline">\(\int_{-\infty}^{+\infty}K(t)dt=1\)</span>, and <span class="math inline">\(K(-t)=K(t)\)</span>.</p>
+<ul>
+<li>Kernel Regression</li>
+</ul>
+<p><span class="math display">\[w_{ij}=\frac{K(\frac{x_i-x_j}{b})}{\sum_{k=1}^n K(\frac{x_i-x_k}{b})}\]</span>
+- Local Weighted Regression</p>
+<p>For local regression, the neighborhood points inside the span can fit locally a regression line or a hyperplane rather than a constant.</p>
 </div>
-</div>
-<div id="generalized-additive-models" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Generalized Additive Models</h2>
+<div id="generalized-additive-models" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Generalized Additive Models</h2>
 <p>Expected finding, implications, and limitations</p>
 
 </div>

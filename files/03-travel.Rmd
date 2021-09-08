@@ -147,9 +147,10 @@ where $t_{ij}$ represent the traffic flow of goods between two centers $i$ and $
 
 As the most influential theory, Gravity Law asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass is often measured by population size.
 
-$$
+$$\begin{equation}
 p_{ij}\propto m_i m_j f(d_{ij}), \qquad i\ne j 
-$$
+(\#eq:gravity-law)
+\end{equation}$$
 
 where $p_{ij}$ is the probability of commuting between origin $i$ and destination $j$, satisfying $\sum_{i,j=1}^n p_{ij}=1$. $m_i$ and $m_j$ are the population of two census units. The travel cost between the two places is represented as a distance decay function of $d_{ij}$ .
 

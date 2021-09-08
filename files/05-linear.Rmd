@@ -54,7 +54,9 @@ There are some quantitative methods which can examine nomalirty of the transform
 
 ## Estimations
 
-### Least Square
+### Least Squares
+
+- Ordinary Least Squares
 
 Least-Squares method can be used to estimate the coefficients $\beta$ in equation \@ref(eq:lm) The dimension of $\mathbf{X}$ is $n\times p$, which means the data contain $n$ observations and $p-1$ predictors. The $p\times1$ vector of least-squares estimators is denoted as $\hat\beta$ and the solution to the normal equations is
 
@@ -82,6 +84,9 @@ $$\begin{equation}
 
 where $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'}$ is hat matrix and $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}$
 
+- Generalized Least Squares
+
+
 When the observations are not independent or have unequal variances, the covariance matrix of error is not identity matrix. The assumption of regression model $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{I}$ doesn't hold. Denote $\mathbf{V}$ is a known $n\times n$ positive definite matrix and $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{V}$.
 Then, there exists an $n\times n$ symmetric matrix $\mathbf{K}$ with rank $n$ and $\mathbf{V}=\mathbf{KK'}$. Let
 
@@ -101,7 +106,7 @@ $$\begin{equation}
 and
 
 $$\begin{equation}
-\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})
+\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'\mathbf{V^{-1}}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})
 (\#eq:glsq-v)
 \end{equation}$$
 
@@ -382,12 +387,12 @@ Another special case is the model with aggregated variables, which is the cases 
 Let $u_j$ and $v_j$ are the response and predictors of $j^{th}$ household in a neighborhood. $n_i$ is the sample size in each neighborhood. Then $y_i=\sum_{j=1}^{n_i}u_j/n_i$ and $X_i=\sum_{j=1}^{n_i}v_j/n_i$. In this case,
 
 $$\begin{equation}
-\mathbf{V}=\mathbf{V}^{-1}=\begin{bmatrix} 
+\mathbf{V}=\begin{bmatrix} 
 \frac1{n_1} & 0 & \dots & 0 \\  
 0 & \frac1{n_2} & \dots & 0 \\  
 \vdots & \vdots & \ddots & \vdots \\  
 0 & 0 & \dots & \frac1{n_n} \end{bmatrix},\quad 
-\begin{bmatrix} 
+\mathbf{V}^{-1}=\begin{bmatrix} 
 n_1 & 0 & \dots & 0 \\  
 0 & n_2 & \dots & 0 \\  
 \vdots & \vdots & \ddots & \vdots \\  
@@ -410,6 +415,41 @@ V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^
 \end{equation}$$
 
 There are three procedures, Bartlett's likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity (Ravishanker & Dey, 2020, 8.1.3, pp.288-290)
+
+
+### Autocorrelation
+
+For spatio-temporal data, the observations often have some relationship over time or space.
+In these cases, the assumption of independent errors is violated, the linear model with serially correlated errors is called autocorrelation.
+Autocorrelation is also common in urban studies. All the neighboring geographic entities or stages could impact each other, or sharing the similar environment.
+
+Take a special case of time-series data for example, assuming the model have constant variance. $E[\varepsilon]=0$ but $Cov[\varepsilon_i,\varepsilon_j]=\sigma^2\rho^{|j-i|}$, $i,j=1,2,...,n$ and $|\rho|<1$
+The variance-covariance matrix is also called Toeplitz matrix as below
+
+$$\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+1 & \rho & \rho^2 & \dots & \rho^{n-1} \\  
+\rho & 1 & \rho & \dots & \rho^{n-2} \\  
+\vdots & \vdots & \vdots & \ddots & \vdots \\  
+\rho^{n-1} & \rho^{n-2} & \rho^{n-3} & \dots & 1 \end{bmatrix},\quad 
+\{\mathbf{V}^{-1}\}_{ij}=\begin{cases} 
+\frac{1}{1-\rho^2} & \text{if } i=j=1,n \\  
+\frac{1+\rho^2}{1-\rho^2} & \text{if } i=j=2,...,n-1 \\  
+\frac{-\rho}{1-\rho^2} & \text{if } |j-i|=1 \\  
+0  & \text{otherwise} \end{cases}
+(\#eq:auto-matrix)
+\end{equation}$$
+
+This is a linear regression with autoregressive order 1 (AR(1)). 
+The estimates of $\boldsymbol{\hat\beta}$ is the same with the GLS solutions, which are
+$\boldsymbol{\hat\beta}_{GLS}=(\mathbf{X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$ and 
+$\widehat{V[\boldsymbol{\hat\beta}_{GLS}]}=\hat\sigma^2_{GLS}(\mathbf{X'V^{-1}X})^{-1}$,
+where $\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'\mathbf{V^{-1}}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})$.
+
+It is can be verified that $\boldsymbol{\hat\beta}_{GLS}\le\boldsymbol{\hat\beta}_{OLS}$ always holds and they are equal when $\mathbf{V=I}$ or $\rho=0$. It proves that $\boldsymbol{\hat\beta}_{GLS}$ are the best linear unbiased estimators (BLUE).
+
+This case can be extended to miltiple regression models and the autocorrelation of a stationary stochastic process at lag-k.
+Durbin-Watson test is used to test the null hypothesis of $\rho=0$.
 
 ### Multicollinearity
 

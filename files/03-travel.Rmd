@@ -80,9 +80,14 @@ In psychology, many theories and models are developed to explain people's decisi
     
     VBN=Value-belief-norm (Stern, 2000,Stern et al., 1999), 
     
-    MGB=Model of goal-directed behavior(Perugini & Bagozzi, 2001),
+    MGB=Model of goal-directed behavior(Perugini & Bagozzi, 2001)
 
-@ajzenAttitudebehaviorRelationsTheoretical1977 proposed the Theory of Reasoned Action (TRA) to understand people's *behavioral intentions* and actual behaviors. They found two deciding psychological elements as *attitudes* and *subjective norms*. @ajzenTheoryPlannedBehavior1991 adds a new part of *Perceived Behavioral Control* (PBC) and renames TRA as Theory of Planned Behavior (TPB).
+
+@ajzenAttitudebehaviorRelationsTheoretical1977 proposed the Theory of Reasoned Action (TRA) to understand people's *behavioral intentions* and actual behaviors. 
+They found two deciding psychological elements as *attitudes* and *subjective norms*. 
+@ajzenTheoryPlannedBehavior1991 adds a new part of *Perceived Behavioral Control* (PBC) and renames TRA as Theory of Planned Behavior (TPB).
+
+
 
 Attitudes are personal evaluation and it means how people prefer or are against performing an activity. For example, a commuter might choose transit in spite of the longer travel time because this person believes that transit is an environment-friendly transport mode.
 
@@ -98,7 +103,7 @@ Two meta-analyses found that intentions to drive, perceived behavioral control, 
 
 ### Prospect Theory
 
-@kahnemanProspectTheoryAnalysis1979a introduced the ProspectTheory ^[@ProspectTheoryOverview] to study the impacts of biases. Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choice based on a reference point, rather than the overall situation or worth. Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior.
+@kahnemanProspectTheoryAnalysis1979a introduced the ProspectTheory to study the impacts of biases. Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while being indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choice based on a reference point, rather than the overall situation or worth. Economist also extend the theory of expected utility maximization to Behavioral Economics by address the influence of psychology on human behavior.
 
 -   Regret Theory
 
@@ -112,14 +117,13 @@ Another psychological factor, cognitive bias can result in judgement errors. For
 
 ## Human Mobility
 
-### Trip Distribution Laws
 
 In Physics and Geography, travel distance and pattern are treated as an objective phenomenon.
 There is a long history of human mobility studies. The related theories try to use some statistical expressions to fit the aggregated trip distributions.
 
 Gravity Law is a dominant theory in this field. Scholars have developed some more delicate forms of Gravity Law and found some mathematical relationship to other famous distribution laws. Some theories from different perspectives, like intervening opportunities also show strong ability for explaining travel patterns and regularities.
 
-#### Distance Based Theories
+### Distance Based Theories
 
 -   Law of Migration
 
@@ -139,7 +143,7 @@ $$
 
 $$
 t_{ij}\propto \frac{m_i m_j} {d_{ij}}
- $$
+$$
 
 where $t_{ij}$ represent the traffic flow of goods between two centers $i$ and $j$ with population sizes $m_i$ and $m_j$. $d_{ij}$ is the distance from $i$ to $j$. Because Zipf's formula has a same form with Newtonian mechanics [@newton18481687], people call this expression as Gravity Law.
 
@@ -147,10 +151,10 @@ where $t_{ij}$ represent the traffic flow of goods between two centers $i$ and $
 
 As the most influential theory, Gravity Law asserts that the amount of traffic flow between two centers is proportional to the product of their mass and inverse to their distance. The mass is often measured by population size.
 
-$$\begin{equation}
+\begin{equation}
 p_{ij}\propto m_i m_j f(d_{ij}), \qquad i\ne j 
 (\#eq:gravity-law)
-\end{equation}$$
+\end{equation}
 
 where $p_{ij}$ is the probability of commuting between origin $i$ and destination $j$, satisfying $\sum_{i,j=1}^n p_{ij}=1$. $m_i$ and $m_j$ are the population of two census units. The travel cost between the two places is represented as a distance decay function of $d_{ij}$ .
 
@@ -182,7 +186,7 @@ The state-of-the-art studies of human mobility agree that travel behavior follow
 
 Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in current VMT-density models [@saichevTheoryZipfLaw2010].
 
-#### Opportunity Based Theories
+### Opportunity Based Theories
 
 -   Law of Intervening Opportunities
 

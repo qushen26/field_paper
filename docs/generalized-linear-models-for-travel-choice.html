@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 Generalized Linear Models for Travel Choice | The Association Between Travel Behavior and Urban Form</title>
+  <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 Generalized Linear Models for Travel Choice | The Association Between Travel Behavior and Urban Form" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="qushen26/field_paper" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 Generalized Linear Models for Travel Choice | The Association Between Travel Behavior and Urban Form" />
+  
+  <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Shen Qu" />
+
+
+<meta name="date" content="2021-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mixed-models-for-spatial-effects.html"/>
+<link rel="next" href="meta-analysis.html"/>
+<script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Field Paper</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Part I Theories and Framework</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#analytical-framework"><i class="fa fa-check"></i><b>1.2</b> Analytical Framework</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#content-organization"><i class="fa fa-check"></i><b>1.3</b> Content Organization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="form.html"><a href="form.html"><i class="fa fa-check"></i><b>2</b> Urban Form as Predictors</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="form.html"><a href="form.html#influencing-direction"><i class="fa fa-check"></i><b>2.1</b> Influencing Direction</a></li>
+<li class="chapter" data-level="2.2" data-path="form.html"><a href="form.html#influencing-factors"><i class="fa fa-check"></i><b>2.2</b> Influencing Factors</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="form.html"><a href="form.html#individual-factors"><i class="fa fa-check"></i><b>2.2.1</b> Individual Factors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="form.html"><a href="form.html#environmental-factors"><i class="fa fa-check"></i><b>2.2.2</b> Environmental Factors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="form.html"><a href="form.html#density"><i class="fa fa-check"></i><b>2.2.3</b> Density</a></li>
+<li class="chapter" data-level="2.2.4" data-path="form.html"><a href="form.html#d-variables"><i class="fa fa-check"></i><b>2.2.4</b> D-variables</a></li>
+<li class="chapter" data-level="2.2.5" data-path="form.html"><a href="form.html#synthesized-index"><i class="fa fa-check"></i><b>2.2.5</b> Synthesized Index</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.3</b> Meta-Aanalysis</a></li>
+<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.4</b> Spatial Scales</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.4.1</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="form.html"><a href="form.html#aggregated-analysis"><i class="fa fa-check"></i><b>2.4.2</b> Aggregated Analysis</a></li>
+<li class="chapter" data-level="2.4.3" data-path="form.html"><a href="form.html#disaggregated-analysis"><i class="fa fa-check"></i><b>2.4.3</b> Disaggregated Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="travel.html"><a href="travel.html"><i class="fa fa-check"></i><b>3</b> Travel as Response</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="travel.html"><a href="travel.html#travel-variables"><i class="fa fa-check"></i><b>3.1</b> Travel Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="travel.html"><a href="travel.html#traveler-choice"><i class="fa fa-check"></i><b>3.2</b> Traveler Choice</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="travel.html"><a href="travel.html#rational-choice-theory"><i class="fa fa-check"></i><b>3.2.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="travel.html"><a href="travel.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>3.2.2</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="3.2.3" data-path="travel.html"><a href="travel.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>3.2.3</b> Theory of Planned Behavior</a></li>
+<li class="chapter" data-level="3.2.4" data-path="travel.html"><a href="travel.html#prospect-theory"><i class="fa fa-check"></i><b>3.2.4</b> Prospect Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="travel.html"><a href="travel.html#human-mobility"><i class="fa fa-check"></i><b>3.3</b> Human Mobility</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#distance-based-theories"><i class="fa fa-check"></i><b>3.3.1</b> Distance Based Theories</a></li>
+<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#opportunity-based-theories"><i class="fa fa-check"></i><b>3.3.2</b> Opportunity Based Theories</a></li>
+<li class="chapter" data-level="3.3.3" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.3</b> Time Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="travel.html"><a href="travel.html#probability-distributions"><i class="fa fa-check"></i><b>3.4</b> Probability Distributions</a></li>
+<li class="chapter" data-level="3.5" data-path="travel.html"><a href="travel.html#summary-opt."><i class="fa fa-check"></i><b>3.5</b> Summary (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="struc.html"><a href="struc.html"><i class="fa fa-check"></i><b>4</b> Model Structures</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="struc.html"><a href="struc.html#multistage"><i class="fa fa-check"></i><b>4.1</b> Multistage</a></li>
+<li class="chapter" data-level="4.2" data-path="struc.html"><a href="struc.html#decision-tree"><i class="fa fa-check"></i><b>4.2</b> Decision Tree</a></li>
+<li class="chapter" data-level="4.3" data-path="struc.html"><a href="struc.html#multi-scales"><i class="fa fa-check"></i><b>4.3</b> Multi-scales</a></li>
+<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#other-structures"><i class="fa fa-check"></i><b>4.4</b> Other Structures</a></li>
+</ul></li>
+<li class="part"><span><b>Part II Statistical Methods</b></span></li>
+<li class="chapter" data-level="5" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#assumptions"><i class="fa fa-check"></i><b>5.1</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#additive-and-linearity"><i class="fa fa-check"></i><b>5.1.1</b> Additive and linearity</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#independent-identically-distributed-iid"><i class="fa fa-check"></i><b>5.1.2</b> Independent Identically Distributed (IID)</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#normality"><i class="fa fa-check"></i><b>5.1.3</b> Normality</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
+<li class="chapter" data-level="5.2.4" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#inference"><i class="fa fa-check"></i><b>5.3</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>5.3.1</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="5.3.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>5.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="5.3.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3.3</b> Confidence Intervals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="adequacy.html"><a href="adequacy.html"><i class="fa fa-check"></i><b>6</b> Adequacy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="adequacy.html"><a href="adequacy.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness of fit</a></li>
+<li class="chapter" data-level="6.2" data-path="adequacy.html"><a href="adequacy.html#residuals-analysis"><i class="fa fa-check"></i><b>6.2</b> Residuals Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="adequacy.html"><a href="adequacy.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.3</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="6.4" data-path="adequacy.html"><a href="adequacy.html#autocorrelation"><i class="fa fa-check"></i><b>6.4</b> Autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="multicollinearity.html"><a href="multicollinearity.html"><i class="fa fa-check"></i><b>7</b> Multicollinearity</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="multicollinearity.html"><a href="multicollinearity.html#variance-inflation"><i class="fa fa-check"></i><b>7.1</b> Variance Inflation</a></li>
+<li class="chapter" data-level="7.2" data-path="multicollinearity.html"><a href="multicollinearity.html#ridge-regression"><i class="fa fa-check"></i><b>7.2</b> Ridge Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="multicollinearity.html"><a href="multicollinearity.html#lasso-regression"><i class="fa fa-check"></i><b>7.3</b> Lasso Regression</a></li>
+<li class="chapter" data-level="7.4" data-path="multicollinearity.html"><a href="multicollinearity.html#principal-components-regression"><i class="fa fa-check"></i><b>7.4</b> Principal Components Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="variables-selections.html"><a href="variables-selections.html"><i class="fa fa-check"></i><b>8</b> Variables Selections</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="variables-selections.html"><a href="variables-selections.html#model-evaluation-criteria"><i class="fa fa-check"></i><b>8.1</b> Model Evaluation Criteria</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="variables-selections.html"><a href="variables-selections.html#mallows-c_p"><i class="fa fa-check"></i><b>8.1.1</b> Mallows <span class="math inline">\(C_p\)</span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="variables-selections.html"><a href="variables-selections.html#akaikebayesian-information-criterion-aicbic"><i class="fa fa-check"></i><b>8.1.2</b> Akaike/Bayesian Information Criterion (AIC/BIC)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="variables-selections.html"><a href="variables-selections.html#selecting-procedure"><i class="fa fa-check"></i><b>8.2</b> Selecting Procedure</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="variables-selections.html"><a href="variables-selections.html#all-possible-regressions"><i class="fa fa-check"></i><b>8.2.1</b> All Possible Regressions</a></li>
+<li class="chapter" data-level="8.2.2" data-path="variables-selections.html"><a href="variables-selections.html#best-subset-selection"><i class="fa fa-check"></i><b>8.2.2</b> Best Subset selection</a></li>
+<li class="chapter" data-level="8.2.3" data-path="variables-selections.html"><a href="variables-selections.html#stepwise-regression"><i class="fa fa-check"></i><b>8.2.3</b> Stepwise Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="variables-selections.html"><a href="variables-selections.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>8.3</b> Underfitting and Overfitting</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="variables-selections.html"><a href="variables-selections.html#underfitting"><i class="fa fa-check"></i><b>8.3.1</b> Underfitting</a></li>
+<li class="chapter" data-level="8.3.2" data-path="variables-selections.html"><a href="variables-selections.html#overfitting"><i class="fa fa-check"></i><b>8.3.2</b> Overfitting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Relationship</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#transformations"><i class="fa fa-check"></i><b>9.1</b> Transformations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#variance-stabilizing"><i class="fa fa-check"></i><b>9.1.1</b> Variance Stabilizing</a></li>
+<li class="chapter" data-level="9.1.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#linearizing"><i class="fa fa-check"></i><b>9.1.2</b> Linearizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#polynomial-regression"><i class="fa fa-check"></i><b>9.2</b> Polynomial Regression</a></li>
+<li class="chapter" data-level="9.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#basis-functions"><i class="fa fa-check"></i><b>9.3</b> Basis Functions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#step-functions"><i class="fa fa-check"></i><b>9.3.1</b> Step Functions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>9.3.2</b> Splines (Piecewise Polynomials)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#smoothing-spline"><i class="fa fa-check"></i><b>9.3.3</b> Smoothing Spline</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#non-parameter-regression"><i class="fa fa-check"></i><b>9.4</b> Non-parameter Regression</a></li>
+<li class="chapter" data-level="9.5" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#generalized-additive-models"><i class="fa fa-check"></i><b>9.5</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html"><i class="fa fa-check"></i><b>10</b> Mixed Models for Spatial Effects</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#fixed-and-random-effects"><i class="fa fa-check"></i><b>10.1</b> Fixed and Random Effects</a></li>
+<li class="chapter" data-level="10.2" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#crossed-and-nested-effects"><i class="fa fa-check"></i><b>10.2</b> Crossed and Nested Effects</a></li>
+<li class="chapter" data-level="10.3" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#unbalanced-subgroup"><i class="fa fa-check"></i><b>10.3</b> Unbalanced Subgroup</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html"><i class="fa fa-check"></i><b>11</b> Generalized Linear Models for Travel Choice</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#binomial-response-models"><i class="fa fa-check"></i><b>11.1</b> Binomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#logit-models"><i class="fa fa-check"></i><b>11.1.1</b> Logit Models</a></li>
+<li class="chapter" data-level="11.1.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#probit-models-opt."><i class="fa fa-check"></i><b>11.1.2</b> Probit Models (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-response-models"><i class="fa fa-check"></i><b>11.2</b> Multinomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-logit-models"><i class="fa fa-check"></i><b>11.2.1</b> Multinomial Logit models</a></li>
+<li class="chapter" data-level="11.2.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#discret-choice-models"><i class="fa fa-check"></i><b>11.2.2</b> Discret Choice Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#poisson-responeloglinear-models"><i class="fa fa-check"></i><b>11.3</b> Poisson Respone/Loglinear Models</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#negative-binomial-model"><i class="fa fa-check"></i><b>11.3.1</b> Negative Binomial Model</a></li>
+<li class="chapter" data-level="11.3.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#quasi-poisson-model"><i class="fa fa-check"></i><b>11.3.2</b> Quasi-Poisson Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#zero-inflated-and-hurdle-models"><i class="fa fa-check"></i><b>11.3.3</b> Zero-inflated and Hurdle Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#other-topic-opt."><i class="fa fa-check"></i><b>11.4</b> Other Topic (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>12</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="meta-analysis.html"><a href="meta-analysis.html#introduction"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="meta-analysis.html"><a href="meta-analysis.html#effect-sizes"><i class="fa fa-check"></i><b>12.2</b> Effect Sizes</a></li>
+<li class="chapter" data-level="12.3" data-path="meta-analysis.html"><a href="meta-analysis.html#cross-study-heterogeneity"><i class="fa fa-check"></i><b>12.3</b> cross-study Heterogeneity</a></li>
+<li class="chapter" data-level="12.4" data-path="meta-analysis.html"><a href="meta-analysis.html#meta-regression"><i class="fa fa-check"></i><b>12.4</b> Meta-Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="meta-analysis.html"><a href="meta-analysis.html#publication-bias"><i class="fa fa-check"></i><b>12.5</b> Publication Bias</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="meta-analysis.html"><a href="meta-analysis.html#checking-publication-bias"><i class="fa fa-check"></i><b>12.5.1</b> Checking Publication Bias</a></li>
+<li class="chapter" data-level="12.5.2" data-path="meta-analysis.html"><a href="meta-analysis.html#standard-error-based-methods"><i class="fa fa-check"></i><b>12.5.2</b> Standard Error-based Methods</a></li>
+<li class="chapter" data-level="12.5.3" data-path="meta-analysis.html"><a href="meta-analysis.html#p-value-based-methods"><i class="fa fa-check"></i><b>12.5.3</b> P value-based Methods</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Association Between Travel Behavior and Urban Form</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="generalized-linear-models-for-travel-choice" class="section level1" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Generalized Linear Models for Travel Choice</h1>
+<p>Generalized Linear Models (GAM) release the restriction of normality.
+GLM allow the response following more general distributions than normal.
+It is very important for the research with discrete response variables, such as mode choice or trips counts.</p>
+<p>GLM (equation <a href="intro.html#eq:glm">(1.2)</a>) include three components.
+Systematic component <span class="math inline">\(\eta=\mathbf{X}\boldsymbol\beta\)</span> has a similar form with ordinary linear models but without error term. <span class="math inline">\(\boldsymbol\beta\)</span> are unknown coefficients.
+Random component <span class="math inline">\(E[Y]=\mu\)</span> specifies the probability distributions of <span class="math inline">\(Y\)</span>, which could have a pdf or pmf from an exponential family.
+Link function <span class="math inline">\(g(\cdot)\)</span> connects the systematic component and random component together.</p>
+<div id="binomial-response-models" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Binomial Response Models</h2>
+<p>When a traveler choose to make a trip or not, the decision follows a Bernoulli distribution. Denotes the probability <span class="math inline">\(Pr(\text{choice}=\text{Yes})=\pi\)</span> and <span class="math inline">\(Pr(\text{choice}=\text{No})=1-\pi\)</span>.
+For <span class="math inline">\(n\)</span> number of decisions under the same <span class="math inline">\(\pi\)</span>, let <span class="math inline">\(Y\)</span> represents the count of choosing ‘Yes’ and follow a binomial distribution <span class="math inline">\(Bin(n,\pi)\)</span>.
+For many travelers with different <span class="math inline">\(\pi\)</span>, one has <span class="math inline">\(Y_i\sim Bin(n_i,\pi_i)\)</span>, that is a binary response data. The number of total observation <span class="math inline">\(N=\sum_{i=1}^n n_i\)</span>. The pmf of binomial distribution is</p>
+<p><span class="math display">\[\begin{equation}
+Pr(Y_i = y_i) =  {{n_i}\choose{y_i}}  \pi_i^{y_i} (1-\pi_i)^{n_i-y_i}
+\end{equation}\]</span></p>
+<div id="logit-models" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Logit Models</h3>
+<p>It is clear that the random component is <span class="math inline">\(E[y_i]=\pi_i\)</span> and systematic component <span class="math inline">\(\eta_i=\mathbf{X}&#39;_i\boldsymbol\beta\)</span>.
+<span class="math inline">\(\pi\)</span> is the probability between zero and one. but the log odds of success <span class="math inline">\(\eta_i\)</span> can take any real number. The canonical form of binomial distribution is</p>
+<p><span class="math display">\[\begin{equation}
+Pr(Y_i = y_i) = \exp\left[\log(\frac{\pi_i}{1-\pi_i})y_i+n_i\log(1-\pi_i)\right]{{n_i}\choose{y_i}}
+\end{equation}\]</span></p>
+<p>The canonical link function in logit models can transform the probability to the range of real number. In this one-to-one mapping, a probability <span class="math inline">\(\pi_i&gt;1/2\)</span> will give a positive <span class="math inline">\(\eta_i\)</span> and a negative <span class="math inline">\(\eta_i\)</span> correspond to a <span class="math inline">\(\pi_i\)</span> less than one half.</p>
+<p><span class="math display" id="eq:logit-link">\[\begin{equation}
+\begin{split}
+g(\pi_i)&amp;=\log\frac{\pi_i}{1-\pi_i}=\eta_i\quad\text{Logit function}\\
+g^{-1}(\eta_i)&amp;=\frac{\exp[\eta_i]}{1+\exp[\eta_i]}=\pi_i\quad\text{Logistic function}\\
+\end{split}
+\tag{11.1}
+\end{equation}\]</span></p>
+<p>The goal is to estimate the unknown vector of parameters <span class="math inline">\(\boldsymbol\beta\)</span> for the known covariates <span class="math inline">\(\mathbf{X}_i\)</span>.
+But in the systematic component, <span class="math inline">\(\eta_i\)</span> is unobserved. Ordinary Linear Regression doesn’t work in this case.
+Fortunately, the link function in logit models has a close form.
+Iteratively Reweighted Least Squares method (IRLS) (Lawson 1961) can get the solution.
+One iteration of this approach includes four steps.</p>
+<p>The first step starts from the current estimated coefficients <span class="math inline">\(\boldsymbol{\hat\beta}^{(0)}\)</span>. Then the current estimates of <span class="math inline">\(\hat{\eta_i}^{(0)}=\mathbf{x}_i&#39;\boldsymbol{\hat\beta}^{(0)}\)</span> and <span class="math inline">\(\hat \pi_i^{(0)}=\frac{\exp[\hat\eta_i^{(0)}]}{1+\exp[\hat\eta_i^{(0)}]}\)</span>.
+But current <span class="math inline">\(\hat{\eta_i}^{(0)}\)</span> is different with the true <span class="math inline">\(\eta_i\)</span>.</p>
+<p>The second step will update the current estimates by adding a correction term.
+Using the first two terms of Taylor series,</p>
+<p><span class="math display">\[\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} +(y_i-\hat\mu_i^{(0)})\cdot \frac{d\hat\eta_i^{(0)}}{d\hat\mu_i^{(0)}}
+\end{equation}\]</span></p>
+<p>Since <span class="math inline">\(E[Y_i]=\mu_i=n_i\pi_i\)</span>, it is also easy to get</p>
+<p><span class="math display">\[\begin{equation}
+\frac{d \eta_i}{d \mu_i}=\frac{1}{n_i}\cdot\frac{d \eta_i}{d \pi_i}=\frac{1}{n_i}\left(\frac{1}{\pi_i}+\frac{1}{1-\pi_i}\right)=\frac1{n_i\pi_i(1-\pi_i)}
+\end{equation}\]</span>
+Therefore,
+<span class="math display">\[\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} + \frac{y_i-n_i\hat\pi_i^{(0)}}{n_i\hat\pi_i^{(0)}(1-\hat\pi_i^{(0)})}
+\end{equation}\]</span></p>
+<p>The third step is to calculate the diagonal weight matrix <span class="math inline">\(\mathbf{W}\)</span> in the Fisher scoring algorithm.
+It is known that the binomial distribution has <span class="math inline">\(Var[Y_i]=n_i\pi_i(1-\pi_i)\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+w_{ii}=\left[Var[Y_i](\frac{d \eta_i}{d \mu_i})^2\right]^{-1}=
+n_i\hat\pi_i(1-\hat\pi_i)
+\end{equation}\]</span></p>
+<p>The final step improves estimate of <span class="math inline">\(\boldsymbol{\hat\beta}^{(1)}\)</span> using the weighted least-squares method</p>
+<p><span class="math display">\[\begin{equation}
+\hat{\boldsymbol{\beta}}^{(1)}=\mathbf{(X&#39;WX)^{-1}}\mathbf{X&#39;W}\boldsymbol{\hat{\eta}}^{(1)}
+\end{equation}\]</span></p>
+<p>The four steps will repeat until the procedure convergence. And the result gives</p>
+<p><span class="math display">\[\begin{equation}
+Var[\hat{\boldsymbol{\beta}}]=\mathbf{(X&#39;WX)^{-1}}
+\end{equation}\]</span></p>
+</div>
+<div id="probit-models-opt." class="section level3" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> Probit Models (Opt.)</h3>
+</div>
+</div>
+<div id="multinomial-response-models" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Multinomial Response Models</h2>
+<div id="multinomial-logit-models" class="section level3" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Multinomial Logit models</h3>
+<p>For categorical response such as travel mode choice, a traveler has more than two alternatives including driving, transit, biking and walking. The generalized logistic regression can address these polychotomous data.</p>
+<p>The mode choice <span class="math inline">\(Y_i\)</span> follows the mutinomial distribution with <span class="math inline">\(J\)</span> alternatives.
+Denote the probability of <span class="math inline">\(i\)</span>th traveler chooses the <span class="math inline">\(j\)</span>th mode, then</p>
+<p><span class="math display">\[\begin{equation}
+\pi_{ij}=Pr(Y_i=j)
+\end{equation}\]</span></p>
+<p>And the pmf of multinomial distribution is</p>
+<p><span class="math display">\[\begin{equation}
+Pr(Y_{i1}=y_{i1}, ..., Y_{iJ}=y_{iJ})= {n_i \choose y_{i1},..., y_{iJ} }
+\pi_{i1}^{y_{i1}} \cdots \pi_{iJ}^{y_{iJ}}
+\end{equation}\]</span></p>
+<p>When the data exclude the people without trip, the several modes exhaust all observations and mutually exclusive. That is <span class="math inline">\(\sum_{j=1}^J\pi_{ij}=1\)</span> for each <span class="math inline">\(i\)</span>. Once <span class="math inline">\(J-1\)</span> parameters are evaluated, the rest one will be determined automatically. That means <span class="math inline">\(\pi_{iJ}=1-\pi_{i1}-\cdots-\pi_{i,J-1}\)</span>.
+The random component is <span class="math inline">\(\mu_i=n_i\pi_{ij}\)</span></p>
+<p><span class="math display" id="eq:mlogit-link">\[\begin{equation}
+\begin{split}
+g^{-1}(\eta_{ij})&amp;=\frac{\exp[\eta_{ij}]}{\sum_{k=1}^J\exp[\eta_{ik}]}=\pi_{ij}\\
+g(\pi_{ij})&amp;=\log\frac{\pi_{ij}}{\pi_{iJ}}=\eta_{ij}\\
+\end{split}
+\tag{11.2}
+\end{equation}\]</span></p>
+<p>And the systematic component is <span class="math inline">\(\eta_{ij}=\mathbf{X}_i&#39;\boldsymbol\beta_j\)</span></p>
+</div>
+<div id="discret-choice-models" class="section level3" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Discret Choice Models</h3>
+<p>McFadden (1973) proposed the discrete choice models also called multinomial/conditional logit model.
+This model introduces <span class="math inline">\(U_{ij}\)</span> as the random utility of <span class="math inline">\(j\)</span>th choice. Then based on Utility Maximum theory,</p>
+<p><span class="math display">\[\begin{equation}
+\pi_{ij}=Pr(Y_i=j)=Pr(\max(U_{i1},...,U_{iJ})=U_{ij})
+\end{equation}\]</span></p>
+<p>Here <span class="math inline">\(U_{ij}=\eta_{ij}+\varepsilon_{ij}\)</span> where the error term follows a standard Type I extreme value distributions. The reason is that the difference between two independent extreme value distributions has a logistic distribution. Hence, it can still be solved by logit models.</p>
+<p>The expected utility depend on the characteristics of the alternatives rather than that of individuals.
+Let <span class="math inline">\(\mathbf{Z}_j\)</span> represents the characteristics of <span class="math inline">\(j\)</span>th alternative, one has <span class="math inline">\(\eta_{ij}=\mathbf{Z}_i&#39;\boldsymbol\gamma\)</span>.</p>
+<p>Combining the two sources of utility together, a general form of utility is</p>
+<p><span class="math display">\[\begin{equation}
+\eta_{ij}=\mathbf{X}_i&#39;\boldsymbol\beta_j+\mathbf{Z}_i&#39;\boldsymbol\gamma
+\end{equation}\]</span></p>
+<p>In reality, a travel data can try to keep the observations independently by random sampling.
+But the available travel modes are not independent.
+The multinomial/conditional probit model can deal with this issue better.
+If assume the error terms <span class="math inline">\(\boldsymbol\varepsilon\sim MVN(\mathbf{0},\Sigma)\)</span> where <span class="math inline">\(\Sigma\)</span> is a correlation matrix.</p>
+</div>
+</div>
+<div id="poisson-responeloglinear-models" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Poisson Respone/Loglinear Models</h2>
+<p>The frequency of trip is count data. The observed trip counts <span class="math inline">\(Y_i,...,Y_n\)</span> are random variable aggregated over differing numbers of individual or household with support <span class="math inline">\(Y=\in\{0,1,2,...\}\)</span>.
+The trips as events occur randomly in a day or other time.
+An usual assumption is that count data follow a Poisson distribution.</p>
+<p>There are three conditions for Poisson process:
+Firstly, as a stochastic process, the probability of at least one event happened in a time interval is proportional to the length of the interval.
+secondly, the probability of two or more event happened in a small time interval is close to zero.
+Finally, in disjoint time intervals, the count numbers of trip should be independent.
+In real life, a traveler can not make two trips at the same time so the second condition holds.
+But a household with two worker and two student might have four trip at the same time every morning. Hence, individual count data is more valid than household’s when using Poisson distribution.
+The independency of count number among differing time interval may not valid too. The daily trips is often a trip chain and require more information at a micro level.</p>
+<p>The pmf and its canonical form is</p>
+<p><span class="math display">\[\begin{equation}
+Pr(Y=y) = \frac{e^{-\mu}\mu^y}{y!}=\exp[\log(\mu) y-\mu](y!)^{-1}
+\end{equation}\]</span></p>
+<p>So Poisson distribution has a simple link function as</p>
+<p><span class="math display" id="eq:pois-link">\[\begin{equation}
+\begin{split}
+g(\mu_i)&amp;=\log\mu_i=\eta_i\\
+g^{-1}(\eta_i)&amp;=\exp[\eta_i]=\mu_i\\
+\end{split}
+\tag{11.3}
+\end{equation}\]</span></p>
+<p>And Poisson distribution has the property of <span class="math inline">\(E[y_i]=Var[y_i]=\mu_i\)</span> as the systematic component.</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+\log(\mu_i)=&amp;\mathbf{x}&#39;\boldsymbol{\beta}\\
+\mu_i=&amp;\exp[\mathbf{x}&#39;\boldsymbol{\beta}]\\
+\end{split}
+\end{equation}\]</span></p>
+<p>By taking log transform, the non-negative parameter space mapping to real number.
+It also convert the multiplicative relationship among predictors to additive.
+The value of coefficient <span class="math inline">\(\beta_j\)</span> means that per unit change in predictor <span class="math inline">\(x_j\)</span> leads to the expected change in the log of the mean of response.
+Another interpretation is that the mean of response would multiple <span class="math inline">\(\exp[\beta_j]\)</span> by per unit change in <span class="math inline">\(x_j\)</span>.</p>
+<p>Similarly, iteratively reweighted least squares method (IRLS) can solve the log-linear Poisson model.
+The key correction step is</p>
+<p><span class="math display">\[\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} + \frac{y_i-\hat\mu_i^{(0)}}{\hat\mu_i^{(0)}}
+\end{equation}\]</span></p>
+<p>The diagonal weight matrix is</p>
+<p><span class="math display">\[\begin{equation}
+w_{ii}=\hat\mu_i^{(0)}
+\end{equation}\]</span></p>
+<div id="negative-binomial-model" class="section level3" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Negative Binomial Model</h3>
+<p>The restriction of Poisson Distribution is that the mean and variance should be equal or proportional.
+In many count data, the inequality of them is called overdispersion.</p>
+<p>Suppose an unobserved random variable follow a gamma distribution <span class="math inline">\(Z\sim Gamma(r,1/r)\)</span> where <span class="math inline">\(r\)</span> is the shape parameter. The pdf is</p>
+<p><span class="math display">\[\begin{equation}
+f(z)=\frac{r^r}{\Gamma(r)}z^{r-1}\exp[-rz],\quad z&gt;0
+\end{equation}\]</span></p>
+<p>It has <span class="math inline">\(E[Z]=1\)</span> and <span class="math inline">\(Var[Z]=1/r\)</span>.</p>
+<p>Then a mixture model can be denote as a conditional distribution <span class="math inline">\(Y|Z\sim Pois(\mu Z)\)</span> for some <span class="math inline">\(\mu&gt;0\)</span> and</p>
+<p><span class="math display">\[\begin{equation}
+E[Y]=E[E[Y|Z]]=E[\mu Z]=\mu E[Z]=\mu
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+Var[Y]&amp;=E[Var[Y|Z]] + Var[E[Y|Z]]\\
+&amp;=E[\mu Z]+Var[\mu Z]\\
+&amp;=\mu E[Z] + \mu^2Var[Z]\\
+&amp;=\mu+\frac{\mu^2}{r}
+\end{split}
+\end{equation}\]</span></p>
+<p>It is called Poisson-Gamma distribution who can represents the inequality of mean and variance.
+If <span class="math inline">\(r\)</span> represent the given number of success and <span class="math inline">\(y\)</span> represent the observed number of failure in a sequence of independent Bernoulli trails. Then the success probability is <span class="math inline">\(p=r/(r+\mu)\)</span>
+Recall that <span class="math inline">\(\Gamma(r+y)=\int_0^\infty z^{r+y-1}\exp[-z]dz\)</span>, it can be proved that <span class="math inline">\(Y\)</span> follow a negative binomial distribution</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+p(y)&amp;=\int_0^\infty p(y|z)\cdot f(z)dz\\
+&amp;=\int_0^\infty \frac{(\mu z)^y\exp[-\mu z]}{y!}\cdot\frac{r^r}{\Gamma(r)}z^{r-1}\exp[-rz]dz\\
+&amp;=\frac{r^r\mu^y}{y!\Gamma(r)}(\mu+r)^{-y-r}\int_0^\infty [(\mu+r)z]^{y+r-1}\exp[-(\mu+r)z]d(\mu+r)z\\
+&amp;=\frac{\Gamma(r+y-1)}{\Gamma(y+1)\Gamma(r)}(\frac{r}{\mu+r})^r(\frac{\mu}{\mu+r})^y\\
+&amp;={{r+y-1}\choose{r-1}}p^r(1-p)^y, \quad y=0,1,2,...
+\end{split}
+\end{equation}\]</span></p>
+<p>However, negative binomial distribution is non-exponential families. Using maximum likelihood method and log link, the coefficients can be estimated.</p>
+</div>
+<div id="quasi-poisson-model" class="section level3" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Quasi-Poisson Model</h3>
+<p>Another simple way for overdispersion is to introduce a dispersion parameter <span class="math inline">\(\phi\)</span>. The Poisson model has <span class="math inline">\(Var[Y|\eta]=\phi\mu\)</span> where <span class="math inline">\(\phi&gt;1\)</span>. The estimated <span class="math inline">\(\phi\)</span> is</p>
+<p><span class="math display">\[
+\hat\phi=\frac{1}{n-p}\sum\frac{(Y_i-\hat\mu_i)^2}{\hat\mu_i}
+\]</span>
+The extra parameter can also be estimated by maximum likelihood.</p>
+</div>
+<div id="zero-inflated-and-hurdle-models" class="section level3" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Zero-inflated and Hurdle Models</h3>
+<p>In trip frequency data, there are often more no-trip observations than Poisson and negative binomial distribution expected. The two types of models, zero-inflated model and hurdle model can address this issue.
+Both of them assume the data arise from two mechanisms.</p>
+<p>In Zero-inflated Poisson/negative binomial model, both of two mechanisms generate zero observations.<br />
+The first mechanism produce the excess zeros with <span class="math inline">\(\pi_i=Pr(Y_i=0)\)</span>. The rest zero and positive values are generated by the second mechanism <span class="math inline">\(f(y;\mathbf{x}_i,\boldsymbol\beta)\)</span> of Poisson or negative binomial pmfs.</p>
+<p><span class="math display" id="eq:zi">\[\begin{equation}
+f(y_i;\pi_i,\mu_i)=\begin{cases}\pi_i+(1-\pi_i)f(0;\mu_i)&amp;y_i=0\\
+(1-\pi_i)f(y_i;\mu_i)&amp;y_i&gt;0\\
+\end{cases}
+\tag{11.4}
+\end{equation}\]</span></p>
+<p>The two link functions are</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+g_0(\pi_i)=&amp;\mathbf{w}&#39;_i\boldsymbol\gamma\\
+g_1(\mu_i)=&amp;\mathbf{x}&#39;_i\boldsymbol\beta\\
+\end{split}
+\end{equation}\]</span></p>
+<p>Note that the two mechanisms could have different covariates and coefficients.
+But both of <span class="math inline">\(\pi_i\)</span> and <span class="math inline">\(\mu_i\)</span> appear in two equations and have to be evaluated jointly. Newton-Raphson algorithm or EM algorithm can deal with this question.</p>
+<p>Hurdle model assumes all zero observations are generated by the first mechanism. Hence the first mechanism is not depend on <span class="math inline">\(\mathbf{x}_i\)</span> and <span class="math inline">\(\boldsymbol\beta\)</span>.
+A challenge is that ordinary Poisson or negative binomial distribution does contain zero values. Here use a truncated distribution to address this issue.</p>
+<p><span class="math display" id="eq:hurdle">\[\begin{equation}
+f(y_i;\pi_i,\mu_i)=\begin{cases}\pi_i&amp;y_i=0\\
+(1-\pi_i)\frac{f(y;\mu_i)}{1-f(0;\mu_i)}&amp;y_i&gt;0\\
+\end{cases}
+\tag{11.5}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(f(0;\mu_i)= \exp[-\mu_i]\)</span> in Poisson model and <span class="math inline">\(f(0;\mu_i)= (\frac{r}{\mu_i+r})^r\)</span> in negativ binomial model.</p>
+<p>“When <span class="math inline">\(\pi\)</span> is close to 0 or close to 1, the standard error is artificially compressed, which leads us to overestimate the precision of the proportion estimate.” (Lipsey and Wilson 2001, chap. 3)</p>
+</div>
+</div>
+<div id="other-topic-opt." class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Other Topic (Opt.)</h2>
+<ul>
+<li><p>Bayesian Approaches</p></li>
+<li><p>Resampling Methods</p></li>
+<li><p>Tree Based Methods</p></li>
+<li><p>Support Vector Machines</p></li>
+</ul>
+
+</div>
+</div>
+<div id="disqus_thread"></div>
+
+<style>
+.hide-social-discuss {
+   background: white;
+   height: 20px;
+   position: relative;
+   width: 80%;
+   top: -60px;
+}
+</style>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qs26.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    //add this to script
+    $("#disqus_thread").append("<div class='hide-social-discuss'></div>")
+
+</script>
+
+
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mixed-models-for-spatial-effects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="meta-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/qushen26/field_paper/edit/master/files/08-glinear.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/qushen26/field_paper/blob/master/files/08-glinear.Rmd",
+"text": null
+},
+"download": ["field_paper.pdf", "field_paper.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

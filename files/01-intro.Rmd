@@ -13,35 +13,37 @@ This paper focuses on the first part and aims at supporting the second part.
 
 ## Analytical Framework
 
-Regression Analysis provides a powerful framework for explaining the relationship between urban form and travel.
+@handyCriticalAssessmentLiterature2005 gives a complete assessment for travel-urban form study, which is the mainstream framework in this field.
+Under this framework, regression analysis currently is still the dominate method for explaining the relationship between urban form and travel.
 A large mount of studies use regression models to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)], the basic structure of the regression model is as below:
 
-$$\begin{equation}
-\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
+\begin{equation}
+\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
 (\#eq:lm)
-\end{equation}$$
+\end{equation}
 
-where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error terms with expected value of $0$ and variance $\sigma^2$.
+where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error term with expected value of $0$ and variance $\sigma^2$.
 
 When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
 
-$$\begin{equation}
-E[\mathbf{y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
+\begin{equation}
+E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
 (\#eq:glm)
-\end{equation}$$
+\end{equation}
 
-Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of individual/household-level travel variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
+Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of travel choice variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
 
 
 ## Content Organization
 
 <!-- \@ref(struc) -->
+Part I introduces the Travel-Urban form studies in recent years. 
 As the essential parts of regression analysis, independent variables of [Urban Form](#form) and dependent variables of [Travel](#travel) are presented using two separate chapters. 
 
-Chapter 2 of [Urban Form](#form) starts from a fundamental question: Do urban form and travel have casual relationship? If not, what is their relationship?
+Chapter 2 of [Urban Form](#form) starts from a fundamental question: What is the relationship between urban form and travel? How strong the relationship is?
 Then the significant influencing factors in literature are systematically introduced.
 
-[Spatial Scales](#scale) is a critical element which can sway the meaning of influencing factors. Careless choosing variable in various scales could even make the results mismatching the initial research questions.
+Aggregated and disaggregated data at vary [Spatial Scales](#scale) can sway the meaning of influencing factors. Units and spatial scales should be careful chosen to make sure the results matching the initial research questions.
 
 Chapter 3, [the theories of travel behavior](#travel) can be divided into [Traveler Choice][Traveler Choice] and [Human Mobility][Human Mobility] by looking travel as object or subject.
 These theories and practice can enrich the understanding of travel variable as response of model.

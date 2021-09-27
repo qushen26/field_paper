@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Adequacy | The Association Between Travel Behavior and Urban Form</title>
+  <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Adequacy | The Association Between Travel Behavior and Urban Form" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="qushen26/field_paper" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Adequacy | The Association Between Travel Behavior and Urban Form" />
+  
+  <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Shen Qu" />
+
+
+<meta name="date" content="2021-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multiple-linear-models.html"/>
+<link rel="next" href="multicollinearity.html"/>
+<script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Field Paper</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Part I Theories and Framework</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#analytical-framework"><i class="fa fa-check"></i><b>1.2</b> Analytical Framework</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#content-organization"><i class="fa fa-check"></i><b>1.3</b> Content Organization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="form.html"><a href="form.html"><i class="fa fa-check"></i><b>2</b> Urban Form as Predictors</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="form.html"><a href="form.html#influencing-direction"><i class="fa fa-check"></i><b>2.1</b> Influencing Direction</a></li>
+<li class="chapter" data-level="2.2" data-path="form.html"><a href="form.html#influencing-factors"><i class="fa fa-check"></i><b>2.2</b> Influencing Factors</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="form.html"><a href="form.html#individual-factors"><i class="fa fa-check"></i><b>2.2.1</b> Individual Factors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="form.html"><a href="form.html#environmental-factors"><i class="fa fa-check"></i><b>2.2.2</b> Environmental Factors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="form.html"><a href="form.html#density"><i class="fa fa-check"></i><b>2.2.3</b> Density</a></li>
+<li class="chapter" data-level="2.2.4" data-path="form.html"><a href="form.html#d-variables"><i class="fa fa-check"></i><b>2.2.4</b> D-variables</a></li>
+<li class="chapter" data-level="2.2.5" data-path="form.html"><a href="form.html#synthesized-index"><i class="fa fa-check"></i><b>2.2.5</b> Synthesized Index</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.3</b> Meta-Aanalysis</a></li>
+<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.4</b> Spatial Scales</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.4.1</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="form.html"><a href="form.html#aggregated-analysis"><i class="fa fa-check"></i><b>2.4.2</b> Aggregated Analysis</a></li>
+<li class="chapter" data-level="2.4.3" data-path="form.html"><a href="form.html#disaggregated-analysis"><i class="fa fa-check"></i><b>2.4.3</b> Disaggregated Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="travel.html"><a href="travel.html"><i class="fa fa-check"></i><b>3</b> Travel as Response</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="travel.html"><a href="travel.html#travel-variables"><i class="fa fa-check"></i><b>3.1</b> Travel Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="travel.html"><a href="travel.html#traveler-choice"><i class="fa fa-check"></i><b>3.2</b> Traveler Choice</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="travel.html"><a href="travel.html#rational-choice-theory"><i class="fa fa-check"></i><b>3.2.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="travel.html"><a href="travel.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>3.2.2</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="3.2.3" data-path="travel.html"><a href="travel.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>3.2.3</b> Theory of Planned Behavior</a></li>
+<li class="chapter" data-level="3.2.4" data-path="travel.html"><a href="travel.html#prospect-theory"><i class="fa fa-check"></i><b>3.2.4</b> Prospect Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="travel.html"><a href="travel.html#human-mobility"><i class="fa fa-check"></i><b>3.3</b> Human Mobility</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#distance-based-theories"><i class="fa fa-check"></i><b>3.3.1</b> Distance Based Theories</a></li>
+<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#opportunity-based-theories"><i class="fa fa-check"></i><b>3.3.2</b> Opportunity Based Theories</a></li>
+<li class="chapter" data-level="3.3.3" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.3</b> Time Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="travel.html"><a href="travel.html#probability-distributions"><i class="fa fa-check"></i><b>3.4</b> Probability Distributions</a></li>
+<li class="chapter" data-level="3.5" data-path="travel.html"><a href="travel.html#summary-opt."><i class="fa fa-check"></i><b>3.5</b> Summary (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="struc.html"><a href="struc.html"><i class="fa fa-check"></i><b>4</b> Model Structures</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="struc.html"><a href="struc.html#multistage"><i class="fa fa-check"></i><b>4.1</b> Multistage</a></li>
+<li class="chapter" data-level="4.2" data-path="struc.html"><a href="struc.html#decision-tree"><i class="fa fa-check"></i><b>4.2</b> Decision Tree</a></li>
+<li class="chapter" data-level="4.3" data-path="struc.html"><a href="struc.html#multi-scales"><i class="fa fa-check"></i><b>4.3</b> Multi-scales</a></li>
+<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#other-structures"><i class="fa fa-check"></i><b>4.4</b> Other Structures</a></li>
+</ul></li>
+<li class="part"><span><b>Part II Statistical Methods</b></span></li>
+<li class="chapter" data-level="5" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#assumptions"><i class="fa fa-check"></i><b>5.1</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#additive-and-linearity"><i class="fa fa-check"></i><b>5.1.1</b> Additive and linearity</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#independent-identically-distributed-iid"><i class="fa fa-check"></i><b>5.1.2</b> Independent Identically Distributed (IID)</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#normality"><i class="fa fa-check"></i><b>5.1.3</b> Normality</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
+<li class="chapter" data-level="5.2.4" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#inference"><i class="fa fa-check"></i><b>5.3</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>5.3.1</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="5.3.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>5.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="5.3.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3.3</b> Confidence Intervals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="adequacy.html"><a href="adequacy.html"><i class="fa fa-check"></i><b>6</b> Adequacy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="adequacy.html"><a href="adequacy.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness of fit</a></li>
+<li class="chapter" data-level="6.2" data-path="adequacy.html"><a href="adequacy.html#residuals-analysis"><i class="fa fa-check"></i><b>6.2</b> Residuals Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="adequacy.html"><a href="adequacy.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.3</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="6.4" data-path="adequacy.html"><a href="adequacy.html#autocorrelation"><i class="fa fa-check"></i><b>6.4</b> Autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="multicollinearity.html"><a href="multicollinearity.html"><i class="fa fa-check"></i><b>7</b> Multicollinearity</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="multicollinearity.html"><a href="multicollinearity.html#variance-inflation"><i class="fa fa-check"></i><b>7.1</b> Variance Inflation</a></li>
+<li class="chapter" data-level="7.2" data-path="multicollinearity.html"><a href="multicollinearity.html#ridge-regression"><i class="fa fa-check"></i><b>7.2</b> Ridge Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="multicollinearity.html"><a href="multicollinearity.html#lasso-regression"><i class="fa fa-check"></i><b>7.3</b> Lasso Regression</a></li>
+<li class="chapter" data-level="7.4" data-path="multicollinearity.html"><a href="multicollinearity.html#principal-components-regression"><i class="fa fa-check"></i><b>7.4</b> Principal Components Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="variables-selections.html"><a href="variables-selections.html"><i class="fa fa-check"></i><b>8</b> Variables Selections</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="variables-selections.html"><a href="variables-selections.html#model-evaluation-criteria"><i class="fa fa-check"></i><b>8.1</b> Model Evaluation Criteria</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="variables-selections.html"><a href="variables-selections.html#mallows-c_p"><i class="fa fa-check"></i><b>8.1.1</b> Mallows <span class="math inline">\(C_p\)</span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="variables-selections.html"><a href="variables-selections.html#akaikebayesian-information-criterion-aicbic"><i class="fa fa-check"></i><b>8.1.2</b> Akaike/Bayesian Information Criterion (AIC/BIC)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="variables-selections.html"><a href="variables-selections.html#selecting-procedure"><i class="fa fa-check"></i><b>8.2</b> Selecting Procedure</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="variables-selections.html"><a href="variables-selections.html#all-possible-regressions"><i class="fa fa-check"></i><b>8.2.1</b> All Possible Regressions</a></li>
+<li class="chapter" data-level="8.2.2" data-path="variables-selections.html"><a href="variables-selections.html#best-subset-selection"><i class="fa fa-check"></i><b>8.2.2</b> Best Subset selection</a></li>
+<li class="chapter" data-level="8.2.3" data-path="variables-selections.html"><a href="variables-selections.html#stepwise-regression"><i class="fa fa-check"></i><b>8.2.3</b> Stepwise Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="variables-selections.html"><a href="variables-selections.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>8.3</b> Underfitting and Overfitting</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="variables-selections.html"><a href="variables-selections.html#underfitting"><i class="fa fa-check"></i><b>8.3.1</b> Underfitting</a></li>
+<li class="chapter" data-level="8.3.2" data-path="variables-selections.html"><a href="variables-selections.html#overfitting"><i class="fa fa-check"></i><b>8.3.2</b> Overfitting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Relationship</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#transformations"><i class="fa fa-check"></i><b>9.1</b> Transformations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#variance-stabilizing"><i class="fa fa-check"></i><b>9.1.1</b> Variance Stabilizing</a></li>
+<li class="chapter" data-level="9.1.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#linearizing"><i class="fa fa-check"></i><b>9.1.2</b> Linearizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#polynomial-regression"><i class="fa fa-check"></i><b>9.2</b> Polynomial Regression</a></li>
+<li class="chapter" data-level="9.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#basis-functions"><i class="fa fa-check"></i><b>9.3</b> Basis Functions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#step-functions"><i class="fa fa-check"></i><b>9.3.1</b> Step Functions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>9.3.2</b> Splines (Piecewise Polynomials)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#smoothing-spline"><i class="fa fa-check"></i><b>9.3.3</b> Smoothing Spline</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#non-parameter-regression"><i class="fa fa-check"></i><b>9.4</b> Non-parameter Regression</a></li>
+<li class="chapter" data-level="9.5" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#generalized-additive-models"><i class="fa fa-check"></i><b>9.5</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html"><i class="fa fa-check"></i><b>10</b> Mixed Models for Spatial Effects</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#fixed-and-random-effects"><i class="fa fa-check"></i><b>10.1</b> Fixed and Random Effects</a></li>
+<li class="chapter" data-level="10.2" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#crossed-and-nested-effects"><i class="fa fa-check"></i><b>10.2</b> Crossed and Nested Effects</a></li>
+<li class="chapter" data-level="10.3" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#unbalanced-subgroup"><i class="fa fa-check"></i><b>10.3</b> Unbalanced Subgroup</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html"><i class="fa fa-check"></i><b>11</b> Generalized Linear Models for Travel Choice</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#binomial-response-models"><i class="fa fa-check"></i><b>11.1</b> Binomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#logit-models"><i class="fa fa-check"></i><b>11.1.1</b> Logit Models</a></li>
+<li class="chapter" data-level="11.1.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#probit-models-opt."><i class="fa fa-check"></i><b>11.1.2</b> Probit Models (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-response-models"><i class="fa fa-check"></i><b>11.2</b> Multinomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-logit-models"><i class="fa fa-check"></i><b>11.2.1</b> Multinomial Logit models</a></li>
+<li class="chapter" data-level="11.2.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#discret-choice-models"><i class="fa fa-check"></i><b>11.2.2</b> Discret Choice Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#poisson-responeloglinear-models"><i class="fa fa-check"></i><b>11.3</b> Poisson Respone/Loglinear Models</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#negative-binomial-model"><i class="fa fa-check"></i><b>11.3.1</b> Negative Binomial Model</a></li>
+<li class="chapter" data-level="11.3.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#quasi-poisson-model"><i class="fa fa-check"></i><b>11.3.2</b> Quasi-Poisson Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#zero-inflated-and-hurdle-models"><i class="fa fa-check"></i><b>11.3.3</b> Zero-inflated and Hurdle Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#other-topic-opt."><i class="fa fa-check"></i><b>11.4</b> Other Topic (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>12</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="meta-analysis.html"><a href="meta-analysis.html#introduction"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="meta-analysis.html"><a href="meta-analysis.html#effect-sizes"><i class="fa fa-check"></i><b>12.2</b> Effect Sizes</a></li>
+<li class="chapter" data-level="12.3" data-path="meta-analysis.html"><a href="meta-analysis.html#cross-study-heterogeneity"><i class="fa fa-check"></i><b>12.3</b> cross-study Heterogeneity</a></li>
+<li class="chapter" data-level="12.4" data-path="meta-analysis.html"><a href="meta-analysis.html#meta-regression"><i class="fa fa-check"></i><b>12.4</b> Meta-Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="meta-analysis.html"><a href="meta-analysis.html#publication-bias"><i class="fa fa-check"></i><b>12.5</b> Publication Bias</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="meta-analysis.html"><a href="meta-analysis.html#checking-publication-bias"><i class="fa fa-check"></i><b>12.5.1</b> Checking Publication Bias</a></li>
+<li class="chapter" data-level="12.5.2" data-path="meta-analysis.html"><a href="meta-analysis.html#standard-error-based-methods"><i class="fa fa-check"></i><b>12.5.2</b> Standard Error-based Methods</a></li>
+<li class="chapter" data-level="12.5.3" data-path="meta-analysis.html"><a href="meta-analysis.html#p-value-based-methods"><i class="fa fa-check"></i><b>12.5.3</b> P value-based Methods</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Association Between Travel Behavior and Urban Form</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adequacy" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Adequacy</h1>
+<p>The outcome of estimation and inference can not demonstrate model’s performance.
+If the primary assumptions is violated, the estimations could be biased and the model could be useless. These problems can also happen when the model is not correctly specified. It is necessary to make diagnosis and validation for fitted models.</p>
+<!-- "There are different types of model specification errors in regression analysis: " -->
+<!-- (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96--8, Section 4.3.2); -->
+<!-- (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); -->
+<!-- (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); -->
+<!-- (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287--92, Section 9.4); and -->
+<!-- (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978). -->
+<div id="goodness-of-fit" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Goodness of fit</h2>
+<p>This structure tell us how good the model can explain the data. Coefficient of Determination <span class="math inline">\(R^2\)</span> is a proportion to assess the quality of fitted model.</p>
+<p><span class="math display" id="eq:rsq">\[\begin{equation}
+R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
+\tag{6.1}
+\end{equation}\]</span></p>
+<p>when <span class="math inline">\(R^2\)</span> is close to <span class="math inline">\(1\)</span>, the most of variation in response can be explained by the fitted model. Although <span class="math inline">\(R^2\)</span> is not the only criteria of a good model, it is often available in most published papers. Recall the discussion in Part I, the aggregated data will eliminate the difference among individuals, households, or neighborhoods. In the new variance structure, <span class="math inline">\(SSE\)</span> will be much less than disaggregated model. The <span class="math inline">\(R^2\)</span> in many disaggregate studies are around 0.3, while the <span class="math inline">\(R^2\)</span> in some aggregate studies can reach 0.8. A seriously underfitting model’s outputs could be biased and unstable.</p>
+<p>A fact is that adding predictors into the model will never decrease <span class="math inline">\(R^2\)</span>. Thus the models with different number of predictors is not comparable. Adjusted <span class="math inline">\(R^2\)</span> can address this issue by introducing degree of freedom. The degree of freedom denotes the amount of information required to know.</p>
+<p><span class="math display" id="eq:df">\[\begin{equation}
+\begin{split}
+df_T =&amp; df_R + df_E\\
+n-1=&amp;(p-1)+(n-p)
+\end{split}
+\tag{6.2}
+\end{equation}\]</span></p>
+<p>Then, the mean square (MS) of each sum of squares (SS) can be calculated by <span class="math inline">\(MS=SS/df\)</span>. The mean square error <span class="math inline">\(MSE\)</span> is also called as the expected value of error variance <span class="math inline">\(\hat\sigma^2=MSE=SSE/(n-p)\)</span>. <span class="math inline">\(n-p\)</span> is the degree of freedom. Then adjusted <span class="math inline">\(R^2\)</span> is</p>
+<p><span class="math display" id="eq:rsq-adj">\[\begin{equation}
+R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
+\tag{6.3}
+\end{equation}\]</span></p>
+<p>Another similar method is <span class="math inline">\(R^2\)</span> for prediction based on PRESS.
+Recall the PRESS statistic is the prediction error sum of square by fitting a model with <span class="math inline">\(n-1\)</span> observations.</p>
+<p><span class="math display" id="eq:press">\[\begin{equation}
+PRESS = \sum_{i=1}^n(y_i-\hat y_{(i)})^2= \sum_{i=1}^n\left(\frac{e_i}{1-h_{ii}}\right)^2
+\tag{6.4}
+\end{equation}\]</span></p>
+<p>A model with smaller PRESS has a better ability of prediction. The <span class="math inline">\(R^2\)</span> for prediction is</p>
+<p><span class="math display" id="eq:rsq-pred">\[\begin{equation}
+R_{pred}^2 = 1-\frac{PRESS}{MST}
+\tag{6.5}
+\end{equation}\]</span></p>
+</div>
+<div id="residuals-analysis" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Residuals Analysis</h2>
+<p>The major assumptions, both IID and normality are related to residual.
+Residual diagnosis is an essential step for modeling validation.</p>
+<p>There are several scaled residuals can help the diagnosis.
+Since <span class="math inline">\(MSE\)</span> is the expected variance of error <span class="math inline">\(\hat\sigma^2\)</span> and <span class="math inline">\(E[\varepsilon]=0\)</span>, standardized residuals should follow a standard normal distribution.</p>
+<p><span class="math display">\[d_i=\frac{e_i}{\sqrt{MSE}}=e_i\sqrt{\frac{n-p}{\sum_{i=1}^n e_i^2}},\quad i=1,2,...,n\]</span></p>
+<p>Recall random error <span class="math inline">\(\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=(\mathbf{I}-\mathbf{H})\mathbf{y}\)</span> and hat matrix <span class="math inline">\(\mathbf{H}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;}\)</span>.
+Let <span class="math inline">\(h_{ii}\)</span> denote the <span class="math inline">\(i^{th}\)</span> diagonal element of hat matrix.
+Studentized Residuals can be expressed by
+<span class="math display">\[r_i=\frac{e_i}{\sqrt{MSE(1-h_{ii})}},\quad i=1,2,...,n\]</span>
+It is proved that <span class="math inline">\(0\le h_{ii}\le1\)</span>.
+An observation with <span class="math inline">\(h_{ii}\)</span> closed to one will return a large value of <span class="math inline">\(r_i\)</span>. The <span class="math inline">\(x_i\)</span> who has strong influence on fitted value is called leverage point.</p>
+<p>Ideally, the scaled residual have zero mean and unit variance. Hence, an observation with <span class="math inline">\(|d_i|&gt;3\)</span> or <span class="math inline">\(|r_i|&gt;3\)</span> is a potential outlier.</p>
+<p>Predicted Residual Error Sum of Squares (PRESS) can also be used to detect outliers.
+This method predicts the <span class="math inline">\(i^{th}\)</span> fitted response by excluding the <span class="math inline">\(i^{th}\)</span> observation and examine the influence of this point.
+The corresponding error <span class="math inline">\(e_{(i)}=e_{i}/(1-h_{ii})\)</span> and <span class="math inline">\(V[e_{(i)}]=\sigma^2/(1-h_{ii})\)</span>.
+Thus, if <span class="math inline">\(MSE\)</span> is a good estimate of <span class="math inline">\(\sigma^2\)</span>, PRESS residuals is equivalent to Studentized Residuals.</p>
+<p><span class="math display">\[\frac{e_{(i)}}{\sqrt{V[e_{(i)}]}}=\frac{e_i/(1-h_{ii})}{\sqrt{\sigma^2/(1-h_{ii})}}=\frac{e_i}{\sqrt{\sigma^2(1-h_{ii})}}\]</span></p>
+<ul>
+<li>Residual Plot</li>
+</ul>
+<p>Residual plot shows the pattern of the residuals against fitted <span class="math inline">\(\mathbf{\hat y}\)</span>.
+If the assumptions are valid, the shape of points should like a envelope and be evenly distributed around the horizontal line of <span class="math inline">\(e=0\)</span>.</p>
+<p>A funnel shape in residual plot shows that the variance of error is a function of <span class="math inline">\(\hat y\)</span>. A suitable transformation to response or predictor could stabilize the variance.
+A curved shape means the assumption of linearity is not valid. It implies that adding quadratic terms or higher-order terms might be suitable.</p>
+<ul>
+<li>Normal Probability Plot</li>
+</ul>
+<p>A histogram of residuals can check the normality assumption.
+The highly right-skewed probability distribution of VMT log-transform of VMT is reasonable.</p>
+<p>A better way is a normal quantile – quantile (QQ) plot of the residuals.
+An ideal cumulative normal distribution should plot as a straight line.
+Only looking at the <span class="math inline">\(R^2\)</span> and p-values cannot disclose this feature.</p>
+</div>
+<div id="heteroscedasticity" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Heteroscedasticity</h2>
+<p>When the assumption of constant variance is violated, the linear model is heteroscedastic.
+Heteroscedasticity is common in urban studies. For example, the cities with different size are not identical. Small cities or rural areas might have homogeneous values of population density, while large cities’ densities are more variable.</p>
+<p>Recall Generalized least square estimates <a href="multiple-linear-models.html#eq:glsq-e">(5.7)</a> and <a href="multiple-linear-models.html#eq:glsq-v">(5.8)</a>, if the residuals are independent but variances are not constant, a simple linear model becomes <span class="math inline">\(\boldsymbol{\varepsilon}\sim MVN(\mathbf{0},\sigma^2\mathbf{V})\)</span> where</p>
+<p><span class="math display" id="eq:hete-matrix">\[\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+x_1^2 &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; x_2^2 &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; x_n^2 \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{x_1^2} &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; \frac1{x_2^2} &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; \frac1{x_n^2} \end{bmatrix}
+\tag{6.6}
+\end{equation}\]</span></p>
+<p>Then <span class="math inline">\(\mathbf{X&#39;V^{-1}X}=n\)</span> and the generalized least squares solution is</p>
+<p><span class="math display" id="eq:hete-e">\[\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\sum_{i=1}^{n}\frac{y_i}{x_i}
+\tag{6.7}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:hete-v">\[\begin{equation}
+\hat\sigma^2_{WLS}=\frac1{n-1}\sum_{i=1}^{n}\frac{(y_i-\hat\beta_{1}x_i)^2}{x_i^2}
+\tag{6.8}
+\end{equation}\]</span></p>
+<p>In heteroscedastic model, the OLS estimates of coefficients are still unbiased but no longer efficient.
+But the estimates of variances are biased. The corresponding hypothesis test and confidence interval would be misleading.</p>
+<p>Another special case is the model with aggregated variables, which is the cases of geographic unit.
+Let <span class="math inline">\(u_j\)</span> and <span class="math inline">\(v_j\)</span> are the response and predictors of <span class="math inline">\(j^{th}\)</span> household in a neighborhood. <span class="math inline">\(n_i\)</span> is the sample size in each neighborhood. Then <span class="math inline">\(y_i=\sum_{j=1}^{n_i}u_j/n_i\)</span> and <span class="math inline">\(X_i=\sum_{j=1}^{n_i}v_j/n_i\)</span>. In this case,</p>
+<p><span class="math display" id="eq:agg-matrix">\[\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+\frac1{n_1} &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; \frac1{n_2} &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; \frac1{n_n} \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+n_1 &amp; 0 &amp; \dots &amp; 0 \\  
+0 &amp; n_2 &amp; \dots &amp; 0 \\  
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+0 &amp; 0 &amp; \dots &amp; n_n \end{bmatrix}
+\tag{6.9}
+\end{equation}\]</span></p>
+<p>Then <span class="math inline">\(\mathbf{X&#39;V^{-1}X}=\sum_{i=1}^nn_ix_i^2\)</span> and the WLS estimate of <span class="math inline">\(\beta_1\)</span> is</p>
+<p><span class="math display" id="eq:agg-e">\[\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\frac{\sum_{i=1}^{n}n_ix_iy_i}{\sum_{i=1}^{n}n_ix_i^2}
+\tag{6.10}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:agg-v">\[\begin{equation}
+V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sum_{i=1}^{n}n_i^2x_i^2\sigma^2/n_i}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sigma^2}{\sum_{i=1}^{n}n_ix_i^2}
+\tag{6.11}
+\end{equation}\]</span></p>
+<p>There are three procedures, Bartlett’s likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity (Ravishanker &amp; Dey, 2020, 8.1.3, pp.288-290)</p>
+</div>
+<div id="autocorrelation" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Autocorrelation</h2>
+<p>For spatio-temporal data, the observations often have some relationship over time or space.
+In these cases, the assumption of independent errors is violated, the linear model with serially correlated errors is called autocorrelation.
+Autocorrelation is also common in urban studies. All the neighboring geographic entities or stages could impact each other, or sharing the similar environment.</p>
+<p>Take a special case of time-series data for example, assuming the model have constant variance. <span class="math inline">\(E[\varepsilon]=0\)</span> but <span class="math inline">\(Cov[\varepsilon_i,\varepsilon_j]=\sigma^2\rho^{|j-i|}\)</span>, <span class="math inline">\(i,j=1,2,...,n\)</span> and <span class="math inline">\(|\rho|&lt;1\)</span>
+The variance-covariance matrix is also called Toeplitz matrix as below</p>
+<p><span class="math display" id="eq:auto-matrix">\[\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+1 &amp; \rho &amp; \rho^2 &amp; \dots &amp; \rho^{n-1} \\  
+\rho &amp; 1 &amp; \rho &amp; \dots &amp; \rho^{n-2} \\  
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
+\rho^{n-1} &amp; \rho^{n-2} &amp; \rho^{n-3} &amp; \dots &amp; 1 \end{bmatrix},\quad 
+\{\mathbf{V}^{-1}\}_{ij}=\begin{cases} 
+\frac{1}{1-\rho^2} &amp; \text{if } i=j=1,n \\  
+\frac{1+\rho^2}{1-\rho^2} &amp; \text{if } i=j=2,...,n-1 \\  
+\frac{-\rho}{1-\rho^2} &amp; \text{if } |j-i|=1 \\  
+0  &amp; \text{otherwise} \end{cases}
+\tag{6.12}
+\end{equation}\]</span></p>
+<p>This is a linear regression with autoregressive order 1 (AR(1)).
+The estimates of <span class="math inline">\(\boldsymbol{\hat\beta}\)</span> is the same with the GLS solutions, which are
+<span class="math inline">\(\boldsymbol{\hat\beta}_{GLS}=(\mathbf{X&#39;V^{-1}X})^{-1}\mathbf{X&#39;V^{-1}}\mathbf{y}\)</span> and
+<span class="math inline">\(\widehat{V[\boldsymbol{\hat\beta}_{GLS}]}=\hat\sigma^2_{GLS}(\mathbf{X&#39;V^{-1}X})^{-1}\)</span>,
+where <span class="math inline">\(\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})&#39;\mathbf{V^{-1}}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})\)</span>.</p>
+<p>It is can be verified that <span class="math inline">\(\boldsymbol{\hat\beta}_{GLS}\le\boldsymbol{\hat\beta}_{OLS}\)</span> always holds and they are equal when <span class="math inline">\(\mathbf{V=I}\)</span> or <span class="math inline">\(\rho=0\)</span>. It proves that <span class="math inline">\(\boldsymbol{\hat\beta}_{GLS}\)</span> are the best linear unbiased estimators (BLUE).</p>
+<p>This case can be extended to miltiple regression models and the autocorrelation of a stationary stochastic process at lag-k.
+Durbin-Watson test is used to test the null hypothesis of <span class="math inline">\(\rho=0\)</span>.</p>
+</div>
+</div>
+<div id="disqus_thread"></div>
+
+<style>
+.hide-social-discuss {
+   background: white;
+   height: 20px;
+   position: relative;
+   width: 80%;
+   top: -60px;
+}
+</style>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qs26.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    //add this to script
+    $("#disqus_thread").append("<div class='hide-social-discuss'></div>")
+
+</script>
+
+
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multiple-linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multicollinearity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/qushen26/field_paper/edit/master/files/05-linear.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/qushen26/field_paper/blob/master/files/05-linear.Rmd",
+"text": null
+},
+"download": ["field_paper.pdf", "field_paper.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

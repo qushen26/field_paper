@@ -1,18 +1,18 @@
-
 # Model Structures {#struc}
 
 Based on related theories and studies, this section introduces several different analytical frameworks [@gotschiComprehensiveConceptualFramework2017]. All three explanatory frameworks can find supportive evidences.
 They reflect the cognitive differences on this topic from various perspectives.
 
 
-
-
-
 ## Multistage
 
-```{r Mstage,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Multistage Structure"}
+```{r ,eval=F,echo=F,out.width='100%', fig.align='center',fig.cap=""}
 # manypoint<- plot(rnorm(30),rnorm(30))
-DiagrammeR::grViz("
+png("~/urbanstudy/field_paper/fig/mstage.png")
+library(DiagrammeR)
+library(DiagrammeRsvg)
+# digraph1 <-export_svg(
+grViz("
 digraph Mstage {
 compound=true; # allow edges between clusters.
 graph[fontname = 'helvetica-bold',  nodesep=0.4, overlap='prism1000']
@@ -74,10 +74,31 @@ Ro -> TB[ltail=cluster_S]
   # a1 ->b [dir=back]
   # b -> c [dir=back]
 
-  }")#,
+  }") #,)
+
  # height = 500,width = 800)
+library(htmltools)
+html_print(HTML(digraph1))
+save_html(HTML(digraph1), "~/urbanstudy/field_paper/fig/mstage.png")
+library(webshot)
+webshot(html_print(HTML(digraph1)), "~/urbanstudy/field_paper/fig/mstage.png")
+
+dev.off()
+# export_graph(digraph1,
+# file_name = "fig/mstage.png",
+# file_type = "png")
+
+# digraph1 = DiagrammeRsvg::export_svg(digraph1)
+# digraph1 = charToRaw(digraph1) # flatten
+# rsvg::rsvg_png(digraph1, "fig/mstage.png")
+# png::writePNG(digraph1, "fig/mstage.png", dpi = 144)
 ```
 
+
+
+```{r Mstage,eval=T,out.width='50%', fig.align='center',fig.cap="Multistage Structure"}
+knitr::include_graphics("~/urbanstudy/field_paper/fig/mstage.png")
+```
 
 @ben-arivaMETHODOLOGYSHORTRANGETRAVEL1977 introduced a hierarchical framework of travel behavior. According to the length of time in travel decision, they divided the relevant factors into three levels. For example, people could change their travel mode choice for each day or each trip. Thus mode choice is a short-term decision
 Car ownership belongs medium-term decision since people usually don't purchase or sell a car very often.
@@ -88,12 +109,12 @@ For example, the distance to destination is decided by residential location choi
 In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. [@dingExploringInfluenceBuilt2017; @devosIndirectEffectBuilt2021].
 A VMT models with stepwise framework is as follow.
 
-```{=tex}
+
 \begin{equation}
 (\#eq:stepwise)
 \mathrm{Y}=\mathbf{X}_\mathrm{L}\boldsymbol{\beta}_\mathrm{L}+\mathrm{X_{M}}{\beta}_\mathrm{M}+\mathbf{X}_\mathrm{S}\boldsymbol{\beta}_\mathrm{S}+\boldsymbol{\varepsilon}
 \end{equation}
-```
+
 
 
 where $\boldsymbol{\beta}$ are the coefficients with respect to long-term factors $\mathbf{X}_\mathrm{L}$, medium-term $\mathrm{X_{M}}$, and short-term covariates $\mathbf{X}_\mathrm{S}$.
@@ -115,9 +136,10 @@ The framework selection should suit the research question.
 
 ##  Decision Tree
 
-```{r Tree,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Decision Tree Structure"}
+```{r ,eval=F,echo=F,out.width='100%', fig.align='center'}
 # manypoint<- plot(rnorm(30),rnorm(30))
-DiagrammeR::grViz("
+# digraph2 <- export_svg(
+grViz("
 digraph Tree {
 graph[fontname = 'helvetica-bold',  nodesep=0.4, overlap='prism1000']
 rankdir = LR
@@ -142,11 +164,14 @@ node [fillcolor = Beige]; #
       T42[label = 'Time'];		    
 
 T1 -> T20   T1 -> T21 -> T31 -> {T41 T42}   T21 -> {T32 T33 T34}
-  }")#,
+  }") #,)
  # height = 500,width = 800)
+
 ```
 
-
+```{r Tree,eval=T,out.width='50%', fig.align='center',fig.cap="Decision Tree Structure"}
+knitr::include_graphics("~/urbanstudy/field_paper/fig/tree.png")
+```
 
 The single-step decision frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
 Here these observation are treated as censored data with negative utilities. (That will leads to Tobit model for VMT.)
@@ -162,7 +187,7 @@ It is remarkable that the covariates set could vary in different layer's models.
 Therefore, this structure is more flexible and is consistent with real decision process.
 
 
-```{=tex}
+
 \begin{equation}
 \begin{split}
 E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\boldsymbol{\beta})\\
@@ -171,7 +196,6 @@ E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&\boldsymbol{\
 \end{split}
 (\#eq:Tree)
 \end{equation}
-```
 
 
 
@@ -194,7 +218,7 @@ where $\mathbf{Y}_{\{yes,no\}}$ is a binary variable of making a trip or not. $\
 
 ## Multi-scales
 
-```{r Mscale,eval=T,echo=F,out.width='100%', fig.align='center',fig.cap="Multi-scales Structure"}
+```{r ,eval=F,echo=F,out.width='100%', fig.align='center',fig.cap=""}
 # manypoint<- plot(rnorm(30),rnorm(30))
 DiagrammeR::grViz("
 digraph Mscale {
@@ -227,57 +251,65 @@ node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1,
  # height = 500,width = 800)
 ```
 
+```{r Mscale,eval=T,out.width='50%', fig.align='center',fig.cap="Multi-scales Structure"}
+knitr::include_graphics("~/urbanstudy/field_paper/fig/mscale.png")
+```
 
 As discussed in previous section, the external factors affect individual's travel behavior at multiple scales (Figure \@ref(fig:Mscale)).
+Van Dender and Clever (2013) doubt weither VMT is determined by local built envrionment factors.
+
 It is necessary to distinguish the meso-scale and macro-scale variable.
 The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions. 
 Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation \@ref(eq:multiscale))
 
-```{=tex}
+
 \begin{equation}
 (\#eq:multiscale)
 \mathbf{Y}=\mathbf{X}_\mathrm{U}\boldsymbol{\beta}_\mathrm{U}+\mathbf{X}_\mathrm{N}{\beta}_\mathrm{N}+\mathbf{X}_\mathrm{H}{\beta}_\mathrm{H}+\cdots+\boldsymbol{\varepsilon}
 \end{equation}
-```
+
 
 where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{H}$ are the covariates at the scales of urban, neighborhood, and household. And $\boldsymbol{\beta}_\mathrm{U}$, $\boldsymbol{\beta}_\mathrm{N}$, and $\boldsymbol{\beta}_\mathrm{H}$ are corresponding coefficients respectively.
 
 
-## Mixed Model
+## Other Structures
 
-Regression models usually assume the fixed effects of covariate on response. has to random effects
+- Mixed Model
 
+Regression models usually assume the fixed effects of covariate on response. In many cases, some variables should be assigned with random effects.
 In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city [@dingInfluencesBuiltEnvironment2017].
 The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
 When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.
 
 In spatial analysis, autocorrelation is a common issue which means the observation values in a location will be affected by its neighbors. Mixed model can help to eliminate the neighborhood effects.
 
-```{=tex}
+
 \begin{equation}
 (\#eq:multiscale)
 \mathbf{Y}=\mathbf{X}_\mathrm{H}\boldsymbol{\beta}+\mathbf{X}_\mathrm{N}{\gamma}+\mathbf{X}_\mathrm{U}{\delta}+\boldsymbol{\varepsilon}
 \end{equation}
-```
+
 
 where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{H}$ are the same as above. $\boldsymbol{\beta}$ is a vector of fixed effects. $\boldsymbol{\gamma}$ and $\boldsymbol{\delta}$ are two vectors of random effects at neighborhood and urban scales. Assume that $\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})$ and $\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})$. And also assume $Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}$.
 
 
-## Non-linear models
+- Non-linear models
 
 As @cliftonGettingHereThere2017 said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], Ewing's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
+More and more studies reveal the non-linear relationship between population density and VMT (Cheng, De Vos, Zhao, Yang, & Witlox, 2020; Ding, Cao, & Næss, 2018; Hong, 2015).
+People can interpret the different trends as trigger effects, ceiling effects, U-shapes, hybrid, or synergy effect.
 
 
 ```{r ewing-gam,eval=T,out.width='50%', fig.align='center',fig.cap="Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form)"}
 knitr::include_graphics("fig/Ewing_gam1.png")
 ```
 
-```{=tex}
+
 \begin{equation}
 (\#eq:nonlinear)
 \mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathbf{X}_\mathrm{E})\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
 \end{equation}
-```
+
 
 In the model (Equation \@ref(eq:nonlinear)), $m(\mathbf{X}_\mathrm{E})$ is a proper function of built environment covariates. 
 
@@ -287,15 +319,11 @@ The results of linear and non-linear models cannot be compared because their und
 
 
 
-
-
 <!-- All factors related to spatial distributions have the morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->
 <!-- such as road network connection -->
 <!-- such as distance to transit services.  -->
 <!-- This perspective helps people to figure out the influencing path and better understand the underlying mechanism. -->
 <!-- another way of understanding the role of land use is morphology versus functionality.  -->
-
-
 
 
 

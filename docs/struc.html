@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Model Structures | The Association Between Travel Behavior and Urban Form</title>
   <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.23.4 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Model Structures | The Association Between Travel Behavior and Urban Form" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-07" />
+<meta name="date" content="2021-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +32,8 @@
   
   
 <link rel="prev" href="travel.html"/>
-<link rel="next" href="linear-models.html"/>
-<script src="book_assets/header-attrs-2.10/header-attrs.js"></script>
+<link rel="next" href="multiple-linear-models.html"/>
+<script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
 <script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,10 +55,6 @@
 <script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
 <link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="book_assets/viz-1.8.2/viz.js"></script>
-<link href="book_assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="book_assets/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 
@@ -119,16 +115,14 @@ div.csl-indent {
 <li class="chapter" data-level="2.2.3" data-path="form.html"><a href="form.html#density"><i class="fa fa-check"></i><b>2.2.3</b> Density</a></li>
 <li class="chapter" data-level="2.2.4" data-path="form.html"><a href="form.html#d-variables"><i class="fa fa-check"></i><b>2.2.4</b> D-variables</a></li>
 <li class="chapter" data-level="2.2.5" data-path="form.html"><a href="form.html#synthesized-index"><i class="fa fa-check"></i><b>2.2.5</b> Synthesized Index</a></li>
-<li class="chapter" data-level="2.2.6" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.2.6</b> Meta-Aanalysis</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.3</b> Spatial Scales</a>
+<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.3</b> Meta-Aanalysis</a></li>
+<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.4</b> Spatial Scales</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="form.html"><a href="form.html#neighborhood-scale"><i class="fa fa-check"></i><b>2.3.1</b> Neighborhood Scale</a></li>
-<li class="chapter" data-level="2.3.2" data-path="form.html"><a href="form.html#urbanregion-scale"><i class="fa fa-check"></i><b>2.3.2</b> Urban/Region Scale</a></li>
-<li class="chapter" data-level="2.3.3" data-path="form.html"><a href="form.html#multi-scale-studies"><i class="fa fa-check"></i><b>2.3.3</b> Multi-scale Studies</a></li>
-<li class="chapter" data-level="2.3.4" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.3.4</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="2.4.1" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.4.1</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="form.html"><a href="form.html#aggregated-analysis"><i class="fa fa-check"></i><b>2.4.2</b> Aggregated Analysis</a></li>
+<li class="chapter" data-level="2.4.3" data-path="form.html"><a href="form.html#disaggregated-analysis"><i class="fa fa-check"></i><b>2.4.3</b> Disaggregated Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#summary"><i class="fa fa-check"></i><b>2.4</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="travel.html"><a href="travel.html"><i class="fa fa-check"></i><b>3</b> Travel as Response</a>
 <ul>
@@ -142,8 +136,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="travel.html"><a href="travel.html#human-mobility"><i class="fa fa-check"></i><b>3.3</b> Human Mobility</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#trip-distribution-laws"><i class="fa fa-check"></i><b>3.3.1</b> Trip Distribution Laws</a></li>
-<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.2</b> Time Geography</a></li>
+<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#distance-based-theories"><i class="fa fa-check"></i><b>3.3.1</b> Distance Based Theories</a></li>
+<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#opportunity-based-theories"><i class="fa fa-check"></i><b>3.3.2</b> Opportunity Based Theories</a></li>
+<li class="chapter" data-level="3.3.3" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.3</b> Time Geography</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="travel.html"><a href="travel.html#probability-distributions"><i class="fa fa-check"></i><b>3.4</b> Probability Distributions</a></li>
 <li class="chapter" data-level="3.5" data-path="travel.html"><a href="travel.html#summary-opt."><i class="fa fa-check"></i><b>3.5</b> Summary (Opt.)</a></li>
@@ -153,100 +148,120 @@ div.csl-indent {
 <li class="chapter" data-level="4.1" data-path="struc.html"><a href="struc.html#multistage"><i class="fa fa-check"></i><b>4.1</b> Multistage</a></li>
 <li class="chapter" data-level="4.2" data-path="struc.html"><a href="struc.html#decision-tree"><i class="fa fa-check"></i><b>4.2</b> Decision Tree</a></li>
 <li class="chapter" data-level="4.3" data-path="struc.html"><a href="struc.html#multi-scales"><i class="fa fa-check"></i><b>4.3</b> Multi-scales</a></li>
-<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#mixed-model"><i class="fa fa-check"></i><b>4.4</b> Mixed Model</a></li>
-<li class="chapter" data-level="4.5" data-path="struc.html"><a href="struc.html#non-linear-models"><i class="fa fa-check"></i><b>4.5</b> Non-linear models</a></li>
+<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#other-structures"><i class="fa fa-check"></i><b>4.4</b> Other Structures</a></li>
 </ul></li>
-<li class="part"><span><b>Part II Regression Analysis</b></span></li>
-<li class="chapter" data-level="5" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>5</b> Linear Models</a>
+<li class="part"><span><b>Part II Statistical Methods</b></span></li>
+<li class="chapter" data-level="5" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Models</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="linear-models.html"><a href="linear-models.html#assumptions"><i class="fa fa-check"></i><b>5.1</b> Assumptions</a>
+<li class="chapter" data-level="5.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#assumptions"><i class="fa fa-check"></i><b>5.1</b> Assumptions</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="linear-models.html"><a href="linear-models.html#additive-and-linearity"><i class="fa fa-check"></i><b>5.1.1</b> Additive and linearity</a></li>
-<li class="chapter" data-level="5.1.2" data-path="linear-models.html"><a href="linear-models.html#independent-identically-distributed-iid"><i class="fa fa-check"></i><b>5.1.2</b> Independent Identically Distributed (IID)</a></li>
-<li class="chapter" data-level="5.1.3" data-path="linear-models.html"><a href="linear-models.html#normality"><i class="fa fa-check"></i><b>5.1.3</b> Normality</a></li>
+<li class="chapter" data-level="5.1.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#additive-and-linearity"><i class="fa fa-check"></i><b>5.1.1</b> Additive and linearity</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#independent-identically-distributed-iid"><i class="fa fa-check"></i><b>5.1.2</b> Independent Identically Distributed (IID)</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#normality"><i class="fa fa-check"></i><b>5.1.3</b> Normality</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="linear-models.html"><a href="linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
+<li class="chapter" data-level="5.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="linear-models.html"><a href="linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
-<li class="chapter" data-level="5.2.2" data-path="linear-models.html"><a href="linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
-<li class="chapter" data-level="5.2.3" data-path="linear-models.html"><a href="linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
-<li class="chapter" data-level="5.2.4" data-path="linear-models.html"><a href="linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
+<li class="chapter" data-level="5.2.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
+<li class="chapter" data-level="5.2.4" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="linear-models.html"><a href="linear-models.html#inference"><i class="fa fa-check"></i><b>5.3</b> Inference</a>
+<li class="chapter" data-level="5.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#inference"><i class="fa fa-check"></i><b>5.3</b> Inference</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="linear-models.html"><a href="linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>5.3.1</b> Analysis of Variance</a></li>
-<li class="chapter" data-level="5.3.2" data-path="linear-models.html"><a href="linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>5.3.2</b> Hypothesis Test</a></li>
-<li class="chapter" data-level="5.3.3" data-path="linear-models.html"><a href="linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3.3</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.3.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>5.3.1</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="5.3.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>5.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="5.3.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3.3</b> Confidence Intervals</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="linear-models.html"><a href="linear-models.html#adequacy"><i class="fa fa-check"></i><b>5.4</b> Adequacy</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="adequacy.html"><a href="adequacy.html"><i class="fa fa-check"></i><b>6</b> Adequacy</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="linear-models.html"><a href="linear-models.html#residuals-analysis"><i class="fa fa-check"></i><b>5.4.1</b> Residuals Analysis</a></li>
-<li class="chapter" data-level="5.4.2" data-path="linear-models.html"><a href="linear-models.html#heteroscedasticity"><i class="fa fa-check"></i><b>5.4.2</b> Heteroscedasticity</a></li>
-<li class="chapter" data-level="5.4.3" data-path="linear-models.html"><a href="linear-models.html#autocorrelation"><i class="fa fa-check"></i><b>5.4.3</b> Autocorrelation</a></li>
-<li class="chapter" data-level="5.4.4" data-path="linear-models.html"><a href="linear-models.html#multicollinearity"><i class="fa fa-check"></i><b>5.4.4</b> Multicollinearity</a></li>
+<li class="chapter" data-level="6.1" data-path="adequacy.html"><a href="adequacy.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness of fit</a></li>
+<li class="chapter" data-level="6.2" data-path="adequacy.html"><a href="adequacy.html#residuals-analysis"><i class="fa fa-check"></i><b>6.2</b> Residuals Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="adequacy.html"><a href="adequacy.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.3</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="6.4" data-path="adequacy.html"><a href="adequacy.html#autocorrelation"><i class="fa fa-check"></i><b>6.4</b> Autocorrelation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="linear-models.html"><a href="linear-models.html#variables-selections"><i class="fa fa-check"></i><b>5.5</b> Variables Selections</a>
+<li class="chapter" data-level="7" data-path="multicollinearity.html"><a href="multicollinearity.html"><i class="fa fa-check"></i><b>7</b> Multicollinearity</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="linear-models.html"><a href="linear-models.html#goodness-of-fit"><i class="fa fa-check"></i><b>5.5.1</b> Goodness of fit</a></li>
-<li class="chapter" data-level="5.5.2" data-path="linear-models.html"><a href="linear-models.html#mallows-c_p"><i class="fa fa-check"></i><b>5.5.2</b> Mallows <span class="math inline">\(C_p\)</span></a></li>
-<li class="chapter" data-level="5.5.3" data-path="linear-models.html"><a href="linear-models.html#press"><i class="fa fa-check"></i><b>5.5.3</b> PRESS</a></li>
+<li class="chapter" data-level="7.1" data-path="multicollinearity.html"><a href="multicollinearity.html#variance-inflation"><i class="fa fa-check"></i><b>7.1</b> Variance Inflation</a></li>
+<li class="chapter" data-level="7.2" data-path="multicollinearity.html"><a href="multicollinearity.html#ridge-regression"><i class="fa fa-check"></i><b>7.2</b> Ridge Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="multicollinearity.html"><a href="multicollinearity.html#lasso-regression"><i class="fa fa-check"></i><b>7.3</b> Lasso Regression</a></li>
+<li class="chapter" data-level="7.4" data-path="multicollinearity.html"><a href="multicollinearity.html#principal-components-regression"><i class="fa fa-check"></i><b>7.4</b> Principal Components Regression</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="linear-models.html"><a href="linear-models.html#other-topics"><i class="fa fa-check"></i><b>5.6</b> Other Topics</a>
+<li class="chapter" data-level="8" data-path="variables-selections.html"><a href="variables-selections.html"><i class="fa fa-check"></i><b>8</b> Variables Selections</a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="linear-models.html"><a href="linear-models.html#bayesian-approaches-opt."><i class="fa fa-check"></i><b>5.6.1</b> Bayesian approaches (Opt.)</a></li>
-<li class="chapter" data-level="5.6.2" data-path="linear-models.html"><a href="linear-models.html#sem-opt."><i class="fa fa-check"></i><b>5.6.2</b> SEM (Opt.)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed Models</a>
+<li class="chapter" data-level="8.1" data-path="variables-selections.html"><a href="variables-selections.html#model-evaluation-criteria"><i class="fa fa-check"></i><b>8.1</b> Model Evaluation Criteria</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#fixed-and-random-effects"><i class="fa fa-check"></i><b>6.1</b> Fixed and Random Effects</a></li>
-<li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#crossed-and-nested-effects"><i class="fa fa-check"></i><b>6.2</b> Crossed and Nested Effects</a></li>
-<li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#unbalanced-subgroup"><i class="fa fa-check"></i><b>6.3</b> Unbalanced Subgroup</a></li>
+<li class="chapter" data-level="8.1.1" data-path="variables-selections.html"><a href="variables-selections.html#mallows-c_p"><i class="fa fa-check"></i><b>8.1.1</b> Mallows <span class="math inline">\(C_p\)</span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="variables-selections.html"><a href="variables-selections.html#akaikebayesian-information-criterion-aicbic"><i class="fa fa-check"></i><b>8.1.2</b> Akaike/Bayesian Information Criterion (AIC/BIC)</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html"><i class="fa fa-check"></i><b>7</b> Non-Linear Models</a>
+<li class="chapter" data-level="8.2" data-path="variables-selections.html"><a href="variables-selections.html#selecting-procedure"><i class="fa fa-check"></i><b>8.2</b> Selecting Procedure</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#transformations"><i class="fa fa-check"></i><b>7.1</b> Transformations</a>
+<li class="chapter" data-level="8.2.1" data-path="variables-selections.html"><a href="variables-selections.html#all-possible-regressions"><i class="fa fa-check"></i><b>8.2.1</b> All Possible Regressions</a></li>
+<li class="chapter" data-level="8.2.2" data-path="variables-selections.html"><a href="variables-selections.html#best-subset-selection"><i class="fa fa-check"></i><b>8.2.2</b> Best Subset selection</a></li>
+<li class="chapter" data-level="8.2.3" data-path="variables-selections.html"><a href="variables-selections.html#stepwise-regression"><i class="fa fa-check"></i><b>8.2.3</b> Stepwise Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="variables-selections.html"><a href="variables-selections.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>8.3</b> Underfitting and Overfitting</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#variance-stabilizing"><i class="fa fa-check"></i><b>7.1.1</b> Variance Stabilizing</a></li>
-<li class="chapter" data-level="7.1.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#linearizing"><i class="fa fa-check"></i><b>7.1.2</b> Linearizing</a></li>
+<li class="chapter" data-level="8.3.1" data-path="variables-selections.html"><a href="variables-selections.html#underfitting"><i class="fa fa-check"></i><b>8.3.1</b> Underfitting</a></li>
+<li class="chapter" data-level="8.3.2" data-path="variables-selections.html"><a href="variables-selections.html#overfitting"><i class="fa fa-check"></i><b>8.3.2</b> Overfitting</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#polynomial-regression"><i class="fa fa-check"></i><b>7.2</b> Polynomial Regression</a></li>
-<li class="chapter" data-level="7.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#basis-functions"><i class="fa fa-check"></i><b>7.3</b> Basis Functions</a>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Relationship</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#step-functions"><i class="fa fa-check"></i><b>7.3.1</b> Step Functions</a></li>
-<li class="chapter" data-level="7.3.2" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>7.3.2</b> Splines (Piecewise Polynomials)</a></li>
-<li class="chapter" data-level="7.3.3" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#smoothing-spline"><i class="fa fa-check"></i><b>7.3.3</b> Smoothing Spline</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#non-parameter-regression"><i class="fa fa-check"></i><b>7.4</b> Non-parameter Regression</a></li>
-<li class="chapter" data-level="7.5" data-path="non-linear-models-1.html"><a href="non-linear-models-1.html#generalized-additive-models"><i class="fa fa-check"></i><b>7.5</b> Generalized Additive Models</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>8</b> Generalized Linear Models</a>
+<li class="chapter" data-level="9.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#transformations"><i class="fa fa-check"></i><b>9.1</b> Transformations</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#logistic-regression"><i class="fa fa-check"></i><b>8.1</b> Logistic Regression</a></li>
-<li class="chapter" data-level="8.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>8.2</b> Poisson Regression</a></li>
-<li class="chapter" data-level="8.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#zero-inflated-and-hurdle-models"><i class="fa fa-check"></i><b>8.3</b> Zero-inflated and Hurdle Models</a></li>
+<li class="chapter" data-level="9.1.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#variance-stabilizing"><i class="fa fa-check"></i><b>9.1.1</b> Variance Stabilizing</a></li>
+<li class="chapter" data-level="9.1.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#linearizing"><i class="fa fa-check"></i><b>9.1.2</b> Linearizing</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>9</b> Meta-Analysis</a>
+<li class="chapter" data-level="9.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#polynomial-regression"><i class="fa fa-check"></i><b>9.2</b> Polynomial Regression</a></li>
+<li class="chapter" data-level="9.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#basis-functions"><i class="fa fa-check"></i><b>9.3</b> Basis Functions</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="meta-analysis.html"><a href="meta-analysis.html#overview"><i class="fa fa-check"></i><b>9.0.1</b> Overview</a></li>
-<li class="chapter" data-level="9.0.2" data-path="meta-analysis.html"><a href="meta-analysis.html#advanced-methods"><i class="fa fa-check"></i><b>9.0.2</b> Advanced Methods</a></li>
-<li class="chapter" data-level="9.0.3" data-path="meta-analysis.html"><a href="meta-analysis.html#summary-1"><i class="fa fa-check"></i><b>9.0.3</b> Summary</a></li>
+<li class="chapter" data-level="9.3.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#step-functions"><i class="fa fa-check"></i><b>9.3.1</b> Step Functions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>9.3.2</b> Splines (Piecewise Polynomials)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#smoothing-spline"><i class="fa fa-check"></i><b>9.3.3</b> Smoothing Spline</a></li>
 </ul></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>A</b> Data</a>
+<li class="chapter" data-level="9.4" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#non-parameter-regression"><i class="fa fa-check"></i><b>9.4</b> Non-parameter Regression</a></li>
+<li class="chapter" data-level="9.5" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#generalized-additive-models"><i class="fa fa-check"></i><b>9.5</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html"><i class="fa fa-check"></i><b>10</b> Mixed Models for Spatial Effects</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="data.html"><a href="data.html#travel-survey"><i class="fa fa-check"></i><b>A.1</b> Travel Survey</a></li>
-<li class="chapter" data-level="A.2" data-path="data.html"><a href="data.html#census-data"><i class="fa fa-check"></i><b>A.2</b> Census Data</a></li>
-<li class="chapter" data-level="A.3" data-path="data.html"><a href="data.html#smart-location-database"><i class="fa fa-check"></i><b>A.3</b> Smart Location Database</a></li>
-<li class="chapter" data-level="A.4" data-path="data.html"><a href="data.html#new-data-sources"><i class="fa fa-check"></i><b>A.4</b> New Data Sources</a></li>
+<li class="chapter" data-level="10.1" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#fixed-and-random-effects"><i class="fa fa-check"></i><b>10.1</b> Fixed and Random Effects</a></li>
+<li class="chapter" data-level="10.2" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#crossed-and-nested-effects"><i class="fa fa-check"></i><b>10.2</b> Crossed and Nested Effects</a></li>
+<li class="chapter" data-level="10.3" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#unbalanced-subgroup"><i class="fa fa-check"></i><b>10.3</b> Unbalanced Subgroup</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>B</b> Discussion</a>
+<li class="chapter" data-level="11" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html"><i class="fa fa-check"></i><b>11</b> Generalized Linear Models for Travel Choice</a>
 <ul>
-<li class="chapter" data-level="B.1" data-path="discussion.html"><a href="discussion.html#a-proposed-framework"><i class="fa fa-check"></i><b>B.1</b> A Proposed Framework</a></li>
-<li class="chapter" data-level="B.2" data-path="discussion.html"><a href="discussion.html#policy-implications"><i class="fa fa-check"></i><b>B.2</b> Policy implications</a></li>
-<li class="chapter" data-level="B.3" data-path="discussion.html"><a href="discussion.html#other-thoughts"><i class="fa fa-check"></i><b>B.3</b> Other thoughts</a></li>
+<li class="chapter" data-level="11.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#binomial-response-models"><i class="fa fa-check"></i><b>11.1</b> Binomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#logit-models"><i class="fa fa-check"></i><b>11.1.1</b> Logit Models</a></li>
+<li class="chapter" data-level="11.1.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#probit-models-opt."><i class="fa fa-check"></i><b>11.1.2</b> Probit Models (Opt.)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="11.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-response-models"><i class="fa fa-check"></i><b>11.2</b> Multinomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-logit-models"><i class="fa fa-check"></i><b>11.2.1</b> Multinomial Logit models</a></li>
+<li class="chapter" data-level="11.2.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#discret-choice-models"><i class="fa fa-check"></i><b>11.2.2</b> Discret Choice Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#poisson-responeloglinear-models"><i class="fa fa-check"></i><b>11.3</b> Poisson Respone/Loglinear Models</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#negative-binomial-model"><i class="fa fa-check"></i><b>11.3.1</b> Negative Binomial Model</a></li>
+<li class="chapter" data-level="11.3.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#quasi-poisson-model"><i class="fa fa-check"></i><b>11.3.2</b> Quasi-Poisson Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#zero-inflated-and-hurdle-models"><i class="fa fa-check"></i><b>11.3.3</b> Zero-inflated and Hurdle Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#other-topic-opt."><i class="fa fa-check"></i><b>11.4</b> Other Topic (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>12</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="meta-analysis.html"><a href="meta-analysis.html#introduction"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="meta-analysis.html"><a href="meta-analysis.html#effect-sizes"><i class="fa fa-check"></i><b>12.2</b> Effect Sizes</a></li>
+<li class="chapter" data-level="12.3" data-path="meta-analysis.html"><a href="meta-analysis.html#cross-study-heterogeneity"><i class="fa fa-check"></i><b>12.3</b> cross-study Heterogeneity</a></li>
+<li class="chapter" data-level="12.4" data-path="meta-analysis.html"><a href="meta-analysis.html#meta-regression"><i class="fa fa-check"></i><b>12.4</b> Meta-Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="meta-analysis.html"><a href="meta-analysis.html#publication-bias"><i class="fa fa-check"></i><b>12.5</b> Publication Bias</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="meta-analysis.html"><a href="meta-analysis.html#checking-publication-bias"><i class="fa fa-check"></i><b>12.5.1</b> Checking Publication Bias</a></li>
+<li class="chapter" data-level="12.5.2" data-path="meta-analysis.html"><a href="meta-analysis.html#standard-error-based-methods"><i class="fa fa-check"></i><b>12.5.2</b> Standard Error-based Methods</a></li>
+<li class="chapter" data-level="12.5.3" data-path="meta-analysis.html"><a href="meta-analysis.html#p-value-based-methods"><i class="fa fa-check"></i><b>12.5.3</b> P value-based Methods</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -274,8 +289,7 @@ They reflect the cognitive differences on this topic from various perspectives.<
 <div id="multistage" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Multistage</h2>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Mstage"></span>
-<div id="htmlwidget-a00cb1a26a0f316f742a" style="width:100%;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a00cb1a26a0f316f742a">{"x":{"diagram":"\ndigraph Mstage {\ncompound=true; # allow edges between clusters.\ngraph[fontname = \"helvetica-bold\",  nodesep=0.4, overlap=\"prism1000\"]\nrankdir = LR\nnode [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, \n      fontname = \"helvetica\",fontsize=12, fontcolor = black];\n\nsubgraph cluster_L{\nlabel = \"Long-term\";\nstyle=dashed; color=black; \nnode [fillcolor = WhiteSmoke];\nR[label = \"Residential \\n location choice\"]; \nL2[label =\"...\"];\nL3[label =\"...\"]; # , style=invis, height = 0.4, width = 0, margin=0\n# R -> NA[style=invis];\n}    \n\nsubgraph cluster_M{\nlabel = \"Medium-term\";\nstyle=dashed; color=black;\n# rank = same;\nnode [fillcolor = PapayaWhip];\nC[label = \"Car \\n ownership\"];  \nD[label = \"Distance to \\n destination\"];\nM2[label =\"...\"];\n# C -> D[style=invis];\n}   \n\n\nsubgraph cluster_S{\nlabel = \"Short-term\";\nstyle=dashed; color=black;\nnode [fillcolor = \"#fee08b\"];\nM[label = \"Mode \\n Choice\"];\nRo[label = \"Route \\n Choice\"]; \nS3[label =\"...\"];\n# M -> Ro[style=invis];\n}  \n\n# NA -> D # [ltail=cluster_L,lhead=cluster_M];\n# D -> Ro # [ltail=cluster_M,lhead=cluster_S];\nsubgraph{\nnode [fillcolor =yellowgreen];\nTB[label = \"Travel \\n Behavior\"];\nL2 -> D[ltail=cluster_L,lhead=cluster_M]\nD -> Ro[ltail=cluster_M,lhead=cluster_S]\nRo -> TB[ltail=cluster_S]\n}\n\n  # c3d1 -> c3ad1[weight= 10]  c3d2 -> c3ad2   c3d3 -> c3ad3[weight= 10]    \n  # {rank = same; c3ad1;c3ad2;c3ad3}    \n\t# c3d1 -> c3d2-> c3d3[style=dashed,splines=curved,constraint=true] #,dir=none\n  #  c2d2 -> c2ad c2d1 -> c2ad[style=invis];\n  # edge[style=invisible,dir=none];\n  #   node [shape = square, style=filled,fontsize=9,fillcolor = Beige];\n  #   b [label = \"The relationship \\n between \\n Auto Dependence \\n & \\n Urban Density\"]\n  #   node [shape = oval, style=filled,fontsize=12, fillcolor = WhiteSmoke]; #\"#91cf60\"\n  #   c [label = \"Evidence from \\n existing studies\"]\n  # a1 ->b [dir=back]\n  # b -> c [dir=back]\n\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<img src="fig/mstage.png" alt="Multistage Structure" width="50%" />
 <p class="caption">
 Figure 4.1: Multistage Structure
 </p>
@@ -287,10 +301,10 @@ Residential location choice is long-term decision because relocation is the most
 For example, the distance to destination is decided by residential location choice and working location choice. And the distance is also a fundamental factor that influences travel mode choice behavior <span class="citation">(<a href="#ref-munshiBuiltEnvironmentMode2016" role="doc-biblioref">Munshi 2016</a>)</span>.
 In this way, both household car ownership, travel distance and travel attitudes are treated as intermediate variables connecting between built environment and mode choice in decision models. <span class="citation">(<a href="#ref-dingExploringInfluenceBuilt2017" role="doc-biblioref">Ding, Wang, et al. 2017</a>; <a href="#ref-devosIndirectEffectBuilt2021" role="doc-biblioref">De Vos et al. 2021</a>)</span>.
 A VMT models with stepwise framework is as follow.</p>
-<span class="math display" id="eq:stepwise">\[\begin{equation}
+<p><span class="math display" id="eq:stepwise">\[\begin{equation}
 \tag{4.1}
 \mathrm{Y}=\mathbf{X}_\mathrm{L}\boldsymbol{\beta}_\mathrm{L}+\mathrm{X_{M}}{\beta}_\mathrm{M}+\mathbf{X}_\mathrm{S}\boldsymbol{\beta}_\mathrm{S}+\boldsymbol{\varepsilon}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\beta}\)</span> are the coefficients with respect to long-term factors <span class="math inline">\(\mathbf{X}_\mathrm{L}\)</span>, medium-term <span class="math inline">\(\mathrm{X_{M}}\)</span>, and short-term covariates <span class="math inline">\(\mathbf{X}_\mathrm{S}\)</span>.
 There could be two-way interaction effect between long-term and medium-term variables; three-way interaction effects among long-term, medium-term and short-term variables in the model (Equation <a href="struc.html#eq:stepwise">(4.1)</a>).</p>
 <p>This framework works well for commuting trips because people will not change work place very often. The mobility theories also agree with this pattern.
@@ -305,8 +319,7 @@ The framework selection should suit the research question.</p>
 <div id="decision-tree" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Decision Tree</h2>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Tree"></span>
-<div id="htmlwidget-b1d741f21fca6bb890c2" style="width:100%;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b1d741f21fca6bb890c2">{"x":{"diagram":"\ndigraph Tree {\ngraph[fontname = \"helvetica-bold\",  nodesep=0.4, overlap=\"prism1000\"]\nrankdir = LR\nnode [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, \n      fontname = \"helvetica\",fontsize=12, fontcolor = black];\n\nT1[label = \"Travel Choice\"];\t\n  T20[label = \"No\"];\nnode [fillcolor = WhiteSmoke];\n  T21[label = \"Yes\"];\t\t \t\t    \n \nnode [fillcolor =\"#fee08b\"];\n    T31[label = \"Driving\"];\t\t    \nnode [fillcolor = PapayaWhip];\n    T32[label = \"Transit\"];        \n    T33[label = \"Biking\"];  \n    T34[label = \"Walking\"];  \n    \nnode [fillcolor = yellowgreen];\n      T41[label = \"Distance\"];\t\t\t    \nnode [fillcolor = Beige]; #\n      T42[label = \"Time\"];\t\t    \n\nT1 -> T20   T1 -> T21 -> T31 -> {T41 T42}   T21 -> {T32 T33 T34}\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<img src="fig/tree.png" alt="Decision Tree Structure" width="50%" />
 <p class="caption">
 Figure 4.2: Decision Tree Structure
 </p>
@@ -321,14 +334,14 @@ A logit or probit model will fit all the data using a suitable model specificati
 At the bottom layer, a linear (or log-linear) model will only fit the data with positive driving distance (hurdle models; <span class="citation"><a href="#ref-maModelingTrafficCrash2015" role="doc-biblioref">Ma, Yan, and Weng</a> (<a href="#ref-maModelingTrafficCrash2015" role="doc-biblioref">2015</a>)</span>; <span class="citation"><a href="#ref-ewingVaryingInfluencesBuilt2015" role="doc-biblioref">Reid Ewing et al.</a> (<a href="#ref-ewingVaryingInfluencesBuilt2015" role="doc-biblioref">2015</a>)</span>).
 It is remarkable that the covariates set could vary in different layer’s models. For example the lifecycle factor could strongly affect the travel frequency but not affect the driving distance significantly.
 Therefore, this structure is more flexible and is consistent with real decision process.</p>
-<span class="math display" id="eq:Tree">\[\begin{equation}
+<p><span class="math display" id="eq:Tree">\[\begin{equation}
 \begin{split}
 E[\mathbf{Y}_{\{yes,no\}}|\mathbf{X_0}]=&amp;\boldsymbol{\mu_0}=g^{-1}(\mathbf{X_0}\boldsymbol{\beta})\\
 E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&amp;\boldsymbol{\mu_1}=g^{-1}(\mathbf{X_1}\boldsymbol{\gamma})\\
 \mathbf{Z}_{\{car\}}=&amp;\mathbf{X}_\mathrm{2}\boldsymbol{\delta} + \boldsymbol{\varepsilon}
 \end{split}
 \tag{4.2}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{Y}_{\{yes,no\}}\)</span> is a binary variable of making a trip or not. <span class="math inline">\(\mathbf{Y}_{\{car,bus,...\}}\)</span> is a categorical variable only including the cases of making a trip. <span class="math inline">\(\mathbf{Z}_{\{car\}}\)</span> is a continuous variable represent driving distance among the group of choosing driving. <span class="math inline">\(\mathbf{X}_{\{0,1,2\}}\)</span> means the three equations could have different model specifications and will estimate corresponding coefficients, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\gamma}\)</span>, and <span class="math inline">\(\boldsymbol{\delta}\)</span>.</p>
 <!-- -   The types of trip variables and the proposed probability distributions -->
 <!--     -   Binary: Choose/not to make trip (Bernoulli/Binomial), -->
@@ -347,48 +360,53 @@ E[\mathbf{Y}_{\{car,bus,...\}}|\mathbf{X_1},\mathbf{Y}_{\{yes\}}]=&amp;\boldsymb
 <div id="multi-scales" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Multi-scales</h2>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Mscale"></span>
-<div id="htmlwidget-466822e7e7e595748343" style="width:100%;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-466822e7e7e595748343">{"x":{"diagram":"\ndigraph Mscale {\ngraph[fontname = \"helvetica-bold\", style=filled, nodesep=0.4, overlap=\"prism1000\"]\nrankdir = TD\nnode [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1, \n      fontname = \"helvetica\",fontsize=12, fontcolor = black];\n\n  subgraph cluster_U {\n  label = \"Urban Scale \\n (urban-form factors)\"; fillcolor= WhiteSmoke; \n     \n    node [fillcolor = Beige];\n    UT[label = \"Macro \\n Travel \\n Behavior\"];\t\t \n\n    subgraph cluster_BE{\n    label = \"Neighborhood Scale \\n (built-environmnet factors)\"; fillcolor= PapayaWhip; \n\n      node [fillcolor = palegreen];\n      NT[label = \"Meso \\n Travel \\n Behavior\"];\n\t\t    \n\t    subgraph cluster_H{\n\t    label = \"Household Scale \\n (socio-demographic \\n characteristics)\"; fillcolor= \"#fee08b\";\n\t\t    \n        node [fillcolor = yellowgreen];\n        HT[label = \"Micro \\n Travel \\n Behavior\"];\t\t    \n\t\t    }\t\n\t\t }\t\n\t}    \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<img src="fig/mscale.png" alt="Multi-scales Structure" width="50%" />
 <p class="caption">
 Figure 4.3: Multi-scales Structure
 </p>
 </div>
 <p>As discussed in previous section, the external factors affect individual’s travel behavior at multiple scales (Figure <a href="struc.html#fig:Mscale">4.3</a>).
-It is necessary to distinguish the meso-scale and macro-scale variable.
+Van Dender and Clever (2013) doubt weither VMT is determined by local built envrionment factors.</p>
+<p>It is necessary to distinguish the meso-scale and macro-scale variable.
 The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions.
 Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation <a href="struc.html#eq:multiscale">(4.3)</a>)</p>
-<span class="math display" id="eq:multiscale">\[\begin{equation}
+<p><span class="math display" id="eq:multiscale">\[\begin{equation}
 \tag{4.3}
 \mathbf{Y}=\mathbf{X}_\mathrm{U}\boldsymbol{\beta}_\mathrm{U}+\mathbf{X}_\mathrm{N}{\beta}_\mathrm{N}+\mathbf{X}_\mathrm{H}{\beta}_\mathrm{H}+\cdots+\boldsymbol{\varepsilon}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the covariates at the scales of urban, neighborhood, and household. And <span class="math inline">\(\boldsymbol{\beta}_\mathrm{U}\)</span>, <span class="math inline">\(\boldsymbol{\beta}_\mathrm{N}\)</span>, and <span class="math inline">\(\boldsymbol{\beta}_\mathrm{H}\)</span> are corresponding coefficients respectively.</p>
 </div>
-<div id="mixed-model" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Mixed Model</h2>
-<p>Regression models usually assume the fixed effects of covariate on response. has to random effects</p>
-<p>In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city <span class="citation">(<a href="#ref-dingInfluencesBuiltEnvironment2017" role="doc-biblioref">Ding, Mishra, et al. 2017</a>)</span>.
+<div id="other-structures" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Other Structures</h2>
+<ul>
+<li>Mixed Model</li>
+</ul>
+<p>Regression models usually assume the fixed effects of covariate on response. In many cases, some variables should be assigned with random effects.
+In travel survey data, every observation are nested in some geographic units, such as tract, TAZ, or city <span class="citation">(<a href="#ref-dingInfluencesBuiltEnvironment2017" role="doc-biblioref">Ding, Mishra, et al. 2017</a>)</span>.
 The geographic location often have some nature of artificial feature influencing travel but the factor is unknown or unobserved.
 When the data across many different regions, the model need to control the location effect to identify the crossed effect of built environment. For example, the hypothesis is whether density variable has a strong effects on travel in all place.</p>
 <p>In spatial analysis, autocorrelation is a common issue which means the observation values in a location will be affected by its neighbors. Mixed model can help to eliminate the neighborhood effects.</p>
-<span class="math display" id="eq:multiscale">\[\begin{equation}
+<p><span class="math display" id="eq:multiscale">\[\begin{equation}
 \tag{4.3}
 \mathbf{Y}=\mathbf{X}_\mathrm{H}\boldsymbol{\beta}+\mathbf{X}_\mathrm{N}{\gamma}+\mathbf{X}_\mathrm{U}{\delta}+\boldsymbol{\varepsilon}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{X}_\mathrm{U}\)</span>, <span class="math inline">\(\mathbf{X}_\mathrm{N}\)</span>, and <span class="math inline">\(\mathbf{X}_\mathrm{H}\)</span> are the same as above. <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of fixed effects. <span class="math inline">\(\boldsymbol{\gamma}\)</span> and <span class="math inline">\(\boldsymbol{\delta}\)</span> are two vectors of random effects at neighborhood and urban scales. Assume that <span class="math inline">\(\boldsymbol{\gamma}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{N})\)</span> and <span class="math inline">\(\boldsymbol{\delta}\sim N(\mathbf{0}, \boldsymbol{\Sigma}_\mathrm{U})\)</span>. And also assume <span class="math inline">\(Cov(\boldsymbol{\gamma},\boldsymbol{\delta})=Cov(\boldsymbol{\gamma},\boldsymbol{\varepsilon})=Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}\)</span>.</p>
-</div>
-<div id="non-linear-models" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Non-linear models</h2>
-<p>As <span class="citation"><a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">Clifton</a> (<a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">2017</a>)</span> said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods <span class="citation">(<a href="#ref-dingNonlinearAssociationsZonal2021" role="doc-biblioref">Ding et al. 2021</a>)</span>. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) <span class="citation">(<a href="#ref-hastieGeneralizedAdditiveModels1990" role="doc-biblioref">Hastie and Tibshirani 1990</a>)</span>, Ewing’s study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure ).</p>
+<ul>
+<li>Non-linear models</li>
+</ul>
+<p>As <span class="citation"><a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">Clifton</a> (<a href="#ref-cliftonGettingHereThere2017" role="doc-biblioref">2017</a>)</span> said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods <span class="citation">(<a href="#ref-dingNonlinearAssociationsZonal2021" role="doc-biblioref">Ding et al. 2021</a>)</span>. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) <span class="citation">(<a href="#ref-hastieGeneralizedAdditiveModels1990" role="doc-biblioref">Hastie and Tibshirani 1990</a>)</span>, Ewing’s study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure ).
+More and more studies reveal the non-linear relationship between population density and VMT (Cheng, De Vos, Zhao, Yang, &amp; Witlox, 2020; Ding, Cao, &amp; Næss, 2018; Hong, 2015).
+People can interpret the different trends as trigger effects, ceiling effects, U-shapes, hybrid, or synergy effect.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ewing-gam"></span>
 <img src="fig/Ewing_gam1.png" alt="Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form)" width="50%" />
 <p class="caption">
 Figure 4.4: Activity density v.s its smooth function ( Source: Ewing, R. 2021. Webinar: Transportation Benefits of Polycentric Urban Form)
 </p>
 </div>
-<span class="math display" id="eq:nonlinear">\[\begin{equation}
+<p><span class="math display" id="eq:nonlinear">\[\begin{equation}
 \tag{4.4}
 \mathrm{Y}=\mathbf{X}_\mathrm{C}\boldsymbol{\beta}_\mathrm{C}+m(\mathbf{X}_\mathrm{E})\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>In the model (Equation <a href="struc.html#eq:nonlinear">(4.4)</a>), <span class="math inline">\(m(\mathbf{X}_\mathrm{E})\)</span> is a proper function of built environment covariates.</p>
 <p>The non-linear methods can better perform goodness-of-fit, but the generated new data are unique and harder to interpret. The non-linear methods can disclose more information from the data. The risk is that their results are more likely to reflect the features of the data itself and cannot be generalized to other cases.</p>
 <p>The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The threshold studies in urban transportation field remain in the early stages.</p>
@@ -415,10 +433,10 @@ Figure 4.4: Activity density v.s its smooth function ( Source: Ewing, R. 2021. W
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-ben-arivaMETHODOLOGYSHORTRANGETRAVEL1977" class="csl-entry">
-Ben-Ariva, M., and T. J. Atherton. 1977. <span>“<span>METHODOLOGY</span> <span>FOR</span> <span>SHORT</span>-<span>RANGE</span> <span>TRAVEL</span> <span>DEMAND</span> <span>PREDICTIONS</span>. <span>ANALYSIS</span> <span>OF</span> <span>CARPOOLING</span> <span>INCENTIVES</span>.”</span> <em>Journal of Transport Economics and Policy</em> 11 (3). <a href="http://trid.trb.org/view/61044">http://trid.trb.org/view/61044</a>.
+Ben-Ariva, M., and T. J. Atherton. 1977. <span>“<span>METHODOLOGY FOR SHORT</span>-<span>RANGE TRAVEL DEMAND PREDICTIONS</span>. <span>ANALYSIS OF CARPOOLING INCENTIVES</span>.”</span> <em>Journal of Transport Economics and Policy</em> 11 (Analytic, 3). <a href="http://trid.trb.org/view/61044">http://trid.trb.org/view/61044</a>.
 </div>
 <div id="ref-cliftonGettingHereThere2017" class="csl-entry">
-Clifton, Kelly J. 2017. <span>“Getting <span>From</span> <span>Here</span> to <span>There</span>: <span>Comment</span> on <span>“</span><span>Does</span> <span>Compact</span> <span>Development</span> <span>Make</span> <span>People</span> <span>Drive</span> <span>Less</span>?<span>”</span>.”</span> <em>Journal of the American Planning Association</em> 83 (2): 148–51. <a href="https://doi.org/10.1080/01944363.2017.1290494">https://doi.org/10.1080/01944363.2017.1290494</a>.
+Clifton, Kelly J. 2017. <span>“Getting <span>From Here</span> to <span>There</span>: <span>Comment</span> on <span>‘<span>Does Compact Development Make People Drive Less</span>?’</span>.”</span> <em>Journal of the American Planning Association</em> 83 (2): 148–51. <a href="https://doi.org/10.1080/01944363.2017.1290494">https://doi.org/10.1080/01944363.2017.1290494</a>.
 </div>
 <div id="ref-devosIndirectEffectBuilt2021" class="csl-entry">
 De Vos, Jonas, Long Cheng, Md. Kamruzzaman, and Frank Witlox. 2021. <span>“The Indirect Effect of the Built Environment on Travel Mode Choice: <span>A</span> Focus on Recent Movers.”</span> <em>Journal of Transport Geography</em> 91 (February): 102983. <a href="https://doi.org/10.1016/j.jtrangeo.2021.102983">https://doi.org/10.1016/j.jtrangeo.2021.102983</a>.
@@ -433,16 +451,16 @@ Ding, Chuan, Sabyasachee Mishra, Guangquan Lu, Jiawen Yang, and Chao Liu. 2017. 
 Ding, Chuan, Donggen Wang, Chao Liu, Yi Zhang, and Jiawen Yang. 2017. <span>“Exploring the Influence of Built Environment on Travel Mode Choice Considering the Mediating Effects of Car Ownership and Travel Distance.”</span> <em>Transportation Research Part A: Policy and Practice</em> 100 (June): 65–80. <a href="https://doi.org/10.1016/j.tra.2017.04.008">https://doi.org/10.1016/j.tra.2017.04.008</a>.
 </div>
 <div id="ref-ewingVaryingInfluencesBuilt2015" class="csl-entry">
-Ewing, Reid, Guang Tian, JP Goates, Ming Zhang, Michael J Greenwald, Alex Joyce, John Kircher, and William Greene. 2015. <span>“Varying Influences of the Built Environment on Household Travel in 15 Diverse Regions of the <span>United</span> <span>States</span>.”</span> <em>Urban Studies</em> 52 (13): 2330–48. <a href="https://doi.org/10.1177/0042098014560991">https://doi.org/10.1177/0042098014560991</a>.
+Ewing, Reid, Guang Tian, JP Goates, Ming Zhang, Michael J Greenwald, Alex Joyce, John Kircher, and William Greene. 2015. <span>“Varying Influences of the Built Environment on Household Travel in 15 Diverse Regions of the <span>United States</span>.”</span> <em>Urban Studies</em> 52 (13): 2330–48. <a href="https://doi.org/10.1177/0042098014560991">https://doi.org/10.1177/0042098014560991</a>.
 </div>
 <div id="ref-gotschiComprehensiveConceptualFramework2017" class="csl-entry">
-Götschi, Thomas, Audrey de Nazelle, Christian Brand, Regine Gerike, B. Alasya, E. Anaya, I. Avila-Palencia, et al. 2017. <span>“Towards a <span>Comprehensive</span> <span>Conceptual</span> <span>Framework</span> of <span>Active</span> <span>Travel</span> <span>Behavior</span>: A <span>Review</span> and <span>Synthesis</span> of <span>Published</span> <span>Frameworks</span>.”</span> <em>Current Environmental Health Reports</em> 4 (3): 286–95. <a href="https://doi.org/10.1007/s40572-017-0149-9">https://doi.org/10.1007/s40572-017-0149-9</a>.
+Götschi, Thomas, Audrey de Nazelle, Christian Brand, Regine Gerike, B. Alasya, E. Anaya, I. Avila-Palencia, et al. 2017. <span>“Towards a <span>Comprehensive Conceptual Framework</span> of <span>Active Travel Behavior</span>: A <span>Review</span> and <span>Synthesis</span> of <span>Published Frameworks</span>.”</span> <em>Current Environmental Health Reports</em> 4 (3): 286–95. <a href="https://doi.org/10.1007/s40572-017-0149-9">https://doi.org/10.1007/s40572-017-0149-9</a>.
 </div>
 <div id="ref-hastieGeneralizedAdditiveModels1990" class="csl-entry">
-Hastie, T. J., and R. J. Tibshirani. 1990. <em>Generalized <span>Additive</span> <span>Models</span></em>. CRC Press.
+Hastie, T. J., and R. J. Tibshirani. 1990. <em>Generalized <span>Additive Models</span></em>. <span>CRC Press</span>. <a href="https://books.google.com?id=qa29r1Ze1coC">https://books.google.com?id=qa29r1Ze1coC</a>.
 </div>
 <div id="ref-maModelingTrafficCrash2015" class="csl-entry">
-Ma, Lu, Xuedong Yan, and Jinxian Weng. 2015. <span>“Modeling Traffic Crash Rates of Road Segments Through a Lognormal Hurdle Framework with Flexible Scale Parameter.”</span> <em>Journal of Advanced Transportation</em> 49 (8): 928–40. https://doi.org/<a href="https://doi.org/10.1002/atr.1322">https://doi.org/10.1002/atr.1322</a>.
+Ma, Lu, Xuedong Yan, and Jinxian Weng. 2015. <span>“Modeling Traffic Crash Rates of Road Segments Through a Lognormal Hurdle Framework with Flexible Scale Parameter.”</span> <em>Journal of Advanced Transportation</em> 49 (8): 928–40. <a href="https://doi.org/10.1002/atr.1322">https://doi.org/10.1002/atr.1322</a>.
 </div>
 <div id="ref-munshiBuiltEnvironmentMode2016" class="csl-entry">
 Munshi, Talat. 2016. <span>“Built Environment and Mode Choice Relationship for Commute Travel in the City of <span>Rajkot</span>, <span>India</span>.”</span> <em>Transportation Research Part D: Transport and Environment</em> 44 (May): 239–53. <a href="https://doi.org/10.1016/j.trd.2015.12.005">https://doi.org/10.1016/j.trd.2015.12.005</a>.
@@ -494,7 +512,7 @@ Van Acker, Veronique, and Frank Witlox. 2011. <span>“Commuting Trips Within To
         </div>
       </div>
 <a href="travel.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="multiple-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

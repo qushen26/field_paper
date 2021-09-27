@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Non-Linear Relationship | The Association Between Travel Behavior and Urban Form</title>
+  <meta name="description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Non-Linear Relationship | The Association Between Travel Behavior and Urban Form" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="qushen26/field_paper" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Non-Linear Relationship | The Association Between Travel Behavior and Urban Form" />
+  
+  <meta name="twitter:description" content="This is a field paper using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Shen Qu" />
+
+
+<meta name="date" content="2021-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variables-selections.html"/>
+<link rel="next" href="mixed-models-for-spatial-effects.html"/>
+<script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Field Paper</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Part I Theories and Framework</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#analytical-framework"><i class="fa fa-check"></i><b>1.2</b> Analytical Framework</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#content-organization"><i class="fa fa-check"></i><b>1.3</b> Content Organization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="form.html"><a href="form.html"><i class="fa fa-check"></i><b>2</b> Urban Form as Predictors</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="form.html"><a href="form.html#influencing-direction"><i class="fa fa-check"></i><b>2.1</b> Influencing Direction</a></li>
+<li class="chapter" data-level="2.2" data-path="form.html"><a href="form.html#influencing-factors"><i class="fa fa-check"></i><b>2.2</b> Influencing Factors</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="form.html"><a href="form.html#individual-factors"><i class="fa fa-check"></i><b>2.2.1</b> Individual Factors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="form.html"><a href="form.html#environmental-factors"><i class="fa fa-check"></i><b>2.2.2</b> Environmental Factors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="form.html"><a href="form.html#density"><i class="fa fa-check"></i><b>2.2.3</b> Density</a></li>
+<li class="chapter" data-level="2.2.4" data-path="form.html"><a href="form.html#d-variables"><i class="fa fa-check"></i><b>2.2.4</b> D-variables</a></li>
+<li class="chapter" data-level="2.2.5" data-path="form.html"><a href="form.html#synthesized-index"><i class="fa fa-check"></i><b>2.2.5</b> Synthesized Index</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="form.html"><a href="form.html#meta-aanalysis"><i class="fa fa-check"></i><b>2.3</b> Meta-Aanalysis</a></li>
+<li class="chapter" data-level="2.4" data-path="form.html"><a href="form.html#scale"><i class="fa fa-check"></i><b>2.4</b> Spatial Scales</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="form.html"><a href="form.html#modifiable-areal-unit-problem-maup"><i class="fa fa-check"></i><b>2.4.1</b> Modifiable areal unit problem (MAUP)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="form.html"><a href="form.html#aggregated-analysis"><i class="fa fa-check"></i><b>2.4.2</b> Aggregated Analysis</a></li>
+<li class="chapter" data-level="2.4.3" data-path="form.html"><a href="form.html#disaggregated-analysis"><i class="fa fa-check"></i><b>2.4.3</b> Disaggregated Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="travel.html"><a href="travel.html"><i class="fa fa-check"></i><b>3</b> Travel as Response</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="travel.html"><a href="travel.html#travel-variables"><i class="fa fa-check"></i><b>3.1</b> Travel Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="travel.html"><a href="travel.html#traveler-choice"><i class="fa fa-check"></i><b>3.2</b> Traveler Choice</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="travel.html"><a href="travel.html#rational-choice-theory"><i class="fa fa-check"></i><b>3.2.1</b> Rational Choice Theory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="travel.html"><a href="travel.html#bounded-rational-behavior"><i class="fa fa-check"></i><b>3.2.2</b> Bounded Rational Behavior</a></li>
+<li class="chapter" data-level="3.2.3" data-path="travel.html"><a href="travel.html#theory-of-planned-behavior"><i class="fa fa-check"></i><b>3.2.3</b> Theory of Planned Behavior</a></li>
+<li class="chapter" data-level="3.2.4" data-path="travel.html"><a href="travel.html#prospect-theory"><i class="fa fa-check"></i><b>3.2.4</b> Prospect Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="travel.html"><a href="travel.html#human-mobility"><i class="fa fa-check"></i><b>3.3</b> Human Mobility</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="travel.html"><a href="travel.html#distance-based-theories"><i class="fa fa-check"></i><b>3.3.1</b> Distance Based Theories</a></li>
+<li class="chapter" data-level="3.3.2" data-path="travel.html"><a href="travel.html#opportunity-based-theories"><i class="fa fa-check"></i><b>3.3.2</b> Opportunity Based Theories</a></li>
+<li class="chapter" data-level="3.3.3" data-path="travel.html"><a href="travel.html#time-geography"><i class="fa fa-check"></i><b>3.3.3</b> Time Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="travel.html"><a href="travel.html#probability-distributions"><i class="fa fa-check"></i><b>3.4</b> Probability Distributions</a></li>
+<li class="chapter" data-level="3.5" data-path="travel.html"><a href="travel.html#summary-opt."><i class="fa fa-check"></i><b>3.5</b> Summary (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="struc.html"><a href="struc.html"><i class="fa fa-check"></i><b>4</b> Model Structures</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="struc.html"><a href="struc.html#multistage"><i class="fa fa-check"></i><b>4.1</b> Multistage</a></li>
+<li class="chapter" data-level="4.2" data-path="struc.html"><a href="struc.html#decision-tree"><i class="fa fa-check"></i><b>4.2</b> Decision Tree</a></li>
+<li class="chapter" data-level="4.3" data-path="struc.html"><a href="struc.html#multi-scales"><i class="fa fa-check"></i><b>4.3</b> Multi-scales</a></li>
+<li class="chapter" data-level="4.4" data-path="struc.html"><a href="struc.html#other-structures"><i class="fa fa-check"></i><b>4.4</b> Other Structures</a></li>
+</ul></li>
+<li class="part"><span><b>Part II Statistical Methods</b></span></li>
+<li class="chapter" data-level="5" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#assumptions"><i class="fa fa-check"></i><b>5.1</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#additive-and-linearity"><i class="fa fa-check"></i><b>5.1.1</b> Additive and linearity</a></li>
+<li class="chapter" data-level="5.1.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#independent-identically-distributed-iid"><i class="fa fa-check"></i><b>5.1.2</b> Independent Identically Distributed (IID)</a></li>
+<li class="chapter" data-level="5.1.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#normality"><i class="fa fa-check"></i><b>5.1.3</b> Normality</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#estimations"><i class="fa fa-check"></i><b>5.2</b> Estimations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#least-squares"><i class="fa fa-check"></i><b>5.2.1</b> Least Squares</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#standardized-coefficients"><i class="fa fa-check"></i><b>5.2.2</b> Standardized coefficients</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#elasticity"><i class="fa fa-check"></i><b>5.2.3</b> Elasticity</a></li>
+<li class="chapter" data-level="5.2.4" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#combined-effects"><i class="fa fa-check"></i><b>5.2.4</b> Combined effects?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#inference"><i class="fa fa-check"></i><b>5.3</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#analysis-of-variance"><i class="fa fa-check"></i><b>5.3.1</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="5.3.2" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#hypothesis-test"><i class="fa fa-check"></i><b>5.3.2</b> Hypothesis Test</a></li>
+<li class="chapter" data-level="5.3.3" data-path="multiple-linear-models.html"><a href="multiple-linear-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3.3</b> Confidence Intervals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="adequacy.html"><a href="adequacy.html"><i class="fa fa-check"></i><b>6</b> Adequacy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="adequacy.html"><a href="adequacy.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness of fit</a></li>
+<li class="chapter" data-level="6.2" data-path="adequacy.html"><a href="adequacy.html#residuals-analysis"><i class="fa fa-check"></i><b>6.2</b> Residuals Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="adequacy.html"><a href="adequacy.html#heteroscedasticity"><i class="fa fa-check"></i><b>6.3</b> Heteroscedasticity</a></li>
+<li class="chapter" data-level="6.4" data-path="adequacy.html"><a href="adequacy.html#autocorrelation"><i class="fa fa-check"></i><b>6.4</b> Autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="multicollinearity.html"><a href="multicollinearity.html"><i class="fa fa-check"></i><b>7</b> Multicollinearity</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="multicollinearity.html"><a href="multicollinearity.html#variance-inflation"><i class="fa fa-check"></i><b>7.1</b> Variance Inflation</a></li>
+<li class="chapter" data-level="7.2" data-path="multicollinearity.html"><a href="multicollinearity.html#ridge-regression"><i class="fa fa-check"></i><b>7.2</b> Ridge Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="multicollinearity.html"><a href="multicollinearity.html#lasso-regression"><i class="fa fa-check"></i><b>7.3</b> Lasso Regression</a></li>
+<li class="chapter" data-level="7.4" data-path="multicollinearity.html"><a href="multicollinearity.html#principal-components-regression"><i class="fa fa-check"></i><b>7.4</b> Principal Components Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="variables-selections.html"><a href="variables-selections.html"><i class="fa fa-check"></i><b>8</b> Variables Selections</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="variables-selections.html"><a href="variables-selections.html#model-evaluation-criteria"><i class="fa fa-check"></i><b>8.1</b> Model Evaluation Criteria</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="variables-selections.html"><a href="variables-selections.html#mallows-c_p"><i class="fa fa-check"></i><b>8.1.1</b> Mallows <span class="math inline">\(C_p\)</span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="variables-selections.html"><a href="variables-selections.html#akaikebayesian-information-criterion-aicbic"><i class="fa fa-check"></i><b>8.1.2</b> Akaike/Bayesian Information Criterion (AIC/BIC)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="variables-selections.html"><a href="variables-selections.html#selecting-procedure"><i class="fa fa-check"></i><b>8.2</b> Selecting Procedure</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="variables-selections.html"><a href="variables-selections.html#all-possible-regressions"><i class="fa fa-check"></i><b>8.2.1</b> All Possible Regressions</a></li>
+<li class="chapter" data-level="8.2.2" data-path="variables-selections.html"><a href="variables-selections.html#best-subset-selection"><i class="fa fa-check"></i><b>8.2.2</b> Best Subset selection</a></li>
+<li class="chapter" data-level="8.2.3" data-path="variables-selections.html"><a href="variables-selections.html#stepwise-regression"><i class="fa fa-check"></i><b>8.2.3</b> Stepwise Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="variables-selections.html"><a href="variables-selections.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>8.3</b> Underfitting and Overfitting</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="variables-selections.html"><a href="variables-selections.html#underfitting"><i class="fa fa-check"></i><b>8.3.1</b> Underfitting</a></li>
+<li class="chapter" data-level="8.3.2" data-path="variables-selections.html"><a href="variables-selections.html#overfitting"><i class="fa fa-check"></i><b>8.3.2</b> Overfitting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html"><i class="fa fa-check"></i><b>9</b> Non-Linear Relationship</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#transformations"><i class="fa fa-check"></i><b>9.1</b> Transformations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#variance-stabilizing"><i class="fa fa-check"></i><b>9.1.1</b> Variance Stabilizing</a></li>
+<li class="chapter" data-level="9.1.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#linearizing"><i class="fa fa-check"></i><b>9.1.2</b> Linearizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#polynomial-regression"><i class="fa fa-check"></i><b>9.2</b> Polynomial Regression</a></li>
+<li class="chapter" data-level="9.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#basis-functions"><i class="fa fa-check"></i><b>9.3</b> Basis Functions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#step-functions"><i class="fa fa-check"></i><b>9.3.1</b> Step Functions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#splines-piecewise-polynomials"><i class="fa fa-check"></i><b>9.3.2</b> Splines (Piecewise Polynomials)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#smoothing-spline"><i class="fa fa-check"></i><b>9.3.3</b> Smoothing Spline</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#non-parameter-regression"><i class="fa fa-check"></i><b>9.4</b> Non-parameter Regression</a></li>
+<li class="chapter" data-level="9.5" data-path="non-linear-relationship.html"><a href="non-linear-relationship.html#generalized-additive-models"><i class="fa fa-check"></i><b>9.5</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html"><i class="fa fa-check"></i><b>10</b> Mixed Models for Spatial Effects</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#fixed-and-random-effects"><i class="fa fa-check"></i><b>10.1</b> Fixed and Random Effects</a></li>
+<li class="chapter" data-level="10.2" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#crossed-and-nested-effects"><i class="fa fa-check"></i><b>10.2</b> Crossed and Nested Effects</a></li>
+<li class="chapter" data-level="10.3" data-path="mixed-models-for-spatial-effects.html"><a href="mixed-models-for-spatial-effects.html#unbalanced-subgroup"><i class="fa fa-check"></i><b>10.3</b> Unbalanced Subgroup</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html"><i class="fa fa-check"></i><b>11</b> Generalized Linear Models for Travel Choice</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#binomial-response-models"><i class="fa fa-check"></i><b>11.1</b> Binomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#logit-models"><i class="fa fa-check"></i><b>11.1.1</b> Logit Models</a></li>
+<li class="chapter" data-level="11.1.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#probit-models-opt."><i class="fa fa-check"></i><b>11.1.2</b> Probit Models (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-response-models"><i class="fa fa-check"></i><b>11.2</b> Multinomial Response Models</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#multinomial-logit-models"><i class="fa fa-check"></i><b>11.2.1</b> Multinomial Logit models</a></li>
+<li class="chapter" data-level="11.2.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#discret-choice-models"><i class="fa fa-check"></i><b>11.2.2</b> Discret Choice Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#poisson-responeloglinear-models"><i class="fa fa-check"></i><b>11.3</b> Poisson Respone/Loglinear Models</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#negative-binomial-model"><i class="fa fa-check"></i><b>11.3.1</b> Negative Binomial Model</a></li>
+<li class="chapter" data-level="11.3.2" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#quasi-poisson-model"><i class="fa fa-check"></i><b>11.3.2</b> Quasi-Poisson Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#zero-inflated-and-hurdle-models"><i class="fa fa-check"></i><b>11.3.3</b> Zero-inflated and Hurdle Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="generalized-linear-models-for-travel-choice.html"><a href="generalized-linear-models-for-travel-choice.html#other-topic-opt."><i class="fa fa-check"></i><b>11.4</b> Other Topic (Opt.)</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="meta-analysis.html"><a href="meta-analysis.html"><i class="fa fa-check"></i><b>12</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="meta-analysis.html"><a href="meta-analysis.html#introduction"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="meta-analysis.html"><a href="meta-analysis.html#effect-sizes"><i class="fa fa-check"></i><b>12.2</b> Effect Sizes</a></li>
+<li class="chapter" data-level="12.3" data-path="meta-analysis.html"><a href="meta-analysis.html#cross-study-heterogeneity"><i class="fa fa-check"></i><b>12.3</b> cross-study Heterogeneity</a></li>
+<li class="chapter" data-level="12.4" data-path="meta-analysis.html"><a href="meta-analysis.html#meta-regression"><i class="fa fa-check"></i><b>12.4</b> Meta-Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="meta-analysis.html"><a href="meta-analysis.html#publication-bias"><i class="fa fa-check"></i><b>12.5</b> Publication Bias</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="meta-analysis.html"><a href="meta-analysis.html#checking-publication-bias"><i class="fa fa-check"></i><b>12.5.1</b> Checking Publication Bias</a></li>
+<li class="chapter" data-level="12.5.2" data-path="meta-analysis.html"><a href="meta-analysis.html#standard-error-based-methods"><i class="fa fa-check"></i><b>12.5.2</b> Standard Error-based Methods</a></li>
+<li class="chapter" data-level="12.5.3" data-path="meta-analysis.html"><a href="meta-analysis.html#p-value-based-methods"><i class="fa fa-check"></i><b>12.5.3</b> P value-based Methods</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Association Between Travel Behavior and Urban Form</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="non-linear-relationship" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Non-Linear Relationship</h1>
+<div id="transformations" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Transformations</h2>
+<p>Checking model adequacy shows if the underlying assumptions of regression model are violated. Research find data transformation can address this issues in many cases.</p>
+<p>Above discussion has shown that some assumptions are not valid for original VMT-urban form models. In literature, some regression models take logarithm transforms on all variables, while others only transform one or a part of them. Even though they have various data sources, it is unlikely that they are all correct or equivalent.</p>
+<div id="variance-stabilizing" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Variance Stabilizing</h3>
+<p>Equality of variance is a primary assumption of the regression model.
+When variance is not constant, the least-squares estimators will not give the minimized variance.
+Though the estimation is still unbiased, the standard errors of regression coefficients will be larger and the model becomes insensitive.
+Montgomery et al. (2021) give several useful variance stabilizing transformations</p>
+<table class=" lightable-classic" style="font-size: 7px; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:transformation">Table 9.1: </span>variance stabilizing transformations
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Relationship
+</th>
+<th style="text-align:left;">
+Transformation
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\propto E[y]\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^{1/2}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\propto (E[y])^2\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\ln(y)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\propto (E[y])^3\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^{-1/2}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\propto (E[y])^4\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^{-1}\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- +----------------------------+------------------+ -->
+<!-- | Relationship               | Transformation   | -->
+<!-- +:===========================+:================:+ -->
+<!-- | $\sigma^2\propto E[y]$     | $y^{1/2}$        | -->
+<!-- +----------------------------+------------------+ -->
+<!-- | $\sigma^2\propto (E[y])^2$ | $\ln(y)$         | -->
+<!-- +----------------------------+------------------+ -->
+<!-- | $\sigma^2\propto (E[y])^3$ | $y^{-1/2}$       | -->
+<!-- +----------------------------+------------------+ -->
+<!-- | $\sigma^2\propto (E[y])^4$ | $y^{-1}$         | -->
+<!-- +----------------------------+------------------+ -->
+<p>A preliminary study finds both the mean and variance of household daily VMT are close to 40.
+This relationship supports that the logarithm of <span class="math inline">\(\mathbf{y}\)</span> is a proper choice for variance stabilizing.</p>
+</div>
+<div id="linearizing" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Linearizing</h3>
+<p>Another fundamental assumption, linearity is also can be addressed by transformation.
+If the relationship between response and predictors is linearizable, a suitable transformation can construct a intrinsically linear model.
+Several common forms are shown in Table.</p>
+<table class=" lightable-classic" style="font-size: 7px; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:linearlizing">Table 9.2: </span>Linearizing transformations
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Relationship
+</th>
+<th style="text-align:left;">
+Transformation
+</th>
+<th style="text-align:left;">
+Linear.Form
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(y=\beta_0\exp[\beta_1x]\varepsilon\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=\ln(y)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=\ln \beta_0 +\beta_1x +\ln\varepsilon\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(y=\beta_0+\beta_1\ln(x)+\varepsilon\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(x^*=\ln(x)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y=\beta_0 +\beta_1x^*+\varepsilon\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(y=\beta_0x^{\beta_1}\varepsilon\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=\ln(y),x^*=\ln(x)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=\ln\beta_0 +\beta_1x^* +\ln\varepsilon\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(y=x/((\beta_0+\varepsilon)x+\beta_1)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=1/y,x^*=1/x\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(y^*=\beta_0 +\beta_1x^* +\varepsilon\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- +--------------------------------------+----------------------+-------------------------------------------+ -->
+<!-- | Linearizable Function                | Transformation       | Linear Form                               | -->
+<!-- +:=====================================+:====================:+==========================================:+ -->
+<!-- | $y=\beta_0\exp[\beta_1x]\varepsilon$ | $y'=\ln(y)$          | $y'=\ln \beta_0 +\beta_1x +\ln\varepsilon$| -->
+<!-- +--------------------------------------+----------------------+-------------------------------------------+ -->
+<!-- | $y=\beta_0+\beta_1\ln(x)+\varepsilon$| $x'=\ln(x)$          | $y=\beta_0 +\beta_1x'+\varepsilon$        | -->
+<!-- +--------------------------------------+----------------------+-------------------------------------------+ -->
+<!-- | $y=\beta_0x^{\beta_1}\varepsilon$    | $y'=\ln(y),x'=\ln(x)$| $y'=\ln\beta_0 +\beta_1x' +\ln\varepsilon$| -->
+<!-- +--------------------------------------+----------------------+-------------------------------------------+ -->
+<!-- |$y=x/((\beta_0+\varepsilon)x+\beta_1)$|$y'=1/y,x'=1/x$       | $y'=\beta_0 +\beta_1x' +\varepsilon$      | -->
+<!-- +--------------------------------------+----------------------+-------------------------------------------+ -->
+<p>Comparing these forms, the <span class="math inline">\(log(y)\)</span> transformation also called log-linear model gives a finite value of response <span class="math inline">\(y\)</span> when predictor <span class="math inline">\(x\to 0\)</span>.
+While the log-log model (<span class="math inline">\(y&#39;=\ln(y),x&#39;=\ln(x)\)</span>) will give an infinite value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\to 0\)</span>.
+This gives a useful hint when one chooses from log-linear and log-log models.</p>
+<p>Moreover, the <span class="math inline">\(log(y)\)</span> transformation changes the scale of error term.
+Only one term in <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\ln\varepsilon\)</span> can be close to constant mean and normal distributed.
+Therefore, residual diagnosis is still a effective way for choosing the proper form of transformation.</p>
+<p>Prior theories and experience can also help to make a proper choice.
+Recall the equation in PART I, both Gravity law and Zipf’s law also imply that a logarithm transformation on VMT is suitable. But whether taking logarithm transformation on urban form still needs further investigation.</p>
+</div>
+</div>
+<div id="polynomial-regression" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Polynomial Regression</h2>
+<p>An implication of Gravity Law is that the interaction between <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span> ((<a href="travel.html#eq:gravity-law">(3.1)</a>) should be considered. That is the attributes of origin and destination can collectively affect travel behavior.
+This involves the second-order polynomial regression models.</p>
+<p><span class="math display" id="eq:polym">\[\begin{equation}
+y=\beta_0+\beta_1x_1+\beta_2x_2+\beta_{11}x_1^2+\beta_{22}x_2^2+\beta_{12}x_1x_2+\varepsilon
+\tag{9.1}
+\end{equation}\]</span></p>
+<p>It has known that the distribution of VMT follow a decreasing exponential curve. Logarithm transformation can make the model at first order and convert the multiplicative relationship to additive.
+Keeping the order of the model as low as possible is a general rule.
+Because adding high-order terms could produce ill-conditioned <span class="math inline">\(\mathbf{X&#39;X}\)</span> matrix or strong multicollinearity between <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>.
+Only if the curve still exists after transformation, the second-order terms could be added to the model.</p>
+<p>High-order models is a global structure of non-linearity. That means this function should hold on the whole range of <span class="math inline">\(x\)</span>.
+Sometimes, the mechanism of a factor are different in different parts of the range of <span class="math inline">\(x\)</span>.
+A common example is the impact of income on travel distance. Research found that low-income and high-income households have longer travel distance than middle class households but the underlying reasons are different.
+High-income families have less constrains on driving decision than middle class so they drive more.
+However low-income families have stronger constrains than middle class because their homes are often far away from their workplaces or cheap grocery stores.
+The similar things could happen on age, population density and other factors.</p>
+</div>
+<div id="basis-functions" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Basis Functions</h2>
+<p>Using basis functions can avoid the weakness of a global structure. By dividing the range of <span class="math inline">\(x\)</span> into many segments, then a set of fixed and known functions can be applied to a variable <span class="math inline">\(X\)</span>.
+The points of the coefficients change are called <strong>knots</strong>.</p>
+<div id="step-functions" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Step Functions</h3>
+<p>Step functions is a special case of basis functions. Here the basis functions are a set of indicator functions.
+The idea is to convert a continuous variable, such as income into an ordered categorical variable. Let the cut-points are <span class="math inline">\(c_1,c_2,..., c_k\)</span> in the range of <span class="math inline">\(X\)</span>, then the new variables are</p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+C_0(x)=&amp;\mathbb{I}_{x&lt;c_1}\\
+C_1(x)=&amp;\mathbb{I}_{c_1\le x&lt;c_2}\\
+C_2(x)=&amp;\mathbb{I}_{c_2\le x&lt;c_3}\\
+\cdots\\
+C_k(x)=&amp;\mathbb{I}_{c_k\le x}\\
+\end{split}
+\end{equation}\]</span></p>
+<p>Then the linear model is</p>
+<p><span class="math display" id="eq:stepf">\[\begin{equation}
+y=\beta_0+\beta_1C_1(x)+\beta_2C_2(x)+\cdots+\beta_{k}x_k+\varepsilon
+\tag{9.2}
+\end{equation}\]</span></p>
+<p>Note that <span class="math inline">\(C_0(x)\)</span> don’t need to appear in the model because it is treated as the reference level.
+Step functions divide the whole curve into many bins. This action could miss the trend of curve.
+The choice of proper breakpoints is also a challenge.</p>
+</div>
+<div id="splines-piecewise-polynomials" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Splines (Piecewise Polynomials)</h3>
+<p>If the range of <span class="math inline">\(x\)</span> is divided into segments, each segment can fit a polynomial model. This method is called piecewise polynomial fitting or spline.</p>
+<p>Adding constrain can make the fitted curves being continues. And the additional constrains can make the first and second derivatives of the piecewise polynomial continues.
+A cubic polynomial with <span class="math inline">\(k\)</span> knots can add a truncated power basis function as</p>
+<p><span class="math display">\[h(x,c_i)=(x-c_i)^3_+=\begin{cases}(x-c_i)^3&amp;\text{if }x&gt;c_i\\0&amp;\text{otherwise}\end{cases}\]</span>
+then the spline with continuous first and second derivatives is</p>
+<p><span class="math display">\[y=\sum_{j=0}^3\beta_{0j}x^j+\sum_{i=i}^k\beta_{k}h(x,c_i)+\varepsilon\]</span></p>
+<p>By computing the MSEs of every models with different number of knots, cross validation can be used to examine the best number of knots.
+When adding more knots, the value of MSE decrease. The optimal choice is the minimum number of knots with respect to a “small enough” MSE.</p>
+</div>
+<div id="smoothing-spline" class="section level3" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> Smoothing Spline</h3>
+<p>Regression spline is very flexible so have the risk of overfitting. The fitted curve can go though all of the <span class="math inline">\(y_i\)</span> without constrains. Denote the function <span class="math inline">\(g(x)\)</span> represent the constraints. Smoothing spline can be expressed as</p>
+<p><span class="math display">\[\arg\min_{g}\left\{\sum_{i=1}^n(y_i-g(x_i)^2)+\lambda\int g&#39;&#39;(t)^2dt \right\}\]</span>
+where <span class="math inline">\(\lambda\)</span> is a nonegative tuning function. The left term of <span class="math inline">\(\sum_{i=1}^n(y_i-g(x_i)^2)\)</span> is the quadratic loss function. Loss reduction can improve the fitness of model.
+The right term of <span class="math inline">\(\lambda\int g&#39;&#39;(t)^2dt\)</span> is a penalty term. <span class="math inline">\(g&#39;&#39;(t)\)</span> is the second derivative of function <span class="math inline">\(g(\cdot)\)</span> measure the amount of slope changing. If the fitted curve is very wiggly, the value of penalty term will be very large.
+Therefore, smoothing spline tries to find the trade-off of loss and penalty by adjusting <span class="math inline">\(\lambda\)</span>.</p>
+<p>Using the leave-one-out (LOO) cross validation, the best value of <span class="math inline">\(\lambda\)</span> can be verified to minimize the SSE and achive the bias-variance balance.</p>
+</div>
+</div>
+<div id="non-parameter-regression" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Non-parameter Regression</h2>
+<p>Non-parameter regression is an approach using a model-free basis for prediction. The basic idea is to select a set of neighborhood points inside a window defined by a bandwidth <span class="math inline">\(b\)</span>. Then calculate <span class="math inline">\(S=[w_{ij}]\)</span>, a weighting matrix. The smoother estimate of the <span class="math inline">\(i\)</span>th response is</p>
+<p><span class="math display">\[\mathbf{\tilde y}=\mathbf{Sy}\quad \text{or } \tilde y_i=\sum_{j=1}^n w_{ij}y_j\]</span></p>
+<p>There are two common types of smoother, kernel and local regression.
+The kernel smoother uses a weighted average for the estimation. And the kernel functions satisfy <span class="math inline">\(K(t)\ge 0,\forall t\)</span>, <span class="math inline">\(\int_{-\infty}^{+\infty}K(t)dt=1\)</span>, and <span class="math inline">\(K(-t)=K(t)\)</span>.</p>
+<ul>
+<li>Kernel Regression</li>
+</ul>
+<p><span class="math display">\[w_{ij}=\frac{K(\frac{x_i-x_j}{b})}{\sum_{k=1}^n K(\frac{x_i-x_k}{b})}\]</span>
+- Local Weighted Regression</p>
+<p>For local regression, the neighborhood points inside the span can fit locally a regression line or a hyperplane rather than a constant.</p>
+</div>
+<div id="generalized-additive-models" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Generalized Additive Models</h2>
+<p>Generalized additive models (GAM) is an extension of Generalized Linear Models (GLM) which apply basis functions on several predictors.
+GAM provide a flexible framework because each variable <span class="math inline">\(X_j\)</span> has a separate basis function <span class="math inline">\(f_j(\cdot)\)</span>. The basis could be any non-linear functions including polynomial regression, steps, splines, local regression, and others. The whole model adds every variale’s contribution together in the end.
+A general form is</p>
+<p><span class="math display" id="eq:stepf">\[\begin{equation}
+y=\beta_{0}+\sum_{j=1}^{p-1}f_j(x_j)+\varepsilon
+\tag{9.2}
+\end{equation}\]</span></p>
+<p>Fitting GAM will estimate each function by holding the remaining variables fixed. This procedure will repeat many time to update the estimations until convergence.
+Interaction terms can also be added to the model.</p>
+<p>An advantage of GAM is the fitted functions can demonstrate the detailed nonlinear effects of each factor on response. It is more interpretable than synthesized indices. Researcher can use GAM to find some critical turning points as the evidence for policy intervention.</p>
+<!-- Expected finding, implications, and limitations -->
+
+</div>
+</div>
+<div id="disqus_thread"></div>
+
+<style>
+.hide-social-discuss {
+   background: white;
+   height: 20px;
+   position: relative;
+   width: 80%;
+   top: -60px;
+}
+</style>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://qs26.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    //add this to script
+    $("#disqus_thread").append("<div class='hide-social-discuss'></div>")
+
+</script>
+
+
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variables-selections.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mixed-models-for-spatial-effects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/qushen26/field_paper/edit/master/files/06-nonlinear.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/qushen26/field_paper/blob/master/files/06-nonlinear.Rmd",
+"text": null
+},
+"download": ["field_paper.pdf", "field_paper.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

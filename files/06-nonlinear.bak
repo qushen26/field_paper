@@ -11,7 +11,7 @@ Above discussion has shown that some assumptions are not valid for original VMT-
 Equality of variance is a primary assumption of the regression model. 
 When variance is not constant, the least-squares estimators will not give the minimized variance.
 Though the estimation is still unbiased, the standard errors of regression coefficients will be larger and the model becomes insensitive.
-Montgomery et al. (2021) give several useful variance stabilizing transformations
+@montgomeryIntroductionLinearRegression2021 give several useful variance stabilizing transformations
 
 ```{r,eval=T}
 library(kableExtra) 
@@ -36,14 +36,14 @@ kbl(data.frame(
 <!-- | $\sigma^2\propto (E[y])^4$ | $y^{-1}$         | -->
 <!-- +----------------------------+------------------+ -->
 
-A preliminary study finds both the mean and variance of household daily VMT are close to 40.
+A preliminary study finds both the mean and standard deviation of household daily VMT are close to 40.
 This relationship supports that the logarithm of $\mathbf{y}$ is a proper choice for variance stabilizing.
 
 ### Linearizing
 
 Another fundamental assumption, linearity is also can be addressed by transformation.
 If the relationship between response and predictors is linearizable, a suitable transformation can construct a intrinsically linear model.
-Several common forms are shown in Table.
+Several common forms from [@montgomeryIntroductionLinearRegression2021] are shown in Table.
 
 ```{r,eval=T}
 library(kableExtra) 

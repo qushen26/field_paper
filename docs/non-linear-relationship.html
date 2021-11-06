@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-27" />
+<meta name="date" content="2021-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -293,7 +293,7 @@ div.csl-indent {
 <p>Equality of variance is a primary assumption of the regression model.
 When variance is not constant, the least-squares estimators will not give the minimized variance.
 Though the estimation is still unbiased, the standard errors of regression coefficients will be larger and the model becomes insensitive.
-Montgomery et al. (2021) give several useful variance stabilizing transformations</p>
+<span class="citation"><a href="#ref-montgomeryIntroductionLinearRegression2021" role="doc-biblioref">Montgomery, Peck, and Vining</a> (<a href="#ref-montgomeryIntroductionLinearRegression2021" role="doc-biblioref">2021</a>)</span> give several useful variance stabilizing transformations</p>
 <table class=" lightable-classic" style="font-size: 7px; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:transformation">Table 9.1: </span>variance stabilizing transformations
@@ -354,14 +354,14 @@ Transformation
 <!-- +----------------------------+------------------+ -->
 <!-- | $\sigma^2\propto (E[y])^4$ | $y^{-1}$         | -->
 <!-- +----------------------------+------------------+ -->
-<p>A preliminary study finds both the mean and variance of household daily VMT are close to 40.
+<p>A preliminary study finds both the mean and standard deviation of household daily VMT are close to 40.
 This relationship supports that the logarithm of <span class="math inline">\(\mathbf{y}\)</span> is a proper choice for variance stabilizing.</p>
 </div>
 <div id="linearizing" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Linearizing</h3>
 <p>Another fundamental assumption, linearity is also can be addressed by transformation.
 If the relationship between response and predictors is linearizable, a suitable transformation can construct a intrinsically linear model.
-Several common forms are shown in Table.</p>
+Several common forms from <span class="citation">(<a href="#ref-montgomeryIntroductionLinearRegression2021" role="doc-biblioref">Montgomery, Peck, and Vining 2021</a>)</span> are shown in Table.</p>
 <table class=" lightable-classic" style="font-size: 7px; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:linearlizing">Table 9.2: </span>Linearizing transformations
@@ -540,6 +540,12 @@ Interaction terms can also be added to the model.</p>
 <p>An advantage of GAM is the fitted functions can demonstrate the detailed nonlinear effects of each factor on response. It is more interpretable than synthesized indices. Researcher can use GAM to find some critical turning points as the evidence for policy intervention.</p>
 <!-- Expected finding, implications, and limitations -->
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-montgomeryIntroductionLinearRegression2021" class="csl-entry">
+Montgomery, Douglas C., Elizabeth A. Peck, and G. Geoffrey Vining. 2021. <em>Introduction to <span>Linear Regression Analysis</span></em>. <span>John Wiley &amp; Sons</span>. <a href="https://books.google.com?id=tCIgEAAAQBAJ">https://books.google.com?id=tCIgEAAAQBAJ</a>.
 </div>
 </div>
 <div id="disqus_thread"></div>

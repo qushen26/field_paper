@@ -1,7 +1,6 @@
 # Model Structures {#struc}
 
-Based on related theories and studies, this section introduces several different analytical frameworks [@gotschiComprehensiveConceptualFramework2017]. All three explanatory frameworks can find supportive evidences.
-They reflect the cognitive differences on this topic from various perspectives.
+Based on related theories and studies, this section introduces several different analytical frameworks. @gotschiComprehensiveConceptualFramework2017  analyses the frameworks of 26 studies on active travel behavior. They propose a conceptual framework covering physical and social determinants, individual and multi-spatial levels.  The three explanatory frameworks introduced in this section can find supportive evidences and reflect the cognitive differences on travel-urban form studies. This section does not intend to figure out a 'best' framework. It demonstrates the structures from various perspectives would lead to distinct models and results. 
 
 
 ## Multistage
@@ -123,8 +122,8 @@ There could be two-way interaction effect between long-term and medium-term vari
 This framework works well for commuting trips because people will not change work place very often. The mobility theories also agree with this pattern.
 "commuting trips are stable in time and account for the largest fraction of the total flows in a population." [@vanackerCommutingTripsTours2011].
 
-However, the number of non-commuting trips in the U.S. have been more than commuting trips in recent years (TODO source).
-For non-commuting travel purposes, such as shopping, leisure, or socializing, the destination choices are more flexible.
+However, the number of weekdays commute trips in the U.S. are less than one third of total trips in many years [source: @nhts_2009].
+For non-work travel purposes, such as shopping, leisure, or socializing, the destination choices are more flexible.
 
 The decision could be one-step. In consideration of all the benefit and cost, The traveler make a decision including the destination, mode and route at the same moment.
 It also could be multistep. Starting from a travel demand or purpose, the traveler decides to make a trip then choose the destination, mode, route, and departure time step-by-step from available alternatives based on benefit, cost, and habit.
@@ -176,7 +175,8 @@ knitr::include_graphics("~/urbanstudy/field_paper/fig/tree.png")
 The single-step decision frameworks often require some strong assumptions. For example, the principle of utility maximization applied in either mode choice or VMT models is supposed to explain all the observations, including no-trip or no-driving cases.
 Here these observation are treated as censored data with negative utilities. (That will leads to Tobit model for VMT.)
 
-In contrast, a Decision Tree structure allows to use a hierarchical structure to fit different observation respectively (Figure \@ref(fig:Tree)).
+In contrast, a Decision Tree structure allows to use a hierarchical structure to fit different observation respectively (Figure \@ref(fig:Tree)). A similar figure can be found in @ewingTrafficGeneratedMixedUse2011 's Figure .1.
+This structure is suitable for the studies including both mode choice and distance/time variables [@maModelingTrafficCrash2015; @ewingVaryingInfluencesBuilt2015].
 The model will split into three equations \@ref(eq:Tree)
 Starting from a travel demand or purpose, the traveler decides to make a trip or not at the first-level dichotomous node. 
 A logit or probit model will fit all the data using a suitable model specification.
@@ -231,13 +231,13 @@ node [shape = oval, style=filled, fillcolor = White, height = 0.75, width = 1,
   label = 'Urban Scale \\n (urban-form factors)'; fillcolor= WhiteSmoke; 
      
     node [fillcolor = Beige];
-    UT[label = 'Macro \\n Travel \\n Behavior'];		 
+    UT[label = 'Macro \\n Travel \\n Feature'];		 
 
     subgraph cluster_BE{
     label = 'Neighborhood Scale \\n (built-environmnet factors)'; fillcolor= PapayaWhip; 
 
       node [fillcolor = palegreen];
-      NT[label = 'Meso \\n Travel \\n Behavior'];
+      NT[label = 'Meso \\n Travel \\n Pattern'];
 		    
 	    subgraph cluster_H{
 	    label = 'Household Scale \\n (socio-demographic \\n characteristics)'; fillcolor= '#fee08b';
@@ -256,9 +256,9 @@ knitr::include_graphics("~/urbanstudy/field_paper/fig/mscale.png")
 ```
 
 As discussed in previous section, the external factors affect individual's travel behavior at multiple scales (Figure \@ref(fig:Mscale)).
-Van Dender and Clever (2013) doubt weither VMT is determined by local built envrionment factors.
-
-It is necessary to distinguish the meso-scale and macro-scale variable.
+This structure is adapted by many studies in recent years [@ewingTrafficGeneratedMixedUse2011, Fig.3].
+Multi-scales studies distinguish the micro-, meso, and macro-scale variables [@dingInfluencesBuiltEnvironment2017;@leeComparingImpactsLocal2020].
+According the results, @van2013recent doubt whether VMT is determined by local built environment factors.
 The external factors always affect a group of individuals. Therefore, the meso-scale factors like built environment still can be examined. But the social and nature environment will impact all the people living inside the cities and regions. 
 Only when the data sources cover many cities or regions, these factors can be involved in the models.(Equation \@ref(eq:multiscale))
 
@@ -295,8 +295,8 @@ where $\mathbf{X}_\mathrm{U}$, $\mathbf{X}_\mathrm{N}$, and $\mathbf{X}_\mathrm{
 
 - Non-linear models
 
-As @cliftonGettingHereThere2017 said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], Ewing's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
-More and more studies reveal the non-linear relationship between population density and VMT (Cheng, De Vos, Zhao, Yang, & Witlox, 2020; Ding, Cao, & Næss, 2018; Hong, 2015).
+As @cliftonGettingHereThere2017 said, built environment-travel studies often assume the linearity holds for the density measures and the travel outcome of interest. In practice, the relationship of trip vesus built environment variables may be non-linear or follow a step function with lower and upper threshold. The shape of the curve is highly informative. Recently, scholars have an increasing interest in the non-parameter methods [@dingNonlinearAssociationsZonal2021]. The overall effects of density might be small. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional. For example, Using Generalized Additive Model (GAM) [@hastieGeneralizedAdditiveModels1990], @ewingReducingVehicleMiles2020 's study finds some potential points of encouraging shorter driving. His study recommended the suitable activity density (population and employment size/square mile) should be between 10000-25000 according to a center type (Figure \ref{ewing-gam}).
+More and more studies reveal the non-linear relationship between population density and VMT [@chengExaminingNonlinearBuilt2020; @dingApplyingGradientBoosting2018].
 People can interpret the different trends as trigger effects, ceiling effects, U-shapes, hybrid, or synergy effect.
 
 
@@ -317,7 +317,79 @@ The non-linear methods can better perform goodness-of-fit, but the generated new
 
 The results of linear and non-linear models cannot be compared because their underlying assumptions of distribution are different. The threshold studies in urban transportation field remain in the early stages. 
 
+# Summary I
 
+- Questions
+
+After reviewing the theories and analysis frameworks, we go back to the real problems. 
+Try to imagine a scenario of publish hearing. A bill under consideration is about changing the rule of land use and development (e.g. Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots in 2019 ^[https://www.oregon.gov/lcd/UP/Pages/Housing-Choices.aspx]). 
+A scholar is asked to clarify the potential impact of urban form on travel behavior.
+It is widely recognized that less driving means a more healthy, environment-friendly lifestyle.
+Two common but distinct questions are: (1). The denser areas make people drive less? (2). People in denser areas drive less? 
+
+Previous discussion tells us that answering Question (1) needs causal inference, which is hard for observational studies.
+Some techniques (e.g. Difference in differences (DID)) try to identify the policy implications.
+But the transformation of land use is gradual over several years. Under the new law, many factors are changing in the meantime (e.g. real estate market, parking space).
+Some uncontrollable factors could also shift the outcomes (e.g. pandemic, autonomous vehicles).
+
+The answer of Question (2) looks more conservative but is still powerful. If the people lived inside UGB or TOD areas really drive less than outside, the policies are successful either because original residents change their behavior or because new residents move in.
+Therefore, this paper stays on the studies of association rather than causality. 
+The major question is how people's travel behaviors change along with the urban-form factors.
+
+- Factors
+
+Many individual and environmental factors affect travel behaviors. Why people choose the framework of D-variables?
+Because the direct intervention on many influencing factors is impossible (e.g. climate, age, income).
+Or some interventions have tremendous economic and political costs (e.g. road capacity, fuel price).
+D-variables provide a stable and applicable framework for examining the influences of the common planning elements on travel.
+The results of study can convert to the guideline and recommended values.
+The accessibility-centered proposal are more close to the nature of travel behavior. But this concept is hard to convert to some 'accessible' measurement.
+
+Previous studies show the impact of D-variables are weak. Although this conclusion is controversial during in academia.
+This result obviously is not compelling in public hearing.
+Some synthesized index from D-variables show much stronger effects on travel. This method cannot tell us what should we do in practice.
+But it implies the answer may still hide inside the covariates and is waiting to be able to reveal more meaningful information.
+
+The studies at different scales also tell us that the meaning of one factor could change with the scales.
+The neighborhood's density and the city's density are two different predictors.
+the words of 'ecological fallacy' could make people think that the higher resolution and more detailed data would give more accurate estimates and are more close to the truth.
+However, there might be many truth at the different spatial levels. 
+A suitable study sign should select the suitable factors at households, neighborhoods, or city levels based on each specific research questions.
+
+
+- Goals
+
+Frequency of trip, traffic mode split, and travel distance are three major dependent variables.
+The theory of Utility Maximization tell us a trip as an event must have some 'utility' or 'benefit.'
+Nobody want to reduce the total number of trips because it reflects the social activity level and is a sign of urban prosperity.
+Given a fixed number of trips, people don't object to a sustainable way. More shared trips with shorter distance are desirable.
+Hence mode split and driving distance are the targets in this field.
+
+TPB and prospect theory could better explain people's decision and choice.
+This fact remind us researchers should not have some high expectations about the role of urban form.
+Adding the attitude, habit, intention into the models does improve the goodness of fit.
+Individual travel behavior and social travel pattern might be also different topics.
+The studies of the former could be applied on micro design while the studies of the later are more important for policy making.
+
+Both of distance-based theories and opportunity-based theories inspire us to rethink the relationship between travel and D-variables.
+Density, mixed land use means more opportunities in the same area.
+Design (intersection density or proportion of four-way intersections) and distance to transit represent the 'resistance' or cost.
+Destination accessibility measures both the resistance and opportunities (e.g. distance to CBD or available jobs within a given travel time).
+That might be the reason that some studies find destination accessibility has the strongest influence on travel.
+Urban transportation is a connected system. Travel survey-based studies may have some systematic drawbacks on the destination side.
+
+- Paths
+
+Researchers could choose a suitable framework of analysis for their research questions.
+Multistage framework can be used on longitudinal studies. Collecting the data of residents relocation, their car ownership, and travel behavior can figure out how these variables change with the built environment over many years.
+This type of study may have limitation for necessity and sufficiency but a long-term evidence is often more impressive for public opinion.
+
+A tree structure covering all decision nodes could reveal the whole travel pattern better. Trip decision, mode choice, and driving distance form the travel pattern. Merely looking at one node could be misleading (e.g. a person has many short driving trips. While another take more bus but makes long drive).
+
+A hierarchical framework helps to identify one factor's effective scale on travel.
+It matters because each policy has its affecting scope. UBD imposes the radius of urban development. TOD projects change the built environment around the stations. House Bill 2001 releases the restriction on only low-dense communities.
+
+The threshold analysis could find the effective range of one factor. It helps to select the strategic focus areas and makes priority planning for limited public resources.
 
 <!-- All factors related to spatial distributions have the morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->
 <!-- such as road network connection -->

@@ -24,7 +24,7 @@
 <meta name="author" content="Shen Qu" />
 
 
-<meta name="date" content="2021-09-27" />
+<meta name="date" content="2021-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,7 +288,7 @@ div.csl-indent {
 Chapter 5 to 10 introduce the main methods could be applied on VMT-urban form models because the response are continue variables. The models of mode choice are placed in Chapter of Generalized linear models.
 The last chapter Meta-Analysis introduces basic ideas and approaches of meta-analysis and dealing with publication bias.</p>
 <p>These contents focus on some analysis which often be neglected or omitted in travel-urban form models and may give some inspiration for improving current studies.
-Hence, these are mostly from several textbooks and will not involve the advanced techniques in recent published papers in statistics.</p>
+Hence, these are mostly from several textbooks <span class="citation">(<a href="#ref-casellaStatisticalInference2002" role="doc-biblioref">Casella and Berger 2002</a>; <a href="#ref-montgomeryIntroductionLinearRegression2021" role="doc-biblioref">Montgomery, Peck, and Vining 2021</a>; <a href="#ref-ravishankerFirstCourseLinear2020" role="doc-biblioref">Ravishanker and Dey 2020</a>)</span> and lecture notes by Dr. Robert Fountain, Dr. Nadeeshani Jayasena, and Dr. Jong Sung Kim. It will not involve the front edge of techniques in recent published papers in statistics.</p>
 <div id="assumptions" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Assumptions</h2>
 <div id="additive-and-linearity" class="section level3" number="5.1.1">
@@ -314,7 +314,7 @@ Cov[\varepsilon_i,\varepsilon_j] = 0,\quad i\neq j
 \end{equation}\]</span></p>
 <p>Once the conditions of IID are satisfied, the Gauss - Markov theorem <a href="multiple-linear-models.html#thm:g-m">5.1</a> proves that least-square method could give the minimum-variance unbiased estimators (MVUE) or called the best linear unbiased estimators (BLUE). These conditions are not strict and make regression method widely applicable.</p>
 <div class="theorem">
-<p><span id="thm:g-m" class="theorem"><strong>Theorem 5.1  (Gauss - Markov theorem) </strong></span>For the regression model <a href="intro.html#eq:lm">(1.1)</a> with the assumptions <span class="math inline">\(E(\varepsilon) = 0\)</span>, <span class="math inline">\(Var(\varepsilon) = \sigma^2\)</span>, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the <span class="math inline">\(y_i\)</span>. (Montgomery et al., 2021)</p>
+<p><span id="thm:g-m" class="theorem"><strong>Theorem 5.1  (Gauss - Markov theorem) </strong></span>For the regression model <a href="intro.html#eq:lm">(1.1)</a> with the assumptions <span class="math inline">\(E(\varepsilon) = 0\)</span>, <span class="math inline">\(Var(\varepsilon) = \sigma^2\)</span>, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the <span class="math inline">\(y_i\)</span>. <span class="citation">(<a href="#ref-montgomeryIntroductionLinearRegression2021" role="doc-biblioref">Montgomery, Peck, and Vining 2021</a>)</span></p>
 <p>Another version is that: Under Models II - VII, if <span class="math inline">\(\lambda&#39;\beta\)</span> is estimable and <span class="math inline">\(\hat\beta\)</span> is any solution to the normal equations, then <span class="math inline">\(\lambda&#39;\hat\beta\)</span> is a linear unbiased estimator of <span class="math inline">\(\lambda&#39;\beta\)</span> and, under Model II, the variance of <span class="math inline">\(\lambda&#39;\hat\beta\)</span> is uniformly less than that of any other linear unbiased estimator of <span class="math inline">\(\lambda&#39;\beta\)</span> (IX, Theorem E13, p38)</p>
 </div>
 <p>Unfortunately, many of the predictors are correlated. Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Diagonusis and Validation.</p>
@@ -343,7 +343,7 @@ Cov[\varepsilon_i,\varepsilon_j] = 0,\quad i\neq j
 \hat\sigma^2=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta})&#39;(\mathbf{y-X}\boldsymbol{\hat\beta})
 \tag{5.5}
 \end{equation}\]</span></p>
-<p>Here requires <span class="math inline">\(\mathbf{X&#39;X}\)</span> are invertible, that is, the covariates are linearly independent if <span class="math inline">\(\mathbf{X}\)</span> has rank <span class="math inline">\(p\)</span> (V., Definition, p.22).</p>
+<p>Here requires <span class="math inline">\(\mathbf{X&#39;X}\)</span> are invertible, that is, the covariates are linearly independent if <span class="math inline">\(\mathbf{X}\)</span> has rank <span class="math inline">\(p\)</span> <span class="citation">(<a href="#ref-kimLectureNotes2020" role="doc-biblioref">Kim 2020</a>, V., Definition, p.22)</span>.</p>
 <p>Given the estimated coefficients, the model can give the fitted values of response as:</p>
 <p><span class="math display" id="eq:fitted-y">\[\begin{equation}
 \mathbf{\hat y}=\mathbf{X}\boldsymbol{\hat\beta}=\mathbf{X}(\mathbf{X&#39;X})^{-1}\mathbf{X&#39;y}= \mathbf{Hy}
@@ -622,11 +622,23 @@ t_0=\frac{\hat\beta_j}{se(\hat\beta_j)}=\frac{\hat\beta_j}{\sqrt{\hat\sigma^2C_{
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-casellaStatisticalInference2002" class="csl-entry">
+Casella, George, and Roger L. Berger. 2002. <em>Statistical Inference</em>. 2nd ed. <span>Australia ; Pacific Grove, CA</span>: <span>Thomson Learning</span>.
+</div>
 <div id="ref-ewingTravelBuiltEnvironment2010" class="csl-entry">
 ———. 2010. <span>“Travel and the <span>Built Environment</span>.”</span> <em>Journal of the American Planning Association</em> 76 (3): 265–94. <a href="https://doi.org/10.1080/01944361003766766">https://doi.org/10.1080/01944361003766766</a>.
 </div>
+<div id="ref-kimLectureNotes2020" class="csl-entry">
+Kim, Jong Sung. 2020. <span>“Lecture <span>Notes</span>.”</span>
+</div>
 <div id="ref-mccarthyTransportationEconomicsTheory2001" class="csl-entry">
-McCarthy, Patrick S. 2001. <em>Transportation <span>Economics</span>: <span>Theory</span> and <span>Practice</span> : A <span>Case Study Approach</span></em>. <span>Blackwell Publishers</span>. <a href="https://books.google.com?id=NvywQgAACAAJ">https://books.google.com?id=NvywQgAACAAJ</a>.
+McCarthy, Patrick S. 2001. <em>Transportation <span>Economics</span>: Theory and <span>Practice</span> : A <span>Case Study Approach</span></em>. <span>Blackwell Publishers</span>. <a href="https://books.google.com?id=NvywQgAACAAJ">https://books.google.com?id=NvywQgAACAAJ</a>.
+</div>
+<div id="ref-montgomeryIntroductionLinearRegression2021" class="csl-entry">
+Montgomery, Douglas C., Elizabeth A. Peck, and G. Geoffrey Vining. 2021. <em>Introduction to <span>Linear Regression Analysis</span></em>. <span>John Wiley &amp; Sons</span>. <a href="https://books.google.com?id=tCIgEAAAQBAJ">https://books.google.com?id=tCIgEAAAQBAJ</a>.
+</div>
+<div id="ref-ravishankerFirstCourseLinear2020" class="csl-entry">
+Ravishanker, Nalini, and Dipak K. Dey. 2020. <em>A <span>First Course</span> in <span>Linear Model Theory</span></em>. <span>CRC Press</span>. <a href="https://books.google.com?id=i2r0DwAAQBAJ">https://books.google.com?id=i2r0DwAAQBAJ</a>.
 </div>
 </div>
 <div id="disqus_thread"></div>

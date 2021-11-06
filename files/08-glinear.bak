@@ -128,7 +128,7 @@ And the systematic component is $\eta_{ij}=\mathbf{X}_i'\boldsymbol\beta_j$
 
 ### Discret Choice Models
 
-McFadden (1973) proposed the discrete choice models also called multinomial/conditional logit model.
+@mcfaddenConditionalLogitAnalysis1973 proposed the discrete choice models also called multinomial/conditional logit model.
 This model introduces $U_{ij}$ as the random utility of $j$th choice. Then based on Utility Maximum theory, 
 
 \begin{equation}

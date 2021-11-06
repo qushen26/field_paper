@@ -9,7 +9,7 @@ Chapter 5 to 10 introduce the main methods could be applied on VMT-urban form mo
 The last chapter Meta-Analysis introduces basic ideas and approaches of meta-analysis and dealing with publication bias. 
 
 These contents focus on some analysis which often be neglected or omitted in travel-urban form models and may give some inspiration for improving current studies. 
-Hence, these are mostly from several textbooks and will not involve the advanced techniques in recent published papers in statistics.
+Hence, these are mostly from several textbooks [@casellaStatisticalInference2002; @montgomeryIntroductionLinearRegression2021;@ravishankerFirstCourseLinear2020] and lecture notes by Dr. Robert Fountain, Dr. Nadeeshani Jayasena, and Dr. Jong Sung Kim. It will not involve the front edge of techniques in recent published papers in statistics.
 
 ## Assumptions
 
@@ -43,12 +43,12 @@ Cov[\varepsilon_i,\varepsilon_j] = 0,\quad i\neq j
 Once the conditions of IID are satisfied, the Gauss - Markov theorem \@ref(thm:g-m) proves that least-square method could give the minimum-variance unbiased estimators (MVUE) or called the best linear unbiased estimators (BLUE). These conditions are not strict and make regression method widely applicable.
 
 ::: {#g-m .theorem name="Gauss - Markov theorem"}
-For the regression model \@ref(eq:lm) with the assumptions $E(\varepsilon) = 0$, $Var(\varepsilon) = \sigma^2$, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the $y_i$. (Montgomery et al., 2021)
+For the regression model \@ref(eq:lm) with the assumptions $E(\varepsilon) = 0$, $Var(\varepsilon) = \sigma^2$, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the $y_i$. [@montgomeryIntroductionLinearRegression2021]
 
-Another version is that: Under Models II - VII, if $\lambda'\beta$ is estimable and $\hat\beta$ is any solution to the normal equations, then $\lambda'\hat\beta$ is a linear unbiased estimator of $\lambda'\beta$ and, under Model II, the variance of $\lambda'\hat\beta$ is uniformly less than that of any other linear unbiased estimator of $\lambda'\beta$ (IX, Theorem E13, p38)
+Another version is that: Under Models II - VII, if $\lambda'\beta$ is estimable and $\hat\beta$ is any solution to the normal equations, then $\lambda'\hat\beta$ is a linear unbiased estimator of $\lambda'\beta$ and, under Model II, the variance of $\lambda'\hat\beta$ is uniformly less than that of any other linear unbiased estimator of $\lambda'\beta$ [@kimLectureNotes2020,IX, Theorem E13, p38].
 :::
 
-Unfortunately, many of the predictors are correlated. Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Diagonusis and Validation.
+Unfortunately, many of the predictors are correlated. Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Adequacy.
 
 ### Normality
 
@@ -79,7 +79,7 @@ and
 \end{equation}
 
 
-Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ (V., Definition, p.22).
+Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ [@kimLectureNotes2020, V., Definition, p.22].
 
 Given the estimated coefficients, the model can give the fitted values of response as:
 
@@ -205,19 +205,19 @@ Elasticity= c('$\\beta\\frac{X_i}{Y_i}$','$\\beta X_i$','$\\beta\\frac{1}{Y_i}$'
 <!-- : Elasticity Estimates for Various Functional Forms -->
 
 It might be a typo that @ewingTravelBuiltEnvironment2010 use the formula of $\beta \bar X\left(1-\frac{\bar Y}{n}\right)$ for Logit model.
-In Poisson model and Negative Binomial model, $\lambda_i=\exp[\mathbf{x}_i'\boldsymbol{\beta}]$ (Greene, 2018, eq.18-17,21).
-For truncated Poisson model: $\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta$ (Greene, 2018, eq.18-23).
-Hurdle model will give separate marginal(partial) effects (Greene, 2018, example 18.20)
+In Poisson model and Negative Binomial model, $\lambda_i=\exp[\mathbf{x}_i'\boldsymbol{\beta}]$ [@greeneEconometricAnalysis2018, eq.18-17,21].
+For truncated Poisson model: $\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta$ [@greeneEconometricAnalysis2018, eq.18-23].
+Hurdle model will give separate marginal(partial) effects [@greeneEconometricAnalysis2018, example 18.20].
 
 ### Combined effects?
 
-Some studies sums up the standardized coefficients or elasticities and called the summation as combined effects [leeComparingImpactsLocal2020]. Although these values are dimensionless, this method is problematic because different model specifications and data ranges are not comparable.
+Some studies sums up the standardized coefficients or elasticities and called the summation as combined effects [@leeComparingImpactsLocal2020]. Although these values are dimensionless, this method is problematic because different model specifications and data ranges are not comparable.
 
 ## Inference
 
 ### Analysis of Variance
 
-Analysis of Variance (ANOVA) is the fundamental approach in regression analysis. Actually, this method analysis the variation in means rather than variances themselves (Casella & Berger, 2002, Ch.11).
+Analysis of Variance (ANOVA) is the fundamental approach in regression analysis. Actually, this method analysis the variation in means rather than variances themselves [@casellaStatisticalInference2002, Ch.11].
 
 Once the linear relationship holds, the response $\mathbf{y}$ can be decomposed to
 
@@ -250,7 +250,7 @@ H_1:&\quad \text{at least one } \beta_j \neq 0,\ j=0,1,...,(p-1)\\
 (\#eq:hyp-1)
 \end{equation}
 
-By Theorem D14 (XX, p.90), if an $n\times1$random vector $\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})$, then
+By Theorem D14 [@kimLectureNotes2020,XX, p.90], if an $n\times1$random vector $\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})$, then
 
 \begin{equation}
 \mathbf{y'y} \sim \chi^2(n,\frac12\boldsymbol{\mu'\mu})
@@ -482,7 +482,7 @@ V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^
 (\#eq:agg-v)
 \end{equation}
 
-There are three procedures, Bartlett's likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity (Ravishanker & Dey, 2020, 8.1.3, pp.288-290)
+There are three procedures, Bartlett's likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity [@ravishankerFirstCourseLinear2020, 8.1.3, pp.288-290]
 
 
 ## Autocorrelation
@@ -550,7 +550,7 @@ Orthogonalization before fitting the model might be helpful. Other approaches su
 Least squares method gives the unbiased estimates of regression coefficients. 
 However, multicollinearity will lead to inflated variance and make the estimates unstable and unreliable.
 To get a smaller variance, a tradeoff is to release the requirement of unbiasedness.
-Hoerl and Kennard (1970) proposed ridge regression to address the nonorthogonal problems.
+@hoerlRidgeRegressionBiased1970 proposed ridge regression to address the nonorthogonal problems.
 Denote $\boldsymbol{\hat\beta}_{R}$ are biased estimates but its variance is small enough.
 
 \begin{equation}
@@ -604,7 +604,7 @@ The advantage of ridge regression is to abtain a suitable set of parameter estim
 It can also be useful for variable selection. The variables with unstable ridge trace or tending toward the value of zero can be removed from the model.
 
 In many case, the ridge trace is erratic divergence and may revert back to least square estimates. 
-Jensen and Ramirez(2010, 2012) proposed surrogate model to further improve ridge regression. Surrogate model chooses $k$ depend on matrix $\mathbf{X}$ and free to $\mathbf{Y}$. 
+[@jensenSurrogateModelsIllconditioned2010a;@jensenVariationsRidgeTraces2012] proposed surrogate model to further improve ridge regression. Surrogate model chooses $k$ depend on matrix $\mathbf{X}$ and free to $\mathbf{Y}$. 
 
 Using a compact singular value decomposition (SVD), the original can be decomposed to maxtix$\mathbf{X}=\mathbf{PD_{\xi}Q}'$. $\mathbf{P}$ and $\mathbf{Q}$ are orthogonal. The columns of $\mathbf{P}$ and $\mathbf{Q}$ are left-singular vectors and right-singular vectors of $\mathbf{X}$.
 It satisfies $\mathbf{P'P}=\mathbf{I}$ and $\mathbf{D}_{\xi}=\text{diag}(\xi_1,...,\xi_p)$ is decreasing singular values. Then $\mathbf{X}_k=\mathbf{PD}((\xi_i^2+k_i)^{1/2})\mathbf{Q}'$ and 
@@ -767,7 +767,7 @@ AIC has a similar characteristic with $C_p$ that it will decrease when adding ex
 (\#eq:aic)
 \end{equation}
 
-Bayesian information criterion (BIC) is the extension of AIC. Schwartz (1978) proposed a version of BIC with higher penalty for adding predictors when sample size is large.
+Bayesian information criterion (BIC) is the extension of AIC. @schwarzEstimatingDimensionModel1978 proposed a version of BIC with higher penalty for adding predictors when sample size is large.
 
 \begin{equation}
 \mathrm{BIC}=n\ln\left(\frac{1}{n} \mathrm{SSE} \right)+ p\ln(n)

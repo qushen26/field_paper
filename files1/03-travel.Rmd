@@ -1,0 +1,205 @@
+# Travel as Response {#travel}
+
+Two different perspectives, individual and collective, can explain travel behavior and car use. When people contextualize travel as a personal choice or decision-making, the traveler as a subject makes mode choices, driving or not. When travel behavior is understood as a social phenomenon, researchers observe and understand all the trip distance, time, and distributions as a whole.
+
+The two perspectives derived two schools of theory, traveler choice, and human mobility. In the school of traveler choice, travel distance could be treated as an independent variable, a part of travel cost, or decided in the next step after mode choice, such as route choice. In the school of human mobility, driving distance grabs more attention.
+
+## Travel Variables
+
+Three dimensions can reflect the degree of car use, travel mode, driving frequency, and driving distance. Previous studies commonly choose two metrics for measuring them, the share of auto trips (or other modes) and Vehicle Miles Traveled (VMT).
+
+The mode share is calculated by dividing the number of chosen modes over the total number of trips. The leading travel modes, transit, bicycle, and walking, are the alternatives to driving a personal car. Given the same travel demand, more active and transit modes mean less car use. VMT is used to measure the travel distance made by a private vehicle. An integrated viewpoint treats the non-auto trips as zero-VMT [@ewingVaryingInfluencesBuilt2015]. In this way, the probability distribution of VMT can comprehensively represent the travel behavior.
+
+The smallest unit of VMT is recorded by a trip from a daily travel survey. Then these records can be aggregated to personal or household daily VMT (DVMT). A traveler's or household's DVMT can account for the degree of automobile dependency by combining the number of trips and driving distance during a day [@bhatCopulabasedApproachAccommodate2009]. Given that the survey day is randomly selected, DVMT can generally reflect the typical travel pattern.
+
+Although, there are other approaches to collect weekly, monthly, or longer VMT records by tracking car usage [@plotzDistributionIndividualDaily2017]. The odometer records are more likely to represent the usage of the vehicle rather than the traveler's behavior. It is not easy to acquire long-term VMT through a survey-based method. The annual mileage and fuel efficiency information provided in some public data usually are estimated values using daily records and are not as accurate as DVMT.
+
+On a personal scale, VMT relates to the economic cost of travel by car, while another dimension, travel time measuring the time cost of vehicle travel [@gimAnalyzingCitylevelEffects2021]. For society as a whole, the total VMT estimates the usage of the road network. Thus, it is a major interest in transportation, especially in researching travel demand and infrastructure capacity.
+
+And VMT is highly correlated with the amount of fuel consumption, which is one of the leading indicators of pollution and GHG emission. Since transportation is the second source of GHG emissions [@hankeyImpactsUrbanForm2010], it is also one of the priority issues involving sustainable development and climate change.
+
+Previous research found that reducing VMT is instrumental in solving some urban problems and improving the quality of urban life. The proportion of transportation cost in household expenditures is about 15 to 25 percent in the U.S. Urban studies try to figure out the relationship between VMT and some urban built-environment factors. Then urban or regional policies could identify the best practices to contribute to VMT reduction.
+
+## Traveler Choice
+
+Are 'decision' and 'choice' the same when discussing travel modes? A 'choice' is one decision given all available options simultaneously. At the same time, 'decision' is a broader concept. A decision could be a schedule with a combination of many choices, such as modes, destination, and activities. A decision related to travel behavior could even include bicycle or car purchase and relocation. This section will start from the theories of mode choice, then extend to a broader discussion of decision processes.
+
+-   Rational Choice Theory
+
+For prescriptive, analytical everyday decision-making, rationality is a basic assumption in reasoned behavior or rational choice theories [@edwardsTheoryDecisionMaking1954; @vonneumannTheoryGamesEconomic1944].
+
+This category is also called 'Normative Decision Theory,' which assumes people a traveler is an ideal decision-maker who is entirely rational. It requires three steps: information collection, utility evaluation, and choice making.
+
+<!-- -   Expected Utility Theory (EUT) -->
+
+Traditional economics focuses on utility evaluation and comes up with the Expected Utility Theory (EUT), also called Consumer Choice Theory. The rule of EUT is **Random Utility Maximization** (RUM) [@ben-akivaDiscreteChoiceAnalysis1985; @mcfaddenConditionalLogitAnalysis1973]. This classical theory claims that customers always choose the most appropriate by comparing the advantages and disadvantages of a range of alternatives, evaluating the benefits and costs of each possible outcome. Eventually, travelers will select the optimal solution with the maximum 'utility' from the choice set.
+
+Rational Choice Theory can not accurately describe actual human behavior in real life. Individuals do not often collect and analyze all the relevant information. They are not 'ideal' and cannot calculate the utility for all possible alternatives with perfect accuracy. In many cases, the travel decision is not the best way to achieve travelers' desired objective. Many other theories were developed to fix these issues.
+
+-   Bounded Rational Behavior
+
+Bounded rationality focused on the limitation of self-control [@marchCognitiveLimitsRationality2005]. In reality, individuals behave under many constraints, including incomplete information, limited time, and cognitive capacity. The observed behaviors are often not optimal and inconsistent with 'pure' rationality. Bounded rationality claims that heuristics and rules of thumb are more common than statistical inference when people make decisions under constraints. People are satisfied with a 'good enough' decision unless there is a definitively better alternative. The recently witnessed events would have more potent effects on an individual's decision than others [@camererAdvancesBehavioralEconomics2004].
+
+-   Theory of Planned Behavior
+
+Many theories and models are developed to explain people's decision-making processes in psychology. [^travel-1]
+
+[^travel-1]: CMDT=Cognitive moral development theory (Kohlberg, 1984),
+
+    ITB=Ipsative theory of behavior (Frey, 1988),
+
+    NAM=Norm activation model (Schwartz, 1977,Schwartz and Howard, 1981),
+
+    SDT=Self-determination theory(Deci & Ryan, 1985),
+
+    TAM=Technology acceptance model(Davis, 1989),
+
+    TDM=Travel demand management measures,
+
+    TNC=Theory of normative conduct (Cialdini et al., 1990,Cialdini et al., 1991),
+
+    TPB=Theory of planned behavior(Ajzen, 1985,Ajzen, 1991),
+
+    VBN=Value-belief-norm (Stern, 2000,Stern et al., 1999),
+
+    MGB=Model of goal-directed behavior(Perugini & Bagozzi, 2001)
+
+@ajzenAttitudebehaviorRelationsTheoretical1977 proposed the Theory of Reasoned Action (TRA) to understand people's *behavioral intentions* and actual behaviors. They found two deciding psychological elements as *attitudes* and *subjective norms*. @ajzenTheoryPlannedBehavior1991 adds a new part of *Perceived Behavioral Control* (PBC) and renames TRA as Theory of Planned Behavior (TPB).
+
+Attitudes are personal evaluation, and it means how people prefer or are against performing an activity. For example, a commuter might choose transit despite the longer travel time than driving because this person believes that transit is an environment-friendly transport mode.
+
+Subjective norm is the social pressure from others. In the example above, choosing transit is because of other people's normative expectations rather than personal desirability.
+
+PBC represents some nonvolitional factors such as time, budget, and resources. PBC is assessed by the individual's perception of ease or difficulty of the behavior. PBC is one reason for the difference between intentions and actual behaviors, called the attitude-behavior gap [@kollmussMindGapWhy2002; @laneAdoptionCleanerVehicles2007]. In this case, a commuter might choose transit because this person is confident in catching the bus every day.
+
+Based on RUM models, @mcfaddenEconomicChoices2001 proposes a similar framework called the choice process, including attitudes, perception, and preference. This framework is further developed to hybrid choice model (HCM) and non-RUM decision protocols [@ben-akivaHybridChoiceModels2002].
+
+Two meta-analyses found that intentions to drive, perceived behavioral control, habits, and past behavior play the primary roles in travel mode choice. Among these factors, PBC has the most potent effects on private car use. People don't want to reduce car use because they think it is very inconvenient. The impact of attitudes is modest, while subjective norms have a weak effect on car use [@lanziniSheddingLightPsychological2017; @gardnerPsychologicalCorrelatesCar2008].
+
+-   Prospect Theory
+
+@kahnemanProspectTheoryAnalysis1979a introduced the Prospect Theory to study the impacts of biases. Prospect Theory is a descriptive theory with three main components: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choices based on a reference point rather than the general situation or worth. Economists also extend the theory of expected utility maximization to Behavioral Economics by addressing the influence of psychology on human behavior.
+
+**Regret Theory** introduces the notions of risk or uncertainty in decisions [@loomesRegretTheoryAlternative1982]. Psychological studies found that individuals will try to maximize the utility and minimize the anticipation of regret. The fear of regret could affect people's rational behavior. For example, A high risk of congestion in peak hours could encourage a commuter to choose transit mode. Likewise, a good reputation for punctuality can give travelers confidence in the rail system.
+
+In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be more minor after subtracting the regret term, an increasing, continuous and non-negative function.
+
+Another psychological factor, **cognitive bias,** can result in judgment errors. For example, people treat potential gains and losses differently, called Loss Aversion. Loss Aversion suggests that the negative feeling about losses is greater than the positive response about gains [@tverskyAdvancesProspectTheory1992]. As a result, an individual's decisions may not be consistent with the evidence and tend to pay additional costs to avoid losses.
+
+## Human Mobility
+
+In physics and geography, travel distance and pattern are often treated as objective phenomenon. There is a long history of human mobility studies. The related theories use mathematical expressions to fit the aggregated trip distributions.
+
+Gravity Law is a dominant theory in this field. Scholars have developed some more delicate forms of gravity model and found some mathematical relationship to other famous distribution laws. Some theories from different perspectives, like intervening opportunities, also show a vital ability for explaining travel patterns and regularities.
+
+-   Distance-Based Theories
+
+An early theory called **Law of Migration** by @ravensteinLawsMigration1885 tried to explain the regional migration patterns. This foundation is based on observation rather than quantitative analysis. But it captures the fact that the direction of migration is toward the regional center with grand commerce and industry. It also pointed out that distance is a primary factor for migrants. This theory inspired many studies on population movement consequently. Even today, socio-economic factors and distance constraints are the essential parts of the relevant models and frameworks.
+
+**Zip's law** is also called discrete Pareto distribution. It is found in linguistics to explain the inverse relationship between the frequency and rank of a word. The charm is that this rank-frequency distribution disclosed a universal law in many realms of society and physics, such as urban size, corporation sizes, cells' transcriptomes and so on. Zipf interpreted the two competing factors as *force of diversification and unification*. The former produces larger amount of cases and the later tries to upgrade the rank. An equilibrium of the rank-frequency balance is controlled through a parameter $\alpha$ in the exponent. For example, a city's population size $m$ has a negative power relationship to its rank $r$. [@visserZipfLawPower2013; @jiangZipfLawAll2015; @rozenfeldAreaPopulationCities2011; @gomez-lievanoStatisticsUrbanScaling2012; @hackmannEvolutionZipfLaw2020]
+
+@zipfP1P2Hypothesis1946 extended his theory to describe the traffic in both directions between two cities. The traffic flow of goods between two centers is proportion to the product of two centers' population sizes divided by the distance between them. Because Zipf's formula has a same form with Newtonian mechanics [@newton18481687], people call this expression as **Gravity Law**. <!-- $$m \sim 1 / r^{\alpha}$$  -->
+
+<!-- $$t_{ij}\propto \frac{m_i m_j} {d_{ij}}$$ -->
+
+<!-- where $t_{ij}$ represent the traffic flow of goods between two centers $i$ and $j$ with population sizes $m_i$ and $m_j$. $d_{ij}$ is the distance from $i$ to $j$.  -->
+
+<!-- As the most influential theory, Gravity Law asserts that the amount of traffic flow between two centers is proportion to the product of their mass and inverse to their distance. The mass is often measured by population size. -->
+
+<!-- \begin{equation} -->
+
+<!-- p_{ij}\propto m_i m_j f(d_{ij}), \qquad i\ne j  -->
+
+<!-- (\#eq:gravity-law) -->
+
+<!-- \end{equation} -->
+
+<!-- where $p_{ij}$ is  $i$ $j$ satisfying $\sum_{i,j=1}^n p_{ij}=1$. $m_i$ and $m_j$ -->
+
+Gravity law has been applied in travel demand modeling for many years. The traditional four-step models include trip generation, trip distribution, mode split, and trip assignment [@ortuzarModellingTransport2011]. As a trip-based method, gravity models generate the Origin-Destination matrix in the step of trip distribution [@mcnallyFourStepModel2008]. All paired units are assigned the estimated traffic flows based on each unit's trip generation and attraction. The probability of commuting between origin and destination is proportion to the population of two units and inverse to their distance. In the version of the single-constrained or unconstrained gravity model, the generation of an origin does not equal the sum of flows to all destinations, or the attraction of a destination does not equal the sum of flows from all origins. Only the doubly constrained gravity models guarantee that the two equations hold.
+
+<!-- with a parameter $\lambda$ showed as below: $d_{ij}$ -->
+
+<!-- $$f(d_{ij})=\exp(-\lambda d_{ij})$$ and -->
+
+<!-- $$f(d_{ij})={d_{ij}}^{-\lambda}$$  -->
+
+Zipf's and gravity laws have a common essence of the power-law or scaling pattern. The Zipfian distribution is one of a family of **power-law** probability distributions. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. The state-of-the-art human mobility studies agree that travel behavior follows a power-law distribution at the population level [@barbosaHumanMobilityModels2018]. An example is @brockmannScalingLawsHuman2006 use dollar bills to track travel habits and confirm this theory. It reflects that trip and land use, as two geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation of linear models based on the location and scale parameters [@jiangZipfLawAll2011; @chenHierarchicalScalingSystems2018; @jiangGeospatialAnalysisRequires2018; @jiangSpatialHeterogeneityScale2018]. Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in some travel-urban form models [@saichevTheoryZipfLaw2010].
+
+The criticism includes that the four-step model uses TAZ inputs and fails to capture the built environment effect at the neighborhood level [@davidsonSynthesisFirstPractices2007]. @nostikasariRepresentationsEverydayTravel2015 analyze the everyday experience in Dallas-Fort Worth metropolitan area and find the daily travel demands in various population groups are not support the assumptions in four-step models. This institutionalized method may enforce auto dependence and social inequality. Some studies have developed an integrated model in recent years and have gotten consistent results among each step [@zhouAlternativeFormulationsCombined2009].
+
+<!-- In transportation modeling, a common form of gravity model is : -->
+
+<!-- $$T_{ij}= \alpha_i O_i \cdot \beta_j D_j \cdot f(d_{ij})$$ -->
+
+<!-- where $T_{ij}$ is the flow between $i$ and $j$.  -->
+
+<!-- the two population are replaced by total trip generation of origin $O_i$ and total trip attraction of destination $D_i$. $\alpha_i$ and $\beta_j$ are two constraining parameters to satisfy $\sum_{i}^{n_i}T_{ij} = D_j$ and $\sum_{j}^{n_j}T_{ij} = O_i$. It means that $\alpha_i = [\sum_{j}^{n_j} \beta_j D_j \cdot f(d_{ij})]^{-1}$ and $\beta_j = [\sum_{i}^{n_i} \alpha_i O_i \cdot f(d_{ij})]^{-1}$. Thus, this model is called as doubly constrained gravity model. -->
+
+-   Opportunity Based Theories
+
+**Law of Intervening Opportunities** by @stoufferInterveningOpportunitiesTheory1940 developed the migration theory differently. Stouffer proposed that "the number of people going a given distance is directly proportional to the number of opportunities at that distance and inversely proportional to the number of intervening opportunities." The number of intervening opportunities replaces the distance between origin and destination compared with gravity law. That means a resident living in one location and attracted to another site is affected by the number of job opportunities between the two places.
+
+<!-- $$p_{ij}\propto m_i \frac{P(1|m_i,m_j,s_{ij})}{\sum_{k=1}^n P(1|m_i,m_j,s_{ij})}, \qquad i\ne j $$ $s_{ij}$ $i$-->
+
+<!-- where the conditional probability $P(1|m_i,m_j,s_{ij})$ can be expressed by Schneider (1959) as: -->
+
+<!-- $$P(1|m_i,m_j,s_{ij})=\exp[-\gamma s_{ij}] - \exp[-\gamma (m_j + s_{ij})]$$ -->
+
+@siminiUniversalModelMobility2012 propose a **radiation model** express the probability of the destination absorbing a person living in one location, which is mutually decided by the population of origin, destination, and the population within a circle centered at origin. The expression can has several forms. One form is that the traffic flow equals the the product of original trips and two weights, the weights of origin and destination in the whole region. Although distance doesn't appear in the expression of radiation model, it is still a determinant as in gravity model.
+
+<!-- $$P(1|m_i,m_j,s_{ij})= \frac{m_i m_j}{(m_i + s_{ij})(m_i + m_j + s_{ij})}$$ $i$ as below:$j$-->
+
+<!-- Or in transportation model it is expressed as: -->
+
+<!-- $$T_{ij}= O_i\cdot\frac{m_i m_j}{(m_i + s_{ij})(m_i + m_j + s_{ij})}$$  -->
+
+<!-- To approximating the number of opportunities, $s_{ij}$ is from the population within a circle centered at origin. The radius is the distance between $i$ and $j$. Then $m_i + m_j + s_{ij}$ represents the total population within the circle, and $m_i + s_{ij}$ is the total population within the circle but excluding $j$, that is: -->
+
+<!-- $$T_{ij}= O_i\cdot\frac{m_i }{m_i + s_{ij}}\cdot\frac{m_j}{m_i + m_j + s_{ij}}$$   $d_{ij}$-->
+
+-   Distance Decay
+
+Travel distance is just one factor of the travel cost. The same travel distance could have different travel times and payments. A travel impedance function or distance decay function better represents the actual travel cost between the two places. Exponential and power are the two forms of the distance decay function. Both functions imply that the movements between the origin and destination decay with their distance. @handyPlanningAccessibilityTheory2005 also treats impedance as one component of accessibility.
+
+Using the survival analysis framework, @yangLimitsPredictabilityCommuting2014 further extended this model by assuming a trip from origin to destination as a time-to-event process, which is called **hazard models** (distance decay). Here time variable is replaced by the number of opportunities. The survival function $S(t)=Pr(T>t)$ represents the cumulative probability of the event not happened within a certain amount of opportunities. A similar method can be found in @dingInfluencesBuiltEnvironment2017 's study. They use a multilevel hazard model to examine the effects of TAZ level and individual level factors with respect to commuting distance using the data of Washington metropolitan area. <!-- Choosing Weibull distribution as the survival function --> <!-- , $S(t)=\exp[-\lambda t^\alpha]$ with scale parameter $\lambda \in (0, +\infty)$. By assuming $f(\lambda)=\exp[-\lambda]$ and integral on $\lambda$, the derivation is: --> <!-- \begin{equation} --> <!-- (\#eq:sf1) --> <!-- \begin{split} --> <!-- P(T>t)=&E\{\exp[-\lambda t^\alpha]\} \\  --> <!-- =&\int_0^{+\infty}\exp[-\lambda t^\alpha]\exp[-\lambda]d\lambda\\ --> <!-- =&\frac{1}{1+t^{\alpha}} --> <!-- \end{split} --> <!-- \end{equation} --> <!-- By replacing $t$ with $m_i+s_{ij}$, the conditional probability is: --> <!-- $$\begin{aligned} --> <!-- P(1|m_i,m_j,s_{ij})= &\frac{P(T>m_i+s_{ij})-P(T> m_i+s_{ij}+m_j)}{P(T>m_i)} \\  --> <!-- =&\frac{[(m_i + s_{ij} + m_j)^{\alpha}-(m_i + s_{ij})^{\alpha}](m_i^{\alpha}+1)}{[(m_i + s_{ij} + m_j)^{\alpha}+1][(m_i + s_{ij})^{\alpha}+1]}\\ --> <!-- \end{aligned}$$ --> <!-- where $\alpha$ is a parameter adjusting the effect of the number of job opportunities between origins and destinations. $d_{ij}$-->
+
+Based on commuting data from six countries, @lenormandSystematicComparisonTrip2016 found gravity law performs better than the intervening opportunities law. The reason could be that the circle with a radius can not represent the actual travel distance. The actual influencing area can not be identified accurately without accounting for distance decay.
+
+-   Time Geography
+
+In contrast to overall trip distribution, the movements of individuals are always research interest in geography. @hagerstraandWhatPeopleRegional1970 proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography. The famous "space-time aquarium/prism" is a 3D cube that adds temporal scales to the geographic space. It can capture the detailed structure and behavior of travelers.
+
+A daily trip could include multiple trips and form a travel chain [@ewingReducingVehicleMiles2020]. The traveler may switch the sequence or adjust the routes to optimize the chain and minimize the travel costs. The daily total travel distance is the summation of every trip distance. The number of trips denotes a trip count. It exists but is not so common that driving itself is the travel purpose, especially in daily life.
+
+Time geography borrows some physical and mathematical concepts and methods such as random walk, Brownian motion, and Levy flight at the individual level. With the wide usage of Global Positioning System (GPS), high-performance computing, and sophisticated algorithms, high-resolution data is being collected. The relevant studies also have a dramatic increase after 2005. @liuPointofInterestDemandModeling2017 use point-of-interest data to disclose better the distribution of opportunities than merely using population size. Using mobile phone data, @sabouriBuiltEnvironmentVehicle2021 find a new version of scaling law: the number of visitors to one location is proportional to "the inverse square of the product of travel distance and visiting frequency." Their found can also help explain the connection between individual trips and aggregated travel patterns.
+
+## Probability Distributions
+
+There are some valuable studies in the transportation field to identify the distributions of trip variables. Based on some theoretical or empirical studies [@hellersteinTheoreticalFoundationCount1993; @jangCountDataModels2005; @bienInflatedMultivariateInteger2011], scholars prove that trip generating frequency should not choose the linear regression models based on continuous functional forms. A zero-inflated negative binomial model is appropriate to solve the problems of overdispersion and excess zero. These studies imply that the diagnosis of variable distribution may be critical for regression modeling.
+
+It seems like choosing log-normal distribution for trip distance/time is a convention for continuous variables. @puAnalyticRelationshipsTravel2011 choose log-normal as a prior assumption because the F-SHRP report [^travel-2] says "the log-normal distribution is the closest traditional statistical distribution that describes the distribution of travel times." Meanwhile, the new version, SHRP2, says "formal tests (e.g., a Kolmogorov-Smirnov test) could be employed to evaluate the assumption and identify the sensitivity of the results to departures from this assumption." (p. 130)
+
+[^travel-2]: which can be found in Future Strategic Highway Research Program (SHRP) by @cambridge2003providing and @kittelson2013evaluating
+
+Meanwhile, @linEstimationEnergyUse2012 validates the daily vehicle miles traveled (DVMT) following a gamma distribution in the context of PHEV [^travel-3] energy analysis. Based on the multidate (7-200 days) data sets from four countries, @plotzDistributionIndividualDaily2017 found Weibull distribution is an overall good two-parameter distribution for daily VKT. At the same time, the log-normal estimates are more conservative. The studies on trip distance are still not conclusive. But the attention of three distributions is similar to the survival analysis, also called time-to-event analysis [@kleinbaumSurvivalAnalysisSelfLearning2012]. This shows a potential relation with the Distance-Decay, or travel-time-budget theories [@marchettiAnthropologicalInvariantsTravel1994]. Similarly, @kolblEnergyLawsHuman2003 show a canonical-like energy distribution for short trips by modes, which imply "a law of constant average energy consumption for the physical activity of daily travel." Some studies are not limited to parameter methods. @siminiUniversalModelMobility2012 propose a parameter-free model that predicts patterns of commuting.
+
+[^travel-3]: Plug-in hybrid electric vehicles
+
+<!-- ## Summary (Opt.) -->
+
+<!-- The theories of travel behavior have followed a positivist tradition for a long time. Economics and geography give strong explanations for macro and micro travel patterns. To remove the limitation of ideal rationality, more sociological and psychological theories and methods are introduced into this field. Gradually, people realized the normative concept is not sufficient for real-world applications. More descriptive and narrative arguments appear in transportation and land use planning. An example is a shift from mobility to accessibility. -->
+
+<!-- A primary trend in urban and transportation fields recently is the transition from techno-centric to socio-centric [@lanziniTechnocentrismSociocentrismEvolution2021] The socio-centric methods claim that accessibility is the key concept for evaluating sustainable urban mobility. This trend emphasizes the interpretations of travel behavior are context-dependent and avoid generalizations. -->
+
+<!-- Research in human mobility insists on the positivism methodology and has significant contributions because the individual differences are confounded at the macro level. Under this framework, geographic distance plays a prominent role in all human mobility theories. In adding to travel distance and Origin-Destination Matrices, Some primary metrics such as Mean Square Displacement and Radius of gyration are defined to quantitatively describe travel behaviors -->
+
+<!-- A vital insight is that human behavior has two mobility roles: explorers and returners. It might be an inherent property of society, the instinct to explore more territory and keep together for labor division. The explorers' behavior is consistent with the theory of utility maximization. People are always looking for more benefits. The concept of habit also matches the behavior of 'preferential return' behavior, which means people are natural or nurtured likely to return to frequently visited or recently-visited locations. -->
+
+<!-- Both gravity and opportunities theory choose population size as the source of travel demand. This is a rough assumption and is insufficient to get more accurate predictions. One solution is to use observed empirical demand to calibrate the model case by case. Another way is to find more suitable variables such as residential, employment, or activity size to improve the model. -->
+
+<!-- When the area of interest is intra-urban, the O-D matrix records the trip connections among all paired locations. The matrix contains plenty of information, including urban spatial structure, opportunities, activities, and other socio-economic characteristics. The theories imply that the O-D matrix has some strong connections to travel behavior in some ways. The first challenge is to mine the information and extract some explainable elements. A limitation is that the empirical O-D matrix may only reflect the particular characteristics in that city and can not be applied to others. The second challenge is how to get a generalized interpretation, -->
+
+<!-- Once choosing the individual perspective, current theories and methods are still insufficient. For example, the physical transportation network is only a part of travel decisions. Social networks with a 'hub-and-spoke structure' play a prominent role in finding a job. Some studies provide valuable insight using social media data but still have a gap to form new theories. -->
+
+<!-- An interdisciplinary perspective could provide a theoretical explanation for model selection. Existing mobility theories can play an anchor to identify the key variables' properties and confirm the additive and linear relation among the factors. -->

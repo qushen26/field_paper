@@ -1,0 +1,303 @@
+# Special Effects
+
+This section introduces three special effects: interaction, spatial, and non-linear.
+
+## Interaction Effects
+
+-   Introduction
+
+What are interaction effects? In multiple linear regression, if the effect of one explanatory variable depends on another or more explanatory variables, that means the interaction effect exists. @montgomeryDesignAnalysisExperiments2017 give a definition: interaction effects mean that "the difference in response between the levels of one factor is not the same at all levels of the other factors." Figure \@ref(fig:montgomery2017) show that the lines should be roughly parallel when factors A and B have no interaction (left panel). Otherwise, the interaction effect occurs (right panel).
+
+(ref:montgomery2017) A factorial experiment without (left) / with (right) interaction [@montgomeryDesignAnalysisExperiments2017]
+
+```{r montgomery2017,eval=T,out.width='75%', fig.align='center',fig.cap="(ref:montgomery2017)",fig.pos="ht"}
+knitr::include_graphics("fig/montgomeryDesignAnalysisExperiments2017.png")
+```
+
+Why do we need to consider interaction effects? Only evaluating the main effects could get wrong conclusions when interaction effects occur. For example, population density and countries may have interactions effects. Based on @guerraBuiltEnvironmentCar2014 's study, @ewingDoesCompactDevelopment2017 point out that the residents who live in suburban Mexico City are transit-dependent while the rich people live in the urban core with greater VMT. It contrasts with the situation in U.S. cities - suburb residents drive more. In this case, household income might be the dominant factor. But only looking at the high-income group, they may have different location choices and different travel preferences. When moving on to other cities like New York, Hong Kong, or Tokyo, the impact of the three factors on driving distance may have a different size or direction. We cannot reject the interaction effects existing unless through some strong background knowledge or systematic examination.
+
+How to identify interaction effects? A straightforward approach is to add interaction terms into the models. All two-way, three-way or even higher-order interaction terms can be involved in the model. Then using stepwise regression, the interaction terms with low explanatory power can be removed from the models. But in travel-urban form literature, interaction effects lack sufficient investigation. The three studies used stepwise regression [@mariakockelmanTravelBehaviorFunction1997; @filionWastedDensityImpact2006; @abhishekUrbanGrowthIndian2017], no interaction effect is considered.
+
+@leeComparingImpactsLocal2020 add the two-way interaction terms between population-weighted density (PWD) at the Urban Area level and the D-variables at census tract level into their models. They find the cross-level interaction effects are highly significant. This setting is based on previous studies [@nasriAssessingImpactMetropolitanLevel2015; @choiImpactMetropolitanCounty2017], not the systematic methods. Other paired or higher-order interactions are not considered in their research.
+
+Someone may argue that the interaction effects can be eliminated by log transformation. But the transformation doesn't work for the interaction between two categorical variables. Moreover, log transformation is a tool for converting the multiplicative relationship to additive in an equation and doesn't change the dependency between two variables. The interaction effects could still happen on the exponent.
+
+The absence of interaction effects could be because of the high-dimension data in travel-urban form studies. Suppose the data has ten$10$ continuous candidate predictors. There will be 1024 possible models and up to 10 parameters without any interaction term$1024$ possible models and up to 10 parameters. There will be $\binom{10}{2}=45$ additional terms when only considering two-way interaction effects. For categorical variables, the number of parameters will be even greater. Therefore, simply adding interaction terms may exhaust the degree of freedom, and the computation is expensive.
+
+-   Factorial design
+
+One solution is to convert all explanatory variables to two- or three-levels factors and then conduct a factorial design [@montgomeryDesignAnalysisExperiments2017]. This preliminary examination can help identify which combinations of factors have significant interaction effects on response. Then researchers can use the identified variable set to fit the formal model.
+
+An interesting example is @ewingIdentifyingMeasuringUrban2006 's study of urban design qualities and walkability. Researchers want to "capture relevant combinations of the eight urban design qualities chosen for operationalization (tidiness was added later)." [^interaction-1] They make a $2^{8-4}$ fractional factorial design to examine the main and two-factor interaction effects of urban design quality. Forty-eight clips are selected from 200 clips and "best match the combinations of high/low values." An expert panel rates these clips and gives a score from 1 to 5 for the eight qualities. The rating values are the response. Over 100 physical features are explanatory variables concerning the eight qualities. The research team then assesses the scores of each feature for each clip. Next, eight regression models are fitted and drop off the non-significant physical features, with 37 features left. The researchers define five criteria to evaluate the performance of the nine qualities (Figure \@ref(fig:ewing2006)). At last, five urban design qualities are identified for relating to walkability. [^interaction-2]
+
+[^interaction-1]: The eight urban design qualities are imageability, legibility, visual enclosure, human scale, transparency, linkage, complexity, and coherence
+
+[^interaction-2]: imageability, visual enclosure, human scale, transparency, and complexity
+
+(ref:Ewing2006) "Performance of Urban Design Qualities Relative to Selection Criteria" [@ewingIdentifyingMeasuringUrban2006]
+
+```{r ewing2006,eval=T,out.width='75%', fig.align='center',fig.cap="(ref:Ewing2006)",fig.pos="ht"}
+knitr::include_graphics("fig/ewingIdentifyingMeasuringUrban2006.png")
+```
+
+Actually, the method in this study is a sample selecting strategy rather than a factorial design. The researchers want to choose 48 clips covering all high/low levels of eight qualities. In their models, the scores of eight qualities are used as a response rather than treatment. Hence, no interaction effect is identified in this study.
+
+-   Lasso Regression
+
+Lasso regression is a method that can drop off insignificant variables, including interaction terms. When reducing variance, lasso allows the least squares estimates to shrink towards zero. This method is called shrinkage.
+
+This method is not yet found in travel-urban form literature. @hsuIdentifyingKeyVariables2015 provide an excellent example of examining interaction effects for high-dimension data. Like many travel-urban form studies, their data include more than 200 candidates of explanatory variables. The number of possible interactions (2023) for the office buildings is greater than the sample size (n=830). Fitting a full model hence is not feasible. They use hierarchical group lasso regularization (HGLR) to identify interactions, especially for cross-data variables. Group lasso means that the model treats the levels of a categorical variable as a group that can be accepted or rejected as a whole by some criteria. Moreover, HGLR can address the issue of multicollinearity. Their response variable - building EUI [^interaction-3] is taken a log transform. All the above features are similar to travel-urban form studies.
+
+[^interaction-3]: energy use intensity
+
+As a result, HGLR identifies nine important variables and eight significant interaction effects (Figure \@ref(fig:hsu2015-1)). Take the variables of *Pct district steam* and *Pct electricity,* for example. Figure \@ref(fig:hsu2015-2) shows that the most significant change in consumption happens in the area of high steam use and low electricity use.
+
+(ref:hsu2015-1) Top Variables for Office Buildings [@hsuIdentifyingKeyVariables2015] (ref:hsu2015-2) Interaction between electricity and steam use [@hsuIdentifyingKeyVariables2015]
+
+```{r hsu2015-1,eval=T,out.width='75%', fig.align='center',fig.cap="(ref:hsu2015-1)",fig.pos="ht"}
+knitr::include_graphics("fig/hsuIdentifyingKeyVariables2015-1.png")
+```
+
+```{r hsu2015-2,eval=T,out.width='75%', fig.align='center',fig.cap="(ref:hsu2015-2)",fig.pos="ht"}
+knitr::include_graphics("fig/hsuIdentifyingKeyVariables2015-2.png")
+```
+
+<!-- Ridge regression can be understood as a restricted least squares problem. Denote the constraint $s$, the solution of ridge coefficient estimates satisfies -->
+
+<!-- \begin{equation} -->
+
+<!-- \min_{\boldsymbol\beta}\left\{\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^p\beta_jx_j\right)^2\right\}\text{ subject to } \sum_{j=1}^p\beta_j^2\le s -->
+
+<!-- \end{equation} -->
+
+<!-- Another approach is to replace the constraint term $\sum_{j=1}^p\beta_j^2\le s$ with $\sum_{j=1}^p|\beta_j|\le s$. This method is called lasso regression. -->
+
+<!-- \begin{equation} -->
+
+<!-- \min_{\boldsymbol\beta}\left\{\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^p\beta_jx_j\right)^2\right\}\text{ subject to } \sum_{j=1}^p|\beta_j|\le s -->
+
+<!-- \end{equation} -->
+
+<!-- Suppose the case of two predictors, the quadratic loss function creates a spherical constraint for a geometric illustration, while the norm loss function is a diamond. The contours of $\mathrm{SSE}$ are many expanding ellipses centered around least square estimate $\hat\beta_{LS}$. Each ellipse represents a $k$ value. -->
+
+<!-- If the restriction $s$ also called 'budget' is very large, the restriction area will cover the point of $\hat\beta_{LS}$. That means $\hat\beta_{LS}=\hat\beta_{R}$ and $k=0$. -->
+
+<!-- When $s$ is small, the solution is to choose the ellipse contacting the constraint area with corresponding $k$ and $\mathrm{SSE}$. -->
+
+<!-- Here lasso constraint has sharp corners at each axes. When the ellipse has a intersect point on one corner, that means one of the coefficient equals zero. But it will not happen on ridge constraint. -->
+
+<!-- Therefore, an improvement of lasso with respect to ridge regression is that lasso allow some estimates $\beta_j=0$. It makes the results more interpretative. Moreover, lasso regression can make variable selection. -->
+
+<!-- ### Shinkage Methods -->
+
+<!-- Balance underfitting and overfitting, missing interaction effects and Multicollinearity. -->
+
+<!-- - Multicollinearity -->
+
+<!-- Multicollinearity or near-linear dependence refers to the models with highly correlated predictors. -->
+
+<!-- When data is generated from experimental design, the treatments could be fixed variables and be orthogonal. -->
+
+<!-- But travel-urban form model is observational studies and nothing can be controlled as in lab. It is known that there are complex correlations among the built-environment predictors themselves. -->
+
+<!-- Although, the basic IID assumptions do not require that all predictors are independent, when the predictors are near-linear dependent, the model is ill-conditioned and the least-square estimators are unstable. -->
+
+<!-- Many studies such as @alamFactorsAffectingTravel2018, check the Variance Inflation Factors (VIF) after fitting the models. -->
+
+<!-- Using Principal Components Regression (PCR) method, some disaggregated travel models' $R^2$ can be over 0.5 [@hamidiLongitudinalStudyChanges2014;@tianTrafficGeneratedMixedUse2015]. -->
+
+<!-- But the limitation is that the principal components are hard to interpret the meaning. -->
+
+<!-- The results of PCR may just describe the data themselves and they are reproducible but not replicable for other data. -->
+
+<!-- Some research further investigate which variable plays the primary role. -->
+
+<!-- Using meta-regression, @gimRelationshipsLandUse2013 find that accessibility to regional centers is the primary factor affecting travel behavior, while other D-variables are conditional or auxiliary factors. -->
+
+<!-- @handyEnoughAlreadyLet2018 says most of the D-variable models have moderate multicollinearity issue and suggest to replace 'Ds' with 'Accessibility' framework. -->
+
+<!-- A question is, does the multicollinearity disappear in the new 'A' framework? -->
+
+<!-- Based on @handyPlanningAccessibilityTheory2005 's suggestion, @proffittAccessibilityPlanningAmerican2019 create an accessibility index by regression tree. It seems like multicollinearity is not the reason of choosing "D" or "A". -->
+
+<!-- To address multicollinearity, ridge regression [@hoerlRidgeRegressionBiased1970], surrogate model [@jensenSurrogateModelsIllconditioned2010a;@jensenVariationsRidgeTraces2012], and lasso regression have provided plenty of choices. -->
+
+<!-- @tsaoEstimableGroupEffects2019 contribute another approach to handle multicollinearity which still uses ordinary least squares regression. -->
+
+<!-- Hence these 'traditional' methods are implementable and interpretative. More important is that they are comparable. -->
+
+<!-- Researcher maybe don't need to rush into some more complex methods or post studies. -->
+
+<!-- Variance Inflation Factors -->
+
+<!-- Principal Components Regression (PCR) is a dimension reduction method. -->
+
+<!-- @hoerlRidgeRegressionBiased1970 proposed ridge regression to address the nonorthogonal problems. -->
+
+<!-- [@jensenSurrogateModelsIllconditioned2010a;@jensenVariationsRidgeTraces2012] proposed surrogate model to further improve ridge regression. -->
+
+<!-- - Variance Inflation -->
+
+<!-- Multicollinearity can make the variances inflated and impact model precision seriously. If some of predictors are exact linear dependent, the matrix $(\mathbf{X'X})^{-1}$ is symmetric but non-invertible. By spectral decomposition of symmetric matrix, $\mathbf{X'X}=\mathbf{P'\Lambda P}$ where $\Lambda=\text{diag}(\lambda_1,...,\lambda_p)$, $\lambda_i$'s are eigenvalues of $\mathbf{X'X}$, $\mathbf{P}$ is an orthogonla matrix whose columns are normalize eigenvectors. Then the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is $\sigma^2\sum_{j=1}^p1/\lambda_j$. -->
+
+<!-- If the predictors are near-linear dependent or nearly singular, $\lambda_j$s may be very small and the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is highly inflated. -->
+
+<!-- For the same reason, the correlation matrix using unit length scaling $\mathbf{Z'Z}$ will has a inverse matrix with inflated variances. That means that the diagonal elements of $(\mathbf{Z'Z})^{-1}$ are not all equal to one. The diagonal elements are called **Variance Inflation Factors**, which can be used to examine multicollinearity. The VIF for a particular predictor is examined by $\mathrm{VIF}_j=\frac{1}{1-R_j^2}$, -->
+
+<!-- where $R_j^2$ is the coefficient of determination by regressing $x_j$ on all the remaining predictors. -->
+
+<!-- \begin{equation} -->
+
+<!-- \mathrm{VIF}_j=\frac{1}{1-R_j^2} -->
+
+<!-- (\#eq:vif) -->
+
+<!-- \end{equation} -->
+
+<!-- A common approach is to drop off the predictor with greatest VIF and refit the model until all VIFs are less than 10. However, dropping off one or more predictors will lose many information which might be valuable for explaining response. Due to the complexity among predictors, dropping off the predictor with the greatest VIF is not always the best choice. Sometimes, removing a predictor with moderate VIF can make all VIFs less than 10 in the refitted model. Moreover, there is not an unique criteria for VIF value. When the relationship between predictor and response is weak, or the $R^2$ is low, the VIFs less than 10 may also affect the ability of estimation dramatically. -->
+
+<!-- Orthogonalization before fitting the model might be helpful. Other approaches such as principal components regression, ridge regression, etc. could deal with multicollinearity better. -->
+
+<!-- - Principal Components Regression -->
+
+<!-- Principal Components Regression (PCR) is a dimension reduction method which projecting the original predictors into a lower-dimension space. -->
+
+<!-- It still uses a singular value decomposition (SVD) and get $\mathbf{X'X}=\mathbf{Q\Lambda Q}'$ -->
+
+<!-- $\mathbf{Q}$ are the matrix who columns are orthogonal eigenvectors of $\mathbf{X'X}$. $\Lambda=\text{diag}(\lambda_1,...,\lambda_p)$ is decreasing eigenvalues with $\lambda_1\ge\lambda_1\ge\cdots\ge\lambda_p$. Then the linear model can transfer to -->
+
+<!-- $\mathbf{y} = \mathbf{XQQ}'\boldsymbol\beta + \varepsilon = \mathbf{Z}\boldsymbol\theta + \varepsilon$, -->
+
+<!-- where $\mathbf{Z}=\mathbf{XQ}$, $\boldsymbol\theta=\mathbf{Q}'\boldsymbol\beta$. -->
+
+<!-- $\boldsymbol\theta$ is called the regression parameters of the principal components. -->
+
+<!-- $\mathbf{Z}=\{\mathbf{z}_1,...,\mathbf{z}_p\}$ is known as the matrix of principal components of $\mathbf{X'X}$. -->
+
+<!-- Then $\mathbf{z}'_j\mathbf{z}_j=\lambda_j$ is the $j$th largest eigenvalue of $\mathbf{X'X}$. -->
+
+<!-- PCR usually chooses several $\mathbf{z}_j$s with largest $\lambda_j$s and can eliminate multicollinearity. -->
+
+<!-- Its estimates $\boldsymbol{\hat\beta}_{P}$ results in low bias but the mean squared error $MSE(\boldsymbol{\hat\beta}_{P})$ is smaller than that of least square $MSE(\boldsymbol{\hat\beta}_{LS})$. -->
+
+<!-- - Ridge Regression -->
+
+<!-- Least squares method gives the unbiased estimates of regression coefficients. -->
+
+<!-- However, multicollinearity will lead to inflated variance and make the estimates unstable and unreliable. -->
+
+<!-- To get a smaller variance, a tradeoff is to release the requirement of unbiasedness. -->
+
+<!-- @hoerlRidgeRegressionBiased1970 proposed ridge regression to address the nonorthogonal problems. -->
+
+<!-- The estimates of ridge regression are $\boldsymbol{\hat\beta}_{R}=(\mathbf{X'X}+k\mathbf{I})^{-1}\mathbf{X'}\mathbf{y}$, -->
+
+<!-- where $k\ge0$ is a selected constant and is called a biasing parameter. When $k=0$, the ridge estimator reduces to least squares estimators. -->
+
+<!-- \begin{equation} -->
+
+<!-- \boldsymbol{\hat\beta}_{R}=(\mathbf{X'X}+k\mathbf{I})^{-1}\mathbf{X'}\mathbf{y} -->
+
+<!-- (\#eq:ridge-e) -->
+
+<!-- \end{equation} -->
+
+<!-- Denote $\boldsymbol{\hat\beta}_{R}$ are biased estimates but its variance is small enough. -->
+
+<!-- \begin{equation} -->
+
+<!-- \begin{split} -->
+
+<!-- \mathrm{MSE}(\boldsymbol{\hat\beta}_{R})&=E[\boldsymbol{\hat\beta}_{R}-\boldsymbol{\beta}]^2=\mathrm{Var}[\boldsymbol{\hat\beta}_{R}]+\mathrm{Bias}[\boldsymbol{\hat\beta}_{R}]^2\\ -->
+
+<!-- &<\mathrm{MSE}(\boldsymbol{\hat\beta}_{LS})=\mathrm{Var}[\boldsymbol{\hat\beta}_{LS}] -->
+
+<!-- \end{split} -->
+
+<!-- \end{equation} -->
+
+<!-- When $\mathbf{X}$ is nonsingular and $(\mathbf{X'X})^{-1}$ exists, the ridge estimator is a linear transformation of $\boldsymbol{\hat\beta}_{LS}$. That is $\boldsymbol{\hat\beta}_{R}=\mathbf{Z}_k\boldsymbol{\hat\beta}_{LS}$ where $\mathbf{Z}_k=(\mathbf{X'X}+k\mathbf{I})^{-1}\mathbf{X'X}$ -->
+
+<!-- Recall the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is $\sigma^2\sum_{j=1}^p1/\lambda_j$. -->
+
+<!-- The total-variance of $\boldsymbol{\hat\beta}_{R}$ is -->
+
+<!-- \begin{equation} -->
+
+<!-- \mathrm{tr}(\mathrm{Cov}[\boldsymbol{\hat\beta}_{R}])=\sigma^2\sum_{j=1}^p\frac{\lambda_j}{(\lambda_j+k)^2} -->
+
+<!-- \end{equation} -->
+
+<!-- Thus, introducing $k$ into the model can avoid tiny denominators and eliminate the inflated variance. -->
+
+<!-- Choosing a proper value of $k$ is to keep the balance of $\mathrm{MSE}$ and $\mathrm{Bias}$. -->
+
+<!-- The bias in $\boldsymbol{\hat\beta}_{R}$ is -->
+
+<!-- \begin{equation} -->
+
+<!-- \mathrm{Bias}(\boldsymbol{\hat\beta}_{R})^2=k^2\boldsymbol{\beta}'(\mathbf{X'X}+k\mathbf{I})^{-2}\boldsymbol{\beta} -->
+
+<!-- \end{equation} -->
+
+<!-- Hence,increasing $k$ will reduce $MSE$ but make greater $bias$. -->
+
+<!-- Ridge trace is a plot of $\boldsymbol{\hat\beta}_{R}$ versus $k$ that can help to select a suitable value of $k$. -->
+
+<!-- First, at the value of $k$, the estimates should be stable. Second, the estimated coefficients should have proper sign and reasonable values. Third, the $SSE$ also should has a reasonable value. -->
+
+<!-- Ridge regression will not give a greater $R^2$ than least squares method. Because the total sum of squares is fixed. -->
+
+<!-- \begin{equation} -->
+
+<!-- \begin{split} -->
+
+<!-- \mathrm{SSE}(\boldsymbol{\hat\beta}_{R})&=(\mathbf{y-X}\boldsymbol{\hat\beta}_{R})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{R})\\ -->
+
+<!-- &=(\mathbf{y-X}\boldsymbol{\hat\beta}_{LS})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{LS})+(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})'\mathbf{X'X}(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})\\ -->
+
+<!-- &=\mathrm{SSE}(\boldsymbol{\hat\beta}_{LS})+(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})'\mathbf{X'X}(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})\\ -->
+
+<!-- &\ge \mathrm{SSE}(\boldsymbol{\hat\beta}_{LS}) -->
+
+<!-- \end{split} -->
+
+<!-- \end{equation} -->
+
+<!-- The advantage of ridge regression is to obtain a suitable set of parameter estimates rather than to improve the fitness. It could have a better prediction ability than least squares. -->
+
+<!-- It can also be useful for variable selection. The variables with unstable ridge trace or tending toward the value of zero can be removed from the model. -->
+
+<!-- In many case, the ridge trace is erratic divergence and may revert back to least square estimates. -->
+
+<!-- [@jensenSurrogateModelsIllconditioned2010a;@jensenVariationsRidgeTraces2012] proposed surrogate model to further improve ridge regression. Surrogate model chooses $k$ depend on matrix $\mathbf{X}$ and free to $\mathbf{Y}$. -->
+
+<!-- Using a compact singular value decomposition (SVD), the original can be decomposed to maxtix$\mathbf{X}=\mathbf{PD_{\xi}Q}'$. $\mathbf{P}$ and $\mathbf{Q}$ are orthogonal. The columns of $\mathbf{P}$ and $\mathbf{Q}$ are left-singular vectors and right-singular vectors of $\mathbf{X}$. -->
+
+<!-- It satisfies $\mathbf{P'P}=\mathbf{I}$ and $\mathbf{D}_{\xi}=\text{diag}(\xi_1,...,\xi_p)$ is decreasing singular values. Then $\mathbf{X}_k=\mathbf{PD}((\xi_i^2+k_i)^{1/2})\mathbf{Q}'$ and -->
+
+<!-- \begin{equation} -->
+
+<!-- \begin{split} -->
+
+<!-- \mathbf{X'X}=&\mathbf{QD}_\xi^2\mathbf{Q}'\\ -->
+
+<!-- \mathbf{X}_k'\mathbf{X}_k=&\mathbf{Q(D_\xi^2+K)}\mathbf{Q}'\quad\text{generalized surrogate}\\ -->
+
+<!-- \mathbf{X}_k'\mathbf{X}_k=&\mathbf{QD}_\xi^2\mathbf{Q}'+k\mathbf{I}\quad\text{ordinary surrogate} -->
+
+<!-- \end{split} -->
+
+<!-- \end{equation} -->
+
+<!-- and the surrogate solution $\boldsymbol{\hat\beta}_{S}$ is -->
+
+<!-- \begin{equation} -->
+
+<!-- \mathbf{Q(D^2_{\xi}+K)Q}'\boldsymbol{\hat\beta}_{S}=\mathbf{X}_k=\mathbf{QD}((\xi_i^2+k_i)^{1/2})\mathbf{P}'\mathbf{y} -->
+
+<!-- (\#eq:surrogate-e) -->
+
+<!-- \end{equation} -->
+
+<!-- Jensen and Ramirez proved that $\mathrm{SSE}(\boldsymbol{\hat\beta}_{S})< \mathrm{SSE}(\boldsymbol{\hat\beta}_{S})$ and surrogate model's canonical traces are monotone in $k$. -->

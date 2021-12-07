@@ -655,7 +655,7 @@ Therefore, in meta-analysis of urban studies, there is particular concern about 
 The results of meta-analyses are the derivations of available studies.
 Thus, if most of the studies have cognitive errors such as the geocentric model, meta-analysis itself can not reject them and will actually reinforce them.
 People should not have too high expectation of meta-analysis.
-If most of the studies have poos quality or are systematically biased, meta-analysis will also be flawed inevitably, which is called "garbage in, garbage out" problem.
+If most of the studies have poor quality or are systematically biased, meta-analysis will also be flawed inevitably, which is called "garbage in, garbage out" problem.
 That is why assessing study quality is critical in study selection.
 
 Another type of limitation is that the available studies can not represent the 'true' population.

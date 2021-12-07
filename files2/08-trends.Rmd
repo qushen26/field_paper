@@ -1,0 +1,320 @@
+## Spatial Effects
+
+<!-- There are many new trends in travel-urban form studies. This section selects spatial effects and non-linear relationships and introduces their basic idea and application. -->
+
+<!-- ## Special Specification -->
+
+Spatial effects often confound with urban-form factors and affect travel patterns for some unknown reasons or by some unobserved factors. Controlling the spatial effects thus is necessary to identify the actual effects size of urban form on travel. Spatial effects include two types - spatial heterogeneity and spatial dependence. Several special model structures could address spatial heterogeneity, such as multilevel, mixture, and mixed models. Geographically Weighted Regression (GWR) and its extension methods could capture the spatial dependence or autocorrelation.
+
+<!-- People may get confused by these concepts. This section tries to figure out their principle and meaning. -->
+
+### Nested (hierarchical) data structure
+
+When collecting travel, socio-demographic, and urban-form data, the spatial information is often nested arrangement (different from the Nested Logit Models in the structural choice analysis [@schmidheinyEquivalenceLocationChoice2011; @chuImplementationNewNetwork2018]).
+
+Crossed and nested effects are a dichotomy in experimental design [@montgomeryDesignAnalysisExperiments2017]. The lower-level locations are nested under the upper-level regions for the spatial related factors of geographic identities. Take @mcneilRevisitingTODsHow2020 's study, for example, two TOD programs, Center Commons and Broadway Vantage, are nested in the East Portland group, which further nested in Portland Region. Each program may have a unique effect on residents' travel behavior. The effects of nested factors on response are called nested effects. There are no interaction effects among the nested factors.
+
+The spatial-free factors such as density, income, or vehicle ownership could affect travel anywhere. Their effects are called crossed effects. For example, population density should be a crossed factor because a density value (e.g., 1000 persons per square miles) is the same in any city. Nested data models aren't discussed in many travel-urban form studies because the specific location effects usually are not the research goals.
+
+However, if the data have significant spatial heterogeneity, adding spatial factors or selecting a suitable model form is necessary. In @zhangHowBuiltEnvironment2012 's study, the mean of residential density in Washington, DC is 7015 persons/sq.mi. At the same time, the mean of residential density in Richmond-Petersburg and Norfolk-Virginia Beach in Virginia is 1950 persons/sq.mi. Although each city has both high-density and low-density neighborhoods, it is possible that that the ranges of a variable in two groups don't overlap. The effects of density concerning the city may not be crossed in this case.
+
+If researchers want to estimate the crossed effect of density based on the data from the two cities, the model should examine the interaction term between density and city. If the data involve many cities or other spatial entities, mixed model or multilevel models may account for the issues of heterogeneity.
+
+<!-- Crossed effects means that every levels of factor $a_{1},a_{2},...,a_{n}$ co-occurs with every levels of factor $b_{1},b_{2},...,b_{m}$. -->
+
+<!-- There could be $mn$ levels of interaction effect between $a$ and $b$, that is $a_{1}b_{1},a_{1}b_{2},...,a_{n}b_{m}$. -->
+
+<!-- There is at least one observation in any specific combination of categories. -->
+
+<!-- A level of factor $a$ applied on the cases will refer to the same treatment. -->
+
+<!-- For example, a household with/without child and with/without vehicle have crossed effects. All households can be assigned to the four categories. All households in one category have the same characteristics on parenthood and vehicle ownership. -->
+
+<!-- Nested arrangement is also called hierarchical design. The levels of factor $a_{ij}$ nested under the levels of factor $B_i$, $i=1,2,..,m$, $j=1,2,...,n_i$. That means some levels of $a_{i1},a_{i2},...,a_{in_i}$ only occurs with one level of factor $B_i$. -->
+
+<!-- In other words, all levels of $a_{ij}$ nested under of $B_i$ are unique. -->
+
+<!-- There would not be interaction effect between $a$ and $B$. Some combinations of categories are not represented. -->
+
+### Mixed models
+
+<!-- When the standard regression model has more than one error term, the model includes both fixed effects and random effects, which is called mixed models. -->
+
+<!-- The general form is $\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}\boldsymbol{\delta}+\boldsymbol{\varepsilon}$. -->
+
+<!-- where $\boldsymbol{\delta}$ represents the random effects by assuming $\boldsymbol{\delta}\sim N(\mathbf{0}, \sigma_\delta^2\mathbf{I})$ and $Cov(\boldsymbol{\delta},\boldsymbol{\varepsilon})=\mathbf{0}$. -->
+
+<!-- $\sigma_\delta^2$ is the extra sources of variability in addition to $\sigma^2$.  -->
+
+<!-- Random effects usually are related to categorical variables.  -->
+
+<!-- $\mathbf{Z}$ is a $n\times q$ indicator matrix. $q$ refers to the levels of factors. -->
+
+<!-- In mixed models, ordinary least squares method ignore the impact of the random effects. -->
+
+<!-- When the grouped data is balanced, the generalized least square method is equivalent to ordinary method.  -->
+
+<!-- The sum of square error is $SSE=\mathbf{y'[Z(Z'Z)^{-1}Z'-X(X'X)^{-1}X']y}$. -->
+
+<!-- When the sample sizes in every groups are unequal (e.g. the travel data are divided by urban areas, TAZs, or neighborhoods), -->
+
+<!-- Restricted Maximum Likelihood (REML) is an iterative approach which can deal with the variability among the groups. -->
+
+<!-- \begin{equation} -->
+
+<!-- \mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}\boldsymbol{\delta}+\boldsymbol{\varepsilon} -->
+
+<!-- (\#eq:mix) -->
+
+<!-- \end{equation} -->
+
+<!-- Each iteration of REML involves two steps.  -->
+
+<!-- The first step ignores the random effect. Only fixed effects $\boldsymbol{\hat\beta}^{(t)}$ are estimated using ordinary least squares method. Then, the results can construct a set of estimated residuals $\mathbf{\hat e}^{(t)}$. -->
+
+<!-- In the second step, using maximum likelihood method to obtain the estimated variance components $(\hat\sigma^2_\delta)^{(t)}$ and the updated variance of $y$. -->
+
+<!-- Plugging the new variance back to step one can get the updated fixed effects and residuals. -->
+
+<!-- This procedure continues until the results being convergence. -->
+
+<!-- Recall that maximum likelihood estimates assumes the observations follow a normal distribution. -->
+
+<!-- Therefore, the mixed model with REML method has stricter requirement of the data or proper transformations. -->
+
+When the standard regression model has more than one error term, the model includes both fixed effects and random effects, which are called mixed models. For a predictor having a fixed effect, its estimated coefficient is constant. That means the effect size of the predictor on response has an actual value. For a predictor with random effect, the coefficient is a random variable that is often assumed following a normal distribution with unknown mean and variance [@montgomeryDesignAnalysisExperiments2017].
+
+The dichotomy of fixed and random effects is decided by the factors themselves and research design. Usually, only categorical predictors could have random effects. The continuous urban-form variables like density hence have fixed effects. For categorical predictors, if all the factor levels are chosen to test the differences among these specific levels, their effects are fixed. Because the selected levels have exhausted the population. Thus, most socio-economic factors such as gender, race, and lifecycle have fixed effects. A counterexample is the survey days in NHTS. 2017 NHTS is collected from April 2016 to April 2017. The days in this year are only a part of the whole time range. Then the variable of survey day could have a random effect. However, when the research design investigates the effects of seasons, weekday/weekend, or workday/holiday, the time variable can be converted to a new variable with limited levels and still have fixed effects.
+
+Therefore, mixed models are the proper form when the levels of a factor only represent a small part of the population, and the levels' effects are not valuable for the study. In travel-urban form studies, the data often involves spatial factors such as TAZ/Block Group, tract, or county/city, which usually have large sizes and have comprehensive impacts on travel. People have already known these factors contribute a part of the variance in the model and have significant impacts on response. By the principle of ANOVA, adding these terms into the model can improve the model's accuracy.
+
+For example, in @ewingReducingVehicleMiles2020 's study, they identified 583 centers in 28 regions of the U.S. Although 8 D-variables represent the centers' built environment, other unselected factors may also affect travel outcomes. The missing part of factors related to centers could make some biased estimates. Since the sample size is large in this study (n=163487), adding a categorical variable of 583 centers could improve the model. Of course, researchers don't want to estimate 583 coefficients for this factor. Assuming the random effect of centers is reasonable in this case.
+
+If the spatial information is unknown, mixture models are used to estimate the properties of sub-populations. This situation is not common in urban studies. Because most of the spatial data are collected by geographic units and have clear boundaries and relationships.
+
+<!-- - Mixture models -->
+
+<!-- From a frequentist perspective, a finite-dimensional mixture of $K$ components has a set of $K$ mixture weights and a set of $K$ parameters. -->
+
+<!-- From the Bayesian perspective, both weights and parameters follow the corresponding prior distributions. -->
+
+<!-- Expectation maximization (EM) algorithm and Markov chain Monte Carlo (MCMC) are two methods that can solve the problem of mixture decomposition. -->
+
+### Multilevel models
+
+A model including multi-scale factors does not need to be a multilevel model. The single-level model specification could include the factors with different scales. Such as the socio-demographic characteristics are at the household level, while built environment factors are at the tract or block group level.
+
+Multilevel models are applied to the data with the hierarchical structure, also called hierarchical linear models. That means the population is also hierarchical [@hoxMultilevelAnalysisTechniques2017]. The observed cases inside a subgroup are identical. The overall population is a mixture of many subgroups. It is the exact circumstances of travel-urban form studies. Individual travel behavior depends on the person's socioeconomic characteristics within this household, neighborhood, city, and region. It is increasingly used in travel-urban form studies [@schwanenImpactMetropolitanStructure2004; @ewingVaryingInfluencesBuilt2015; @parkNotParkingLots2019].
+
+In @leeComparingImpactsLocal2020 's recent study, there are 16695 census tracts in 121 urbanized areas. Estimating the fixed effects for each census tract or area is impossible and unnecessary. And these levels also don't exhaust all levels of the population. Therefore, they assign the factor of census tracts, urbanized areas with random effects. Although the percentages of variance components by census tracts and urban areas are small in this study (1% and 2%, respectively), the random effects represent the comprehensive unknown mechanisms that other factors can not explain. A similar setting can be found in some recent studies [@hongHowBuiltenvironmentFactors2014; @dingNonlinearAssociationsZonal2021].
+
+An urban-form factor also can appear on multiple levels. In @leeComparingImpactsLocal2020 's models, the density at census tract level and urban area level are two predictors and have different estimated coefficients.
+
+### Geographically weighted regression
+
+In travel studies, many data sources include spatial information such as longitude, latitude, and geographic identity. As discussed in the previous section, spatial heterogeneity and spatial autocorrelation are common issues in travel-urban form studies, especially at small scale such as Census Block Group or traffic analysis zone (TAZ). The units inside a cluster could share a common environmental factor that produces spatial heterogeneity. The neighbored units could impact each other and generate spatial autocorrelation. Both of the two phenomena are non-stationarity which researchers want to control.
+
+Geographically weighted regression (GWR) is a local regression technique to capture spatial instability. This approach applies the weighted least squares methods by involving location information as spatial variables such as latitude and longitude. @cardozoApplicationGeographicallyWeighted2012 has shown that GWR models have better performance than ordinary least squares (OLS) for predicting the transit ridership at Madrid Metro station. Other studies further try some extended versions of GWR. @liuInfluenceBuiltEnvironment2018 's study on ridership finds that geographically weighted Poisson regression (GWPR) models give smaller AIC than global GWR. @chenDiscoveringSpatiotemporalImpacts2019 replace the Euclidean distance (ED) metric with Minkowski distance (MD) in GWR models. @chenNonlinearEffectsBuilt2021 continue examining the models' performances among GWR, support vector machine (SVM), and Random Forest. Using 10-fold cross-validation, they find a hybrid method combining Random Forest and multiple local models can account for the spatial heterogeneity and improve the predictive ability.
+
+Mixed models and GWR methods have become increasingly used in travel-urban form studies. The essence of these tools is still to solve the IID issues. The correct way to use them is to make the methods match the research design from the start. Alternative models such as kriging [\@zhangEvaluationSpatialAutocorrelation2009] and Bayesian methods can be applied in travel-urban form models. Bayesian approaches can be found in the two papers by @zhangHowBuiltEnvironment2012 and @hongHowBuiltenvironmentFactors2014. But both of the two studies use the non-informative prior such as uniform distribution. If more studies could investigate more suitable distributions for the common parameters of D-variables, that will enhance the power of the Bayesian method in travel-urban form studies.
+
+## Non-linear Effects
+
+Additivity and linearity are two fundamental requirements of linear regression. Traditional methods assume the effect size of one urban-form factor on travel is a constant. But in travel-urban form studies, both empirical research and conceptual analysis do not support this assumption. As discussed in the previous section, if the initial relationship is multiplicative or exponential, log transform can covert the multiplicative relationship to additive [@choiAnalysisMetroRidership2012]. But after log transform, the effects of predictors on response may still be non-linear. In many cases, the mechanisms of a factor are different in different parts of the range of covariates. Sometimes, the overall effects of the D-variable might be minor. But the curve might have a steep rise or sheer drop in some intervals. The inflection points, called effective thresholds, are more attractive and instructional.
+
+More recent travel-urban form studies have started to pay attention to the non-linear relationship. Some (semi-)parametric [@dingNonlinearAssociationsZonal2021], non-parametric models [@ewingReducingVehicleMiles2020], and even model-free techniques [@dingApplyingGradientBoosting2018; @chengExaminingNonlinearBuilt2020] could disclose these non-linear feathers. These non-linear feathers matter in practice because policymaking only cares about the effectiveness of predictors in an operational range. People can further interpret the different trends as the trigger, ceiling, U-shapes, hybrid, or synergy.
+
+<!-- ## Capturing Non-Linear Relationship -->
+
+### Parametric Methods
+
+Sometimes, the non-linear effects can be explained by the high-order terms. For example, the two-way interaction effect is a part of the quadratic polynomial model. The three-way interaction effect is that of a cubic polynomial regression and so on. Polynomial regression is a simple type of curve-fitting model, similar to regular linear models. By adding some high-order terms, the models still use some global parameters. But the shapes of polynomial models are limited. The relationships among socio-demographic characteristics and D-variables are complicated that a few global parameters can not represent. Thus, this type of model is not common in travel-urban form studies.
+
+Another parametric solution is piecewise Linear Regression. @cliftonGettingHereThere2017 points out the assumption of linearity in many studies don't hold. A step function could express the relationship between VMT and D-variables better. The step function is also called piecewise-constant models. The basic idea is to cut the range into pieces and fit each part separately. The points of the coefficients change are called knots.
+
+A typical example is the impact of income on travel distance. Researchers found that low-income and high-income households have longer travel distances than middle-class households, but the underlying reasons are different. High-income families have fewer constraints on driving decisions than the middle class, so they drive more. However, low-income families have more substantial restrictions than the middle class because their homes are often far away from their workplaces or cheap grocery stores. Therefore, the income values are converted to a categorical variable in many travel studies. In @zhangHouseholdTripGeneration2019 's study on trip generation, they choose a simplified way to deal with the nonlinearity. The cut of \$50,000 is selected as the household income threshold and creates an indicator variable 'medium-to-high level of income.' Some studies also convert population density to high, medium, and low levels. A similar method could apply to age, distance to CBD, and other factors. Two challenges are how many pieces are proper and how to choose the best location of knots. Conceptually, to capture the non-linear effect, a preliminary study and calibration for each explanatory variable are necessary.
+
+As the name suggests, piecewise polynomial regression combines the two methods. The role of piecewise is to capture the non-linear feathers by dividing the range of variables into many pieces and fitting them respectively. And the role of polynomial terms is to fit a continuous but not smooth curve between a predictor and response. There will be a parameter for each term in piecewise polynomial models.
+
+<!-- - A brief discussion Basis FunctionsSmoothing spline. -->
+
+<!-- ## Semi-parameter Methods -->
+
+### Non-parametric Methods
+
+For smoothing the fitted curve, some techniques such as spline can make the fitted curves are smooth around the knots. Starting from here, the previous coefficients become some functions on predictors. These techniques are non-parametric methods. Spline methods still have some parameters of splines (number, form, and arrangement). Similar to GWR, these parameters are not the interest of studies anymore.
+
+The piecewise models are the special cases of basis function, which allow the parts have overlapped scopes. This extension makes the models more flexible. Moreover, the regular terms in simple linear models can still be added. These models, including parametric and non-parametric terms, are called the semi-parametric model. Generalized additive models (GAM) further apply basis functions on different predictors with any parametric or non-parametric form [@hastieGeneralizedAdditiveModels1990; @woodGeneralizedAdditiveModels2017].
+
+\@dingNonlinearAssociationsZonal2021 's study chooses the thin plate regression spline basis to fit a semi-parametric multilevel mixed logit model. The outcomes of this model still have some estimated coefficients, such as intercept and socio-demographic characteristics at the individual level. For the urban-form variables, the model gives the estimated standard deviations of the coefficients for each predictor at the TAZ level. And the "standard deviation of the coefficient forming the smoothing spline for variable's fixed effect" [@dingNonlinearAssociationsZonal2021, Table 3] shows that the non-linear effect exists. The authors further use partial dependence plots to reveal the curves (Figure \@ref(fig:ewing-ding)). For example, the density measured by floor area ratio (FAR) has the most substantial positive impact on transit use when FAR \< 1.0. Then the effect weakens when 1\< FAR \< 4.3. Over the threshold of FAR = 4.3, the density would not affect transit use anymore. The impact of land use mix (entropy) shows an inverse U shape. If the entropy index is over 0.6, the influencing direction of mixed-use on transit use will change from positive to negative. Another interesting result is that the intersection density has a strong negative impact on transit use when less than 12 intersections/sq. Km. The authors explain this outcome is due to the non-motorized modes replacing transit in the areas of high street connectivity.
+
+(ref:ewingvsding2021) Plots of the association between transit use and urban-form variables. The left is activity density, mixed-use entropy, and intersection density by @ewingWebinarTransportationBenefits2021. The right is FAR, mixed-use entropy, and intersection density by @dingNonlinearAssociationsZonal2021.
+
+```{r ewing-ding,eval=T,out.width='45%', fig.align='center',fig.show='hold',fig.cap="(ref:ewingvsding2021)"}
+knitr::include_graphics("fig/Ewing_gam_transit1.png")
+knitr::include_graphics("fig/Ding2021_transit1.png")
+knitr::include_graphics("fig/Ewing_gam_transit2.png")
+knitr::include_graphics("fig/Ding2021_transit2.png")
+knitr::include_graphics("fig/Ewing_gam_transit3.png")
+knitr::include_graphics("fig/Ding2021_transit3.png")
+```
+
+The first benefit of semi- and non-parameter methods is to improve the models' fitness. @dingNonlinearAssociationsZonal2021 apply spline basis function on built-environment variables. The value of WAIC [^trends-1] in the new model is smaller than the regular logit model.
+
+[^trends-1]: widely applicable information criterion
+
+The second benefit is that these fitted functions keep the regression models' structure. In a study of mode choice in Chicago, @zhouBikesharingTaxiModeling2019 find that, by simply adding polynomial interaction terms, the performance of multinomial logit models are as good as some machine learning algorithm (e.g., support vector machine, decision tree, and neural network). When choosing different methods in a study, the simpler and robust approach is always more preferred.
+
+The third important benefit is that these tools can help identify non-linear features. "Built environment variables are effective only within a certain range" [@wuExaminingThresholdEffects2019]. In @zhaoPredictionBehavioralAnalysis2020 's study, the piece-wise utility functions reveal that passengers are time-sensitive when waiting time is less than five minutes (i.e., it has a steeper slope than longer waiting time). Thus, researchers can interpret these features as threshold effects or synergistic effects [^trends-2]. The outcomes of nonlinear effects are more likely to convert to policy implications. More researchers focus on GAM than synthesized indices [@ewingReducingVehicleMiles2020; @parkGuidelinesPolycentricRegion2020]. Three recent IPEN studies [^trends-3] employed Generalized Additive Mixed Models (GAMMs) to examine curvilinear effects of objective and perceived urban form factors on active travel. [@christiansenInternationalComparisonsAssociations2016; @kerrPerceivedNeighborhoodEnvironmental2016; @cerinObjectivelyassessedNeighbourhoodDestination2018].
+
+[^trends-2]: "threshold effect is an effect in a dependent variable that does not occur until a certain level, or threshold, is reached in an independent variable."(APA Dictionary of Psychology); "Synergistic effects are nonlinear cumulative effects of two active ingredients with similar or related outcomes of their different activities, or active ingredients with sequential or supplemental activities." (Delivery System Handbook for Personal Care and Cosmetic Products, 2005)
+
+[^trends-3]: the International Physical Activity and the Environment Network (<http://www.ipenproject.org/IPEN_adult.html>)
+
+The results of the non-linear effect in two studies are inconsistent (Figure \@ref(fig:ewing-ding)). It is hard to explain the variant outcomes without original data. The threshold studies in the urban transportation field remain in the early stages. As more relevant studies are published, the systematic comparison and summary of threshold and other effects would be possible.
+
+<!-- - Polynomial Regression -->
+
+<!-- An implication of Gravity Law is that the interaction between $m_1$ and $m_2$ in gravity model should be considered. That is the attributes of origin and destination can collectively affect travel behavior. -->
+
+<!-- This involves the second-order polynomial regression models $y=\beta_0+\beta_1x_1+\beta_2x_2+\beta_{11}x_1^2+\beta_{22}x_2^2+\beta_{12}x_1x_2+\varepsilon$. -->
+
+<!-- It has known that the distribution of VMT follow a decreasing exponential curve. Logarithm transformation can make the model at first order and convert the multiplicative relationship to additive. -->
+
+<!-- Keeping the order of the model as low as possible is a general rule. -->
+
+<!-- Because adding high-order terms could produce ill-conditioned $\mathbf{X'X}$ matrix or strong multicollinearity between $x$ and $x^2$. -->
+
+<!-- Only if the curve still exists after transformation, the second-order terms could be added to the model. -->
+
+<!-- @ref(eq:gravity-law) -->
+
+<!-- \begin{equation} -->
+
+<!-- y=\beta_0+\beta_1x_1+\beta_2x_2+\beta_{11}x_1^2+\beta_{22}x_2^2+\beta_{12}x_1x_2+\varepsilon -->
+
+<!-- (\#eq:polym) -->
+
+<!-- \end{equation} -->
+
+<!-- - Basis Functions -->
+
+<!-- High-order models is a global structure of non-linearity. That means this function should hold on the whole range of $x$. -->
+
+<!-- Using basis functions can avoid the weakness of a global structure. By dividing the range of $x$ into many segments, then a set of fixed and known functions can be applied to a variable $X$. -->
+
+<!-- The points of the coefficients change are called **knots**. -->
+
+<!-- **Step functions** is a special case of basis functions. Here the basis functions are a set of indicator functions.  -->
+
+<!-- The idea is to convert a continuous variable, such as income into an ordered categorical variable. Let the cut-points are $c_1,c_2,..., c_k$ in the range of $X$, then the new variables are -->
+
+<!-- Then the linear model is $y=\beta_0+\beta_1C_1(x)+\beta_2C_2(x)+\cdots+\beta_{k}C_k(x)+\varepsilon$ -->
+
+<!-- Note that $C_0(x)$ don't need to appear in the model because it is treated as the reference level. -->
+
+<!-- Step functions divide the whole curve into many bins. This action could miss the trend of curve. -->
+
+<!-- The choice of proper breakpoints is also a challenge. -->
+
+<!-- \begin{equation} -->
+
+<!-- \begin{split} -->
+
+<!-- C_0(x)=&\mathbb{I}_{x<c_1}\\ -->
+
+<!-- C_1(x)=&\mathbb{I}_{c_1\le x<c_2}\\ -->
+
+<!-- C_2(x)=&\mathbb{I}_{c_2\le x<c_3}\\ -->
+
+<!-- \cdots\\ -->
+
+<!-- C_k(x)=&\mathbb{I}_{c_k\le x}\\ -->
+
+<!-- \end{split} -->
+
+<!-- \end{equation} -->
+
+<!-- \begin{equation} -->
+
+<!-- y=\beta_0+\beta_1C_1(x)+\beta_2C_2(x)+\cdots+\beta_{k}C_k(x)+\varepsilon -->
+
+<!-- (\#eq:stepf) -->
+
+<!-- \end{equation} -->
+
+<!-- If the range of $x$ is divided into segments, each segment can fit a polynomial model. This method is called **piecewise polynomial** fitting or **spline**. -->
+
+<!-- Adding constrain can make the fitted curves being continues. And the additional constrains can make the first and second derivatives of the piecewise polynomial continues. -->
+
+<!-- A cubic polynomial with $k$ knots can add a truncated power basis function as -->
+
+<!-- $h(x,c_i)=(x-c_i)^3_+=\begin{cases}(x-c_i)^3&\text{if }x>c_i\\0&\text{otherwise}\end{cases}$. -->
+
+<!-- Then the spline with continuous first and second derivatives is -->
+
+<!-- $y=\sum_{j=0}^3\beta_{0j}x^j+\sum_{i=i}^k\beta_{k}h(x,c_i)+\varepsilon$. -->
+
+<!-- By computing the MSEs of every models with different number of knots, cross validation can be used to examine the best number of knots. -->
+
+<!--  When adding more knots, the value of MSE decrease. The optimal choice is the minimum number of knots with respect to a "small enough" MSE. -->
+
+<!-- Regression spline is very flexible so have the risk of overfitting. The fitted curve can go though all of the $y_i$ without constrains. Denote the function $g(x)$ represent the constraints. **Smoothing spline** can be expressed as -->
+
+<!-- $\arg\min_{g}\left\{\sum_{i=1}^n(y_i-g(x_i)^2)+\lambda\int g''(t)^2dt \right\}$, -->
+
+<!-- where $\lambda$ is a nonegative tuning function. The left term of $\sum_{i=1}^n(y_i-g(x_i)^2)$ is the quadratic loss function. Loss reduction can improve the fitness of model. -->
+
+<!-- The right term of $\lambda\int g''(t)^2dt$ is a penalty term. $g''(t)$ is the second derivative of function $g(\cdot)$ measure the amount of slope changing. If the fitted curve is very wiggly, the value of penalty term will be very large. -->
+
+<!-- Therefore, smoothing spline tries to find the trade-off of loss and penalty by adjusting $\lambda$. -->
+
+<!-- Using the leave-one-out (LOO) cross validation, the best value of $\lambda$ can be verified to minimize the $SSE$ and achieve the bias-variance balance. -->
+
+<!-- - Generalized Additive Models -->
+
+<!-- Generalized additive models (GAM) is an extension of Generalized Linear Models (GLM) which apply basis functions on several predictors [@hastieGeneralizedAdditiveModels1990; @woodGeneralizedAdditiveModels2017]. -->
+
+<!-- GAM provide a flexible framework because each variable $X_j$ has a separate basis function $f_j(\cdot)$. The basis could be any non-linear functions including polynomial regression, steps, splines, local regression, and others. The whole model adds every variables' contribution together in the end. -->
+
+<!-- A general form is $y=\beta_{0}+\sum_{j=1}^{p-1}f_j(x_j)+\varepsilon$. -->
+
+<!-- Fitting GAM will estimate each function by holding the remaining variables fixed. This procedure will repeat many time to update the estimations until convergence. -->
+
+<!-- Interaction terms can also be added to the model. -->
+
+<!-- - Non-parameter Regression -->
+
+<!-- Non-parameter regression is an approach using a model-free basis for prediction. -->
+
+<!-- The basic idea is to select a set of neighborhood points inside a window defined by a bandwidth $b$. Then calculate $S=[w_{ij}]$, a weighting matrix. The smoother estimate of the $i$th response is $\mathbf{\tilde y}=\mathbf{Sy}\quad \text{or } \tilde y_i=\sum_{j=1}^n w_{ij}y_j$. -->
+
+<!-- There are two common types of smoother, kernel and local regression. -->
+
+<!-- The kernel smoother uses a weighted average for the estimation. And the kernel functions satisfy $K(t)\ge 0,\forall t$, $\int_{-\infty}^{+\infty}K(t)dt=1$, and $K(-t)=K(t)$. -->
+
+<!-- The Kernel Regression is $w_{ij}=\frac{K(\frac{x_i-x_j}{b})}{\sum_{k=1}^n K(\frac{x_i-x_k}{b})}$. -->
+
+<!-- For local weighted regression, the neighborhood points inside the span can fit locally a regression line or a hyperplane rather than a constant.  -->
+
+### Machine Learning Methods
+
+Machine learning methods are becoming more popular in recent years. The common techniques include Support vector machines (SVM), Naive Bayes (NB), Neural networks (NN), and Tree-based methods (e.g., Boosting trees (BOOST), Bagging trees(BAG), Classification and regression trees(CART), Random forest(RF)). These methods usually have better predictive accuracy than traditional methods. For example, using the Random Forest method, both models' Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) are smaller than regular linear models' results [@chengExaminingNonlinearBuilt2020]. Random Forest can evaluate each independent variable's contribution in the fitted models. It also can disclose the nonlinear features of built-environment factors on travel demand and mode choice [@yanUsingMachineLearning2020; @xuIdentifyingKeyFactors2021]. Gradient boosting decision trees (GBDT) is a popular tree-based method recently because it outperforms other methods on prediction precision [@dingApplyingGradientBoosting2018; @wangSynergisticThresholdEffects2020; @zhangNonlinearEffectAccessibility2020].
+
+It doesn't mean the more complex models are always recommended. @zhouBikesharingTaxiModeling2019 's study of travel choices finds that Multi-Layer Neural Network has similar predicting accuracy as simple machine learning method such as Random Forest. The reason might be that the data sample size in travel-urban form studies is not large enough to show the advanced algorithm's advantage.
+
+Usually, the models' interpretability is the shortcoming of machine learning approaches. Recent travel-urban form studies often try both traditional and machine-learning methods [@zhouBikesharingTaxiModeling2019; @zhaoPredictionBehavioralAnalysis2020]. One interpreting method is to evaluate the ranking of variable importance. As discussed in the previous section, standardized coefficients in traditional regression models can show which independent variable has the most decisive influence on response than others. Random Forest and Neural Network can also give all covariates ranks if the matrix is non-singular. Another method is the partial dependence plot. @zhaoPredictionBehavioralAnalysis2020 compare multinomial logit models and several machine learning approaches and find the effect of travel time by transit on mode choice is close to linear. At the same time, the waiting time and rideshare are two factors with nonlinearities. Then based on these results, the traditional regression models equipped with nonlinear functions can also give accurate and interpretable estimates.
+
+<!-- Common analysis techniques have difficulty addressing dimension data. -->
+
+<!-- ### SEM (Opt.) -->
+
+<!-- Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) [@cerveroEffectsBuiltEnvironments2010; @ewingStructuralEquationModels2014]. -->
+
+<!-- In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. -->
+
+<!-- The published papers usually don't show the results of diagnosis and validation. -->
+
+<!-- Under this circumstance, comparing or summarizing these outcomes is unreliable. -->
+
+<!-- Expected finding, implications, and limitations -->

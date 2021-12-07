@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.22)  15 OCT 2021 09:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.22)  6 NOV 2021 09:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -767,9 +767,6 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `eq:multiscale' multiply defined.
 
-
-LaTeX Warning: Label `eq:stepf' multiply defined.
-
 )
 \openout1 = `field_paper.aux'.
 
@@ -897,11 +894,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 121.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 121.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-35.
-(/home/qs26/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3
+[3
 
 ] [4
 
@@ -909,132 +902,145 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 ] [6]
 
-LaTeX Warning: Reference `4age' on page 7 undefined on input line 211.
+LaTeX Warning: Reference `4age' on page 7 undefined on input line 203.
 
-<fig/one_hour_commmuting2.png, id=172, 1003.75pt x 699.61375pt>
+<fig/one_hour_commmuting2.png, id=171, 1003.75pt x 699.61375pt>
 File: fig/one_hour_commmuting2.png Graphic file (type png)
 <use fig/one_hour_commmuting2.png>
-Package pdftex.def Info: fig/one_hour_commmuting2.png  used on input line 215.
+Package pdftex.def Info: fig/one_hour_commmuting2.png  used on input line 207.
 (pdftex.def)             Requested size: 234.87042pt x 163.70468pt.
 [7
 
-] [8 <./fig/one_hour_commmuting2.png>] [9]
-Underfull \vbox (badness 1910) has occurred while \output is active []
-
-[10] [11] [12]
+] [8 <./fig/one_hour_commmuting2.png>] [9] [10] [11] [12]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+21.
+(/home/qs26/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 338.
+(Font)              <7> on input line 339.
 [13] [14] [15] [16] [17] [18] [19
 
 ] [20]
 Underfull \vbox (badness 1496) has occurred while \output is active []
 
-[21] [22] [23] [24] [25] [26] [27] [28]
-<~/urbanstudy/field_paper/fig/mstage.png, id=704, 576.1525pt x 305.64188pt>
+[21] [22] [23] [24] [25] [26] [27]
+<~/urbanstudy/field_paper/fig/mstage.png, id=715, 576.1525pt x 305.64188pt>
 File: ~/urbanstudy/field_paper/fig/mstage.png Graphic file (type png)
 <use ~/urbanstudy/field_paper/fig/mstage.png>
 Package pdftex.def Info: ~/urbanstudy/field_paper/fig/mstage.png  used on input
- line 811.
+ line 793.
 (pdftex.def)             Requested size: 234.87897pt x 124.60042pt.
-[29
+[28
 
  </home/qs26/urbanstudy/field_paper/fig/mstage.png>]
-<~/urbanstudy/field_paper/fig/tree.png, id=724, 444.15938pt x 358.33875pt>
+<~/urbanstudy/field_paper/fig/tree.png, id=737, 444.15938pt x 358.33875pt>
 File: ~/urbanstudy/field_paper/fig/tree.png Graphic file (type png)
 <use ~/urbanstudy/field_paper/fig/tree.png>
 Package pdftex.def Info: ~/urbanstudy/field_paper/fig/tree.png  used on input l
-ine 851.
+ine 833.
 (pdftex.def)             Requested size: 234.87471pt x 189.49214pt.
-[30 </home/qs26/urbanstudy/field_paper/fig/tree.png>]
-<~/urbanstudy/field_paper/fig/mscale.png, id=743, 480.79625pt x 344.78813pt>
+[29 </home/qs26/urbanstudy/field_paper/fig/tree.png>]
+<~/urbanstudy/field_paper/fig/mscale.png, id=760, 480.79625pt x 344.78813pt>
 File: ~/urbanstudy/field_paper/fig/mscale.png Graphic file (type png)
 <use ~/urbanstudy/field_paper/fig/mscale.png>
 Package pdftex.def Info: ~/urbanstudy/field_paper/fig/mscale.png  used on input
- line 887.
+ line 870.
 (pdftex.def)             Requested size: 234.88058pt x 168.43733pt.
-[31 </home/qs26/urbanstudy/field_paper/fig/mscale.png>]
+[30 </home/qs26/urbanstudy/field_paper/fig/mscale.png>]
 
-LaTeX Warning: Reference `ewing-gam' on page 32 undefined on input line 937.
+LaTeX Warning: Reference `ewing-gam' on page 31 undefined on input line 920.
 
-<fig/Ewing_gam1.png, id=763, 167.62625pt x 148.555pt>
+<fig/Ewing_gam1.png, id=790, 167.62625pt x 148.555pt>
 File: fig/Ewing_gam1.png Graphic file (type png)
 <use fig/Ewing_gam1.png>
-Package pdftex.def Info: fig/Ewing_gam1.png  used on input line 943.
+Package pdftex.def Info: fig/Ewing_gam1.png  used on input line 926.
 (pdftex.def)             Requested size: 167.63348pt x 148.56142pt.
-[32] [33 <./fig/Ewing_gam1.png>] [34
+[31] [32 <./fig/Ewing_gam1.png>] [33
 
-] [35
+] [34] [35] [36
 
-]
-Underfull \vbox (badness 2134) has occurred while \output is active []
+] [37
 
-[36] [37] [38]
-Overfull \hbox (19.896pt too wide) in paragraph at lines 1241--1242
-[]\T1/lmr/m/n/10.95 For Gen-er-al-ized Least Squares method, $[] \OT1/lmr/m/n/1
-0.95 = []$\T1/lmr/m/n/10.95 , $[] \OT1/lmr/m/n/10.95 = [][] = [])[][]\OT1/lmr/b
-x/n/10.95 y$\T1/lmr/m/n/10.95 ,
- []
-
-[39] [40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[41] [42]
+] [38] [39] [40] [41] [42] [43] [44]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1427.
+(amsmath)                 on input line 1508.
 
-[43] [44] [45] [46] [47] [48
+[45] [46] [47] [48
 
-] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60
+] [49]
+<field_paper_files/figure-latex/resid-plot-1.pdf, id=1042, 846.16125pt x 251.94
+125pt>
+File: field_paper_files/figure-latex/resid-plot-1.pdf Graphic file (type pdf)
+<use field_paper_files/figure-latex/resid-plot-1.pdf>
+Package pdftex.def Info: field_paper_files/figure-latex/resid-plot-1.pdf  used 
+on input line 1708.
+(pdftex.def)             Requested size: 469.75417pt x 139.86748pt.
+<field_paper_files/figure-latex/qq-plot-1.pdf, id=1043, 846.16125pt x 252.945pt
+>
+File: field_paper_files/figure-latex/qq-plot-1.pdf Graphic file (type pdf)
+<use field_paper_files/figure-latex/qq-plot-1.pdf>
+Package pdftex.def Info: field_paper_files/figure-latex/qq-plot-1.pdf  used on 
+input line 1722.
+(pdftex.def)             Requested size: 469.75417pt x 140.42473pt.
+[50] [51 <./field_paper_files/figure-latex/resid-plot-1.pdf> <./field_paper_fil
+es/figure-latex/qq-plot-1.pdf>] [52] [53] [54] [55] [56] [57] [58
 
-] [61]
-Underfull \vbox (badness 1221) has occurred while \output is active []
+] [59] [60] [61] [62] [63] [64] [65
 
-[62] [63] [64] [65] [66
+] [66] [67] [68] [69]
+<field_paper_files/figure-latex/funnelplot1-1.pdf, id=1382, 545.03625pt x 357.3
+35pt>
+File: field_paper_files/figure-latex/funnelplot1-1.pdf Graphic file (type pdf)
+<use field_paper_files/figure-latex/funnelplot1-1.pdf>
+Package pdftex.def Info: field_paper_files/figure-latex/funnelplot1-1.pdf  used
+ on input line 2563.
+(pdftex.def)             Requested size: 352.31497pt x 230.98366pt.
+[70] [71 <./field_paper_files/figure-latex/funnelplot1-1.pdf>]
+<field_paper_files/figure-latex/rucker-1.pdf, id=1426, 545.03625pt x 212.795pt>
 
-] [67] [68] [69] [70] [71]
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
-[72]
-<field_paper_files/figure-latex/unnamed-chunk-13-1.pdf, id=1281, 549.05125pt x 
-394.47375pt>
-File: field_paper_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type 
-pdf)
-<use field_paper_files/figure-latex/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: field_paper_files/figure-latex/unnamed-chunk-13-1.pdf 
- used on input line 2833.
-(pdftex.def)             Requested size: 352.32153pt x 253.13046pt.
-[73 <./field_paper_files/figure-latex/unnamed-chunk-13-1.pdf>] [74]
-<field_paper_files/figure-latex/unnamed-chunk-14-1.pdf, id=1322, 549.05125pt x 
-215.80624pt>
-File: field_paper_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type 
-pdf)
-<use field_paper_files/figure-latex/unnamed-chunk-14-1.pdf>
-Package pdftex.def Info: field_paper_files/figure-latex/unnamed-chunk-14-1.pdf 
- used on input line 2920.
-(pdftex.def)             Requested size: 469.77043pt x 184.64467pt.
-[75 <./field_paper_files/figure-latex/unnamed-chunk-14-1.pdf>]
-<field_paper_files/figure-latex/pcurve-1.pdf, id=1343, 845.1575pt x 262.9825pt>
-
+File: field_paper_files/figure-latex/rucker-1.pdf Graphic file (type pdf)
+<use field_paper_files/figure-latex/rucker-1.pdf>
+Package pdftex.def Info: field_paper_files/figure-latex/rucker-1.pdf  used on i
+nput line 2637.
+(pdftex.def)             Requested size: 469.7533pt x 183.40274pt.
+[72 <./field_paper_files/figure-latex/rucker-1.pdf>]
+<field_paper_files/figure-latex/pcurve-1.pdf, id=1447, 845.1575pt x 261.97874pt
+>
 File: field_paper_files/figure-latex/pcurve-1.pdf Graphic file (type pdf)
 <use field_paper_files/figure-latex/pcurve-1.pdf>
 Package pdftex.def Info: field_paper_files/figure-latex/pcurve-1.pdf  used on i
-nput line 2944.
-(pdftex.def)             Requested size: 469.76436pt x 146.17369pt.
-[76 <./field_paper_files/figure-latex/pcurve-1.pdf>]
-<field_paper_files/figure-latex/stepcurve-1.pdf, id=1361, 580.1675pt x 433.62pt
+nput line 2671.
+(pdftex.def)             Requested size: 469.76436pt x 145.61578pt.
+[73 <./field_paper_files/figure-latex/pcurve-1.pdf>]
+<field_paper_files/figure-latex/stepcurve-1.pdf, id=1466, 580.1675pt x 433.62pt
 >
 File: field_paper_files/figure-latex/stepcurve-1.pdf Graphic file (type pdf)
 <use field_paper_files/figure-latex/stepcurve-1.pdf>
 Package pdftex.def Info: field_paper_files/figure-latex/stepcurve-1.pdf  used o
-n input line 3015.
+n input line 2723.
 (pdftex.def)             Requested size: 281.85893pt x 210.66273pt.
-[77]
-Underfull \vbox (badness 5403) has occurred while \output is active []
+[74 <./field_paper_files/figure-latex/stepcurve-1.pdf>]
+<~/urbanstudy/field_paper/fig/semenescu30YearsSoft2020.jpg, id=1500, 366.84251p
+t x 203.0787pt>
+File: ~/urbanstudy/field_paper/fig/semenescu30YearsSoft2020.jpg Graphic file (t
+ype jpg)
+<use ~/urbanstudy/field_paper/fig/semenescu30YearsSoft2020.jpg>
+Package pdftex.def Info: ~/urbanstudy/field_paper/fig/semenescu30YearsSoft2020.
+jpg  used on input line 2758.
+(pdftex.def)             Requested size: 352.34393pt x 195.05249pt.
+[75 </home/qs26/urbanstudy/field_paper/fig/semenescu30YearsSoft2020.jpg>] [76] 
+[77
 
-[78 <./field_paper_files/figure-latex/stepcurve-1.pdf>]
-Underfull \hbox (badness 1092) in paragraph at lines 3081--3083
+] [78]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[79
+
+]
+Underfull \hbox (badness 1092) in paragraph at lines 2924--2926
 []\T1/lmr/m/n/10.95 Borenstein, Michael, Larry V. Hedges, Ju-lian P. T. Hig-gin
 s, and Han-nah R. Roth-stein.
  []
@@ -1042,28 +1048,25 @@ s, and Han-nah R. Roth-stein.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[79]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [80]
-Underfull \hbox (badness 2302) in paragraph at lines 3165--3167
-[]\T1/lmr/m/n/10.95 Ewing, Reid, Shima Hamidi, Guang Tian, David Prof-fitt, Ste
--fa-nia Tonin, and Laura
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 3165--3167
-\T1/lmr/m/n/10.95 Fre-go-lent. 2018. ``Test-ing New-man and Ken-wor-thy's The-o
-ry of Den-sity and Au-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [81]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [82]
+Underfull \hbox (badness 2302) in paragraph at lines 3053--3055
+[]\T1/lmr/m/n/10.95 Ewing, Reid, Shima Hamidi, Guang Tian, David Prof-fitt, Ste
+-fa-nia Tonin, and Laura
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 3053--3055
+\T1/lmr/m/n/10.95 Fre-go-lent. 2018. ``Test-ing New-man and Ken-wor-thy's The-o
+ry of Den-sity and Au-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [83]
@@ -1081,7 +1084,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [87]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[88] [89]
+[88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[89]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[91]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[92] [93]
 \tf@toc=\write4
 \openout4 = `field_paper.toc'.
 
@@ -1094,51 +1109,46 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16678 strings out of 480559
- 251352 string characters out of 5903047
- 606094 words of memory out of 5000000
- 33425 multiletter control sequences out of 15000+600000
+ 16537 strings out of 480559
+ 250901 string characters out of 5903047
+ 599334 words of memory out of 5000000
+ 33381 multiletter control sequences out of 15000+600000
  510587 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 74i,20n,80p,2284b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{ref-greeneEconometricAnalysis2018} has been refer
-enced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{ref-alamFactorsAffectingTravel2018} has been refere
-nced but does not exist, replaced by a fixed one
-
-{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/qs26/.T
-inyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/qs26/.TinyTeX/texmf-dist/
-fonts/enc/dvips/lm/lm-mathit.enc}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvip
-s/lm/lm-mathex.enc}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</home/qs26/.Tin
-yTeX/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></home/qs26/.TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmbx10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1
-/public/lm/lmbx12.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmb
-x7.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></home/q
-s26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></home/qs26/.TinyTeX/te
-xmf-dist/fonts/type1/public/lm/lmex10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts
-/type1/public/lm/lmmi10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/
-lm/lmmi5.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></
-home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/qs26/.Tiny
-TeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/qs26/.TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmmib10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/p
-ublic/lm/lmr10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.
-pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/qs26
-/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></home/qs26/.TinyTeX/texmf-
-dist/fonts/type1/public/lm/lmr6.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1
-/public/lm/lmr7.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.
-pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/qs26/
-.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/qs26/.TinyTeX/texmf
--dist/fonts/type1/public/lm/lmro10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/ty
-pe1/public/lm/lmsy10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/
-lmsy5.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></hom
-e/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/qs26/.TinyTeX
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on field_paper.pdf (89 pages, 1099424 bytes).
+ 74i,19n,80p,2284b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/qs26/
+.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/qs26/.TinyTeX/texmf-dis
+t/fonts/enc/dvips/lm/lm-mathit.enc}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dv
+ips/lm/lm-mathex.enc}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
+nc}{/home/qs26/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</home/qs26/.T
+inyTeX/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></home/qs26/.TinyTeX/texmf-
+dist/fonts/type1/public/lm/lmbx10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/typ
+e1/public/lm/lmbx12.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/l
+mbx7.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></home
+/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></home/qs26/.TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/qs26/.TinyTeX/texmf-dist/fon
+ts/type1/public/lm/lmmi10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/publi
+c/lm/lmmi5.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb>
+</home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/qs26/.Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/qs26/.TinyTeX/texmf-dis
+t/fonts/type1/public/lm/lmmib10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1
+/public/lm/lmr10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr1
+2.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/qs
+26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></home/qs26/.TinyTeX/texm
+f-dist/fonts/type1/public/lm/lmr6.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/typ
+e1/public/lm/lmr7.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr
+8.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/qs2
+6/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/qs26/.TinyTeX/tex
+mf-dist/fonts/type1/public/lm/lmro10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/
+type1/public/lm/lmsy10.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/l
+m/lmsy5.pfb></home/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></h
+ome/qs26/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/qs26/.TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/qs26/.TinyTeX/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on field_paper.pdf (93 pages, 1604696 bytes).
 PDF statistics:
- 2054 PDF objects out of 2073 (max. 8388607)
- 1860 compressed objects within 19 object streams
- 621 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2286 PDF objects out of 2487 (max. 8388607)
+ 2077 compressed objects within 21 object streams
+ 520 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 

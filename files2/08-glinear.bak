@@ -1,0 +1,326 @@
+# Generalized Linear Models for Travel Choice
+
+Generalized Linear Models (GAM) release the restriction of normality.
+GLM allow the response following more general distributions than normal.
+It is very important for the research with discrete response variables, such as mode choice or trips counts.
+
+GLM (equation \@ref(eq:glm)) include three components. 
+Systematic component $\eta=\mathbf{X}\boldsymbol\beta$ has a similar form with ordinary linear models but without error term. $\boldsymbol\beta$ are unknown coefficients.
+Random component $E[Y]=\mu$ specifies the probability distributions of $Y$, which could have a pdf or pmf from an exponential family.
+Link function $g(\cdot)$ connects the systematic component and random component together.
+
+
+
+## Binomial Response Models
+
+When a traveler choose to make a trip or not, the decision follows a Bernoulli distribution. Denotes the probability $Pr(\text{choice}=\text{Yes})=\pi$ and $Pr(\text{choice}=\text{No})=1-\pi$. 
+For $n$ number of decisions under the same $\pi$, let $Y$ represents the count of choosing 'Yes' and follow a binomial distribution $Bin(n,\pi)$.
+For many travelers with different $\pi$, one has $Y_i\sim Bin(n_i,\pi_i)$, that is a binary response data. The number of total observation $N=\sum_{i=1}^n n_i$. The pmf of binomial distribution is 
+
+\begin{equation}
+Pr(Y_i = y_i) =  {{n_i}\choose{y_i}}  \pi_i^{y_i} (1-\pi_i)^{n_i-y_i}
+\end{equation}
+
+### Logit Models
+
+It is clear that the random component is $E[y_i]=\pi_i$ and systematic component $\eta_i=\mathbf{X}'_i\boldsymbol\beta$. 
+$\pi$ is the probability between zero and one. but the log odds of success $\eta_i$ can take any real number. The canonical form of binomial distribution is
+
+\begin{equation}
+Pr(Y_i = y_i) = \exp\left[\log(\frac{\pi_i}{1-\pi_i})y_i+n_i\log(1-\pi_i)\right]{{n_i}\choose{y_i}}
+\end{equation}
+
+
+The canonical link function in logit models can transform the probability to the range of real number. In this one-to-one mapping, a probability $\pi_i>1/2$ will give a positive $\eta_i$ and a negative $\eta_i$ correspond to a $\pi_i$ less than one half.
+
+\begin{equation}
+\begin{split}
+g(\pi_i)&=\log\frac{\pi_i}{1-\pi_i}=\eta_i\quad\text{Logit function}\\
+g^{-1}(\eta_i)&=\frac{\exp[\eta_i]}{1+\exp[\eta_i]}=\pi_i\quad\text{Logistic function}\\
+\end{split}
+(\#eq:logit-link)
+\end{equation}
+
+
+
+The goal is to estimate the unknown vector of parameters $\boldsymbol\beta$ for the known covariates $\mathbf{X}_i$. 
+But in the systematic component, $\eta_i$ is unobserved. Ordinary Linear Regression doesn't work in this case. 
+Fortunately, the link function in logit models has a close form.
+Iteratively Reweighted Least Squares method (IRLS) (Lawson 1961) can get the solution. 
+One iteration of this approach includes four steps.
+
+The first step starts from the current estimated coefficients $\boldsymbol{\hat\beta}^{(0)}$. Then the current estimates of $\hat{\eta_i}^{(0)}=\mathbf{x}_i'\boldsymbol{\hat\beta}^{(0)}$ and $\hat \pi_i^{(0)}=\frac{\exp[\hat\eta_i^{(0)}]}{1+\exp[\hat\eta_i^{(0)}]}$.
+But current $\hat{\eta_i}^{(0)}$ is different with the true $\eta_i$.
+
+The second step will update the current estimates by adding a correction term.
+Using the first two terms of Taylor series,
+
+\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} +(y_i-\hat\mu_i^{(0)})\cdot \frac{d\hat\eta_i^{(0)}}{d\hat\mu_i^{(0)}}
+\end{equation}
+
+ Since $E[Y_i]=\mu_i=n_i\pi_i$, it is also easy to get 
+
+\begin{equation}
+\frac{d \eta_i}{d \mu_i}=\frac{1}{n_i}\cdot\frac{d \eta_i}{d \pi_i}=\frac{1}{n_i}\left(\frac{1}{\pi_i}+\frac{1}{1-\pi_i}\right)=\frac1{n_i\pi_i(1-\pi_i)}
+\end{equation}
+Therefore,
+\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} + \frac{y_i-n_i\hat\pi_i^{(0)}}{n_i\hat\pi_i^{(0)}(1-\hat\pi_i^{(0)})}
+\end{equation}
+
+The third step is to calculate the diagonal weight matrix $\mathbf{W}$ in the Fisher scoring algorithm.
+It is known that the binomial distribution has $Var[Y_i]=n_i\pi_i(1-\pi_i)$. 
+
+\begin{equation}
+w_{ii}=\left[Var[Y_i](\frac{d \eta_i}{d \mu_i})^2\right]^{-1}=
+n_i\hat\pi_i(1-\hat\pi_i)
+\end{equation}
+
+The final step improves estimate of $\boldsymbol{\hat\beta}^{(1)}$ using the weighted least-squares method
+
+\begin{equation}
+\hat{\boldsymbol{\beta}}^{(1)}=\mathbf{(X'WX)^{-1}}\mathbf{X'W}\boldsymbol{\hat{\eta}}^{(1)}
+\end{equation}
+
+The four steps will repeat until the procedure convergence. And the result gives
+
+\begin{equation}
+Var[\hat{\boldsymbol{\beta}}]=\mathbf{(X'WX)^{-1}}
+\end{equation}
+
+### Probit Models (Opt.)
+
+
+## Multinomial Response Models
+
+### Multinomial Logit models
+
+For categorical response such as travel mode choice, a traveler has more than two alternatives including driving, transit, biking and walking. The generalized logistic regression can address these polychotomous data.
+
+The mode choice $Y_i$ follows the mutinomial distribution with $J$ alternatives. 
+Denote the probability of $i$th traveler chooses the $j$th mode, then
+
+\begin{equation}
+\pi_{ij}=Pr(Y_i=j)
+\end{equation}
+
+And the pmf of multinomial distribution is 
+
+\begin{equation}
+Pr(Y_{i1}=y_{i1}, ..., Y_{iJ}=y_{iJ})= {n_i \choose y_{i1},..., y_{iJ} }
+\pi_{i1}^{y_{i1}} \cdots \pi_{iJ}^{y_{iJ}}
+\end{equation}
+
+
+When the data exclude the people without trip, the several modes exhaust all observations and mutually exclusive. That is $\sum_{j=1}^J\pi_{ij}=1$ for each $i$. Once $J-1$ parameters are evaluated, the rest one will be determined automatically. That means $\pi_{iJ}=1-\pi_{i1}-\cdots-\pi_{i,J-1}$. 
+The random component is $\mu_i=n_i\pi_{ij}$
+
+\begin{equation}
+\begin{split}
+g^{-1}(\eta_{ij})&=\frac{\exp[\eta_{ij}]}{\sum_{k=1}^J\exp[\eta_{ik}]}=\pi_{ij}\\
+g(\pi_{ij})&=\log\frac{\pi_{ij}}{\pi_{iJ}}=\eta_{ij}\\
+\end{split}
+(\#eq:mlogit-link)
+\end{equation}
+
+And the systematic component is $\eta_{ij}=\mathbf{X}_i'\boldsymbol\beta_j$
+
+### Discret Choice Models
+
+@mcfaddenConditionalLogitAnalysis1973 proposed the discrete choice models also called multinomial/conditional logit model.
+This model introduces $U_{ij}$ as the random utility of $j$th choice. Then based on Utility Maximum theory, 
+
+\begin{equation}
+\pi_{ij}=Pr(Y_i=j)=Pr(\max(U_{i1},...,U_{iJ})=U_{ij})
+\end{equation}
+
+Here $U_{ij}=\eta_{ij}+\varepsilon_{ij}$ where the error term follows a standard Type I extreme value distributions. The reason is that the difference between two independent extreme value distributions has a logistic distribution. Hence, it can still be solved by logit models.
+
+The expected utility depend on the characteristics of the alternatives rather than that of individuals.
+Let $\mathbf{Z}_j$ represents the characteristics of $j$th alternative, one has $\eta_{ij}=\mathbf{Z}_i'\boldsymbol\gamma$.
+
+Combining the two sources of utility together, a general form of utility is
+
+\begin{equation}
+\eta_{ij}=\mathbf{X}_i'\boldsymbol\beta_j+\mathbf{Z}_i'\boldsymbol\gamma
+\end{equation}
+
+
+In reality, a travel data can try to keep the observations independently by random sampling.
+But the available travel modes are not independent.
+The multinomial/conditional probit model can deal with this issue better.
+If assume the error terms $\boldsymbol\varepsilon\sim MVN(\mathbf{0},\Sigma)$ where $\Sigma$ is a correlation matrix.
+
+
+## Poisson Respone/Loglinear Models
+
+The frequency of trip is count data. The observed trip counts $Y_i,...,Y_n$ are random variable aggregated over differing numbers of individual or household with support $Y=\in\{0,1,2,...\}$.
+The trips as events occur randomly in a day or other time.
+An usual assumption is that count data follow a Poisson distribution. 
+
+There are three conditions for Poisson process:
+Firstly, as a stochastic process, the probability of at least one event happened in a time interval is proportional to the length of the interval.
+secondly, the probability of two or more event happened in a small time interval is close to zero.
+Finally, in disjoint time intervals, the count numbers of trip should be independent.
+In real life, a traveler can not make two trips at the same time so the second condition holds.
+But a household with two worker and two student might have four trip at the same time every morning. Hence, individual count data is more valid than household's when using Poisson distribution. 
+The independency of count number among differing time interval may not valid too. The daily trips is often a trip chain and require more information at a micro level.
+
+The pmf and its canonical form is 
+
+\begin{equation}
+Pr(Y=y) = \frac{e^{-\mu}\mu^y}{y!}=\exp[\log(\mu) y-\mu](y!)^{-1}
+\end{equation}
+
+So Poisson distribution has a simple link function as
+
+\begin{equation}
+\begin{split}
+g(\mu_i)&=\log\mu_i=\eta_i\\
+g^{-1}(\eta_i)&=\exp[\eta_i]=\mu_i\\
+\end{split}
+(\#eq:pois-link)
+\end{equation}
+
+And Poisson distribution has the property of $E[y_i]=Var[y_i]=\mu_i$ as the systematic component.
+
+
+\begin{equation}
+\begin{split}
+\log(\mu_i)=&\mathbf{x}'\boldsymbol{\beta}\\
+\mu_i=&\exp[\mathbf{x}'\boldsymbol{\beta}]\\
+\end{split}
+\end{equation}
+
+By taking log transform, the non-negative parameter space mapping to real number.
+It also convert the multiplicative relationship among predictors to additive.
+The value of coefficient $\beta_j$ means that per unit change in predictor $x_j$ leads to the expected change in the log of the mean of response.
+Another interpretation is that the mean of response would multiple $\exp[\beta_j]$ by per unit change in $x_j$.
+
+Similarly, iteratively reweighted least squares method (IRLS) can solve the log-linear Poisson model.
+The key correction step is
+
+\begin{equation}
+\hat{\eta_i}^{(1)}=\hat{\eta_i}^{(0)} + \frac{y_i-\hat\mu_i^{(0)}}{\hat\mu_i^{(0)}}
+\end{equation}
+
+The diagonal weight matrix is
+
+\begin{equation}
+w_{ii}=\hat\mu_i^{(0)}
+\end{equation}
+
+### Negative Binomial Model
+
+The restriction of Poisson Distribution is that the mean and variance should be equal or proportional.
+In many count data, the inequality of them is called overdispersion.
+
+Suppose an unobserved random variable follow a gamma distribution $Z\sim Gamma(r,1/r)$ where $r$ is the shape parameter. The pdf is
+
+\begin{equation}
+f(z)=\frac{r^r}{\Gamma(r)}z^{r-1}\exp[-rz],\quad z>0
+\end{equation}
+
+It has $E[Z]=1$ and $Var[Z]=1/r$. 
+
+Then a mixture model can be denote as a conditional distribution $Y|Z\sim Pois(\mu Z)$ for some $\mu>0$ and
+
+\begin{equation}
+E[Y]=E[E[Y|Z]]=E[\mu Z]=\mu E[Z]=\mu
+\end{equation}
+
+and
+
+\begin{equation}
+\begin{split}
+Var[Y]&=E[Var[Y|Z]] + Var[E[Y|Z]]\\
+&=E[\mu Z]+Var[\mu Z]\\
+&=\mu E[Z] + \mu^2Var[Z]\\
+&=\mu+\frac{\mu^2}{r}
+\end{split}
+\end{equation}
+
+It is called Poisson-Gamma distribution who can represents the inequality of mean and variance.
+If $r$ represent the given number of success and $y$ represent the observed number of failure in a sequence of independent Bernoulli trails. Then the success probability  is $p=r/(r+\mu)$
+Recall that $\Gamma(r+y)=\int_0^\infty z^{r+y-1}\exp[-z]dz$, it can be proved that $Y$ follow a negative binomial distribution
+
+\begin{equation}
+\begin{split}
+p(y)&=\int_0^\infty p(y|z)\cdot f(z)dz\\
+&=\int_0^\infty \frac{(\mu z)^y\exp[-\mu z]}{y!}\cdot\frac{r^r}{\Gamma(r)}z^{r-1}\exp[-rz]dz\\
+&=\frac{r^r\mu^y}{y!\Gamma(r)}(\mu+r)^{-y-r}\int_0^\infty [(\mu+r)z]^{y+r-1}\exp[-(\mu+r)z]d(\mu+r)z\\
+&=\frac{\Gamma(r+y-1)}{\Gamma(y+1)\Gamma(r)}(\frac{r}{\mu+r})^r(\frac{\mu}{\mu+r})^y\\
+&={{r+y-1}\choose{r-1}}p^r(1-p)^y, \quad y=0,1,2,...
+\end{split}
+\end{equation}
+
+However, negative binomial distribution is non-exponential families. Using maximum likelihood method and log link, the coefficients can be estimated.
+
+### Quasi-Poisson Model
+
+Another simple way for overdispersion is to introduce a dispersion parameter $\phi$. The Poisson model has $Var[Y|\eta]=\phi\mu$ where $\phi>1$. The estimated $\phi$ is
+
+$$
+\hat\phi=\frac{1}{n-p}\sum\frac{(Y_i-\hat\mu_i)^2}{\hat\mu_i}
+$$
+The extra parameter can also be estimated by maximum likelihood.
+
+
+### Zero-inflated and Hurdle Models
+
+In trip frequency data, there are often more no-trip observations than Poisson and negative binomial distribution expected. The two types of models, zero-inflated model and hurdle model can address this issue.
+Both of them assume the data arise from two mechanisms.
+
+In Zero-inflated Poisson/negative binomial model, both of two mechanisms generate zero observations.  
+The first mechanism produce the excess zeros with $\pi_i=Pr(Y_i=0)$. The rest zero and positive values are generated by the second mechanism $f(y;\mathbf{x}_i,\boldsymbol\beta)$ of Poisson or negative binomial pmfs.
+
+\begin{equation}
+f(y_i;\pi_i,\mu_i)=\begin{cases}\pi_i+(1-\pi_i)f(0;\mu_i)&y_i=0\\
+(1-\pi_i)f(y_i;\mu_i)&y_i>0\\
+\end{cases}
+(\#eq:zi)
+\end{equation}
+
+The two link functions are
+
+\begin{equation}
+\begin{split}
+g_0(\pi_i)=&\mathbf{w}'_i\boldsymbol\gamma\\
+g_1(\mu_i)=&\mathbf{x}'_i\boldsymbol\beta\\
+\end{split}
+\end{equation}
+
+
+Note that the two mechanisms could have different covariates and coefficients. 
+But both of $\pi_i$ and $\mu_i$ appear in two equations and have to be evaluated jointly. Newton-Raphson algorithm or EM algorithm can deal with this question.
+
+Hurdle model assumes all zero observations are generated by the first mechanism. Hence the first mechanism is not depend on $\mathbf{x}_i$ and $\boldsymbol\beta$. 
+A challenge is that ordinary Poisson or negative binomial distribution does contain zero values. Here use a truncated distribution to address this issue.
+
+\begin{equation}
+f(y_i;\pi_i,\mu_i)=\begin{cases}\pi_i&y_i=0\\
+(1-\pi_i)\frac{f(y;\mu_i)}{1-f(0;\mu_i)}&y_i>0\\
+\end{cases}
+(\#eq:hurdle)
+\end{equation}
+
+where $f(0;\mu_i)= \exp[-\mu_i]$ in Poisson model and  $f(0;\mu_i)= (\frac{r}{\mu_i+r})^r$ in negativ binomial model.
+
+"When $\pi$ is close to 0 or close to 1, the standard error is artificially compressed, which leads us to overestimate the precision of the proportion estimate." (Lipsey and Wilson 2001, chap. 3)
+
+
+## Other Topic (Opt.)
+
+- Bayesian Approaches 
+
+- Resampling Methods
+
+- Tree Based Methods
+
+- Support Vector Machines
+
+
+
+
+

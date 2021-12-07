@@ -5,7 +5,7 @@ be_tr <- read_xlsx("BE-TR.Meta-Analysis.database.v2.3Feb20.xlsx",sheet = "Databa
 be_tr6 <- read_xlsx("BE-TR.Empirical.Database(6).xlsx",sheet = "1. BE-TR_Database")
 
 
-betr <- be_tr %>% select(Study_ID,Citation,Estimation_method,
+betr <- be_tr %>% select(Study_ID, Model_ID,Citation,Estimation_method,DV,
                          `Year of data collection`,`sampling period_SS`,publication_period,
                          sample_size,Country,IV,IV_Indicator, )
 
@@ -13,6 +13,14 @@ betr6 <- be_tr6 %>% select(Study_ID,Citation,Estimation_method,
                          `Year of data collection`,
                          sample_size,Country,IV,IV_Indicator,Fit, Fit_Type )
 
+modelid <- betr %>% group_by(Model_ID) %>%
+  summarise(unique(Estimation_method)) %>% select(-Model_ID)
+
+modelDV <- betr %>% group_by(Model_ID) %>%
+  summarise(dv=unique(DV),meth=unique(Estimation_method))
+
+modelid[,2] %>% table()
+modelDV[,-1] %>% table()
 
 table(betr$Estimation_method)
 table(betr$Country)

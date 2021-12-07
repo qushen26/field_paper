@@ -1,0 +1,927 @@
+# (PART\*) Part II Statistical Methods {.unnumbered}
+
+
+
+# Multiple Linear Models
+
+Part II presents some statistical methods relating to Travel-Urban Form models.
+Chapter 5 to 10 introduce the main methods could be applied on VMT-urban form models because the response are continue variables. The models of mode choice are placed in Chapter of Generalized linear models.
+The last chapter Meta-Analysis introduces basic ideas and approaches of meta-analysis and dealing with publication bias. 
+
+These contents focus on some analysis which often be neglected or omitted in travel-urban form models and may give some inspiration for improving current studies. 
+Hence, these are mostly from several textbooks [@casellaStatisticalInference2002; @montgomeryIntroductionLinearRegression2021;@ravishankerFirstCourseLinear2020] and lecture notes by Dr. Robert Fountain, Dr. Nadeeshani Jayasena, and Dr. Jong Sung Kim. It will not involve the front edge of techniques in recent published papers in statistics.
+
+## Assumptions
+
+### Additive and linearity
+
+For linear models, the most important assumptions are the additive and linear relationship between the response and predictors. Gravity Law discloses that travel distance has a multiplicative (inverse) relationship with the 'masses' of two places. If the population size can be a representative of built environment, the additive relationship will not hold. Previous studies also shows that the effect sizes of built environment with respect of travel are small and complex. There is not sufficient evidence to support or against the linear hypothesis.
+
+### Independent Identically Distributed (IID)
+
+Another essential assumption is that random error are Independent Identically Distributed (IID). Random error is also called residual, which refer to the difference between observed $\mathbf{y}$ and fitted $\mathbf{\hat y}$. $\mathbf{\hat y}$ are the linear combinations of predictors $\mathbf{X}$. residuals represent the part can not be explained by the model.
+
+\begin{equation}
+\mathbf{e}=\mathbf{y}-\mathbf{\hat y}
+(\#eq:residual)
+\end{equation}
+
+The expected value, the variances, and the covariances among the random errors are the first- and second-moment of residuals. 'Identical' means that random errors should have zero mean and constant variance. The homogeneity of variance is also called homoscedasticity.
+
+\begin{equation}
+E(\varepsilon) = 0, \quad Var(\varepsilon) = \sigma^2
+(\#eq:identical)
+\end{equation}
+
+'Independent' requires the random errors are uncorrelated. That is
+
+\begin{equation}
+Cov[\varepsilon_i,\varepsilon_j] = 0,\quad i\neq j
+(\#eq:indenpendent)
+\end{equation}
+
+Once the conditions of IID are satisfied, the Gauss - Markov theorem \@ref(thm:g-m) proves that least-square method could give the minimum-variance unbiased estimators (MVUE) or called the best linear unbiased estimators (BLUE). These conditions are not strict and make regression method widely applicable.
+
+::: {#g-m .theorem name="Gauss - Markov theorem"}
+For the regression model \@ref(eq:lm) with the assumptions $E(\varepsilon) = 0$, $Var(\varepsilon) = \sigma^2$, and uncorrelated errors, the least-squares estimators are unbiased and have minimum variance when compared with all other unbiased estimators that are linear combinations of the $y_i$. [@montgomeryIntroductionLinearRegression2021]
+
+Another version is that: Under Models II - VII, if $\lambda'\beta$ is estimable and $\hat\beta$ is any solution to the normal equations, then $\lambda'\hat\beta$ is a linear unbiased estimator of $\lambda'\beta$ and, under Model II, the variance of $\lambda'\hat\beta$ is uniformly less than that of any other linear unbiased estimator of $\lambda'\beta$ [@kimLectureNotes2020,IX, Theorem E13, p38].
+:::
+
+Unfortunately, many of the predictors are correlated. Moreover, the observations from various cities, regions, or counties are very unlikely identical. This issue is called heteroscedasticity. Related contents are in Section of Adequacy.
+
+### Normality
+
+When conducting hypothesis test and confidence intervals, the required assumption is $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$. Maximum Likelihood Methods also requires this assumption.
+
+Evidence has demonstrated that travel distance is not Normal distributed. The Zipf's law also prove that travel distance follows a power distribution. Using logarithm transformations, the skewed distribution can be converted to an approximate normal distribution.
+
+There are some quantitative methods which can examine nomalirty of the transformed distributions.
+
+## Estimations
+
+### Least Squares
+
+- Ordinary Least Squares
+
+Least-Squares method can be used to estimate the coefficients $\beta$ in equation \@ref(eq:lm) The dimension of $\mathbf{X}$ is $n\times p$, which means the data contain $n$ observations and $p-1$ predictors. The $p\times1$ vector of least-squares estimators is denoted as $\hat\beta$ and the solution to the normal equations is
+
+\begin{equation}
+\boldsymbol{\hat\beta}=(\mathbf{X'X})^{-1}\mathbf{X'}\mathbf{y}
+(\#eq:lsq-e)
+\end{equation}
+
+and
+
+\begin{equation}
+\hat\sigma^2=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta})'(\mathbf{y-X}\boldsymbol{\hat\beta})
+(\#eq:lsq-v)
+\end{equation}
+
+
+Here requires $\mathbf{X'X}$ are invertible, that is, the covariates are linearly independent if $\mathbf{X}$ has rank $p$ [@kimLectureNotes2020, V., Definition, p.22].
+
+Given the estimated coefficients, the model can give the fitted values of response as:
+
+\begin{equation}
+\mathbf{\hat y}=\mathbf{X}\boldsymbol{\hat\beta}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'y}= \mathbf{Hy}
+(\#eq:fitted-y)
+\end{equation}
+
+where $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'}$ is hat matrix and $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=\mathbf{y}-\mathbf{X}\boldsymbol{\hat\beta}=(\mathbf{I}-\mathbf{H})\mathbf{y}$
+
+- Generalized Least Squares
+
+
+When the observations are not independent or have unequal variances, the covariance matrix of error is not identity matrix. The assumption of regression model $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{I}$ doesn't hold. Denote $\mathbf{V}$ is a known $n\times n$ positive definite matrix and $V[\boldsymbol{\varepsilon}]=\sigma^2\mathbf{V}$.
+Then, there exists an $n\times n$ symmetric matrix $\mathbf{K}$ with rank $n$ and $\mathbf{V}=\mathbf{KK'}$. Let
+
+\begin{equation}
+\mathbf{z}=\mathbf{K'y},\ \mathbf{B}=\mathbf{K^{-1}X}, \text{and}\ \boldsymbol{\eta}=\mathbf{K'}\boldsymbol{\varepsilon}
+\end{equation}
+
+The linear model becomes $\mathbf{z}=\mathbf{B}\boldsymbol{\beta}+\boldsymbol{\eta}$ and $V[\boldsymbol{\eta}]=\sigma^2\mathbf{I}$.
+If the model is full rank, that is $rank(\mathbf{X})=p$ then $\mathbf{X'V^{-1}X}$ is invertible
+and the generalized least squares solution is
+
+\begin{equation}
+\boldsymbol{\hat\beta}_{GLS}=(\mathbf{X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}
+(\#eq:glsq-e)
+\end{equation}
+
+and
+
+\begin{equation}
+\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'\mathbf{V^{-1}}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})
+(\#eq:glsq-v)
+\end{equation}
+
+### Standardized coefficients
+
+The value of $\hat \beta_j$ means that, given all other coefficients fixed, for each change of one unit in $x_j$, the average change in the mean of $Y$. However, the units of predictors $\mathbf{X}$ are very different. Hence, the values of coefficients are not comparable.
+
+Unit normal scaling or Unit length scaling can convert $\hat \beta_j$ to dimensionless regression coefficient, which is called standardized regression coefficients. Let
+
+\begin{equation}
+\begin{split}
+z_{ij}=&\frac{x_{ij}-\bar x_j}{\sqrt{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}}\\
+y^{0}_{i}=&\frac{y_{i}-\bar y}{\sqrt{\sum_{i=1}^{n}(y_{i}-\bar y)^2}}
+\end{split}
+(\#eq:standize)
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\mathbf{\hat b}=&(\mathbf{Z'Z})^{-1}\mathbf{Z'}\mathbf{y^{0}},\ \text{or}\\
+\hat b_j= &\hat\beta_j\sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar x_j)^2}{\sum_{i=1}^{n}(y_{i}-\bar y)^2}},\ j=1,2,...(p-1),\text{ and}\\
+\hat\beta_0=&\bar y - \sum_{j=1}^{p-1}\hat\beta_j\bar x_j
+\end{split}
+(\#eq:stand-coef)
+\end{equation}
+
+Note that $\mathbf{Z'Z}$ correlations matrix.
+
+\begin{equation}
+\mathbf{Z'Z}=\begin{bmatrix} 
+1 & r_{12} & r_{13} & \dots & r_{1k} \\  
+r_{21} & 1 & r_{23} & \dots & r_{2k} \\  
+r_{31} & _{32} & 1 & \dots & r_{3k} \\  
+\vdots & \vdots & \vdots & \ddots & \vdots \\  
+r_{k1} & r_{k2} & _{k3} & \dots & 1  \end{bmatrix},\quad 
+\mathbf{Z'}\mathbf{y^{0}}=\begin{bmatrix} 
+r_{1y} \\ r_{2y} \\ r_{3y} \\ \vdots \\ r_{ky} \end{bmatrix}
+(\#eq:corr-matrix)
+\end{equation}
+
+where
+
+\begin{equation}
+\begin{split}
+r_{ij}=&\frac{\sum_{u=1}^{n}(x_{ui}-\bar x_i)(x_{uj}-\bar x_j)}{\sqrt{\sum_{u=1}^{n}(x_{ui}-\bar x_i)^2\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2}}\\
+r_{jy}=&\frac{\sum_{u=1}^{n}(x_{uj}-\bar x_j)(y_{u}-\bar y)}{\sqrt{\sum_{u=1}^{n}(x_{uj}-\bar x_j)^2\sum_{u=1}^{n}(y_{u}-\bar y)^2}}
+\end{split}
+(\#eq:corr-1)
+\end{equation}
+
+where $r_{ij}$ is the simple correlation between $x_i$ and $x_j$. $r_{jy}$ is the simple correlation between $x_j$ and $y$
+
+It seems that standardized regression coefficients are comparable. However, the value of $\hat b_j$ depends on other predictors. Therefore, comparison between different models is still problematic.
+
+### Elasticity
+
+Elasticity is commonly used to determine the relative importance of a variable in terms of its influence on a dependent variable. It is generally interpreted as the percent change in the dependent variable induced by a 1% change in the independent variable [@mccarthyTransportationEconomicsTheory2001].
+
+$$e_i=\beta_i\frac{X_i}{Y_i}\approx\frac{\partial Y_i}{\partial X_i}\frac{X_i}{Y_i}$$
+
+```{r,eval=T}
+library(kableExtra) 
+kbl(data.frame(
+  `Model`=c('Linear','Log-linear','Linear-log','Log-log','Logit','Poisson','NB'),
+  `Marginal Effects` = c('$\\beta$','$\\beta Y_i$','$\\beta\\frac{1}{X_i}$', '$\\beta\\frac{Y_i}{X_i}$','$\\beta p_i(1-p_i)$', '$\\beta\\lambda_{i}$','$\\beta \\lambda_{i}$'),
+Elasticity= c('$\\beta\\frac{X_i}{Y_i}$','$\\beta X_i$','$\\beta\\frac{1}{Y_i}$','$\\beta$','$\\beta X_i(1-p_i)$','$\\beta X_i$','$\\beta X_i$')
+)  , booktabs = TRUE, label = 'elas-formula', digit=2, #, align = "llr"
+  caption = 'Elasticity Estimates for Various Functional Forms'
+) %>% kable_classic(full_width = F,font_size = 7) 
+```
+
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Model          | Marginal Effects              | Elasticity                      | -->
+<!-- +:==============:+:=============================:+:===============================:+ -->
+<!-- | Linear         | $\beta$                       | $\beta\frac{X_i}{Y_i}$          | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Log-linear     | $\beta Y_i$                   | $\beta X_i$                     | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Linear-log     | $\beta\frac{1}{X_i}$          | $\beta\frac{1}{Y_i}$            | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Log-log        | $\beta\frac{Y_i}{X_i}$        | $\beta$                         | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Logit          | $\beta p_i(1-p_i)$            | $\beta X_i(1-p_i)$              | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | Poisson        | $\beta \lambda_i$             | $\beta X_i$                     | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+<!-- | NB             | $\beta \lambda_i$             | $\beta X_i$                     | -->
+<!-- +----------------+-------------------------------+---------------------------------+ -->
+
+<!-- : Elasticity Estimates for Various Functional Forms -->
+
+It might be a typo that @ewingTravelBuiltEnvironment2010 use the formula of $\beta \bar X\left(1-\frac{\bar Y}{n}\right)$ for Logit model.
+In Poisson model and Negative Binomial model, $\lambda_i=\exp[\mathbf{x}_i'\boldsymbol{\beta}]$ [@greeneEconometricAnalysis2018, eq.18-17,21].
+For truncated Poisson model: $\delta_i=\frac{(1-P_{i,0}-\lambda_i P_{i,0})}{(1-P_{i,0})^2}\cdot\lambda_i\beta$ [@greeneEconometricAnalysis2018, eq.18-23].
+Hurdle model will give separate marginal(partial) effects [@greeneEconometricAnalysis2018, example 18.20].
+
+### Combined effects?
+
+Some studies sums up the standardized coefficients or elasticities and called the summation as combined effects [@leeComparingImpactsLocal2020]. Although these values are dimensionless, this method is problematic because different model specifications and data ranges are not comparable.
+
+## Inference
+
+### Analysis of Variance
+
+Analysis of Variance (ANOVA) is the fundamental approach in regression analysis. Actually, this method analysis the variation in means rather than variances themselves [@casellaStatisticalInference2002, Ch.11].
+
+Once the linear relationship holds, the response $\mathbf{y}$ can be decomposed to
+
+\begin{equation}
+\begin{split}
+\mathbf{y'y}=&\mathbf{y'Hy}+\mathbf{y'}(\mathbf{I}-\mathbf{H})\mathbf{y}\\
+\mathbf{y'y}=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
+\mathbf{y'y}-n\bar y^2=&\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}-n\bar y^2+\mathbf{y'y}-\boldsymbol{\hat\beta}\mathbf{X'}\mathbf{y}\\
+\sum(y-\bar y)^2=&\sum(\hat y-\bar y)^2+\sum(y-\hat y)^2\\
+\mathrm{SST} =& \mathrm{SSR} + \mathrm{SSE}
+\end{split}
+(\#eq:ss)
+\end{equation}
+
+where $\mathrm{SST}$ is Sum of Squares Total, $\mathrm{SSR}$ is Sum of Squares Regression, and $\mathrm{SSE}$ is Sum of Square Error. $\mathrm{SSE}=\mathbf{e'e}$ represents the unknown part of model.
+
+For Generalized Least Squares method, $\mathrm{SST}=\mathbf{y'V^{-1}y}$, $\mathrm{SSR}= \boldsymbol{\hat\beta'}\mathbf{B'z}=\mathbf{y'V^{-1}X(X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$, and $\mathrm{SSE}=\mathrm{SST}-\mathrm{SSR}$
+
+### Hypothesis Test
+
+-   Significance of Regression
+
+Significance of regression means if the linear relationship between response and predictors is adequate. The hypotheses for testing model adequacy are
+
+\begin{equation}
+\begin{split}
+H_0:&\quad \beta_0 = \beta_1 = \cdots =\beta_{p-1}=0\\
+H_1:&\quad \text{at least one } \beta_j \neq 0,\ j=0,1,...,(p-1)\\
+\end{split}
+(\#eq:hyp-1)
+\end{equation}
+
+By Theorem D14 [@kimLectureNotes2020,XX, p.90], if an $n\times1$random vector $\mathbf{y}\sim N(\boldsymbol{\mu},\mathbf{I})$, then
+
+\begin{equation}
+\mathbf{y'y} \sim \chi^2(n,\frac12\boldsymbol{\mu'\mu})
+(\#eq:chisq)
+\end{equation}
+
+Recall the assumption of $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$.\
+By the additive property of $\chi^2$ distribution,
+
+\begin{equation}
+\begin{split}
+\frac{MSE}{\sigma^2}=&\frac{\mathbf{y'(I-H)y}}{(n-p)\sigma^2} \sim \chi^2_{(n-p)}\\
+\frac{MSR}{\sigma^2}=&\frac{\mathbf{y'Hy}}{(p-1)\sigma^2} \sim \chi^2_{(p-1)}
+\end{split}
+(\#eq:msemsr)
+\end{equation}
+
+Though $\sigma^2$ is usually unknown, by the relationship between $\chi^2$ and $F$ distributions,
+
+\begin{equation}
+F_0=\frac{MSE}{MSR} \sim F_{(p-1),(n-p),\lambda}
+\end{equation} 
+
+where $\lambda$ is the non-centrality parameter. It allows to test the hypotheses given a significance level $\alpha$. If test statistic $F_0>F_{\alpha,(p-1),(n-p)}$, then one can reject $H_0$.
+
+If a VMT-urban form model added many predictors but adjusted $R^2$ is still low, the association between travel distance and built environment might be spurious.
+
+-   Significance of Coefficients
+
+For testing a specific coefficient, the hypothesis is
+
+\begin{equation}
+\begin{split}
+H_0:&\quad \beta_j =0\\
+H_1:&\quad \beta_j \neq 0\\
+\end{split}
+(\#eq:hyp-2)
+\end{equation}
+
+$\boldsymbol{\hat\beta}$ is a linear combination of $\mathbf{y}$. Based on the assumption of $\mathbf{y|x}\sim N (\mathbf{X}\boldsymbol{\beta},\sigma^2\mathbf{I})$, it can be proved that $\boldsymbol{\hat\beta}\sim N (\boldsymbol{\beta},\sigma^2(\mathbf{X'X})^{-1})$ and
+
+\begin{equation}
+t_0=\frac{\hat\beta_j}{se(\hat\beta_j)}=\frac{\hat\beta_j}{\sqrt{\hat\sigma^2C_{jj}}} \sim t_{(n-p)}
+\end{equation} 
+
+where $C_{jj}$ is the element at the $j$ row and $j$ column of $(\mathbf{X'X})^{-1}$. If $|t_0|< t_{\alpha/2,(n-p)}$, then the test failed to reject the $H_0$, this predictor can be removed from the model. This test is called partial or marginal test because the test statistic for $\beta_j$ depends on all the predictors in the model.
+
+### Confidence Intervals
+
+Above results can also construct the confidence interval for each coefficient. A $100(1-\alpha)$ confidence interval for $\beta_j$ is
+
+\begin{equation}
+\hat\beta_j-t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}\le \beta_j \le \hat\beta_j+t_{\alpha/2,(n-p)}\sqrt{\hat\sigma^2C_{jj}}
+\end{equation}
+
+# Adequacy
+
+The outcome of estimation and inference can not demonstrate model's performance.
+If the primary assumptions is violated, the estimations could be biased and the model could be useless. These problems can also happen when the model is not correctly specified. It is necessary to make diagnosis and validation for fitted models.
+
+
+
+<!-- "There are different types of model specification errors in regression analysis: " -->
+<!-- (1) necessary independent variable(s) is (are) missing from the model (i.e., omission error) (Greene 2012, 96--8, Section 4.3.2); -->
+<!-- (2) irrelevant independent variable(s) is (are) added to the model (i.e., commission error) (Greene 2012, 98, Section 4.3.3); -->
+<!-- (3) independent variables have an incorrect functional form (Ramsey 1969; Thursby and Schmidt 1977; Hausman 1978; Davidson and MacKinnon 1981); -->
+<!-- (4) variables in the model are not accurately measured (i.e., measurement error) (Wooldridge 2015, 287--92, Section 9.4); and -->
+<!-- (5) the model is not stand-alone but instead belongs to a system of simultaneous equations (Ramsey 1969; Hausman 1978). -->
+
+## Goodness of fit
+
+This structure tell us how good the model can explain the data. Coefficient of Determination $R^2$ is a proportion to assess the quality of fitted model.
+
+\begin{equation}
+R^2 =\frac{SSR}{SST}=1-\frac{SSE}{SST}
+(\#eq:rsq)
+\end{equation}
+
+when $R^2$ is close to $1$, the most of variation in response can be explained by the fitted model. Although $R^2$ is not the only criteria of a good model, it is often available in most published papers. Recall the discussion in Part I, the aggregated data will eliminate the difference among individuals, households, or neighborhoods. In the new variance structure, $SSE$ will be much less than disaggregated model. The $R^2$ in many disaggregate studies are around 0.3, while the $R^2$ in some aggregate studies can reach 0.8. A seriously underfitting model's outputs could be biased and unstable.
+
+A fact is that adding predictors into the model will never decrease $R^2$. Thus the models with different number of predictors is not comparable. Adjusted $R^2$ can address this issue by introducing degree of freedom. The degree of freedom denotes the amount of information required to know.
+
+\begin{equation}
+\begin{split}
+df_T =& df_R + df_E\\
+n-1=&(p-1)+(n-p)
+\end{split}
+(\#eq:df)
+\end{equation}
+
+Then, the mean square (MS) of each sum of squares (SS) can be calculated by $MS=SS/df$. The mean square error $MSE$ is also called as the expected value of error variance $\hat\sigma^2=MSE=SSE/(n-p)$. $n-p$ is the degree of freedom. Then adjusted $R^2$ is
+
+\begin{equation}
+R_{adj}^2 = 1-\frac{MSE}{MST} = 1-\frac{SSE/(n-p)}{SST/(n-1)}
+(\#eq:rsq-adj)
+\end{equation}
+
+Another similar method is $R^2$ for prediction based on PRESS.
+Recall the PRESS statistic is the prediction error sum of square by fitting a model with $n-1$ observations.
+
+\begin{equation}
+PRESS = \sum_{i=1}^n(y_i-\hat y_{(i)})^2= \sum_{i=1}^n\left(\frac{e_i}{1-h_{ii}}\right)^2
+(\#eq:press)
+\end{equation}
+
+
+A model with smaller PRESS has a better ability of prediction. The $R^2$ for prediction is
+
+\begin{equation}
+R_{pred}^2 = 1-\frac{PRESS}{MST}
+(\#eq:rsq-pred)
+\end{equation}
+
+
+
+
+
+## Residuals Analysis
+
+The major assumptions, both IID and normality are related to residual. 
+Residual diagnosis is an essential step for modeling validation.
+
+There are several scaled residuals can help the diagnosis. 
+Since $MSE$ is the expected variance of error $\hat\sigma^2$ and $E[\varepsilon]=0$, standardized residuals should follow a standard normal distribution.
+
+$$d_i=\frac{e_i}{\sqrt{MSE}}=e_i\sqrt{\frac{n-p}{\sum_{i=1}^n e_i^2}},\quad i=1,2,...,n$$
+
+Recall random error $\mathbf{e}=\mathbf{y}-\mathbf{\hat y}=(\mathbf{I}-\mathbf{H})\mathbf{y}$ and hat matrix $\mathbf{H}=\mathbf{X}(\mathbf{X'X})^{-1}\mathbf{X'}$.
+Let $h_{ii}$ denote the $i^{th}$ diagonal element of hat matrix.
+Studentized Residuals can be expressed by
+$$r_i=\frac{e_i}{\sqrt{MSE(1-h_{ii})}},\quad i=1,2,...,n$$
+It is proved that $0\le h_{ii}\le1$.
+An observation with $h_{ii}$ closed to one will return a large value of $r_i$. The $x_i$ who has strong influence on fitted value is called leverage point.
+
+Ideally, the scaled residual have zero mean and unit variance. Hence, an observation with $|d_i|>3$ or $|r_i|>3$ is a potential outlier.
+
+Predicted Residual Error Sum of Squares (PRESS) can also be used to detect outliers.
+This method predicts the $i^{th}$ fitted response by excluding the $i^{th}$ observation and examine the influence of this point.
+The corresponding error $e_{(i)}=e_{i}/(1-h_{ii})$ and $V[e_{(i)}]=\sigma^2/(1-h_{ii})$.
+Thus, if $MSE$ is a good estimate of $\sigma^2$, PRESS residuals is equivalent to Studentized Residuals.
+
+$$\frac{e_{(i)}}{\sqrt{V[e_{(i)}]}}=\frac{e_i/(1-h_{ii})}{\sqrt{\sigma^2/(1-h_{ii})}}=\frac{e_i}{\sqrt{\sigma^2(1-h_{ii})}}$$
+
+- Residual Plot
+
+Residual plot shows the pattern of the residuals against fitted $\mathbf{\hat y}$.
+If the assumptions are valid, the shape of points should like a envelope and be evenly distributed around the horizontal line of $e=0$.
+
+A funnel shape in residual plot shows that the variance of error is a function of $\hat y$. A suitable transformation to response or predictor could stabilize the variance.
+A curved shape means the assumption of linearity is not valid. It implies that adding quadratic terms or higher-order terms might be suitable.
+
+
+- Normal Probability Plot
+
+A histogram of residuals can check the normality assumption. 
+The highly right-skewed probability distribution of VMT log-transform of VMT is reasonable.
+
+A better way is a normal quantile -- quantile (QQ) plot of the residuals.
+An ideal cumulative normal distribution should plot as a straight line.
+Only looking at the $R^2$ and p-values cannot disclose this feature. 
+
+
+## Heteroscedasticity
+
+When the assumption of constant variance is violated, the linear model is heteroscedastic.
+Heteroscedasticity is common in urban studies. For example, the cities with different size are not identical. Small cities or rural areas might have homogeneous values of population density, while large cities' densities are more variable. 
+
+Recall Generalized least square estimates \@ref(eq:glsq-e) and \@ref(eq:glsq-v), if the residuals are independent but variances are not constant, a simple linear model becomes $\boldsymbol{\varepsilon}\sim MVN(\mathbf{0},\sigma^2\mathbf{V})$ where
+
+\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+x_1^2 & 0 & \dots & 0 \\  
+0 & x_2^2 & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & x_n^2 \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+\frac1{x_1^2} & 0 & \dots & 0 \\  
+0 & \frac1{x_2^2} & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & \frac1{x_n^2} \end{bmatrix}
+(\#eq:hete-matrix)
+\end{equation}
+
+Then $\mathbf{X'V^{-1}X}=n$ and the generalized least squares solution is
+
+\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\sum_{i=1}^{n}\frac{y_i}{x_i}
+(\#eq:hete-e)
+\end{equation}
+
+and
+
+\begin{equation}
+\hat\sigma^2_{WLS}=\frac1{n-1}\sum_{i=1}^{n}\frac{(y_i-\hat\beta_{1}x_i)^2}{x_i^2}
+(\#eq:hete-v)
+\end{equation}
+
+In heteroscedastic model, the OLS estimates of coefficients are still unbiased but no longer efficient.
+But the estimates of variances are biased. The corresponding hypothesis test and confidence interval would be misleading.
+
+Another special case is the model with aggregated variables, which is the cases of geographic unit.
+Let $u_j$ and $v_j$ are the response and predictors of $j^{th}$ household in a neighborhood. $n_i$ is the sample size in each neighborhood. Then $y_i=\sum_{j=1}^{n_i}u_j/n_i$ and $X_i=\sum_{j=1}^{n_i}v_j/n_i$. In this case,
+
+\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+\frac1{n_1} & 0 & \dots & 0 \\  
+0 & \frac1{n_2} & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & \frac1{n_n} \end{bmatrix},\quad 
+\mathbf{V}^{-1}=\begin{bmatrix} 
+n_1 & 0 & \dots & 0 \\  
+0 & n_2 & \dots & 0 \\  
+\vdots & \vdots & \ddots & \vdots \\  
+0 & 0 & \dots & n_n \end{bmatrix}
+(\#eq:agg-matrix)
+\end{equation}
+
+Then $\mathbf{X'V^{-1}X}=\sum_{i=1}^nn_ix_i^2$ and the WLS estimate of $\beta_1$ is
+
+\begin{equation}
+\hat\beta_{1,WLS}=\frac1n\frac{\sum_{i=1}^{n}n_ix_iy_i}{\sum_{i=1}^{n}n_ix_i^2}
+(\#eq:agg-e)
+\end{equation}
+
+and
+
+\begin{equation}
+V[\hat\beta_{1,WLS}]=\frac{V[\sum_{i=1}^{n}n_ix_iy_i]}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sum_{i=1}^{n}n_i^2x_i^2\sigma^2/n_i}{(\sum_{i=1}^{n}n_ix_i^2)^2}=\frac{\sigma^2}{\sum_{i=1}^{n}n_ix_i^2}
+(\#eq:agg-v)
+\end{equation}
+
+There are three procedures, Bartlett's likelihood ratio test, Goldfeld-Quandt test, or Breusch-Pagan test which can be used to examine heteroscedasticity [@ravishankerFirstCourseLinear2020, 8.1.3, pp.288-290]
+
+
+## Autocorrelation
+
+For spatio-temporal data, the observations often have some relationship over time or space.
+In these cases, the assumption of independent errors is violated, the linear model with serially correlated errors is called autocorrelation.
+Autocorrelation is also common in urban studies. All the neighboring geographic entities or stages could impact each other, or sharing the similar environment.
+
+Take a special case of time-series data for example, assuming the model have constant variance. $E[\varepsilon]=0$ but $Cov[\varepsilon_i,\varepsilon_j]=\sigma^2\rho^{|j-i|}$, $i,j=1,2,...,n$ and $|\rho|<1$
+The variance-covariance matrix is also called Toeplitz matrix as below
+
+\begin{equation}
+\mathbf{V}=\begin{bmatrix} 
+1 & \rho & \rho^2 & \dots & \rho^{n-1} \\  
+\rho & 1 & \rho & \dots & \rho^{n-2} \\  
+\vdots & \vdots & \vdots & \ddots & \vdots \\  
+\rho^{n-1} & \rho^{n-2} & \rho^{n-3} & \dots & 1 \end{bmatrix},\quad 
+\{\mathbf{V}^{-1}\}_{ij}=\begin{cases} 
+\frac{1}{1-\rho^2} & \text{if } i=j=1,n \\  
+\frac{1+\rho^2}{1-\rho^2} & \text{if } i=j=2,...,n-1 \\  
+\frac{-\rho}{1-\rho^2} & \text{if } |j-i|=1 \\  
+0  & \text{otherwise} \end{cases}
+(\#eq:auto-matrix)
+\end{equation}
+
+This is a linear regression with autoregressive order 1 (AR(1)). 
+The estimates of $\boldsymbol{\hat\beta}$ is the same with the GLS solutions, which are
+$\boldsymbol{\hat\beta}_{GLS}=(\mathbf{X'V^{-1}X})^{-1}\mathbf{X'V^{-1}}\mathbf{y}$ and 
+$\widehat{V[\boldsymbol{\hat\beta}_{GLS}]}=\hat\sigma^2_{GLS}(\mathbf{X'V^{-1}X})^{-1}$,
+where $\hat\sigma^2_{GLS}=\frac1{n-p}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})'\mathbf{V^{-1}}(\mathbf{y-X}\boldsymbol{\hat\beta}_{GLS})$.
+
+It is can be verified that $\boldsymbol{\hat\beta}_{GLS}\le\boldsymbol{\hat\beta}_{OLS}$ always holds and they are equal when $\mathbf{V=I}$ or $\rho=0$. It proves that $\boldsymbol{\hat\beta}_{GLS}$ are the best linear unbiased estimators (BLUE).
+
+This case can be extended to miltiple regression models and the autocorrelation of a stationary stochastic process at lag-k.
+Durbin-Watson test is used to test the null hypothesis of $\rho=0$.
+
+
+# Multicollinearity
+
+Multicollinearity or near-linear dependence refers to the models with highly correlated predictors. When data is generated from experimental design, the treatments $X$ could be fixed variables and be orthogonal. But travel-urban form model is observational studies and nothing can be controlled as in lab. It is known that there are complex correlations among the built-environment predictors themselves.
+
+Although, the basic IID assumptions do not require that all predictors $\mathbf{X}$ are independent, when the predictors are near-linear dependent, the model is ill-conditioned and the least-square estimators are unstable.
+
+## Variance Inflation
+
+multicollinearity can make the variances inflated and impact model precision seriously. If some of predictors are exact linear dependent, the matrix $(\mathbf{X'X})^{-1}$ is symmetric but non-invertible. By spectral decomposition of symmetric matrix, $\mathbf{X'X}=\mathbf{P'\Lambda P}$ where $\Lambda=\text{diag}(\lambda_1,...,\lambda_p)$, $\lambda_i$'s are eigenvalues of $\mathbf{X'X}$, $\mathbf{P}$ is an orthogonla matrix whose columns are normalize eigenvectors. Then the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is $\sigma^2\sum_{j=1}^p1/\lambda_j$.
+If the predictors are near-linear dependent or nearly singular, $\lambda_j$s may be very small and the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is highly inflated.
+
+For the same reason, the correlation matrix using unit length scaling $\mathbf{Z'Z}$will has a inverse matrix with inflated variances. That means that the diagonal elements of $(\mathbf{Z'Z})^{-1}$ are not all equal to one. The diagnoal elements are called **Variance Inflation Factors**, which can be used to examine multicollinearity. The VIF for a particular predictor is examined as below
+
+\begin{equation}
+\mathrm{VIF}_j=\frac{1}{1-R_j^2}
+(\#eq:vif)
+\end{equation}
+
+where $R_j^2$ is the coefficient of determination by regressing $x_j$ on all the remaining predictors.
+
+A common approach is to drop off the predictor with greatest VIF and refit the model until all VIFs are less than 10. However, dropping off one or more predictors will lose many information which might be valuable for explaining response. Due to the complexity among predictors, dropping off the predictor with the greatest VIF is not always the best choice. Sometimes, removing a predictor with moderate VIF can make all VIFs less than 10 in the refitted model. Moreover, there is not an unique criteria for VIF value. When the relationship between predictor and response is weak, or the $R^2$ is low, the VIFs less than 10 may also affect the ability of estimation dramatically.
+
+Orthogonalization before fitting the model might be helpful. Other approaches such as ridge regression or principal components regression could deal with multicollinearity better.
+
+## Ridge Regression
+
+
+Least squares method gives the unbiased estimates of regression coefficients. 
+However, multicollinearity will lead to inflated variance and make the estimates unstable and unreliable.
+To get a smaller variance, a tradeoff is to release the requirement of unbiasedness.
+@hoerlRidgeRegressionBiased1970 proposed ridge regression to address the nonorthogonal problems.
+Denote $\boldsymbol{\hat\beta}_{R}$ are biased estimates but its variance is small enough.
+
+\begin{equation}
+\begin{split}
+\mathrm{MSE}(\boldsymbol{\hat\beta}_{R})&=E[\boldsymbol{\hat\beta}_{R}-\boldsymbol{\beta}]^2=\mathrm{Var}[\boldsymbol{\hat\beta}_{R}]+\mathrm{Bias}[\boldsymbol{\hat\beta}_{R}]^2\\
+&<\mathrm{MSE}(\boldsymbol{\hat\beta}_{LS})=\mathrm{Var}[\boldsymbol{\hat\beta}_{LS}]
+\end{split}
+\end{equation}
+
+The estimates of ridge regression are
+
+\begin{equation}
+\boldsymbol{\hat\beta}_{R}=(\mathbf{X'X}+k\mathbf{I})^{-1}\mathbf{X'}\mathbf{y}
+(\#eq:ridge-e)
+\end{equation}
+where $k\ge0$ is a selected constant and is called a biasing parameter. When $k=0$, the ridge estimator reduces to least squares estimators.
+
+When $\mathbf{X}$ is nonsingular and $(\mathbf{X'X})^{-1}$ exists, the ridge estimator is a linear transformation of $\boldsymbol{\hat\beta}_{LS}$. That is $\boldsymbol{\hat\beta}_{R}=\mathbf{Z}_k\boldsymbol{\hat\beta}_{LS}$ where $\mathbf{Z}_k=(\mathbf{X'X}+k\mathbf{I})^{-1}\mathbf{X'X}$
+
+Recall the total-variance of $\boldsymbol{\hat\beta}_{LS}$ is $\sigma^2\sum_{j=1}^p1/\lambda_j$.
+The total-variance of $\boldsymbol{\hat\beta}_{R}$ is 
+
+\begin{equation}
+\mathrm{tr}(\mathrm{Cov}[\boldsymbol{\hat\beta}_{R}])=\sigma^2\sum_{j=1}^p\frac{\lambda_j}{(\lambda_j+k)^2}
+\end{equation}
+
+Thus, introducing $k$ into the model can avoid tiny denominators and eliminate the inflated variance.
+Choosing a proper value of $k$ is to keep the balance of $\mathrm{MSE}$ and $\mathrm{Bias}$.
+The bias in $\boldsymbol{\hat\beta}_{R}$ is 
+
+\begin{equation}
+\mathrm{Bias}(\boldsymbol{\hat\beta}_{R})^2=k^2\boldsymbol{\beta}'(\mathbf{X'X}+k\mathbf{I})^{-2}\boldsymbol{\beta}
+\end{equation}
+
+Hence,increasing $k$ will reduce $MSE$ but make greater $bias$.
+Ridge trace is a plot of $\boldsymbol{\hat\beta}_{R}$ versus $k$ that can help to select a suitable value of $k$.
+First, at the value of $k$, the estimates should be stable. Second, the estimated coefficients should have proper sign and reasonable values. Third, the $SSE$ also should has a reasonable value.
+
+Ridge regression will not give a greater $R^2$ than least squares method. Because the total sum of squares is fixed.
+
+\begin{equation}
+\begin{split}
+\mathrm{SSE}(\boldsymbol{\hat\beta}_{R})&=(\mathbf{y-X}\boldsymbol{\hat\beta}_{R})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{R})\\
+&=(\mathbf{y-X}\boldsymbol{\hat\beta}_{LS})'(\mathbf{y-X}\boldsymbol{\hat\beta}_{LS})+(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})'\mathbf{X'X}(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})\\
+&=\mathrm{SSE}(\boldsymbol{\hat\beta}_{LS})+(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})'\mathbf{X'X}(\boldsymbol{\hat\beta}_{LS}-\boldsymbol{\hat\beta}_{R})\\
+&\ge \mathrm{SSE}(\boldsymbol{\hat\beta}_{LS})
+\end{split}
+\end{equation}
+
+The advantage of ridge regression is to abtain a suitable set of parameter estimates rather than to improve the fitness. It could have a better prediction ability than least squares.
+It can also be useful for variable selection. The variables with unstable ridge trace or tending toward the value of zero can be removed from the model.
+
+In many case, the ridge trace is erratic divergence and may revert back to least square estimates. 
+[@jensenSurrogateModelsIllconditioned2010a;@jensenVariationsRidgeTraces2012] proposed surrogate model to further improve ridge regression. Surrogate model chooses $k$ depend on matrix $\mathbf{X}$ and free to $\mathbf{Y}$. 
+
+Using a compact singular value decomposition (SVD), the original can be decomposed to maxtix$\mathbf{X}=\mathbf{PD_{\xi}Q}'$. $\mathbf{P}$ and $\mathbf{Q}$ are orthogonal. The columns of $\mathbf{P}$ and $\mathbf{Q}$ are left-singular vectors and right-singular vectors of $\mathbf{X}$.
+It satisfies $\mathbf{P'P}=\mathbf{I}$ and $\mathbf{D}_{\xi}=\text{diag}(\xi_1,...,\xi_p)$ is decreasing singular values. Then $\mathbf{X}_k=\mathbf{PD}((\xi_i^2+k_i)^{1/2})\mathbf{Q}'$ and 
+
+\begin{equation}
+\begin{split}
+\mathbf{X'X}=&\mathbf{QD}_\xi^2\mathbf{Q}'\\
+\mathbf{X}_k'\mathbf{X}_k=&\mathbf{Q(D_\xi^2+K)}\mathbf{Q}'\quad\text{generalized surrogate}\\
+\mathbf{X}_k'\mathbf{X}_k=&\mathbf{QD}_\xi^2\mathbf{Q}'+k\mathbf{I}\quad\text{ordinary surrogate}
+\end{split}
+\end{equation}
+
+and the surrogate solution $\boldsymbol{\hat\beta}_{S}$ is
+
+\begin{equation}
+\mathbf{Q(D^2_{\xi}+K)Q}'\boldsymbol{\hat\beta}_{S}=\mathbf{X}_k=\mathbf{QD}((\xi_i^2+k_i)^{1/2})\mathbf{P}'\mathbf{y}
+(\#eq:surrogate-e)
+\end{equation}
+
+Jensen and Ramirez proved that $\mathrm{SSE}(\boldsymbol{\hat\beta}_{S})< \mathrm{SSE}(\boldsymbol{\hat\beta}_{S})$ and surrogate model's canonical traces are monotone in $k$.
+
+## Lasso Regression
+
+Ridge regression can be understood as a restricted least squares problem. Denote the constraint $s$, the solution of ridge coefficient estimates satisfies
+
+\begin{equation}
+\min_{\boldsymbol\beta}\left\{\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^p\beta_jx_j\right)^2\right\}\text{ subject to } \sum_{j=1}^p\beta_j^2\le s
+\end{equation}
+
+Another approach is to replace the constraint term $\sum_{j=1}^p\beta_j^2\le s$ with $\sum_{j=1}^p|\beta_j|\le s$. This method is called lasso regression. 
+
+\begin{equation}
+\min_{\boldsymbol\beta}\left\{\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^p\beta_jx_j\right)^2\right\}\text{ subject to } \sum_{j=1}^p|\beta_j|\le s
+\end{equation}
+
+Suppose the case of two predictors, the quadratic loss function creates a spherical constraint for a geometric illustration, while the norm loss function is a diamond. The contours of $\mathrm{SSE}$ are many expanding ellipses centered around least square estimate $\hat\beta_{LS}$. Each ellipse represents a $k$ value. 
+
+If the restriction $s$ also called 'budget' is very large, the restriction area will cover the point of $\hat\beta_{LS}$. That means $\hat\beta_{LS}=\hat\beta_{R}$ and $k=0$.
+When $s$ is small, the solution is to choose the ellipse contacting the constraint area with corresponding $k$ and $\mathrm{SSE}$.
+
+Here lasso constraint has sharp corners at each axes. When the ellipse has a intersect point on one corner, that means one of the coefficient equals zero. But it will not happen on ridge constraint.
+Therefore, an improvement of lasso with respect to ridge regression is that lasso allow some estimates $\beta_j=0$. It makes the results more interpretative.  Moreover, lasso regression can make variable selection
+
+
+## Principal Components Regression
+
+Principal Components Regression (PCR) is a dimension reduction method which that can handle multicollinearity.
+It still uses a singular value decomposition (SVD) and get $\mathbf{X'X}=\mathbf{Q\Lambda Q}'$
+$\mathbf{Q}$ are the matrix who columns are orthogonal eigenvectors of $\mathbf{X'X}$. $\Lambda=\text{diag}(\lambda_1,...,\lambda_p)$ is decreasing eigenvalues with $\lambda_1\ge\lambda_1\ge\cdots\ge\lambda_p$. Then the linear model can transfer to
+
+\begin{equation}
+\mathbf{y} = \mathbf{XQQ}'\boldsymbol\beta + \varepsilon = \mathbf{Z}\boldsymbol\theta + \varepsilon
+\end{equation}
+
+where $\mathbf{Z}=\mathbf{XQ}$, $\boldsymbol\theta=\mathbf{Q}'\boldsymbol\beta$. 
+$\boldsymbol\theta$ is called the regression parameters of the principal components.
+$\mathbf{Z}=\{\mathbf{z}_1,...,\mathbf{z}_p\}$ is known as the matrix of principal components of $\mathbf{X'X}$. 
+Then $\mathbf{z}'_j\mathbf{z}_j=\lambda_j$ is the $j$th largest eigenvalue of $\mathbf{X'X}$.
+
+PCR usually chooses several $\mathbf{z}$_js with largest $\lambda_j$s and can eliminate multicollinearity. 
+Its estimates $\boldsymbol{\hat\beta}_{P}$ results in low bias but the mean squared error $MSE(\boldsymbol{\hat\beta}_{P})$ is smaller than that of least square $MSE(\boldsymbol{\hat\beta}_{LS})$.
+
+Therefore, some disaggregated travel models' $R^2$ can be over 0.5. But the limitation is that the principal components are hard to interpret the meaning.
+The results of PCR may just describe the data themselves and they are reproducible but not replicable for other data.
+
+```{r,eval=F}
+# Compute k-means with k = 3
+set.seed(123)
+res.km <- kmeans(scale(iris[, -5]), 3, nstart = 25)
+# K-means clusters showing the group of each individuals
+fviz_cluster(res.km, data = iris[, -5],
+             palette = "set3", #c("#2E9FDF", "#00AFBB", "#E7B800")
+             geom = "point", pointsize=1, # "text"
+             ellipse = T,ellipse.type ="t",   #'confidence'"euclid""convex"
+             ellipse.level = 0.75, ellipse.alpha = 0.1,
+             ggtheme = theme_bw(), main="Models with trip response variable",xlab="data", ylab="models"
+             )
+```
+
+```{r,eval=F}
+res.km <- kmeans(scale(USArrests), 4, nstart = 25)
+fviz_cluster(res.km, data = USArrests,
+             palette = "set3", #c("#2E9FDF", "#00AFBB", "#E7B800")
+             geom = "point", pointsize=1, # "text"
+             ellipse = T,ellipse.type ="t",   #'confidence'"euclid""convex"
+             ellipse.level = 0.75, ellipse.alpha = 0.1,legend = "none",
+             ggtheme = theme_bw(), main="Models with trip response variable",xlab="data", ylab="models"
+             )
+```
+
+```{r modelcluster, eval=F, out.width='50%',fig.cap="A diagram of model cluster"}
+# Dimension reduction using PCA
+res.pca <- prcomp(USArrests,  scale = TRUE) #iris[, -5]
+# Coordinates of individuals
+ind.coord <- as.data.frame(get_pca_ind(res.pca)$coord)
+# Add clusters obtained using the K-means algorithm
+res.km <- kmeans(scale(USArrests), 4, nstart = 25)
+ind.coord$cluster <- factor(res.km$cluster)
+# Add Species groups from the original data sett
+# ind.coord$Species <- iris$Species
+eigenvalue <- round(get_eigenvalue(res.pca), 1)
+variance.percent <- eigenvalue$variance.percent
+p <- ggscatter(ind.coord,x = "Dim.1", y = "Dim.2",
+  color = "cluster", palette = "npg", title="Find some proper Model clusters",
+  ellipse = TRUE, ellipse.type = "t", #"convex"
+  ellipse.border.remove=T, ellipse.level = 0.85,
+  shape = "cluster", #"Species"
+  size = 1.5,legend = "none", ggtheme = theme_bw(),
+  xlab = "Various scale or scope",ylab = "Various probability distribution",
+) + # theme(axis.text = element_blank()) +
+  stat_mean(aes(color = cluster), size = 8,shape = c(1,2,0,3))
+
+ggpar(p,tickslab=F,ticks=F)
+```
+
+
+# Variables Selections
+
+It has shown that lasso can help dropping off some variables. 
+To reduce variance, lasso allow the least squares estimates shrinking towards zero. This method is called shrinkage.
+PCR is a dimension reduction method which projecting the original predictors into a lower-dimension space.
+This chapter gives more approaches for systematic variable selections.
+
+## Model Evaluation Criteria
+
+Coefficient of determination $R^2$is a basic measure of model performance. It has known that adding more predictor always increases $R^2$. So the subset regression will stop to add new variables when the change of $R^2$ is not significant.
+
+The improvement of $R^2_{adj}$ is that it is not a monotone increasing function. So one can select a maximum value on a convex curve.
+Maximizing $R^2_{adj}$ is equivalent to minimizing residual mean square $\mathrm{MSE}$
+
+When prediction of the mean response is the interest, $R^2_{pred}$ based on prediction mean square error (PRESS) statistic is more preferred. PRESS is useful for selecting from two competing models.
+
+### Mallows $C_p$
+
+Beside above criteria, Mallows $C_p$ statistic is an important criteria related to the mean square error.
+Suppose the fitted subset model has $p$ variables and expected response $\hat y_i$. $\mathrm{SSE}(p)$ is the total sum square error including two variance components.
+$\mathrm{SSE}$ is the true sum square error from the 'true' model, while the sum square bias is $\mathrm{SSE}_B(p)=\sum_{i=1}^n(E[y_i]-E[\hat y_i])^2= \mathrm{SSE}(p) - \mathrm{SSE}$.
+Then Mallows $C_p$ is
+
+\begin{equation}
+\begin{split}
+C_p=&\frac{1}{\hat\sigma^2}( \mathrm{SSE}_B(p) + \sum_{i=1}^n\mathrm{Var}[\hat y_i] )\\
+=&\frac{1}{\hat\sigma^2}( \mathrm{SSE}(p) - \mathrm{SSE} + \sum_{i=1}^n\mathrm{Var}[\hat y_i] )\\
+=&\frac{1}{\hat\sigma^2}( \mathrm{SSE}(p) - (n-p)\hat\sigma^2 + p\hat\sigma^2 )\\
+=&\frac{\mathrm{SSE}(p)}{\hat\sigma^2} - n + 2p
+\end{split}
+\end{equation}
+
+If the supposed model is true, $\mathrm{SSE}_B(p)=0$, it gives $E[C_p|\mathrm{Bias}=0] = \frac{(n-p)\sigma^2}{\sigma^2}-(n-2p)=p$
+Hence, a plot of $C_p$ versus $p$ can help to find the best one from many points. The proper model should have $C_p\approx p$ and smaller $C_p$ is preferred.
+$C_p$ is often increase when $\mathrm{SSE}(p)$ decrease by adding predictors. A personal judgment can choose the best tradeoff between samller $C_p$ and smaller $\mathrm{SSE}(p)$.
+
+### Akaike/Bayesian Information Criterion (AIC/BIC)
+
+Akaike Information Criterion (AIC) is a penalized measure using maximum entropy. 
+AIC has a similar characteristic with $C_p$ that it will decrease when adding extra terms into the model. Then one can justify when the model can stop adding the new terms.
+
+\begin{equation}
+\mathrm{AIC}=n\ln\left(\frac1n \mathrm{SSE} \right)+ 2p
+(\#eq:aic)
+\end{equation}
+
+Bayesian information criterion (BIC) is the extension of AIC. @schwarzEstimatingDimensionModel1978 proposed a version of BIC with higher penalty for adding predictors when sample size is large.
+
+\begin{equation}
+\mathrm{BIC}=n\ln\left(\frac{1}{n} \mathrm{SSE} \right)+ p\ln(n)
+(\#eq:bic)
+\end{equation}
+
+
+
+
+## Selecting Procedure
+
+
+### All Possible Regressions
+
+Suppose data has $p$ candidate predictors. There will be $2^p$ possible models. 
+For example, one can fit 1024 models using $10$ candidate predictors. Then one can select the best one based on aobve criteria.
+For high-dimension data, fitting all possible regressions is very computing intensive.
+In practice, people often choose other more efficient procedures.
+
+### Best Subset selection
+
+Given a number of selected variables $k\le p$, there could be $p\choose k$ possible combinations. By fitting all $p\choose k$ models with $k$ predictors, denote the best model with smallest $SSE$, or largest $R^2$ as $M_k$.
+For each $k=1,2,...,p$, there will be $M_0,M_1,...,M_p$ models. The final winner could be identified by comparing PRESS,
+
+### Stepwise Regression
+
+- Forward Selection
+
+Forward selection starts from null model with only intercept. In each step of this procedure, a variable with greatest simple correlation with the response will be added into the model. If the new variable $x_1$ gets a large $F$ statistic and shows a significance effect on response, the second step will calculate the partial correlations between two sets of residuals. One is from the new fitted model $\hat y=\beta_0+\beta_1x_1$. Another one is the model of other candidates on $x_1$, that is $\hat x_j=\alpha_{0j}+\alpha_{1j}x_1$, $j=2,3,...,(p-1)$. Then the variable with largest partial correlation with $y$ is added into the model.
+The two steps will repeat until the partial $F$ statistic is small at a given significant level.
+
+- Backward Elimination
+
+Backward elimination starts from the full model with all candidates.
+Given a preselected value of $F_0$, each round will remove the variable with smallest $F$ and refit the model with rest predictors.
+Then repeat to drop off one variable each round until all remaining predictors have a partial $F_j>F_0$.
+
+- Stepwise Regression
+
+Stepwise regression combines forward selection and backward elimination together. During the forward steps, if some added predictors have a partial $F_j<F_0$, they also can be removed from the model by backward elimination. 
+
+It is common that some candidate predictors are correlated. 
+At the beginning, a predictor $x_1$ having greater simple correlation with response was added into the model.
+However, along with a subset of related predictors were added, $x_1$ could become 'useless' in the model. In this case, backward elimination is necessary for achieving the best solution. 
+
+
+##  Underfitting and Overfitting
+
+Suppose the true model is $\mathbf{y}=\mathbf{X}\boldsymbol\beta +\boldsymbol\varepsilon=\mathbf{X}_1\boldsymbol\beta_1 + \mathbf{X}_2\boldsymbol\beta_2 + \boldsymbol\varepsilon$. $\mathbf{X}$ is full rank $r(\mathbf{X})=r =r_1+r_2$, $E[\boldsymbol\varepsilon]=0$, and $Cov[\boldsymbol\varepsilon]= \sigma^2\mathbf{I}_n$.
+The normal equation $\mathbf{X'X}\boldsymbol\beta=\mathbf{X'y}$ can be rewrite as 
+
+\begin{equation}
+\begin{split}
+\mathbf{X}_1'\mathbf{X}_1\boldsymbol\beta^0_1+\mathbf{X}_1'\mathbf{X}_2\boldsymbol\beta^0_2&=\mathbf{X}_1'\mathbf{y}\\
+\mathbf{X}_2'\mathbf{X}_1\boldsymbol\beta^0_1+\mathbf{X}_2'\mathbf{X}_2\boldsymbol\beta^0_2&=\mathbf{X}_2'\mathbf{y}\\
+\end{split}
+\end{equation}
+
+Let $\mathbf{P}_i=\mathbf{X}_i(\mathbf{X}_i'\mathbf{X}_i)^{-}\mathbf{X}'_i$, $i=1,2$, and
+
+\begin{equation}
+\begin{split}
+\mathbf{M}_1=&(\mathbf{X}'_1\mathbf{X}_1)^{-}\mathbf{X}'_1\mathbf{X}_2\\
+\mathbf{M}_2=&\mathbf{X}'_2(\mathbf{I}-\mathbf{P}_1)\mathbf{X}_2
+\end{split}
+\end{equation}
+
+Then,
+
+\begin{equation}
+\begin{split}
+\boldsymbol\beta^0_1=&(\mathbf{X}'_1\mathbf{X}_1)^{-}\mathbf{X}'_1(\mathbf{y}-\mathbf{X}_2\boldsymbol\beta^0_2)\\
+\boldsymbol\beta^0_2=&[\mathbf{X}'_2(\mathbf{I}-\mathbf{P}_1)\mathbf{X}_2]^{-}\mathbf{X}'_2(\mathbf{I}-\mathbf{P}_1)\mathbf{y}=\mathbf{M}^{-}_2\mathbf{X}'_2(\mathbf{I}-\mathbf{P}_1)\mathbf{y}\\
+\hat\sigma^2=&\frac{1}{n-r}(\mathbf{y}-\mathbf{X}_1\boldsymbol\beta^0_1-\mathbf{X}_2\boldsymbol\beta^0_2)'(\mathbf{y}-\mathbf{X}_1\boldsymbol\beta^0_1-\mathbf{X}_2\boldsymbol\beta^0_2)
+\end{split}
+\end{equation}
+
+### Underfitting
+
+In practice, due to data limitation or other reasons, one may only use a subset of the true predictors to fit the model.
+If the fitted model $\mathbf{y}=\mathbf{X}_1\boldsymbol\beta_1 + \boldsymbol\varepsilon$ doesn't contain $\mathbf{X}_2$ and $\boldsymbol\beta_2$, the least squares solutions are
+
+\begin{equation}
+\begin{split}
+\boldsymbol\beta^0_{1,H}=&(\mathbf{X}'_1\mathbf{X}_1)^{-}\mathbf{X}'_1\mathbf{y}\\
+\hat\sigma^2_{1,H}=&\frac{1}{n-r_1}\mathbf{y}'(\mathbf{I}-\mathbf{P}_1)\mathbf{y}
+\end{split}
+\end{equation}
+
+It is clear that $\boldsymbol\beta^0_{1,H}$ and $\hat\sigma^2_{1,H}$ are biased estimates because
+
+\begin{equation}
+\begin{split}
+E[\boldsymbol\beta^0_{1,H}]=&(\mathbf{X}'_1\mathbf{X}_1)^{-}\mathbf{X}'_1\mathbf{X}_1\boldsymbol\beta_1+(\mathbf{X}'_1\mathbf{X}_1)^{-}\mathbf{X}'_1\mathbf{X}_2\boldsymbol\beta_2\\
+=&\mathbf{H}\boldsymbol\beta_1+\mathbf{M}_1\boldsymbol\beta_2
+\end{split}
+\end{equation}
+
+and
+
+\begin{equation}
+E[\hat\sigma^2_{1,H}]=\sigma^2 + \frac{1}{n-r_1}\boldsymbol\beta'_2\mathbf{X}'_2(\mathbf{I}-\mathbf{P}_1)\mathbf{X}_2\boldsymbol\beta_2
+=\sigma^2 + \frac{1}{n-r_1}\boldsymbol\beta'_2\mathbf{M}\boldsymbol\beta_2
+\end{equation}
+
+$E[\boldsymbol\beta^0_{1,H}]=\boldsymbol\beta_1$ and $E[\hat\sigma^2_{1,H}]=\sigma^2$ only when $\boldsymbol\beta_2=0$ or $\mathbf{M}_1=0$. The later is $\mathbf{X}_1\perp\mathbf{X}_2$ or $\mathbf{X}'_1\mathbf{X}_2=0$.
+
+Since $\mathbf{\hat Y}_{0,H}=\mathbf{X}_{0,1}\boldsymbol\beta^0_{1,H}$, $\mathbf{\hat Y}_{0,H}$ is also biased unless $\boldsymbol\beta_2=0$ or $\mathbf{X}_1$ is orthogonal to $\mathbf{X}_2$.
+
+Denote $MSE_{H}$ as the error mean squares of underfitting model. $MSE=\text{Var-cov}[\boldsymbol{\hat\beta}]+\text{Bias}\cdot\text{Bias}'$. Then
+
+
+\begin{equation}
+\begin{split}
+MSE_{H}=&\sigma^2(\mathbf{X}'_1\mathbf{X}_1)^{-} + \mathbf{M}_1\boldsymbol\beta_2\boldsymbol\beta_2'\mathbf{M}'_1\\
+MSE=&\sigma^2(\mathbf{X}'_1\mathbf{X}_1)^{-} + \mathbf{M}_1Cov[\boldsymbol\beta_2^0]\mathbf{M}'_1\\
+\end{split}
+\end{equation}
+
+Since $Cov[\boldsymbol\beta_2^0]-\boldsymbol\beta_2\boldsymbol\beta_2'$ is a  positive semidefinite matrix (p.s.d.), $MSE\ge MSE_{H}$ always holds.
+
+
+### Overfitting
+
+In contrast, One may fit a model with extra irrelevant factors. 
+That is, the true model is $\mathbf{y}=\mathbf{X}_1\boldsymbol\beta_1 + \boldsymbol\varepsilon$
+and the fitted model is $\mathbf{y}=\mathbf{X}_1\boldsymbol\beta_1 + \mathbf{X}_2\boldsymbol\beta_2 + \boldsymbol\varepsilon$.
+
+This case implies $\boldsymbol\beta_2=0$. Then all above estimates are unbiased.
+
+\begin{equation}
+\begin{split}
+E[\boldsymbol\beta^0_{1,H}]=&\mathbf{H}\boldsymbol\beta_1+\mathbf{M}_1\boldsymbol\beta_2=\mathbf{H}\boldsymbol\beta_1\\
+E[\hat\sigma^2_{1,H}]=&\sigma^2 + \frac{1}{n-r_1}\boldsymbol\beta'_2\mathbf{M}\boldsymbol\beta_2=\sigma^2\\
+MSE_{H}=&\sigma^2(\mathbf{X}'_1\mathbf{X}_1)^{-} + \mathbf{M}_1\boldsymbol\beta_2\boldsymbol\beta_2'\mathbf{M}'_1=\sigma^2(\mathbf{X}'_1\mathbf{X}_1)^{-}\\
+\end{split}
+\end{equation}
+
+Overfitting model fits the data too closely and may only capture the random noise.
+Or the extra factors are accidentally related to the response in this data. 
+Hence, the overfitting models produce false positive relationship and perform badly in prediction.
+
+
+\pagebreak
+
+<!-- ## Other Topics -->
+
+<!-- ### Bayesian approaches (Opt.) -->
+
+<!-- ### SEM (Opt.) -->
+
+<!-- Another attempt tries the method of structural equation modeling (SEM). The two studies capture higher elasticities of per capita VMT with respect to density (-0.38 and -0.238) [@cerveroEffectsBuiltEnvironments2010; @ewingStructuralEquationModels2014]. -->
+
+
+<!-- In general, modeling is a case-by-case work. Researchers may have their preferred model by weighing the sensitivity and robustness even given the same hypothesis and data. -->
+<!-- The published papers usually don't show the results of diagnosis and validation. -->
+<!-- Under this circumstance, compare or summarize these outcomes are unreliable. -->

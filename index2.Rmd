@@ -1,0 +1,126 @@
+--- 
+title: "The Association Between Travel and Urban Form"
+subtitle: "Part II Second field: Statistical Methods"
+author: "Shen Qu"
+date: "`r Sys.Date()`"
+# site: bookdown::bookdown_site
+output: 
+  # bookdown::gitbook: 
+  #   lib_dir: "book_assets"
+  #   includes:
+  #     after_body: disqus.html
+  bookdown::pdf_book:
+    toc: true
+    toc_depth: 4
+  citation_package: biblatex
+
+documentclass: article #ElegantPaper # memoir # custom # amsbook  # scrbook # book
+bibliography: [fieldpaper1114.bib, unsorted.bib] #, book.bib, packages.bib
+biblio-style: apalike
+link-citations: yes
+# github-repo: qushen26/field_paper
+description: "This is a field paper using the bookdown package."
+# abstract: |
+always_allow_html: true
+fontsize: 12pt
+geometry: margin=1.25in
+# classoption: openany # remove blank pages
+keywords: travel behavior, urban form, regression analysis
+header-includes:
+   - \usepackage{amssymb}
+   - \usepackage{amsmath}
+   - \usepackage{fancyhdr}
+   - \pagestyle{fancy}
+   - \setlength{\headheight}{15pt}
+   # - \fancyhead[CO]{\thesection}
+   # - \fancyhead[CE]{\thesection}
+   # - \fancyfoot[CO,CE]{\thesection}
+   # - \fancyfoot[LE,RO]{\thepage}
+   # - \fancyhf{}
+   # - \rhead{\thechapter}
+   # - \chead{Field Paper}
+   # - \lhead{\thesection}
+   # - \rfoot{Page \thepage}
+   # - \usepackage{setspace}\doublespacing
+   - \usepackage{subfig}
+   - \usepackage{multicol}
+   - \usepackage{multirow}
+
+
+---
+
+
+
+<!-- # Preface {-} -->
+
+<!-- This field paper is for discussing the relationship between travel and urban form.  -->
+<!-- The initial motivation is curious about how the travel distance is affected by urban densities. -->
+<!-- Is this relationship existed universally or just context-dependent?  -->
+<!-- Are these models in literature replicable or reproducible? -->
+<!-- Part I reviews the related literature and tries to cover the main theories and research in this field. -->
+<!-- Travel patterns or behaviors as the variable of interest, is associated with many factors including urban form variables. -->
+<!-- To answer above questions, this field paper extends to different types of travel variables and more influencing factors. -->
+
+<!-- The travel-urban form studies are many and perplexing. -->
+<!-- Part II introduces the common statistical methods for the question raised in Part I. -->
+<!-- Although emerging many new techniques in recent years, regression analysis is still the fundamental and explainable methodology. -->
+<!-- The first stage is to understand the different methods adapted in previous studies. -->
+<!-- After that, it could be possible to give suitable criticism or replicate the previous models. -->
+
+<!-- Under the travel-urban form topic, one goal is to examine the validation of different models. A parallel study on known data may find the issues of mismatch or misreading, and to improve the relevant studies in the future. -->
+<!-- Another potential goal is to get some generalized association between travel and urban form. Based on many studies on the same topic, meta-analysis is a useful tool that can help to disclose publication bias in this field. -->
+
+
+
+<!-- - Several Ideas -->
+
+<!-- The discussion will gradually narrow down to the association between driving distance and urban density.  -->
+<!-- Instead of using very high dimension model or synthesized index,  -->
+<!-- Population Density itself may have more potential to explain the driving distance than people ever thought about. -->
+
+<!--  Many disaggregated travel-urban form models without psychological factors are underfitting, the corresponding estimates are biased. -->
+<!-- When the goal of related studies is to provide evidence for public policy, aggregated analysis may be good enough. -->
+
+
+<!--  The estimated coefficients are incomparable unless the regression models have the common key specification. Because $\boldsymbol{\hat\beta}=(\mathbf{X'X})^{-1}\mathbf{X'}\mathbf{y}$ is a function depending on $\mathbf{X}$. -->
+<!--  Standardized coefficients or elasticities cannot fix this issues. -->
+
+<!--  Due to the non-linear characteristics of many individual and urban-form factors, identifying the effective ranges of variables is useful for policy making. -->
+
+
+
+```{r setup, include=FALSE}
+# knitr::opts_chunk$set(
+#   tidy=FALSE,     # display code as typed
+#   size="small")   # slightly smaller font for code
+# devtools::install_github('rich-iannone/DiagrammeR')
+# remotes::update_packages(c("DiagrammeR", "tinytex", "rmarkdown", "knitr"))
+# remotes::install_github('rstudio/rmarkdown')
+library(pacman)
+p_load(tidyverse,kableExtra ,mosaic,ggpubr,factoextra, DiagrammeR,magrittr) #
+# if (!require("webshot")) {install.packages("webshot")}
+# webshot::install_phantomjs()
+knitr::opts_knit$set(root.dir = "C:/E/PhD/courses/Field paper")
+knitr::opts_chunk$set(eval=T,echo=F, message=F, warning=F,cache=T,fig.align = 'center') #,fig.pos="!h",fig.dim = c(8, 6)
+```
+
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+bookdown::render_book("index2.Rmd", bookdown::pdf_book(keep_tex = TRUE))
+# bookdown::render_book("index.Rmd", bookdown::word_document2())
+# bookdown::render_book()
+# bookdown::publish_book(account="qushen")
+```
+
+
+```{r include=FALSE,eval=F}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+

@@ -1,0 +1,67 @@
+# Summary {#summary}
+
+-   Questions
+
+After reviewing the theories and analysis frameworks, we go back to the real-world problems. Imagining a scenario of the public hearing, a bill under consideration is about changing the rule of land use and development (e.g., Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots in 2019 [^references1-1]). A scholar is asked to clarify the potential impact of urban form on travel behavior. It is widely recognized that less driving means a more healthy, environment-friendly lifestyle. Two common but distinct questions are: (1). The denser areas make people drive less? (2). People in denser areas drive less?
+
+[^references1-1]: <https://www.oregon.gov/lcd/UP/Pages/Housing-Choices.aspx>
+
+The previous discussion tells us that answering Question (1) needs causal inference, which is hard for observational studies. Some techniques (e.g., Difference in differences (DID)) try to identify the policy implications. But the transformation of land use is gradual over several years. Under the new law, many factors are changing in the meantime (e.g., real estate market, parking space). Some uncontrollable factors could also shift the outcomes (e.g., pandemic, autonomous vehicles).
+
+The answer to Question (2) looks more conservative but is still powerful. Suppose the people who live inside UGB or TOD areas drive less than outside. In that case, the policies are successful either because original residents change their behavior or new residents move in. Therefore, this paper stays on the studies of association rather than causality. The primary question is how people's travel behaviors change along with the urban-form factors.
+
+-   Factors
+
+Many individual and environmental factors affect travel behaviors. Why do people choose the framework of D-variables? Because the direct intervention on many influencing factors is impossible (e.g., climate, age, income). Or some interventions have tremendous economic and political costs (e.g., road capacity, fuel price). D-variables provide a stable and applicable framework for examining the influences of the common planning elements on travel. The results of the studies can convert to the guideline and recommended values. The accessibility-centered proposal is more close to the nature of travel behavior. But this concept is hard to convert to some 'accessible' measurement.
+
+Previous studies show the impact of D-variables is weak. Moreover, this conclusion is still controversial in academia. Of course, this result is not compelling in a public hearing. Some synthesized indexes from D-variables show much more potent effects on travel. This method cannot tell us what we should do in practice. But it implies the answer may still hide inside the covariates and is waiting to reveal more meaningful information.
+
+The studies at different scales also tell us that the meaning of one factor could change with the scales. The neighborhood's density and the city's density are two different predictors. The words 'ecological fallacy' could make people think that the higher resolution and more detailed data would give more accurate estimates and be closer to the truth. However, there might be many truths at the different spatial levels. A suitable study design should select the appropriate factors at households, neighborhoods, or city levels based on each specific research question.
+
+-   Goals
+
+Frequency of trip, traffic mode split, and travel distance are three major dependent variables. The theory of Utility Maximization tells us a trip as an event must have some 'utility' or 'benefit.' Nobody wants to reduce the total number of trips because it reflects the social activity level and is a sign of urban prosperity. People don't object to a sustainable way given a fixed number of trips. More shared trips with shorter distances are desirable. Hence mode split and driving distance are the targets in this field.
+
+TPB and prospect theory could better explain people's decisions and choices. This fact reminds us researchers should not have some high expectations about the role of urban form. Adding the attitude, habit, intention into the models does improve the goodness of fit. Individual travel behavior and social travel pattern might also be different topics. The former studies could be applied to micro design, while the latter is more important for policymaking.
+
+Both distance-based and opportunity-based theories inspire us to rethink the relationship between travel and D-variables. Density, mixed land use means more opportunities in the same area. Design (intersection density or proportion of four-way intersections) and distance to transit represent travel impedance or cost. Destination accessibility measures both the impedance and opportunities (e.g., distance to CBD or available jobs within a given travel time). That might be why some studies find destination accessibility has the most decisive influence on travel. Urban transportation is a connected system. Travel survey-based studies may have some systematic drawbacks on the destination side.
+
+-   Paths
+
+Researchers could choose a suitable framework of analysis for their research questions. A multistage framework can be used in longitudinal studies. Collecting the data of residents' relocation, car ownership, and travel behavior can figure out how these variables change with the built environment over many years. This type of study may have limitations for necessity and sufficiency, but long-term evidence is often more impressive for public opinion.
+
+A tree structure covering all decision nodes could reveal the whole travel pattern better. The trip decision, mode choice, and driving distance make up the travel pattern. Merely looking at one node could be misleading (e.g., a person has many short driving trips, while another takes more buses but makes a long drive).
+
+A hierarchical framework helps to identify one factor's effective scale on travel. It matters because each policy has its affecting scope. UBD imposes the radius of urban development. TOD projects change the built environment around the stations. House Bill 2001 releases the restriction on only low-dense communities.
+
+The threshold analysis could find the effective range of one factor. It helps select the strategic focus areas and prioritizes planning for limited public resources.
+
+<!-- All factors related to spatial distributions have morphological attributes. These attributes directly or indirectly affect travel behavior through some functional ways -->
+
+<!-- such as road network connection -->
+
+<!-- such as distance to transit services.  -->
+
+<!-- This perspective helps people figure out the influencing path and better understand the underlying mechanism. -->
+
+<!-- another way of understanding the role of land use is morphology versus functionality.  -->
+
+<!-- the demand or utility of travel is the primary node affecting travel choice.  -->
+
+<!-- The available transportation modes are the secondary nodes that allow travelers to compare and choose among driving and others. Choosing routes and departure time is in the third level. -->
+
+<!-- The travel demand or utility mainly decides the driving distance. The lower levels ' choices could change the driving distance only when the demand is not strong enough or has many alternative destinations. -->
+
+<!-- If one focuses on auto trips. The tree can be simplified to two levels: driving or not. -->
+
+<!-- From the travel behavior perspective, driving distance locates on a terminal node of a trip decision tree. -->
+
+<!-- The tree shows that the first two levels could produce some 'zero' driving distance. Should these cases be included in the studies of driving distance? -->
+
+<!-- This discussion demonstrates a hierarchical relationship among driving distance and other trip variables. -->
+
+<!-- In this way, the transit services are located on the second internal node. -->
+
+<!-- the travel destination may be determined before the decision-making or be selected after the traveler compares several plans. -->
+
+# References {.unnumbered}

@@ -1,0 +1,93 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+<!-- # (PART\*) Part I Theories and Framework {-}  -->
+
+# Introduction {#intro}
+
+## Background
+
+In the past decades, efforts have been made to reduce Automobile Dependency in developed and developing counties.
+Many researchers have found that moderating car use has positive social, economic, and environmental impacts.
+The negative externalities of automobiles include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions.
+
+In urban planning and transportation, achieving this goal requires two parts.
+First, researchers find a set of factors that could mainly explain and affect travel behavior.
+Second, planning and policy are made to intervene in the modifiable factors to reduce car use then significantly.
+This paper focuses on the first part and aims at supporting the second part.
+
+## Literature fields
+
+Four fields' literature is involved in Part I of this paper (Figure \@ref(fig:fields)).
+Urban study and transportation are two primary fields with large amounts of published articles relating to travel-urban form topics.
+A "milestone" paper, @ewingTravelBuiltEnvironment2010 's meta-analysis, is selected as the start point.
+And four more meta-analyses are found using the 'snowball' method.
+The advantage of choosing meta-analysis is that they all select as relevant studies on this topic as possible.
+These meta-analyses also make careful screening to ensure the selected studies have common properties and have high quality.
+In this way, over 200 studies are identified ( 62 in @ewingTravelBuiltEnvironment2010, 39 in @gimRelationshipsLandUse2013; 37 in @stevensDoesCompactDevelopment2017, 146 in @astonStudyDesignImpacts2020, 187 in @astonExploringBuiltEnvironment2021).
+
+The third field is the studies of human mobility in geography.
+Similarly, in another milestone study, @barbosaHumanMobilityModels2018 review 422 articles on relevant models and applications.
+Although scholars in urban transportation are familiar with Gravity models and some other methods, the geographic perspective can broaden our horizons and can offer valuable insight into the travel pattern as a whole.
+
+Meanwhile, the fourth field, theories in psychology, opens another window for understanding travel behavior.
+Why does a person choose to drive alone rather than take the bus?
+Fully understanding the individual's action has to look for psychological theories.
+Here select a few classical theories of travelers' choice.
+The purpose is to see a big picture of travel behavior and realize the limitation of geographic and engineering perspectives.
+As Max Weber mentioned in *Objectivity in Social Science* (1904), "the knowledge of social laws is not knowledge of social reality but is rather one of the various aids used by our minds for attaining this end." Travel is a curious hybrid of objective physical movement and subjective social-cultural reality.
+In this way, interpretation is more important than predicting the relationship between travel and urban form when researchers target the policy implications.
+
+```{r fields,eval=T,out.width='90%', fig.align='center',fig.cap="Literature fields",fig.pos="ht" }
+knitr::include_graphics("fig/concepts.png")
+```
+
+## Content Organization
+
+<!-- @ref(struc) -->
+
+Part I introduces the theories and framework of Travel-Urban form studies in recent years.
+As the essential elements of regression analysis, independent variables of Urban Form and dependent variables of Travel are presented using two separate chapters.
+
+Section 2 of Urban Form starts from a fundamental question: What is the relationship between urban form and travel?
+How strong is the relationship?
+Then the significant influencing factors in literature are systematically introduced.
+
+Aggregated and disaggregated data at various spatial scales can sway the meaning of influencing factors.
+Units and spatial scales should be carefully chosen to ensure the results match the initial research questions.
+
+Section 3, the theories of travel behavior can be divided into Traveler Choice and Human Mobility by looking at travel as an object or subject.
+These theories and practice can enrich the understanding of travel variables as the model's response.
+
+Section 4 presents several common model structures in the existing literature of this field.
+It demonstrates the different perspectives of the relationship between urban form and travel.
+Some new trends and methods are also included in this chapter.
+
+## Part II Preview
+
+Part II presents some statistical methods relating to travel-urban form models.
+The standard statistical tools applied in travel-urban form studies are some fundamental approaches had been developed for decades.
+But are these principles and algorithms correctly applied in travel-urban form models?
+What else can untapped potential be unraveled to eliminate the bias or improve the accuracy?
+
+When fitting a travel-urban form model, the first step is to choose a suitable model genre.
+Travel as the response has different variable types such as distance, frequency, and mode choice.
+Section 2 introduces the main types of the model with respect to the different travel variables and the methodology of variable selection.
+
+The fitted models always give some outcomes.
+But the reliable results require the models to be valid, adequate, and 'healthy.' Section 3 lists several potential issues which often be neglected or omitted in travel-urban form models.
+Section 4 explains the type of model's outcomes and their meaning.
+
+Researchers never stop trying new approaches to address the shortcomings in previous studies.
+Section 5 and 6 present some recent trends in travel-urban form studies that can give some inspiration for future work.
+
+Scholars don't anticipate all studies will have the same results, especially for the association between travel and urban form.
+But they want to see a more generalized result and then contribute the policy implication.
+The last section, Meta-Analysis, introduces some basic ideas and approaches of meta-analysis and how to deal with publication bias.
+
+<!-- the premise that further discussions continue. -->
+
+<!-- Hence, the contents in this chapter are primarily from several textbooks [@casellaStatisticalInference2002; @montgomeryIntroductionLinearRegression2021;@ravishankerFirstCourseLinear2020] and lecture notes by Dr. Robert Fountain, Dr. Nadeeshani Jayasena, and Dr. Jong Sung Kim, rather than involving the front edge of techniques in the recent statistics literature. -->

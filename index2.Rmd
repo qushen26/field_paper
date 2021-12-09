@@ -51,44 +51,6 @@ header-includes:
 
 
 
-<!-- # Preface {-} -->
-
-<!-- This field paper is for discussing the relationship between travel and urban form.  -->
-<!-- The initial motivation is curious about how the travel distance is affected by urban densities. -->
-<!-- Is this relationship existed universally or just context-dependent?  -->
-<!-- Are these models in literature replicable or reproducible? -->
-<!-- Part I reviews the related literature and tries to cover the main theories and research in this field. -->
-<!-- Travel patterns or behaviors as the variable of interest, is associated with many factors including urban form variables. -->
-<!-- To answer above questions, this field paper extends to different types of travel variables and more influencing factors. -->
-
-<!-- The travel-urban form studies are many and perplexing. -->
-<!-- Part II introduces the common statistical methods for the question raised in Part I. -->
-<!-- Although emerging many new techniques in recent years, regression analysis is still the fundamental and explainable methodology. -->
-<!-- The first stage is to understand the different methods adapted in previous studies. -->
-<!-- After that, it could be possible to give suitable criticism or replicate the previous models. -->
-
-<!-- Under the travel-urban form topic, one goal is to examine the validation of different models. A parallel study on known data may find the issues of mismatch or misreading, and to improve the relevant studies in the future. -->
-<!-- Another potential goal is to get some generalized association between travel and urban form. Based on many studies on the same topic, meta-analysis is a useful tool that can help to disclose publication bias in this field. -->
-
-
-
-<!-- - Several Ideas -->
-
-<!-- The discussion will gradually narrow down to the association between driving distance and urban density.  -->
-<!-- Instead of using very high dimension model or synthesized index,  -->
-<!-- Population Density itself may have more potential to explain the driving distance than people ever thought about. -->
-
-<!--  Many disaggregated travel-urban form models without psychological factors are underfitting, the corresponding estimates are biased. -->
-<!-- When the goal of related studies is to provide evidence for public policy, aggregated analysis may be good enough. -->
-
-
-<!--  The estimated coefficients are incomparable unless the regression models have the common key specification. Because $\boldsymbol{\hat\beta}=(\mathbf{X'X})^{-1}\mathbf{X'}\mathbf{y}$ is a function depending on $\mathbf{X}$. -->
-<!--  Standardized coefficients or elasticities cannot fix this issues. -->
-
-<!--  Due to the non-linear characteristics of many individual and urban-form factors, identifying the effective ranges of variables is useful for policy making. -->
-
-
-
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(
 #   tidy=FALSE,     # display code as typed

@@ -6,25 +6,54 @@ editor_options:
 
 # Urban Form as Predictors {#form}
 
-In literature, the concepts of 'urban form,' 'built environment,' and 'land use' are often exchangeable. Adopted from some common usages, 'urban form' refers to the comprehensive physical expression of land use at the macro scale. 'Built environment' emphasizes the urban form attributes as a series of external factors opposite travelers' internal characteristics and is often used in disaggregate studies at mesoscale. When using 'urban form' and 'built environment,' one looks at them as the given conditions of travel decision. While 'land use' can represent either current status descriptions or designated future use at mesoscale and micro scales.
+The concepts of 'urban form,' 'built environment,' and 'land use' have some subtle differences. 
+Adopted from some common usages, 'urban form' refers to the comprehensive physical expression of land use at the macro scale such as city scale.
+It can has both meanings of morphology and functionality such as in @vanmeeterenPacifyingBabelTower2016 's analysis of polycentricity.
+'Land use' centers on the meaning of functionality and can represent either current status descriptions or designated future use.
+'Built environment'  is a general concept for describing the background in contrast to natural and social environment
+It emphasizes the urban form attributes as a series of external factors opposite travelers' internal characteristics.
+Built environment has not clear implication in a study scale and has not specific morphological or functional meaning.
+
+The three terms are often exchangeable in literature. 
+This paper think urban form as some existing conditions influencing travel and will not consider the effects of land use plan.
+Current urban-form factors include both morphological measurement such as network density and functional measurement such as mixed use.
+'urban form' implies the relevant factors are adjustable and designable rather than they are treated as a given background.
+Therefore, this paper chooses 'urban form' as the major term.
 
 ## Influencing Direction
 
-Before discussing the impact of land use on travel, the first question is whether land-use characteristics affect the outcome of travel behavior? Or the affecting direction is opposite? Technically, randomized control experiments can identify the causal relationship between them. But in real life, it is impossible to set up some experimental areas and randomly assign people to live in these areas.
+Before discussing the impact of land use on travel, the first question is whether land-use characteristics cause the outcome of travel behavior? Or the affecting direction is opposite? Technically, randomized control trials/experiments (RCT) can identify the causal relationship between two factors. But in real life, it is impossible to set up some experimental areas and randomly assign people to live in the different areas.
+Strictly speaking, observational studies can not make causal inference.
 
-Another way is to observe the dynamic of these factors to figure out the direction of influences. @mullerTransportationUrbanForm2004 reviews the evolution of the U.S. urban form and describe the four eras of intra-metropolitan growth (Figure \@ref(fig:4age)) in U.S. history: the walking-horsecar era (the 1800s -- 1890s), the electric streetcar or transit era (1890s -- 1920s), the recreational automobile era (1930s -- 1950s), and the freeway era (1950s -- 2010s) [@rodrigueGeographyTransportSystems2016]. Each four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each era has a distinctive travel mode, distance range, and land-use patterns. People can see that the innovation of transportation technology is a determining constraint to other factors and a main driving force to launch the next era.
+But observing the dynamic of these factors can help to understand the direction of influences more clear. 
+@mullerTransportationUrbanForm2004 reviews the evolution of the U.S. urban form and describe the relationship between transportation modes and urban form (Figure \@ref(fig:4age)).
+@rodrigueGeographyTransportSystems2016 summerized the four eras of intra-metropolitan growth  in U.S. history: the walking-horsecar era (the 1800s -- 1890s), the electric streetcar or transit era (1890s -- 1920s), the recreational automobile era (1930s -- 1950s), and the freeway era (1950s -- 2010s). Each four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each era has a distinctive travel mode, distance range, and land-use patterns. These descriptions imply that the emerging modes or innovation of transportation technology is a overriding constraint to other factors and a main driving force to launch the next era.
+The new transportation tools like urban rail transit, automobile, and freeway (or autonomous vehicle in future) shifted people's travel choises or extended travel distance, and reshaped the urban form. In causal inference, the new tools are called confounder or common cause, affecting both treatment and outcome. 
 
-```{r 4age,eval=T,out.width='50%', fig.align='center',fig.cap="One Hour Commuting According to Different Urban Transportation Modes. Source: P.Hugill (1995), World Trade since 1431, p. 213."}
+```{r 4age,eval=T,out.width='50%', fig.align='center',fig.cap="One hour commuting according to different urban transportation modes. Source: P.Hugill (1995), World Trade since 1431, p. 213."}
 knitr::include_graphics("fig/one_hour_commmuting2.png")
 ```
 
-New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools are called confounder or common cause, affecting treatment and outcome. But what is the relationship between travel and urban form? A simple way is to observe the sequence of events to happen. In each transition period, the new tools and modes began ahead of the new urban development. Even today, multiple travel modes exist in the old town, but suburban seldom has the old way like the streetcar. Thus, urban form is more like an outcome rather than treatment.
+It is still not sufficient for concluding the new travel modes are the cause of new urban form.
+A key is to observe the sequence of events to happen. In each transition period, there are many cases that the new tools and modes began ahead of the new urban development. 
+Many examples showed the old and new modes appear on the urban roads at the same time such as the carriage, streetcar, and automobile 100 years ago.
+Now the ride-hailing services, e-scooter, and autonomous vehicles are emerging in the streets too.
+But it is hard to find a case of developed suburb community without supported by rail transit or private car.
+Thus, we can at least reject that the change of urban form is the cause of mode change.
 
-However, the urban form remains relatively more stable than an individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, the urban form can be treated as independent variables in the context of the current stage of urban development. The relationship of urban form concerning travel can hold for a period of time.
+However, the influencing direction is also not one way that travel mode only impact urban form.
+Looking inside each era, the given travel modes and tools are fixed. 
+The mode choice and car usage are variable.
+While the urban form remains relatively stable in short term.
+Once a suburb neighborhood is built up, its form will last for many years.
+A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. 
+But the family's moving will not change New York or Austin's urban form.
 
 Over the long term, the relationships among travel, urban form, and other physical, socio-economic, demographic factors were interactive and iterative. @levinsonMetropolitanTransportLand2018 emphasize transportation is a necessary but not a sufficient factor for any development. The change of eras is a comprehensive outcome of socio-economic and technological development. Which factor caused which effect does not have a simple answer. A conservative view is that land use and travel behavior are determined simultaneously by the transportation costs [@pickrellTRANSPORTATIONLANDUSE1999].
 
-Although randomized control experiments about travel and urban form are impossible, the regression model can still explore their associations once the simultaneous relationship holds.
+Hence, the relationship of urban form influencing travel can hold for a period of time.
+The urban form can be treated as independent variables in the context of the current stage of urban development. 
+Although randomized control experiments are impossible, the regression analysis of travel and urban form can still explore their associations once they change simultaneously.
 
 ## Influencing Factors
 

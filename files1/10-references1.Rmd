@@ -1,6 +1,5 @@
 # Summary {#summary}
 
--   Questions
 
 After reviewing these theories and frameworks, we go back to the real-world problems. Imagining a scenario of the public hearing, a bill under consideration is about changing the rule of land use and development (e.g., Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots in 2019 [^references1-1]). It is widely recognized that less driving means a more healthy, environment-friendly lifestyle. At the hearing, a scholar is asked to provide solid evidence to clarify the relationship between urban form on travel behavior. Combining with the previous introduction, we could think about several questions:
 

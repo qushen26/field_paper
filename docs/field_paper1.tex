@@ -1,0 +1,1256 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+]{article}
+\title{The Association Between Travel and Urban Form}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Part I First field: Theories and Framework}
+\author{Shen Qu}
+\date{2022-01-01}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={The Association Between Travel and Urban Form},
+  pdfauthor={Shen Qu},
+  pdfkeywords={travel behavior, urban form, regression analysis},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1.25in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{multirow}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\section*{Preface}\label{preface}}
+\addcontentsline{toc}{section}{Preface}
+
+This field paper reviews the literature on the relationship between travel and urban form. In the urban planning field, the concept of ``compact city'' or ``smart growth'' is widely supported by planners. Its core idea is that a compact urban form can relieve the issues of automobile dependency and sprawl, then contribute to urban well-being and other sustainability goals. But opponents think denser development means crowding and traffic congestion. In the context of the U.S., a policy-making proposal related to increasing urban density is not easy to pass. Academia conducts many studies to provide evidence for the debate on compact development. These studies examine the relationship between travel and urban form using statistical models. These models are used to identify how the urban density, mixed-use, and other factors impact travel behaviors and patterns. Many scholars have found these urban-form factors associated with travel variables as expected, but the effect sizes are small.
+
+This paper aims to understand the major ideologies in previous studies, know the research dynamic in recent years, and prepare for future studies. Researchers keep trying new data sources and methods to improve the models. They also summarize the outcomes from many models of this kind by meta-analysis. Part I of this paper introduces some influential studies on this topic and tries to figure out their frameworks and opinions. This part also extends the view to the relevant theories and research in psychology and geography, which could give some insight into the feature of travel for better understanding the models' elements and settings. Part II explores the statistical methods used in previous studies. This part goes through the common modeling procedure and introduces several critical effects types in travel-urban form studies. Given the available data sources currently, improving the methods has considerable potential in getting more convincing results of the association between travel and urban form.
+
+\hypertarget{intro}{%
+\section{Introduction}\label{intro}}
+
+\hypertarget{background}{%
+\subsection{Background}\label{background}}
+
+In the past decades, efforts have been made to reduce automobile dependency in developed and developing counties. The negative externalities of automobile dependency include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions. Many researchers have found that moderating car use has positive social, economic, and environmental impacts.
+
+Urban planners use policy and planning tools such as UBG and TOD to achieve this goal. The underlying logic is that the urban-form factors can impact people's travel. If urban form representing a series of long-standing environmental elements can encourage travelers to drive less, take more public transit, or choose active modes voluntarily, these policies and tools would have substantial ecological and social benefits.
+
+Researchers need to address two missions on this topic.
+The first one is to prove this relationship between travel and urban form is genuine and estimate the effect sizes.
+Such as, does this relationship exist significantly?
+Which factors of urban form have a more substantial impact on travel?
+Moreover, the effects on individuals and society could have distinctive meanings.
+The effects might be strong in some cities but weak in others.
+A convincing conclusion requires summarizing the results generated from various data sources and categorizing different types of studies.
+
+The second mission is to evaluate the effectiveness of the intervention.
+It is more challenging because many socio-economic and built-environment factors are changing simultaneously and interact with each other in real life.
+The causal inference is the weakness of observational studies on travel-urban form relationship.
+Although some studies try to account for the self-selection issues, it is hard to prove one intervention must have an expected result.
+
+Another challenge is to balance the costs and benefits and make sure the positive profit for the public interest.
+For example, increasing the road network density in a built-up area could be expensive.
+Is it worth exchanging the benefit of less driving?
+Would there be a net gain to the public as a whole?
+
+There are more practical considerations in policy implementation, such as public will and equity issues.
+Increasing residential density in the suburbs often raises serious objections and becomes unfeasible.
+The disadvantaged groups could bear a disproportionate burden of urban form changes.
+Some researchers suggest thinking about the paradigm shift from mobility to accessibility or reforming the urban transportation system and travel demand management.
+These ideas reflect that travel behavior is a curious hybrid of objective physical movement and subjective social-cultural reality.
+As Max Weber mentioned in \emph{Objectivity in Social Science} (1904), ``the knowledge of social laws is not knowledge of social reality but is rather one of the various aids used by our minds for attaining this end.'' These issues are beyond the scope of positivism and concern about value and belief.
+
+For the above reason, this paper places the limits on the first mission.
+It will look at how previous studies identify and interpret the relationship between travel and urban form, think how to improve the modeling, and prepare for future studies on the effectiveness.
+It will also focus on the U.S. context for controlling the effects of historical, cultural, and political environment among different countries.
+
+\hypertarget{literature-clusters}{%
+\subsection{Literature clusters}\label{literature-clusters}}
+
+Four clusters' literature is involved in Part I of this paper (Figure \ref{fig:fields}).
+Urban study and transportation are two primary clusters with large amounts of published articles relating to travel-urban form topics.
+A ``milestone'' paper, \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) `s meta-analysis, is selected as the start point.
+And four more meta-analyses are found using the 'snowball' method.
+The advantage of choosing meta-analysis is that they all select as relevant studies on this topic as possible.
+These meta-analyses also make careful screening to ensure the selected studies have common properties and have high quality.
+In this way, over 200 studies are identified ( 62 in \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}), 39 in \protect\hyperlink{ref-gimRelationshipsLandUse2013}{Gim} (\protect\hyperlink{ref-gimRelationshipsLandUse2013}{2013}); 37 in \protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{Stevens} (\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{2017a}), 146 in \protect\hyperlink{ref-astonStudyDesignImpacts2020}{Aston et al.} (\protect\hyperlink{ref-astonStudyDesignImpacts2020}{2020}), 187 in \protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{Aston et al.} (\protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{2021})).
+
+The third cluster is the studies of human mobility in geography.
+Similarly, in another milestone study, \protect\hyperlink{ref-barbosaHumanMobilityModels2018}{Barbosa et al.} (\protect\hyperlink{ref-barbosaHumanMobilityModels2018}{2018}) review 422 articles on relevant models and applications.
+Although scholars in urban transportation are familiar with Gravity models and some other methods, the geographic perspective can broaden our horizons and can offer valuable insight into the travel pattern as a whole.
+
+Meanwhile, the fourth cluster, theories in psychology, opens another window for travel studies.
+People are not machines. There is a large part of travel behavior cannot be explained by the objective factors.
+Fully understanding the individual's action has to look for some psychological reasons.
+Here select a few classical theories of travelers' choice.
+The purpose is to see a big picture of travel behavior and realize the limitation of geographic and engineering perspectives.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/concepts} 
+
+}
+
+\caption{Literature fields}\label{fig:fields}
+\end{figure}
+
+\hypertarget{content-organization}{%
+\subsection{Content Organization}\label{content-organization}}
+
+Part I introduces the theories and framework of travel-urban form studies in recent years.
+urban-form factors as the independent variables and travel as the dependent variables are the essential elements of regression analysis.
+The two groups are presented using two separate sections.
+
+Section 2 of Urban Form starts from a fundamental question: What is the influencing direction between urban form and travel?
+The significant influencing urban-form factors in literature then are systematically introduced.
+This section also notes the scale issues.
+Aggregated and disaggregated data at various spatial scales can sway the meaning of influencing factors.
+Units and spatial scales should be carefully chosen to ensure the results match the initial research questions.
+
+Section 3 introduce the theories of travel behavior and patterns.
+Traveler Choice is looked as a subject in psychology.
+While the theories of Human Mobility in geography look at the travel pattern as an object.
+These theories and practice can enrich the understanding of travel variables as the model's response.
+
+Section 4 presents several common model structures in the existing literature of this field.
+It demonstrates the different perspectives of the relationship between urban form and travel.
+
+\hypertarget{form}{%
+\section{Urban Form as Predictors}\label{form}}
+
+The concepts of ``urban form,'' ``built environment,'' and ``land use'' have some subtle differences. Adopted from some common usages, ``urban form'' refers to the comprehensive physical expression of land use at macro scales, such as the city scale. It can have both meanings of morphology and functionality, such as in \protect\hyperlink{ref-vanmeeterenPacifyingBabelTower2016}{van Meeteren et al.} (\protect\hyperlink{ref-vanmeeterenPacifyingBabelTower2016}{2016}) `s analysis of polycentricity. ``Land use'' centers on the meaning of functionality and can represent either current status descriptions or designated future use. ``Built environment'' is a general concept for describing the background in contrast to the natural and social environment. It emphasizes the urban-form attributes as a series of external factors opposite travelers' internal characteristics. ``Built environment'' has no clear implication in a study scale and has no specific morphological or functional meaning.
+
+The three terms are often exchangeable in literature. This paper considers urban form as some existing conditions influencing travel and will not consider the effects of the land-use plan. The common urban-form factors in the literature include both morphological measurements such as network density and functional measures such as mixed-use. ``Urban form'' implies the relevant factors are adjustable and designable rather than treated as a given background. Therefore, this paper chooses ``urban form'' as the major term.
+
+\hypertarget{influencing-direction}{%
+\subsection{Influencing Direction}\label{influencing-direction}}
+
+Before discussing the impact of land use on travel, the first question is whether the change of urban-form characteristics causes the change of travel behavior? Or the affecting direction is opposite? Technically, randomized control trials/experiments (RCT) can identify the causal relationship between two factors. But in real life, it is impossible to set up some experimental areas and randomly assign people to live in the different regions. Strictly speaking, observational studies can not make a causal inference.
+
+But observing the dynamic of these factors can help understand the direction of influences more clearly. \protect\hyperlink{ref-mullerTransportationUrbanForm2004}{Muller} (\protect\hyperlink{ref-mullerTransportationUrbanForm2004}{2004}) reviews the U.S. urban form's evolution and describes the relationship between transportation modes and urban form (Figure \ref{fig:4age}). \protect\hyperlink{ref-rodrigueGeographyTransportSystems2016}{Rodrigue, Comtois, and Slack} (\protect\hyperlink{ref-rodrigueGeographyTransportSystems2016}{2016}) summarized the four eras of intra-metropolitan growth in U.S. history: the walking-horsecar era (the 1800s -- 1890s), the electric streetcar or transit era (1890s -- 1920s), the recreational automobile era (1930s -- 1950s), and the freeway era (1950s -- 2010s). Each four-stage urban transportation development has its dominated spatial structure, which is hard represented by other socio-economic concepts. Each period has a distinctive travel mode, distance range, and land-use patterns. These descriptions imply that the emerging modes or transportation technology's innovation override other factors and is a main driving force to launch the next era. The new transportation tools like urban rail transit, automobile, and freeway (or autonomous vehicle in the future) shifted people's travel choices or extended travel distance and reshaped the urban form. In causal inference, the new tools are called confounder or common cause, affecting both treatment and outcome.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/one_hour_commmuting2} 
+
+}
+
+\caption{One hour commuting according to different urban transportation modes. Source: P.Hugill (1995), World Trade since 1431, p. 213.}\label{fig:4age}
+\end{figure}
+
+It is still not sufficient to conclude that new travel modes cause the new urban form. A key is to observe the sequence of events to happen. Many cases show that the emerging tools and modes began before the new urban development in each transition period. Many examples illustrate the old and new modes appearing on the urban roads simultaneously, such as the carriage, streetcar, and automobile 100 years ago. Ride-hailing services, e-scooter, and autonomous vehicles are also emerging in the streets recently. But it is hard to find a developed suburb community case without rail transit or private car support. Thus, we can at least reject that the urban form change is the cause of mode change.
+
+However, the influencing direction is not one way that travel modes only impact urban form. Looking inside each era, the given travel modes and tools are fixed. The mode choice and car usage are variable. At the same time, the urban form remains relatively stable in the short term. Once a suburb neighborhood is built up, its state will last for many years. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. But the family's moving will not change New York or Austin's urban form.
+
+Over the long term, the relationships among travel, urban form, and other physical, socio-economic, demographic factors were interactive and iterative. \protect\hyperlink{ref-levinsonMetropolitanTransportLand2018}{D. M. Levinson and Krizek} (\protect\hyperlink{ref-levinsonMetropolitanTransportLand2018}{2018}) emphasize transportation is a necessary but not a sufficient factor for any development. The change of eras is a comprehensive outcome of socio-economic and technological development. Which factor caused which effect does not have a simple answer. A conservative view is that land use and travel behavior are determined simultaneously by the transportation costs (\protect\hyperlink{ref-pickrellTRANSPORTATIONLANDUSE1999}{Pickrell 1999}).
+
+Hence, the relationship of urban form influencing travel can hold for a period of time. The urban form can be treated as independent variables in the context of the current stage of urban development. Although randomized control experiments are impossible, the regression analysis of travel and urban form can still explore their associations once they change simultaneously.
+
+\hypertarget{influencing-factors}{%
+\subsection{Influencing Factors}\label{influencing-factors}}
+
+For the complexity of urban form and travel, many objective or subjective factors could change people's travel behavior. They include but are not limited to physical, socio-demographic, individual, and policy determinants. It seems impossible to make an exhaustive list. Here briefly introduces several significant influencing factors.
+
+A dichotomy of individual versus environmental factors is a common framework. All relevant factors involving personal or household characteristics can be categorized as internal factors. In comparison, the built environment and other environmental factors have external influences. Disaggregate analysis usually chooses this structure because the models can distinguish the different sources of variation from individual and environmental factors. For example, the VMT model is as follows.
+
+\[\begin{aligned}
+\mathbf{Y}=\mathbf{X}_\mathrm{I}\boldsymbol{\beta}_\mathrm{I}+\mathbf{X}_\mathrm{E}\boldsymbol{\beta}_\mathrm{E}+\boldsymbol{\varepsilon}
+\end{aligned}\]
+
+where \(\mathbf{X}_\mathrm{I}\) are travelers' internal characteristics; \(\mathbf{X}_\mathrm{E}\) are built environment and other environment covariates.
+
+\hypertarget{individual-factors}{%
+\subsubsection{Individual Factors}\label{individual-factors}}
+
+Previous researchers have identified many internal factors that have substantial impacts on travel. Vehicle ownership is a good indicator for choosing the auto mode and longer travel distance (\protect\hyperlink{ref-vanderwaardNewDriversMobility2013}{van der Waard, Jorritsma, and Immers 2013}). Employment status or entry into the labor market often increases driving while retirement may have more walking or cycling for fewer time constraints (\protect\hyperlink{ref-goodwinPeakCarThemes2013}{Goodwin and Van Dender 2013}; \protect\hyperlink{ref-grimalStagnationIndividualCar2013}{Grimal, Collet, and Madre 2013}; \protect\hyperlink{ref-headicarChangingSpatialDistribution2013}{Headicar 2013}).
+
+Some factors show significant impacts on travel but give opposite directions. Sometimes, it implies some nonlinear features. For example, income usually positively correlates with car ownership and driving distance. But some studies find less-wealthy groups have more cars and longer driving distances (\protect\hyperlink{ref-goetzkeSeparatingContextualEndogenous2012}{Goetzke and Weinberger 2012}). Sometimes, it depends on the location and social background. \protect\hyperlink{ref-dargayVolatilityCarOwnership2007}{Dargay and Hanly} (\protect\hyperlink{ref-dargayVolatilityCarOwnership2007}{2007}) find the number of children in a household has a positive relationship in the U.K. While \protect\hyperlink{ref-dingExploringInfluenceBuilt2017}{Ding, Wang, et al.} (\protect\hyperlink{ref-dingExploringInfluenceBuilt2017}{2017}) find a negative effect in the U.S.
+
+\protect\hyperlink{ref-laroucheEffectMajorLife2020}{Larouche et al.} (\protect\hyperlink{ref-laroucheEffectMajorLife2020}{2020}) make a scoping review of some major life events on travel behavior. They provide some explanation for the inconsistent results. Relocation offers windows of opportunity for travel behavior change, but the direction depends on people's attitudes. Psychological factors such as travelers' habits and preferences are determinants. Similarly, the choice after school transitions depends on the new environmental factors. Marriage is not significant because couples may live together before marriage. Likewise, parents may have more car use several years after childbirth for childcare, school, recreation, etc.
+
+A policy usually cannot intervene in the individual factors. But controlling these independent variables can increase models' fitness. A well-performed model containing these influencing factors can better identify the effect sizes of modifiable factors. Moreover, individual factors may interact with urban-form factors such as wealth lived in the suburb could have different travel habits with the wealth lived in downtown. At last, understanding the roles of internal variables helps evaluate the policy influences from the lens of inclusion and equity. For example, it would not be appropriate if urban form change squeezes the low-income group's travel scopes disproportionately.
+
+\hypertarget{environmental-factors}{%
+\subsubsection{Environmental Factors}\label{environmental-factors}}
+
+Environmental factors usually impact a large number of people. These factors can be divided into three main categories: natural environment, socio-economic environment, and the built environment. The natural terrain, temperature, and precipitation could change travelers' choices. These factors can only be examined across cities and regions. They are also hard to change and are not included in many studies. Socio-economic environments such as fuel prices and crime rates also encourage/discourage people from choosing to drive for economic or safety reasons. These factors often have stronger influences than the urban form's on travel and can be intervened. For example, \protect\hyperlink{ref-ewingRelationshipUrbanSprawl2014}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingRelationshipUrbanSprawl2014}{2014}) 's study controls both social- and natural- environment factors in addition to built-environment factors. They found that the counties with higher violent crime rates are like to have worse obesity and physical activity have a negative relationship with annual precipitation, heating/cooling degree days, and percentage parkland (relative to total land area). But socio-economic environments are often related to broader topics such as living burden or public security. In these cases, car usage is not the core concern. Some of them, such as car culture, are hard to measure and control, the same as psychological factors.
+
+Infrastructure supplement is also a set of solid explanatory variables. It has been proven that road capacity and parking space are two primary factors for driving. \protect\hyperlink{ref-chatmanDeconstructingDevelopmentDensity2008}{Chatman} (\protect\hyperlink{ref-chatmanDeconstructingDevelopmentDensity2008}{2008}) finds the effect of denser development on VMT is neutral after controlling the road service and parking demand. The problem is that reducing supply is painful for the public and is subject to political pressure. Increasing and improving transit services are more attractive by substituting driving (\protect\hyperlink{ref-kuhnimhofWhoMadePeak2013}{Kuhnimhof, Zumkeller, and Chlond 2013}).
+
+Policy environment as treatments applied on an administrative region, such as restrictions on car use, can only be examined by comparing with the `control groups.' The cross-sectional study is a challenge because transportation policy is a context-dependent factor. There could be complex interaction effects between a policy and the characteristics of the `experimental group.' The same policy in the name may be implemented in very different ways across the cities or regions. A longitudinal study is used in policy evaluations through some methods like the difference in difference (DID). Some policies like travel demand management (TDM) can take effect at once and head directly toward changing travel behavior. For example, studies find parking management and low ticket fare can attract more transit passengers through subsidies (\protect\hyperlink{ref-grimalStagnationIndividualCar2013}{Grimal, Collet, and Madre 2013}).
+
+Built environment such as urban density and design is a primary focus of attention in urban studies because they are more changeable than the natural environment, more measurable than the social environment, and more moderate than travel demand management. They have neutral meanings and are more acceptable to the public. They can inadvertently change people's behavior. Policy or planning might intervene in current and future built environments, further achieving the goal of travel behavior change. ``Attributes of the built environment influence travel by making travel to opportunities more or less convenient and attractive'' (\protect\hyperlink{ref-domencichURBANTRAVELDEMAND1975}{Domencich and McFadden 1975}; \protect\hyperlink{ref-levinsonElementsAccessTransport2017}{D. M. Levinson, Marshall, and Axhausen 2017}; \protect\hyperlink{ref-litmanHowLandUse2017}{Litman 2017}).
+
+But the policy implications about the urban form such as UBG, TOD, and rezoning often need a long period and have more comprehensive effects. Many complex unknown processes could happen in this period. The longitudinal study can only provide narrative evidence. Again, the interaction effects between urban form and other factors complicate the relationship. For example, some research found that major life events may provide windows of opportunity in the habit discontinuity hypothesis. Individuals may reconsider their travel behaviors and be more sensitive to behavior change interventions (\protect\hyperlink{ref-verplankenContextChangeTravel2008}{Verplanken et al. 2008}). The changes in built-environment attributes may capture these windows of opportunity. More introduction of urban-form factors is placed in the next section.
+
+\hypertarget{density}{%
+\subsubsection{Density}\label{density}}
+
+Density is the first urban-form factor added to the model. Early research of automobile trips and urban density can go back sixty years ago (\protect\hyperlink{ref-mitchellUrbanTraffic1954}{Mitchell and Rapkin 1954}). \protect\hyperlink{ref-levinsonEFFECTSDENSITYURBAN1963}{H. S. Levinson and Wynn} (\protect\hyperlink{ref-levinsonEFFECTSDENSITYURBAN1963}{1963}) suggest that the people who live in high-density neighborhoods make fewer automobile trips. This argument stimulated an enormous volume of work. Although later studies construct more complex models, the density factor stays in most travel-urban form models even today.
+
+The most influential aggregate studies start from Newman and Kenworthy. They published a series of studies to show a strong negative correlation between per capita fuel use and gross population density (GPD).\footnote{\protect\hyperlink{ref-newmanCITIESAUTOMOBILEDEPENDENCE1989}{P. G. Newman and Kenworthy} (\protect\hyperlink{ref-newmanCITIESAUTOMOBILEDEPENDENCE1989}{1989a});\protect\hyperlink{ref-newmanGasolineConsumptionCities1989}{P. G. Newman and Kenworthy} (\protect\hyperlink{ref-newmanGasolineConsumptionCities1989}{1989b});\protect\hyperlink{ref-kenworthyINTERNATIONALSOURCEBOOKAUTOMOBILE1999}{J. R. Kenworthy et al.} (\protect\hyperlink{ref-kenworthyINTERNATIONALSOURCEBOOKAUTOMOBILE1999}{1999});\protect\hyperlink{ref-newmanUrbanDesignReduce2006}{P. Newman et al.} (\protect\hyperlink{ref-newmanUrbanDesignReduce2006}{2006});\protect\hyperlink{ref-newmanPeakCarUse2011}{P. Newman and Kenworthy} (\protect\hyperlink{ref-newmanPeakCarUse2011}{2011a});\protect\hyperlink{ref-newmanDensityMultiplierResponse2011}{P. Newman and Kenworthy} (\protect\hyperlink{ref-newmanDensityMultiplierResponse2011}{2011b});\protect\hyperlink{ref-newmanDensitySustainabilityMultiplier2014}{P. Newman} (\protect\hyperlink{ref-newmanDensitySustainabilityMultiplier2014}{2014});\protect\hyperlink{ref-newmanEndAutomobileDependence2015}{P. Newman and Kenworthy} (\protect\hyperlink{ref-newmanEndAutomobileDependence2015}{2015});\protect\hyperlink{ref-kenworthyAutomobileDependenceEmerging2017}{Jeffrey R. Kenworthy} (\protect\hyperlink{ref-kenworthyAutomobileDependenceEmerging2017}{2017})} Their sample covers from thirty-two to fifty-eight global cities (\protect\hyperlink{ref-newmanCITIESAUTOMOBILEDEPENDENCE1989}{P. G. Newman and Kenworthy 1989a}; \protect\hyperlink{ref-newmanEndAutomobileDependence2015}{P. Newman and Kenworthy 2015}) and produces compelling results. Their research points out the relationship rather than estimating the effect size. In this way, the denser cities have less fuel consumption, implying less automobile dependence. This is a concise argument and is widely accepted by planners and policymakers.
+
+The criticisms include their ideological grounds, dataset, and model specification(\protect\hyperlink{ref-gordonGasolineConsumptionCities1989}{Gordon and Richardson 1989}; \protect\hyperlink{ref-dujardinHometoworkCommutingUrban2012}{Dujardin et al. 2012}; \protect\hyperlink{ref-perumalContextualDensityUS2017}{Perumal and Timmons 2017}). A criticism is that, for aggregated data, the population variable on both sides of the equation artificially creates a hyperbolic function (Equation \eqref{eq:hyperbolic}). In many disaggregate studies, density effects are insignificant and have a small magnitude (\protect\hyperlink{ref-zhaoRethinkingDeterminantsVehicle2021}{Zhao and Li 2021}).
+
+\begin{equation}
+\begin{split}
+ & \text{VMT}_{average}  =\beta\cdot  \text{Density}  +\cdots\\ 
+\implies & \frac{\text{VMT}_{total}}{\text{Population}}  = \beta\cdot  \frac{\text{Population}}{\text{Area Size}}  +\cdots\\
+\implies & \text{VMT}_{total} = \beta\cdot  \frac{(\text{Population})^2}{\text{Area Size}}  +\cdots
+\end{split}
+\label{eq:hyperbolic}
+\end{equation}
+
+Another criticism argues that the global comparisons are not valid, such as comparing Hong Kong and Houston. \protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{2018}) created a subset with only U.S. Metropolitan areas from \protect\hyperlink{ref-kenworthyPatternsAutomobileDependence1999}{Jeffrey R. Kenworthy and Laube} (\protect\hyperlink{ref-kenworthyPatternsAutomobileDependence1999}{1999}) `s original data set. They fit the same model but get a much lower \(R^2\) (0.096) than Kenworthy and Laube's (0.72). Similar work by \protect\hyperlink{ref-fanisThreeStudiesThat2019}{Fanis} (\protect\hyperlink{ref-fanisThreeStudiesThat2019}{2019}) shows the low \(R^2\) for U.S. cities (0.1838) and European cities (0.2804) when deconstructing Newman and Kenworthy's data by continent. Any research question has its corresponding sampling design. Choosing a cutoff from the whole data often gets a different result. These criticisms are unfair to Kenworthy and Laube's work. The status quo of the U.S. cities indeed have higher VMT and lower density than other countries.' This subgroup's feature could be distinct from the global trend. Recent evidence from seven metropolitan regions in developing countries over 20 years implies that there is not always an `irresistible force' of automobile dependence worldwide (\protect\hyperlink{ref-kenworthyAutomobileDependenceEmerging2017}{Jeffrey R. Kenworthy 2017}). Hence, the disagreement is not about true-or-false. Examining the relationship between travel and urban form in the U.S. raises a different research question in contrast to the global scale.
+
+Putting the debate aside, density as an explanatory variable has some advantages. Density is calculated by population size and area size from census data, widely available over the country. In contrast, some individual variables are not as measurable and accurate as density. Some studies found density might be an intermediate variable or proxy to other land-use variables such as land use mix, street network, and transit services (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero 2010}; \protect\hyperlink{ref-handyCriticalAssessmentLiterature2005}{Handy 2005a}). The divisions of the statistical units in the U.S. are from uniform criteria at multiple scales. Thus, density values are more objective and comparable comparing other measurements.
+
+Density is an essential measurement and can be extended to some derivatives variables for describing the urban form, such as continuity, centrality, concentration, clustering, nuclearity, and proximity (\protect\hyperlink{ref-galsterWrestlingSprawlGround2001}{Galster et al. 2001}; \protect\hyperlink{ref-cutsingerVerifyingMultiDimensionalNature2005}{Cutsinger et al. 2005}). Scholars also explore more delicate measurements of density. For example, Articulated density describes how ``densities are strategically distributed across parts of a metropolitan area.'' (\protect\hyperlink{ref-suzukiTransformingCitiesTransit2013}{Suzuki, Cervero, and Iuchi 2013}) Population Weighted Density (PWD) ``is equal to conventional density plus the variance of density across the subareas used for its calculation divided by the conventional density'' (\protect\hyperlink{ref-ottensmannPopulationWeightedDensity2018}{Ottensmann 2018}). These measurements are related to the distributions of population density directly or indirectly. Compared to replacing overall density with them, density is an informative factor and still has more potential to tap. Except for the mean and variance, The moment functions for urban density, such as skewness, kurtosis, or rank, can all be the predictor candidates.
+
+Density is also not limited to population and employment density. Urban density can be gross or net. Many approximate variables can represent it -- built-up density measured by dwelling units or building floor area, residential or employment density, destination or CBD density. This paper focuses on population density -- how many people live in a square mile of land - and involves others if possible.
+
+\hypertarget{d-variables}{%
+\subsubsection{D-variables}\label{d-variables}}
+
+One trenchant criticism of Newman and Kenworthy's work is that the univariate or bivariate models may leave some critical factors out. In a recent debate (\protect\hyperlink{ref-fanisThreeStudiesThat2019}{Fanis 2019}), Newman clarified that ``All our work shows that there are multiple causes of car dependence and multiple implications.'' Since travel behavior is a multi-dimensional issue, more socio-demographic and built-environment variables were added to the multivariate analysis. The work started by adding three D-variables, \textbf{density}, \textbf{diversity}, and \textbf{design} (\protect\hyperlink{ref-cerveroTravelDemand3Ds1997}{Cervero and Kockelman 1997}) extended to five `Ds,' adding \textbf{destination accessibility} and \textbf{distance to transit} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2001}{Reid Ewing and Cervero 2001}). It even grows to seven with the addition of \emph{demand management} and \emph{demographics}. But the last two D-variables are beyond the scope of the built environment.
+
+The idea of 5D-variables is from some urban planning and transportation theories such as ``smart growth'' and ``new urbanism.'' To address the urban sprawl, A ``compact city'' should be denser than a typical suburban development (\protect\hyperlink{ref-schimekHouseholdMotorVehicle1996}{Schimek 1996}; \protect\hyperlink{ref-zhangHouseholdTripGeneration2019}{Q. Zhang et al. 2019}). Mixed land use could build a sense of community and allow more external trips to be replaced by internal trips (\protect\hyperlink{ref-ewingTrafficGeneratedMixedUse2011}{Reid Ewing et al. 2011}; \protect\hyperlink{ref-tianTrafficGeneratedMixedUse2015}{Tian et al. 2015}). The transit-oriented development (TOD) could reduce the distance to transit and encourage people to drive less and choose active modes (\protect\hyperlink{ref-mcneilRevisitingTODsHow2020}{McNeil and Dill 2020}). Each variable has a corresponding planning tool and may somehow explain a part of travel behavior.
+
+Researchers have a rough consensus of the measurement of D-variables. \textbf{Diversity} or \textbf{Mixed uses} entropy to measure the land-use differences in a given unit. Entropy index \(S= -\sum_1^k(P_i\ln(P_i))/\ln(k)\), \(i =\{1,2,...,k\}\),where \(P_i\)represents the proportion of different types. The types could be single-family, multifamily, commercial, and public by \protect\hyperlink{ref-tianTrafficGeneratedMixedUse2015}{Tian et al.} (\protect\hyperlink{ref-tianTrafficGeneratedMixedUse2015}{2015}). Or they include residential, commercial, and public in \protect\hyperlink{ref-parkGuidelinesPolycentricRegion2020}{K. Park et al.} (\protect\hyperlink{ref-parkGuidelinesPolycentricRegion2020}{2020}) `s paper. \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee} (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{2020}) choose residential, commercial, industrial, and offices in their study. Sometimes, researchers are interested in the relationship between residents and employment. Then jobs-to-housing index is \(S= -\sum[P_i\ln(P_i)]/\ln(2)\), where \(i=1,2\). \(P_1=\frac{Emp}{Emp+HH}\) and \(P_2=\frac{HH}{Emp+HH}\). \(HH\) is the number of households. Another way is called jobs-population balance \(S= 1-\frac{|Emp-0.2 Pop|}{Emp+0.2 Pop}\), where \(Emp\) is employment and \(Pop\) is population (\protect\hyperlink{ref-parkGuidelinesPolycentricRegion2020}{K. Park et al. 2020}; \protect\hyperlink{ref-tianTrafficGeneratedMixedUse2015}{Tian et al. 2015}). In addition to the count number, the formula terms can also be calculated by land or floor area size. \textbf{Design} could be a broad concept including all built-environment elements. Many elements are difficult to quantify. In the context of compact city and auto dependency, researchers measure design by some pedestrian-environments factors such as street widths, street trees, sidewalk coverage, and building setbacks (\protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{Reid Ewing et al. 2015}). It is a simplified method, but the data are still unavailable in many cases. An even simpler way is to use the road network to represent the design. The measurements are based on block size or the number of intersections, such as intersection density (number of intersections per square mile) or proportion of four-way intersection. Another way is to calculate the street connectivity using \(Beta\) index \(\beta= e/v\), where \(e\) is the number of edges and \(v\) is the number of vertices (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee 2020}). \textbf{Destination accessibility} measures how easily travelers reach the attractions. One way measures the distance from the origin to the given destination. The measurements could be the length of the straight-line or shortest route. The destinations could be the central business district or 'subcenter' (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee 2020}). Another way is to count the number of attractions with a given distance/buffer or travel time. The number of jobs is the major measurement. A more thoughtful measure is urban living infrastructure (ULI) that counts ``the number of retail and services that support everyday shopping, maintenance, and social activities'' (\protect\hyperlink{ref-zhangHouseholdTripGeneration2019}{Q. Zhang et al. 2019}). The count can also be converted to a proportion of the whole region. Some studies further distinguish the measures by travel time (within 10/20/30 minutes) and by modes (transit or automobile) (\protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{Reid Ewing et al. 2015}). \textbf{Distance to transit} also has two types of measurements. For a traveler, the shortest route from home or workplace to the nearest transit stop measures the ease of transit access. For a city, the number of stops and stations, the length of transit routes, or the stop spacing represent the transit service levels. These measurements are often expressed as average length or service density.
+
+D-variables provide a general framework from the perspective of planning. Under this framework, researchers can select the specific variables and metrics based on their understanding and the available data. But it could also be the reason for many studies' mixed results. A factor may significantly impact travel in some studies while not in others, or even has different influencing directions. For example, the effect of population density on bus trips is positive in the study by \protect\hyperlink{ref-brownUnderstandingTransitRidership2014}{Brown et al.} (\protect\hyperlink{ref-brownUnderstandingTransitRidership2014}{2014}), while it is negative in \protect\hyperlink{ref-alamFactorsAffectingTravel2018}{Alam, Nixon, and Zhang} (\protect\hyperlink{ref-alamFactorsAffectingTravel2018}{2018}) 's model.
+
+Looking at D-variables from other ways could help to understand them better. One point of view is the perspective of functionality and morphology. The distance-based and network measures, like distance to CBD and intersection density, are morphological factors and reflect the spatial structure and connection. In comparison, the land-use entropy and jobs-population balance have functional meanings. Population, employment, or transit densities contain both functional and morphological information. Their magnitudes reflect the intensive quantity, and their spatial distributions are related to accessibility. Conceptually, it is possible that the variables inside the same category, functional or morphological, may have some relationship. In regression analysis, this relationship among the covariates is called multicollinearity, leading to variance-inflation issues. If the new data have a similar pattern with the initial data fitting the model, multicollinearity will not affect the model's prediction ability. But the estimated coefficients could be biased. \protect\hyperlink{ref-handyEnoughAlreadyLet2018}{Handy} (\protect\hyperlink{ref-handyEnoughAlreadyLet2018}{2018}) criticizes that the D-variables may not be independent. A meta-analysis also confirms that spatial multicollinearity is widespread in this field (\protect\hyperlink{ref-gimRelationshipsLandUse2013}{Gim 2013}). The studies in this field usually check and control serious multicollinearity by removing the variables with a high variance inflation factor (VIF). But that may lose some useful information. The functional and morphological perspective may moderate these issues in the research design stage.
+
+Another point of view is that D-variables include both local and regional factors. Usually, density, diversity, design, and distance to transit refer to the properties of travelers' neighborhoods. When considering the destination accessibility, the measures become regional or city scale. It is still unclear whether this incoordinate structure would affect the models' performance. Some studies try to extend some local measures to the regional scale, such as distinct residential and CBD density, neighborhood diversity, and regional jobs-housing balance (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee 2020}). But it is hard to raise the resolution of destination to the same scale as that of origin. For the four-step models in transportation, each TAZ has both trip generations and attractions. The O-D matrix distributes all the traffic flows at the same scale. The D-variables framework covers many elements in four-step models, but the destination's measures are sketchy. Improving the measurements needs some new data. For example, \protect\hyperlink{ref-schlapferUniversalVisitationLaw2021}{Schläpfer et al.} (\protect\hyperlink{ref-schlapferUniversalVisitationLaw2021}{2021}) use the mobile phone datasets to identify the visiting records for each destination, which could make up the missing piece in the current D-variable framework.
+
+\hypertarget{synthesized-index}{%
+\subsubsection{Synthesized Index}\label{synthesized-index}}
+
+\protect\hyperlink{ref-cliftonGettingHereThere2017}{Clifton} (\protect\hyperlink{ref-cliftonGettingHereThere2017}{2017}) suggests converting the various environmental characteristics to built environment indices to address the multicollinearity and interactions issues. Some researchers use `density factor' to replace the single density measurement (\protect\hyperlink{ref-ewingMEASURINGSPRAWLITS2002}{R. Ewing, Pendall, and Chen 2002}; \protect\hyperlink{ref-ewingRelationshipUrbanSprawl2003}{Reid Ewing et al. 2003}). The primary method is Principal Components Analysis (PCA) or Principal Components Regression (PCR), which synthesizes many variables into fewer dimensions. The advantage of this method can eliminate multicollinearity and increase the elasticity value significantly. A recent study shows that the elasticity of VMT with respect to the density factor is -0.612 (\protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al. 2018}).
+
+The disadvantage of this method is that the internal mechanisms of the indices are still unclear. And every scholar may have their version of indices. For example, there are different versions of the `Compactness/Sprawl Index.' The early study uses two synthesized dimensions: development density and street accessibility (\protect\hyperlink{ref-ewingRelationshipUrbanSprawl2003}{Reid Ewing et al. 2003}). In \protect\hyperlink{ref-ewingRelationshipUrbanSprawl2014}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingRelationshipUrbanSprawl2014}{2014}) `s research, the 'Original sprawl index' is six-to-one, and the `refined version' reduces into four dimensions: development density, land use mix, activity centering, and street connectivity. Compactness/sprawl index then is the summation of the four synthesized factors or the standardized residuals from the regression among the four factors and logarithm of the MSAs/urbanized areas' population size (\protect\hyperlink{ref-hamidiLongitudinalStudyChanges2014}{Hamidi and Ewing 2014}; \protect\hyperlink{ref-hamidiMeasuringSprawlIts2015}{Hamidi et al. 2015}). This four-factor method is used in some later studies (\protect\hyperlink{ref-ewingUrbanSprawlRisk2016}{Reid Ewing, Hamidi, and Grace 2016}; \protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al. 2018}; \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee 2020}). Meanwhile, \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee} (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{2020}) also choose their measurements with `centrality index,' `Jobs-to-housing index,' and `beta index' of street connectivity. They also argue that the compactness indices at urbanized area and census tract levels are distinct. The coefficients of the compactness index are -0.05 at UA scale and -0.527 at census tract scale in their study.
+
+For another similar example, \protect\hyperlink{ref-zhangHouseholdTripGeneration2019}{Q. Zhang et al.} (\protect\hyperlink{ref-zhangHouseholdTripGeneration2019}{2019}) use urban living infrastructure (ULI) as the local accessibility variable (ULI) and finds that ULI and household density significantly affect household trip generation. Their ULI is the count number of retail, services, and social activities. Meanwhile, the Urban Liveability Index (ULI) by \protect\hyperlink{ref-higgsUrbanLiveabilityIndex2019}{Higgs et al.} (\protect\hyperlink{ref-higgsUrbanLiveabilityIndex2019}{2019}) are some indices supporting health and wellbeing. These indices include social infrastructure, transit service, walkability, public open space, housing, and employment. The two ULI have different information and may not be comparable. Hence, the association between ULI and travel mode choice is a specific result unless a uniform measurement is widely applied to other studies and cities.
+
+A smart application of synthesizing method (common factor analysis) is to control the psychological effects in models. \protect\hyperlink{ref-hongHowBuiltenvironmentFactors2014}{Hong, Shen, and Zhang} (\protect\hyperlink{ref-hongHowBuiltenvironmentFactors2014}{2014}) convert eight attitudinal questions in the 2006 Household Activity Survey to three factors: Ease, Convenience, and Pro-transit. They fit the model using two geographic scales: 1-km buffer and traffic analysis zone (TAZ). After controlling the attitudinal effects, the \emph{nonresidential density} and \emph{distance from CBD} have significant impacts on VMT at the TAZ level.
+
+\hypertarget{meta-analysis}{%
+\subsection{Meta-Analysis}\label{meta-analysis}}
+
+This section introduces several influencing meta-analyses of travel-urban form studies. Although these meta-analyses systematically summarized the outcomes from many similar studies, scholars still have different views and interpretations. The contents of the methodology are in a separate chapter of Part II.
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010})
+\end{itemize}
+
+To get a general, comparable outcome, \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) collected more than 200 related studies and summarized the elasticity values using meta-analysis. They exclude the aggregated studies to avoid ``ecological fallacies.'' The studies on specific groups such as aged people are also excluded. The selected studies must use multiple regression analysis with at least one response of VMT or travel modes, with at least one predictor from 5D variables. The studies using structural equation models are not included because these models will not give a single effects size of each D-variable. The coefficients concerning various metrics of predictors are incomparable. Thus they convert all the estimates of the coefficient to elasticities. Elasticity measures the percentage change in response to a 1 percent increase in a predictor. Therefore, it is a dimensionless parameter.
+
+After screening, sixty-two studies were selected. This is a tiny sample size because the research question involves five predictors (5D-variables) and three responses (VMT, walking, and transit use). For example, for the VMT-density relationships, only nine selected studies in this meta-analysis. It is not large enough to get a sufficient inference. Looking at the distribution of elasticities, six of nine papers gave zero or insignificant elasticity. Three studies showed significant negative values (two are -0.04 and one is -0.12). \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) use the nine observation to calculate the weighted-average elasticities of VMT concerning population density. The three observations mainly determine the result of -0.04.
+
+Moreover, among the nine VMT-density studies, eight use single city/metro data. Only one nationwide study using NPTS data (\protect\hyperlink{ref-schimekHouseholdMotorVehicle1996}{Schimek 1996}) finds logarithm of household VMT has a non-significant elasticity (-0.07).
+
+Similarly, in this meta-analysis, the weighted-average elasticity of job density (sample size = 9) was zero. The most extensive elasticities of VMT are -0.20 concerning job accessibility by auto (sample size = 5) and -0.22 concerning distance to downtown (sample size = 3).
+
+For the limitation of data quality, the standard errors of elasticities are not included in this meta-analysis. When calculating the weighted-average values, \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) use each study's sample size as the weight factor. For the same reason, the confidence intervals are also not available.
+
+
+
+\begin{table}
+
+\caption{\label{tab:meta2010}The studies of VMT vresus Density in \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010})}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{llrl}
+\toprule
+Study & Sites & Elasticity & note\\
+\midrule
+Ewing et al. (2009) & Portland,OR & 0.00 & \\
+Frank and Engelke (2005) & Seattle & 0.00 & \\
+Greenwald (2009) & Sacramento & -0.07 & Non-peer-reviewed,Non-significant\\
+Maria Kockelman (1997) & Bay Area & 0.00 & \\
+Kuzmyak (2009b) & Los Angeles & -0.04 & Non-peer-reviewed\\
+\addlinespace
+Kuzmyak (2009a) & Phoenix & 0.00 & Non-peer-reviewed\\
+Zegras (2010) & Santiago de Chile & -0.04 & \\
+Zhou and Kockelman (2008) & Austin & -0.12 & not log transform,R2=0.097\\
+Schimek (1996) & U.S. & -0.07 & Non-significant\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This meta-analysis kindled researchers' enthusiasm for this topic. After that, some studies try to cover multi-region data (\protect\hyperlink{ref-zhangHowBuiltEnvironment2012}{L. Zhang et al. 2012}). \protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{2015}) accumulated a travel-built environmental dataset from 23 metropolitan regions in the U.S. (81,056 households and 815,204 people). They find that all 11 D-variables have statistically significant effects on VMT.
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{Stevens} (\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{2017a})
+\end{itemize}
+
+\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{Stevens} (\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{2017a}) extends this analysis and explains the different outcomes using a meta-regression method. He focuses on the studies with VMT as the response and uses similar screening criteria. Based on the results from 37 studies, he finds the elasticity of population density is small (-0.10) and suggests that compacting development has a minor influence on driving.
+
+Adding a dummy variable, whether a study control residential self-selection or not, into the meta-regression, \protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{Stevens} (\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{2017a}) shows that self-selection research design could significantly impact the effect size. For the studies with self-selection control, the estimated elasticity of population density becomes -0.22, which is much stronger than \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) 's result (-0.04). An advantage of meta-regression is that the two groups with/without self-selection control can share the common errors, fully utilize the information, and overcome the small sample size issue to a certain extent. The number of studies with self-selection control is four, while the total selected studies are 19. This result is more reliable than the average value in the self-selection control group.
+
+Another improvement is that Stevens' meta-regression uses the weighted least squares (WLS) method. The weights are the precision (inverse of variance) of each observation. The same weights are applied on the weighted average and precision-effect estimate with standard error (PEESE) method in his `Technical Appendix for details.' The estimated elasticities of population density with the three methods are -0.22, -0.13, and -0.20, respectively. Unfortunately, Stevens doesn't share his data of standard error of coefficients in the article and technical appendix. It is not easy to check his data and results.
+
+Note that one observation, the study by \protect\hyperlink{ref-chatmanHowDensityMixed2003}{Chatman} (\protect\hyperlink{ref-chatmanHowDensityMixed2003}{2003}), may dramatically twist Stevens' result about density. In Chatman's Tobit model, the average VMT is \(\bar y= 3.988\); the average household density is \(\bar x= 1.902\) (housing units per square mile, residential block group (1,000s)); the coefficient of household density is \(\beta=-0.082\). Then the elasticity should be
+
+\[
+\beta\cdot\frac{\bar x}{\bar y}=-0.082\cdot\frac{1.902}{3.988}=-0.0391
+\]
+
+This elasticity calculated by \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) is -0.58. And it is not selected in the meta-analysis because the response is VMT on commercial trips. \protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{Stevens} (\protect\hyperlink{ref-stevensDoesCompactDevelopment2017}{2017a}) chooses this study and calculates a different elasticity -0.34. Whatever, -0.34 is the smallest elasticity, and the second smallest one (\protect\hyperlink{ref-zahabiSpatiotemporalAnalysisCar2015}{Zahabi et al. 2015}) is -0.22. At the same time, the rest studies give the range of elasticities from 0 to -0.20. Hence, these observations are highly skewed.
+
+\protect\hyperlink{ref-chatmanHowDensityMixed2003}{Chatman} (\protect\hyperlink{ref-chatmanHowDensityMixed2003}{2003}) `s model is also the only one of four studies with self-selection control. When this case is removed (-0.34), the estimated effect size will be much close to zero. \protect\hyperlink{ref-zahabiSpatiotemporalAnalysisCar2015}{Zahabi et al.} (\protect\hyperlink{ref-zahabiSpatiotemporalAnalysisCar2015}{2015}) has the largest sample size (147574). Steven finds the PEESE method for bias correction will change the weighted average elasticity from -0.13 to -0.20. He hesitates to remove this 'outlier' because the outcome will become -0.09. At last, he chooses to keep this observation and report the result without bias correction (-0.22). Changing the criteria after seeing the results is called post hoc analysis or exploratory analysis.
+
+Stevens' work triggers a round of discussion. \protect\hyperlink{ref-ewingDoesCompactDevelopment2017}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingDoesCompactDevelopment2017}{2017}) reply that they don't doubt Stevens' results and criticize his conclusions. They agree with the values of elasticity but argue that Stevens' results (-0.22 for density) are not small actually. They emphasize the extensive benefit of compacting development. They don't think reporting bias widely exists in travel-urban form studies. The different results of the meta-analysis are mainly due to the studies selection, such as the U.S. or international context. Keeping or removing the outlier is also makes the difference.
+
+Other scholars also contribute various insights. \protect\hyperlink{ref-manvilleTravelBuiltEnvironment2017}{Manville} (\protect\hyperlink{ref-manvilleTravelBuiltEnvironment2017}{2017}) supports the idea that compact development is related to less car use and looks at it as a ``fundamental belief in urban planning.'' \protect\hyperlink{ref-nelsonCompactDevelopmentReduces2017}{Nelson} (\protect\hyperlink{ref-nelsonCompactDevelopmentReduces2017}{2017}) agree that selective reporting bias does exist when some ``interests or ideology dominate the discussion.'' \protect\hyperlink{ref-cliftonGettingHereThere2017}{Clifton} (\protect\hyperlink{ref-cliftonGettingHereThere2017}{2017}) points out some weaknesses and potential sources of bias in current travel behavior studies. \protect\hyperlink{ref-heresFutureResearchLink2017}{Heres and Niemeier} (\protect\hyperlink{ref-heresFutureResearchLink2017}{2017}) support more application of meta-analysis on relevant studies. And they remind the substantial difference among the studies with varied methods, country data sources, and metrics (e.g., commuting and noncommuting trips). They suggest narrowing the scope of studies to get more specific conclusions for policymakers. \protect\hyperlink{ref-knaapDrivingCompactGrowth2017}{Knaap, Avin, and Fang} (\protect\hyperlink{ref-knaapDrivingCompactGrowth2017}{2017}) provide suggestions for improving this approach from the perspective of sample size, model specification, and weighing. Among the discussion, a key issue is whether a universal effect of compact development concerning driving distance exists or the effect is context-dependent. Stevens' work should not be criticized for the cross-country scope if the former is true. If the latter is true, it still should be based on evidence rather than belief or experience. The complexity of urban issues makes it is an unsolved problem.
+
+\protect\hyperlink{ref-handyThoughtsMeaningMark2017}{Handy} (\protect\hyperlink{ref-handyThoughtsMeaningMark2017}{2017}) agrees with the improvement by meta-regression but thinks that meta-analysis is not a direction worth further investigation. In a later paper, \protect\hyperlink{ref-handyEnoughAlreadyLet2018}{Handy} (\protect\hyperlink{ref-handyEnoughAlreadyLet2018}{2018}) argues that accessibility-centered studies should replace the 5Ds framework. \protect\hyperlink{ref-stevensResponseCommentariesDoes2017}{Stevens} (\protect\hyperlink{ref-stevensResponseCommentariesDoes2017}{2017b}) responses to commentaries and clarifies some research goals and important questions. He insists this meta-regression is currently the ``most accurate synthesis of the literature.''
+
+Stevens' study shows an uncommon direction of bias on the elasticity of population density. A usual assumption of publication bias is small studies tend to have greater standard errors and effect sizes. In contrast, among the 19 studies including the density variable, the effect sizes in small studies are closer to zero. A possible reason is that the studies with high heterogeneity answer different questions. Researchers may not have too much pressure for a small effect size in a highly heterogeneous field. Another possible explanation is that most recent studies include a bundle of predictors. Once one or more coefficients show significance, the paper can claim some contributions. Publication bias only affects the nothing significant studies.
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{Aston et al.} (\protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{2021})
+\end{itemize}
+
+After the two milestones for meta-analysis of built environment and travel behavior, a recent update re-examines the post-2010 empirical literature. \protect\hyperlink{ref-astonStudyDesignImpacts2020}{Aston et al.} (\protect\hyperlink{ref-astonStudyDesignImpacts2020}{2020}) collected 146 studies containing 467 models recorded as 1662 data points. There are 15 predictors of research design, including the number of variables, aggregate/disaggregate data, general/commuter group, trip purposes, time periods, types of model, which are used to examine how research design affects the built environment-mode choice studies. Instead of using elasticities as the response variable, they choose correlation, another dimensionless variable to measure the strength of the relationship between the built environment and transit use. Their results show that whether accounting residential self-selection and regional accessibility can account for 40\% of the variation of mode choice in the meta-regression.
+
+This meta-regression uses the Stepwise selection method to remove the insignificant predictors. 40\% is the coefficient of determination \(R^2\) in the four-predictor model for density and the five-predictor model for diversity. In these meta-regression models, standard errors \(SE_r\) show the largest coefficient value. Control for covariance (which lacks explanation in this paper) contributes to the second large one. Control for regional accessibility is an insignificant variable in both density and diversity models. How can we conclude that 40\% of the variation is due to the control of self-selection and regional accessibility? \protect\hyperlink{ref-astonStudyDesignImpacts2020}{Aston et al.} (\protect\hyperlink{ref-astonStudyDesignImpacts2020}{2020}) mention the asymmetry in the funnel plot for density and accessibility. It is evidence of publication bias that could lead to overestimating the correlation. But the plot is not shown in the paper.
+
+In a later paper, \protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{Aston et al.} (\protect\hyperlink{ref-astonExploringBuiltEnvironment2021}{2021}) further improve the meta-analysis to examine the impacts of 5D variables on transit use. The number of studies is extended to 187. And 418 of 505 elasticities are used as a valid response. They find that using a random-effect model, the elasticity of density on transit use (0.10) is close to \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010}) 's result (0.07). The standard error of the estimate is also included \(SE=0.013\). Using these estimates, they re-examine the effects of control for self-selection and regional accessibility. The paired tests show that both indicators significantly impact elasticities of density. They also find that the estimated elasticity of density in the studies after 2010 is significantly higher than before 2010. The authors explain this change by more diverse study locations and more studies that control regional accessibility after 2010.
+
+\hypertarget{scale}{%
+\subsection{Spatial Scales}\label{scale}}
+
+\begin{itemize}
+\tightlist
+\item
+  Modifiable areal unit problem (MAUP)
+\end{itemize}
+
+The travel-urban form studies divide into two groups due to the various data sources or research interests. One group uses aggregated travel and urban-form variables at the city, county, or metropolitan level. At the same time, the other group uses travel survey data at the individual or household level. The results of travel models at different scales are often inconsistent. Using the same data source, \protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{2018}) found that the elasticity of VMT with respect to population density is -0.164 in the aggregate models, which is a much higher value than disaggregate studies (-0.04 in the meta-analysis of \protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{Reid Ewing and Cervero} (\protect\hyperlink{ref-ewingTravelBuiltEnvironment2010}{2010})). They suspect that this phenomenon is aggregation bias or ecological fallacy. They further explain that the two scales represent two different questions: The metropolitan-level density, which strongly affects the VMT, is not equivalent to the neighborhood density, which has much weaker effects on VMT.
+
+Early in 1930, scholars noticed that when a set of smaller areal units was aggregated into larger areal units, the variance structure would be changed, and the estimated coefficients would be larger (\protect\hyperlink{ref-gehlkeCertainEffectsGrouping1934}{Gehlke and Biehl 1934}). This inconsistency/sensitivity of analysis results is called modifiable areal unit problem (MAUP) or ecological fallacy (\protect\hyperlink{ref-openshawEcologicalFallaciesAnalysis1984}{Openshaw 1984}). In spatial analysis, two kinds of MAUP often happen simultaneously (\protect\hyperlink{ref-wongModifiableArealUnit2004}{Wong 2004}). The first one, called the `scale effect,' means that the correlation among variables depends on the size of areal units. Larger units usually lead to more extensive estimations. The second one, `zone effect,' describes the various correlation results by choosing different areal shapes or subsets at the same scale.
+
+\protect\hyperlink{ref-fotheringhamModifiableArealUnit1991}{Fotheringham and Wong} (\protect\hyperlink{ref-fotheringhamModifiableArealUnit1991}{1991}) found that multivariate analysis is unreliable when using the data from areal units. Both value and direction of estimated coefficients may change for different spatial configurations (\protect\hyperlink{ref-leeModifiableArealUnit2016}{G. Lee, Cho, and Kim 2016}; \protect\hyperlink{ref-xuModifiableArealUnit2018}{Xu, Huang, and Dong 2018}). The factors measured at a specific scale could only explain the variation generated at or above that level. Some factors, such as density, have cross scales. Their distributions in different units and scales are not identical. It is reasonable for them to have various meanings and influences on travel. A systematic comparison should be conducted among multi-scale studies. The inconsistency might not be correct or wrong. As \protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{2018}) commented, the aggregate and disaggregate studies ask the apples and oranges questions.
+
+\begin{itemize}
+\tightlist
+\item
+  Aggregated Analysis
+\end{itemize}
+
+The aggregate analysis at the macro-level treats each city or metropolitan as an observation. The most common way of data aggregation, weighted or simple averages, may miss some desirable information. The averages of group data are suitable when the groups' effects are random, identical, and independent. Then the estimations of coefficients in the linear model are unbiased (\protect\hyperlink{ref-praisGroupingObservationsRegression1954}{Prais and Aitchison 1954}). But these assumptions do not hold for travel-urban form studies. Some factors such as gross population or employment density can not reflect the internal land-use pattern or structure. To address this issue, some studies add the urban-form factors such as centrality and the features of CBD into the model. \protect\hyperlink{ref-vandecoeveringReevaluatingImpactUrban2006}{van de Coevering and Schwanen} (\protect\hyperlink{ref-vandecoeveringReevaluatingImpactUrban2006}{2006}) carry on Newman and Kenworthy's work and consider four sets of potential explanatory variables: ten of urban form, six of transport service, five of housing and development history, and thirteen of socio-economic situations. The ten urban-form factors include population and employment density in the whole metropolitan area, CBD, and inner area,\footnote{the built-up area before World war II} and centrality in CBD and inner area. They fit some linear regression models (all the variables keep the initial magnitude without taking logarithm or other transformation), and their adjusted \(R^2\)s are high (0.770 -- 0.967). Their models show that the cities with higher gross population density have less driving distance. But when adding an indicator for European, Canadian, and US cities, this relationship becomes weak in U.S. cities and has the opposite direction. Their models also find that the inner area's employment density significantly impacts travel distance by transit. But this relationship is much more robust in Canadian and U.S. than in European cities. A recent city-level study (\protect\hyperlink{ref-gimAnalyzingCitylevelEffects2021}{Gim 2021}) fits multiple regression models based on the data from 65 global cities. Using structural equation modeling, their results show that fuel price, household size, and congestion level strongly affect travel time. In their model, the effect of overall population density becomes insignificant, while in the high-density built-up areas, the population density still greatly impacts travel. These studies show that population/employment spatial distributions could be the same or more important than the averages.
+
+When a study comes to mesolevels such as Census Tract, Block Group, or TAZ, the spatial difference in a city is not an explanatory variable anymore. If there are no other proper explanatory factors, regression models will recognize the difference as residuals or random errors. This issue is called \emph{omission error} (\protect\hyperlink{ref-amrheinSearchingElusiveAggregation1995}{Amrhein 1995}; \protect\hyperlink{ref-yeImpactsModifiableAreal2021}{Ye and Rogerson 2021}). However, there could not be one or a few factors that can play the role. The city's spatial difference usually forms from some geographic and historical reasons. Such as the shape of a river or a great fire. Each city has its specific spatial structure or pattern. Some techniques, such as the geographically weighted regression (GWR), can capture these spatial features (\protect\hyperlink{ref-paezGeographicallyWeightedRegression2009}{Páez and Wheeler 2009}). But one city's model cannot be applied to other cities.
+
+\begin{table}
+
+\caption{\label{tab:geoid}GEOID Structure for Geographic Areas}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{llr}
+\toprule
+Area.Type & GEOID & Geographic.Area\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{3}{l}{\textbf{Nested Entities}}\\
+\hspace{1em}State & 41 & Oregon\\
+\hspace{1em}County & 41051 & Multnomah County, OR\\
+\hspace{1em}County Subdivision & 4105192520 & Portland West CCD, Multnomah County, OR\\
+\hspace{1em}Tract & 410510056 & Census Tract 56, Multnomah County, OR\\
+\hspace{1em}Block Group & 410510056002 & Block Group 2, Census Tract 56, Multnomah County, OR\\
+\hspace{1em}Block & 410510056002014 & Block 2014, Census Tract 56, Multnomah County, OR\\
+\addlinespace[0.3em]
+\multicolumn{3}{l}{\textbf{Other Entities}}\\
+\hspace{1em}CSA & 440 & Portland-Vancouver-Salem, OR-WA\\
+\hspace{1em}CMSA & 6442 & Portland-Salem, OR-WA\\
+\hspace{1em}CBSA & 38900 & Portland-Vancouver-Hillsboro, OR-WA\\
+\hspace{1em}UACE & 71317 & Portland, OR-WA\\
+\hspace{1em}Places & 4159000 & Portland city, OR\\
+\hspace{1em}PUMA & 4101314 & Portland City (Northwest \& Southwest)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The higher geographic levels have smaller sample sizes. Aggregate data are more accessible and convenient to combine with other data sources. The U.S. has a uniform geographic coding defined by Census Bureau (Table \ref{tab:geoid}). Once a travel survey contains the attribute of \href{https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html}{geographic identifier}, travel information can be integrated into other demographic, employment, and urban-form data (e.g., \href{https://www.census.gov/programs-surveys/decennial-census/about/census-acs.html}{American Community Survey (ACS)}). For example, \protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingTestingNewmanKenworthy2018}{2018}) use the average per capita VMT of all urbanized areas across the U.S. from FHWA's Highway Statistics. Then they join the 2010 census data in 157 urbanized areas (with populations of two hundred thousand or more) to FHWA's VMT data. It should be noted that the travel survey data themselves are not suitable for aggregating to any levels though each observation contains a geographic identifier. For example, the estimates in 2009 NHTS are valid down to the state level.\footnote{\url{https://nhts.ornl.gov/faq.shtml}} Only the part from areas purchased add-on samples may be valid to smaller levels. Usually, the travel survey's sampling design cannot represent the features at all geographic levels due to budget constraints. Only census data cover the total population at all levels. The bottom-up aggregation is possible in some cases. A study by \protect\hyperlink{ref-zhaoRethinkingDeterminantsVehicle2021}{Zhao and Li} (\protect\hyperlink{ref-zhaoRethinkingDeterminantsVehicle2021}{2021}) uses individual data for Wellington Region from New Zealand Household Travel Survey (NZHTS) to generate the VKT per capita for 193 traffic zones. It depends on whether the sampling method for Wellington Region can represent this region's feature.
+
+\begin{itemize}
+\tightlist
+\item
+  Disaggregated Analysis
+\end{itemize}
+
+In disaggregate analysis, the travel records by individual or household are the basic unit of dependent variables. When the resolution raises to the individual level, the advantage is that the individual/household's socio-demographic characteristics such as income, working status, and vehicle ownership, even the travelers' attitude and habits can be added into the models and eliminate the \emph{omission error}. However, urban-form factors have a minimum geographic unit as the measured scope. A common way is to get travel survey data from the local transportation department and combine it with census data and GIS data. Census Tract and Block Group then are the minimum units in disaggregate analysis. Disaggregated data can disclose the neighborhood-level differences and eliminate aggregation bias. Some studies confirm that individual-level data make the travel-land use model more reliable (\protect\hyperlink{ref-boarnetInfluenceLandUse2001}{Boarnet and Crane 2001}).
+
+Disaggregate analysis can also evaluate the impact of macro/mesolevel urban-form factors like the population and employment distribution of intra-urban (\protect\hyperlink{ref-buchananEffectUrbanGrowth2006}{Buchanan et al. 2006}; \protect\hyperlink{ref-sultanaJourneytoWorkPatternsAge2007}{Sultana and Weber 2007}). Using logarithms of VMTs per vehicle from \emph{National Personal Travel Survey (NPTS)} data with 114 urban areas, \protect\hyperlink{ref-bentoEffectsUrbanSpatial2005}{Bento et al.} (\protect\hyperlink{ref-bentoEffectsUrbanSpatial2005}{2005}) fit the linear model with 19 variables. Instead of population density, they found that population centrality significantly affects VMT.\footnote{``population centrality measure is computed by averaging the difference between the cumulative population in annulus \(n\) (expressed as a percentage of total population) and the cumulative distance-weighted population in annulus \(n\) (expressed as a percentage of total distance-weighted population).''} The elasticity of annual VMT with respect to population centrality is 1.5.
+
+Aggregate and disaggregate are relative concepts. The household-level data are usually treated as disaggregated, but they are aggregated by persons or trips. From Census Block to Tract, County, and Metropolitan Area, the data at these levels are all called aggregated, but they have substantial differences. \protect\hyperlink{ref-schwanenImpactMetropolitanStructure2004}{Schwanen, Dieleman, and Dijst} (\protect\hyperlink{ref-schwanenImpactMetropolitanStructure2004}{2004}) explains that many urban-form dimensions are tied to specific geographic scales. Recently, more studies have imported the spatial scales as an explanatory variable. In a travel and polycentric development report, \protect\hyperlink{ref-ewingReducingVehicleMiles2020}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingReducingVehicleMiles2020}{2020}) identify 589 centers in 28 U.S. regions. Then a categorical variable, `within/outside a center,' is added to the model. The results show that households living within a center have more walk trips and fewer VMT than those living outside. \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee} (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{2020}) also conducted a study involving factors at three levels: household, Census Tract, Urbanized Area. They find that density and centrality affect VMT at the urban level, and the jobs-housing mix affects VMT at the mesoscale. After controlling for factors, the effect of local factors at the urban-level spatial structure moderates the effect size of the local built environment on travel.
+
+\hypertarget{travel}{%
+\section{Travel as Response}\label{travel}}
+
+Disaggregate and aggregate analysis also reflect two different perspectives, individual travel choice or collective human mobility. When researchers observe travel as a personal choice or decision-making, a traveler is a subject to make choices. Some economic and psychological theories are developed to explain why and how a person decides to drive, such as utility-maximization theory. When researchers contextualize the many trips as a whole into the city/region's environment, the human mobility or travel pattern is a social and geographic phenomenon. Some geographic or physical theories express the mechanism behind the pattern, such as the gravity model.
+
+\hypertarget{travel-variables}{%
+\subsection{Travel Variables}\label{travel-variables}}
+
+Two primary dimensions can measure travel behavior: travel mode choice and degree of car use. Their smallest unit is a trip recorded in the travel survey. When the traveler has decided to have a trip, the chosen mode for each trip, driving, transit, bicycle, or walking, is a discrete variable in the disaggregate analysis. Given a driving trip, the driving distance or driving duration measures the car use intensity, such as Vehicle Miles Traveled (VMT). That means a usage variable is based on a given condition in the mode-choice dimension.
+
+Then, the essential measurements can be converted to other variables. For example, the daily driving frequency is the count number of all driving trips on the survey day. Daily VMT (DVMT) is the total driving distance on the survey day. A travel survey often records the trips with the information of persons, vehicles, and households on the survey day. The trip's VMT and frequency have the corresponding measurements by person, vehicle, or household. Since the internal difference inside a household usually is not the research interest, DVMT per household is generally chosen to reflect the typical travel behavior (\protect\hyperlink{ref-bhatCopulabasedApproachAccommodate2009}{Bhat and Eluru 2009}). And the household travel records are still treated as disaggregated data. An integrated viewpoint treats the non-auto trips and no-trip as zero-VMT (\protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{Reid Ewing et al. 2015}). In this way, the VMT variable can comprehensively represent the overall travel behavior. But researchers should reconsider the VMT's probability distribution.
+
+If the sampling can represent the population's features, these records are further aggregated by a given temporal or spatial unit in aggregate analysis. For a given geographic unit, such as Census Block Group, Tract, or county, the common measures are the averages of the records at the lower scales. Another measure is the mode share or split calculated by dividing the driving frequency over the total number of trips. The share of alternative travel modes has a deterministic relationship to the share of driving. It is not easy to acquire long-term travel information through a survey-based method. Although the survey day may be randomly selected, it is risky to use daily observations to represent monthly or annual features. The annual mileage and fuel efficiency information provided in some public data usually are estimated values using daily records and are not as accurate as DVMT. Tracking car usage such as odometer records can collect weekly, monthly, or longer VMT records (\protect\hyperlink{ref-plotzDistributionIndividualDaily2017}{Plötz, Jakobsson, and Sprei 2017}). But this approach is more likely to measure the use of the vehicle rather than the traveler's behavior.
+
+Travel variables relate to social, economic, and environmental meanings in the theories and practices. On an individual/household scale, VMT relates to the financial cost of travel by car. The proportion of transportation cost in household expenditures is about 15 to 25 percent in the U.S. Previous research found that reducing VMT is instrumental in solving some urban problems and improving the quality of urban life. For society as a whole, the total VMT estimates the usage of the road network. Thus, it is a major interest in transportation, especially in researching travel demand and infrastructure capacity. Transportation is the second source of GHG emissions (\protect\hyperlink{ref-hankeyImpactsUrbanForm2010}{Hankey and Marshall 2010}). VMT is highly correlated with the amount of fuel consumption, which is one of the leading indicators of pollution and GHG emission, further involving sustainable development and climate change. Another measure of car use, driving duration/time, measures travel's time cost connecting to peak hours and congestion. Total driving time is also a good variable reflecting the CO\(_2\) emissions and pollution (\protect\hyperlink{ref-gimAnalyzingCitylevelEffects2021}{Gim 2021}).
+
+\hypertarget{traveler-choice}{%
+\subsection{Traveler Choice}\label{traveler-choice}}
+
+Are `decision' and `choice' the same when discussing travel modes? A `choice' is one decision given all available options simultaneously. At the same time, `decision' is a broader concept. A decision could be a schedule with a combination of many choices, such as modes, destination, and activities. A decision related to travel behavior could even include bicycle or car purchase and relocation. This section will start from the theories of mode choice, then extend to a broader discussion of decision processes.
+
+\begin{itemize}
+\tightlist
+\item
+  Rational Choice Theory
+\end{itemize}
+
+Rationality is a basic assumption in reasoned behavior or rational choice theories for prescriptive, analytical everyday decision-making (\protect\hyperlink{ref-edwardsTheoryDecisionMaking1954}{Edwards 1954}; \protect\hyperlink{ref-vonneumannTheoryGamesEconomic1944}{Von Neumann and Morgenstern 1944}). This category is also called `normative decision theory,' which assumes people a traveler is an ideal decision-maker who is entirely rational. It requires three steps: information collection, utility evaluation, and choice making.
+
+Traditional economics focuses on utility evaluation and comes up with the \textbf{Expected Utility Theory} (EUT), also called consumer choice theory. The rule of EUT is \textbf{Random Utility Maximization} (RUM) (\protect\hyperlink{ref-ben-akivaDiscreteChoiceAnalysis1985}{Ben-Akiva and Lerman 1985}; \protect\hyperlink{ref-mcfaddenConditionalLogitAnalysis1973}{McFadden 1973}). This classical theory claims that customers always choose the most appropriate by comparing the advantages and disadvantages of a range of alternatives, evaluating the benefits and costs of each possible outcome. Eventually, travelers will select the optimal solution with the maximum `utility' from the choice set.
+
+Expected utility theory is widespread and contributes to economics and other fields. But it has some drawbacks to describing actual human behavior in real life. The observed behaviors are often not optimal and inconsistent with `pure' rationality. \protect\hyperlink{ref-starmerDevelopmentsNonexpectedUtility2000}{Starmer} (\protect\hyperlink{ref-starmerDevelopmentsNonexpectedUtility2000}{2000}) explains that EUT is based on three axioms: ordering, continuity, and independence. The choices under risk have non-expected utilities, and the independence axiom is violated. \protect\hyperlink{ref-kahnemanProspectTheoryAnalysis1979a}{Kahneman and Tversky} (\protect\hyperlink{ref-kahnemanProspectTheoryAnalysis1979a}{1979}) develop the \textbf{Prospect Theory} as an alternative to EUT. The real-life individual choice usually is not one-stage but includes at least two steps: editing and evaluation. In the first step of editing, a traveler uses the \emph{satisfying heuristic rule} to make a simple choice. In the second evaluation step, the traveler values the prospect by both values and weights. \protect\hyperlink{ref-tverskyAdvancesProspectTheory1992}{Tversky and Kahneman} (\protect\hyperlink{ref-tverskyAdvancesProspectTheory1992}{1992}) further extend this theory to the cumulative prospect theory (CPT). Prospect theory is a descriptive theory with three main features: First, people are more sensitive to the sure things (e.g., the probability between 0.9 and 1.0, or between 0.0 and 0.1 ), while indifferent to the middle range (e.g., from 0.45 to 0.55). Second, people care more about the change of overall proportion than the absolute values regardless of gains or losses. Third, people make choices based on a reference point rather than the general situation or worth. Economists also extend the theory of expected utility maximization to Behavioral Economics by addressing the influence of psychology on human behavior. Travel studies still have no consensus over the utilities' reference points.
+
+\textbf{Regret Theory} introduces the notions of risk or uncertainty in decisions (\protect\hyperlink{ref-loomesRegretTheoryAlternative1982}{Loomes and Sugden 1982}). Psychological studies found that individuals will try to maximize the utility and minimize the anticipation of regret. The fear of regret could affect people's rational behavior. People treat potential gains and losses differently, called Loss Aversion. Loss Aversion suggests that the negative feeling about losses is greater than the positive response about gains (\protect\hyperlink{ref-tverskyAdvancesProspectTheory1992}{Tversky and Kahneman 1992}). As a result, an individual's decisions may not be consistent with the evidence and tend to pay additional costs to avoid losses. For example, A high risk of congestion in peak hours could encourage a commuter to choose rail transit. Likewise, a good reputation for punctuality can give travelers confidence in the rail system. In addition to the traditional utility framework, a regret term is added to address the uncertainty resolution. The utility function on the best alternative outcome will be more minor after subtracting the regret term, an increasing, continuous and non-negative function. Prospect and regret theories provide more realistic explanatory frameworks to account for the limited information and uncertain time of daily travel choice. But they are still not as simple and tractable as EUT and require further study.
+
+The above theories are based on the \emph{weighted additive rule} and represent a \emph{high accuracy-high effort} mechanism (\protect\hyperlink{ref-ramosStateoftheArtReviewDevelopments2014}{Ramos, Daamen, and Hoogendoorn 2014}). But individuals often do not collect and analyze all the relevant information. The decision-makers are not `ideal' and cannot calculate the utility for all possible alternatives with perfect accuracy. In terms of travel behavior, the accurate evaluation of each trip seems unnecessary and impossible for the regular daily activity. In many cases, travel decisions are not the best way to achieve travelers' desired objectives. A psychological factor, \textbf{cognitive bias}, can result in judgment errors. For example, transit users value the walk and wait time called out-of-vehicle time (OVT) higher than in-vehicle time (IVT). Drivers place more value on car parking space search time (\protect\hyperlink{ref-wardmanValuesTravelTime2016}{Wardman, Chintakayala, and de Jong 2016}). Some theories of \textbf{Bounded Rational Behavior} were developed to fix these issues. Bounded rationality focused on the limitation of self-control (\protect\hyperlink{ref-marchCognitiveLimitsRationality2005}{March and Simon 2005}). In reality, individuals behave under many constraints, including incomplete information, limited time, and cognitive capacity.
+
+Bounded rationality claims that heuristics and rules of thumb are more common than comprehensive evaluation when people make decisions under constraints. People are satisfied with a `good enough' decision unless there is a definitively better alternative. The recently witnessed events would have more potent effects on an individual's decision than others (\protect\hyperlink{ref-camererAdvancesBehavioralEconomics2004}{Camerer, Loewenstein, and Rabin 2004}).
+
+\begin{itemize}
+\tightlist
+\item
+  Theory of Planned Behavior
+\end{itemize}
+
+A person as a subject does not merely execute the order from a utility evaluation and do ``what he/she wants to do.'' Many theories and models are developed to explain people's decision-making processes in psychology.\footnote{CMDT=Cognitive moral development theory (Kohlberg, 1984),
+
+  ITB=Ipsative theory of behavior (Frey, 1988),
+
+  NAM=Norm activation model (Schwartz, 1977,Schwartz and Howard, 1981),
+
+  SDT=Self-determination theory(Deci \& Ryan, 1985),
+
+  TAM=Technology acceptance model(Davis, 1989),
+
+  TDM=Travel demand management measures,
+
+  TNC=Theory of normative conduct (Cialdini et al., 1990,Cialdini et al., 1991),
+
+  TPB=Theory of planned behavior(Ajzen, 1985,Ajzen, 1991),
+
+  VBN=Value-belief-norm (Stern, 2000,Stern et al., 1999),
+
+  MGB=Model of goal-directed behavior(Perugini \& Bagozzi, 2001)} Theory of Planned Behavior (TPB) is one of the most influential theories. \protect\hyperlink{ref-ajzenAttitudebehaviorRelationsTheoretical1977}{Ajzen and Fishbein} (\protect\hyperlink{ref-ajzenAttitudebehaviorRelationsTheoretical1977}{1977}) proposed the theory of reasoned action (TRA) to understand people's \emph{behavioral intentions} and actual behaviors. They found two deciding psychological elements as \emph{attitudes} and \emph{subjective norms}. \protect\hyperlink{ref-ajzenTheoryPlannedBehavior1991}{Ajzen} (\protect\hyperlink{ref-ajzenTheoryPlannedBehavior1991}{1991}) adds a new part of \emph{perceived behavioral control} (PBC) and renames TRA as TPB.
+
+Attitudes are personal evaluation, and it means how people prefer or are against performing an activity. For example, a commuter might choose transit despite the longer travel time than driving because this person believes that transit is an environment-friendly transport mode. Subjective norm is the social pressure from others. In the example above, choosing transit is because of other people's normative expectations rather than personal desirability. PBC represents some non-volitional factors such as time, budget, and resources. PBC is assessed by the individual's perception of ease or difficulty of the behavior. PBC is one reason for the difference between intentions and actual behaviors, called the attitude-behavior gap (\protect\hyperlink{ref-kollmussMindGapWhy2002}{Kollmuss and Agyeman 2002}; \protect\hyperlink{ref-laneAdoptionCleanerVehicles2007}{Lane and Potter 2007}). In this case, a commuter might choose transit because this person is confident in catching the morning bus every day.
+
+Based on RUM models, \protect\hyperlink{ref-mcfaddenEconomicChoices2001}{McFadden} (\protect\hyperlink{ref-mcfaddenEconomicChoices2001}{2001}) proposes a similar framework called the choice process, including attitudes, perception, and preference. This framework is further developed to hybrid choice model (HCM) and non-RUM decision protocols (\protect\hyperlink{ref-ben-akivaHybridChoiceModels2002}{Ben-Akiva et al. 2002}).
+
+Two meta-analyses found that intentions to drive, perceived behavioral control, habits, and past behavior play the primary roles in travel mode choice (\protect\hyperlink{ref-lanziniSheddingLightPsychological2017}{Lanzini and Khan 2017}; \protect\hyperlink{ref-gardnerPsychologicalCorrelatesCar2008}{Gardner and Abraham 2008}). Among these factors, PBC has the most potent effects on private car use. People don't want to reduce car use because they think it is very inconvenient. The impact of attitudes is modest, while subjective norms have a weak effect on car use. \protect\hyperlink{ref-dillHowCanPsychological2014}{Dill, Mohr, and Ma} (\protect\hyperlink{ref-dillHowCanPsychological2014}{2014}) confirm that social norms have no significant impact on walking and bicycling. They find attitudes have a stronger connection to bicycling while PBC is more important for walking. Their study also reveals that some built-environment factors could impact attitudes and PBC, further influencing cycling and walking behavior. That means attitudes and PBC are mediators for the relationship between travel and urban form. By controlling the mediators in the models, the correlation between travel and urban form should be stronger.
+
+\hypertarget{human-mobility}{%
+\subsection{Human Mobility}\label{human-mobility}}
+
+In physics and geography, travel activities and papatternsre are considered objective phenomena and conventionally called human mobility. There is a long history of human mobility studies. The related theories use mathematical expressions to explain the relationship between ob travel variables and the influencing factors. Gravity Law is a primary theory in this field. Scholars have developed some more delicate forms of gravity model and found some mathematical relationship to other famous distribution laws. Some theories from different perspectives, like intervening opportunities, also show a vital ability for explaining travel patterns and regularities.
+
+\begin{itemize}
+\tightlist
+\item
+  Distance-Based Theories
+\end{itemize}
+
+An early theory called \textbf{Law of Migration} by \protect\hyperlink{ref-ravensteinLawsMigration1885}{Ravenstein} (\protect\hyperlink{ref-ravensteinLawsMigration1885}{1885}) tried to explain the regional migration patterns. This foundation is based on observation rather than quantitative analysis. But it captures the fact that the direction of migration is toward the regional center with grand commerce and industry. It also pointed out that distance is a primary factor for migrants. This theory inspired many studies on population movement consequently. Even today, socio-economic factors and distance constraints are the essential parts of the relevant models and frameworks.
+
+\textbf{Zip's law} is also called discrete Pareto distribution. It is found in linguistics to explain the inverse relationship between the frequency and rank of a word. The charm is that this rank-frequency distribution disclosed a universal law in many realms of society and physics, such as urban size, corporation sizes, cells' transcriptomes and so on. Zipf interpreted the two competing factors as \emph{force of diversification and unification}. The former produces larger amount of cases and the later tries to upgrade the rank. An equilibrium of the rank-frequency balance is controlled through a parameter \(\alpha\) in the exponent. For example, a city's population size \(m\) has a negative power relationship to its rank \(r\). (\protect\hyperlink{ref-visserZipfLawPower2013}{Visser 2013}; \protect\hyperlink{ref-jiangZipfLawAll2015}{Jiang, Yin, and Liu 2015}; \protect\hyperlink{ref-rozenfeldAreaPopulationCities2011}{Rozenfeld et al. 2011}; \protect\hyperlink{ref-gomez-lievanoStatisticsUrbanScaling2012}{Gomez-Lievano, Youn, and Bettencourt 2012}; \protect\hyperlink{ref-hackmannEvolutionZipfLaw2020}{Hackmann and Klarl 2020})
+
+\protect\hyperlink{ref-zipfP1P2Hypothesis1946}{Zipf} (\protect\hyperlink{ref-zipfP1P2Hypothesis1946}{1946}) extended his theory to describe the traffic in both directions between two cities. The traffic flow of goods between two centers is proportion to the product of two centers' population sizes divided by the distance between them. Because Zipf's formula has a same form with Newtonian mechanics (\protect\hyperlink{ref-newton18481687}{Newton 1848}), people call this expression as \textbf{Gravity Law}.
+
+Gravity law has been applied in travel demand modeling for many years. The traditional four-step models include trip generation, trip distribution, mode split, and trip assignment (\protect\hyperlink{ref-ortuzarModellingTransport2011}{Ortúzar and Willumsen 2011}). As a trip-based method, gravity models generate the Origin-Destination matrix in the step of trip distribution (\protect\hyperlink{ref-mcnallyFourStepModel2008}{McNally 2008}). All paired units are assigned the estimated traffic flows based on each unit's trip generation and attraction. The probability of commuting between origin and destination is proportion to the population of two units and inverse to their distance. In the version of the single-constrained or unconstrained gravity model, the generation of an origin does not equal the sum of flows to all destinations, or the attraction of a destination does not equal the sum of flows from all origins. Only the doubly constrained gravity models guarantee that the two equations hold.
+
+Zipf's and gravity laws have a common essence of the power-law or scaling pattern. The Zipfian distribution is one of a family of \textbf{power-law} probability distributions. The power-law distribution also holds in many realms: urban size, population density, street blocks, building heights, etc. The state-of-the-art human mobility studies agree that travel behavior follows a power-law distribution at the population level (\protect\hyperlink{ref-barbosaHumanMobilityModels2018}{Barbosa et al. 2018}). An example is \protect\hyperlink{ref-brockmannScalingLawsHuman2006}{Brockmann, Hufnagel, and Geisel} (\protect\hyperlink{ref-brockmannScalingLawsHuman2006}{2006}) use dollar bills to track travel habits and confirm this theory. It reflects that trip and land use, as two geographic variables, follow some Paretian-like distribution. Apparently, it conflicts with Gaussian thinking, the foundation of linear models based on the location and scale parameters (\protect\hyperlink{ref-jiangZipfLawAll2011}{Jiang and Jia 2011}; \protect\hyperlink{ref-chenHierarchicalScalingSystems2018}{Chen and Jiang 2018}; \protect\hyperlink{ref-jiangGeospatialAnalysisRequires2018}{Jiang 2018a}, \protect\hyperlink{ref-jiangSpatialHeterogeneityScale2018}{2018b}). Meanwhile, the log-normal distribution may be asymptotically equivalent to a special case of Zipf's law, which could support the logarithm transform in some travel-urban form models (\protect\hyperlink{ref-saichevTheoryZipfLaw2010}{Saichev, Malevergne, and Sornette 2010}).
+
+The criticism includes that the four-step model uses TAZ inputs and fails to capture the built environment effect at the neighborhood level (\protect\hyperlink{ref-davidsonSynthesisFirstPractices2007}{Davidson et al. 2007}). \protect\hyperlink{ref-nostikasariRepresentationsEverydayTravel2015}{Nostikasari} (\protect\hyperlink{ref-nostikasariRepresentationsEverydayTravel2015}{2015}) analyze the everyday experience in Dallas-Fort Worth metropolitan area and find the daily travel demands in various population groups are not support the assumptions in four-step models. This institutionalized method may enforce auto dependence and social inequality. Some studies have developed an integrated model in recent years and have gotten consistent results among each step (\protect\hyperlink{ref-zhouAlternativeFormulationsCombined2009}{Zhou, Chen, and Wong 2009}).
+
+\begin{itemize}
+\tightlist
+\item
+  Opportunity Based Theories
+\end{itemize}
+
+\textbf{Law of Intervening Opportunities} by \protect\hyperlink{ref-stoufferInterveningOpportunitiesTheory1940}{Stouffer} (\protect\hyperlink{ref-stoufferInterveningOpportunitiesTheory1940}{1940}) developed the migration theory differently. Stouffer proposed that ``the number of people going a given distance is directly proportional to the number of opportunities at that distance and inversely proportional to the number of intervening opportunities.'' The number of intervening opportunities replaces the distance between origin and destination compared with gravity law. That means a resident living in one location and attracted to another site is affected by the number of jobs, public services, and other opportunities between the two places.
+
+\protect\hyperlink{ref-siminiUniversalModelMobility2012}{Simini et al.} (\protect\hyperlink{ref-siminiUniversalModelMobility2012}{2012}) propose a \textbf{radiation model} express the probability of the destination absorbing a person living in one location, which is mutually decided by the population of origin, destination, and the population within a circle centered at origin. The expression can has several forms. One form is that the traffic flow equals the the product of original trips and two weights, the weights of origin and destination in the whole region. Although distance doesn't appear in the expression of radiation model, it is still a determinant as in gravity model.
+
+\begin{itemize}
+\tightlist
+\item
+  Distance Decay
+\end{itemize}
+
+In geographic studies, the distributions of density, frequency, or intensity from an initial point show a monotonically decreasing curve. This rule of distance decay is widespread and called ``the first law of geography'' (\protect\hyperlink{ref-toblerComputerMovieSimulating1970}{Tobler 1970}). The distance decay rule reveals that the relationship between trip frequency and travel distance is not linear (\protect\hyperlink{ref-taylorDistanceDecaySpatial1975}{Taylor and Openshaw 1975}). An improved gravity model uses a distance decay function on distance to replace the simple distance. Exponential and power are the two forms of the distance decay functions. Both of them better represent the decaying processes by introducing a new parameter. The parameter controlling decay speed is also called travel impedance in travel demand models. \protect\hyperlink{ref-handyPlanningAccessibilityTheory2005}{Handy} (\protect\hyperlink{ref-handyPlanningAccessibilityTheory2005}{2005b}) treats impedance as one component of accessibility. In practice, the parameter values are calibrated using observed trips data.
+
+Traditional opportunity-based cannot reflect the feature of declining along with distance as well as the improved gravity model. Based on commuting data from six countries, \protect\hyperlink{ref-lenormandSystematicComparisonTrip2016}{Lenormand, Bassolas, and Ramasco} (\protect\hyperlink{ref-lenormandSystematicComparisonTrip2016}{2016}) found gravity law performs better than the intervening opportunities law. One reason could be that the circle with a radius can not represent the actual travel distance. Moreover, The intervening-opportunities models may miss some mechanism without accounting for distance decay. \protect\hyperlink{ref-yangLimitsPredictabilityCommuting2014}{Yang et al.} (\protect\hyperlink{ref-yangLimitsPredictabilityCommuting2014}{2014}) extend the opportunity-based model by assuming a trip from origin to destination as a time-to-event process called \textbf{hazard models}. Under the survival analysis framework, the time variable is replaced by the number of opportunities \(a\). The survival function \(S(a)=Pr(T>a)\) then represents the cumulative probability of the event not happening within a certain amount of opportunities. Their extended radiation model performs as well as the doubly constrained gravity model in a multi-scale study.
+
+In \protect\hyperlink{ref-dingInfluencesBuiltEnvironment2017}{Ding, Mishra, et al.} (\protect\hyperlink{ref-dingInfluencesBuiltEnvironment2017}{2017}) 's study, the time variable in the decay function is replaced by commuting distance. Unlike common regression models, they use a Cox proportional hazard model to examine the effects of built-environment factors at the TAZ level and socio-demographic characteristics at the individual level on commuting distance. Using the Washington metropolitan area data, their model confirms that residential density, land use mix, and distance from CBD can significantly impact commuting distance. And their multilevel hazard model outperforms the general multilevel model.
+
+These studies inspire us to rethink the convention of log-transform on travel variables. In regression analysis, log-transform implies that the travel variables, such as trip distance/time, follow the log-normal distribution. \protect\hyperlink{ref-puAnalyticRelationshipsTravel2011}{Pu} (\protect\hyperlink{ref-puAnalyticRelationshipsTravel2011}{2011}) choose log-normal as a prior assumption because the F-SHRP report\footnote{which can be found in Future Strategic Highway Research Program (SHRP) by \protect\hyperlink{ref-cambridge2003providing}{Cambridge Systematics, Texas Transportation Institute, Univ. of Washington, and Dowling Associates} (\protect\hyperlink{ref-cambridge2003providing}{2003}) and \protect\hyperlink{ref-kittelson2013evaluating}{Associates and (US)} (\protect\hyperlink{ref-kittelson2013evaluating}{2013})} says ``the log-normal distribution is the closest traditional statistical distribution that describes the distribution of travel times.'' But the new version of SHRP2 says, ``formal tests (e.g., a Kolmogorov-Smirnov test) could be employed to evaluate the assumption and identify the sensitivity of the results to departures from this assumption.'' (p.~130) That means the assumption of log-normal distribution does not always hold.
+
+Survival analysis, also called time-to-event analysis, often chooses three distributions in parametric approaches: Weibull, Gamma, and Log-normal distribution (\protect\hyperlink{ref-kleinbaumSurvivalAnalysisSelfLearning2012}{Kleinbaum and Klein 2012}). Some studies explore using these distributions to fit the travel data. \protect\hyperlink{ref-linEstimationEnergyUse2012}{Lin et al.} (\protect\hyperlink{ref-linEstimationEnergyUse2012}{2012}) validates the daily vehicle miles traveled (DVMT) following a gamma distribution in the context of PHEV\footnote{Plug-in hybrid electric vehicles} energy analysis. Based on the multidate (7-200 days) data sets from four countries, \protect\hyperlink{ref-plotzDistributionIndividualDaily2017}{Plötz, Jakobsson, and Sprei} (\protect\hyperlink{ref-plotzDistributionIndividualDaily2017}{2017}) found Weibull distribution is an overall good two-parameter distribution for daily VKT. At the same time, the log-normal estimates are more conservative.
+
+The studies on travel distributions are still not conclusive. But they show a potential relationship among log-transform, distance decay, and travel-time-budget theories (\protect\hyperlink{ref-marchettiAnthropologicalInvariantsTravel1994}{Marchetti 1994}). Similarly, \protect\hyperlink{ref-kolblEnergyLawsHuman2003}{Kölbl and Helbing} (\protect\hyperlink{ref-kolblEnergyLawsHuman2003}{2003}) show a canonical-like energy distribution for short trips by modes, which imply ``a law of constant average energy consumption for the physical activity of daily travel.'' Some studies are not limited to parameter methods. \protect\hyperlink{ref-siminiUniversalModelMobility2012}{Simini et al.} (\protect\hyperlink{ref-siminiUniversalModelMobility2012}{2012}) propose a parameter-free model that predicts patterns of commuting.
+
+\begin{itemize}
+\tightlist
+\item
+  Time Geography
+\end{itemize}
+
+In contrast to overall trip distribution, the detailed individuals' movements are also research interest in geography. \protect\hyperlink{ref-hagerstraandWhatPeopleRegional1970}{Hägerstraand} (\protect\hyperlink{ref-hagerstraandWhatPeopleRegional1970}{1970}) proposed some concepts and tools in space and time to measure and understand the individual trajectories. This branch is called time geography. The famous ``space-time aquarium/prism'' is a 3D cube that adds temporal scales to the geographic space. It can capture the detailed structure and behavior of travelers.
+
+The aggregated trips' tempo-spatial distributions are essential for transportation infrastructure. Compared to daily total traffic volume, the maximum flows in peak hours represent the actual demand for the road network. Based on the trips' distributions, planners can identify the most critical segments and relieve congestion by increasing these segments' capacity. For shared mobility, The placement of shared-bicycle stations can be optimized by analyzing the pattern of riders' travel trajectories (\protect\hyperlink{ref-parkOptimizationApproachPlacement2017}{C. Park and Sohn 2017}). Using the trajectory data in New York City, \protect\hyperlink{ref-qianImpactTransportationNetwork2020}{Qian et al.} (\protect\hyperlink{ref-qianImpactTransportationNetwork2020}{2020}) find that transportation network companies (TNCs) services indeed increase the urban traffic congestion.
+
+Time geography can better understand the relationship between travel and urban form. A daily trip could include multiple trips and form a travel chain. The traveler may switch the sequence or adjust the routes to optimize the chain and minimize the travel costs. Given the same daily total travel distance, the travel chain could include a long driving trip or many short trips. The same trip frequency could cross the city with a lot of trouble and could also be a series of leisure activities downtown. \protect\hyperlink{ref-ewingReducingVehicleMiles2020}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingReducingVehicleMiles2020}{2020}) examine the travel chains in 28 U.S. regions and find that the tours inside the urban centers are more efficient than those outside the centers and hybrid (both inside and outside the centers). That means the tours within a center have shorter VMT per trip and higher shares of walk, bicycle, and transit.
+
+Time geography borrows some physical and mathematical concepts and methods such as random walk, Brownian motion, and Levy flight at the individual level. With the wide usage of Global Positioning System (GPS), high-performance computing, and sophisticated algorithms, high-resolution data is being collected. The relevant studies also have a dramatic increase after 2005. \protect\hyperlink{ref-liuPointofInterestDemandModeling2017}{Liu et al.} (\protect\hyperlink{ref-liuPointofInterestDemandModeling2017}{2017}) use point-of-interest data to disclose better the distribution of opportunities than merely using population size. Using mobile phone data, \protect\hyperlink{ref-sabouriBuiltEnvironmentVehicle2021}{Sabouri et al.} (\protect\hyperlink{ref-sabouriBuiltEnvironmentVehicle2021}{2021}) find a new version of scaling law: the number of visitors to one location is proportional to ``the inverse square of the product of travel distance and visiting frequency.'' Their found can also help explain the connection between individual trips and aggregated travel patterns.
+
+\hypertarget{struc}{%
+\section{Conceptual Frameworks}\label{struc}}
+
+A conceptual framework is ``an argument about why the topic one wishes to study matters, and why the means proposed to study it are appropriate and rigorous'' (\protect\hyperlink{ref-burkholderResearchDesignMethods2019}{Burkholder et al. 2019, chap. 3}). The topic of this paper -- the association between travel and urban form -- will examine whether the influential concept of compact city can moderate automobile dependency. It matters to the public because the denser, diverse, and well-designed development should be accepted only if this association is solid. If studies find the association is not reliable or is negligible, the relevant urban planning and policymaking would have no reason to continue to advocate the idea of compact development.
+
+Then the primary challenge is to make sure the studies have an appropriate and rigorous framework. \protect\hyperlink{ref-gotschiComprehensiveConceptualFramework2017}{Götschi et al.} (\protect\hyperlink{ref-gotschiComprehensiveConceptualFramework2017}{2017}) analyses the frameworks of 26 studies on active travel behavior. They propose a comprehensive conceptual framework based on three features: choice process, structural scales, and topical domains. This section follows these key features to consider how the current D-variables framework assembles the research elements and explains their relationship.
+
+\hypertarget{topical-domains}{%
+\subsection{Topical Domains}\label{topical-domains}}
+
+D-variables frameworks include two essential domains: travel and urban form. Previous sections have introduced their roles, measures, and effects in the literature. The framework's contents should be selected and meaningful for the specific research question. For example, mode choice and DVMT are the most common dependent variables for measuring automobile dependency. In this context, fewer studies choose the frequency of trips as the dependent variable. The utility maximization theory tells us a trip as an event must have some `utility' or `benefit.' Nobody wants to reduce the personal or social frequency of trips because it reflects the person's activity level or is a sign of urban prosperity. People don't object to a more sustainable way given a fixed number of trips. More shared trips and shorter distances are desirable. Hence mode split and driving distance are the targets in this field. The studies on active travel further focus on mode choice or split. When the research is about trip generation in the four-step model, the frequency of trips is the main target (\protect\hyperlink{ref-tianTrafficGeneratedMixedUse2015}{Tian et al. 2015}; \protect\hyperlink{ref-zhangHouseholdTripGeneration2019}{Q. Zhang et al. 2019}). When researchers assess the environmental impact of driving, they have to find other variables to represent the GHG emissions. \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee} (\protect\hyperlink{ref-leeComparingImpactsLocal2020}{2020}) use annual household VMT, fuel efficiency, and CO\(_2\) emission factor (e.g., 23.46 lbs per gal suggested by \protect\hyperlink{ref-glaeserGreennessCitiesCarbon2010}{Glaeser and Kahn} (\protect\hyperlink{ref-glaeserGreennessCitiesCarbon2010}{2010}); 8.78 kg per gal by \protect\hyperlink{ref-perumalContextualDensityUS2017}{Perumal and Timmons} (\protect\hyperlink{ref-perumalContextualDensityUS2017}{2017})) to estimate the GHG emissions. \protect\hyperlink{ref-bigazziMarginalEmissionFactors2020}{Bigazzi} (\protect\hyperlink{ref-bigazziMarginalEmissionFactors2020}{2020}) indicates that the average emission factors (AEF) should be replaced by marginal emission factors (MEF). But annual VMT is a synthesized variable, and fuel efficiency is a rough estimation. In contrast, \protect\hyperlink{ref-gimAnalyzingCitylevelEffects2021}{Gim} (\protect\hyperlink{ref-gimAnalyzingCitylevelEffects2021}{2021}) fixed this issue using a global dataset of CO\(_2\) emissions for 343 cities. They add congestion level as the explanatory variable and travel time as a mediator into the SEM model. The downside is that this method can only examine the impact of urban form at the city level. In many cases, available data is the main limitation for contents selection.
+
+It is similar for independent variables. Although the conceptual framework lists each D-variable side by side, the data and methodology may not fully support examining them equally. Inside the urban-form domain, an element could have many options. ``Density'' has many distinct definitions and measures. Researchers try different versions of density to find the best one. Some D-variables are the opposite. ``Design'' covers many meanings, but its feasible measures are limited, especially at macro scales. Urban design is not just road network design. There could be distinct patterns and structures even for the same road network density. In a comprehensive travel-urban form study assessment, \protect\hyperlink{ref-handyCriticalAssessmentLiterature2005}{Handy} (\protect\hyperlink{ref-handyCriticalAssessmentLiterature2005}{2005a}) argues that density is a proxy variable for active travel and should be replaced by other variables like accessibility that directly affect travel. She suggests exploring more quantitative measures from the existing urban design literature to improve the framework.
+
+The D-variable framework does not refuse but does not specify the domains other than urban form. Besides D-variables, other external and internal factors should be fully considered. \protect\hyperlink{ref-handyCriticalAssessmentLiterature2005}{Handy} (\protect\hyperlink{ref-handyCriticalAssessmentLiterature2005}{2005a}) calls for a broader conceptual framework including both objective and perceived urban-form factors. And the travelers' preferences and perceptions are also should be involved. She further suggests that controlling the changes of travelers and urban form is necessary for a quasi-experimental design, such as relocation, infrastructure improvement, and planned development projects.
+
+\hypertarget{structural-scales}{%
+\subsection{Structural Scales}\label{structural-scales}}
+
+The scales of studies and the topical domains are related. When conducting a cross-sectional countrywide survey, factors such as fuel price and heating/cooling degree days are critical. But when the research is a case study for a metropolitan area, controlling these macro-level factors becomes useless because all travelers or TAZs share the same external factors. The same factor, like CBD density, is an internal characteristic at the city level. But at the lower level, CBD density becomes an external factor. For individual-level data, missing the socio-demographic characteristics and psychological factors could lead to underfitting severe such as very low \(R^2\). Similarly, individual preferences and psychological effects are confounded when a research scale rises to census tract or TAZ levels. As discussed in the section on Spatial Scales, the aggregated measures such as average income will have different meanings at the new scales.
+
+Researchers try to cover the physical and social determinants at multi-levels (\protect\hyperlink{ref-ewingTrafficGeneratedMixedUse2011}{Reid Ewing et al. 2011, fig. 3}). Under this framework, each level has its specific influential factors (Figure \ref{fig:Mscale}). In recent years, increasing studies have used the multi-scales frameworks to the micro-, meso, and macro-scale variables (\protect\hyperlink{ref-dingInfluencesBuiltEnvironment2017}{Ding, Mishra, et al. 2017}; \protect\hyperlink{ref-leeComparingImpactsLocal2020}{S. Lee and Lee 2020}; \protect\hyperlink{ref-zhangWhenContextMeets2020}{M. Zhang and Zhang 2020}). These studies claim that multi-scales frameworks can better distinguish the effects of local and regional factors.
+
+Multi-scales study has higher requirements for the data sources and variable selection. A macro-scale analysis should contain many cities or regions. Such kinds of data sources often lack detailed information on perceived measures. Various policy environments across regions are also hard to identify and control. At the mesoscale, the observations are often conceptual areas like tracts and TAZs rather than real entities. The meaning of a tract or TAZ is abstract and hard to interpret. Whether the averages aggregated from lower levels can adequately represent a TAZ's feature is a question that should be answered. Moreover, when the data structure includes many geographic groups, the sample size in each subgroup should be large enough.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/mscale} 
+
+}
+
+\caption{Multi-scales Structure}\label{fig:Mscale}
+\end{figure}
+
+\hypertarget{choice-process}{%
+\subsection{Choice Process}\label{choice-process}}
+
+There are different perspectives to understand the travel choice process. When the travel behavior itself is the research target, a common framework originates in bounded rational behavior and TPB (Figure \ref{fig:choiceprocess}). This framework focus on the decision mechanism and the subjective factors.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/gotschiComprehensiveConceptualFramework2017} 
+
+}
+
+\caption{ Generic choice process for active travel-related behavioral decisions by \protect\hyperlink{ref-gotschiComprehensiveConceptualFramework2017}{Götschi et al.} (\protect\hyperlink{ref-gotschiComprehensiveConceptualFramework2017}{2017}) }\label{fig:choiceprocess}
+\end{figure}
+
+A discrete travel choice process is a decision tree from the objective perspective. A tree framework allows a hierarchical structure and covers different dependent variables (Figure \ref{fig:Tree}). A similar figure can be found in \protect\hyperlink{ref-ewingTrafficGeneratedMixedUse2011}{Reid Ewing et al.} (\protect\hyperlink{ref-ewingTrafficGeneratedMixedUse2011}{2011}) 's Figure .1. The tree starts from a travel demand or purpose. The traveler decides to make a trip or not at the first-level dichotomous node. Then, the second layer with polychotomous nodes is about mode choice from available alternatives based on benefit, cost, and habit. At the bottom layer, each mode has the corresponding variables such as the driving route, distance, or time under the driving node. This process is step-by-step, iterative, and habitual in real life. The tree structure can reflect the overall travel pattern. For example, a person has only short driving trips. Another one takes more buses but makes a long drive occasionally. The mode-only or VMT-only framework may only capture a single side for these two different patterns. The tree structure can also include no-trip or no-driving cases into the models (\protect\hyperlink{ref-ewingVaryingInfluencesBuilt2015}{Reid Ewing et al. 2015}). Remarkably, the covariates set could vary in different model layers. It doesn't require a set of independent variables to explain all dependent variables. For example, the lifecycle factor could strongly affect travel frequency but not significantly driving distance. Therefore, this structure is more flexible and is consistent with the actual decision process.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/tree} 
+
+}
+
+\caption{Decision Tree Structure}\label{fig:Tree}
+\end{figure}
+
+The framework could be a multistage structure when observing the choice process over time. \protect\hyperlink{ref-ben-akivaMethodologyShortRangeTravel1977a}{Ben-Akiva and Atherton} (\protect\hyperlink{ref-ben-akivaMethodologyShortRangeTravel1977a}{1977}) introduced a hierarchical framework of travel behavior. The length of time in travel decisions divided the relevant factors into long, medium, and short-range decisions (Figure \ref{fig:Mstage}). For example, people often change their non-work travel mode choice for each day or trip. Thus non-work mode choice is a short-term decision. In contrast, commuting trips usually have stable mode choice and fall into the medium-term decision. Car ownership belongs to medium-term decisions since people typically don't purchase or sell a car very often. Residential location and workplace choice are the long-term decisions because relocation and changing jobs are infrequent than above. Researchers can choose one or two stages in this process. The long and medium terms decisions work well on commuting trips because people will not often change the workplace. The mobility theories also agree with this pattern. ``commuting trips are stable in time and account for the largest fraction of the total flows in a population.'' (\protect\hyperlink{ref-vanackerCommutingTripsTours2011}{Van Acker and Witlox 2011}).
+
+Under this framework, urban form is the overall external environment and impacts all decisions. The decisions in the long term can affect that in the short term, not vice versa. For example, the distance to the destination is decided by residential and working location choices. And travel distance is further a fundamental factor influencing short-term travel mode choice behavior (\protect\hyperlink{ref-munshiBuiltEnvironmentMode2016}{Munshi 2016}). In this way, household car ownership, travel distance, and mode to work are considered intermediate variables connecting the urban form and mode choice in decision models. (\protect\hyperlink{ref-dingExploringInfluenceBuilt2017}{Ding, Wang, et al. 2017}; \protect\hyperlink{ref-devosIndirectEffectBuilt2021}{De Vos et al. 2021}). Meanwhile, the number of weekdays commute trips in the U.S. are less than one-third of total trips in many years (source: \protect\hyperlink{ref-nhts_2009}{U.S. Department of Transportation, Federal Highway Administration 2009}). For non-work travel purposes, such as shopping, leisure, or socializing, short-term decisions such as frequency, mode, and destination choices are also critical.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/mstage} 
+
+}
+
+\caption{Multistage Structure}\label{fig:Mstage}
+\end{figure}
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+\begin{itemize}
+\tightlist
+\item
+  Questions
+\end{itemize}
+
+After reviewing these theories and frameworks, we go back to the real-world problems. Imagining a scenario of the public hearing, a bill under consideration is about changing the rule of land use and development (e.g., Oregon legislators passed the first law (HB2001) in the United States legalizing duplexes on city lots in 2019).\footnote{\url{https://www.oregon.gov/lcd/UP/Pages/Housing-Choices.aspx}} It is widely recognized that less driving means a more healthy, environment-friendly lifestyle. At the hearing, a scholar is asked to provide solid evidence to clarify the relationship between urban form on travel behavior. Combining with the previous introduction, we could think about several questions:
+
+The first question is, do travel-urban form studies need causal inference? In natural science studies, causality is often the final goal, such as the relationship between vaccination and contagious. However, observational data would not give the unobserved or counterfactual outcome in social studies. Under a new rule, land use transformation is gradual over several years or even longer. Many factors are changing in the meantime (e.g., real estate market, parking space). Some uncontrollable factors could also shift the outcomes (e.g., pandemic, autonomous vehicles). For some quantitative methods applied in previous studies, such as entropy index and SEM, the calculating parts are objective, but the formulating parts are still subjective. Even in the quasi-experimental design, the judgments remain hypothetical. The conclusions are untestable and unfalsifiable. Compared with causation, the association study looks more conservative but is still valid. Suppose the people inside UGB or TOD areas drive less than outside. In that case, the policies are successful either because original residents change their behavior or new residents move in. Therefore, this paper stays on the studies of association. The primary question is ``people living in a similar urban environment have similar travel patterns,'' rather than ``people change their travel behaviors by urban form.''
+
+The second question is, are more detailed data and more complicated frameworks more useful? The words `ecological fallacy' could make people think that the higher resolution and more complex data would give more accurate estimates and be closer to the truth. If the policy-making is interested in the overall pattern, adding the information at the individual level may not help. If planners want to improve the active travel infrastructure like the bike lanes, the individual factors will become critical. Usually, frameworks with more relevant factors and layers have a stronger explanatory ability. But the direct intervention on many influencing factors is impossible (e.g., climate, age, income). Or some interventions have tremendous economic and political costs (e.g., road capacity, fuel price). Therefore, no matter how many factors are involved, a good framework should identify some core factors with precise meanings, definite measures, and operational tools. The multi-layer structures could better represent the actual relations. Since the meaning of one factor could change with the scales, the more complex structure has higher data and assumptions requirements. Meanwhile, a neat design could be more robust and compelling for the public.
+
+The last question is, do we have better ways to estimate the association? Previous studies show the impact of D-variables is weak. Moreover, this conclusion is still controversial in academia. Of course, this result is not compelling in a public hearing. Some synthesized indexes from D-variables show much more potent effects on travel. It implies the answer may still hide inside the D-variables and is waiting to be revealed. Both distance-based and opportunity-based theories inspire us to rethink the relationship between travel and D-variables. Density, mixed land use means more opportunities in the same area. Design (intersection density or proportion of four-way intersections) and distance to transit represent travel impedance or cost. Destination accessibility measures both the impedance and opportunities (e.g., distance to CBD or available jobs within a given travel time). That might be why some studies find destination accessibility has the most decisive influence on travel. Urban transportation is a connected system. The studies merely using travel survey data may have some systematic drawbacks on the destination side.
+
+Finally, the study results should convert to some guidelines and recommended values for practical applications. Each policy has its affecting scope. UGB imposes the radius of urban development. TOD projects change the built environment around the stations. House Bill 2001 releases the restriction on only low-dense communities. It is necessary to clarify the factors' effective range and the meaning. The 4000 and 8000 persons per square miles in statistical models only have a magnitude difference. But in real life, the two density values represent distinct urban areas. They may have their specific features, problems, and visions. We may cluster the urbanized areas into typical categories and find the most sensitive areas. If the association between travel and urban form in these areas is strong, we can know where the compact development works and where it does not work. The threshold analysis may do a similar job. It can help select the strategic focus areas and prioritize planning for limited public resources. For instance, useful results could be like this: In the cities with CBD density below 6000 persons per square miles, the residents who can access an activity center in 10 minutes have a larger share of transit and shorter driving distance.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-ajzenTheoryPlannedBehavior1991}{}}%
+Ajzen, Icek. 1991. {``The Theory of Planned Behavior.''} \emph{Organizational Behavior and Human Decision Processes}, Theories of {Cognitive Self-Regulation}, 50 (2): 179--211. \url{https://doi.org/10.1016/0749-5978(91)90020-T}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ajzenAttitudebehaviorRelationsTheoretical1977}{}}%
+Ajzen, Icek, and Martin Fishbein. 1977. {``Attitude-Behavior Relations: {A} Theoretical Analysis and Review of Empirical Research.''} \emph{Psychological Bulletin} 84 (5): 888--918. \url{https://doi.org/10.1037/0033-2909.84.5.888}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-alamFactorsAffectingTravel2018}{}}%
+Alam, Bhuiyan Monwar, Hilary Nixon, and Qiong Zhang. 2018. {``Factors {Affecting Travel Demand} by {Bus}: {An Empirical Analysis} at {U}.{S}. {Metropolitan Statistical Area Level}.''} \emph{Transportation Research Record} 2672 (8): 817--26. \url{https://doi.org/10.1177/0361198118798714}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-amrheinSearchingElusiveAggregation1995}{}}%
+Amrhein, C G. 1995. {``Searching for the {Elusive Aggregation Effect}: {Evidence} from {Statistical Simulations}.''} \emph{Environment and Planning A: Economy and Space} 27 (1): 105--19. \url{https://doi.org/10.1068/a270105}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kittelson2013evaluating}{}}%
+Associates, Kittelson \&, and Second Strategic Highway Research Program (US). 2013. \emph{Evaluating Alternative Operations Strategies to Improve Travel Time Reliability}. Transportation Research Board.
+
+\leavevmode\vadjust pre{\hypertarget{ref-astonExploringBuiltEnvironment2021}{}}%
+Aston, Laura, Graham Currie, Alexa Delbosc, Md Kamruzzaman, and David Teller. 2021. {``Exploring Built Environment Impacts on Transit Use -- an Updated Meta-Analysis.''} \emph{Transport Reviews} 41 (1): 73--96. \url{https://doi.org/10.1080/01441647.2020.1806941}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-astonStudyDesignImpacts2020}{}}%
+Aston, Laura, Graham Currie, Md. Kamruzzaman, Alexa Delbosc, and David Teller. 2020. {``Study Design Impacts on Built Environment and Transit Use Research.''} \emph{Journal of Transport Geography} 82 (January): 102625. \url{https://doi.org/10.1016/j.jtrangeo.2019.102625}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-barbosaHumanMobilityModels2018}{}}%
+Barbosa, Hugo, Marc Barthelemy, Gourab Ghoshal, Charlotte R. James, Maxime Lenormand, Thomas Louail, Ronaldo Menezes, José J. Ramasco, Filippo Simini, and Marcello Tomasini. 2018. {``Human Mobility: {Models} and Applications.''} \emph{Physics Reports}, Human mobility: {Models} and applications, 734 (March): 1--74. \url{https://doi.org/10.1016/j.physrep.2018.01.001}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ben-akivaMethodologyShortRangeTravel1977a}{}}%
+Ben-Akiva, Moshe, and Terry J. Atherton. 1977. {``Methodology for {Short-Range Travel Demand Predictions}: {Analysis} of {Carpooling Incentives}.''} \emph{Journal of Transport Economics and Policy} 11 (3): 224--61. \url{https://www.jstor.org/stable/20052477}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ben-akivaDiscreteChoiceAnalysis1985}{}}%
+Ben-Akiva, Moshe, and Steven R. Lerman. 1985. \emph{Discrete {Choice Analysis}: {Theory} and {Application} to {Travel Demand}}. {MIT Press}. \url{https://books.google.com?id=7L34DwAAQBAJ}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ben-akivaHybridChoiceModels2002}{}}%
+Ben-Akiva, Moshe, Daniel Mcfadden, Kenneth Train, Joan Walker, Chandra Bhat, Michel Bierlaire, Denis Bolduc, et al. 2002. {``Hybrid {Choice Models}: {Progress} and {Challenges}.''} \emph{Marketing Letters} 13 (3): 163--75. \url{https://doi.org/10.1023/A:1020254301302}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bentoEffectsUrbanSpatial2005}{}}%
+Bento, Antonio M., Maureen L. Cropper, Ahmed Mushfiq Mobarak, and Katja Vinha. 2005. {``The {Effects} of {Urban Spatial Structure} on {Travel Demand} in the {United States}.''} \emph{The Review of Economics and Statistics} 87 (3): 466--78. \url{https://doi.org/10.1162/0034653054638292}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bhatCopulabasedApproachAccommodate2009}{}}%
+Bhat, Chandra R., and Naveen Eluru. 2009. {``A Copula-Based Approach to Accommodate Residential Self-Selection Effects in Travel Behavior Modeling.''} \emph{Transportation Research Part B: Methodological} 43 (7): 749--65. \url{https://doi.org/10.1016/j.trb.2009.02.001}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bigazziMarginalEmissionFactors2020}{}}%
+Bigazzi, Alexander. 2020. {``Marginal Emission Factors for Public Transit: {Effects} of Urban Scale and Density.''} \emph{Transportation Research Part D: Transport and Environment} 88 (November): 102585. \url{https://doi.org/10.1016/j.trd.2020.102585}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-boarnetInfluenceLandUse2001}{}}%
+Boarnet, Marlon, and Randall Crane. 2001. {``The Influence of Land Use on Travel Behavior: Specification and Estimation Strategies.''} \emph{Transportation Research Part A: Policy and Practice} 35 (9): 823--45. \url{https://doi.org/10.1016/S0965-8564(00)00019-7}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-brockmannScalingLawsHuman2006}{}}%
+Brockmann, D., L. Hufnagel, and T. Geisel. 2006. {``The Scaling Laws of Human Travel.''} \emph{Nature} 439 (7075, 7075): 462--65. \url{https://doi.org/10.1038/nature04292}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-brownUnderstandingTransitRidership2014}{}}%
+Brown, Jeffrey, Gregory Thompson, Torscha Bhattacharya, and Michal Jaroszynski. 2014. {``Understanding {Transit Ridership Demand} for the {Multidestination}, {Multimodal Transit Network} in {Atlanta}, {Georgia}: {Lessons} for {Increasing Rail Transit Choice Ridership} While {Maintaining Transit Dependent Bus Ridership}.''} \emph{Urban Studies} 51 (5): 938--58. \url{https://doi.org/10.1177/0042098013493021}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-buchananEffectUrbanGrowth2006}{}}%
+Buchanan, Nick, Ross Barnett, Simon Kingham, and Doug Johnston. 2006. {``The Effect of Urban Growth on Commuting Patterns in {Christchurch}, {New Zealand}.''} \emph{Journal of Transport Geography} 14 (5): 342--54. \url{https://doi.org/10.1016/j.jtrangeo.2005.10.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-burkholderResearchDesignMethods2019}{}}%
+Burkholder, Gary J., Kimberley A. Cox, Linda M. Crawford, and John H. Hitchcock. 2019. \emph{Research {Design} and {Methods}: {An Applied Guide} for the {Scholar-Practitioner}}. {SAGE Publications}. \url{https://books.google.com?id=j6elDwAAQBAJ}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cambridge2003providing}{}}%
+Cambridge Systematics, Texas Transportation Institute, Univ. of Washington, and Dowling Associates. 2003. {``Providing a Highway System with Reliable Travel Times.''} Transportation Research Board of the National Academies Washington, DC.
+
+\leavevmode\vadjust pre{\hypertarget{ref-camererAdvancesBehavioralEconomics2004}{}}%
+Camerer, Colin F., George Loewenstein, and Matthew Rabin. 2004. \emph{Advances in {Behavioral Economics}}. {Princeton University Press}. \url{https://books.google.com?id=xWKYDwAAQBAJ}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cerveroTravelDemand3Ds1997}{}}%
+Cervero, Robert, and Kara Kockelman. 1997. {``Travel Demand and the {3Ds}: {Density}, Diversity, and Design.''} \emph{Transportation Research Part D: Transport and Environment} 2 (3): 199--219. \url{https://doi.org/10.1016/S1361-9209(97)00009-6}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chatmanHowDensityMixed2003}{}}%
+Chatman, Daniel G. 2003. {``How {Density} and {Mixed Uses} at the {Workplace Affect Personal Commercial Travel} and {Commute Mode Choice}.''} \emph{Transportation Research Record} 1831 (1): 193--201. \url{https://doi.org/10.3141/1831-22}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chatmanDeconstructingDevelopmentDensity2008}{}}%
+---------. 2008. {``Deconstructing Development Density: {Quality}, Quantity and Price Effects on Household Non-Work Travel.''} \emph{Transportation Research Part A: Policy and Practice} 42 (7): 1008--30. \url{https://doi.org/10.1016/j.tra.2008.02.003}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chenHierarchicalScalingSystems2018}{}}%
+Chen, Yanguang, and Bin Jiang. 2018. {``Hierarchical {Scaling} in {Systems} of {Natural Cities}.''} \emph{Entropy} 20 (6, 6): 432. \url{https://doi.org/10.3390/e20060432}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cliftonGettingHereThere2017}{}}%
+Clifton, Kelly J. 2017. {``Getting {From Here} to {There}: {Comment} on {`{Does Compact Development Make People Drive Less}?'}.''} \emph{Journal of the American Planning Association} 83 (2): 148--51. \url{https://doi.org/10.1080/01944363.2017.1290494}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vandecoeveringReevaluatingImpactUrban2006}{}}%
+Coevering, Paul van de, and Tim Schwanen. 2006. {``Re-Evaluating the Impact of Urban Form on Travel Patternsin {Europe} and {North-America}.''} \emph{Transport Policy} 13 (3): 229--39. \url{https://doi.org/10.1016/j.tranpol.2005.10.001}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cutsingerVerifyingMultiDimensionalNature2005}{}}%
+Cutsinger, Jackie, George Galster, Harold Wolman, Royce Hanson, and Douglas Towns. 2005. {``Verifying the {Multi-Dimensional Nature} of {Metropolitan Land Use}: {Advancing} the {Understanding} and {Measurement} of {Sprawl}.''} \emph{Journal of Urban Affairs} 27 (3): 235--59. \url{https://doi.org/10.1111/j.0735-2166.2005.00235.x}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dargayVolatilityCarOwnership2007}{}}%
+Dargay, Joyce, and Mark Hanly. 2007. {``Volatility of Car Ownership, Commuting Mode and Time in the {UK}.''} \emph{Transportation Research Part A: Policy and Practice} 41 (10): 934--48. \url{https://doi.org/10.1016/j.tra.2007.05.003}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-davidsonSynthesisFirstPractices2007}{}}%
+Davidson, William, Robert Donnelly, Peter Vovsha, Joel Freedman, Steve Ruegg, Jim Hicks, Joe Castiglione, and Rosella Picado. 2007. {``Synthesis of First Practices and Operational Research Approaches in Activity-Based Travel Demand Modeling.''} \emph{Transportation Research Part A: Policy and Practice}, Bridging {Research} and {Practice}: {A Synthesis} of {Best Practices} in {Travel Demand Modeling}, 41 (5): 464--88. \url{https://doi.org/10.1016/j.tra.2006.09.003}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-devosIndirectEffectBuilt2021}{}}%
+De Vos, Jonas, Long Cheng, Md. Kamruzzaman, and Frank Witlox. 2021. {``The Indirect Effect of the Built Environment on Travel Mode Choice: {A} Focus on Recent Movers.''} \emph{Journal of Transport Geography} 91 (February): 102983. \url{https://doi.org/10.1016/j.jtrangeo.2021.102983}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dillHowCanPsychological2014}{}}%
+Dill, Jennifer, Cynthia Mohr, and Liang Ma. 2014. {``How {Can Psychological Theory Help Cities Increase Walking} and {Bicycling}?''} \emph{Journal of the American Planning Association} 80 (1): 36--51. \url{https://doi.org/10.1080/01944363.2014.934651}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dingInfluencesBuiltEnvironment2017}{}}%
+Ding, Chuan, Sabyasachee Mishra, Guangquan Lu, Jiawen Yang, and Chao Liu. 2017. {``Influences of Built Environment Characteristics and Individual Factors on Commuting Distance: {A} Multilevel Mixture Hazard Modeling Approach.''} \emph{Transportation Research Part D: Transport and Environment} 51 (March): 314--25. \url{https://doi.org/10.1016/j.trd.2017.02.002}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dingExploringInfluenceBuilt2017}{}}%
+Ding, Chuan, Donggen Wang, Chao Liu, Yi Zhang, and Jiawen Yang. 2017. {``Exploring the Influence of Built Environment on Travel Mode Choice Considering the Mediating Effects of Car Ownership and Travel Distance.''} \emph{Transportation Research Part A: Policy and Practice} 100 (June): 65--80. \url{https://doi.org/10.1016/j.tra.2017.04.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-domencichURBANTRAVELDEMAND1975}{}}%
+Domencich, T. A., and D. McFadden. 1975. {``{URBAN TRAVEL DEMAND} - {A BEHAVIORAL ANALYSIS},''} no. Monograph. \url{http://trid.trb.org/view/48594}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dujardinHometoworkCommutingUrban2012}{}}%
+Dujardin, S., F. Pirart, F. Brévers, A. -F. Marique, and J. Teller. 2012. {``Home-to-Work Commuting, Urban Form and Potential Energy Savings: {A} Local Scale Approach to Regional Statistics.''} \emph{Transportation Research Part A: Policy and Practice} 46 (7): 1054--65. \url{https://doi.org/10.1016/j.tra.2012.04.010}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-edwardsTheoryDecisionMaking1954}{}}%
+Edwards, Ward. 1954. {``The Theory of Decision Making.''} \emph{Psychological Bulletin} 51 (4): 380--417. \url{https://doi.org/10.1037/h0053870}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingTravelBuiltEnvironment2001}{}}%
+Ewing, Reid, and Robert Cervero. 2001. {``Travel and the {Built Environment}: {A Synthesis}.''} \emph{Transportation Research Record: Journal of the Transportation Research Board} 1780 (January): 87--114. \url{https://doi.org/10.3141/1780-10}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingTravelBuiltEnvironment2010}{}}%
+---------. 2010. {``Travel and the {Built Environment}.''} \emph{Journal of the American Planning Association} 76 (3): 265--94. \url{https://doi.org/10.1080/01944361003766766}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingDoesCompactDevelopment2017}{}}%
+---------. 2017. {``{`{Does Compact Development Make People Drive Less}?'} {The Answer Is Yes}.''} \emph{Journal of the American Planning Association} 83 (1): 19--25. \url{https://doi.org/10.1080/01944363.2016.1245112}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingTrafficGeneratedMixedUse2011}{}}%
+Ewing, Reid, Michael Greenwald, Ming Zhang, Jerry Walters, Mark Feldman, Robert Cervero, Lawrence Frank, and John Thomas. 2011. {``Traffic {Generated} by {Mixed-Use Developments}---{Six-Region Study Using Consistent Built Environmental Measures}.''} \emph{Journal of Urban Planning and Development} 137 (3): 248--61. \url{https://doi.org/10.1061/(ASCE)UP.1943-5444.0000068}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingUrbanSprawlRisk2016}{}}%
+Ewing, Reid, Shima Hamidi, and James B Grace. 2016. {``Urban Sprawl as a Risk Factor in Motor Vehicle Crashes.''} \emph{Urban Studies} 53 (2): 247--66. \url{https://doi.org/10.1177/0042098014562331}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingTestingNewmanKenworthy2018}{}}%
+Ewing, Reid, Shima Hamidi, Guang Tian, David Proffitt, Stefania Tonin, and Laura Fregolent. 2018. {``Testing {Newman} and {Kenworthy}'s {Theory} of {Density} and {Automobile Dependence}.''} \emph{Journal of Planning Education and Research} 38 (2): 167--82. \url{https://doi.org/10.1177/0739456X16688767}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingRelationshipUrbanSprawl2014}{}}%
+Ewing, Reid, Gail Meakins, Shima Hamidi, and Arthur C. Nelson. 2014. {``Relationship Between Urban Sprawl and Physical Activity, Obesity, and Morbidity -- {Update} and Refinement.''} \emph{Health \& Place} 26 (March): 118--26. \url{https://doi.org/10.1016/j.healthplace.2013.12.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingReducingVehicleMiles2020}{}}%
+Ewing, Reid, Keunhyun Park, Sadegh Sabouri, Torrey Lyons, Keuntae Kim, Dong-ah Choi, Katherine Daly, and Roya Ghasrodashti. 2020. {``Reducing {Vehicle Miles Traveled}, {Encouraging Walk Trips}, and {Facilitating Efficient Trip Chains Through Polycentric Development}.''} \emph{TREC Final Reports}, October. \url{https://doi.org/10.15760/trec.255}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingRelationshipUrbanSprawl2003}{}}%
+Ewing, Reid, Tom Schmid, Richard Killingsworth, Amy Zlot, and Stephen Raudenbush. 2003. {``Relationship Between {Urban Sprawl} and {Physical Activity}, {Obesity}, and {Morbidity}.''} \emph{American Journal of Health Promotion} 18 (1): 47--57. \url{https://doi.org/10.4278/0890-1171-18.1.47}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingVaryingInfluencesBuilt2015}{}}%
+Ewing, Reid, Guang Tian, JP Goates, Ming Zhang, Michael J Greenwald, Alex Joyce, John Kircher, and William Greene. 2015. {``Varying Influences of the Built Environment on Household Travel in 15 Diverse Regions of the {United States}.''} \emph{Urban Studies} 52 (13): 2330--48. \url{https://doi.org/10.1177/0042098014560991}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ewingMEASURINGSPRAWLITS2002}{}}%
+Ewing, R., Rolf Pendall, and D. Chen. 2002. {``{MEASURING SPRAWL AND ITS IMPACT}.''} \url{http://trid.trb.org/view/724911}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fanisThreeStudiesThat2019}{}}%
+Fanis, Grammenos. 2019. {``Three {Studies That Show Density Doesn}'t {Determine Car Travel}.''} {Planetizen - Urban Planning News, Jobs, and Education}. September 30, 2019. \url{https://www.planetizen.com/features/106433-three-studies-show-density-doesnt-determine-car-travel}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fotheringhamModifiableArealUnit1991}{}}%
+Fotheringham, A S, and D W S Wong. 1991. {``The {Modifiable Areal Unit Problem} in {Multivariate Statistical Analysis}.''} \emph{Environment and Planning A: Economy and Space} 23 (7): 1025--44. \url{https://doi.org/10.1068/a231025}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-galsterWrestlingSprawlGround2001}{}}%
+Galster, George, Royce Hanson, Michael R. Ratcliffe, Harold Wolman, Stephen Coleman, and Jason Freihage. 2001. {``Wrestling {Sprawl} to the {Ground}: {Defining} and Measuring an Elusive Concept.''} \emph{Housing Policy Debate} 12 (4): 681--717. \url{https://doi.org/10.1080/10511482.2001.9521426}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gardnerPsychologicalCorrelatesCar2008}{}}%
+Gardner, Benjamin, and Charles Abraham. 2008. {``Psychological Correlates of Car Use: {A} Meta-Analysis.''} \emph{Transportation Research Part F: Traffic Psychology and Behaviour} 11 (4): 300--311. \url{https://doi.org/10.1016/j.trf.2008.01.004}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gehlkeCertainEffectsGrouping1934}{}}%
+Gehlke, C. E., and Katherine Biehl. 1934. {``Certain {Effects} of {Grouping} Upon the {Size} of the {Correlation Coefficient} in {Census Tract Material}.''} \emph{Journal of the American Statistical Association} 29 (March): 169--70. \url{https://doi.org/10.1080/01621459.1934.10506247}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gimRelationshipsLandUse2013}{}}%
+Gim, Tae-Hyoung Tommy. 2013. {``The Relationships Between Land Use Measures and Travel Behavior: A Meta-Analytic Approach.''} \emph{Transportation Planning and Technology} 36 (5): 413--34. \url{https://doi.org/10.1080/03081060.2013.818272}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gimAnalyzingCitylevelEffects2021}{}}%
+---------. 2021. {``Analyzing the City-Level Effects of Land Use on Travel Time and {Co2} Emissions: A Global Mediation Study of Travel Time.''} \emph{International Journal of Sustainable Transportation} 0 (0): 1--18. \url{https://doi.org/10.1080/15568318.2021.1901163}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-glaeserGreennessCitiesCarbon2010}{}}%
+Glaeser, Edward L., and Matthew E. Kahn. 2010. {``The Greenness of Cities: {Carbon} Dioxide Emissions and Urban Development.''} \emph{Journal of Urban Economics} 67 (3): 404--18. \url{https://doi.org/10.1016/j.jue.2009.11.006}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-goetzkeSeparatingContextualEndogenous2012}{}}%
+Goetzke, Frank, and Rachel Weinberger. 2012. {``Separating {Contextual} from {Endogenous Effects} in {Automobile Ownership Models}.''} \emph{Environment and Planning A: Economy and Space} 44 (5): 1032--46. \url{https://doi.org/10.1068/a4490}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gomez-lievanoStatisticsUrbanScaling2012}{}}%
+Gomez-Lievano, Andres, HyeJin Youn, and Luís M. A. Bettencourt. 2012. {``The {Statistics} of {Urban Scaling} and {Their Connection} to {Zipf}'s {Law}.''} \emph{PLoS One} 7 (7): e40393. https://doi.org/\url{http://dx.doi.org.proxy.lib.pdx.edu/10.1371/journal.pone.0040393}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-goodwinPeakCarThemes2013}{}}%
+Goodwin, Phil, and Kurt Van Dender. 2013. {``{`{Peak Car}'} --- {Themes} and {Issues}.''} \emph{Transport Reviews} 33 (3): 243--54. \url{https://doi.org/10.1080/01441647.2013.804133}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gordonGasolineConsumptionCities1989}{}}%
+Gordon, Peter, and Harry W. Richardson. 1989. {``Gasoline {Consumption And Cities}: {A Reply}.''} \emph{American Planning Association. Journal of the American Planning Association} 55 (3): 342. \url{http://search.proquest.com/docview/229599978/abstract/FBB96AB65F044006PQ/1}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gotschiComprehensiveConceptualFramework2017}{}}%
+Götschi, Thomas, Audrey de Nazelle, Christian Brand, Regine Gerike, B. Alasya, E. Anaya, I. Avila-Palencia, et al. 2017. {``Towards a {Comprehensive Conceptual Framework} of {Active Travel Behavior}: A {Review} and {Synthesis} of {Published Frameworks}.''} \emph{Current Environmental Health Reports} 4 (3): 286--95. \url{https://doi.org/10.1007/s40572-017-0149-9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-grimalStagnationIndividualCar2013}{}}%
+Grimal, Richard, Roger Collet, and Jean-Loup Madre. 2013. {``Is the {Stagnation} of {Individual Car Travel} a {General Phenomenon} in {France}? {A Time-Series Analysis} by {Zone} of {Residence} and {Standard} of {Living}.''} \emph{Transport Reviews} 33 (3): 291--309. \url{https://doi.org/10.1080/01441647.2013.801930}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hackmannEvolutionZipfLaw2020}{}}%
+Hackmann, Angelina, and Torben Klarl. 2020. {``The Evolution of {Zipf}'s {Law} for {U}.{S}. Cities.''} \emph{Papers in Regional Science} 99 (3): 841--52. \url{https://doi.org/10.1111/pirs.12498}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hagerstraandWhatPeopleRegional1970}{}}%
+Hägerstraand, Torsten. 1970. {``What {About People} in {Regional Science}?''} \emph{Papers in Regional Science} 24 (1): 7--24. \url{https://doi.org/10.1111/j.1435-5597.1970.tb01464.x}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hamidiLongitudinalStudyChanges2014}{}}%
+Hamidi, Shima, and Reid Ewing. 2014. {``A Longitudinal Study of Changes in Urban Sprawl Between 2000 and 2010 in the {United States}.''} \emph{Landscape and Urban Planning} 128 (August): 72--82. \url{https://doi.org/10.1016/j.landurbplan.2014.04.021}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hamidiMeasuringSprawlIts2015}{}}%
+Hamidi, Shima, Reid Ewing, Ilana Preuss, and Alex Dodds. 2015. {``Measuring {Sprawl} and {Its Impacts}: {An Update}.''} \emph{Journal of Planning Education and Research} 35 (1): 35--50. \url{https://doi.org/10.1177/0739456X14565247}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-handyCriticalAssessmentLiterature2005}{}}%
+Handy, Susan. 2005a. {``Critical {Assessment} of the {Literature} on the {Relationships Among Transportation}, {Land Use}, and {Physical Activity},''} 102.
+
+\leavevmode\vadjust pre{\hypertarget{ref-handyPlanningAccessibilityTheory2005}{}}%
+---------. 2005b. {``Planning for {Accessibility}: {In Theory} and in {Practice}.''} In \emph{Access to {Destinations}}, edited by David M. Levinson and Kevin J. Krizek, 131--47. {Emerald Group Publishing Limited}. \url{https://doi.org/10.1108/9780080460550-007}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-handyThoughtsMeaningMark2017}{}}%
+---------. 2017. {``Thoughts on the {Meaning} of {Mark Stevens}'s {Meta-Analysis}.''} \emph{Journal of the American Planning Association} 83 (1): 26--28. \url{https://doi.org/10.1080/01944363.2016.1246379}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-handyEnoughAlreadyLet2018}{}}%
+---------. 2018. {``Enough with the {`{D}'s'} {Already} --- {Let}'s {Get Back} to {`{A}'}.''} \emph{Transfers Magazine}, no. 1 (May). \url{http://trid.trb.org/view/1709460}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hankeyImpactsUrbanForm2010}{}}%
+Hankey, Steve, and Julian D. Marshall. 2010. {``Impacts of Urban Form on Future {US} Passenger-Vehicle Greenhouse Gas Emissions.''} \emph{Energy Policy}, Special {section} on {Carbon Emissions} and {Carbon Management} in {Cities} with {Regular Papers}, 38 (9): 4880--87. \url{https://doi.org/10.1016/j.enpol.2009.07.005}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-headicarChangingSpatialDistribution2013}{}}%
+Headicar, Peter. 2013. {``The {Changing Spatial Distribution} of the {Population} in {England}: {Its Nature} and {Significance} for {`{Peak Car}'}.''} \emph{Transport Reviews} 33 (3): 310--24. \url{https://doi.org/10.1080/01441647.2013.802751}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-heresFutureResearchLink2017}{}}%
+Heres, David R., and Deb A. Niemeier. 2017. {``The {Past} and {Future} of {Research} on the {Link Between Compact Development} and {Driving}: {Comment} on {`{Does Compact Development Make People Drive Less}?'}.''} \emph{Journal of the American Planning Association} 83 (2): 145--48. \url{https://doi.org/10.1080/01944363.2017.1279949}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-higgsUrbanLiveabilityIndex2019}{}}%
+Higgs, Carl, Hannah Badland, Koen Simons, Luke D. Knibbs, and Billie Giles-Corti. 2019. {``The {Urban Liveability Index}: Developing a Policy-Relevant Urban Liveability Composite Measure and Evaluating Associations with Transport Mode Choice.''} \emph{International Journal of Health Geographics} 18 (1). \url{https://doi.org/10.1186/s12942-019-0178-8}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hongHowBuiltenvironmentFactors2014}{}}%
+Hong, Jinhyun, Qing Shen, and Lei Zhang. 2014. {``How Do Built-Environment Factors Affect Travel Behavior? {A} Spatial Analysis at Different Geographic Scales.''} \emph{Transportation} 41 (3): 419--40. \url{https://doi.org/10.1007/s11116-013-9462-9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jiangGeospatialAnalysisRequires2018}{}}%
+Jiang, Bin. 2018a. {``Geospatial {Analysis Requires} a {Different Way} of {Thinking}: {The Problem} of {Spatial Heterogeneity}.''} In \emph{Trends in {Spatial Analysis} and {Modelling}: {Decision-Support} and {Planning Strategies}}, edited by Martin Behnisch and Gotthard Meinel, 23--40. Geotechnologies and the {Environment}. {Cham}: {Springer International Publishing}. \url{https://doi.org/10.1007/978-3-319-52522-8_2}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jiangSpatialHeterogeneityScale2018}{}}%
+---------. 2018b. {``Spatial {Heterogeneity}, {Scale}, {Data Character} and {Sustainable Transport} in the {Big Data Era}.''} \emph{ISPRS International Journal of Geo-Information} 7 (5, 5): 167. \url{https://doi.org/10.3390/ijgi7050167}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jiangZipfLawAll2011}{}}%
+Jiang, Bin, and Tao Jia. 2011. {``Zipf's Law for All the Natural Cities in the {United States}: A Geospatial Perspective.''} \emph{International Journal of Geographical Information Science} 25 (8): 1269--81. \url{https://doi.org/10.1080/13658816.2010.510801}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jiangZipfLawAll2015}{}}%
+Jiang, Bin, Junjun Yin, and Qingling Liu. 2015. {``Zipf's Law for All the Natural Cities Around the World.''} \emph{International Journal of Geographical Information Science} 29 (3): 498--522. \url{https://doi.org/10.1080/13658816.2014.988715}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kahnemanProspectTheoryAnalysis1979a}{}}%
+Kahneman, Daniel, and Amos Tversky. 1979. {``Prospect {Theory}: {An Analysis} of {Decision} Under {Risk}.''} \emph{Econometrica} 47 (2): 263--91. \url{https://doi.org/10.2307/1914185}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kenworthyINTERNATIONALSOURCEBOOKAUTOMOBILE1999}{}}%
+Kenworthy, J. R., F. B. Laube, P. Newman, P. Barter, T. Raad, C. Poboon, and B. Guia Jr. 1999. \emph{{AN INTERNATIONAL SOURCEBOOK OF AUTOMOBILE DEPENDENCE IN CITIES} 1960-1990}. \url{http://trid.trb.org/view/648499}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kenworthyAutomobileDependenceEmerging2017}{}}%
+Kenworthy, Jeffrey R. 2017. {``Is {Automobile Dependence} in {Emerging Cities} an {Irresistible Force}? {Perspectives} from {São Paulo}, {Taipei}, {Prague}, {Mumbai}, {Shanghai}, {Beijing}, and {Guangzhou}.''} \emph{Sustainability} 9 (11, 11): 1953. \url{https://doi.org/10.3390/su9111953}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kenworthyPatternsAutomobileDependence1999}{}}%
+Kenworthy, Jeffrey R, and Felix B Laube. 1999. {``Patterns of Automobile Dependence in Cities: An International Overview of Key Physical and Economic Dimensions with Some Implications for Urban Policy.''} \emph{Transportation Research Part A: Policy and Practice} 33 (7): 691--723. \url{https://doi.org/10.1016/S0965-8564(99)00006-3}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kleinbaumSurvivalAnalysisSelfLearning2012}{}}%
+Kleinbaum, David G., and Mitchel Klein. 2012. \emph{Survival {Analysis}: {A Self-Learning Text}, {Third Edition}}. 3rd ed. Statistics for {Biology} and {Health}. {New York}: {Springer-Verlag}. \url{https://doi.org/10.1007/978-1-4419-6646-9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-knaapDrivingCompactGrowth2017}{}}%
+Knaap, Gerrit-Jan, Uri Avin, and Li Fang. 2017. {``Driving and {Compact Growth}: {A Careful Look} in the {Rearview Mirror}.''} \emph{Journal of the American Planning Association} 83 (1): 32--35. \url{https://doi.org/10.1080/01944363.2017.1251276}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kolblEnergyLawsHuman2003}{}}%
+Kölbl, Robert, and Dirk Helbing. 2003. {``Energy Laws in Human Travel Behaviour.''} \emph{New Journal of Physics} 5 (May): 48--48. \url{https://doi.org/10.1088/1367-2630/5/1/348}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kollmussMindGapWhy2002}{}}%
+Kollmuss, Anja, and Julian Agyeman. 2002. {``Mind the {Gap}: {Why} Do People Act Environmentally and What Are the Barriers to Pro-Environmental Behavior?''} \emph{Environmental Education Research} 8 (3): 239--60. \url{https://doi.org/10.1080/13504620220145401}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kuhnimhofWhoMadePeak2013}{}}%
+Kuhnimhof, Tobias, Dirk Zumkeller, and Bastian Chlond. 2013. {``Who {Made Peak Car}, and {How}? {A Breakdown} of {Trends} over {Four Decades} in {Four Countries}.''} \emph{Transport Reviews} 33 (3): 325--42. \url{https://doi.org/10.1080/01441647.2013.801928}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-laneAdoptionCleanerVehicles2007}{}}%
+Lane, Ben, and Stephen Potter. 2007. {``The Adoption of Cleaner Vehicles in the {UK}: Exploring the Consumer Attitude--Action Gap.''} \emph{Journal of Cleaner Production}, The {Automobile Industry} \& {Sustainability}, 15 (11): 1085--92. \url{https://doi.org/10.1016/j.jclepro.2006.05.026}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lanziniSheddingLightPsychological2017}{}}%
+Lanzini, Pietro, and Sana Akbar Khan. 2017. {``Shedding Light on the Psychological and Behavioral Determinants of Travel Mode Choice: {A} Meta-Analysis.''} \emph{Transportation Research Part F: Traffic Psychology and Behaviour} 48 (July): 13--27. \url{https://doi.org/10.1016/j.trf.2017.04.020}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-laroucheEffectMajorLife2020}{}}%
+Larouche, Richard, this link will open in a new window Link to external site, Ulises Charles Rodriguez, Ransimala Nayakarathna, and David R. Scott. 2020. {``Effect of {Major Life Events} on {Travel Behaviours}: {A Scoping Review}.''} \emph{Sustainability} 12 (24): 10392. https://doi.org/\url{http://dx.doi.org.proxy.lib.pdx.edu/10.3390/su122410392}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-leeModifiableArealUnit2016}{}}%
+Lee, Gunhak, Daeheon Cho, and Kamyoung Kim. 2016. {``The Modifiable Areal Unit Problem in Hedonic House-Price Models.''} \emph{Urban Geography} 37 (2): 223--45. \url{https://doi.org/10.1080/02723638.2015.1057397}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-leeComparingImpactsLocal2020}{}}%
+Lee, Sungwon, and Bumsoo Lee. 2020. {``Comparing the Impacts of Local Land Use and Urban Spatial Structure on Household {VMT} and {GHG} Emissions.''} \emph{Journal of Transport Geography} 84 (April): 102694. \url{https://doi.org/10.1016/j.jtrangeo.2020.102694}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lenormandSystematicComparisonTrip2016}{}}%
+Lenormand, Maxime, Aleix Bassolas, and José J. Ramasco. 2016. {``Systematic Comparison of Trip Distribution Laws and Models.''} \emph{Journal of Transport Geography} 51 (February): 158--69. \url{https://doi.org/10.1016/j.jtrangeo.2015.12.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-levinsonMetropolitanTransportLand2018}{}}%
+Levinson, David M., and Kevin J. Krizek. 2018. \emph{Metropolitan {Transport} and {Land Use}: {Planning} for {Place} and {Plexus}}. 2nd ed. {Second edition. \textbar{} New York : Routledge, 2018.}: {Routledge}. \url{https://doi.org/10.4324/9781315684482}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-levinsonElementsAccessTransport2017}{}}%
+Levinson, David M., Wesley Marshall, and Kay Axhausen. 2017. \emph{Elements of {Access}: {Transport Planning} for {Engineers}, {Transport Engineering} for {Planners}}. {Network Design Lab}. \url{https://ses.library.usyd.edu.au/handle/2123/21628}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-levinsonEFFECTSDENSITYURBAN1963}{}}%
+Levinson, Herbert S., and F. Houston Wynn. 1963. {``{EFFECTS OF DENSITY ON URBAN TRANSPORTATION REQUIREMENTS}.''} \emph{Highway Research Record}, no. 2. \url{http://trid.trb.org/view/133884}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-linEstimationEnergyUse2012}{}}%
+Lin, Zhenhong, Jing Dong, Changzheng Liu, and David Greene. 2012. {``Estimation of {Energy Use} by {Plug-In Hybrid Electric Vehicles}: {Validating Gamma Distribution} for {Representing Random Daily Driving Distance}.''} \emph{Transportation Research Record} 2287 (1): 37--43. \url{https://doi.org/10.3141/2287-05}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-litmanHowLandUse2017}{}}%
+Litman, Todd. 2017. {``How {Land Use Factors Affect Travel Behavior},''} 91.
+
+\leavevmode\vadjust pre{\hypertarget{ref-liuPointofInterestDemandModeling2017}{}}%
+Liu, Yanchi, Chuanren Liu, Xinjiang Lu, Mingfei Teng, Hengshu Zhu, and Hui Xiong. 2017. {``Point-of-{Interest Demand Modeling} with {Human Mobility Patterns}.''} In \emph{Proceedings of the 23rd {ACM SIGKDD International Conference} on {Knowledge Discovery} and {Data Mining}}, 947--55. {KDD} '17. {New York, NY, USA}: {Association for Computing Machinery}. \url{https://doi.org/10.1145/3097983.3098168}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-loomesRegretTheoryAlternative1982}{}}%
+Loomes, Graham, and Robert Sugden. 1982. {``Regret {Theory}: {An Alternative Theory} of {Rational Choice Under Uncertainty}.''} \emph{The Economic Journal} 92 (368): 805--24. \url{https://doi.org/10.2307/2232669}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-manvilleTravelBuiltEnvironment2017}{}}%
+Manville, Michael. 2017. {``Travel and the {Built Environment}: {Time} for {Change}.''} \emph{Journal of the American Planning Association} 83 (1): 29--32. \url{https://doi.org/10.1080/01944363.2016.1249508}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-marchCognitiveLimitsRationality2005}{}}%
+March, James G., and Herbert A. Simon. 2005. \emph{Cognitive {Limits} on {Rationality}}. Negotiation, Decision Making and Conflict Management, {Vol} 1--3. {Northampton, MA, US}: {Edward Elgar Publishing}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-marchettiAnthropologicalInvariantsTravel1994}{}}%
+Marchetti, C. 1994. {``Anthropological Invariants in Travel Behavior.''} \emph{Technological Forecasting and Social Change} 47 (1): 75--88. \url{https://doi.org/10.1016/0040-1625(94)90041-8}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mcfaddenConditionalLogitAnalysis1973}{}}%
+McFadden, Daniel. 1973. \emph{Conditional Logit Analysis of Qualitative Choice Behavior}. Working Paper, no. 199/BART 10. {Berkeley}: {Institute of Urban \& Regional Development, University of California, Berkeley}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mcfaddenEconomicChoices2001}{}}%
+---------. 2001. {``Economic {Choices}.''} \emph{American Economic Review} 91 (3): 351--78. \url{https://doi.org/10.1257/aer.91.3.351}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mcnallyFourStepModel2008}{}}%
+McNally, Michael G. 2008. {``The {Four Step Model},''} November. \url{https://escholarship.org/uc/item/0r75311t}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mcneilRevisitingTODsHow2020}{}}%
+McNeil, Nathan, and Jennifer Dill. 2020. {``Revisiting {TODs}: {How Subsequent Development Affects} the {Travel Behavior} of {Residents} in {Existing Transit-Oriented Developments}.''} NITC-RR-1240. \url{https://rosap.ntl.bts.gov/view/dot/54613}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vanmeeterenPacifyingBabelTower2016}{}}%
+Meeteren, Michiel van, Ate Poorthuis, Ben Derudder, and Frank Witlox. 2016. {``Pacifying {Babel}'s {Tower}: {A} Scientometric Analysis of Polycentricity in Urban Research.''} \emph{Urban Studies} 53 (6): 1278--98. \url{https://doi.org/10.1177/0042098015573455}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mitchellUrbanTraffic1954}{}}%
+Mitchell, Robert B., and Chester Rapkin. 1954. \emph{Urban {Traffic}}. {Columbia University Press}. \url{http://www.degruyter.com/document/doi/10.7312/mitc94522/html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mullerTransportationUrbanForm2004}{}}%
+Muller, Peter O. 2004. \emph{Transportation and {Urban Form} - {Stages} in the {Spatial Evolution} of the {American Metropolis}}. \url{http://trid.trb.org/view/756060}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-munshiBuiltEnvironmentMode2016}{}}%
+Munshi, Talat. 2016. {``Built Environment and Mode Choice Relationship for Commute Travel in the City of {Rajkot}, {India}.''} \emph{Transportation Research Part D: Transport and Environment} 44 (May): 239--53. \url{https://doi.org/10.1016/j.trd.2015.12.005}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nelsonCompactDevelopmentReduces2017}{}}%
+Nelson, Arthur C. 2017. {``Compact {Development Reduces VMT}: {Evidence} and {Application} for {Planners}---{Comment} on {`{Does Compact Development Make People Drive Less}?'}.''} \emph{Journal of the American Planning Association} 83 (1): 36--41. \url{https://doi.org/10.1080/01944363.2016.1246378}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanCITIESAUTOMOBILEDEPENDENCE1989}{}}%
+Newman, P. G., and J. R. Kenworthy. 1989a. \emph{{CITIES AND AUTOMOBILE DEPENDENCE}: {AN INTERNATIONAL SOURCEBOOK}}. \url{http://trid.trb.org/view/351194}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanGasolineConsumptionCities1989}{}}%
+Newman, P. G., and Jeffrey R. Kenworthy. 1989b. {``Gasoline {Consumption} and {Cities}.''} \emph{Journal of the American Planning Association} 55 (1): 24--37. \url{https://doi.org/10.1080/01944368908975398}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanDensitySustainabilityMultiplier2014}{}}%
+Newman, Peter. 2014. {``Density, the {Sustainability Multiplier}: {Some Myths} and {Truths} with {Application} to {Perth}, {Australia}.''} \url{https://pubag.nal.usda.gov/catalog/6516732}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanPeakCarUse2011}{}}%
+Newman, Peter, and Jeff Kenworthy. 2011a. {``{`{Peak Car Use}'}: {Understanding} the {Demise} of {Automobile Dependence}.''} \emph{World Transport Policy \& Practice} 17 (2). \url{http://trid.trb.org/view/1106687}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanDensityMultiplierResponse2011}{}}%
+---------. 2011b. {``The {Density Multiplier}: {A Response} to {Mees}.''} \emph{World Transport Policy \& Practice} 17 (3). \url{http://trid.trb.org/view/1127388}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanEndAutomobileDependence2015}{}}%
+Newman, Peter, and Jeffrey Kenworthy. 2015. {``The {End} of {Automobile Dependence}:''} In \emph{The {End} of {Automobile Dependence}: {How Cities Are Moving Beyond Car-Based Planning}}, edited by Peter Newman and Jeffrey Kenworthy, 201--26. {Washington, DC}: {Island Press/Center for Resource Economics}. \url{https://doi.org/10.5822/978-1-61091-613-4_7}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newmanUrbanDesignReduce2006}{}}%
+Newman, Peter, Jeffrey Kenworthy, Peter Newman, and Jeffrey Kenworthy. 2006. {``Urban Design to Reduce Automobile Dependence.''} \emph{Opolis}, 35--52.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newton18481687}{}}%
+Newton, Isaac. 1848. {``1687 Philosophiae Naturalis Principia Mathematica.''} \emph{Reg. Soc. Praeses, London} 2: 1--4.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nostikasariRepresentationsEverydayTravel2015}{}}%
+Nostikasari, Dian. 2015. {``Representations of Everyday Travel Experiences: {Case} Study of the {Dallas-Fort Worth Metropolitan Area}.''} \emph{Transport Policy} 44 (November): 96--107. \url{https://doi.org/10.1016/j.tranpol.2015.06.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-openshawEcologicalFallaciesAnalysis1984}{}}%
+Openshaw, S. 1984. {``Ecological {Fallacies} and the {Analysis} of {Areal Census Data}.''} \emph{Environment and Planning A: Economy and Space} 16 (1): 17--31. \url{https://doi.org/10.1068/a160017}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ortuzarModellingTransport2011}{}}%
+Ortúzar, Juan de Dios, and Luis G. Willumsen. 2011. \emph{Modelling {Transport}}. {John Wiley \& Sons}. \url{https://books.google.com?id=qWa5MyS4CiwC}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ottensmannPopulationWeightedDensity2018}{}}%
+Ottensmann, John R. 2018. {``On {Population-Weighted Density}.''} SSRN Scholarly Paper ID 3119965. {Rochester, NY}: {Social Science Research Network}. \url{https://doi.org/10.2139/ssrn.3119965}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-paezGeographicallyWeightedRegression2009}{}}%
+Páez, A., and D. C. Wheeler. 2009. {``Geographically {Weighted Regression}.''} In \emph{International {Encyclopedia} of {Human Geography}}, edited by Rob Kitchin and Nigel Thrift, 407--14. {Oxford}: {Elsevier}. \url{https://doi.org/10.1016/B978-008044910-4.00447-8}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-parkOptimizationApproachPlacement2017}{}}%
+Park, Chung, and So Young Sohn. 2017. {``An Optimization Approach for the Placement of Bicycle-Sharing Stations to Reduce Short Car Trips: {An} Application to the City of {Seoul}.''} \emph{Transportation Research Part A: Policy and Practice} 105 (November): 154--66. \url{https://doi.org/10.1016/j.tra.2017.08.019}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-parkGuidelinesPolycentricRegion2020}{}}%
+Park, Keunhyun, Reid Ewing, Sadegh Sabouri, Dong-ah Choi, Shima Hamidi, and Guang Tian. 2020. {``Guidelines for a {Polycentric Region} to {Reduce Vehicle Use} and {Increase Walking} and {Transit Use}.''} \emph{Journal of the American Planning Association} 86 (2): 236--49. \url{https://doi.org/10.1080/01944363.2019.1692690}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-perumalContextualDensityUS2017}{}}%
+Perumal, Andrew, and David Timmons. 2017. {``Contextual {Density} and {US Automotive Co2 Emissions} Across the {Rural}--{Urban Continuum}.''} \emph{International Regional Science Review} 40 (6): 590--615. \url{https://doi.org/10.1177/0160017615614897}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-pickrellTRANSPORTATIONLANDUSE1999}{}}%
+Pickrell, D. 1999. \emph{{TRANSPORTATION AND LAND USE}}. \url{http://trid.trb.org/view/500082}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-plotzDistributionIndividualDaily2017}{}}%
+Plötz, Patrick, Niklas Jakobsson, and Frances Sprei. 2017. {``On the Distribution of Individual Daily Driving Distances.''} \emph{Transportation Research Part B: Methodological} 101 (July): 213--27. \url{https://doi.org/10.1016/j.trb.2017.04.008}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-praisGroupingObservationsRegression1954}{}}%
+Prais, S. J., and J. Aitchison. 1954. {``The {Grouping} of {Observations} in {Regression Analysis}.''} \emph{Revue de l'Institut International de Statistique / Review of the International Statistical Institute} 22 (1/3): 1--22. \url{https://doi.org/10.2307/1401916}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-puAnalyticRelationshipsTravel2011}{}}%
+Pu, Wenjing. 2011. {``Analytic {Relationships} Between {Travel Time Reliability Measures}.''} \emph{Transportation Research Record} 2254 (1): 122--30. \url{https://doi.org/10.3141/2254-13}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-qianImpactTransportationNetwork2020}{}}%
+Qian, Xinwu, Tian Lei, Jiawei Xue, Zengxiang Lei, and Satish V. Ukkusuri. 2020. {``Impact of Transportation Network Companies on Urban Congestion: {Evidence} from Large-Scale Trajectory Data.''} \emph{Sustainable Cities and Society} 55 (April): 102053. \url{https://doi.org/10.1016/j.scs.2020.102053}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ramosStateoftheArtReviewDevelopments2014}{}}%
+Ramos, Giselle Moraes, Winnie Daamen, and Serge Hoogendoorn. 2014. {``A {State-of-the-Art Review}: {Developments} in {Utility Theory}, {Prospect Theory} and {Regret Theory} to {Investigate Travellers}' {Behaviour} in {Situations Involving Travel Time Uncertainty}.''} \emph{Transport Reviews} 34 (1): 46--67. \url{https://doi.org/10.1080/01441647.2013.856356}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ravensteinLawsMigration1885}{}}%
+Ravenstein, E. G. 1885. {``The {Laws} of {Migration}.''} \emph{Journal of the Statistical Society of London} 48 (2): 167--235. \url{https://doi.org/10.2307/2979181}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rodrigueGeographyTransportSystems2016}{}}%
+Rodrigue, Jean-Paul, Claude Comtois, and Brian Slack. 2016. \emph{The {Geography} of {Transport Systems}}. 4th ed. {London}: {Routledge}. \url{https://doi.org/10.4324/9781315618159}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rozenfeldAreaPopulationCities2011}{}}%
+Rozenfeld, Hernán D., Diego Rybski, Xavier Gabaix, and Hernán A. Makse. 2011. {``The {Area} and {Population} of {Cities}: {New Insights} from a {Different Perspective} on {Cities}.''} \emph{American Economic Review} 101 (5): 2205--25. \url{https://doi.org/10.1257/aer.101.5.2205}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sabouriBuiltEnvironmentVehicle2021}{}}%
+Sabouri, Sadegh, Guang Tian, Reid Ewing, Keunhyun Park, and William Greene. 2021. {``The Built Environment and Vehicle Ownership Modeling: {Evidence} from 32 Diverse Regions in the {U}.{S}.''} \emph{Journal of Transport Geography} 93 (May): 103073. \url{https://doi.org/10.1016/j.jtrangeo.2021.103073}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-saichevTheoryZipfLaw2010}{}}%
+Saichev, Alexander I., Yannick Malevergne, and Didier Sornette. 2010. \emph{Theory of {Zipf}'s {Law} and {Beyond}}. Lecture {Notes} in {Economics} and {Mathematical Systems}. {Berlin Heidelberg}: {Springer-Verlag}. \url{https://doi.org/10.1007/978-3-642-02946-2}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schimekHouseholdMotorVehicle1996}{}}%
+Schimek, Paul. 1996. {``Household {Motor Vehicle Ownership} and {Use}: {How Much Does Residential Density Matter}?''} \emph{Transportation Research Record} 1552 (1): 120--25. \url{https://doi.org/10.1177/0361198196155200117}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schlapferUniversalVisitationLaw2021}{}}%
+Schläpfer, Markus, Lei Dong, Kevin O'Keeffe, Paolo Santi, Michael Szell, Hadrien Salat, Samuel Anklesaria, Mohammad Vazifeh, Carlo Ratti, and Geoffrey B. West. 2021. {``The Universal Visitation Law of Human Mobility.''} \emph{Nature} 593 (7860, 7860): 522--27. \url{https://doi.org/10.1038/s41586-021-03480-9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schwanenImpactMetropolitanStructure2004}{}}%
+Schwanen, Tim, Frans M. Dieleman, and Martin Dijst. 2004. {``The {Impact} of {Metropolitan Structure} on {Commute Behavior} in the {Netherlands}: {A Multilevel Approach}.''} \emph{Growth and Change} 35 (3): 304--33. \url{https://doi.org/10.1111/j.1468-2257.2004.00251.x}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-siminiUniversalModelMobility2012}{}}%
+Simini, Filippo, Marta C. González, Amos Maritan, and Albert-László Barabási. 2012. {``A Universal Model for Mobility and Migration Patterns.''} \emph{Nature} 484 (7392, 7392): 96--100. \url{https://doi.org/10.1038/nature10856}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-starmerDevelopmentsNonexpectedUtility2000}{}}%
+Starmer, Chris. 2000. {``Developments in {Non-expected Utility Theory}: {The Hunt} for a {Descriptive Theory} of {Choice} Under {Risk}.''} \emph{Journal of Economic Literature} 38 (2): 332--82. \url{https://doi.org/10.1257/jel.38.2.332}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stevensDoesCompactDevelopment2017}{}}%
+Stevens, Mark R. 2017a. {``Does {Compact Development Make People Drive Less}?''} \emph{Journal of the American Planning Association} 83 (1): 7--18. \url{https://doi.org/10.1080/01944363.2016.1240044}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stevensResponseCommentariesDoes2017}{}}%
+---------. 2017b. {``Response to {Commentaries} on {`{Does Compact Development Make People Drive Less}?'}.''} \emph{Journal of the American Planning Association} 83 (2): 151--58. \url{https://doi.org/10.1080/01944363.2017.1287588}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stoufferInterveningOpportunitiesTheory1940}{}}%
+Stouffer, Samuel A. 1940. {``Intervening {Opportunities}: {A Theory Relating Mobility} and {Distance}.''} \emph{American Sociological Review} 5 (6): 845--67. \url{https://doi.org/10.2307/2084520}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sultanaJourneytoWorkPatternsAge2007}{}}%
+Sultana, Selima, and Joe Weber. 2007. {``Journey-to-{Work Patterns} in the {Age} of {Sprawl}: {Evidence} from {Two Midsize Southern Metropolitan Areas}.''} \emph{The Professional Geographer} 59 (2): 193--208. \url{https://doi.org/10.1111/j.1467-9272.2007.00607.x}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-suzukiTransformingCitiesTransit2013}{}}%
+Suzuki, Hiroaki, Robert Cervero, and Kanako Iuchi. 2013. \emph{Transforming {Cities} with {Transit}}. Urban {Development}. {The World Bank}. \url{https://doi.org/10.1596/978-0-8213-9745-9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-taylorDistanceDecaySpatial1975}{}}%
+Taylor, Peter J., and S. Openshaw. 1975. {``Distance Decay in Spatial Interactions.''} In \emph{Concepts and {Techniques} in {Modern Geography}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-tianTrafficGeneratedMixedUse2015}{}}%
+Tian, Guang, Reid Ewing, Alex White, Shima Hamidi, Jerry Walters, J. P. Goates, and Alex Joyce. 2015. {``Traffic {Generated} by {Mixed-Use Developments}: {Thirteen-Region Study Using Consistent Measures} of {Built Environment}.''} \emph{Transportation Research Record} 2500 (1): 116--24. \url{https://doi.org/10.3141/2500-14}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-toblerComputerMovieSimulating1970}{}}%
+Tobler, W. R. 1970. {``A {Computer Movie Simulating Urban Growth} in the {Detroit Region}.''} \emph{Economic Geography} 46: 234--40. \url{https://doi.org/10.2307/143141}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-tverskyAdvancesProspectTheory1992}{}}%
+Tversky, Amos, and Daniel Kahneman. 1992. {``Advances in Prospect Theory: {Cumulative} Representation of Uncertainty.''} \emph{Journal of Risk and Uncertainty} 5 (4): 297--323. \url{https://doi.org/10.1007/BF00122574}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nhts_2009}{}}%
+U.S. Department of Transportation, Federal Highway Administration. 2009. {``2009 {National Household Travel Survey}.''} \url{https://nhts.ornl.gov/documentation.shtml}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vanackerCommutingTripsTours2011}{}}%
+Van Acker, Veronique, and Frank Witlox. 2011. {``Commuting Trips Within Tours: How Is Commuting Related to Land Use?''} \emph{Transportation} 38 (3): 465--86. \url{https://doi.org/10.1007/s11116-010-9309-6}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-verplankenContextChangeTravel2008}{}}%
+Verplanken, Bas, Ian Walker, Adrian Davis, and Michaela Jurasek. 2008. {``Context Change and Travel Mode Choice: {Combining} the Habit Discontinuity and Self-Activation Hypotheses.''} \emph{Journal of Environmental Psychology} 28 (2): 121--27. \url{https://doi.org/10.1016/j.jenvp.2007.10.005}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-visserZipfLawPower2013}{}}%
+Visser, Matt. 2013. {``Zipf's Law, Power Laws and Maximum Entropy.''} \emph{New Journal of Physics} 15 (4): 043021. \url{https://doi.org/10.1088/1367-2630/15/4/043021}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vonneumannTheoryGamesEconomic1944}{}}%
+Von Neumann, J., and O. Morgenstern. 1944. \emph{Theory of Games and Economic Behavior}. Theory of Games and Economic Behavior. {Princeton, NJ, US}: {Princeton University Press}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vanderwaardNewDriversMobility2013}{}}%
+Waard, Jan van der, Peter Jorritsma, and Ben Immers. 2013. {``New {Drivers} in {Mobility}; {What Moves} the {Dutch} in 2012?''} \emph{Transport Reviews} 33 (3): 343--59. \url{https://doi.org/10.1080/01441647.2013.801046}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wardmanValuesTravelTime2016}{}}%
+Wardman, Mark, V. Phani K. Chintakayala, and Gerard de Jong. 2016. {``Values of Travel Time in {Europe}: {Review} and Meta-Analysis.''} \emph{Transportation Research Part A: Policy and Practice} 94 (December): 93--111. \url{https://doi.org/10.1016/j.tra.2016.08.019}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wongModifiableArealUnit2004}{}}%
+Wong, David W. S. 2004. {``The {Modifiable Areal Unit Problem} ({MAUP}).''} In \emph{{WorldMinds}: {Geographical Perspectives} on 100 {Problems}: {Commemorating} the 100th {Anniversary} of the {Association} of {American Geographers} 1904--2004}, edited by Donald G. Janelle, Barney Warf, and Kathy Hansen, 571--75. {Dordrecht}: {Springer Netherlands}. \url{https://doi.org/10.1007/978-1-4020-2352-1_93}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-xuModifiableArealUnit2018}{}}%
+Xu, Pengpeng, Helai Huang, and Ni Dong. 2018. {``The Modifiable Areal Unit Problem in Traffic Safety: {Basic} Issue, Potential Solutions and Future Research.''} \emph{Journal of Traffic and Transportation Engineering (English Edition)} 5 (1): 73--82. \url{https://doi.org/10.1016/j.jtte.2015.09.010}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-yangLimitsPredictabilityCommuting2014}{}}%
+Yang, Yingxiang, Carlos Herrera, Nathan Eagle, and Marta C. González. 2014. {``Limits of {Predictability} in {Commuting Flows} in the {Absence} of {Data} for {Calibration}.''} \emph{Scientific Reports} 4 (1, 1): 5662. \url{https://doi.org/10.1038/srep05662}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-yeImpactsModifiableAreal2021}{}}%
+Ye, Xiang, and Peter Rogerson. 2021. {``The {Impacts} of the {Modifiable Areal Unit Problem} ({MAUP}) on {Omission Error}.''} \emph{Geographical Analysis} n/a (n/a). \url{https://doi.org/10.1111/gean.12269}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zahabiSpatiotemporalAnalysisCar2015}{}}%
+Zahabi, Seyed Amir H., Luis Miranda-Moreno, Zachary Patterson, and Philippe Barla. 2015. {``Spatio-Temporal Analysis of Car Distance, Greenhouse Gases and the Effect of Built Environment: {A} Latent Class Regression Analysis.''} \emph{Transportation Research Part A: Policy and Practice} 77 (July): 1--13. \url{https://doi.org/10.1016/j.tra.2015.04.002}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhangHowBuiltEnvironment2012}{}}%
+Zhang, Lei, Jin Hyun Hong, Arefeh Nasri, and Qing Shen. 2012. {``How Built Environment Affects Travel Behavior: {A} Comparative Analysis of the Connections Between Land Use and Vehicle Miles Traveled in {US} Cities.''} \emph{Journal of Transport and Land Use} 5 (3, 3). \url{https://doi.org/10.5198/jtlu.v5i3.266}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhangWhenContextMeets2020}{}}%
+Zhang, Ming, and Wenjia Zhang. 2020. {``When {Context Meets Self-Selection}: {The Built Environment}--{Travel Connection Revisited}.''} \emph{Journal of Planning Education and Research} 40 (3): 304--19. \url{https://doi.org/10.1177/0739456X18755495}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhangHouseholdTripGeneration2019}{}}%
+Zhang, Qin, Kelly J. Clifton, Rolf Moeckel, and Jaime Orrego-Oñate. 2019. {``Household {Trip Generation} and the {Built Environment}: {Does More Density Mean More Trips}?''} \emph{Transportation Research Record} 2673 (5): 596--606. \url{https://doi.org/10.1177/0361198119841854}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhaoRethinkingDeterminantsVehicle2021}{}}%
+Zhao, Pengjun, and Peilin Li. 2021. {``Rethinking the Determinants of Vehicle Kilometers Traveled ({VKT}) in an Auto-Dependent City: Transport Policies, Socioeconomic Factors and the Built Environment.''} \emph{Transportation Planning and Technology} 44 (3): 273--302. \url{https://doi.org/10.1080/03081060.2021.1883228}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhouAlternativeFormulationsCombined2009}{}}%
+Zhou, Zhong, Anthony Chen, and S. C. Wong. 2009. {``Alternative Formulations of a Combined Trip Generation, Trip Distribution, Modal Split, and Trip Assignment Model.''} \emph{European Journal of Operational Research} 198 (1): 129--38. \url{https://doi.org/10.1016/j.ejor.2008.07.041}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zipfP1P2Hypothesis1946}{}}%
+Zipf, George Kingsley. 1946. {``The {P1 P2}/{D Hypothesis}: {On} the {Intercity Movement} of {Persons}.''} \emph{American Sociological Review} 11 (6): 677--86. \url{https://doi.org/10.2307/2087063}.
+
+\end{CSLReferences}
+
+\end{document}

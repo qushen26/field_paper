@@ -88,7 +88,7 @@ library(pacman)
 p_load(tidyverse,kableExtra ,mosaic,ggpubr,factoextra, DiagrammeR,magrittr) #
 # if (!require("webshot")) {install.packages("webshot")}
 # webshot::install_phantomjs()
-knitr::opts_knit$set(root.dir = "C:/E/PhD/courses/Field paper")
+# knitr::opts_knit$set(root.dir = "C:/E/PhD/courses/Field paper")
 knitr::opts_chunk$set(eval=T,echo=F, message=F, warning=F,cache=T,fig.align = 'center') #,fig.pos="!h",fig.dim = c(8, 6)
 
 ```

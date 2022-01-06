@@ -133,7 +133,8 @@ For the limitation of data quality, the standard errors of elasticities are not 
 (ref:EwingTravelBuiltEnvironment2010) @ewingTravelBuiltEnvironment2010
 
 ```{r,eval=T,results='asis'}
-# library(kableExtra) #knitr::kable
+library(dplyr)
+library(kableExtra) #knitr::kable
 meta2010 <- data.frame( 
   Study=c("Ewing et al. (2009)",
           "Frank and Engelke (2005)",
@@ -174,9 +175,9 @@ This meta-analysis kindled researchers' enthusiasm for this topic. After that, s
 
 @stevensDoesCompactDevelopment2017 extends this analysis and explains the different outcomes using a meta-regression method. He focuses on the studies with VMT as the response and uses similar screening criteria. Based on the results from 37 studies, he finds the elasticity of population density is small (-0.10) and suggests that compacting development has a minor influence on driving.
 
-Adding a dummy variable, whether a study control residential self-selection or not, into the meta-regression, @stevensDoesCompactDevelopment2017 shows that self-selection research design could significantly impact the effect size. For the studies with self-selection control, the estimated elasticity of population density becomes -0.22, which is much stronger than @ewingTravelBuiltEnvironment2010 's result (-0.04). An advantage of meta-regression is that the two groups with/without self-selection control can share the common errors, fully utilize the information, and overcome the small sample size issue to a certain extent. The number of studies with self-selection control is four, while the total selected studies are 19. This result is more reliable than the average value in the self-selection control group.
+Adding a dummy variable indicating whether a study controls residential self-selection or not into the meta-regression, @stevensDoesCompactDevelopment2017 shows that self-selection research design could significantly impact the effect size. For the studies with control for self-selection, the estimated elasticity of population density becomes -0.22, which is much stronger than @ewingTravelBuiltEnvironment2010 's result (-0.04). An advantage of meta-regression is that the two groups with/without self-selection control can share the common errors, fully utilize the information, and overcome the small sample size issue to a certain extent. The number of studies with control for self-selection is four among a totla of 19 studies. This result is more reliable than the average value in the self-selection control group.
 
-Another improvement is that Stevens' meta-regression uses the weighted least squares (WLS) method. The weights are the precision (inverse of variance) of each observation. The same weights are applied on the weighted average and precision-effect estimate with standard error (PEESE) method in his 'Technical Appendix for details.' The estimated elasticities of population density with the three methods are -0.22, -0.13, and -0.20, respectively. Unfortunately, Stevens doesn't share his data of standard error of coefficients in the article and technical appendix. It is not easy to check his data and results.
+Another improvement of Stevens' meta-regression is the use of weighted least squares (WLS) method. The weights are the precision (inverse of variance) of each observation. The same weights are applied on the weighted average and precision-effect estimate with standard error (PEESE) method in his 'Technical Appendix for details.' The estimated elasticities of population density with the three methods are -0.22, -0.13, and -0.20, respectively. Unfortunately, Stevens doesn't share his data of standard error of coefficients in the article and technical appendix. It is not easy to check his data and results.
 
 Note that one observation, the study by @chatmanHowDensityMixed2003, may dramatically twist Stevens' result about density. In Chatman's Tobit model, the average VMT is $\bar y= 3.988$; the average household density is $\bar x= 1.902$ (housing units per square mile, residential block group (1,000s)); the coefficient of household density is $\beta=-0.082$. Then the elasticity should be
 

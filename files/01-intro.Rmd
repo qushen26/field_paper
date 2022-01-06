@@ -4,46 +4,37 @@
 
 ## Background
 
-In the past decades, efforts have been made to reduce Automobile Dependency in both developed and developing counties. Many research have found that moderating the car use have positive social, economic and environmental impacts. The negative externalities of automobile include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions.
+In the {==past decades==}{>>decades?<<}, efforts have been made to reduce automobile dependency, as reducing  car use have found to have positive social, economic and environmental impacts. Negative externalities of automobile use include congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions.
 
-In urban planning and transportation, achieving this goal requires two parts. First, researcher find a set of factors which could mostly explain and affect travel behavior. Second, planning and policy are made to intervene the adjustable factors then to reduce the car use significantly.
-This paper focuses on the first part and aims at supporting the second part.
+Before policy makers in urban and transportation planning can devise policies to reduce auto use, researchers need to identify factors correlated with and, ideally, influencing travel behavior. This is especially challenging because of a number of reasons:
 
+1. Most of the data in the field are observational data;
+1. There are numerous measures of outcome and independent variables of interest;
+1. These data are for different units in space and analytic method need to take account of spatial correlation.
 
 
 ## Analytical Framework
 
-@handyCriticalAssessmentLiterature2005 gives a complete assessment for travel-urban form study, which is the mainstream framework in this field.
-Under this framework, regression analysis currently is still the dominate method for explaining the relationship between urban form and travel.
-A large mount of studies use regression models to identify the influencing factors and evaluate the effect size. Previous research demonstrated that there is not a single factor determining travel behavior. When choosing continues response, like Vehicle Miles Traveled (VMT) ^[or Vehicle Kilometers Traveled (VKT)], the basic structure of the regression model is as below:
+@handyCriticalAssessmentLiterature2005 gives a critical assessment for travel-urban form literature.
 
-\begin{equation}
-\mathbf{Y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}
-(\#eq:lm)
-\end{equation}
+~~Under this framework, regression analysis currently is still the dominate method for explaining the relationship between urban form and travel.
+A large mount of studies use regression models to identify the influencing factors and evaluate the effect size.~~ <!-- not directly related to FRAMEWORK & theory-->
 
-where $\mathbf{Y}$ are the variable of VMT. $\mathbf{X}$ are all relevant covariates with corresponding coefficients $\boldsymbol{\beta}$. $\boldsymbol{\varepsilon}$ are a random error term with expected value of $0$ and variance $\sigma^2$.
 
-When the response is categorical variable, such as binary data of driving versus not, polytomous data of mode choice, or count data of trip frequency, the proper model is:
-
-\begin{equation}
-E[\mathbf{Y}|\mathbf{X}]=\mu=g^{-1}(\mathbf{X}\boldsymbol{\beta})
-(\#eq:glm)
-\end{equation}
-
-Where $E[\mathbf{Y}|\mathbf{X}]$ is the expected value of travel choice variable $\mathbf{Y}$ conditional on $\mathbf{X}$; $\mathbf{X}\boldsymbol{\beta}$ is a linear combination (Ditto.); $g(\cdot)$ is a link function.
+There are numerous travel behavioral outcomes of interest, including
+- Vehicle or personal miles traveled (VMT or PMT) ^[or Vehicle Kilometers Traveled (VKT)]
+- Mode choice and mode share/split
+- Trip frequency and count
 
 
 ## Content Organization
 
 <!-- \@ref(struc) -->
-Part I introduces the Travel-Urban form studies in recent years. 
-As the essential parts of regression analysis, independent variables of [Urban Form](#form) and dependent variables of [Travel](#travel) are presented using two separate chapters. 
+The remaining of the paper is organized as follow:
 
-Chapter 2 of [Urban Form](#form) starts from a fundamental question: What is the relationship between urban form and travel? How strong the relationship is?
-Then the significant influencing factors in literature are systematically introduced.
+Chapter 2 [Urban Form](#form) identifies measures of urban form used in the literature and systematically reviews factors significantly influencing travel behavior reported in the literature.
 
-Aggregated and disaggregated data at vary [Spatial Scales](#scale) can sway the meaning of influencing factors. Units and spatial scales should be careful chosen to make sure the results matching the initial research questions.
+Aggregate and disaggregated data at vary [Spatial Scales](#scale) can sway the meaning of influencing factors. Units and spatial scales should be careful chosen to make sure the results matching the initial research questions.
 
 Chapter 3, [the theories of travel behavior](#travel) can be divided into [Traveler Choice][Traveler Choice] and [Human Mobility][Human Mobility] by looking travel as object or subject.
 These theories and practice can enrich the understanding of travel variable as response of model.

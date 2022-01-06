@@ -7,7 +7,7 @@ editor_options:
 # Urban Form as Predictors {#form}
 
 The concepts of 'urban form,' 'built environment,' and 'land use' are often exchangeable in literature. Adopted from some common usages, here, 'urban form' refers to the comprehensive physical expression of land use at the macro scale.\
-'Built environment' emphasizes the urban form attributes as a series of external factors with respect to travelers' internal characteristics and is often used in disaggregated studies at mesoscale. When using 'urban form' and 'built environment,' one looks at them as the given conditions of travel decision. While 'land use' can represent either current status descriptions or designated future use at mesoscale and micro scales.
+'Built environment' emphasizes the urban form attributes as a series of external factors with respect to travelers' internal characteristics and is often used in disaggregated studies at mesoscale. When using 'urban form' and 'built environment,' one looks at them as the given conditions of travel decision. While 'land use' can represent either current status descriptions or designated future use at mesoscale and micro scales. <!--citation?-->
 
 ## Influencing Direction
 
@@ -19,7 +19,7 @@ Another way is to observe the dynamic of these factors to figure out the directi
 knitr::include_graphics("fig/one_hour_commmuting2.png")
 ```
 
-New transportation tools shifted people's travel modes, extended travel distance, and reshaped the urban form. In causal inference, the new tools are called confounder or common cause, affecting both treatment and outcome. But what is the relationship between travel and urban form? A simple way is to observe the sequence of events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today, multiple travel modes exist in the old town, but suburban seldom has the old way like the streetcar. Thus, urban form is more like an outcome rather than treatment.
+New transportation tools shifted people's travel modes, ~~extended~~<!--?--> travel distance, and ~~reshaped the urban form~~<!--?-->. In causal inference, the new tools are called confounder or common cause, affecting both treatment and outcome. But what is the relationship between travel and urban form? A simple way is to observe the sequence of events to happen. In each transition period, the new tools and new modes began ahead of the new urban development. Even today, multiple travel modes exist in the old town, but suburban seldom has the old way like the streetcar. Thus, urban form is more like an outcome rather than treatment.
 
 However, the urban form remains relatively more stable than an individual's travel behavior in each era. A family may be used to driving in Texas and turn to use the subway when they move to New York and vice versa. Given a period, VMT could be affected by density and other factors. It doesn't make sense that VMT will change the density in the short term. Therefore, urban form can be treated as independent variables in the context of the current stage of urban development. The relationship of urban form with respect to travel can hold for a period of time.
 

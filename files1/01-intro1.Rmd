@@ -12,13 +12,13 @@ editor_options:
 
 In the past decades, efforts have been made to reduce automobile dependency in developed and developing counties. The negative externalities of automobile dependency include, but are not limited to, congestion, collision, unhealthy lifestyle, urban sprawl, social segmentation, pollution, and Greenhouse Gas (GHG) emissions. Many researchers have found that moderating car use has positive social, economic, and environmental impacts.
 
-Urban planners use policy and planning tools such as UBG and TOD to achieve this goal. The underlying logic is that the urban-form factors can impact people's travel. If urban form representing a series of long-standing environmental elements can encourage travelers to drive less, take more public transit, or choose active modes voluntarily, these policies and tools would have substantial ecological and social benefits.
+Urban planners use policies and planning tools such as UBG and TOD to achieve this goal. The underlying logic is that urban-form factors can impact people's travel. If urban form representing a series of long-standing environmental elements can encourage travelers to drive less, take more public transit, or choose active modes voluntarily, these policies and tools would have substantial ecological and social benefits.
 
 Researchers need to address two missions on this topic.
 The first one is to prove this relationship between travel and urban form is genuine and estimate the effect sizes.
 Such as, does this relationship exist significantly?
 Which factors of urban form have a more substantial impact on travel?
-Moreover, the effects on individuals and society could have distinctive meanings.
+Moreover, the effects on individuals and society could have distinctive meanings. <-! what does this sentence mean?-->
 The effects might be strong in some cities but weak in others.
 A convincing conclusion requires summarizing the results generated from various data sources and categorizing different types of studies.
 

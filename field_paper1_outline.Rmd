@@ -1,0 +1,52 @@
+# Urban Form and Auto Dependency
+
+1. Introduction
+- why is the relationship a critical question for research and policy
+- scope of this review
+    - theories of travel behavior 
+    - auto dependency
+    - measuring urban form: the 3D/5D/7D framework & beyond
+    - association using observational data
+
+2. auto dependency
+- what does it mean? 
+- Why does it matter?
+- how is it being measured:
+    - VMT
+    - VHT
+    - mode share
+- justification to focusing on VMT
+
+3. urban form
+- what does it mean? 
+- Why does it matter?
+- how is it being measured:
+    - 3D/5D/7D
+    - ?
+- scale of the measures
+    - parcel/tax lot
+    - census boundaries: bg, ct
+    - taz
+    - uza
+
+4. empirical studies on the relationship
+- the role of meta-analysis
+    - review/synthesis of meta analyses
+- the consensus & differences:
+  - in methods/
+  - criteria/
+  - vintage (year the meta analysis was done)/
+  - results/
+  - conclusion
+
+5. the discrepancy in previous empirical studies (needs a better chapter title)
+- different measures: e.g. pop den vs emp den as density measure
+- scale of the measure
+- data: single region vs multiple regions
+- research design
+- methods
+
+6. conclusions/hypotheses
+- The difference in measure & scale creates challenges in comparing/synthesizing previous studies
+- Fewer multi-regional studies
+- Methods insufficient to incorporate non-linear relationship/threshold effects/interaction effect

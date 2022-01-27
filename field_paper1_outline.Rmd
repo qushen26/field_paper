@@ -1,52 +1,348 @@
+
+
 # Urban Form and Auto Dependency
 
-1. Introduction
-- why is the relationship a critical question for research and policy
-- scope of this review
-    - theories of travel behavior 
-    - auto dependency
-    - measuring urban form: the 3D/5D/7D framework & beyond
-    - association using observational data
+1.  Introduction
 
-2. auto dependency
-- what does it mean? 
-- Why does it matter?
-- how is it being measured:
-    - VMT
-    - VHT
-    - mode share
-- justification to focusing on VMT
+-   Why is the relationship a critical question for research and policy
 
-3. urban form
-- what does it mean? 
-- Why does it matter?
-- how is it being measured:
-    - 3D/5D/7D
-    - ?
-- scale of the measures
-    - parcel/tax lot
-    - census boundaries: bg, ct
-    - taz
-    - uza
+Automobile dependency (AD) means residents over relies on private vehicles in daily life. AD negatively influences environments, community development, and public health. Researchers want to examine the relationship between AD and urban form in urban studies. A better understanding of this relationship allows urban planning and land use policymaking to contribute to AD relief.
 
-4. empirical studies on the relationship
-- the role of meta-analysis
-    - review/synthesis of meta analyses
-- the consensus & differences:
-  - in methods/
-  - criteria/
-  - vintage (year the meta analysis was done)/
-  - results/
-  - conclusion
+-   Scope of this review
 
-5. the discrepancy in previous empirical studies (needs a better chapter title)
-- different measures: e.g. pop den vs emp den as density measure
-- scale of the measure
-- data: single region vs multiple regions
-- research design
-- methods
+    -   Theories of travel behavior
 
-6. conclusions/hypotheses
-- The difference in measure & scale creates challenges in comparing/synthesizing previous studies
-- Fewer multi-regional studies
-- Methods insufficient to incorporate non-linear relationship/threshold effects/interaction effect
+AD is a type of travel behavior or pattern. There are two schools of theory for explaining travel behavior: "human mobility" and "traveler choice." Choosing the suitable theories depends on the research purposes. 
+
+Theories of human mobility in geography explain travel patterns from an objective and holistic perspective. The most influencing one is the Gravity Law which claims that traffic flow is determined by the mass of two places and the distance between them. When the research purpose is policy-oriented, theories of human mobility is suitable because everyone who live in an area will be impact by the plans or land use policies.
+
+Theories of traveler choice focus on individuals' behaviors. The utility theory in economics assumes the traveler's choice is based on the utility by weighing the benefits and costs. Other behavioral theories in psychology explain the irrational parts in real life to complete the framework. When the research purpose is project-oriented or user-oriented, theories of traveler choice must be considered because the project only impact the user groups. The users' experiences and reactions are critical for evaluating the project.
+
+
+
+    -   Auto dependency
+
+AD is a relative term. Broadly speaking, the modern society is automobile dependent. AD relief aims at the excessive driving.
+The travelers in modern U.S. cities drive more frequently and longer than the traditional communities or some cities in Europe and Asia due to historical, cultural, and geographic reasons. The literature in this review only discusses how to drive less and shorter under the contemporary U.S. context.
+
+AD is a conditional term. Given a same trip frequency, fewer driving trips mean less AD. Given a same driving trip frequency, the shorter driving distance or duration means less AD. 
+Assessing the degree of AD with various trip frequency is meaningless.
+The goals of AD relief are addressed through improving the efficiency rather than reducing trips and activities.
+
+    -   Measuring urban form: the 3D/5D/7D framework & beyond
+
+In this paper, the terms "urban form" and "built environment" are exchangeable. There are numerous ways of measuring urban form. D-variables is the commonest framework in the literature. Density, diversity, and design are the first three chosen factors. Distance to transit and destination accessibility are added into the framework later. D-variables is an open framework. In addition to the essential 3D or 5D, one can include any urban-form factors having a strong influence on driving behavior. The version of 7D by adding demographic characteristics and demand management can even be beyond the scope of urban forms. Technically, this framework should be called "urban form +". It does not matter whether the term starts with D or not. What matters is whether the term has significnt and strong impact on AD. Scholars keep using the name of D for being well known and convenient.
+
+    -   Association using observational data
+
+Association rather than causation is the proper term for describing the relationship between AD and urban form. The history of urbanization and motorization in twentieth-century America has shown that travel patterns and urban forms were changing simultaneously and interactively. Motorization stimulated urban sprawl. Urban sprawl then reinforced AD in turn. There may not be a single causal relationship between urban form and AD.
+
+Causal inference is a challenge for Observational studies. Strictly speaking, only RCT can conduct causal inference. Some techniques of quasi-experimental design can address an approximate causation based on some assumptions. The key is whether the assumptions are appropriate for the research question and data. However, once we relieve persuing causation and turn to association, the research goal still can be achieved. "People in denser areas drive less" is not as strong as "a denser area makes people driving less." But it is strong enough for proving the benefit of compact development.
+
+2.  Auto dependency
+
+-   what does it mean?
+
+AD means the"unnecessary", "inefficient," or "extra" driving trips. But there is no line for defining AD regarding an "normal" or "auto-free" travel pattern.
+For example, a highway cuts of the walking path in a community. Two neighbors had been visited each other by walking but now they have to drive. These driving trips are unnecessary.
+In contract, a gardener is more like auto dependent than a writer but this is necessary. For another example, without school bus, all parents in a neighborhood have to drop off and pick up their kids at school. This is inefficient. But when the workers in a household have different workplaces in different directions, we cannot blame them for driving along. For the last example, suppose the nearest store is closed. One has to drive three miles for buying a mask. This person drives an extra distance. But it is normal that a patient drives across the city for a special treatment.
+Therefore, we cannot define AD in an universal way because AD is not merely an transportation issues. It is a lifestyle generated by travelers, transportation systems, and urban land use.
+
+For investigating the association between AD and urban form, We need to focus on the unfavorable AD connecting to urban form.
+It assumes that travelers make necessary and efficient choice based on their situation, and transportation system is best optimized based on current techniques and investments. Urban form is the changeable part. The ideal urban from can minimize the unfavorable AD.
+
+-   Why does it matter?
+
+Many studies have shown that AD is related to unhealthy lifestyle. People who spend more time on driving than walking or biking are more like threatened by obesity.
+AD means more energy consumption and higher car ownership that lead to both environmental issues and cost of living.
+AD as a lifestyle also decreases the sense of community and is one of the reasons of social segregation
+
+-   How is it being measured:
+
+AD can be measured by driving frequency, distance, and duration. Car ownership can is related AD in some way but it doesn't include the car use information.
+
+    -   VMT
+
+Vehicle miles traveled (VMT) measures the driving distance which is often made from travel surveys. In the survey day, each trip is the basic unit and has a VMT value. The observed trips are added up to daily VMT per person and VMT per household. The long-term VMT are often estimated from daily VMT. The regional VMT are summarized from individual VMT. Both of long-term and regional VMT are not directly observed.
+In 2017 NHTS data, "trip distance in miles for personally driven vehicle trips" is "derived from route geometry returned by Google Maps API." The VMT from NHTS should be more accurate than that by self-report.
+
+    -   VHT
+
+Vehicle hours traveled (VHT) measure the driving duration in a similar way with VMT. In NHTS, VHT is calculated by the trip start time and end time recorded in the survey. But NHTS does not provide the driving trip time separately.
+
+
+    -   mode share
+
+Mode share measures the proportion of different trip modes. Driving mode share is calculated by the driving frequency over the total trip frequency.
+Mode share is an aggregated variable regarding to the trips happened in an area or time stage. In contrast, mode choice is an observed, discrete variable for describing individual's decision for each trip.
+
+
+-   Justification to focusing on VMT
+
+Mode share must be designated a tempo-spatial space as same as many aggregated factors. When using mode share, the study should match the scales for all variables. In contrast, VMT or VHT can be used on multiple scales.
+Moreover, mode share doesn't include the information of driving intensity. Mode share hence has more limitations on AD studies.
+
+VHT can reflect the driving intensity by duration and can better evaluate the effect of AD on health and fuel consumption. But VHT is strongly connected to traffic dynamic. The same trip route could have very different VHT in peak and off-peak hours. 2017 NHTS added a new variable of "trip time in minutes to work without traffic" that give the opportunity for controlling the congestion effect.
+But trip time is still related to the road condition, speed limits, and number of intersections. Road condition and speed limits belong to the category of transportation system rather than urban form.
+In contrast, VMT only related to the distance between origin and destination, which reflects the relationship between driving intensity by length and urban morphological characteristics.
+
+Therefore, when the research goal is to evaluate the final AD impact on person or environment, VHT could be the better choice.
+When the goal is to examine the relationship between AD and urban form, VMT is more preferred. Because it is hard to fully capture and control the influences by traffic managements and dynamics from transportation system. 
+
+
+
+
+3.  Urban form
+
+-   What does it mean?
+
+Urban form means the features of urbanized human settlements.
+As the artificial agglomeration, urban form has both the functional and morphological meaning. 
+Urban functions refer to what people can do in urban areas. such as residing, working, recreation, and travel.
+Urban morphology means the distribution and organization of the functions.
+In gravity law, the mass of place related to the functional parts and the distance is decided by morphological parts.
+In theory of intervening opportunities, the number of opportunities is decided by the urban functions and the radium is related to morphology.
+In utility theory, the functions make benefits through activities and the morphological factors give the costs or impedance.
+
+In policy-oriented studies, urban form refer to a general description rather than the specific functions or morphology.
+That means all the people in a urbanized area share the uniform urban-form features. 
+In contrast, the urban form with unique features such as Disneyland or Portland Greenways should be analysed in project-oriented studies.
+
+
+The features of travel and transportation system can be broadly interpreted as a part of urban form.
+But in AD-urban form studies, travel pattern is the target. The relationship between AD and travel pattern is a self-evident question.
+The relationship between AD and transportation system is the interest of transportation planning and policy.
+Therefore, urban studies need to distinguish travel and transportation with other urban forms.
+
+
+-   Why does it matter?
+
+Urban form reflects some stable features. These features formed from long-term accumulation. The voluntary change of urban form is a slow, gradual process. The intervention is often costly.
+If a urban form intensifies the residents' AD, the negative effects will last for many years.
+Meanwhile, the AD relief influence of urban form could be imperceptible and subtle. This effect doesn't require continuous inputs, mandatory regulations, or unfavorable taxation.
+
+
+-   How is it being measured:
+
+    -   3D/5D/7D
+
+Ds are the general names of the factors. There could be many ways to measure a factor from different dimensions.
+Density is an intensity dimension which can be measured by population density or built-up density - the population or floor areas over the area size.
+Diversity usually refers to the land-use mix - how many different functions in an area and the composition.
+Design only includes the street network structure. Because the term of design itself means creative and unique. The space qualities are also hard to quantified.
+Distance to transit measures the transit service.
+Destination accessibility can be measured by either the distance to a destination or the potential destinations in a given distance.
+Demand management involves parking space and price as the measures.
+Demographic characteristics treat the features of human populations as a separate category.
+
+    -   ?
+
+The idea D-variables is oriented from the concepts of "compact city," "smart growth," and "new urbanism." 
+Urban planners and activists believe a dense, diverse, and well-designed city or neighborhood contributes a sustainable and high-quality urban environment.
+D-variables framework lists the main influencing factors but doesn't specify the measures for them. 
+The later studies always tried to add new factors and new measures for many years.
+Currently, The 10 measures for 5D-variables is the most widely adopted selection.  
+
+Density:
+Household/population density;
+Job density. 
+
+Diversity: 
+Land use mix (entropy index); 
+Jobs-housing balance. 
+
+Design:
+Intersection/street density; 
+% 4-way intersections. 
+
+Destination accessibility:
+Job accessibility by auto; 
+Job accessibility by transit; 
+Distance to downtown. 
+
+Distance to transit: Distance to nearest transit stop.
+
+2017 NHTS provides some categorized variables for the census tract of the trip destination's location. These variables include density of workers, population, housing units (per square mile), and percent of renter-occupied housing. This new variables may provide some insight in future studies.
+
+-   Scale of the measures
+
+    -   Parcel/tax lot
+
+The data at the parcel or tax-lot scale often contain some built-up information such as floor areas, parking lots, and even property tax. The challenge is how to match the travel survey and census data into the parcels. Another limitation is that the non-residential lots are often the trip destination and have not a clear AD meaning. For a single-family lot, the household travel behavior can be connected to the lot's attributes. But for multifamily lot, the studies need to specify the meaning and measures for many households. Therefore, there are some restrictions for the cross-sectional analysis.
+Many project-oriented studies like Traffic Impact Analysis use this scale because they focus on the local areas.  But it is hard to extend to other regions. 
+
+    -   Census boundaries: bg, ct
+
+The advantages of census boundaries include that they have an uniform countrywide criteria and they connect to the plenty of census data. 
+Matching the travel survey data with the census boundaries is still a problem. The travel survey's sampling design usually cannot reach the levels of Census Block Group or Tracts.
+The Local Area Transportation Characteristics for Households (LATCH) by the Bureau of Transportation Statistics (BTS) transfers the NHTS data to the Census tracts level using the household and demographic data from the ACS (https://www.bts.gov/latch).
+But it raises another issue that the estimated tract-level travel variables have been the linear combinations of household and demographic data. They are not suitable for future regression analysis including household and demographic variables.
+
+
+    -   TAZ
+
+TAZ boundaries are defined by local planners based on long-term observations.
+Thus TAZ can better reflect the neighborhood travel pattern than the statistical boundaries.
+The drawback is that there is not an easy way for matching the census demographic data.
+Like other local data, it should be careful for cross-region comparisons at the TAZ scale, 
+
+    -   UZA
+
+The boundaries of urbanized area is defined using an uniform criteria by Census. The criteria cuts off the rural areas with less population. 
+Since the research topic is about urban form. This cutoff is necessary. 
+UZA boundaries also keep the integrity of urban as a spontaneous entity.
+It is meaningful since the street network and many functions are organized as a whole.
+At UZA scale, the role of urban-form factors turns from external treatments to intrinsic properties. The individual and neighborhood variances are eliminated. This is an advantage for policy-oriented studies.
+A drawback of UZA scale is that many variables are aggregated estimates such as the average household income or size. They are not directly observed and only reflect a moment of the full information. For example, mean or median, which one is the better measure for density and distance?
+
+4.  Empirical studies on the relationship
+
+-   The role of meta-analysis
+
+Meta-analysis is a systematic method for assessing the results of multiple studies.
+
+    -   Review/synthesis of meta analyses
+
+Ewing and Cervero (2010) and Stevens (2017) published two influential meta-analysis for VMT and built environment.
+
+
+-   The consensus & differences:
+
+    -   In methods
+
+Ewing and Cervero (2010) use meta-analysis to estimate the weighted average elasticities.
+
+Stevens (2017) uses meta-regression analysis to get the elasticity estimates.
+
+    -   Criteria
+
+Both of the two meta-analysis don't include the papers using aggregate analysis. The studies using SEM, limited population, or limited trip purposes are also excluded.
+
+Actually, Stevens' (2017) Technical Appendix shows that his study includes some papers using nonwork VMT (Boarnet et al., 2004), VMT for commercial trips (Chatman, 2003), and annual car miles (Fang, 2008).
+
+    -   Vintage (year the meta analysis was done)
+
+The papers selected by Ewing and Cervero (2010) are published from 1996 to 2010. 
+
+Stevens (2017) reinspects the literature from 1996 to 2015 and includes 37 papers.
+
+    -   Results
+
+The elasticity for density is small.
+
+The largest influencing factor is destination accessibility.
+
+
+    -   Conclusion
+
+The two studies have consistent results on effect sizes.
+But the authors have difference interpretation for the results.
+
+The controversy surrounds whether the effect size is large or small.
+
+
+5.  The discrepancy in previous empirical studies (needs a better chapter title)
+
+-   Different measures: e.g. pop den vs emp den as density measure
+
+The density measures include two types: The first type is population, residential, or household density.
+The second type is job/employment density. 
+But job density is the value in the area of the traveler located, not the value from the trip destination.
+Form the perspective of gravity law, we can think that current density measures only include the mass of origin, miss the mass of destination.
+
+It still makes sense that the local job density implies some people work inside this area and have no external trip. Or more local jobs imply more local services.
+People can access these services by internal trips.
+Ewing et al. (2020) add population and employment together and name it with "activity density."
+But one measure of diversity - jobs-housing balance - is derived from the same information.
+No matter using summation, division, or entropy, the number of residents and employment repeatedly appear in the regression model. That may generate multicollinearity issues.
+
+Destination accessibility does consider the information from the destination side.
+But current measures are fuzzy. 'Job accessibility' by auto or transit draw a large area by radium or calculated trip distance/duration. Then it counts how many jobs inside this area. 
+This measure reflects the potential job opportunities in given area and is equivalent to regional job density. It is an macro-scale measure and not match the scale of origin side.
+'Distance to downtown' assumes downtown is the destination for all trips. That's partially right but misses the other part, many trips don't end in downtown.
+
+The measures of diversity also include two types: land use mix and socio-demographic mix. Either entropy or balance index can measure the degree of mixture. 
+But Handy (2017) thinks representing diversity by socio-demographic mix is a mistake.
+The concepts of Compact City or New Urbanism believe that people lived a diverse community can satisfy their demand by internal trips. From this viewpoint, the measures by land use or socio-demographic mix should have not essential difference.
+
+In most studies, the measures of design only include the street network characteristics such as intersection/street density and % 4-way intersections. 
+But that's only one aspect of what Compact City and New Urbanism mean. Urban designers think the building layout, open space, and street network is an organic whole. They also may not agree that design is just aesthetic qualities. Some early studies do include the design elements such as building frontage, sidewalk, and parking spaces.
+
+
+-   Scale of the measure
+
+The multiple scales for these measure are not the issue. The problems is what scale is appropriate for each factor.
+There are three types of issuses related to the spatial scales.
+The first is matching issues: Current measures use a fine scale at the origin side but use a regional scale at the destination side. The previous studies show that destination accessibility has the greatest effect size. It might be because the destination side is more important, or because the influencing factors are confounded at destination side?
+The second is MAUP issues: A same measure like job density could have multiple scales. The neighborhood-scale and city-scale job densities have different meanings and applications.
+The third is noise issues: A higher-resolution data contain more information. But the outputs are efficient only if the increasing information is consistent to the framework and explanatory variables. Otherwise, the extra information at the small scales may be a burden.
+
+-   Data: single region vs multiple regions
+
+Both single-region and multiple region data have some limitations. 
+The data in a single region could contain more detailed information. But they can not extended to other region and get a more general conclusion.
+The data from multiple regions such as different MPO could have various survey designs, sampling designs, and criteria. It should be careful to use a combined data from multiple surveys.
+The cross-regions data like NHTS have the advantage that all information is collected by an uniform way. It is more suitable for cross-sectional study. The drawback is many variables are not available. Moreover, their sampling design may not support applying the data in lower-level areas.
+
+-   Research design
+
+D or A: Since 3D variables show a small impact on travel behavior, is it time to replace the framework with a new one?
+Handy (2017) suggest to replace D-variable with an Accessibility framework. She thinks D-variables affect travel decisions indirectly but accessibility connects to travel behavior directly. If the change is just about some new variable, the framework has not substantial difference. If the accessibility is the critical latent variable. That means the framework should use a dual-layers structure.
+
+Causation or association: Many studies control the residential self-selection to investigate the causal relationship. Some studies try the Propensity Score Matching (PSM) methods.
+But if urban form and travel behavior have not "constant conjunction," this direction could be fruitless. 
+It needs to return to the start point: does this research purpose require causal inference.
+
+
+-   Methods
+
+Regular regression methods assume the linear relationship between independent and dependent variables.
+Some studies have shown that this assumption doesn't hold.
+Recent studies started to use step function, GAM, or machine learning methods to disclose the non-linear relationships.
+
+
+
+6.  Conclusions/hypotheses
+
+After the vast studies for many years, we have known something about these D-variables.
+We now may be free from the D names and ponder how to improve the framework.
+In an improved framework, each factor should have some more clearly specified measures and scales.
+The framework should be compatible with the data sources from single or multiple regions.
+The framework can also focus on some thresholds or critical intervals for answer the realistic policy questions.
+
+
+-   The difference in measure & scale creates challenges in comparing/synthesizing previous studies
+
+There are few papers choosing the same factors, measures, and scales in previous AD-urban form studies. That makes the comparison or synthesis more difficult.
+To fix this issues, the future study may consider a integrated solution which specify the categories of scales, factors and corresponding measures.
+
+Choosing a suitable scale is the first step. The city-scale analysis can answer "UBG" questions but could be too general for "TOD" questions.
+Meanwhile, the individual-scale analysis can explain the personal travel choice but may not answer a neighborhood question well. The multi-scales study may be closer to the real situation. But any study is a simplification of the real world. A more compex framework doen't mean it can answer the research question better.
+
+The second step is choosing the factors at this scale. This step should based on existing theories rather than some concepts in planning and design. For example, based on Graviry Law, a neighborhood-scale study could rearrange the influencing factors with the categories of origin, destination, and network variables. 
+As for individual-scale studies, behavior theories require that socio-demographic and psychological factors are essential categories. There could also be other perspectives such as functional versus morphological, physical versus demographic, or inside transportation system versus outside.
+
+After the two steps, the repeat or confused uses can be avoided in choosing measures. For example, number of jobs should appear only once at one scale. Gross population density may matter for a city's travel pattern but the local population density may not be useful for any scale.
+Several principle should also be considered for choosing measures.
+First, the measures should be available in practice. That means the values can be observed or derived. When studies go in for individual behavior, many psychological factors cannot be measured in an accurate and objective way.
+Second, more interpretable and operable measures are preferred. Comparing to the complex index and elasticities, the simpler outputs are easier for understanding and converting to policy language. The original metrics such as counts and length should be the first choice as the final results.
+Last, a good measure should filter out the irrelevant and disruptive information and capture the key slice. It still needs further selecting and testing.
+
+
+
+-   Fewer multi-regional studies
+
+The results from multi-regiona studies could have a more general meaning. But the data sources are limited and the sampling design doesn't support small-scale studies. The number of multi-region studies is fewer than single-region studies.
+Future work can try to pick up the valuable parts from different data sources.
+The countrywide survey can be used to evaluate the overall travel pattern by modes and purpose. We can estimate some parameters as the prior information of the population. Then small-scale samples from the single-region data can be used to generate the posterior travel distribution. This is a Bayesian method that can synthesize the travel attributes for neighborhoods or urbanized areas.
+
+-   Methods insufficient to incorporate non-linear relationship/threshold effects/interaction effect
+
+Regular regression methods cannot capture the nonlinear relationship between VMT and urban-form factors. For this reason, the straigth regression line could cover some dramatic swings.
+The internal dynamics are critical because not the whole ranges of variables have realistic meaning.
+
+Future studies should define some meaningful intervals based on the background knowledge of density, diversity, or distances. For example the low density in suburb represent a candidate range for removing the density restrictions. In contrast, doubling the downtown's street network is not the point.
+Some statistical methods then can help to examine the effects inside the intervals and identify some thresholds.
+As a special case of non-linear relationship, the interaction effect is also worthy to investigate. For example, the density and income may have a synergy effect on VMT.
+These non-linear relationships are more useful for the policy intervention.
+

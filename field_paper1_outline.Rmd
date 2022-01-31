@@ -18,7 +18,7 @@ Theories of traveler choice focus on individuals' behaviors. The utility theory 
 
     -   Auto dependency
 
-AD is a relative term. Broadly speaking, modern society is automobile-dependent. AD relief aims at excessive driving. The travelers in modern U.S. cities drive more frequently and longer than the traditional communities or some cities in Europe and Asia due to historical, cultural, and geographic reasons. The literature in this review only discusses how to drive less and shorter under the contemporary U.S. context.
+AD is a relative term. Modern society is automobile-dependent. AD relief aims at excessive driving. The travelers in modern U.S. cities drive more frequently and longer than the traditional communities or some cities in Europe and Asia due to historical, cultural, and geographic reasons. The literature in this review only discusses how to drive less and shorter under the contemporary U.S. context.
 
 AD is a conditional term. Given the same trip frequency, fewer driving trips mean less AD. Given the same driving trip frequency, the shorter driving distance or duration means less AD. Assessing the degree of AD with various trip frequencies is meaningless. The goals of AD relief are addressed by improving efficiency rather than reducing trips and activities.
 
@@ -50,7 +50,7 @@ AD can be measured by driving mode share, distance, and duration. Car ownership 
 
     -   VMT
 
-Vehicle miles traveled (VMT) measures the driving distance, often made from travel surveys. Each trip is the basic unit on the survey day and has a VMT value. The observed trips are added to daily VMT per person and VMT per household. The long-term VMT is often estimated from daily VMT. The regional VMT are summarized from individual VMT. Both long-term and regional VMT are not directly observed. In 2017 NHTS data, "trip distance in miles for personally driven vehicle trips" is "derived from route geometry returned by Google Maps API." The VMT from NHTS should be more accurate than that by self-report or straight line length.
+Vehicle miles traveled (VMT) measures the driving distance, often made from travel surveys. Each trip is the basic unit on the survey day and has a VMT value. The observed trips are added to daily VMT per person and VMT per household. The long-term VMT is often estimated from daily VMT. The regional VMT are summarized from individual VMT. Both long-term and regional VMT are not directly observed. In 2017 NHTS data, "trip distance in miles for personally driven vehicle trips" is "derived from route geometry returned by Google Maps API." The VMT from NHTS should be more accurate than that by self-report or straight-line length.
 
     -   VHT
 
@@ -62,7 +62,7 @@ Mode share measures the proportion of different trip modes. Driving mode share i
 
 -   Justification to focusing on VMT
 
-Mode share must be designated a tempo-spatial space as same as many aggregated factors. When using mode share, other variables should match the same or upper scales. In contrast, VMT or VHT can reach the individual scale. Moreover, mode share doesn't include the information of driving intensity. Mode share hence has more limitations on AD studies.
+Mode share must be designated a tempo-spatial space as same as many aggregated factors. Other variables should match the same or upper scales when using mode share. In contrast, VMT or VHT can reach the individual scale. Moreover, mode share doesn't include the information of driving intensity. Mode share hence has more limitations on AD studies.
 
 VHT can reflect the driving intensity by duration and better evaluate AD's effect on health and fuel consumption. But VHT is strongly connected to traffic dynamics. The same trip route could have different VHT in peak and off-peak hours. 2017 NHTS added a new variable of "trip time in minutes to work without traffic" that can control the congestion effect. But trip time is still related to road conditions, speed limits, and intersections. Road conditions and speed limits belong to the category of transportation system rather than urban form. In contrast, VMT is only related to the distance between origin and destination, reflecting the relationship between driving intensity by length and urban morphological characteristics.
 
@@ -72,11 +72,13 @@ Therefore, when the research goal is to evaluate the final AD impact on individu
 
 -   What does it mean?
 
-Urban form means the features of urbanized human settlements. As the artificial agglomeration, urban form has functional and morphological meaning. Urban functions refer to what people can do in urban areas, such as residing, working, recreation, and travel. Urban morphology means the distribution and organization of the functions. In gravity law, place mass is related to the functional parts, and the morphological parts decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional parts benefit through activities, and the morphological parts give the costs or impedance.
+Urban form means the features of urbanized human settlements or artificial agglomeration. 
+In policy-oriented studies, urban-form features refer to some general characteristics described by some factors such as population, land use, road network structures. Each factor could have one or more measures like size, counts, density or distance.
+That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
 
-In policy-oriented studies, urban form refers to a general description rather than the specific functions or morphology. That means all the people in an urbanized area share uniform urban-form features. In contrast, the urban form with unique features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
+Urban-form features can be divided as functional or morphological. Functional features refer to what people can do in urban areas, such as residing, working, recreation, and travel. Morphological features mean the distribution and organization of the functions. In gravity law, place mass is related to the functional features, and the morphological features decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional features benefit through activities, and the morphological features give the costs or impedance.
 
-Travel and transportation system features can be broadly interpreted as a part of the urban form. But in AD-urban form studies, travel pattern is the target. Transportation system belongs to the interest of transportation planning and policy. Therefore, urban studies need to distinguish travel and transportation from other urban forms.
+Travel and transportation system can be broadly interpreted as a part of the urban form. But in AD-urban form studies, travel pattern is the target. Transportation system belongs to the interest of transportation planning and policy. Therefore, AD-urban form studies need to distinguish travel and transportation from other urban forms.
 
 -   Why does it matter?
 
@@ -106,22 +108,13 @@ Distance to transit: Distance to nearest transit stop.
 
 -   Scale of the measures
 
-The same measure could have different scales. Its range, distribution, and meaning could switch along the scales.
-Generally, a fine-scale measure contains more information. But if the information is irrelevant to the dependent variables, the study results will not be improved or even be worse.
-The urban-form variables' scales could be same or higher than VMT's. 
-In disaggregate studies, the former is higher, and these measures are the treatments on each observation.
-In aggregate studies, when their scales are the same, the measures are the attributes of each observation. 
-
+The same measure could have different scales. Its range, distribution, and meaning could switch along the scales. Generally, a fine-scale measure contains more information. But if the information is irrelevant to the dependent variables, the study results will not be improved or even be worse. The urban-form variables' scales could be same or higher than VMT's. In disaggregate studies, the former is higher, and these measures are the treatments on each observation. In aggregate studies, when their scales are the same, the measures are the attributes of each observation.
 
     -   Parcel/tax lot
 
-Density at the parcel/tax-lot level measures the net population/built-up density and would return a higher values than that at the higher scales.
-Choosing the smaller unit means that there will be more cases having single land use. Entropy, the measure of diversity are more like close to zero.
-The local measures like the distance to transit can reflect how easy one accesses transit precisely. For the regional measures such as distance to CBD, the difference among parcels is not very meaningful. 
-The parcel or tax-lot scale data could contain built-up information such as floor areas, parking lots, and even property tax. 
-Many project-oriented studies like Traffic Impact Analysis use this scale to focus on local issues. But it is hard to extend to other regions.
+Density at the parcel/tax-lot level measures the net population/built-up density and would return a higher values than that at the higher scales. Choosing the smaller unit means that there will be more cases having single land use. Entropy, the measure of diversity are more like close to zero. The local measures like the distance to transit can reflect how easy one accesses transit precisely. For the regional measures such as distance to CBD, the difference among parcels is not very meaningful. The parcel or tax-lot scale data could contain built-up information such as floor areas, parking lots, and even property tax. Many project-oriented studies like Traffic Impact Analysis use this scale to focus on local issues. But it is hard to extend to other regions.
 
-For the aggregate analysis at this scale, the challenge is how to match the travel survey and census data into the parcels. Another limitation is that the non-residential lots are often the trip destination and do not have a clear AD meaning. For a single-family lot, the household travel behavior can be connected to the lot's attributes. But for the multifamily lot, the studies need to specify the meaning and measures for many households. That means, the studies should divide the parcels or lots into categories. 
+For the aggregate analysis at this scale, the challenge is how to match the travel survey and census data into the parcels. Another limitation is that the non-residential lots are often the trip destination and do not have a clear AD meaning. For a single-family lot, the household travel behavior can be connected to the lot's attributes. But for the multifamily lot, the studies need to specify the meaning and measures for many households. That means, the studies should divide the parcels or lots into categories.
 
     -   Census boundaries: bg, ct
 
@@ -133,13 +126,11 @@ Aggregating the travel survey data into the census boundaries is still a problem
 
     -   TAZ
 
-TAZ boundaries are defined by local planners based on long-term observations. Thus TAZ can better reflect the neighborhood travel pattern than the statistical boundaries. The drawback is that there is no easy way to match the census demographic data. 
-Similarlly, TAZ refelcts the local urban form rather than the regional urban form.
-Like other local data, it should be careful with cross-region comparisons at the TAZ scale.
+TAZ boundaries are defined by local planners based on long-term observations. Thus TAZ can better reflect the neighborhood travel pattern than the statistical boundaries. The drawback is that there is no easy way to match the census demographic data. Similarlly, TAZ refelcts the local urban form rather than the regional urban form. Like other local data, it should be careful with cross-region comparisons at the TAZ scale.
 
     -   UZA
 
-The boundaries of urbanized areas are defined using uniform criteria by Census. The standards cut off the rural areas with less population. Since the research topic is about urban form, this cutoff is necessary. UZA boundaries also keep the integrity of urban as a spontaneous entity. It is meaningful since the street network and land use are an organic whole. There is no 'local' measure at the UZA scale. The role of urban-form factors turns from external treatments to intrinsic properties. The individual and neighborhood variances are eliminated. This is an advantage for policy-oriented studies. A drawback of the UZA scale is that many variables are aggregated estimates, such as the average household income or size. They are not directly observed and only reflect a moment of the complete information. For example, among mean and median, one may be the better measure for density and distance.
+The boundaries of urbanized areas are defined using uniform criteria by Census. These criteria cut off the rural areas with less population. Since the research topic is about urban form, this cutoff is necessary. UZA boundaries also keep the integrity of urban as a spontaneous entity. It is meaningful since the street network and land use are an organic whole. There is no 'local' measure at the UZA scale. The role of urban-form factors turns from external treatments to intrinsic properties. The individual and neighborhood variances are eliminated. This is an advantage for policy-oriented studies. A drawback of the UZA scale is that many variables are aggregated estimates, such as the average household income or size. They are not directly observed and only reflect a moment of the complete information. For example, among mean and median, one may be the better measure for density and distance.
 
 4.  Empirical studies on the relationship
 

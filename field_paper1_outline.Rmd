@@ -46,23 +46,23 @@ Many studies have shown that AD is related to an unhealthy lifestyle. People who
 
 -   How is it being measured:
 
-AD can be measured by driving mode share, distance, and duration. Car ownership can be related to AD somehow, but it doesn't include car use information. The driving frequency itself can not express whether these trips are necessary or not.
+AD can be measured by driving mode share, distance, and duration. Car ownership can be related to AD somehow, but it doesn't include car use information. The driving frequency itself can not express whether these driving trips are necessary or additional.
 
     -   VMT
 
-Vehicle miles traveled (VMT) measures the driving distance, often made from travel surveys. Each trip is the basic unit on the survey day and has a VMT value. The observed trips are added to daily VMT per person and VMT per household. The long-term VMT is often estimated from daily VMT. The regional VMT are summarized from individual VMT. Both long-term and regional VMT are not directly observed. In 2017 NHTS data, "trip distance in miles for personally driven vehicle trips" is "derived from route geometry returned by Google Maps API." The VMT from NHTS should be more accurate than that by self-report.
+Vehicle miles traveled (VMT) measures the driving distance, often made from travel surveys. Each trip is the basic unit on the survey day and has a VMT value. The observed trips are added to daily VMT per person and VMT per household. The long-term VMT is often estimated from daily VMT. The regional VMT are summarized from individual VMT. Both long-term and regional VMT are not directly observed. In 2017 NHTS data, "trip distance in miles for personally driven vehicle trips" is "derived from route geometry returned by Google Maps API." The VMT from NHTS should be more accurate than that by self-report or straight line length.
 
     -   VHT
 
 Vehicle hours traveled (VHT) measure the driving duration. In NHTS, VHT is calculated by the trip start and end time recorded in the survey. It could also have the measures by the trip, person, or household. But NHTS does not provide the driving trip time separately.
 
-    -   mode share
+    -   Mode share
 
 Mode share measures the proportion of different trip modes. Driving mode share is the driving frequency divided by the total trip frequency. Mode share is an aggregated variable regarding the trips that happened in an area or time stage. In contrast, mode choice is an observed, discrete variable for describing the individual's decision for each trip.
 
 -   Justification to focusing on VMT
 
-Mode share must be designated a tempo-spatial space as same as many aggregated factors. When using mode share, the study should match the scales for all variables. In contrast, VMT or VHT can be used on multiple scales. Moreover, mode share doesn't include the information of driving intensity. Mode share hence has more limitations on AD studies.
+Mode share must be designated a tempo-spatial space as same as many aggregated factors. When using mode share, other variables should match the same or upper scales. In contrast, VMT or VHT can reach the individual scale. Moreover, mode share doesn't include the information of driving intensity. Mode share hence has more limitations on AD studies.
 
 VHT can reflect the driving intensity by duration and better evaluate AD's effect on health and fuel consumption. But VHT is strongly connected to traffic dynamics. The same trip route could have different VHT in peak and off-peak hours. 2017 NHTS added a new variable of "trip time in minutes to work without traffic" that can control the congestion effect. But trip time is still related to road conditions, speed limits, and intersections. Road conditions and speed limits belong to the category of transportation system rather than urban form. In contrast, VMT is only related to the distance between origin and destination, reflecting the relationship between driving intensity by length and urban morphological characteristics.
 
@@ -80,13 +80,13 @@ Travel and transportation system features can be broadly interpreted as a part o
 
 -   Why does it matter?
 
-Urban form reflects some stable features. These features are formed from long-term accumulation. The voluntary change of urban form is a slow, gradual process. The intervention is often costly. If an urban form intensifies the residents' AD, the adverse effects will last many years. Meanwhile, the AD relief influence of urban form could be invisible and subtle. This effect doesn't require continuous inputs, mandatory regulations, or unfavorable taxation.
+Urban form reflects some stable features. These features are formed from long-term accumulation. The voluntary change of urban form is a slow, gradual process. The intervention is often costly. If an urban form intensifies the residents' AD, the adverse effects will last many years. Meanwhile, the urban form's influence on AD relief could be invisible and subtle. This effect doesn't require continuous inputs, mandatory regulations, or unfavorable taxation.
 
 -   How is it being measured:
 
     -   3D/5D/7D
 
-Ds are the known names of the factors. There could be many ways to measure a factor from different dimensions. Density is an intensity dimension that can be measured by population density or built-up density - the population or floor areas over the area size. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
+Ds are the known names of the factors. There could be many ways to measure a factor from different dimensions. Density is an intensity factor that can be measured by population density or built-up density - the population or floor areas over the area size. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
 
     -   ?
 
@@ -106,21 +106,40 @@ Distance to transit: Distance to nearest transit stop.
 
 -   Scale of the measures
 
+The same measure could have different scales. Its range, distribution, and meaning could switch along the scales.
+Generally, a fine-scale measure contains more information. But if the information is irrelevant to the dependent variables, the study results will not be improved or even be worse.
+The urban-form variables' scales could be same or higher than VMT's. 
+In disaggregate studies, the former is higher, and these measures are the treatments on each observation.
+In aggregate studies, when their scales are the same, the measures are the attributes of each observation. 
+
+
     -   Parcel/tax lot
 
-The parcel or tax-lot scale data often contain built-up information such as floor areas, parking lots, and even property tax. The challenge is how to match the travel survey and census data into the parcels. Another limitation is that the non-residential lots are often the trip destination and do not have a clear AD meaning. For a single-family lot, the household travel behavior can be connected to the lot's attributes. But for the multifamily lot, the studies need to specify the meaning and measures for many households. Therefore, there are some restrictions for the cross-sectional analysis. Many project-oriented studies like Traffic Impact Analysis use this scale to focus on local issues. But it is hard to extend to other regions.
+Density at the parcel/tax-lot level measures the net population/built-up density and would return a higher values than that at the higher scales.
+Choosing the smaller unit means that there will be more cases having single land use. Entropy, the measure of diversity are more like close to zero.
+The local measures like the distance to transit can reflect how easy one accesses transit precisely. For the regional measures such as distance to CBD, the difference among parcels is not very meaningful. 
+The parcel or tax-lot scale data could contain built-up information such as floor areas, parking lots, and even property tax. 
+Many project-oriented studies like Traffic Impact Analysis use this scale to focus on local issues. But it is hard to extend to other regions.
+
+For the aggregate analysis at this scale, the challenge is how to match the travel survey and census data into the parcels. Another limitation is that the non-residential lots are often the trip destination and do not have a clear AD meaning. For a single-family lot, the household travel behavior can be connected to the lot's attributes. But for the multifamily lot, the studies need to specify the meaning and measures for many households. That means, the studies should divide the parcels or lots into categories. 
 
     -   Census boundaries: bg, ct
 
-The advantages of census boundaries include having uniform countrywide criteria and connecting to plenty of census data. Matching the travel survey data with the census boundaries is still a problem. The travel survey's sampling design usually cannot reach Census Block Group or Tracts levels. The Local Area Transportation Characteristics for Households (LATCH) by the Bureau of Transportation Statistics (BTS) transfers the NHTS data to the Census tracts level using the household and demographic data from the ACS (<https://www.bts.gov/latch>). But it raises another issue: the estimated tract-level travel variables have been the linear combinations of household and demographic data. They are not suitable for future regression analysis, including household and demographic variables.
+One advantage of census boundaries is that it has uniform countrywide criteria and connecting to plenty of census data. Another one is that Block Group and Tracts levels data are randomly sampled and can represent each area's attributes. Block Group and Tract are statistical boundaries. A potential issue is whether they can be treated as an actual entity and have some meanings.
+
+In disaggregate studies, each case locates in a Block Group or Tract. The attributes of this Block Group or Tract are the urban-form treatments on this case. The regional measures are often not applicable for these scales.
+
+Aggregating the travel survey data into the census boundaries is still a problem. The travel survey's sampling design usually cannot reach Census Block Group or Tracts levels. The Local Area Transportation Characteristics for Households (LATCH) by the Bureau of Transportation Statistics (BTS) transfers the NHTS data to the Census tracts level using the household and demographic data from the ACS (<https://www.bts.gov/latch>). But it raises another issue: the estimated tract-level travel variables have been the linear combinations of household and demographic data. They are not suitable for future regression analysis, including household and demographic variables.
 
     -   TAZ
 
-TAZ boundaries are defined by local planners based on long-term observations. Thus TAZ can better reflect the neighborhood travel pattern than the statistical boundaries. The drawback is that there is no easy way to match the census demographic data. Like other local data, it should be careful with cross-region comparisons at the TAZ scale,
+TAZ boundaries are defined by local planners based on long-term observations. Thus TAZ can better reflect the neighborhood travel pattern than the statistical boundaries. The drawback is that there is no easy way to match the census demographic data. 
+Similarlly, TAZ refelcts the local urban form rather than the regional urban form.
+Like other local data, it should be careful with cross-region comparisons at the TAZ scale.
 
     -   UZA
 
-The boundaries of urbanized areas are defined using uniform criteria by Census. The standards cut off the rural areas with less population. Since the research topic is about urban form, this cutoff is necessary. UZA boundaries also keep the integrity of urban as a spontaneous entity. It is meaningful since the street network and land use are an organic whole. At the UZA scale, the role of urban-form factors turns from external treatments to intrinsic properties. The individual and neighborhood variances are eliminated. This is an advantage for policy-oriented studies. A drawback of the UZA scale is that many variables are aggregated estimates, such as the average household income or size. They are not directly observed and only reflect a moment of the complete information. For example, one may be the better measure for density and distance among mean and median.
+The boundaries of urbanized areas are defined using uniform criteria by Census. The standards cut off the rural areas with less population. Since the research topic is about urban form, this cutoff is necessary. UZA boundaries also keep the integrity of urban as a spontaneous entity. It is meaningful since the street network and land use are an organic whole. There is no 'local' measure at the UZA scale. The role of urban-form factors turns from external treatments to intrinsic properties. The individual and neighborhood variances are eliminated. This is an advantage for policy-oriented studies. A drawback of the UZA scale is that many variables are aggregated estimates, such as the average household income or size. They are not directly observed and only reflect a moment of the complete information. For example, among mean and median, one may be the better measure for density and distance.
 
 4.  Empirical studies on the relationship
 

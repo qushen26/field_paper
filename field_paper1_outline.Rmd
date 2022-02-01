@@ -72,7 +72,7 @@ Therefore, when the research goal is to evaluate the final AD impact on individu
 
 -   What does it mean?
 
-Urban form means the features of urbanized human settlements or artificial agglomeration. In policy-oriented studies, urban-form features refer to some general characteristics described by some factors such as population, land use, and road network structure. Each factor could have one or more measures like size, counts, density or distance. That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
+Urban form means the features of urbanized human settlements or artificial agglomeration. In policy-oriented studies, urban-form features refer to the general characteristics described by some factors such as density, mixed use, and road network structure. Each factor could have one or more measures like population, employment, or intersection. That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
 
 Urban-form features can be divided as functional or morphological. Functional features refer to what people can do in urban areas, such as residing, working, recreation, and travel. Morphological features mean the distribution and organization of the functions. In gravity law, place mass is related to the functional features, and the morphological features decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional features benefit through activities, and the morphological features give the costs or impedance.
 
@@ -86,11 +86,15 @@ Urban form reflects some stable features. These features are formed from long-te
 
     -   3D/5D/7D
 
-Ds are the known names of the factors. There could be many ways to measure a factor from different dimensions. Density is an intensity factor that can be measured by population density or built-up density - the population size or floor area over the land area. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
+The best known factors are density, diversity, design (3D), distance to transit, destination accessibility (5D), and are further extended to demand management and demographic characteristics (7D). The idea of D-variables is oriented from the concepts of "compact city," "smart growth," and "new urbanism." Urban planners and activists believe a dense, diverse, well-designed city or neighborhood contributes to a sustainable and high-quality urban environment. 
+
+Density is an intensity factor that can be measured by population density or built-up density - the population size or floor area over the land area. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
 
     -   ?
 
-The idea of D-variables is oriented from the concepts of "compact city," "smart growth," and "new urbanism." Urban planners and activists believe a dense, diverse, well-designed city or neighborhood contributes to a sustainable and high-quality urban environment. The D-variables framework lists the main influencing factors but doesn't specify their measures. The later studies always tried to add new factors and measures for many years. Currently, The ten measures for 5D-variables are the most widely adopted selection.
+The D-variables framework lists the main influencing factors but doesn't specify their measures.
+There could be more ways to measure a factor from different dimensions. 
+The later studies always tried to add new factors and measures for many years. Currently, The ten measures for 5D-variables are the most widely adopted selection.
 
 Density: Household/population density; Job density.
 

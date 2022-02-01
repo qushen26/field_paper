@@ -72,9 +72,7 @@ Therefore, when the research goal is to evaluate the final AD impact on individu
 
 -   What does it mean?
 
-Urban form means the features of urbanized human settlements or artificial agglomeration. 
-In policy-oriented studies, urban-form features refer to some general characteristics described by some factors such as population, land use, road network structures. Each factor could have one or more measures like size, counts, density or distance.
-That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
+Urban form means the features of urbanized human settlements or artificial agglomeration. In policy-oriented studies, urban-form features refer to some general characteristics described by some factors such as population, land use, and road network structure. Each factor could have one or more measures like size, counts, density or distance. That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
 
 Urban-form features can be divided as functional or morphological. Functional features refer to what people can do in urban areas, such as residing, working, recreation, and travel. Morphological features mean the distribution and organization of the functions. In gravity law, place mass is related to the functional features, and the morphological features decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional features benefit through activities, and the morphological features give the costs or impedance.
 
@@ -88,7 +86,7 @@ Urban form reflects some stable features. These features are formed from long-te
 
     -   3D/5D/7D
 
-Ds are the known names of the factors. There could be many ways to measure a factor from different dimensions. Density is an intensity factor that can be measured by population density or built-up density - the population or floor areas over the area size. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
+Ds are the known names of the factors. There could be many ways to measure a factor from different dimensions. Density is an intensity factor that can be measured by population density or built-up density - the population size or floor area over the land area. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
 
     -   ?
 

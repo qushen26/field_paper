@@ -72,11 +72,11 @@ Therefore, when the research goal is to evaluate the final AD impact on individu
 
 -   What does it mean?
 
-Urban form means the features of urbanized human settlements or artificial agglomeration. In policy-oriented studies, urban-form features refer to the general characteristics described by some factors such as density, mixed use, and road network structure. Each factor could have one or more measures like population, employment, or intersection. That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
+Urban form means the features of urbanized human settlements or artificial agglomeration. In policy-oriented studies, urban-form features refer to the general characteristics described by some factors such as population, land use, and street network. Each factor could have one or more measures like counts, density, or proportion. That means an urban-form factor and its measures have the same meaning in different regions or urbanized areas. In contrast, the specific features such as Disneyland or Portland Greenways should be analyzed in project-oriented studies.
 
-Urban-form features can be divided as functional or morphological. Functional features refer to what people can do in urban areas, such as residing, working, recreation, and travel. Morphological features mean the distribution and organization of the functions. In gravity law, place mass is related to the functional features, and the morphological features decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional features benefit through activities, and the morphological features give the costs or impedance.
+Urban-form factors can be divided as functional or morphological. This dichotomy can help understand and organize the research framework. Functional factors refer to what people can do in urban areas, such as residing, working, recreation, and travel. Morphological factors mean the distribution and organization of the functions. In gravity law, place mass is related to the functional features, and the morphological features decide distance. In the theory of intervening opportunities, the number of opportunities is determined by the urban functions, and the radium is related to morphology. In utility theory, the functional features benefit through activities, and the morphological features give the costs or impedance.
 
-Travel and transportation system can be broadly interpreted as a part of the urban form. But in AD-urban form studies, travel pattern is the target. Transportation system belongs to the interest of transportation planning and policy. Therefore, AD-urban form studies need to distinguish travel and transportation from other urban forms.
+Demography and transportation system can be broadly interpreted as some parts of the urban form. But AD-urban form studies need to distinguish them from other urban form factors. Demographic and transportation factors are important explanatory variables but is not the targets of land-use planning and policy. A special case, parking belongs both land use and transportation system.
 
 -   Why does it matter?
 
@@ -86,13 +86,13 @@ Urban form reflects some stable features. These features are formed from long-te
 
     -   3D/5D/7D
 
-The best known factors are density, diversity, design (3D), distance to transit, destination accessibility (5D), and are further extended to demand management and demographic characteristics (7D). The idea of D-variables is oriented from the concepts of "compact city," "smart growth," and "new urbanism." Urban planners and activists believe a dense, diverse, well-designed city or neighborhood contributes to a sustainable and high-quality urban environment. 
+The best known framework is density, diversity, design (3D), distance to transit, destination accessibility (5D), and are further extended to demand management and demographic characteristics (7D). The idea of D-variables is oriented from the concepts of "compact city," "smart growth," and "new urbanism." Urban planners and activists believe a dense, diverse, well-designed city or neighborhood contributes to a sustainable and high-quality urban environment. 
 
+The D-variables framework lists the main influencing factors but doesn't specify their measures.
 Density is an intensity factor that can be measured by population density or built-up density - the population size or floor area over the land area. Diversity usually refers to the land-use mix - how many different functions in an area and the composition. Design only includes the street network structure. Because the term design itself means creative and unique. The space qualities are also intricate to quantify. Distance to transit measures the transit service. Destination accessibility can be measured by the distance to a destination or the potential destinations in a given distance. Demand management involves parking space and price as the measures. Demographic characteristics treat the features of human populations as a separate category.
 
     -   ?
 
-The D-variables framework lists the main influencing factors but doesn't specify their measures.
 There could be more ways to measure a factor from different dimensions. 
 The later studies always tried to add new factors and measures for many years. Currently, The ten measures for 5D-variables are the most widely adopted selection.
 
@@ -122,9 +122,9 @@ For the aggregate analysis at this scale, the challenge is how to match the trav
 
 One advantage of census boundaries is that it has uniform countrywide criteria and connecting to plenty of census data. Another one is that Block Group and Tracts levels data are randomly sampled and can represent each area's attributes. Block Group and Tract are statistical boundaries. A potential issue is whether they can be treated as an actual entity and have some meanings.
 
-In disaggregate studies, each case locates in a Block Group or Tract. The attributes of this Block Group or Tract are the urban-form treatments on this case. The regional measures are often not applicable for these scales.
+In disaggregate studies, each case locates in a Block Group or Tract. The attributes of this Block Group or Tract are the urban-form treatments on this case. Some measures are not applicable for these census boundaries such as distance-to-transit or buffer-based measures.
 
-Aggregating the travel survey data into the census boundaries is still a problem. The travel survey's sampling design usually cannot reach Census Block Group or Tracts levels. The Local Area Transportation Characteristics for Households (LATCH) by the Bureau of Transportation Statistics (BTS) transfers the NHTS data to the Census tracts level using the household and demographic data from the ACS (<https://www.bts.gov/latch>). But it raises another issue: the estimated tract-level travel variables have been the linear combinations of household and demographic data. They are not suitable for future regression analysis, including household and demographic variables.
+Aggregating the travel survey data into the census boundaries is still a problem. The travel survey's sampling design usually cannot reach Census Block Group or Tracts levels. The Local Area Transportation Characteristics for Households (LATCH) by the Bureau of Transportation Statistics (BTS) transfers the NHTS data to the Census tracts level using the household and demographic data from the ACS (<https://www.bts.gov/latch>). But it raises another issue: the estimated tract-level travel variables have been the linear combinations of household and demographic data. They may be not suitable for future regression analysis, including household and demographic variables.
 
     -   TAZ
 
@@ -174,7 +174,7 @@ The most potent influencing factor is destination accessibility.
 
 The two studies have consistent results on effect sizes. But the authors have a different interpretation for the results.
 
-The controversy surrounds whether the effect size is large or small.
+The controversy surrounds whether the effect size is large or small, and whether the results can support the idea of compact development.
 
 5.  The discrepancy in previous empirical studies (needs a better chapter title)
 
@@ -202,11 +202,12 @@ Both single-region and multiple-region data have some limitations. The data in a
 
 D or A: Since 3D variables show a small impact on travel behavior, is it time to replace the framework with a new one? Handy (2017) suggests replacing D-variable with an Accessibility framework. She thinks D-variables affect travel decisions indirectly, but accessibility directly connects to travel behavior. If the change is just about some new variable, the framework has no substantial difference. Suppose accessibility is the critical latent variable. That means the framework should use a dual-layer structure.
 
-Causation or association: Many studies control the residential self-selection to investigate the causal relationship. Some studies try the Propensity Score Matching (PSM) methods. But if urban form and travel behavior have no "constant conjunction," this direction could be fruitless. It needs to return to the start point: does this research purpose require causal inference.
+Causation or association: Many studies control the residential self-selection to investigate the causal relationship. Some studies try the Propensity Score Matching (PSM) methods. These methods essentially are analyzing a subgroup for a stronger statement. But the policy-oriented studies want a general outcome for the complete population. Moreover, if urban form and travel behavior have no "constant conjunction," this direction could be fruitless. It needs to return to the start point: does this research purpose require causal inference.
 
 -   Methods
 
-Standard regression methods assume the linear relationship between independent and dependent variables. Some studies have shown that this assumption doesn't hold. Recent studies started to use step function, GAM, or machine learning methods to disclose the non-linear relationships.
+Standard regression methods assume the linear relationship between independent and dependent variables.
+Some studies have shown that this assumption doesn't hold. Recent studies started to use step function, GAM, or machine learning methods to disclose the non-linear relationships.
 
 6.  Conclusions/hypotheses
 

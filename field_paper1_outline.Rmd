@@ -166,7 +166,7 @@ Stevens (2017) reinspects the literature from 1996 to 2015 and includes 37 paper
 
     -   Results
 
-The elasticity for density is small.
+The elasticity for density is small. The elasticity for density in Stevens' results is greater than that in Ewing and Cervero's (2010).
 
 The most potent influencing factor is destination accessibility.
 
@@ -174,7 +174,8 @@ The most potent influencing factor is destination accessibility.
 
 The two studies have consistent results on effect sizes. But the authors have a different interpretation for the results.
 
-The controversy surrounds whether the effect size is large or small, and whether the results can support the idea of compact development.
+The controversy surrounds whether the effect size is large or small, and whether the results can support the idea of compact development. Stevens thinks that the costs of changing urban-form factors should be considered. Otherwise, the effect size is not very useful for practitioners.
+Ewing and Cervero argue that less drive has many non-monetary benefits and it is not merely a financial issue.
 
 5.  The discrepancy in previous empirical studies (needs a better chapter title)
 
@@ -196,18 +197,22 @@ The multiple scales for these measures are not the issue. The problem is what sc
 
 -   Data: single region vs multiple regions
 
-Both single-region and multiple-region data have some limitations. The data in a single region could contain more detailed information. But they can not be extended to other regions and get a more general conclusion. The data from multiple regions, such as different MPO, could have various survey designs, sampling designs, and criteria. It should be careful to use combined data from multiple surveys. Cross-regions data like NHTS have the advantage of collecting all information uniformly. It is more suitable for a cross-sectional study. The drawback is many variables are not available. Moreover, their sampling design may not support applying the data in lower-level areas.
+Both single-region and multiple-region data have some limitations. The data in a single region could contain more detailed information. But they can not be extended to other regions and get a more general conclusion. The data from multiple regions, such as different MPO, could have various survey designs, sampling designs, and criteria. It should be careful to use combined data from multiple surveys. Cross-regions data like NHTS have the advantage of collecting all information uniformly. It is more suitable for a cross-sectional study. The drawback is many variables are not available. Moreover, their sampling design may not support applying the data in micro-scale stuides.
 
 -   Research design
 
-D or A: Since 3D variables show a small impact on travel behavior, is it time to replace the framework with a new one? Handy (2017) suggests replacing D-variable with an Accessibility framework. She thinks D-variables affect travel decisions indirectly, but accessibility directly connects to travel behavior. If the change is just about some new variable, the framework has no substantial difference. Suppose accessibility is the critical latent variable. That means the framework should use a dual-layer structure.
+D or A: Since 3D variables show a small impact on travel behavior, is it time to replace the framework with a new one? Handy (2017) suggests replacing D-variable with an Accessibility framework. She thinks D-variables affect travel decisions indirectly, but accessibility directly connects to travel behavior. If the change is just about some new variables, the framework has no substantial difference. Suppose accessibility is the critical latent variable. That means the framework should use a dual-layer structure.
 
-Causation or association: Many studies control the residential self-selection to investigate the causal relationship. Some studies try the Propensity Score Matching (PSM) methods. These methods essentially are analyzing a subgroup for a stronger statement. But the policy-oriented studies want a general outcome for the complete population. Moreover, if urban form and travel behavior have no "constant conjunction," this direction could be fruitless. It needs to return to the start point: does this research purpose require causal inference.
+Causation or association: Many studies control the residential self-selection to investigate the causal relationship. Some studies try the Propensity Score Matching (PSM) methods. These methods essentially are analyzing a subgroup for a stronger statement. But the policy-oriented studies want a general outcome for the complete population. Moreover, if urban form and travel behavior have no "constant conjunction," this research direction could be fruitless. 
+Instead of pursuing the cause, breaking the loop cycle between urban sprawl and AD could be the feasible, useful goal of policymaking, 
+
 
 -   Methods
 
 Standard regression methods assume the linear relationship between independent and dependent variables.
 Some studies have shown that this assumption doesn't hold. Recent studies started to use step function, GAM, or machine learning methods to disclose the non-linear relationships.
+
+The real mechanisms of urban-form impacting travel is an interactive process. The four-step models are also employ an iterative algorithm for matching the flows between origins and destinations. However, most of previous travel-urban form studies get the estimates by one-round computation, which is only one moment of the actual relationship. Some resampling methods like bootstrap or MCMC may improve the analysis.
 
 6.  Conclusions/hypotheses
 
